@@ -1,6 +1,30 @@
 ====== Kamailio SIP Server Documentation Wiki ======
 
 <color blue>//This wiki site is work in progress, targeting to collect updated documentation for [[http://www.kamailio.org|Kamailio SIP Server]] v3.2.0 or newer. If you don't find on this site the documentation you are looking for, search for it on [[http://www.kamailio.org/dokuwiki/|Old Wiki Site]].//</color>
+
+===== Installation =====
+
+===== Cookbooks =====
+
+\\
+
+|                     ^ Core Cookbook                  ^ Pseudo Variables                ^ Transformations  ^ Selects ^
+^ Development Version |  [[http://sip-router.org/wiki/cookbooks/core-cookbook/devel|link]]  |  [[http://sip-router.org/wiki/cookbooks/pseudo-variables/devel|link]]  |  [[http://sip-router.org/wiki/cookbooks/transformations/devel|link]]  |  [[http://sip-router.org/wiki/cookbooks/selects/devel|link]]  |
+^ 3.2.x Version       |  [[cookbooks:3.2.x:core|link]]  |  [[cookbooks:3.2.x:pseudovariables|link]]  |  [[cookbooks:3.2.x:transformations|link]]  |  [[cookbooks:3.2.x:selects|link]]  |
+
+\\ 
+
+
+===== Alphabetic Indexes =====
+
+\\
+
+|                     ^ Modules Parameters  ^ Modules Functions ^ MI Commands ^
+^ 3.2.x Version       |  [[alphaindexes:3.2.x:modparameters|link]]  |  [[alphaindexes:3.2.x:modfunctions|link]]  | [[alphaindexes:3.2.x:micommands|link]] |
+
+\\ 
+
+
 ===== Disclaimer =====
 
 <color grey>
