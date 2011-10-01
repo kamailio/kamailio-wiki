@@ -4,5 +4,5 @@
 ===== Disclaimer =====
 
 <color grey>
-**The dokuwiki is left open for contribution to anybody but may be abused by malicious people out there. Hence, the content of the dokuwiki page may have <color brown>//illegal//</color> content at some points in time. Please report such cases as soon as you see them at //sr-dev@lists.sip-router.org// or //team@lists.kamailio.org// for private messages. Kamailio.org is not responsible for the content in the dokuwiki pages.**
+The dokuwiki is left open for contribution to anybody but may be abused by malicious people out there. Hence, the content of the dokuwiki page may have </color><color green>//illegal//</color><color grey> content at some points in time. Please report such cases as soon as you see them at //sr-dev@lists.sip-router.org// or //team@lists.kamailio.org// for private messages. Kamailio.org is not responsible for the content in the dokuwiki pages.
 </color>
