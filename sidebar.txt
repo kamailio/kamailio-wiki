@@ -1,1 +1,6 @@
   * [[start|Wiki Home]]
+  * [[http://www.kamailio.org|Kamailio Site]]
+  * [[http://www.kamailio.org/docs/|Docs Index]]
+  * [[http://www.kamailio.org/docs/modules/|Modules' Docs]]
+  * [[:wiki:dokuwiki|Help]]
+  * [[:wiki:syntax|Wiki Syntax]]
