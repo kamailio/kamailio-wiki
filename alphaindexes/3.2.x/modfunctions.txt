@@ -43,6 +43,8 @@
 | **append_urihf(prefix, suffix)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/textops.html | textops]] |
 | **async_route(routename, seconds)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/async.html | async]] |
 | **async_sleep(seconds)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/async.html | async]] |
+| **auth_add_identity()** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/auth_identity.html | auth_identity]] |
+| **auth_date_proc()** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/auth_identity.html | auth_identity]] |
 | **avp_check(name,op_value)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/avpops.html | avpops]] |
 | **avp_copy(old_name,new_name)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/avpops.html | avpops]] |
 | **avp_db_delete(source,name)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/avpops.html | avpops]] |
@@ -191,6 +193,18 @@
 | **imc_manager()** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/imc.html | imc]] |
 | **insert_hf(txt)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/textops.html | textops]] |
 | **insert_hf(txt, hdr)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/textops.html | textops]] |
+| **iptrtpproxy_adjust_timeout(gate_a_to_b, session_ids)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/iptrtpproxy.html | iptrtpproxy]] |
+| **iptrtpproxy_alloc(gate_a_to_b [, existing_sess_ids])** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/iptrtpproxy.html | iptrtpproxy]] |
+| **iptrtpproxy_authorize_media()** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/iptrtpproxy.html | iptrtpproxy]] |
+| **iptrtpproxy_delete(session_ids)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/iptrtpproxy.html | iptrtpproxy]] |
+| **iptrtpproxy_set_param("(aggregation/switchboard)_by_sip_ip_(a/b)", sip_ip)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/iptrtpproxy.html | iptrtpproxy]] |
+| **iptrtpproxy_set_param("codec_set", value)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/iptrtpproxy.html | iptrtpproxy]] |
+| **iptrtpproxy_set_param("o_addr", value)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/iptrtpproxy.html | iptrtpproxy]] |
+| **iptrtpproxy_set_param("o_name", value)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/iptrtpproxy.html | iptrtpproxy]] |
+| **iptrtpproxy_set_param("protected_session_ids", sess_ids)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/iptrtpproxy.html | iptrtpproxy]] |
+| **iptrtpproxy_set_param("remove_codec_mask", value)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/iptrtpproxy.html | iptrtpproxy]] |
+| **iptrtpproxy_set_param(param, value)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/iptrtpproxy.html | iptrtpproxy]] |
+| **iptrtpproxy_update(gate_a_to_b, session_ids)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/iptrtpproxy.html | iptrtpproxy]] |
 | **ip_type (ip)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/ipops.html | ipops]] |
 | **isbflagset(flag [, branch])** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/kex.html | kex]] |
 | **isdsturiset()** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/kex.html | kex]] |
@@ -526,6 +540,11 @@
 | **validateospheader()** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/osp.html | osp]] |
 | **verify_destination()** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/peering.html | peering]] |
 | **verify_source()** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/peering.html | peering]] |
+| **vrfy_check_callid()** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/auth_identity.html | auth_identity]] |
+| **vrfy_check_certificate()** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/auth_identity.html | auth_identity]] |
+| **vrfy_check_date()** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/auth_identity.html | auth_identity]] |
+| **vrfy_check_msgvalidity()** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/auth_identity.html | auth_identity]] |
+| **vrfy_get_certificate()** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/auth_identity.html | auth_identity]] |
 
 ===== [W] =====
 
