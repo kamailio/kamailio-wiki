@@ -65,25 +65,29 @@ The **most important and first step** is to set build flavour to **kamailio**.
 
 If you forget to set the flavour to kamailio, the default build is SER (note that SER flavour does not enable by default Kamailio's statistics support and application server extensions in tm module needed only by **seas** module, otherwise is the same application, just using a different name).
 
-Next step is to enable the MySQL module.
+Next step is to enable the MySQL module. Edit **modules.lst** file:
 
 <code>
   nano -w modules.lst
 </code>
 
-Remove **db_mysql** from the variable **exclude_modules**.
+Add **db_mysql** to the variable **include_modules**.
+
+<code>
+include_modules= db_mysql
+</code>
 
 Save the **modules.lst** and exit.
 
-NOTE: this is the mechanism to enable modules which are not compiled by default, such as lcr, dialplan, presence -- remove the module from **exclude_modules** variable inside the **modules.lst** file.
+NOTE: this is one mechanism to enable modules which are not compiled by default, such as lcr, dialplan, presence -- add the modules to **include_modules** variable inside the **modules.lst** file.
 
-Alternative is to use 'include_modules' variable to specify what extra modules to be included for compilation:
+Alternative is to set 'include_modules' variable to specify what extra modules to be included for compilation when building Makefile cfg:
 
 <code>
-make FLAVOUR=kamailio  include_modules="db_mysql dialplan" cfg
+make FLAVOUR=kamailio include_modules="db_mysql dialplan" cfg
 </code>
 
-If you want to install everything in one directory (so you can delete all installed files at once), say /usr/local/kamailio-devel, then use:
+If you want to install everything in one directory (so you can delete all installed files at once), say /usr/local/kamailio-devel, then set PREFIX variable to the install path in 'make cfg ...' command:
 
 <code>
 make PREFIX="/usr/local/kamailio-devel" FLAVOUR=kamailio  include_modules="db_mysql dialplan" cfg
