@@ -1,13 +1,13 @@
-======= Install And Maintain Kamailio (OpenSER) Devel From GIT =======
+======= Install And Maintain Kamailio Devel Version From GIT =======
 
 <code>
 Main author:
    Daniel-Constantin Mierla <miconda (at) gmail.com>
 </code>
 
-This is a step by step tutorial about how to install and maintain Kamailio (OpenSER) using the sources from GIT - the choice for those willing to write code for Kamailio or to try the new features to be released in the future with the next major stable version.
+This is a step by step tutorial about how to install and maintain Kamailio SIP server development version using the sources downloaded from GIT repository - the choice for those willing to write code for Kamailio or to try the new features to be released in the future with the next major stable version.
 
-This document focuses on Kamailio (OpenSER) devel (at this time upcoming v3.2.0) with MySQL support, using a Debian unstable system.
+//This document focuses on Kamailio devel (at this time it is the upcoming v3.2.0) with MySQL support, using a Debian unstable system.//
 
 
 ==== Notes on Kamailio vs SER ====
