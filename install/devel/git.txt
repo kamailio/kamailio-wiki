@@ -111,9 +111,9 @@ You can get full compile flags output using:
   make Q=0 all
 </code>
 
-===== 5. Install Kamailio (OpenSER) =====
+===== 5. Install Kamailio =====
 
-When the compilation is ready, install Kamailio (OpenSER) with the following command:
+When the compilation is ready, install Kamailio with the following command:
 
 <code>
   make install
