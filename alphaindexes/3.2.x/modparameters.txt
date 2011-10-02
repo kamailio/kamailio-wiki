@@ -6,6 +6,7 @@
 
 ^ Name ^ Module Path ^ Module Name ^
 | **accept_filter (string)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/uac_redirect.html | uac_redirect]] |
+| **accept_pem_certs ([0|1])** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/auth_identity.html | auth_identity]] |
 | **acc_callid_column (string)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/acc.html | acc]] |
 | **acc_db_table (string)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/uac_redirect.html | uac_redirect]] |
 | **acc_from_tag_column (string)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/acc.html | acc]] |
@@ -42,6 +43,7 @@
 | **auth_password_avp (string)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/uac.html | uac]] |
 | **auth_realm_avp (string)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/uac.html | uac]] |
 | **auth_username_avp (string)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/uac.html | uac]] |
+| **auth_validity_time (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/auth_identity.html | auth_identity]] |
 | **autoconversion (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/ctl.html | ctl]] |
 | **autoconversion (string)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/xmlrpc.html | xmlrpc]] |
 | **autodrop (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/sanity.html | sanity]] |
@@ -81,6 +83,7 @@
 ===== [C] =====
 
 ^ Name ^ Module Path ^ Module Name ^
+| **cainfo_path (string)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/auth_identity.html | auth_identity]] |
 | **calculate_ha1 (integer)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/auth_db.html | auth_db]] |
 | **callee_contact_column (string)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/dialog.html | dialog]] |
 | **callee_cseq_column (string)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/dialog.html | dialog]] |
@@ -95,6 +98,7 @@
 | **caller_route_column (string)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/dialog.html | dialog]] |
 | **caller_service_type (integer)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/misc_radius.html | misc_radius]] |
 | **caller_sock_column (string)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/dialog.html | dialog]] |
+| **callid_cache_limit (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/auth_identity.html | auth_identity]] |
 | **callid_column (string)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/dialog.html | dialog]] |
 | **callid_column (string)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/usrloc.html | usrloc]] |
 | **callid_prefix (str)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/topoh.html | topoh]] |
@@ -109,6 +113,9 @@
 | **cdr_log_facility (integer)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/acc.html | acc]] |
 | **cdr_start_when_confirmed (integer)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/acc.html | acc]] |
 | **certificate (string)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/tls.html | tls]] |
+| **certificate_cache_limit (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/auth_identity.html | auth_identity]] |
+| **certificate_path (string)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/auth_identity.html | auth_identity]] |
+| **certificate_url (string)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/auth_identity.html | auth_identity]] |
 | **cfgtrace (int)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/debugger.html | debugger]] |
 | **cflags_column (string)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/usrloc.html | usrloc]] |
 | **char_list (string)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/mtree.html | mtree]] |
@@ -125,6 +132,8 @@
 | **clean_period (int)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/presence.html | presence]] |
 | **clean_period (int)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/rls.html | rls]] |
 | **cnt_avp (str)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/dispatcher.html | dispatcher]] |
+| **codec_set (string)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/iptrtpproxy.html | iptrtpproxy]] |
+| **config (string)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/iptrtpproxy.html | iptrtpproxy]] |
 | **config (string)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/tls.html | tls]] |
 | **config_file (string)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/carrierroute.html | carrierroute]] |
 | **config_file (string)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/ldap.html | ldap]] |
@@ -216,6 +225,7 @@
 | **db_url(str)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/rls.html | rls]] |
 | **db_url(str)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/xcap_client.html | xcap_client]] |
 | **db_use_transactions (int)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/p_usrloc.html | p_usrloc]] |
+| **declare_codec (string)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/iptrtpproxy.html | iptrtpproxy]] |
 | **default_allow_file (string)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/permissions.html | permissions]] |
 | **default_checks (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/sanity.html | sanity]] |
 | **default_code (int)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/sl.html | sl]] |
@@ -425,6 +435,7 @@
 | **header_name(str)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/pua_bla.html | pua_bla]] |
 | **hep_capture_on (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/sipcapture.html | sipcapture]] |
 | **hep_mode_on (integer)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/siptrace.html | siptrace]] |
+| **hostname (string)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/iptrtpproxy.html | iptrtpproxy]] |
 | **hostname_column (string)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/lcr.html | lcr]] |
 | **htable (str)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/htable.html | htable]] |
 | **httpProxy_host (str)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/purple.html | purple]] |
@@ -545,6 +556,7 @@
 | **mqueue (string)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/mqueue.html | mqueue]] |
 | **MsgQueueMajorThreshold (Integer)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/snmpstats.html | snmpstats]] |
 | **MsgQueueMinorThreshold (Integer)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/snmpstats.html | snmpstats]] |
+| **msg_timeout (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/auth_identity.html | auth_identity]] |
 | **mtree (string)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/mtree.html | mtree]] |
 | **mt_ignore_duplicates (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/mtree.html | mtree]] |
 | **mt_tree_type (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/mtree.html | mtree]] |
@@ -637,6 +649,7 @@
 | **pres_htable_size (int)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/presence.html | presence]] |
 | **priority_col (string)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/dispatcher.html | dispatcher]] |
 | **priority_column (string)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/lcr.html | lcr]] |
+| **privatekey_path (string)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/auth_identity.html | auth_identity]] |
 | **private_key (string)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/tls.html | tls]] |
 | **private_key, local_certificate, ca_certificates** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/osp.html | osp]] |
 | **profiles_no_value (string)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/dialog.html | dialog]] |
@@ -729,6 +742,7 @@
 | **rls_event (str)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/rls.html | rls]] |
 | **rooms_table (str)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/imc.html | imc]] |
 | **route (string)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/xmlrpc.html | xmlrpc]] |
+| **rpc_heartbeat_timeout (int)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/iptrtpproxy.html | iptrtpproxy]] |
 | **rpid_avp (string)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/siputils.html | siputils]] |
 | **rpid_prefix (string)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/siputils.html | siputils]] |
 | **rpid_suffix (string)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/siputils.html | siputils]] |
@@ -829,6 +843,7 @@
 | **subst_exp_col (string)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/dialplan.html | dialplan]] |
 | **subs_htable_size (int)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/presence.html | presence]] |
 | **suffix (string)** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/diversion.html | diversion]] |
+| **switchboard (string)** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/iptrtpproxy.html | iptrtpproxy]] |
 
 ===== [T] =====
 
