@@ -4,6 +4,7 @@
 
 ===== Installation =====
 
+  * [[install:devel:git|Install Kamailio Devel Version From GIT]]
 ===== Cookbooks =====
 
 \\
