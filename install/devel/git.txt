@@ -130,10 +130,10 @@ The binaries and executable scripts were installed in:
 
 These are:
 
-  * __kamailio__ - Kamailio (OpenSER) server
+  * __kamailio__ - Kamailio SIP server
   * __kamdbctl__ - script to create and manage the Databases
-  * __kamctl__ - script to manage and control Kamailio (OpenSER) server
-  * __sercmd__ - CLI - command line tool to interface with Kamailio (OpenSER) server
+  * __kamctl__ - script to manage and control Kamailio SIP server
+  * __sercmd__ - CLI - command line tool to interface with Kamailio SIP server
 
 To be able to use the binaries from command line, make sure that '/usr/local/sbin' is set in PATH environment variable. You can check that with 'echo $PATH'. If not and you are using 'bash', open '/root/.bash_profile' and at the end add:
 
@@ -168,6 +168,7 @@ The configuration file was installed in:
   /usr/local/etc/kamailio/kamailio.cfg
 </code>
 
+In case you set the PREFIX variable in 'make cfg ...' command, then replace **/usr/local** in all paths above with the value of PREFIX in order to locate the files installed.
 ===== 7. Create MySQL database =====
 
 To create the MySQL database, you have to use the database setup script:
