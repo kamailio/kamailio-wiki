@@ -97,9 +97,9 @@ make PREFIX="/usr/local/kamailio-devel" FLAVOUR=kamailio  include_modules="db_my
 More hints about Makefile system at: 
   * http://sip-router.org/wiki/tutorials/makefile-system
 
-===== 4. Compile Kamailio (OpenSER) =====
+===== 4. Compile Kamailio =====
 
-Once the mysql module was removed from excluded modules list, you can compile Kamailio (OpenSER).
+Once you added the mysql module to the list of enabled modules, you can compile Kamailio:
 
 <code>
   make all
