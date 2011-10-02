@@ -171,27 +171,35 @@ The configuration file was installed in:
 In case you set the PREFIX variable in 'make cfg ...' command, then replace **/usr/local** in all paths above with the value of PREFIX in order to locate the files installed.
 ===== 7. Create MySQL database =====
 
-To create the MySQL database, you have to use the database setup script:
+To create the MySQL database, you have to use the database setup script. First edit **kamctlrc** file to set the database server type:
+
+<code>
+  nano -w /usr/local/etc/kamailio/kamctlrc
+</code>
+
+Locate DBENGINE variable and set it to MYSQL:
+
+<code>
+DBENGINE=MYSQL
+</code>
+
+You can change other values in **kamctlrc** file, at least it is recommended to change the default passwords for the users to be created to connect to database.
+
+Once you are done updating **kamctlrc** file, run the script to create the database used by Kamailio:
 
 <code>
   /usr/local/sbin/kamdbctl create
 </code>
 
-In order to create the database you need to specify the wanted db type (DBENGINE=MYSQL) in the 
-
-<code>
-  /usr/local/etc/kamailio/kamctlrc
-</code>
-
-file. Call this script without any parameter to get some help for the usage. You will be asked for the domain name Kamailio (OpenSER) is going to serve (e.g., mysipserver.com) and the password of the 'root' MySQL user. The script will create a database named 'openser' containing the tables required by Kamailio (OpenSER). You can change the default settings in the kamctlrc file mentioned above.
+You can call this script without any parameter to get some help for the usage. You will be asked for the domain name Kamailio (OpenSER) is going to serve (e.g., mysipserver.com) and the password of the 'root' MySQL user. The script will create a database named 'openser' containing the tables required by Kamailio (OpenSER). You can change the default settings in the kamctlrc file mentioned above.
 
 The script will add two users in MySQL:
 
-- **openser** - having the password 'openserrw', user which has full access rights to 'openser' database
+- **openser** - (with default password 'openserrw') - user which has full access rights to 'openser' database
 
-- **openserro** - having the password 'openserro', user which has read-only access rights to 'openser' database
+- **openserro** - (with default password 'openserro') - user which has read-only access rights to 'openser' database
 
-**__Do change the passwords for these two users immediately after the database is created.__**
+**__Do change the passwords for these two users to something different that the default values that come with sources.__**
 
 ===== 8. Edit configuration file =====
 
