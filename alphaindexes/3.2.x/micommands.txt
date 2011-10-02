@@ -22,8 +22,16 @@
 ===== [C] =====
 
 ^ Name ^ Module Path ^ Module Name ^
+| **check_config_hash** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/cfgutils.html | cfgutils]] |
 | **cleanup** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/presence.html | presence]] |
 | **conference_reset** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/presence_conference.html | presence_conference]] |
+| **cr_activate_host** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/carrierroute.html | carrierroute]] |
+| **cr_add_host** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/carrierroute.html | carrierroute]] |
+| **cr_deactivate_host** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/carrierroute.html | carrierroute]] |
+| **cr_delete_host** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/carrierroute.html | carrierroute]] |
+| **cr_dump_routes** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/carrierroute.html | carrierroute]] |
+| **cr_reload_routes** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/carrierroute.html | carrierroute]] |
+| **cr_replace_host** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/carrierroute.html | carrierroute]] |
 
 ===== [D] =====
 
@@ -49,11 +57,17 @@
 ===== [F] =====
 
 ^ Name ^ Module Path ^ Module Name ^
+| **forward_filter** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/utils.html | utils]] |
+| **forward_list** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/utils.html | utils]] |
+| **forward_proxy** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/utils.html | utils]] |
+| **forward_switch** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/utils.html | utils]] |
 
 ===== [G] =====
 
 ^ Name ^ Module Path ^ Module Name ^
+| **get_config_hash** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/cfgutils.html | cfgutils]] |
 | **GET_CPL** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/cpl-c.html | cpl-c]] |
+| **get_gflags** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/cfgutils.html | cfgutils]] |
 
 ===== [H] =====
 
@@ -64,6 +78,7 @@
 ^ Name ^ Module Path ^ Module Name ^
 | **imc_list_members** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/imc.html | imc]] |
 | **imc_list_rooms** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/imc.html | imc]] |
+| **is_gflag** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/cfgutils.html | cfgutils]] |
 
 ===== [J] =====
 
@@ -89,6 +104,9 @@
 ===== [N] =====
 
 ^ Name ^ Module Path ^ Module Name ^
+| **nh_enable_ping** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/nathelper.html | nathelper]] |
+| **nh_enable_rtpp** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/rtpproxy.html | rtpproxy]] |
+| **nh_show_rtpp** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/rtpproxy.html | rtpproxy]] |
 
 ===== [O] =====
 
@@ -97,6 +115,9 @@
 ===== [P] =====
 
 ^ Name ^ Module Path ^ Module Name ^
+| **pdb_activate** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/pdb.html | pdb]] |
+| **pdb_deactivate** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/pdb.html | pdb]] |
+| **pdb_status** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/pdb.html | pdb]] |
 | **pdt_list** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/pdt.html | pdt]] |
 | **pdt_reload** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/pdt.html | pdt]] |
 | **pike_list** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/pike.html | pike]] |
@@ -117,15 +138,24 @@
 ===== [R] =====
 
 ^ Name ^ Module Path ^ Module Name ^
+| **rand_get_prob** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/cfgutils.html | cfgutils]] |
+| **rand_reset_prob** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/cfgutils.html | cfgutils]] |
+| **rand_set_prop** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/cfgutils.html | cfgutils]] |
 | **refreshWatchers** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/presence.html | presence]] |
 | **regex_reload** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/regex.html | regex]] |
+| **reload_blacklist** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/userblacklist.html | userblacklist]] |
+| **reload_matrix** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/matrix.html | matrix]] |
 | **REMOVE_CPL** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/cpl-c.html | cpl-c]] |
+| **reset_gflag** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/cfgutils.html | cfgutils]] |
 
 ===== [S] =====
 
 ^ Name ^ Module Path ^ Module Name ^
+| **set_gflag** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/cfgutils.html | cfgutils]] |
 | **sht_dump** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/htable.html | htable]] |
 | **sht_reload** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/htable.html | htable]] |
+| **shv_get** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/pv.html | pv]] |
+| **shv_set** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/pv.html | pv]] |
 | **sip_capture** | //modules// | [[http://www.kamailio.org/docs/modules/3.2.x/modules/sipcapture.html | sipcapture]] |
 | **sip_trace** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/siptrace.html | siptrace]] |
 | **subnet_dump** | //modules_k// | [[http://www.kamailio.org/docs/modules/3.2.x/modules_k/permissions.html | permissions]] |
