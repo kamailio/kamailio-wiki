@@ -26,13 +26,14 @@ To be able to follow the guidelines from this document you need **root** access.
 
 The following packages are required before proceeding to the next steps.
 
-  * __git__ client: apt-get install git-core - it is recommended to have the latest version, which might not be part of the distribution yet, but you can get it from: http://git-scm.com/
+  * __git__ client: apt-get install git-core - it is recommended to have a recent version, if your Linux distro has an old version, you can download newer one from: http://git-scm.com/
   * __gcc__ compiler: apt-get install gcc
   * __flex__ - apt-get install flex
   * __bison__ - apt-get install bison
-  * __libmysqlclient15-dev__ - apt-get install libmysqlclient15-dev
+  * __libmysqlclient-dev__ - apt-get install libmysqlclient-dev
   * __make__ - apt-get install make
   * if you want to enable more modules, some of them require extra libraries:
+    * __libssl__ - apt-get install libssl-dev
     * __libcurl__ - apt-get install libcurl4-openssl-dev
     * __libxml2__ - apt-get install libxml2-dev
     * __libpcre3__ - apt-get install libpcre3-dev
