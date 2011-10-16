@@ -1,0 +1,62 @@
+====== DEB Packages ======
+
+Courtesy of [[http://sipdoc.net|Sipdoc Team]], **Kamailio SIP Server project** offers APT repositories with packages for Debian and Ubuntu distributions.
+
+
+===== Status =====
+
+  * Distributions: ''Debian 5.0 Lenny'',  ''Debian 6.0 Squeeze'',  ''Ubuntu 10.04 Lucid''
+  * Archs supported: ''amd64'', ''i386''
+  * Sources provided for stable releases
+  * Nightly builds of supported branches
+
+===== Instructions =====
+
+First download and add our GPG key to your apt key list:
+
+<code>
+wget http://deb.kamailio.org/kamailiodebkey.gpg
+apt-key add kamailiodebkey.gpg
+</code>
+
+Select from next list the repository URLs specific for desired Kamailio version and Operating System and add to your ''/etc/apt/sources.list''.
+
+==== Latest Kamailio stable release  ====
+
+=== ''Debian Lenny'' ===
+<code>
+deb http://deb.kamailio.org/kamailio lenny main
+deb-src http://deb.kamailio.org/kamailio lenny main
+</code>
+
+=== ''Debian Squeeze'' ===
+<code>
+deb http://deb.kamailio.org/kamailio squeeze main
+deb-src http://deb.kamailio.org/kamailio squeeze main
+</code>
+
+=== ''Ubuntu Lucid'' ===
+<code>
+deb http://deb.kamailio.org/kamailio lucid main
+deb-src http://deb.kamailio.org/kamailio lucid main
+</code>
+
+==== Latest Kamailio 3.2 release ====
+
+=== ''Debian Lenny'' ===
+<code>
+deb http://deb.kamailio.org/kamailio32 lenny main
+deb-src http://deb.kamailio.org/kamailio32 lenny main
+</code>
+
+=== ''Debian Squeeze'' ===
+<code>
+deb http://deb.kamailio.org/kamailio32 squeeze main
+deb-src http://deb.kamailio.org/kamailio32 squeeze main
+</code>
+
+=== ''Ubuntu Lucid'' ===
+<code>
+deb http://deb.kamailio.org/kamailio32 lucid main
+deb-src http://deb.kamailio.org/kamailio32 lucid main
+</code>
