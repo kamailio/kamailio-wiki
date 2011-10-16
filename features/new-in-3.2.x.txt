@@ -1,0 +1,275 @@
+====== Kamailio SIP Server - New features in version 3.2.0 ======
+
+The page collects the summary (draft notes) of the new features in Kamailio (OpenSER) version 3.2.x.
+
+**The release date for version 3.2.0: October 18, 2011**.
+
+
+===== New Modules =====
+
+==== async ====
+
+  * collector for asynchronous config functions
+  * async_route(...) - execute a route block asynchronously after an interval of time
+  * async_sleep(...) - asynchronous sleep for usage when processing SIP requests
+
+==== db_sqlite ====
+
+  * database connector for SQLite
+
+==== dmq ====
+
+  * distributed message queue using SIP to communicate between peers (SIP server instances)
+
+==== ipops ====
+
+  * IPv4 and IPv6 related functions for config file
+
+==== json ====
+
+  * json parser for configuration file
+
+==== jsonrpc-c ====
+
+  * JSON-RPC client over netstrings
+==== ndb_redis ====
+
+  * connector to Redis no-SQL database engine
+
+==== presence_reginfo ====
+
+  * Support for RFC 3680 in the presence architecture of Kamailio
+
+==== pua_reginfo ====
+
+  * Publish Registration info according to RFC 3680 ("reg"-Package), in case a user registration (based on usrloc callbacks)
+  * Subscribe to remote registration info
+  * Process published registration info (NOTIFY requests) and store it to usrloc
+  * (currently still in the carstenbock/ims branch, planned as a replacement of the RFC 3680 implementation in the CSCF modules)
+
+==== p_usrloc ====
+
+  * partitioned user location service
+
+==== sdpops ====
+
+  * module to control the content of the SDP payload from configuration file
+    * e.g.,: remove codecs
+
+==== sipcapture ====
+
+  * SIP traffic capturing server extension for Homer project
+
+===== IMS Extensions =====
+
+  * the IMS related modules resides in **carstenbock/ims** branch and **not included** in the release of version 3.2.x. However, they can be tested using 3.2.x, links to installation guidelines for IM extensions are available at:
+    * http://www.kamailio.org/w/2011/01/ims-extensions-available-for-testing/
+
+==== IMS: CDP / CDP-AVP ====
+
+  * The CDP (C-Diameter-Peer) modules provide an Diameter-interface, which are used by several components of the OpenIMS-core: They are used as Cx-Interface for the I-/S-CSCF and for the Rx-Interface for the P-CSCF. The modules may be used in other ways, too (e.g. for an Sh-Interface for an Kamailio-based aplication server)
+
+==== IMS: P-CSCF ====
+
+  * The Proxy-CSCF in the IMS Architecture acts as an entry point to the network. The pcscf module of the original OpenIMS-core aggregates many functions required at this component: Header manipulation/verification, RTP-Relay and presence-support for the “reginfo”-event. Optional, the Rx-Interface for Billing may be enabled. 
+
+==== IMS: I-CSCF ====
+
+  * The Interrogating-CSCF is a kind of “Loadbalancer” or a entry Proxy for the “home-network” of an IMS setup. The I-CSCF will retrieve the location for a user from the HSS, it will check, where a user is registered or where it should register (based on user-settings, required capabilities later maybe even load). The icscf-module implements the according interfaces towards the HSS (Cx) and according header manipulation/verification methods.
+
+==== IMS: S-CSCF ====
+
+  * The Serving-CSCF is acting as a registrar and as decision engine regarding the routing of the Request. It retrieves the user-data and routing rules from the HSS and applies them to the processed requests. The scscf-module implements the according interfaces towards the HSS (Cx), the interfaces towards application-servers (Isc) and according header manipulation/verification methods.
+
+==== IMS: MGCF ====
+
+  * The MGCF-Module of the OpenIMS core implements header and content manipulation for interconnections towards Class 4 networks.
+
+==== IMS: E-CSCF & LRF ====
+
+  * The Emergency-CSCF and the Location Ressource Function (LRF) implements IMS compliant emergency call routing. The modules provide required content aggregation methods.
+
+
+
+===== New in Old SIP Router modules =====
+
+==== acc ====
+
+  * name of acc and missed calls database tables can contain variables which are evaluated at runtime
+  * generate user-customizable CDR logs
+  * added 'failed_filter' module parameter
+
+==== app_lua ====
+
+  * more modules available in Lua
+    * auth
+    * auth_db
+    * dispatcher
+    * maxfwd
+    * presence
+    * presence_xml
+    * registrar
+    * rr
+    * sdpops
+    * sqlops
+    * tm
+    * xhttp
+
+==== auth ====
+
+  * New flag 16 to add stale=true to challenge response.
+
+==== auth_db ====
+
+  * export of inter-module API (available through Lua)
+
+==== auth_radius ====
+
+  * Added optional uri_user param to radius_www_authorize().
+
+==== db_postgres ====
+
+  * reconnect in case of broken connection
+
+==== dialog ====
+
+  * read and set per-dialog variables from script
+  * provide callbacks to fire on OK and ACK messages following INVITE, respectively
+  * enable to terminate call programmatically
+
+==== lcr ====
+
+  * Added optional tag_avp module parameter and made lcr_flags module parameter optional.
+  * Renamed dont_strip_or_tag_flag module parameter to dont_strip_or_prefix_flag.
+  * load_gws() can take uri_user param, value of which is used instead of Request URI user part by load_gws() function.
+  * [from|to][any]_gw functions now check also transport protocol.
+  * Renamed lcr_gw table's tag field to prefix field.
+  * Parameters of load_gw() function must be given without quotes.
+  * Added tag field to lcr_gw table whose value is assigned to possible tag_avp by next_gw() and from_gw() functions.
+  * Increased lcr_gw tables version number to 2.
+  * Script that upgrades lcr_gw table from version 3.1 is available as http://box.openxg.com/tmp/lcr_upgrade_from_3.1.sh.
+
+==== dialplan ====
+
+  * dp_translate() returns -2 (instead of -1) if dp with given id does not exist.
+  
+==== dispatcher ====
+
+  * export of inter-module API (available through Lua)
+  * new event routes that are called when destinations go on/off-line
+
+==== mtree ====
+
+  * Added new mode 2 to mt_match() that instead of setting value of longest matching prefix to a pv, sets values of all matching prefixes to an avp so that value of longest matching prefix is in avp index 0.
+
+==== nathelper ====
+  * new function: is_rfc1918(ip_addr). Checks if the address <ip_addr> is a private range address.
+
+
+==== maxfwd ====
+
+  * export of inter-module API (available through Lua)
+
+==== presence ====
+
+  * the module can work in three modes
+    * caching
+    * caching with fallback to database
+    * database only
+
+==== presence_xml ====
+  * new exported functions to enable the online/offline presentity of a subscriber to be checked from the configuration file.
+
+==== pv ====
+
+  * new pseudovariables:
+    * $timef(format) - string representation of time formatted according to format
+    * $Tb - epoch of the startup (boottime) of the current process
+  * new transformations:
+    * {s.ftime,<format>} - format the epoch in the pvar according to <format>
+    * {s.sql} - output the pvar as valid SQL value. <null> as NULL, integer as bare number, string as quoted and escaped string
+    * {s.replace,<search>,<replace>} - replace every occurrence of <search> in the pvar with <replace>
+    * {s.prefixes[,<max>]}, {s.prefixes.quoted[,<max>]} - create a list of (quoted) prefixes of the pvar, with optional maximum prefix length: "123456"{s.prefixes.quot,4} => '1','12','123','1234'
+  * new functions:
+    * is_int() checks if pvar argument contains integer value. 
+
+==== registrar ====
+
+  * export of inter-module API (available through Lua)
+
+==== rls ====
+
+  * new parameters to control local contact and outbound proxy addresses
+  * support for resource-list indices that reference other resource-list XML documents (including XPath within documents)
+  * new exported function to allow re-subscription to a list to be initiated from the configuration file
+
+==== rr ====
+
+  * export of inter-module API (available through Lua)
+
+==== rtpproxy ====
+
+  * force_rtp_proxy function was removed
+
+==== siputils ====
+
+  * Added set_uri_user(uri, user) and set_uri_host(uri, host) functions.
+  * Function tel2sip() replaced by tel2sip(uri, hostpart, result).
+==== sqlops ====
+  * xavp support. New function sql_xquery() stores the query result in an xavp.
+  * BIGINT support. Native support when sql_xquery is used, transformed to string for sql_query().
+
+==== textops ====
+  * new exported function to add "Date:" headers to requests.
+
+==== tmx ====
+
+  * asynchronous SIP request processing functions for configuration file
+    * t_suspend() - suspend the processing of SIP request transaction
+    * t_continue() - resume the processing of SIP request transaction
+  * $T(name) - new class of pseudo-variables for accessing transaction attributes:
+    * internal index, label, the branch index, reply code
+
+==== uac ====
+  * new function: uac_reg_request_to. Lookup a local user from the registration table and prepares message variables so the request can be sent to the remote user, using the same credentials as with which the registration has been done.
+
+
+==== usrloc ====
+
+  * store extra attributes per location records
+==== xavp ====
+  *  [[devel:xavp|xavp]]'s are enabled by default now.
+
+==== xcap_server ====
+  * Support for extra auids:
+    * org.openmobilealliance.user-profile
+    * org.openmobilealliance.pres-content
+    * org.openmobilealliance.search
+  * Support for HTTP 1.1 pre-conditions to enable clients to avoid having to re-download unchanged documents and to check whether documents have changed or not on upload
+
+==== xhttp ====
+
+  * export of inter-module API (available through Lua)
+
+
+===== New in Core =====
+
+==== Preprocessor directives ====
+
+  * #!substdef - add a substitution rule and a define at the same time
+  * #!substdefs - add a substitution rule and a define with string value at the same time
+  * #!trydef - add a define if not defined already
+  * #!redefine - force redefinition even if defined already
+
+**#!** and **!!** can be used as start of preprocessor directives
+
+==== import_file ====
+
+Attempt to include a file, but if it is not found, do not throw error like **include_file**.
+
+===== New in Documentation =====
+
+==== Developer visible changes ====
+
+  * Many bug-fixes to existing doxygen code documentation in modules and core
+  * Several extensions to doxygen documentation in modules and core
