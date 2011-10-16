@@ -1,0 +1,14 @@
+====== Download Sources of Kamailio from GIT Repository ======
+
+Instructions to download sources from GIT repository, specific for stable release branches and Kamailio flavour.
+
+===== Kamailio v3.2.x =====
+
+Direct download of sources from GIT for latest Kamailio v3.2.x.
+
+<code>
+  git clone --depth 1 git://git.sip-router.org/sip-router kamailio
+  cd kamailio
+  git checkout -b 3.2 origin/3.2
+  make FLAVOUR=kamailio cfg
+</code>
