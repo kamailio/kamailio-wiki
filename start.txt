@@ -7,6 +7,7 @@
 ===== Installation =====
 
   * [[install:devel:git|Install Kamailio Devel Version From GIT]]
+  * [[install:3.2.x:git|Install Kamailio v3.2.x From GIT]]
 
 ===== Download =====
 
