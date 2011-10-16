@@ -9,6 +9,8 @@ This is a step by step tutorial about how to install and maintain Kamailio SIP s
 
 <color blue>//This document focuses on Kamailio v3.2.x with MySQL support, using a Debian unstable system.//</color>
 
+The first version in release series 3.2 is 3.2.0. 3.2.x refers to the most recent version released at some point in time that starts with 3.2.
+
 
 ==== Notes on Kamailio vs SER ====
 
