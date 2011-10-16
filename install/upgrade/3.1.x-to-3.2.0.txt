@@ -1,0 +1,140 @@
+====== Upgrade Kamailio from v3.1.x to v3.2.0 ======
+
+The page contains the details about the changes that were made to old components during the development of v3.2.0 compared with what existed in v3.1.x. It does not include the brand new modules, focusing on how to upgrade database and configuration file from v3.1.x to run with Kamailio v3.2.0.
+
+===== Database Structure =====
+
+These sections presents notes, listed by modules, about the structure of database tables that existed in v3.1.x and changed during development of v3.2.0.
+
+==== modules_k/acc ====
+
+  * table **acc**
+    * callid column has now the size varchar(255)
+  * table **missed_calls**
+    * callid column in has now the size varchar(255)
+
+==== modules_k/acc ====
+
+  * table **htable**
+    * table version is 2
+    * new column: expires INT DEFAULT 0 NOT NULL
+
+==== modules_k/dialog ====
+
+  * table **dialog_vars**
+    * new table that holds per-dialog custom values
+    * the new table has to be created, see SQL command below
+==== modules/lcr ====
+
+  * table **lcr_gw**
+    * table version is 2.
+    * Renamed lcr_gw table column 'tag' to 'prefix'.
+    * Added new lcr_gw table column 'tag': tag VARCHAR(64) DEFAULT NULL.
+    * Dropped unique index lcr_id_ip_addr_port_hostname_idx
+    * Added new index: CREATE INDEX lcr_id_idx ON lcr_gw (lcr_id);
+    * Script modules/lcr/utils/lcr_upgrade_from_3.1.sh can be used to perform the upgrade of lcr_gw table.
+
+==== modules_k/presence ====
+
+  * table **active_watchers**
+    * callid column has now the size varchar(255)
+
+==== modules_k/pua ====
+
+  * table **pua**
+    * table version is 7
+    * call_id column has now the size varchar(255)
+    * pres_id column has now the size varchar(255)
+
+==== modules_k/rls ====
+
+  * table **rls_presentity**
+    * table version is 1
+    * content_type column has now the size varchar(255)
+    * callid column has now the size varchar(255)
+    * contact column has now the size varchar(128)
+
+==== modules_k/siptrace ====
+
+  * table **sip_trace**
+    * table version is 3
+    * new columns: time_us INT UNSIGNED DEFAULT 0 NOT NULL
+    * msg column has the type: MEDIUMTEXT
+
+==== modules_k/xcap_client ====
+
+  * table **xcap**
+    * table version is 4
+    * doc column has the type: MEDIUMBLOB
+    * doc_uri column has now the size varchar(255)
+
+==== SQL Commands ====
+
+You can use next SQL commands (made for MySQL) to update the structure of existing tables in v3.1.x for v3.2.0:
+
+<code sql>
+
+ALTER TABLE acc MODIFY callid VARCHAR(255) DEFAULT '' NOT NULL;
+ALTER TABLE missed_calls MODIFY callid VARCHAR(255) DEFAULT '' NOT NULL;
+
+INSERT INTO version (table_name, table_version) values ('dialog_vars','1');
+CREATE TABLE dialog_vars (
+    id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    hash_entry INT(10) UNSIGNED NOT NULL,
+    hash_id INT(10) UNSIGNED NOT NULL,
+    dialog_key VARCHAR(128) NOT NULL,
+    dialog_value VARCHAR(512) NOT NULL
+) ENGINE=MyISAM;
+CREATE INDEX hash_idx ON dialog_vars (hash_entry, hash_id);
+
+UPDATE version SET table_version=2 WHERE table_name="htable";
+ALTER TABLE htable MODIFY key_value VARCHAR(128) DEFAULT '' NOT NULL;
+ALTER TABLE htable ADD COLUMN expires INT DEFAULT 0 NOT NULL;
+
+UPDATE version SET table_version=2 WHERE table_name="lcr_gw";
+ALTER TABLE lcr_gw DROP INDEX lcr_id_ip_addr_port_hostname_idx;
+ALTER TABLE lcr_gw ADD prefix VARCHAR(16) DEFAULT NULL;
+ALTER TABLE lcr_gw MODIFY tag VARCHAR(64) DEFAULT NULL;
+CREATE INDEX lcr_id_idx ON lcr_gw (lcr_id);
+
+ALTER TABLE active_watchers MODIFY callid VARCHAR(255) NOT NULL,
+
+UPDATE version SET table_version=7 WHERE table_name="pua";
+ALTER TABLE pua MODIFY pres_id VARCHAR(255) NOT NULL;
+ALTER TABLE pua MODIFY call_id VARCHAR(255) NOT NULL;
+
+UPDATE version SET table_version=1 WHERE table_name="rls_presentity";
+ALTER TABLE rls_presentity MODIFY content_type VARCHAR(255) NOT NULL;
+ALTER TABLE rls_presentity MODIFY callid VARCHAR(255) NOT NULL;
+ALTER TABLE rls_presentity MODIFY contact VARCHAR(128) NOT NULL;
+
+UPDATE version SET table_version=3 WHERE table_name="sip_trace";
+ALTER TABLE sip_trace ADD COLUMN time_us INT UNSIGNED DEFAULT 0 NOT NULL;
+ALTER TABLE sip_trace MODIFY msg MEDIUMTEXT NOT NULL;
+
+UPDATE version SET table_version=4 WHERE table_name="xcap";
+ALTER TABLE xcap MODIFY doc MEDIUMBLOB NOT NULL;
+ALTER TABLE xcap MODIFY doc_uri VARCHAR(255) NOT NULL;
+
+</code>
+
+===== Modules =====
+
+==== modules/lcr ====
+
+  * Renamed 'dont_strip_or_tag_flag' module parameter to 'dont_strip_or_prefix_flag'.
+  * Added new optional 'tag_avp' module parameter and made 'lcr_flags' module parameter optional.
+  * If 'tag_avp' module parameter is defined, gateway's tag field value is assigned to the AVP by next_gw() and from_gw() functions.
+  * load_gws() syntax has changed from load_gws(lcr_id[, caller_uri]) to load_gws(lcr_id[, uri_user[, caller_uri]]).
+  * [to|from][_any]_gw() functions now check also transport protocol of gateway.
+  * [to|from]_gw() syntax has changed from [to|from]_gw(lcr_id[, ip_addr]) to [to|from]_gw(lcr_id[, ip_addr, proto]).
+  * [to|from]_any_gw() syntax has changed from [to|from]_any_gw([ip_addr]) to [to|from]_any_gw([ip_addr, proto]).
+
+==== modules/rtpproxy ====
+
+  * force_rtp_proxy() removed
+    * use rtpproxy_offer() when it is SDP offer (mainly on INVITE request) and rtpproxy_answer() when it is SDP answer (mainly on INVITE replies)
+    * new alternative is to use rtpproxy_manage() which does the detection of SDP offer/answer internally
+==== modules/utils ====
+
+  * New function is_int(pvar) that returns true if pvar argument has integer value.
