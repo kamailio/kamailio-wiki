@@ -1,6 +1,8 @@
 ====== Kamailio SIP Server Documentation Wiki ======
 
-<color blue>//This wiki site is work in progress, targeting to collect updated documentation for [[http://www.kamailio.org|Kamailio SIP Server]] v3.2.0 or newer. If you don't find on this site the documentation you are looking for, search for it on [[http://www.kamailio.org/dokuwiki/|Old Wiki Site]].//</color>
+<color blue>//This wiki site is work in progress, targeting to collect updated documentation for [[http://www.kamailio.org|Kamailio SIP Server]] v3.2.0 or newer. If you don't find on this site the documentation you are looking for, search for it on:
+
+  * [[http://www.kamailio.org/dokuwiki/|Old Wiki Site]].//</color>
 
 ===== Installation =====
 
