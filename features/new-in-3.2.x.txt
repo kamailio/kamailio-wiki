@@ -373,7 +373,7 @@ modparam("acc", "failed_filter", "401,407")
 
 Attempt to include a file, but if it is not found, do not throw error like **include_file**.
 
-===== Parameters =====
+==== Parameters ====
 
   * corelog - control the log level for non-critical core error messages
 ==== Config Reload Framework ====
