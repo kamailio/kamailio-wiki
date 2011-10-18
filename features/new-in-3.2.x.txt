@@ -25,6 +25,7 @@ The default configuration file shipped with Kamailio v3.2.0 has several enhancem
   * collector for asynchronous config functions
   * async_route(...) - execute a route block asynchronously after an interval of time
   * async_sleep(...) - asynchronous sleep for usage when processing SIP requests
+  * README File: http://kamailio.org/docs/modules/3.2.x/modules/async.html
 
 ==== db_sqlite ====
 
