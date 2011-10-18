@@ -211,6 +211,8 @@ modparam("acc", "failed_filter", "401,407")
 
   * export of inter-module API (available through Lua)
   * new event routes that are called when destinations go on/off-line
+    * event_route[dispatcher:dst-up]
+    * event_route[dispatcher:dst-down]
   * added RPC commands - new RPC commands to replace the MI ones
 
 ==== domain ====
