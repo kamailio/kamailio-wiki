@@ -214,6 +214,9 @@ modparam("acc", "failed_filter", "401,407")
     * new rpc command pkg.stats that prints used, free and real_used metrics per process for private memory (pkg)
     * you can see how much pkg each process is eating and how much is still available
     * should be useful to track pkg memory leaks and/or trigger alerts when there is no more pkg available
+  * added setdebug(level) - can change the debug level per process
+  * added resetdebug() - set back the debug level to the global parameter 'debug'
+
 
 ==== lcr ====
 
