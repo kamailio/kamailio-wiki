@@ -197,6 +197,10 @@ modparam("acc", "failed_filter", "401,407")
 ==== dialplan ====
 
   * dp_translate() returns -2 (instead of -1) if dp with given id does not exist.
+  * added rpc commands
+    * dialplan.reload - to reload the records from database
+    * dialplan.translate - to translate a string using a specific dialplan id
+
   
 ==== dispatcher ====
 
