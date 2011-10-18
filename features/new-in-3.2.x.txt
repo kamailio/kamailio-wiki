@@ -30,6 +30,7 @@ The default configuration file shipped with Kamailio v3.2.0 has several enhancem
 ==== db_sqlite ====
 
   * database connector for SQLite
+  * README File: http://kamailio.org/docs/modules/3.2.x/modules_k/db_sqlite.html
 
 ==== dmq ====
 
