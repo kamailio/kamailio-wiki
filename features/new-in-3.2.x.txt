@@ -47,6 +47,7 @@ The default configuration file shipped with Kamailio v3.2.0 has several enhancem
 ==== json ====
 
   * json parser for configuration file
+    * get the values from a JSON document
     * example:
 <code c>
 json_get_field("{'foo':'bar'}", "foo", "$var(foo)");
