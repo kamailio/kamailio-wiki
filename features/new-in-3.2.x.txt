@@ -341,6 +341,11 @@ Attempt to include a file, but if it is not found, do not throw error like **inc
 ==== SIP Parser ====
 
   * sdp parser detection of on hold media during sdp parsing
+
+==== Memory Manager ====
+
+  * core events when pkg usage changes
+
 ===== New in Documentation =====
 
 ==== Developer visible changes ====
