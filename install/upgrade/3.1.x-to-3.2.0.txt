@@ -135,6 +135,3 @@ ALTER TABLE xcap MODIFY doc_uri VARCHAR(255) NOT NULL;
   * force_rtp_proxy() removed
     * use rtpproxy_offer() when it is SDP offer (mainly on INVITE request) and rtpproxy_answer() when it is SDP answer (mainly on INVITE replies)
     * new alternative is to use rtpproxy_manage() which does the detection of SDP offer/answer internally
-==== modules/utils ====
-
-  * New function is_int(pvar) that returns true if pvar argument has integer value.
