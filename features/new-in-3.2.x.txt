@@ -324,6 +324,14 @@ Attempt to include a file, but if it is not found, do not throw error like **inc
 ==== Config Reload Framework ====
 
   * support for multiple cfg group instances
+
+==== libsrdb1 ====
+
+  * keep PID per DB connection to detect automatically if many processes share same DB connection
+
+==== SIP Parser ====
+
+  * sdp parser detection of on hold media during sdp parsing
 ===== New in Documentation =====
 
 ==== Developer visible changes ====
