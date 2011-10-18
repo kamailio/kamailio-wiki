@@ -429,7 +429,8 @@ modparam("acc", "failed_filter", "401,407")
     * org.openmobilealliance.user-profile
     * org.openmobilealliance.pres-content
     * org.openmobilealliance.search
-  * Support for HTTP 1.1 pre-conditions to enable clients to avoid having to re-download unchanged documents and to check whether documents have changed or not on upload
+  * support for HTTP 1.1 pre-conditions to enable clients to avoid having to re-download unchanged documents and to check whether documents have changed or not on upload
+  * ability to insert new nodes in xcap docs
 
 ==== xlog ====
 
