@@ -365,6 +365,10 @@ modparam("acc", "failed_filter", "401,407")
     * t_continue() - resume the processing of SIP request transaction
   * $T(name) - new class of pseudo-variables for accessing transaction attributes:
     * internal index, label, the branch index, reply code
+  * two helper functions to detect route block type
+    * t_is_failure_route() - return true if it is a failure_route execution
+    * t_is_branch_route() - return true if it is a branch_route execution
+    * useful to check in sub-routes executed from different points of config
 
 ==== uac ====
   * new function: uac_reg_request_to. Lookup a local user from the registration table and prepares message variables so the request can be sent to the remote user, using the same credentials as with which the registration has been done.
