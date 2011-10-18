@@ -271,7 +271,12 @@ modparam("acc", "failed_filter", "401,407")
     * {s.ftime,<format>} - format the epoch in the pvar according to <format>
     * {s.sql} - output the pvar as valid SQL value. <null> as NULL, integer as bare number, string as quoted and escaped string
     * {s.replace,<search>,<replace>} - replace every occurrence of <search> in the pvar with <replace>
-    * {s.prefixes[,<max>]}, {s.prefixes.quoted[,<max>]} - create a list of (quoted) prefixes of the pvar, with optional maximum prefix length: "123456"{s.prefixes.quot,4} => '1','12','123','1234'
+    * {s.prefixes[,<max>]}, {s.prefixes.quoted[,<max>]} - create a list of (quoted) prefixes of the pvar, with optional maximum prefix length:
+<code c>
+  "1234"{s.prefixes,0} => 1,12,123,1234
+  "123456"{s.prefixes,4} => 1,12,123,1234
+  "123456"{s.prefixes.quot,4} => '1','12','123','1234'
+</code>
   * new functions:
     * is_int() checks if pvar argument contains integer value. 
 
