@@ -267,6 +267,10 @@ modparam("acc", "failed_filter", "401,407")
 ==== textops ====
   * new exported function to add "Date:" headers to requests.
 
+==== topoh ====
+
+  * new parameter 'sanity_checks' - option to bind to sanity for parsing checks
+  * the module can bind to sanity to perform parsing checks before proceeding to encoding/decoding of received requests
 ==== tmx ====
 
   * asynchronous SIP request processing functions for configuration file
