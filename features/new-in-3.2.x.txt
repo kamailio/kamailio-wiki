@@ -455,6 +455,9 @@ Attempt to include a file, but if it is not found, do not throw error like **inc
   * pv_buffer_slots - home many internal PV buffers (default 10)
   * sql_buffer_size - set the size of SQL buffer (default 64k)
 
+==== Functions ====
+
+  * added functions remove_branch(index) and clear_branches()
 ==== Config Reload Framework ====
 
   * support for multiple cfg group instances
