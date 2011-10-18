@@ -125,6 +125,9 @@ The default configuration file shipped with Kamailio v3.2.0 has several enhancem
   * above example will write now to table **acc_2011_10**
   * same can be done for missed_calls table name
   * second parameter of acc_db_request() supports as well config variables
+<code c>
+acc_log_request("200 OK", "acc_$time(year)_$time(mon)");
+</code>
   * by using **dialog module**, acc can generate user-customizable CDRs at once
   * added 'failed_filter' module parameter: a string of failure response codes from 300 to 999 separated by commas. Failed transaction will not be accounted if its response code is in the list even when failed_transaction_flag is set. For example:
 
