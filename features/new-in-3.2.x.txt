@@ -208,6 +208,9 @@ modparam("acc", "failed_filter", "401,407")
   * Increased lcr_gw tables version number to 2.
   * Script that upgrades lcr_gw table from version 3.1 is available as http://box.openxg.com/tmp/lcr_upgrade_from_3.1.sh.
 
+==== ldap ====
+
+  * connect to server for negative ranks - there are some processes with negative rank that need connection to ldap server, like timers
 ==== mtree ====
 
   * Added new mode 2 to mt_match() that instead of setting value of longest matching prefix to a pv, sets values of all matching prefixes to an avp so that value of longest matching prefix is in avp index 0.
