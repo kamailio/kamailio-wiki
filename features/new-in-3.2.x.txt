@@ -230,6 +230,7 @@ modparam("acc", "failed_filter", "401,407")
     * $Tb - epoch of the startup (boottime) of the current process
     * $sndto(id) points to next hop address
     * $sndfrom(id) points to local socket to be used for sending
+    * $rmid - request method id
 
   * new transformations:
     * {s.ftime,<format>} - format the epoch in the pvar according to <format>
