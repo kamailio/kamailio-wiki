@@ -4,7 +4,19 @@ The page collects the summary (draft notes) of the new features in Kamailio (Ope
 
 **The release date for version 3.2.0: October 18, 2011**.
 
+===== Configuration File =====
 
+The default configuration file shipped with Kamailio v3.2.0 has several enhancements comparing to v3.1.0. You can read more about all features provided by default configuration file in the comments located at the top of it. Shortly about the enhancements in 3.2.0:
+
+  * refactored NAT traversal logic
+    * use of rtpproxy_manage() to handle properly cases when 200ok and ACK have the SDP
+    * enable RTP relaying in branch_route to optimize handling of parallel forking to natted and non-natted branches for the same call
+  * speed dial support - enabled when adding **#!define WITH_SPEEDDIAL** after the first line
+  * routing to voicemail in case of not available  - enabled when adding **#!define WITH_VOICEMAIL** after the first line and setting the voicemail server address in //voicemail.srv_ip// variable
+  * blocking of redirect replies (3xx replies) - enabled when adding **#!define WITH_BLOCK3XX** after the first line
+  * acc module shows how to store source IP for each accounted record
+  * TCP connection lifetime is set over one hour to cope better with devices behind NAT connected over TCP or TLS
+  * main request routing block name switched to **request_route** in order to be easy to refer to it. Note that **route** is still valid name for main request routing block.
 ===== New Modules =====
 
 ==== async ====
