@@ -282,10 +282,13 @@ modparam("acc", "failed_filter", "401,407")
 
 ==== presence_xml ====
   * new exported functions to enable the online/offline presentity of a subscriber to be checked from the configuration file.
+    * pres_check_basic() enables you to find out whether a users basic status matches the string you provide.
+    * pres_check_activities() enables you to find out whether any of user's listed activities matches the string you provide.
 
-=== pua ===
 
-  *  added new modparam check_remote_contact
+==== pua ====
+
+  * added new modparam check_remote_contact
 ==== pv ====
 
   * new pseudovariables:
