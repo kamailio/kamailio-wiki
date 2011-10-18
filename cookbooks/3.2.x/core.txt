@@ -1963,7 +1963,7 @@ Rewrite the domain part and port of the R-URI with the value of function's param
 
 Example of usage:
 
-    rewritehostporttrans(???"1.2.3.4:5080"???);
+    rewritehostporttrans("1.2.3.4:5080");
 
 ==== rewritehost ====
 
