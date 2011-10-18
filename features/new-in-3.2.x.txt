@@ -281,7 +281,7 @@ modparam("acc", "failed_filter", "401,407")
 
 ==== usrloc ====
 
-  * store extra attributes per location records
+  * new parameter 'preload' can be used to specify list of location table to be initiated at startup, even they are not used by registrar module functions. Good for using the usrloc module from inside other modules.
 ==== xavp ====
   *  [[devel:xavp|xavp]]'s are enabled by default now.
 
