@@ -170,6 +170,9 @@ modparam("acc", "failed_filter", "401,407")
 ==== auth_db ====
 
   * export of inter-module API (available through Lua)
+  * option to skip checking version table
+    * new parameter 'version_table' to be able to disable checking for version table
+    * useful when connecting to a different database to fetch the password
 
 ==== auth_radius ====
 
