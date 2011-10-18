@@ -271,6 +271,7 @@ modparam("acc", "failed_filter", "401,407")
 
 ==== textops ====
   * new exported function to add "Date:" headers to requests.
+  * new function is_audio_on_hold() - return true if media stream in SDP is put on hold
 
 ==== topoh ====
 
