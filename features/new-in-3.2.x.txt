@@ -69,6 +69,10 @@ The default configuration file shipped with Kamailio v3.2.0 has several enhancem
 ==== p_usrloc ====
 
   * partitioned user location service
+  * similar to usrloc module, but provides partitioned user location. This provides 3 benefits:
+    * Redundancy - if a location db is down, there is a spare running
+    * Load Balancing - the module balances the entries by hashing the username(or username@domain)
+    * Failover- in case of error and recovery, it ensures that no stale contacts are returned
   * README File: http://kamailio.org/docs/modules/3.2.x/modules_k/p_usrloc.html
 
 ==== sdpops ====
