@@ -4,7 +4,6 @@ The page collects the summary (draft notes) of the new features in Kamailio (Ope
 
 **The release date for version 3.2.0: October 18, 2011**.
 
-**NOTE: this page is not yet up-to-date with all new features in v3.2.0. Check back soon, it is updated right now, it should take just a bit. This message will be removed when the update is finished.**
 ===== Configuration File =====
 
 The default configuration file shipped with Kamailio v3.2.0 has several enhancements comparing to v3.1.0. You can read more about all features provided by default configuration file in the comments located at the top of it. Shortly about the enhancements in 3.2.0:
