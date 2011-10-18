@@ -229,6 +229,7 @@ modparam("acc", "failed_filter", "401,407")
     * should be useful to track pkg memory leaks and/or trigger alerts when there is no more pkg available
   * added setdebug(level) - can change the debug level per process
   * added resetdebug() - set back the debug level to the global parameter 'debug'
+  * added mi command clear_statistics - return the values and reset the counters for statistics
 
 
 ==== lcr ====
