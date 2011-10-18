@@ -380,6 +380,7 @@ modparam("acc", "failed_filter", "401,407")
     * t_is_failure_route() - return true if it is a failure_route execution
     * t_is_branch_route() - return true if it is a branch_route execution
     * useful to check in sub-routes executed from different points of config
+  * added t_reply_callid MI command
 
 ==== uac ====
   * new function: uac_reg_request_to. Lookup a local user from the registration table and prepares message variables so the request can be sent to the remote user, using the same credentials as with which the registration has been done.
