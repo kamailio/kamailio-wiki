@@ -40,6 +40,7 @@ The default configuration file shipped with Kamailio v3.2.0 has several enhancem
 ==== ipops ====
 
   * IPv4 and IPv6 related functions for config file
+  * README File: http://kamailio.org/docs/modules/3.2.x/modules/ipops.html
 
 ==== json ====
 
