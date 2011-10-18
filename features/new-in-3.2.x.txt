@@ -332,6 +332,7 @@ modparam("acc", "failed_filter", "401,407")
   * use server_address parameter as contact in replies
   * support for resource-list indices that reference other resource-list XML documents (including XPath within documents)
   * new exported function to allow re-subscription to a list to be initiated from the configuration file
+  * added a new exported function: rls_update_subs() - this new function can be called from the Kamailio configuration file to force the RLS module to refresh its back-end subscriptions.
 
 ==== rr ====
 
