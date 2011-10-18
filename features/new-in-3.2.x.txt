@@ -233,6 +233,7 @@ modparam("acc", "failed_filter", "401,407")
     * $shtdec(htable=>key) - decrement atomically 1 to the value of the item
     * both return the new value of the item
     * they work only with items having integer values
+  * options to store expires value of items in database
 ==== kex ====
 
   * added new function is_myself(uri) to return true if parameters matches 'myself' condition
