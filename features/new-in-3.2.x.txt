@@ -378,7 +378,8 @@ modparam("acc", "failed_filter", "401,407")
   *  [[devel:xavp|xavp]]'s are enabled by default now.
 
 ==== xcap_server ====
-  * Support for extra auids:
+  * added oma user-profile and pres-content (avatar) support
+  * support for extra auids:
     * org.openmobilealliance.user-profile
     * org.openmobilealliance.pres-content
     * org.openmobilealliance.search
