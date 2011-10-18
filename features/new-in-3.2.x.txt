@@ -256,7 +256,8 @@ modparam("acc", "failed_filter", "401,407")
 
 ==== rls ====
 
-  * new parameters to control local contact and outbound proxy addresses
+  * added outbound_proxy parameter - set SIP uri where to send subscriptions
+  * use server_address parameter as contact in replies
   * support for resource-list indices that reference other resource-list XML documents (including XPath within documents)
   * new exported function to allow re-subscription to a list to be initiated from the configuration file
 
