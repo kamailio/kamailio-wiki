@@ -107,9 +107,22 @@ The default configuration file shipped with Kamailio v3.2.0 has several enhancem
 
 ==== acc ====
 
-  * name of acc and missed calls database tables can contain variables which are evaluated at runtime
-  * generate user-customizable CDR logs
-  * added 'failed_filter' module parameter
+  * you can include variables in table name and will be evaluated at runtime. For example:
+<code c>
+  modparam("acc", "db_table_acc", "acc_$time(year)_$time(mon)")
+</code>
+
+  * above example will write now to table **acc_2011_10**
+  * same can be done for missed_calls table name
+  * second parameter of acc_db_request() supports as well config variables
+  * by using **dialog module**, acc can generate user-customizable CDRs at once
+  * added 'failed_filter' module parameter: a string of failure response codes from 300 to 999 separated by commas. Failed transaction will not be accounted if its response code is in the list even when failed_transaction_flag is set. For example:
+
+<code c>
+modparam("acc", "failed_filter", "401,407")
+</code>
+
+
 
 ==== app_lua ====
 
