@@ -412,6 +412,13 @@ Attempt to include a file, but if it is not found, do not throw error like **inc
 ==== Memory Manager ====
 
   * core events when pkg usage changes
+  * pkg mem size configurable form the cmd line
+    * The pkg mem size used can be configured by using the "-M" parameter on the command line. The default remains 4Mb.
+<code c>
+  kamailio -M 8  -f test.cfg # start with 8mb of pkg memory
+</code>
+    
+
 
 ==== STUN ====
 
