@@ -196,6 +196,9 @@ modparam("acc", "failed_filter", "401,407")
   * export of inter-module API (available through Lua)
   * new event routes that are called when destinations go on/off-line
 
+==== kex ====
+
+  * added new function is_myself(uri) to return true if parameters matches 'myself' condition
 ==== mtree ====
 
   * Added new mode 2 to mt_match() that instead of setting value of longest matching prefix to a pv, sets values of all matching prefixes to an avp so that value of longest matching prefix is in avp index 0.
