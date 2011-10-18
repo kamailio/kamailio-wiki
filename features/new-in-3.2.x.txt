@@ -147,6 +147,7 @@ acc_log_request("200 OK", "acc_$time(year)_$time(mon)");
 modparam("acc", "failed_filter", "401,407")
 </code>
 
+  * db_insert_mode can be set to 1 in order to use INSERT DELAYED when adding the acc records to database
 
 
 ==== app_lua ====
