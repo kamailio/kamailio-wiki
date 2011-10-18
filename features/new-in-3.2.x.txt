@@ -188,6 +188,19 @@ modparam("acc", "failed_filter", "401,407")
 ==== kex ====
 
   * added new function is_myself(uri) to return true if parameters matches 'myself' condition
+
+==== lcr ====
+
+  * Added optional tag_avp module parameter and made lcr_flags module parameter optional.
+  * Renamed dont_strip_or_tag_flag module parameter to dont_strip_or_prefix_flag.
+  * load_gws() can take uri_user param, value of which is used instead of Request URI user part by load_gws() function.
+  * [from|to][any]_gw functions now check also transport protocol.
+  * Renamed lcr_gw table's tag field to prefix field.
+  * Parameters of load_gw() function must be given without quotes.
+  * Added tag field to lcr_gw table whose value is assigned to possible tag_avp by next_gw() and from_gw() functions.
+  * Increased lcr_gw tables version number to 2.
+  * Script that upgrades lcr_gw table from version 3.1 is available as http://box.openxg.com/tmp/lcr_upgrade_from_3.1.sh.
+
 ==== mtree ====
 
   * Added new mode 2 to mt_match() that instead of setting value of longest matching prefix to a pv, sets values of all matching prefixes to an avp so that value of longest matching prefix is in avp index 0.
