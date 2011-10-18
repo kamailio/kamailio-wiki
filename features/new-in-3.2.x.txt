@@ -341,6 +341,7 @@ Attempt to include a file, but if it is not found, do not throw error like **inc
 ==== Config Reload Framework ====
 
   * support for multiple cfg group instances
+  * add/del_group_inst() updates the local configuration to make sure that cfg_set_*() sees the change when it immediately follows the group intance modification
 
 ==== libsrdb1 ====
 
