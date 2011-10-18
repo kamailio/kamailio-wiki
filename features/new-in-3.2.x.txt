@@ -49,6 +49,7 @@ The default configuration file shipped with Kamailio v3.2.0 has several enhancem
 ==== jsonrpc-c ====
 
   * JSON-RPC client over netstrings
+  * README File: http://kamailio.org/docs/modules/3.2.x/modules/jsonrpc-c.html
 ==== ndb_redis ====
 
   * connector to Redis no-SQL database engine
