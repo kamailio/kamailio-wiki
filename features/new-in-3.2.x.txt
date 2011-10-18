@@ -396,6 +396,7 @@ modparam("acc", "failed_filter", "401,407")
 
   * request_route { ... } can be used instead of main route { ... }
   * reply_route { ... } can be used instead of main onreply_route { ... }
+  * '!!' can be used as alternative to '#!' for pre-processor directives, being easier to distinguish it out of commented lines
 ==== Preprocessor directives ====
 
   * #!substdef - add a substitution rule and a define at the same time
