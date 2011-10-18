@@ -55,6 +55,8 @@ The default configuration file shipped with Kamailio v3.2.0 has several enhancem
 ==== ndb_redis ====
 
   * connector to Redis no-SQL database engine
+    * uses hiredis library
+    * exports function to send commands to redis and a new pseudo-variable class to access the reply: $redis(key)
   * README File: http://kamailio.org/docs/modules/3.2.x/modules/ndb_redis.html
 
 ==== presence_reginfo ====
