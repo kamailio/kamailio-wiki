@@ -71,6 +71,8 @@ xlog("foo is $var(foo)");
 ==== presence_reginfo ====
 
   * Support for RFC 3680 in the presence architecture of Kamailio
+    * handle PUBLISH requests with reg-info content
+    * notify watcher with updates of reg-info records
   * README File: http://kamailio.org/docs/modules/3.2.x/modules_k/presence_reginfo.html
 
 ==== pua_reginfo ====
