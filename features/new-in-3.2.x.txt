@@ -444,6 +444,24 @@ Attempt to include a file, but if it is not found, do not throw error like **inc
     * Removing checking/adding of FINGERPRINT attribute
     * Update some attribute values according to new spec
 
+==== RPC Commands ====
+
+  * added rpc command core.psx
+    * similar to core.ps but prints the details in RPC structure along with process index, like:
+<code c>
+    sercmd> core.psx
+    {
+    	IDX: 0
+    	PID: 73408
+    	DSC: attendant
+    }
+    {
+    	IDX: 1
+    	PID: 73409
+    	DSC: udp receiver child=0 sock=127.0.0.1:5060
+    }
+</code>
+
 ===== New in Documentation =====
 
 ==== Developer visible changes ====
