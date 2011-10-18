@@ -203,6 +203,9 @@ modparam("acc", "failed_filter", "401,407")
   * export of inter-module API (available through Lua)
   * new event routes that are called when destinations go on/off-line
 
+==== domain ====
+
+  * added rpc commands to reload and dump domains
 ==== htable ====
 
   * option to save content of htable to db at shutdown - new 'dbmode' attribute for hash table definition
