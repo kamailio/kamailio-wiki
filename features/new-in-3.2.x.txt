@@ -364,6 +364,8 @@ modparam("acc", "failed_filter", "401,407")
 ==== siptrace ====
 
   * trace_to_database configuration parameter - to control whether to write to database or not and just mirror traffic
+  * use x-headers to add fromip, toip, method, time and direction in the message body (using X-* headers). This allows to transmit them using duplicate_uri from one kamailio to an other.
+  * store milliseconds part of the time in database
 ==== siputils ====
 
   * Added set_uri_user(uri, user) and set_uri_host(uri, host) functions.
