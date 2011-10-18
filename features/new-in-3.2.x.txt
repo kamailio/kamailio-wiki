@@ -18,6 +18,7 @@ The default configuration file shipped with Kamailio v3.2.0 has several enhancem
   * acc module shows how to store source IP for each accounted record
   * TCP connection lifetime is set over one hour to cope better with devices behind NAT connected over TCP or TLS
   * main request routing block name switched to **request_route** in order to be easy to refer to it. Note that **route** is still valid name for main request routing block.
+  * load debugger module for WITH_DEBUG - set cfgtrace parameter to 1 in this case
 ===== New Modules =====
 
 ==== async ====
