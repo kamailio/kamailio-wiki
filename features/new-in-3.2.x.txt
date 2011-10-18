@@ -291,6 +291,7 @@ modparam("acc", "failed_filter", "401,407")
 
 ==== uac ====
   * new function: uac_reg_request_to. Lookup a local user from the registration table and prepares message variables so the request can be sent to the remote user, using the same credentials as with which the registration has been done.
+  * updates to internal mechanism of registering as SIP user agents to remote SIP servers
 
 
 ==== usrloc ====
