@@ -165,6 +165,11 @@ modparam("acc", "failed_filter", "401,407")
 
   * Added optional uri_user param to radius_www_authorize().
 
+==== cfg_rpc ====
+
+  * two RPC commands added for deleting a configuration value from a cfg framework group instance:
+    * cfg.del group[id] var
+    * cfg.del_delayed group[id] var
 ==== cfgutils ====
 
   * added pkg_summary() and shm_summary() - ability to print summary of pkg and shm from config
