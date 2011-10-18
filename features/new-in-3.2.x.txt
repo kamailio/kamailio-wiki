@@ -59,6 +59,7 @@ The default configuration file shipped with Kamailio v3.2.0 has several enhancem
 ==== presence_reginfo ====
 
   * Support for RFC 3680 in the presence architecture of Kamailio
+  * README File: http://kamailio.org/docs/modules/3.2.x/modules_k/presence_reginfo.html
 
 ==== pua_reginfo ====
 
