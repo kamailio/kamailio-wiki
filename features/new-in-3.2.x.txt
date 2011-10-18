@@ -75,6 +75,7 @@ The default configuration file shipped with Kamailio v3.2.0 has several enhancem
 
   * module to control the content of the SDP payload from configuration file
     * e.g.,: remove codecs
+  * README File: http://kamailio.org/docs/modules/3.2.x/modules/sdpops.html
 
 ==== sipcapture ====
 
