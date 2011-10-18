@@ -69,6 +69,7 @@ The default configuration file shipped with Kamailio v3.2.0 has several enhancem
 ==== p_usrloc ====
 
   * partitioned user location service
+  * README File: http://kamailio.org/docs/modules/3.2.x/modules_k/p_usrloc.html
 
 ==== sdpops ====
 
