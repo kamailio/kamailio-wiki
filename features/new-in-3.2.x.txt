@@ -308,7 +308,7 @@ modparam("acc", "failed_filter", "401,407")
 
 Attempt to include a file, but if it is not found, do not throw error like **include_file**.
 
-==== Config Reload Framwork ====
+==== Config Reload Framework ====
 
   * support for multiple cfg group instances
 ===== New in Documentation =====
