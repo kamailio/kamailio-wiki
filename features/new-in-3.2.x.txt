@@ -360,6 +360,10 @@ modparam("acc", "failed_filter", "401,407")
 
   * new parameter autodrop to control automatic dropping of broken messages
   * setting it to 0 is good for logging purposes in config file and exiting from there
+
+==== siptrace ====
+
+  * trace_to_database configuration parameter - to control whether to write to database or not and just mirror traffic
 ==== siputils ====
 
   * Added set_uri_user(uri, user) and set_uri_host(uri, host) functions.
