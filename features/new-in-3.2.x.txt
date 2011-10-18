@@ -64,9 +64,7 @@ The default configuration file shipped with Kamailio v3.2.0 has several enhancem
 ==== pua_reginfo ====
 
   * Publish Registration info according to RFC 3680 ("reg"-Package), in case a user registration (based on usrloc callbacks)
-  * Subscribe to remote registration info
-  * Process published registration info (NOTIFY requests) and store it to usrloc
-  * (currently still in the carstenbock/ims branch, planned as a replacement of the RFC 3680 implementation in the CSCF modules)
+  * README File: http://kamailio.org/docs/modules/3.2.x/modules_k/pua_reginfo.html
 
 ==== p_usrloc ====
 
