@@ -282,6 +282,9 @@ modparam("acc", "failed_filter", "401,407")
 ==== presence_xml ====
   * new exported functions to enable the online/offline presentity of a subscriber to be checked from the configuration file.
 
+=== pua ===
+
+  *  added new modparam check_remote_contact
 ==== pv ====
 
   * new pseudovariables:
