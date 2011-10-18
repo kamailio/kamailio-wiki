@@ -57,7 +57,9 @@ xlog("foo is $var(foo)");
 
 ==== jsonrpc-c ====
 
-  * JSON-RPC client over netstrings
+  * JSON-RPC client over tcp/netstrings
+    * send notifications to a JSON-RPC server
+    * invoke execution of a JSON-RPC to a server
   * README File: http://kamailio.org/docs/modules/3.2.x/modules/jsonrpc-c.html
 ==== ndb_redis ====
 
