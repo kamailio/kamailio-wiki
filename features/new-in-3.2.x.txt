@@ -395,6 +395,7 @@ modparam("acc", "failed_filter", "401,407")
 ==== Config Structure ====
 
   * request_route { ... } can be used instead of main route { ... }
+  * reply_route { ... } can be used instead of main onreply_route { ... }
 ==== Preprocessor directives ====
 
   * #!substdef - add a substitution rule and a define at the same time
