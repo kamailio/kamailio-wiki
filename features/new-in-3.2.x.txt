@@ -197,6 +197,15 @@ modparam("acc", "failed_filter", "401,407")
   * export of inter-module API (available through Lua)
   * new event routes that are called when destinations go on/off-line
 
+==== htable ====
+
+  * option to save content of htable to db at shutdown - new 'dbmode' attribute for hash table definition
+    * if dbmode=1, the content of hash table will be saved back to database table when the sip server is stopped
+    * default value is 0 - no sync back to database table
+    * example:
+<code c>
+  modparam("htable", "htable", "a=>size=8;dbtable=htable;dbmode=1;")
+</code>
 ==== kex ====
 
   * added new function is_myself(uri) to return true if parameters matches 'myself' condition
