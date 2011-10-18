@@ -216,10 +216,18 @@ modparam("acc", "failed_filter", "401,407")
   * option to save content of htable to db at shutdown - new 'dbmode' attribute for hash table definition
     * if dbmode=1, the content of hash table will be saved back to database table when the sip server is stopped
     * default value is 0 - no sync back to database table
-    * example:
+      * example:
 <code c>
   modparam("htable", "htable", "a=>size=8;dbtable=htable;dbmode=1;")
 </code>
+  * new attribute 'initval' to hash table definition
+    * initval can set init integer value for hash table keys, meaning that if the key is not set, the init value is returned by $sht(htable=>key)
+    * useful for hash tables holding counters - the value can default to 0, avoiding extra check for $null value
+  * added two new PVs
+    * $shtinc(htable=>key) - add atomically 1 to the value of the item
+    * $shtdec(htable=>key) - decrement atomically 1 to the value of the item
+    * both return the new value of the item
+    * they work only with items having integer values
 ==== kex ====
 
   * added new function is_myself(uri) to return true if parameters matches 'myself' condition
