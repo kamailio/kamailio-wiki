@@ -383,6 +383,7 @@ modparam("acc", "failed_filter", "401,407")
 ==== sqlops ====
   * xavp support. New function sql_xquery() stores the query result in an xavp.
   * BIGINT support. Native support when sql_xquery is used, transformed to string for sql_query().
+  * new PV $sqlrows(con) - return affected rows of previous query
 
 ==== textops ====
   * new exported function to add "Date:" headers to requests.
