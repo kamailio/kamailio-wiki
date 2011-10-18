@@ -292,6 +292,9 @@ modparam("acc", "failed_filter", "401,407")
       * the value is 1 if the sip message is request
       * the value is 2 if the sip message is reply
     * $Tb - startup time available in a pseudo-variable (boottime)
+    * $rz - returns r-uri scheme
+      * possible values: sip, sips, tel and tels
+      * r-uri scheme parsing error should be reflected by value: none
 
   * new transformations:
     * {s.ftime,<format>} - format the epoch in the pvar according to <format>
