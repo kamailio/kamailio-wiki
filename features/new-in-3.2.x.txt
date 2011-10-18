@@ -103,6 +103,7 @@ xlog("foo is $var(foo)");
 ==== sipcapture ====
 
   * SIP traffic capturing server extension for Homer project
+    * save to database mirrored traffic from other SIP server instances - mirroring can be done by siptrace module
   * README File: http://kamailio.org/docs/modules/3.2.x/modules/sipcapture.html
 
 ===== IMS Extensions =====
