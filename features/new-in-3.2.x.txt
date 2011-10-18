@@ -244,6 +244,9 @@ modparam("acc", "failed_filter", "401,407")
 ==== rr ====
 
   * export of inter-module API (available through Lua)
+  * record_route_preset takes a second parameter allowing the setting of a second Record-Route header
+  * new rr param 'enable_socket_mismatch_warning': enables or disables a warning log
+
 
 ==== rtpproxy ====
 
