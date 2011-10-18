@@ -252,6 +252,10 @@ modparam("acc", "failed_filter", "401,407")
 
   * force_rtp_proxy function was removed
 
+==== sanity ====
+
+  * new parameter autodrop to control automatic dropping of broken messages
+  * setting it to 0 is good for logging purposes in config file and exiting from there
 ==== siputils ====
 
   * Added set_uri_user(uri, user) and set_uri_host(uri, host) functions.
