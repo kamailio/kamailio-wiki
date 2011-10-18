@@ -396,6 +396,12 @@ Attempt to include a file, but if it is not found, do not throw error like **inc
 
   * core events when pkg usage changes
 
+==== STUN ====
+
+  * ser_stun update to RFC 5389
+    * Removing checking/adding of FINGERPRINT attribute
+    * Update some attribute values according to new spec
+
 ===== New in Documentation =====
 
 ==== Developer visible changes ====
