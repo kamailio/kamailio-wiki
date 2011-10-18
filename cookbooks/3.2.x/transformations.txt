@@ -5,13 +5,13 @@ Main author:
    Daniel-Constantin Mierla <miconda (at) asipto.com>
 </code>
 
-[b]Transformation[/b] is basically a function that is applied to a pseudo-variable (PV) to get a special value from it. The value of PV is not altered.
+**Transformation** is basically a function that is applied to a pseudo-variable (PV) to get a special value from it. The value of PV is not altered.
 
 Transformations are implemented by various modules, most of them being in **pv** module.
 
 The transformations are intended to facilitate access to different attributes of PV (like strlen of value, parts of value, substrings) or complete different value of PV (encoded in hexa, md5 value, escape/unescape PV value for DB operations...).
 
-A transformation is represented in between [b]'{'[/b] and [b]'}'[/b] and follows the name of a PV. When using transformations, the PV name and transformations [b]must[/b] be enclosed in between [b]'('[/b] and [b]')'[/b].
+A transformation is represented in between **'{'** and **'}'** and follows the name of a PV. When using transformations, the PV name and transformations **must** be enclosed in between **'('** and **')'**, following the **$** sign.
 
 <code>
 # the length of From URI ($fu is PV for From URI)
