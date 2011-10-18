@@ -448,6 +448,7 @@ Attempt to include a file, but if it is not found, do not throw error like **inc
   * corelog - control the log level for non-critical core error messages
   * pv_buffer_size - size in bytes for internal PV buffer (default 1024)
   * pv_buffer_slots - home many internal PV buffers (default 10)
+  * sql_buffer_size - set the size of SQL buffer (default 64k)
 
 ==== Config Reload Framework ====
 
