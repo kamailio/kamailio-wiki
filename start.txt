@@ -22,6 +22,7 @@
 ==== Linux - Unix Distributions ====
 
   * [[packages:debs|DEBS: Debian - Ubuntu]]
+  * [[packages:rpms|RPMS: CentOS - RedHat - Fedora - OpenSUSE]]
 
 ===== Cookbooks =====
 
