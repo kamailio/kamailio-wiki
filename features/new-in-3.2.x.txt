@@ -77,7 +77,7 @@ xlog("foo is $var(foo)");
 
 ==== pua_reginfo ====
 
-  * Publish Registration info according to RFC 3680 ("reg"-Package), in case a user registration (based on usrloc callbacks)
+  * publish registration info (reg-info) according to RFC 3680 ("reg"-package), in case a user registration (based on usrloc callbacks)
   * README File: http://kamailio.org/docs/modules/3.2.x/modules_k/pua_reginfo.html
 
 ==== p_usrloc ====
