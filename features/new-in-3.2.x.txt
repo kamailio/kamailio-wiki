@@ -381,6 +381,11 @@ modparam("acc", "failed_filter", "401,407")
   * Added is_reply() returns true if the SIP message is a reply
     * useful to check in sub-routes that can be executed from both request and reply routes
 
+==== snmpstats ====
+
+  * control exporting registrar records
+    * exporting of large location database may result in out of shared memory, as well as when the records are not pulled
+    * new parameter export_registrar was added to enable/disable location records export (off by default)
 ==== sqlops ====
   * xavp support. New function sql_xquery() stores the query result in an xavp.
   * BIGINT support. Native support when sql_xquery is used, transformed to string for sql_query().
