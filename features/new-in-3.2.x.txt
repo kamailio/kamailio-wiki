@@ -228,6 +228,9 @@ modparam("acc", "failed_filter", "401,407")
   * new pseudovariables:
     * $timef(format) - string representation of time formatted according to format
     * $Tb - epoch of the startup (boottime) of the current process
+    * $sndto(id) points to next hop address
+    * $sndfrom(id) points to local socket to be used for sending
+
   * new transformations:
     * {s.ftime,<format>} - format the epoch in the pvar according to <format>
     * {s.sql} - output the pvar as valid SQL value. <null> as NULL, integer as bare number, string as quoted and escaped string
