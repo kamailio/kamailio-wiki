@@ -478,7 +478,7 @@ To delete all the AVP with name 'id' you have to assign $null to the index '*':
 $(avp(id)[*]) = $null;
 </code>
 
-To overwrite the value f the AVP with name 'id' you have to assign the new value to the index '*':
+To overwrite the value of the AVP with name 'id' you have to assign the new value to the index '*':
 <code c>
 $(avp(id)[*]) = newvalue;
 </code>
@@ -497,8 +497,7 @@ if($(avp(x)[1])==1) {
 $(avp(x)[1]) = $null;
 </code>
 
-
-<hi #d0d0d0>It is R/W variable (you can assign values to it directly in configuration file)</hi>
+<fc #d0d0d0>It is R/W variable (you can assign values to it directly in configuration file)</fc>
 
 
 ===== Headers =====
