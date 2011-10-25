@@ -497,7 +497,7 @@ if($(avp(x)[1])==1) {
 $(avp(x)[1]) = $null;
 </code>
 
-<fc #d0d0d0>It is R/W variable (you can assign values to it directly in configuration file)</fc>
+It is R/W variable (you can assign values to it directly in configuration file).
 
 
 ===== Headers =====
