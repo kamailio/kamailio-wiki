@@ -855,7 +855,7 @@ Example of usage:
     open_files_limit=2048
 
 ==== phone2tel ====
-By enabling this feature, SIP-Router internally treats SIP URIs with user=phone parameter as TEL URIs. If you do not want thi behavior, you have to turn it off. 
+By enabling this feature, SIP-Router internally treats SIP URIs with user=phone parameter as TEL URIs. If you do not want this behavior, you have to turn it off. 
 
 Default value: 1 (enabled)
 
