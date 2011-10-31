@@ -56,9 +56,7 @@ For example if you want to build for Debian Lenny and do not need the troublesom
 
 If the build process fails due to missing dependencies install them via "apt-get install ....." and try "make deb" again.
 
-===== 5. Done =====
-
-The packages are located in ''../''
+If the build succeeds, the packages are located in ''../''
 
 ===== 6. Install Kamailio =====
 
