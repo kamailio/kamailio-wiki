@@ -60,3 +60,37 @@ deb-src http://deb.kamailio.org/kamailio32 squeeze main
 deb http://deb.kamailio.org/kamailio32 lucid main
 deb-src http://deb.kamailio.org/kamailio32 lucid main
 </code>
+====  Kamailio 3.2 - Nightly Builds ====
+
+* ''Debian Lenny''
+<code>
+deb http://deb.kamailio.org/kamailio32-nightly lenny main
+</code>
+
+* ''Debian Squeeze''
+<code>
+deb http://deb.kamailio.org/kamailio32-nightly squeeze main
+</code>
+
+* ''Ubuntu Lucid''
+<code>
+deb http://deb.kamailio.org/kamailio32-nightly lucid main
+</code>
+
+====  Kamailio Development - Nightly Builds ====
+
+* ''Debian Lenny''
+<code>
+deb http://deb.kamailio.org/kamailiodev-nightly lenny main
+</code>
+
+* ''Debian Squeeze''
+<code>
+deb http://deb.kamailio.org/kamailiodev-nightly squeeze main
+</code>
+
+* ''Ubuntu Lucid''
+<code>
+deb http://deb.kamailio.org/kamailiodev-nightly lucid main
+</code>
+
