@@ -5,7 +5,7 @@ Courtesy of [[http://sipdoc.net|Sipdoc Team]], **Kamailio SIP Server project** o
 
 ===== Status =====
 
-  * Distributions: ''Debian 5.0 Lenny'',  ''Debian 6.0 Squeeze'',  ''Ubuntu 10.04 Lucid''
+  * Distributions: ''Debian 5.0 Lenny'',  ''Debian 6.0 Squeeze'',  ''Debian Wheezy'',  ''Ubuntu 10.04 Lucid''
   * Archs supported: ''amd64'', ''i386''
   * Sources provided for stable releases
   * Nightly builds of supported branches
@@ -51,58 +51,74 @@ deb-src http://deb.kamailio.org/kamailio lucid main
 ==== Latest Kamailio 3.2 release ====
 
 === ''Debian Lenny'' ===
+
 <code>
 deb http://deb.kamailio.org/kamailio32 lenny main
 deb-src http://deb.kamailio.org/kamailio32 lenny main
 </code>
 
 === ''Debian Squeeze'' ===
+
 <code>
 deb http://deb.kamailio.org/kamailio32 squeeze main
 deb-src http://deb.kamailio.org/kamailio32 squeeze main
 </code>
 
 === ''Debian Wheezy'' ===
+
 <code>
 deb http://deb.kamailio.org/kamailio32 wheezy main
 deb-src http://deb.kamailio.org/kamailio32 wheezy main
 </code>
 
 === ''Ubuntu Lucid'' ===
+
 <code>
 deb http://deb.kamailio.org/kamailio32 lucid main
 deb-src http://deb.kamailio.org/kamailio32 lucid main
 </code>
+
 ====  Kamailio 3.2 - Nightly Builds ====
 
-* ''Debian Lenny''
+=== ''Debian Lenny'' ===
+
 <code>
 deb http://deb.kamailio.org/kamailio32-nightly lenny main
 </code>
 
-* ''Debian Squeeze''
+=== ''Debian Squeeze'' ===
 <code>
 deb http://deb.kamailio.org/kamailio32-nightly squeeze main
 </code>
 
-* ''Ubuntu Lucid''
+=== ''Debian Wheezy'' ===
+<code>
+deb http://deb.kamailio.org/kamailio32-nightly wheezy main
+</code>
+
+=== ''Ubuntu Lucid'' ===
 <code>
 deb http://deb.kamailio.org/kamailio32-nightly lucid main
 </code>
 
 ====  Kamailio Development - Nightly Builds ====
 
-* ''Debian Lenny''
+=== ''Debian Lenny'' ===
 <code>
 deb http://deb.kamailio.org/kamailiodev-nightly lenny main
 </code>
 
-* ''Debian Squeeze''
+=== ''Debian Squeeze'' ===
 <code>
 deb http://deb.kamailio.org/kamailiodev-nightly squeeze main
 </code>
 
-* ''Ubuntu Lucid''
+=== ''Debian Wheezy'' ===
+<code>
+deb http://deb.kamailio.org/kamailiodev-nightly squeeze main
+</code>
+
+=== ''Ubuntu Lucid'' ===
 <code>
 deb http://deb.kamailio.org/kamailiodev-nightly lucid main
 </code>
