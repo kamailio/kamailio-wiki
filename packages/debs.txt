@@ -62,6 +62,12 @@ deb http://deb.kamailio.org/kamailio32 squeeze main
 deb-src http://deb.kamailio.org/kamailio32 squeeze main
 </code>
 
+=== ''Debian Wheezy'' ===
+<code>
+deb http://deb.kamailio.org/kamailio32 wheezy main
+deb-src http://deb.kamailio.org/kamailio32 wheezy main
+</code>
+
 === ''Ubuntu Lucid'' ===
 <code>
 deb http://deb.kamailio.org/kamailio32 lucid main
