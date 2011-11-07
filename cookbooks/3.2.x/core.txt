@@ -825,7 +825,7 @@ mem_summary=15
 
 ==== mhomed ====
 
-Set the server to try to locate outbound interface on multihomed host. This parameter affects the selection of the outgoing socket for forwarding requests. By default is off (0) - it is rather time consuming. When decativated, the incoming socket will be used or the first one for a different protocol, disregarding the destination location. When activated, sip-router will select a socket that can reach the destination (to be able to connect to the remote address). (sip-router opens a UDP socket to the destination, then it retrieves the local IP which was assigned by the operating system to the new UDP socket. Then this socket will be closed and the retrieved IP address will be used as IP address in the Via/Record-Route headers)
+Set the server to try to locate outbound interface on multihomed host. This parameter affects the selection of the outgoing socket for forwarding requests. By default is off (0) - it is rather time consuming. When deactivated, the incoming socket will be used or the first one for a different protocol, disregarding the destination location. When activated, sip-router will select a socket that can reach the destination (to be able to connect to the remote address). (sip-router opens a UDP socket to the destination, then it retrieves the local IP which was assigned by the operating system to the new UDP socket. Then this socket will be closed and the retrieved IP address will be used as IP address in the Via/Record-Route headers)
 
 Example of usage:
 
