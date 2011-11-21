@@ -132,7 +132,6 @@ For example, commit the changes for module auth:
 <code>
 git commit modules/auth/
 </code>
-</code>
 
 ===== Core Commits =====
 
