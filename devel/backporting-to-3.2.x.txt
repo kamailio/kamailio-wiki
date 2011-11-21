@@ -282,8 +282,22 @@ When you are sure all is fine and want to push the change to remote repository i
 git push origin 3.2:3.2
 </code>
 
-You should see the commit announcement on the sr-dev mailing list in short time.
+You should see the email with the commit announcement on the sr-dev mailing list in short time.
 
+<code>
+[sr-dev] git:3.2: kamailio.cfg: small change to make an example
+
+Module: sip-router
+Branch: 3.2
+Commit: a1b2c3dab799a003b1097b2a1ca08a7b5ebc9390
+URL:    http://git.sip-router.org/cgi-bin/gitweb.cgi/sip-router/?a=commit;h=a1b2c3dab799a003b1097b2a1ca08a7b5ebc9390
+
+...
+
+(cherry picked from commit f3fb55dab799a003b1097b2a1ca08a7b5ebc9390)
+
+...
+</code>
 ===== Remarks =====
 
 Note this is one way of doing the backporting, there are many other ways, consult GIT manual for alternatives.
