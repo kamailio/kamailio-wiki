@@ -53,6 +53,7 @@
 ===== Development =====
 
   * [[devel:backporting-to-3.2.x|Backporting Patches from Devel Branch to 3.2.x]]
+  * [[devel:git-commit-guidelines|GIT Commit Guidelines]]
 ===== Disclaimer =====
 
 <color grey>
