@@ -300,6 +300,10 @@ URL:    http://git.sip-router.org/cgi-bin/gitweb.cgi/sip-router/?a=commit;h=a1b2
 </code>
 
 <fc #0000FF>IMPORTANT: Again, before pushing commits to sip-router.org GIT repository in the stable branch, 3.2, be sure you have tested them properly and they don't break the code.</fc>
+==== Recommendations ====
+
+Use cherry-pick whenever it is possible, especially when fixing issues. The commit to stable branch will have a reference to the commit in the master branch, making easier to track if any fix has been forgotten to be ported.
+
 ===== Remarks =====
 
-Note this is one way of doing the backporting, there are many other ways, consult GIT manual for alternatives.
+Note this is one way of doing the backporting, there are many other ways, consult GIT manual for alternatives. This is a wiki page -- people knowing alternatives to do porting of the patches from one branch to another are welcome to contribute.
