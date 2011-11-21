@@ -298,6 +298,8 @@ URL:    http://git.sip-router.org/cgi-bin/gitweb.cgi/sip-router/?a=commit;h=a1b2
 
 ...
 </code>
+
+<fc #0000FF>IMPORTANT: Again, before pushing commits to sip-router.org GIT repository in the stable branch, 3.2, be sure you have tested them properly and they don't break the code.</fc>
 ===== Remarks =====
 
 Note this is one way of doing the backporting, there are many other ways, consult GIT manual for alternatives.
