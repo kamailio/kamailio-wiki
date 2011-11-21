@@ -304,6 +304,14 @@ URL:    http://git.sip-router.org/cgi-bin/gitweb.cgi/sip-router/?a=commit;h=a1b2
 
 Use cherry-pick whenever it is possible, especially when fixing issues. The commit to stable branch will have a reference to the commit in the master branch, making easier to track if any fix has been forgotten to be ported.
 
+For quick reference, when you are in local branch 3.2 and want to backport commit with id a1b2c3d, here is the sequence of commands:
+
+<code>
+cd ~/kamailio/kamailio-3.2
+git pull origin
+git cherry-pick -x a1b2c3d
+git push origin 3.2:3.2
+</code>
 ===== Remarks =====
 
 Note this is one way of doing the backporting, there are many other ways, consult GIT manual for alternatives. This is a wiki page -- people knowing alternatives to do porting of the patches from one branch to another are welcome to contribute.
