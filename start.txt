@@ -56,12 +56,12 @@
 
   * [[http://www.kamailio.org/docs/docbooks/3.2.x/rpc_api/rpc_api.html|RPC Control Interface - API]]
 
-=== Guidelines ===
+==== Guidelines ====
 
   * [[devel:backporting-to-3.2.x|Backporting Patches from Devel Branch to 3.2.x]]
   * [[devel:git-commit-guidelines|GIT Commit Guidelines]]
 
-=== Misc ===
+==== Misc ====
 
   * [[devel:active-contributors|Contributors - List of Active Developers]]
 ===== Disclaimer =====
