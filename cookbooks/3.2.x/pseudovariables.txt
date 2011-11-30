@@ -755,13 +755,13 @@ xlog("$shtcn(a=>a.*)");
 ...
 </code>
 
-==== $shtcv(htable=>regexp) ====
+==== $shtcv(htable=>exp) ====
 
 Count items matching the value by regexp.
 
 The “htname” must be a hash table name defined via “htable” parameter.
 
-The “regexp” must be a regular expression.
+The **exp** must follow same rules as for **$shtcn(...)**.
 
 <code>
 ...
