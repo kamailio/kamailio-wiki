@@ -97,7 +97,7 @@ ALTER TABLE lcr_gw ADD prefix VARCHAR(16) DEFAULT NULL;
 ALTER TABLE lcr_gw MODIFY tag VARCHAR(64) DEFAULT NULL;
 CREATE INDEX lcr_id_idx ON lcr_gw (lcr_id);
 
-ALTER TABLE active_watchers MODIFY callid VARCHAR(255) NOT NULL,
+ALTER TABLE active_watchers MODIFY callid VARCHAR(255) NOT NULL;
 
 UPDATE version SET table_version=7 WHERE table_name="pua";
 ALTER TABLE pua MODIFY pres_id VARCHAR(255) NOT NULL;
