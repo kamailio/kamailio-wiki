@@ -181,7 +181,7 @@ modparam("acc", "db_url", "mysql://user:DBPASSWD@localhost/db")
 ==== substdef ====
 
 <code c>
-#!subst "/ID/subst/"
+#!substdef "/ID/subst/"
 </code>
 
 Similar to **subst**, but in addition it adds a **#!define ID subst**.
