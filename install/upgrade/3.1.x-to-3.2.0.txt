@@ -118,6 +118,76 @@ ALTER TABLE xcap MODIFY doc_uri VARCHAR(255) NOT NULL;
 
 </code>
 
+This is the translation of the above script for PostgreSQL (tested with 9.1.1)
+
+<code sql>
+
+ALTER TABLE acc ALTER COLUMN callid TYPE VARCHAR(255);
+ALTER TABLE acc ALTER COLUMN callid SET DEFAULT '';
+ALTER TABLE acc ALTER COLUMN callid SET NOT NULL;
+ALTER TABLE missed_calls ALTER COLUMN callid TYPE VARCHAR(255);
+ALTER TABLE missed_calls ALTER COLUMN callid SET DEFAULT '';
+ALTER TABLE missed_calls ALTER COLUMN callid SET NOT NULL;
+
+INSERT INTO version (table_name, table_version) VALUES ('dialog_vars','1');
+CREATE TABLE dialog_vars (
+    id SERIAL PRIMARY KEY NOT NULL,
+    hash_entry INTEGER NOT NULL,
+    hash_id INTEGER NOT NULL,
+    dialog_key VARCHAR(128) NOT NULL,
+    dialog_value VARCHAR(512) NOT NULL
+);
+CREATE INDEX hash_idx ON dialog_vars (hash_entry, hash_id);
+
+UPDATE version SET table_version=2 WHERE table_name='htable';
+ALTER TABLE htable ALTER COLUMN key_value TYPE VARCHAR(128);
+ALTER TABLE htable ALTER COLUMN key_value SET DEFAULT '';
+ALTER TABLE htable ALTER COLUMN key_value SET NOT NULL;
+
+ALTER TABLE htable ADD COLUMN expires INTEGER;
+ALTER TABLE htable ALTER COLUMN expires SET DEFAULT 0;
+ALTER TABLE htable ALTER COLUMN expires SET NOT NULL;
+
+UPDATE version SET table_version=2 WHERE table_name='lcr_gw';
+ALTER TABLE lcr_gw DROP CONSTRAINT lcr_gw_lcr_id_ip_addr_port_hostname_idx;
+ALTER TABLE lcr_gw ADD prefix VARCHAR(16);
+ALTER TABLE lcr_gw ALTER COLUMN prefix SET DEFAULT NULL;
+ALTER TABLE lcr_gw ALTER COLUMN tag TYPE VARCHAR(64);
+ALTER TABLE lcr_gw ALTER COLUMN tag SET DEFAULT NULL;
+CREATE INDEX lcr_id_idx ON lcr_gw (lcr_id);
+
+ALTER TABLE active_watchers ALTER COLUMN callid TYPE VARCHAR(255);
+ALTER TABLE active_watchers ALTER COLUMN callid SET NOT NULL;
+
+UPDATE version SET table_version=7 WHERE table_name='pua';
+ALTER TABLE pua ALTER COLUMN pres_id TYPE VARCHAR(255);
+ALTER TABLE pua ALTER COLUMN pres_id SET NOT NULL;
+ALTER TABLE pua ALTER COLUMN call_id TYPE VARCHAR(255);
+ALTER TABLE pua ALTER COLUMN call_id SET NOT NULL;
+
+UPDATE version SET table_version=1 WHERE table_name='rls_presentity';
+ALTER TABLE rls_presentity ALTER COLUMN content_type TYPE VARCHAR(255);
+ALTER TABLE rls_presentity ALTER COLUMN content_type SET NOT NULL;
+ALTER TABLE rls_presentity ADD callid VARCHAR(255);
+ALTER TABLE rls_presentity ALTER COLUMN callid SET NOT NULL;
+ALTER TABLE rls_presentity ADD contact VARCHAR(128);
+ALTER TABLE rls_presentity ALTER COLUMN contact SET NOT NULL;
+
+UPDATE version SET table_version=3 WHERE table_name='sip_trace';
+ALTER TABLE sip_trace ADD time_us INTEGER;
+ALTER TABLE sip_trace ALTER COLUMN time_us SET DEFAULT 0;
+ALTER TABLE sip_trace ALTER COLUMN time_us SET NOT NULL;
+ALTER TABLE sip_trace ALTER COLUMN msg TYPE TEXT;
+ALTER TABLE sip_trace ALTER COLUMN msg SET NOT NULL;
+
+UPDATE version SET table_version=4 WHERE table_name='xcap';
+ALTER TABLE xcap ALTER COLUMN doc TYPE BYTEA;
+ALTER TABLE xcap ALTER COLUMN doc SET NOT NULL;
+ALTER TABLE xcap ALTER COLUMN doc_uri TYPE VARCHAR(255);
+ALTER TABLE xcap ALTER COLUMN doc_uri SET NOT NULL;
+
+</code>
+
 ===== Modules =====
 
 ==== modules/lcr ====
