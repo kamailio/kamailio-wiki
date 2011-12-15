@@ -185,6 +185,15 @@ Example:
 $var(x) = "abababa";
 $(var(x){s.replace,a,c} => "cbcbcbc"
 </code>
+
+==== {s.ftime,format} ====
+
+
+Format the epoch in the pv according to the parameter. The parameter has to be strftime formatting string.
+    
+<code c>
+$(TS{s.ftime,%Y-%m-%d %H:%M:%S})
+</code>
 ===== URI Transformations =====
 
 The name of transformation starts with 'uri.'. The PV value is considered to be a SIP URI. This transformation returns parts of SIP URI (see struct sip_uri). If that part is missing, the returned value is an empty string.
