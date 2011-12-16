@@ -461,8 +461,9 @@ Note: the system time is computed for each call of $TS. Subsequent calls of $TS 
 
 The 'id' can be:
 
-* "[si]:name" - name is the id of an AVP; 's' and 'i' specifies if the id is string or integer. If missing, it is considered to be string.
+* "[(s|i):]name" - name is the id of an AVP; 's' and 'i' specifies if the id is string or integer. If missing, it is considered to be string.
 * "name" - the name is an AVP alias, or if the alias is not found, it is a string name
+* pseudo variable - if value of pv is integer, id is integer, if string, id is string
 
 $(avp(id)[0]) can be written in shorter form as $avp(id) and $avp(s:name) as $avp(name).
 
