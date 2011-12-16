@@ -206,7 +206,7 @@ Return the user part
 
 ==== {uri.host} ====
 
-(same as [b]{uri.domain}[/b])
+(same as **{uri.domain}**)
 
 Return the domain part
 
@@ -339,7 +339,7 @@ Return the length of the entire name-addr part from the value.
 
 ===== To-Body Transformations =====
 
-<hi #c0c0c0>This transformation class is exported by **pv** module.</hi>
+<fc #0000ff>This transformation class is exported by **pv** module.</fc>
 
 Access parts of a ToBody-like structure.
 
@@ -370,7 +370,7 @@ Access parts of a ToBody-like structure.
 
 ===== Regular Expression Transformations =====
 
-<hi #c0c0c0>This transformation class is exported by **textops** module.</hi>
+<fc #0000ff>This transformation class is exported by **textops** module.</fc>
 
 
 ==== {re.subst,expression} ====
@@ -402,7 +402,7 @@ The prototype is:
 
 ===== SQL Transformations =====
 
-<hi #c0c0c0>The transformations in this class are exported by the **sqlops** module.</hi>
+<fc #0000ff>The transformations in this class are exported by the **sqlops** module.</fc>
 
 ==== {sql.val} ====
 
