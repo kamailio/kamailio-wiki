@@ -221,6 +221,14 @@ Remove left whitespaces (' ', '\t', '\r', '\n') around PV value.
 <code c>
 $(var(x){s.ltrim})
 </code>
+
+==== {s.rm,match} ====
+
+Remove occurrences of 'match' from PV. 'match' can be static string or variable.
+
+<code c>
+$(var(x){s.rm,test})
+</code>
 ===== URI Transformations =====
 
 The name of transformation starts with 'uri.'. The PV value is considered to be a SIP URI. This transformation returns parts of SIP URI (see struct sip_uri). If that part is missing, the returned value is an empty string.
