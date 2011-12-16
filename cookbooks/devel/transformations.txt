@@ -402,6 +402,39 @@ Access parts of a ToBody-like structure.
 
 * return parameters part from To body
 
+===== Line Transformations =====
+
+Line-based operations on text values.
+
+==== {line.count} ====
+
+Return the number of lines.
+
+Example:
+
+<code c>
+$(var(x){line.count})
+</code>
+
+==== {line.at,pos} ====
+
+Return the line at position 'pos'. The index start from 0. Negative position can be used to count from last line (which is -1).
+
+Example:
+
+<code c>
+$(var(x){line.at,2})
+</code>
+
+==== {line.sw,match} ====
+
+Return the line starting with **match**.
+
+Example:
+
+<code c>
+$(var(x){line.sw,mytext})
+</code>
 
 ===== Regular Expression Transformations =====
 
