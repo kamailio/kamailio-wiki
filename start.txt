@@ -30,7 +30,7 @@
 \\
 
 |                     ^ Core Cookbook                  ^ Pseudo Variables                ^ Transformations  ^ Selects ^
-^ Development Version |  [[http://sip-router.org/wiki/cookbooks/core-cookbook/devel|link]]  |  [[http://sip-router.org/wiki/cookbooks/pseudo-variables/devel|link]]  |  [[http://sip-router.org/wiki/cookbooks/transformations/devel|link]]  |  [[http://sip-router.org/wiki/cook6+6+books/selects/devel|link]]  |
+^ Development Version |  [[cookbooks:devel:core|link]]  |  [[cookbooks:devel:pseudovariables|link]]  |  [[cookbooks:devel:transformations|link]]  |  [[cookbooks:devel:selects|link]]  |
 ^ 3.2.x Version       |  [[cookbooks:3.2.x:core|link]]  |  [[cookbooks:3.2.x:pseudovariables|link]]  |  [[cookbooks:3.2.x:transformations|link]]  |  [[cookbooks:3.2.x:selects|link]]  |
 
 \\ 
