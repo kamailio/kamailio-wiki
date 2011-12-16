@@ -1,0 +1,62 @@
+====== Kamailio SIP Server and SER - New Features in Devel Version ======
+
+===== New Modules =====
+
+==== presence_profile ====
+
+  * new module for managing UA configuration via SIMPLE extensions
+
+==== xhttp_rpc ====
+
+  * new module to execute RPC commands via embedded HTPP server
+
+===== New in Old Modules =====
+
+==== dispatcher ====
+
+  * refactored dispatcher destination states
+    * states: active, trying, inactive, disabled
+    * probing is a mode that can be set for active and inactive states
+  * added outbound_proxy modparam for use with dispatcher pings
+
+==== pv ====
+
+  * new transformation class **line**
+    * {line.count}
+    * {line.at,pos}
+    * {line.sw,match}
+  * new string tranformations
+    * {s.trim}
+    * {s.ltrim}
+    * {s.rtrim}
+    * {s.rm,match}
+
+
+==== rtimer ====
+
+  * execute route blocks on micro-second timer base
+
+==== textopsx ====
+
+  * new function keep_hf(expr)
+    * remove all the non-mandatory headers that don't match **expr**
+
+===== New in Core =====
+
+==== Global Parameters ====
+
+=== tls_max_connections ===
+
+===== New RPC Commands =====
+
+==== core.tcp_list ====
+
+  * list active TCP connections
+
+==== core.aliases_list ====
+
+  * list local name aliases (matching **myself**)
+
+==== core.sockets_list ====
+
+  * list local listen sockets
