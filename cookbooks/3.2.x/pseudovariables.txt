@@ -543,9 +543,9 @@ Setting a variable to null is actually initializing the value to integer '0'. Sc
 
 **Note:** A script variable persists over the SIP-Router process in which it was initialized, so be sure of giving it a new value before reading it or you'll get the value asigned in any other previous message processed by the same SIP-Router process (pid).
 
-<hi #d0d0d0>It is R/W variable (you can assign values to it directly in configuration file)</hi>
+<fc #0000FF>It is R/W variable (you can assign values to it directly in configuration file)</fc>
 
-[b]pv[/b] module can be used to initialise the script variables.
+**pv** module can be used to initialize the script variables.
 
 ===== Script shared variables =====
 
