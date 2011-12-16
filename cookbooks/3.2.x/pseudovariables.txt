@@ -111,7 +111,7 @@ $(branch(uri)[2]) = "sip:test@kamailio.org;transport=sctp";
 
 **$br** - reference to request's first branch
 
-<hi #d0d0d0>It is R/W variable, you can assign values to it directly in configuration file (will add a new branch).</hi>
+<fc #0000ff>It is R/W variable, you can assign values to it directly in configuration file (will add a new branch).</fc>
 
 ==== Request's all branches ====
 
@@ -189,7 +189,7 @@ $(branch(uri)[2]) = "sip:test@kamailio.org;transport=sctp";
 If loose_route() returns TRUE a destination uri is set according to the first Route header.
 $du is also set if lookup() function of 'registrar' module finds contact(s) behind NAT.
 
-<hi #d0d0d0>It is R/W variable (you can assign values to it directly in configuration file)</hi>
+<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
 
 To reset $du:
   $du = null;
@@ -243,13 +243,13 @@ To reset $du:
 
 **$mf** - reference to message/transaction flags set for current SIP request
 
-<hi #d0d0d0>It is R/W variable (you can assign values to it directly in configuration file)</hi>
+<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
 
 ==== Flags in hexadecimal ====
 
 **$mF** -reference to message/transaction flags set for current SIP request in hexa-decimal
 
-<hi #d0d0d0>It is R/W variable (you can assign values to it directly in configuration file)</hi>
+<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
 
 ==== SIP message id ====
 
@@ -309,7 +309,7 @@ To reset $du:
 
 **$rd** - reference to domain in request's URI
 
-<hi #d0d0d0>It is R/W variable (you can assign values to it directly in configuration file)</hi>
+<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
 
 ==== Body of request/reply ====
 
@@ -335,7 +335,7 @@ To reset $du:
 
 **$rp** - reference to port of R-URI
 
-<hi #d0d0d0>It is R/W variable (you can assign values to it directly in configuration file)</hi>
+<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
 
 ==== Transport protocol of SIP request URI ====
 
@@ -357,13 +357,13 @@ To reset $du:
 
 **$ru** - reference to request's URI
 
-<hi #d0d0d0>It is R/W variable (you can assign values to it directly in configuration file)</hi>
+<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
 
 ==== Username in SIP Request's URI ====
 
 **$rU** - reference to username in request's URI
 
-<hi #d0d0d0>It is R/W variable (you can assign values to it directly in configuration file)</hi>
+<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
 
 ==== Received IP address ====
 
@@ -398,7 +398,7 @@ To reset $du:
 
 **$fs** - reference to the forced socket for message sending (if any) in the form proto:ip:port
 
-<hi #d0d0d0>It is R/W variable (you can assign values to it directly in configuration file)</hi>
+<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
 
 ==== To URI Domain ====
 
@@ -520,7 +520,7 @@ if($hdr(From)=~"sip-router\.org") {
 }
 </code>
 
-<hi #d0d0d0>It is read-only variable. You can remove or add headers using functions from textops module.</hi>
+<fc #0000ff>It is read-only variable. You can remove or add headers using functions from textops module.</fc>
 
 ===== Script private variables =====
 
@@ -563,7 +563,7 @@ if ($shv(debug) == 1) {
 ...
 </code>
 
-<hi #d0d0d0>It is R/W variable (you can assign values to it directly in configuration file)</hi>
+<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
 
 ===== Broken-down time =====
 
@@ -642,7 +642,7 @@ onsend_route {
 
 Return the attribute of the current processed dialog.
 
-<hi #d0d0d0>It is R/O variable.</hi>
+<fc #0000ff>It is R/O variable.</fc>
 
 The 'attr' can be:
   * h_id - hash id
@@ -672,7 +672,7 @@ The 'attr' can be:
 
 Return the attribute of the context for current processed dialog.
 
-<hi #d0d0d0>It is R/W variable.</hi>
+<fc #0000ff>It is R/W variable.</fc>
 
 The 'attr' can be:
   * set
@@ -687,7 +687,7 @@ The 'attr' can be:
 
 Access hash table entries.
 
-<hi #d0d0d0>It is R/W variable, you can assign values to it directly in configuration file.</hi>
+<fc #0000ff>It is R/W variable, you can assign values to it directly in configuration file.</fc>
 
 The “htname” must be a hash table name defined via “htable” parameter.
 
@@ -709,7 +709,7 @@ $sht(a=>$ru) = $fu;
 
 Access hash table entry expire value. Value represents the seconds until the htable entry will expire and be deleted from htable.
 
-<hi #d0d0d0>It is R/W variable, you can assign values to it directly in configuration file.</hi>
+<fc #0000ff>It is R/W variable, you can assign values to it directly in configuration file.</fc>
 
 The “htname” must be a hash table name defined via “htable” parameter and have auto-expire greater than 0.
 
@@ -780,7 +780,7 @@ xlog("$shtcv(a=>x.*)");
 
 Access hash table entries stored in the memcached server.
 
-<hi #d0d0d0>It is R/W variable, you can assign values to it directly in configuration file.</hi>
+<fc #0000ff>It is R/W variable, you can assign values to it directly in configuration file.</fc>
 
 The “key” can be:
 
@@ -802,7 +802,7 @@ xlog("stored value is $mct(test)"); # will return <null>
 
 Do a atomic increment operation on the value stored in memcached. You need to add a value previously.
 
-<hi #d0d0d0>It is R/W variable, you can assign values to it directly in configuration file.</hi>
+<fc #0000ff>It is R/W variable, you can assign values to it directly in configuration file.</fc>
 
 The “key” can be:
 
@@ -821,7 +821,7 @@ xlog("counter is now $mct(cnt)");
 
 Do a atomic decrement operation on the value stored in memcached. You need to add a value previously.
 
-<hi #d0d0d0>It is R/W variable, you can assign values to it directly in configuration file.</hi>
+<fc #0000ff>It is R/W variable, you can assign values to it directly in configuration file.</fc>
 
 The “key” can be:
 
