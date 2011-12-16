@@ -194,6 +194,33 @@ Format the epoch in the pv according to the parameter. The parameter has to be s
 <code c>
 $(TS{s.ftime,%Y-%m-%d %H:%M:%S})
 </code>
+
+==== {s.trim} ====
+
+
+Remove left and right whitespaces (' ', '\t', '\r', '\n') around PV value.
+    
+<code c>
+$(var(x){s.trim})
+</code>
+
+==== {s.rtrim} ====
+
+
+Remove right whitespaces (' ', '\t', '\r', '\n') around PV value.
+    
+<code c>
+$(var(x){s.rtrim})
+</code>
+
+==== {s.ltrim} ====
+
+
+Remove left whitespaces (' ', '\t', '\r', '\n') around PV value.
+    
+<code c>
+$(var(x){s.ltrim})
+</code>
 ===== URI Transformations =====
 
 The name of transformation starts with 'uri.'. The PV value is considered to be a SIP URI. This transformation returns parts of SIP URI (see struct sip_uri). If that part is missing, the returned value is an empty string.
