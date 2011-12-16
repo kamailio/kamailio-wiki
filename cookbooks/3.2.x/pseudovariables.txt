@@ -8,7 +8,7 @@ The beginning of a “pseudo-variable” is marked by the character “$”. If 
 
 There is a set of predefined pseudo-variables, which have the name composed from one or more characters, and special pseudo-variables that are references to dynamic fields (AVP and Headers).
 
-Pseudo-Variables are implemented by various modules, most of them are provided by [b]pv[/b].
+Pseudo-Variables are implemented by various modules, most of them are provided by **pv**.
 
 ===== Pseudo-variables usage =====
 
