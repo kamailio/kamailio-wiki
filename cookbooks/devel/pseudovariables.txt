@@ -590,6 +590,17 @@ if ($time(year) == 2008) {
 ...
 </code>
 
+
+===== Strftime Formatted Time =====
+
+**$timef(format)** - return current time as formatted by strftime 'format'. See 'man strftime' to see the available time attribute specifiers.
+
+Example:
+
+<code c>
+xlog("Today is $timef(%m/%d/%y)\n");
+</code>
+
 ===== Selects =====
 
 **$sel(name)** - return the value of **select** specified by name. **select** refers a class of config variables introduced by SER 2.0, allowing to select and return parts of sip messages and not only.
