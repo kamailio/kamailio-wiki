@@ -55,6 +55,10 @@
   * new function: fnmatch(value, match, flags)
     * match using shell-like patters based on C fnmatch(...)
 
+==== tls ====
+
+  * new parameters:
+    * renegotiation - enable/disable TLS cipher renegotiation
 ===== New in Core =====
 
 ==== Global Parameters ====
