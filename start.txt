@@ -29,9 +29,9 @@
 
 \\
 
-|                     ^ Core Cookbook                  ^ Pseudo Variables                ^ Transformations  ^ Selects ^
-^ Development Version |  [[cookbooks:devel:core|link]]  |  [[cookbooks:devel:pseudovariables|link]]  |  [[cookbooks:devel:transformations|link]]  |  [[cookbooks:devel:selects|link]]  |
-^ 3.2.x Version       |  [[cookbooks:3.2.x:core|link]]  |  [[cookbooks:3.2.x:pseudovariables|link]]  |  [[cookbooks:3.2.x:transformations|link]]  |  [[cookbooks:3.2.x:selects|link]]  |
+|                     ^ Core Cookbook                  ^ Pseudo Variables                ^ Transformations  ^ Selects ^ Modules ^
+^ Development Version |  [[cookbooks:devel:core|link]]  |  [[cookbooks:devel:pseudovariables|link]]  |  [[cookbooks:devel:transformations|link]]  |  [[cookbooks:devel:selects|link]]  |  [[http://kamailio.org/docs/modules/devel/|link]]  |
+^ 3.2.x Version       |  [[cookbooks:3.2.x:core|link]]  |  [[cookbooks:3.2.x:pseudovariables|link]]  |  [[cookbooks:3.2.x:transformations|link]]  |  [[cookbooks:3.2.x:selects|link]]  |  [[http://kamailio.org/docs/modules/3.2.x/|link]]  |
 
 \\ 
 
