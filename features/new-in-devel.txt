@@ -11,6 +11,7 @@
 ==== xhttp_rpc ====
 
   * new module to execute RPC commands via embedded HTPP server
+  * http://kamailio.org/docs/modules/devel/modules/xhttp_rpc.html
 
 ===== New in Old Modules =====
 
