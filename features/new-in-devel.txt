@@ -6,6 +6,7 @@
 ==== presence_profile ====
 
   * new module for managing UA configuration via SIMPLE extensions
+  * http://kamailio.org/docs/modules/devel/modules_k/presence_profile.html
 
 ==== xhttp_rpc ====
 
