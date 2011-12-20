@@ -13,6 +13,11 @@
 
 ===== New in Old Modules =====
 
+==== dialplan ====
+
+  * new matching operator - fnmatch (match_op=2)
+    * match using shell-like patterns
+
 ==== dispatcher ====
 
   * refactored dispatcher destination states
