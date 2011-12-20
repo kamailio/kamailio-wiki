@@ -1403,6 +1403,19 @@ Maximum bytes queued for write allowed globally. It has no effect if tcp_write_b
 
   tcp_wq_max = bytes (default 10 Mb)
 
+===== TLS Parameters =====
+
+Most of TLS layer attributes can be configured via TLS module parameters.
+
+==== tls_max_connections ====
+
+Maximum number of ls connections (if the number is exceeded no new ls connections will be accepted). It cannot exceed tcp_max_connections.
+
+Default value is 2048.
+
+Example of usage:
+
+    tls_max_connections=4096
 ===== SCTP Parameters =====
 
 ==== disable_sctp ====
