@@ -54,6 +54,10 @@
   * [[features:new-in-3.2.x|New Features in Release 3.2.x]]
 
 
+===== Tutorials =====
+
+  * [[tutorials:3.2.x:syslog|Kamailio and Syslog with Log Rotate]]
+
 ===== Development =====
 
 ==== Development APIs ====
