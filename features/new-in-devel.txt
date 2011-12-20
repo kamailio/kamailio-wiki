@@ -25,6 +25,12 @@
     * probing is a mode that can be set for active and inactive states
   * added outbound_proxy modparam for use with dispatcher pings
 
+==== pdt ====
+
+  * new functions:
+    * pd_translate(sdomain, rmode)
+  * new rpc commands:
+    * pdt.reload - reload database records in cache
 ==== pv ====
 
   * new transformation class **line**
