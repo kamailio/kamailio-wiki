@@ -44,8 +44,10 @@
 
 ==== textopsx ====
 
-  * new function keep_hf(expr)
+  * new function: keep_hf(expr)
     * remove all the non-mandatory headers that don't match **expr**
+  * new function: fnmatch(value, match, flags)
+    * match using shell-like patters based on C fnmatch(...)
 
 ===== New in Core =====
 
