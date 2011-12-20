@@ -73,3 +73,24 @@ Containing:
 </code>
 
 Otherwise, add the piece of config above in **/etc/logrotate.conf**.
+
+For **syslog-ng** the appropriate pid file has to be used, should be like:
+
+<code>
+/var/log/kamailio.log {
+    missingok
+    size=50M
+    create 0644 root root
+    postrotate
+	   /bin/kill -HUP `cat /var/run/syslog-ng.pid 2> /dev/null` 2> /dev/null || true
+    endscript
+}
+</code>
+
+You can test the existence of pid files before using kill, like:
+
+<code>
+    if [ -f /var/run/syslog-ng.pid ]; then    \
+        kill -HUP `cat /var/run/syslog-ng.pid`; \
+    fi;
+</code>
