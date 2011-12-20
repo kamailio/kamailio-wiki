@@ -1,7 +1,18 @@
 ====== Kamailio with Syslog and Log Rotate ======
 
+<code>
+Authors of initial tutorial:
+Daniel-Constantin Mierla
+  <miconda (at) gmail.com>
+
+Elena-Ramona Modroiu
+  <ramona (at) asipto.com>
+
+</code>
+
 How-to about configuring syslog daemon to write the log messages from Kamailio SIP server in a dedicated file and rotate it when becomes too big.
 
+This tutorial is updated for Kamailio v3.2.0 or newer (original tutorial written for [[http://www.kamailio.org/dokuwiki/doku.php/tutorials:debug-syslog-messages|older versions is here]]).
 ===== Syslog - Custom Log File =====
 
 In a Linux/Unix environment it is possible to configure syslog to write log messages to a separate file for a specific facility.
