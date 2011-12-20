@@ -67,6 +67,7 @@
 
 === tls_max_connections ===
 
+  * limit the number of active tls connections
 ===== New RPC Commands =====
 
 ==== core.tcp_list ====
