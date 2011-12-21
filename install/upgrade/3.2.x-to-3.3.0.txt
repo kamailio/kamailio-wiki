@@ -4,7 +4,7 @@ The page contains the details about the changes that were made to old components
 
 ===== Database Structure =====
 
-These sections presents notes, listed by modules, about the structure of database tables that existed in v3.2.x and changed during development of v3.2.0.
+These sections presents notes, listed by modules, about the structure of database tables that existed in v3.2.x and changed during development of v3.3.0.
 
 ==== modules/lcr ====
 
