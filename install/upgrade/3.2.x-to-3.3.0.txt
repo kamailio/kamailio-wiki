@@ -1,0 +1,35 @@
+====== Upgrade Kamailio from v3.2.x to v3.3.0 (unreleased) ======
+
+The page contains the details about the changes that were made to old components during the development of v3.3.0 (unreleased) compared with what existed in v3.2.x. It does not include the brand new modules, focusing on how to upgrade database and configuration file from v3.2.x to run with Kamailio v3.3.0.
+
+===== Database Structure =====
+
+These sections presents notes, listed by modules, about the structure of database tables that existed in v3.2.x and changed during development of v3.2.0.
+
+==== modules/lcr ====
+
+  * table **lcr_gw**
+    * ip_addr column has now the size varchar(47)
+==== SQL Commands ====
+
+You can use next SQL commands (made for MySQL) to update the structure of existing tables in v3.2.x for v3.3.0:
+
+<code sql>
+
+ALTER TABLE lcr_gw MODIFY ip_addr VARCHAR(47) NOT NULL;
+
+</code>
+
+This is the translation of the above script for PostgreSQL (should work with 9.1.1, but is untested!)
+
+<code sql>
+
+ALTER TABLE lcr_gw ALTER COLUMN ip_addr TYPE VARCHAR(47);
+
+</code>
+
+===== Modules =====
+
+==== modules/your-module-here ====
+
+  * Add changes or additions reflected in kamailio config syntax here.
