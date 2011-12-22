@@ -150,9 +150,12 @@ ALTER TABLE htable ALTER COLUMN expires SET NOT NULL;
 
 UPDATE version SET table_version=2 WHERE table_name='lcr_gw';
 ALTER TABLE lcr_gw DROP CONSTRAINT lcr_gw_lcr_id_ip_addr_port_hostname_idx;
-ALTER TABLE lcr_gw ADD prefix VARCHAR(16);
+<del>ALTER TABLE lcr_gw ADD prefix VARCHAR(16);
 ALTER TABLE lcr_gw ALTER COLUMN prefix SET DEFAULT NULL;
 ALTER TABLE lcr_gw ALTER COLUMN tag TYPE VARCHAR(64);
+ALTER TABLE lcr_gw ALTER COLUMN tag SET DEFAULT NULL;</del>
+ALTER TABLE lcr_gw RENAME tag TO prefix;
+ALTER TABLE lcr_gw ADD tag VARCHAR(64);
 ALTER TABLE lcr_gw ALTER COLUMN tag SET DEFAULT NULL;
 CREATE INDEX lcr_id_idx ON lcr_gw (lcr_id);
 
