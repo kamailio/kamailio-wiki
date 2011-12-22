@@ -118,7 +118,9 @@ ALTER TABLE xcap MODIFY doc_uri VARCHAR(255) NOT NULL;
 
 </code>
 
-This is the translation of the above script for PostgreSQL (tested with 9.1.1)
+This is the translation of the above script for PostgreSQL (tested with 9.1.1).
+
+Difference: Instead of adding prefix column, the script renames tag to prefix, and then, creates the new tag column. So that, you don't have to migrate all the values from tag to prefix column.
 
 <code sql>
 
@@ -150,10 +152,6 @@ ALTER TABLE htable ALTER COLUMN expires SET NOT NULL;
 
 UPDATE version SET table_version=2 WHERE table_name='lcr_gw';
 ALTER TABLE lcr_gw DROP CONSTRAINT lcr_gw_lcr_id_ip_addr_port_hostname_idx;
-<del>ALTER TABLE lcr_gw ADD prefix VARCHAR(16);
-ALTER TABLE lcr_gw ALTER COLUMN prefix SET DEFAULT NULL;
-ALTER TABLE lcr_gw ALTER COLUMN tag TYPE VARCHAR(64);
-ALTER TABLE lcr_gw ALTER COLUMN tag SET DEFAULT NULL;</del>
 ALTER TABLE lcr_gw RENAME tag TO prefix;
 ALTER TABLE lcr_gw ADD tag VARCHAR(64);
 ALTER TABLE lcr_gw ALTER COLUMN tag SET DEFAULT NULL;
