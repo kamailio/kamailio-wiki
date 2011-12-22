@@ -50,6 +50,14 @@
 
   * execute route blocks on micro-second timer base
 
+==== sdpops ====
+
+  * new functions
+    * sdp_with_codecs_by_id("codecs")
+    * sdp_with_codecs_by_name("codecs")
+    * sdp_remove_media("type")
+  * old functions
+    * functions for keeping only a set of codecs can take a second parameter to filter the matching on certain media type
 ==== textopsx ====
 
   * new function: keep_hf(expr)
