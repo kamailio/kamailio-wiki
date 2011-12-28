@@ -673,3 +673,55 @@ Prototype
 <code c>
 sr.xhttp.reply(code, reason, content-type, body)
 </code>
+
+===== SR.MSILO Package =====
+
+==== sr.msilo.store ====
+
+==== sr.msilo.dump ====
+
+===== SR.SDPOPS Package =====
+
+==== sr.sdpops.sdp_with_media ====
+
+===== SR.PRESENCE Package =====
+
+==== sr.presence.pres_auth_status ====
+
+==== sr.presence.handle_publish ====
+
+==== sr.presence.handle_subscribe ====
+
+===== SR.PRESENCE_XML Package =====
+
+==== sr.presence_xml.pres_check_basic ====
+
+==== sr.presence_xml.pres_check_activities ====
+
+===== SR.TEXTOPS Package =====
+
+==== sr.textops.is_privacy ====
+
+===== SR.PUA_USRLOC Package =====
+
+==== sr.pua_usrloc.set_publish ====
+
+===== SR.SIPUTILS Package =====
+
+==== sr.siputils.has_totag ====
+
+==== sr.siputils.is_uri_user_e164 ====
+
+===== SR.RLS Package =====
+
+==== sr.rls.handle_subscribe ====
+
+==== sr.rls.handle_notify ====
+
+===== SR.ALIAS_DB Package =====
+
+==== sr.alias_db.lookup ====
+
+===== SR.UAC Package =====
+
+==== sr.uac.replace_from ====
