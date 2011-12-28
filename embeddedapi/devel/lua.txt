@@ -620,7 +620,7 @@ sr.registrar.lookup("table")
 </code>
 
 
-===== SR.dispatcher Package =====
+===== SR.DISPATCHER Package =====
 
 ==== sr.dispatcher.select ====
 
