@@ -65,6 +65,16 @@
 
   * [[http://www.kamailio.org/docs/docbooks/3.2.x/rpc_api/rpc_api.html|RPC Control Interface - API]]
 
+==== Embedded APIs ====
+
+\\
+
+|                     ^ - Lua - ^ - Perl - ^ - Python - ^ 
+^ Devel Version       |  [[embeddedapi:devel:lua|link]]  |  [[embeddedapi:devel:perl|link]]  |  [[embeddedapi:devel:python|link]]  |
+^ 3.2.x Version       |  [[embeddedapi:3.2.x:lua|link]]  |  [[embeddedapi:3.2.x:perl|link]]  |  [[embeddedapi:3.2.x:python|link]]  |
+
+\\ 
+
 ==== Guidelines ====
 
   * [[http://asipto.com/u/kdg|Kamailio SIP Server v3.2.x Devel Guide]]
