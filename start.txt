@@ -69,9 +69,9 @@
 
 \\
 
-|                     ^ - Lua - ^ - Perl - ^ - Python - ^ 
-^ Devel Version       |  [[embeddedapi:devel:lua|link]]  |  [[embeddedapi:devel:perl|link]]  |  [[embeddedapi:devel:python|link]]  |
-^ 3.2.x Version       |  [[embeddedapi:3.2.x:lua|link]]  |  [[embeddedapi:3.2.x:perl|link]]  |  [[embeddedapi:3.2.x:python|link]]  |
+|                     ^ - Lua - ^ - Mono - ^ - Perl - ^ - Python - ^ 
+^ Devel Version       |  [[embeddedapi:devel:lua|link]]  |  [[embeddedapi:devel:mono|link]]  |  [[embeddedapi:devel:perl|link]]  |  [[embeddedapi:devel:python|link]]  |
+^ 3.2.x Version       |  [[embeddedapi:3.2.x:lua|link]]  |  -  |  [[embeddedapi:3.2.x:perl|link]]  |  [[embeddedapi:3.2.x:python|link]]  |
 
 \\ 
 
