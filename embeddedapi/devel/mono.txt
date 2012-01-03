@@ -1,0 +1,175 @@
+====== Mono - C# API for Kamailio Devel Version ======
+
+Kamailio can execute managed code assemblies via **app_mono** module:
+
+  * http://kamailio.org/docs/modules/devel/modules/app_mono.html
+
+The C# API exported by Kamailio to the embedded Mono interpreter is defined in **SR.cs** file located in source tree **modules/app_mono/lib/SR.cs**.
+
+To compile **SR.cs** to a library, use:
+
+<code>
+gmcs -t:library SR.cs
+</code>
+
+This will generate the file **SR.dll**. To link your C# file to it, use:
+
+<code>
+$ gmcs -r:SR.dll MyFile.cs
+</code>
+
+The API is stored in a **namespace**, named **SR**. The several classes offer access to internal Kamailio functionalities via public static functions.
+
+===== Class Core =====
+
+==== APIVersion ====
+
+<code c>
+public extern static string APIVersion();
+</code>
+
+Return API version string.
+
+==== Log ====
+
+<code c>
+public extern static void Log(int level, string text);
+</code>
+
+Write a message via Kamailio logging system to specified log level.
+
+==== Err ====
+
+<code c>
+public extern static void Err(string text);
+</code>
+
+Write a message via Kamailio logging system to error log level.
+
+==== Dbg ====
+
+<code c>
+public extern static void Dbg(string text);
+</code>
+
+Write a message via Kamailio logging system to debug log level.
+
+==== ModF ====
+
+<code c>
+public extern static int ModF(string text);
+</code>
+
+Execute the function named by the value of parameter 'text' exported by a Kamailio module. It has to be a function with no parameters.
+
+===== Class PV =====
+
+==== GetS ====
+
+<code c>
+public extern static string GetS(string pvn);
+</code>
+
+Get the string value of a pseudo-variable.
+
+==== GetI ====
+
+<code c>
+public extern static int GetI(string pvn);
+</code>
+
+Get the integer value of a pseudo-variable.
+
+==== SetS ====
+
+<code c>
+public extern static int SetS(string pvn, string val);
+</code>
+
+Set the pseudo-variable to a string value.
+
+==== SetI ====
+
+<code c>
+public extern static int SetI(string pvn, int val);
+</code>
+
+Set the pseudo-variable to an integer value.
+
+==== Unset ====
+
+<code c>
+public extern static int Unset(string pvn);
+</code>
+
+Unset the pseudo-variable (like assigning $null in kamailio.cfg).
+
+==== IsNull ====
+
+<code c>
+public extern static int IsNull(string pvn);
+</code>
+
+Return true if the pseudo-variable is null.
+
+===== Class HDR =====
+
+==== Append ====
+
+<code c>
+public extern static int Append(string hv);
+</code>
+
+Add a header to the end of the headers list. The parameter must be full header, including name, body header and ending '\r\n'.
+
+==== Remove ====
+
+<code c>
+public extern static int Remove(string name);
+</code>
+
+Remove all headers matching the name.
+
+==== Insert ====
+
+<code c>
+public extern static int Insert(string hv);
+</code>
+
+Add a header to the beginning of the headers list. The parameter must be full header, including name, body header and ending '\r\n'.
+
+==== AppendToReply ====
+
+<code c>
+public extern static int AppendToReply(string hv);
+</code>
+
+Add a header to the headers list for local reply. The parameter must be full header, including name, body header and ending '\r\n'.
+
+===== Example =====
+
+A basic example of C# application using SR API:
+
+<code c>
+using SR;
+
+namespace MySRTest {
+        class Test {
+                static int Main(string[] args) {
+                        SR.Core.Log(1, "Kamailio API Version: " + SR.Core.APIVer
+sion() + "\n");
+                        if (args.Length == 1) {
+                                SR.Core.Log(1, "Parameter from Kamailio config:
+"
+                                        + args[0] + "\n");
+                        }
+                        SR.Core.Dbg("Request URI is: " + SR.PV.GetS("$ru") + "\n
+");
+                        SR.PV.SetS("$rU", "123");
+                        SR.HDR.AppendToReply("My-Mono-Hdr: ok\r\n");
+                        SR.Core.ModF("sl_reply_error");
+                        return 1;
+                }
+        }
+}
+</code>
