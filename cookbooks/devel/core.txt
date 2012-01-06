@@ -598,6 +598,7 @@ Default: 60 s. Use 0 to disable.
 yes/no: Similar to the force_rport() function, but activates symmetric response routing globally.
 
 ==== fork ====
+
 If set to 'yes' the proxy will fork and run in daemon mode - one process will be created for each network interface the proxy listens to and for each protocol (TCP/UDP), multiplied with the value of 'children' parameter.
 
 When set to 'no', the proxy will stay bound to the terminal and runs as single process. First interface is used for listening to. This is equivalent to setting the server option "-F".
@@ -608,6 +609,17 @@ Example of usage:
 
     fork=no
 
+==== fork_delay ====
+
+Number of usecs to wait before forking a process.
+
+Default is 0 (don't wait).
+
+Example of usage:
+
+<code c>
+fork_delay=5000
+</code>
 ==== group ====
 
 **Alias name: gid**
