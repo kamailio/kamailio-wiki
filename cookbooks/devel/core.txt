@@ -1266,6 +1266,15 @@ Example of usage:
 
     tcp_children=4
 
+==== tcp_clone_rcvbuf ====
+
+Control if the received buffer should be cloned from the TCP stream, needed by functions working inside the SIP message buffer (such as msg_apply_changes()).
+
+Default is 0 (don't clone), set it to 1 for cloning.
+
+Example of usage:
+
+    tcp_clone_rcvbuf=1
 ==== tcp_connection_lifetime ====
 
 Lifetime in seconds for TCP sessions. TCP sessions which are inactive for longer than **tcp_connection_lifetime** will be closed by sip-router. Default value is defined in tcp_conn.h: #define DEFAULT_TCP_CONNECTION_LIFETIME 120. Setting this value to 0 will close the TCP connection pretty quick ;-).
