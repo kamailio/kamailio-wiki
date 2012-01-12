@@ -957,6 +957,41 @@ Example of usage:
 
     sip_warning=0
 
+==== socket_workers ====
+
+Number of workers to process SIP traffic per listen socket - typical use is before a **listen** global parameter.
+
+  * when used before **listen** on UDP or SCTP socket, it overwrites **children** or **sctp_children** value for that socket.
+  * when used before **listen** on TCP or TLS socket, it adds extra tcp workers, these handling traffic only on that socket.
+
+The value of **socket_workers** is reset with next **listen** socket definition that is added, thus use it for each **listen** socket where you want custom number of workers.
+
+If this parameter is not used at all, the values for **children**, **tcp_children** and **sctp_children** are used as usually.
+
+Example for udp sockets:
+
+<code c>
+children=4
+socket_workers=2
+listen=udp:127.0.0.1:5080
+listen=udp:127.0.0.1:5070
+listen=udp:127.0.0.1:5060
+</code>
+
+  * it will start 2 workers to handle traffic on udp:127.0.0.1:5080 and 4 for each of udp:127.0.0.1:5070 and udp:127.0.0.1:5060. In total there are 10 worker processes
+
+Example for tcp sockets:
+
+<code c>
+children=4
+socket_workers=2
+listen=tcp:127.0.0.1:5080
+listen=tcp:127.0.0.1:5070
+listen=tcp:127.0.0.1:5060
+</code>
+
+  * it will start 2 workers to handle traffic on tcp:127.0.0.1:5080 and 4 to handle traffic on both tcp:127.0.0.1:5070 and tcp:127.0.0.1:5060. In total there are 6 worker processes
+
 ==== statistics ====
 
 ==== stun_allow_fp ====
