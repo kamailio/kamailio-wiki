@@ -1052,6 +1052,47 @@ if($gip(src=>cc)==$gip(dst=>cc))
 
   * URL of http request.
 
+===== MSRP Module Pseudo Variables =====
+
+==== $msrp(buf) ====
+
+==== $msrp(body) ====
+
+==== $msrp(code) ====
+
+==== $msrp(hdrs) ====
+
+==== $msrp(msgid) ====
+
+==== $msrp(method) ====
+
+==== $msrp(buflen) ====
+
+==== $msrp(sessid) ====
+
+==== $msrp(reason) ====
+
+==== $msrp(crthop) ====
+
+==== $msrp(bodylen) ====
+
+==== $msrp(transid) ====
+
+==== $msrp(prevhop) ====
+
+==== $msrp(nexthop) ====
+
+==== $msrp(lasthop) ====
+
+==== $msrp(srcaddr) ====
+
+==== $msrp(srcsock) ====
+
+==== $msrp(firsthop) ====
+
+==== $msrp(prevhops) ====
+
+==== $msrp(nexthops) ====
 
 ===== Special pseudo-variables - Escape Sequences =====
 
