@@ -156,15 +156,12 @@ using SR;
 namespace MySRTest {
         class Test {
                 static int Main(string[] args) {
-                        SR.Core.Log(1, "Kamailio API Version: " + SR.Core.APIVer
-sion() + "\n");
+                        SR.Core.Log(1, "Kamailio API Version: " + SR.Core.APIVersion() + "\n");
                         if (args.Length == 1) {
-                                SR.Core.Log(1, "Parameter from Kamailio config:
-"
+                                SR.Core.Log(1, "Parameter from Kamailio config:"
                                         + args[0] + "\n");
                         }
-                        SR.Core.Dbg("Request URI is: " + SR.PV.GetS("$ru") + "\n
-");
+                        SR.Core.Dbg("Request URI is: " + SR.PV.GetS("$ru") + "\n");
                         SR.PV.SetS("$rU", "123");
                         SR.HDR.AppendToReply("My-Mono-Hdr: ok\r\n");
                         SR.Core.ModF("sl_reply_error");
