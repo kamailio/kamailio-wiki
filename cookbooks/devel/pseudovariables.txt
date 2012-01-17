@@ -1112,6 +1112,7 @@ The local socket where the MSRP frame was received, set as **proto:ipaddr:port".
 The URI of the first hop - the last address in From-Path header.
 ==== $msrp(prevhops) ====
 
+The number of previous hops - it is the number of addresses in From-Path header.
 ==== $msrp(nexthops) ====
 
 ===== Special pseudo-variables - Escape Sequences =====
