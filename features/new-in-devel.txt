@@ -16,6 +16,7 @@
 ==== msrp ====
 
   * new module offering an embedded MSRP relay (RFC4975 and RFC4976)
+  * http://kamailio.org/docs/modules/devel/modules/msrp.html
 
 ==== presence_profile ====
 
