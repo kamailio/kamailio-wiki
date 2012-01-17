@@ -1063,6 +1063,7 @@ The entire content of MSRP frame - first line, headers, body and end-line.
 The body of MSRP frame.
 ==== $msrp(code) ====
 
+The code of MSRP replies.
 ==== $msrp(hdrs) ====
 
 ==== $msrp(msgid) ====
