@@ -8,6 +8,11 @@
   * new module for embedded execution of managed code, like C#
   * http://kamailio.org/docs/modules/devel/modules/app_mono.html
 
+==== db_cassandra ====
+
+  * new module offering a connector to Cassandra DB server
+  * http://kamailio.org/docs/modules/devel/modules/db_cassandra.html
+
 ==== presence_profile ====
 
   * new module for managing UA configuration via SIMPLE extensions
