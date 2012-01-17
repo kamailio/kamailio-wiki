@@ -1075,6 +1075,7 @@ The body of Message-Id header.
 The method of a MSRP request.
 ==== $msrp(buflen) ====
 
+The length of entire MSRP frame.
 ==== $msrp(sessid) ====
 
 ==== $msrp(reason) ====
