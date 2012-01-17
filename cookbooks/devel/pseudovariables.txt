@@ -1066,6 +1066,7 @@ The body of MSRP frame.
 The code of MSRP replies.
 ==== $msrp(hdrs) ====
 
+The headers in a MSRP frame.
 ==== $msrp(msgid) ====
 
 ==== $msrp(method) ====
