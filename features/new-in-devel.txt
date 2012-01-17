@@ -91,6 +91,18 @@
 
 ==== Global Parameters ====
 
+=== fork_delay ===
+
+  * number of usecs to wait before forking a process
+
+=== socket workers ===
+
+  * set the number of worker processes to handle traffic on specific listen sockets
+
+=== tcp_clone_rcvbuf ===
+
+  * enable or disable cloning of received data on TCP connections to allow safe updates directly inside the incoming buffer
+
 === tls_max_connections ===
 
   * limit the number of active tls connections
