@@ -1103,6 +1103,7 @@ The URI of the next hop - the second address in To-Path header.
 The last hop URI - the last address in To-Path header.
 ==== $msrp(srcaddr) ====
 
+The address of the previous hop set as MSRP URI using received source IP and port.
 ==== $msrp(srcsock) ====
 
 ==== $msrp(firsthop) ====
