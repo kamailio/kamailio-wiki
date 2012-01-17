@@ -1072,6 +1072,7 @@ The headers in a MSRP frame.
 The body of Message-Id header.
 ==== $msrp(method) ====
 
+The method of a MSRP request.
 ==== $msrp(buflen) ====
 
 ==== $msrp(sessid) ====
