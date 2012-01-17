@@ -1069,6 +1069,7 @@ The code of MSRP replies.
 The headers in a MSRP frame.
 ==== $msrp(msgid) ====
 
+The body of Message-Id header.
 ==== $msrp(method) ====
 
 ==== $msrp(buflen) ====
