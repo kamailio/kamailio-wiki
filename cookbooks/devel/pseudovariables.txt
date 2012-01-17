@@ -1087,6 +1087,8 @@ The reason text in a MSRP reply.
 The URI for current hop - it is the first URI in To-Path header.
 ==== $msrp(bodylen) ====
 
+The length of the body in MSRP frame.
+
 ==== $msrp(transid) ====
 
 ==== $msrp(prevhop) ====
