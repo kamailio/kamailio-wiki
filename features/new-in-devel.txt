@@ -13,11 +13,19 @@
   * new module offering a connector to Cassandra DB server
   * http://kamailio.org/docs/modules/devel/modules/db_cassandra.html
 
+==== msrp ====
+
+  * new module offering an embedded MSRP relay (RFC4975 and RFC4976)
+
 ==== presence_profile ====
 
   * new module for managing UA configuration via SIMPLE extensions
   * http://kamailio.org/docs/modules/devel/modules_k/presence_profile.html
 
+==== tmrec ====
+
+  * new module for matching time recurrences in config file. Definitions of recurrences are based on Internet Calendaring and Scheduling Core Object Specification (Calendar COS - RFC 2445).
+  * http://kamailio.org/docs/modules/devel/modules/tmrec.html
 ==== xhttp_rpc ====
 
   * new module to execute RPC commands via embedded HTPP server
