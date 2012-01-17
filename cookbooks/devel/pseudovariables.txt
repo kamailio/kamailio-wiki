@@ -1057,6 +1057,7 @@ if($gip(src=>cc)==$gip(dst=>cc))
 This class of pseudo-variables is exported by MSRP module and give access to attributes of MSRP frames.
 ==== $msrp(buf) ====
 
+The entire content of MSRP frame - first line, headers, body and end-line.
 ==== $msrp(body) ====
 
 ==== $msrp(code) ====
