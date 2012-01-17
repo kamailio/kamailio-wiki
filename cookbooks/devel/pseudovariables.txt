@@ -1081,6 +1081,7 @@ The length of entire MSRP frame.
 The session id for MSRP frame. It is taken from the first MSRP URI in To-Path header.
 ==== $msrp(reason) ====
 
+The reason text in a MSRP reply.
 ==== $msrp(crthop) ====
 
 ==== $msrp(bodylen) ====
