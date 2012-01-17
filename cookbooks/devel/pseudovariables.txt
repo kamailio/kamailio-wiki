@@ -1084,6 +1084,7 @@ The session id for MSRP frame. It is taken from the first MSRP URI in To-Path he
 The reason text in a MSRP reply.
 ==== $msrp(crthop) ====
 
+The URI for current hop - it is the first URI in To-Path header.
 ==== $msrp(bodylen) ====
 
 ==== $msrp(transid) ====
