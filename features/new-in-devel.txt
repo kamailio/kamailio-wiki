@@ -3,6 +3,11 @@
 **Devel version will be numbered 3.3.0 and it is planned to be released in 2012**.
 ===== New Modules =====
 
+==== app_mono ====
+
+  * new module for embedded execution of managed code, like C#
+  * http://kamailio.org/docs/modules/devel/modules/app_mono.html
+
 ==== presence_profile ====
 
   * new module for managing UA configuration via SIMPLE extensions
