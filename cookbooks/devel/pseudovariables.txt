@@ -1097,6 +1097,7 @@ The transaction ID from the first line of MSRP frame.
 The MSRP URI of the previous hop - the first address in From-Path header.
 ==== $msrp(nexthop) ====
 
+The URI of the next hop - the second address in To-Path header.
 ==== $msrp(lasthop) ====
 
 ==== $msrp(srcaddr) ====
