@@ -1115,6 +1115,7 @@ The URI of the first hop - the last address in From-Path header.
 The number of previous hops - it is the number of addresses in From-Path header.
 ==== $msrp(nexthops) ====
 
+The number of next hops - it is the number of addresses in To-Path header minus 1 (the first address in To-Path is current hop).
 ===== Special pseudo-variables - Escape Sequences =====
 
 
