@@ -1106,6 +1106,7 @@ The last hop URI - the last address in To-Path header.
 The address of the previous hop set as MSRP URI using received source IP and port.
 ==== $msrp(srcsock) ====
 
+The local socket where the MSRP frame was received, set as **proto:ipaddr:port".
 ==== $msrp(firsthop) ====
 
 ==== $msrp(prevhops) ====
