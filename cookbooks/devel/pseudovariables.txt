@@ -1091,6 +1091,7 @@ The length of the body in MSRP frame.
 
 ==== $msrp(transid) ====
 
+The transaction ID from the first line of MSRP frame.
 ==== $msrp(prevhop) ====
 
 ==== $msrp(nexthop) ====
