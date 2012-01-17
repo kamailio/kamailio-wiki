@@ -1060,6 +1060,7 @@ This class of pseudo-variables is exported by MSRP module and give access to att
 The entire content of MSRP frame - first line, headers, body and end-line.
 ==== $msrp(body) ====
 
+The body of MSRP frame.
 ==== $msrp(code) ====
 
 ==== $msrp(hdrs) ====
