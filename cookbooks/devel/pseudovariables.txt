@@ -1094,6 +1094,7 @@ The length of the body in MSRP frame.
 The transaction ID from the first line of MSRP frame.
 ==== $msrp(prevhop) ====
 
+The MSRP URI of the previous hop - the first address in From-Path header.
 ==== $msrp(nexthop) ====
 
 ==== $msrp(lasthop) ====
