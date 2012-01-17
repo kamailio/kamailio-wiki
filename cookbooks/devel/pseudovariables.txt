@@ -1078,6 +1078,7 @@ The method of a MSRP request.
 The length of entire MSRP frame.
 ==== $msrp(sessid) ====
 
+The session id for MSRP frame. It is taken from the first MSRP URI in To-Path header.
 ==== $msrp(reason) ====
 
 ==== $msrp(crthop) ====
