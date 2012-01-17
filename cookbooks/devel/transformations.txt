@@ -436,10 +436,41 @@ Example:
 $(var(x){line.sw,mytext})
 </code>
 
+===== MSRP Transformations =====
+
+<fc #0000ff>This transformation class is exported by **msrp** module.</fc>
+
+==== {msrpuri.user} ====
+
+User part of a MSRP URI.
+
+==== {msrpuri.host} ====
+
+Host part of a MSRP URI.
+
+==== {msrpuri.port} ====
+
+Port part of a MSRP URI.
+
+==== {msrpuri.session} ====
+
+Session ID part of a MSRP URI.
+
+==== {msrpuri.proto} ====
+
+Transport layer part of a MSRP URI.
+
+==== {msrpuri.params} ====
+
+Parameters part of a MSRP URI.
+
+==== {msrpuri.userinfo} ====
+
+User-Info part of a MSRP URI. This is the same as user part, when there are no user parameters or password fields. Otherwise, it include the whole part after scheme and before '@' in front of host.
+
 ===== Regular Expression Transformations =====
 
 <fc #0000ff>This transformation class is exported by **textops** module.</fc>
-
 
 ==== {re.subst,expression} ====
 
