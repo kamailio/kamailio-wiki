@@ -1,0 +1,31 @@
+====== IRC Devel Meeting - 2012-XX-XX ======
+
+Proposed Dates:
+  * **15:00 UTC, January 26, 2012**
+  * **15:00 UTC, January 31, 2012**
+
+Vote for date:
+  * http://www.doodle.com/qzteweb62sqax5r6
+
+Utility:
+  * [[http://www.timeanddate.com/worldclock/converter.html|Time Converter]]
+
+Place:
+ * **#sip-router** IRC channel on **irc.freenode.net** server
+
+===== Agenda =====
+
+Kamailio related:
+  * (dcm) kamailio 3.3.0 - roadmap to next major release
+  * (dcm) outstanding issues at this time, if any
+  * (dcm) packaging - ways to automate the process better
+  * (dcm) documentation - suggestions to improve it and attract more contributions in this field
+  * (dcm) ideas for new features
+  * (dcm) administration - web site, mailing lists, etc ... do we miss some good resource out there that should be added in the eco-system?
+
+
+===== Participants =====
+
+Following developers and community members announced intention to participate (add yourself, alphabetic order):
+  * Daniel-Constantin Mierla (dcm)
+  * Elena-Ramona Modroiu (erm)
