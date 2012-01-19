@@ -1,0 +1,21 @@
+====== IRC Development Meetings ======
+
+IRC-based meetings hosted at:
+  * channel: **#sip-router**
+  * server: **irc.freenode.net**
+
+Scope:
+  * development synchronisation
+  * short term planning
+
+Targeted attendees:
+  * developers
+  * contributors
+  * community members
+
+Access type:
+  * free for anyone
+
+===== Meetings =====
+
+  * [[devel:irc-meetings:2012a|2012 - First Meeting]]
