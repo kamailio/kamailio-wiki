@@ -84,6 +84,7 @@
 ==== Misc ====
 
   * [[devel:active-contributors|Contributors - List of Active Developers]]
+  * [[devel:irc-meetings|IRC Development Meetings]]
 ===== Disclaimer =====
 
 <color grey>
