@@ -11,7 +11,7 @@ Utility:
   * [[http://www.timeanddate.com/worldclock/converter.html|Time Converter]]
 
 Place:
- * **#sip-router** IRC channel on **irc.freenode.net** server
+  * **#sip-router** IRC channel on **irc.freenode.net** server
 
 ===== Agenda =====
 
