@@ -1116,6 +1116,10 @@ The number of previous hops - it is the number of addresses in From-Path header.
 ==== $msrp(nexthops) ====
 
 The number of next hops - it is the number of addresses in To-Path header minus 1 (the first address in To-Path is current hop).
+
+==== $msrp(conid) ====
+
+The internal integer id for TCP/TLS connection.
 ===== Special pseudo-variables - Escape Sequences =====
 
 
