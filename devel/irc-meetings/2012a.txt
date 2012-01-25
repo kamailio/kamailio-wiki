@@ -1,8 +1,7 @@
-====== IRC Devel Meeting - 2012-XX-XX ======
+====== IRC Devel Meeting - 2012-01-31 ======
 
-Proposed Dates:
-  * **15:00 UTC, January 26, 2012**
-  * **15:00 UTC, January 31, 2012**
+Date:
+  * **15:00 UTC, Tuesday, January 31, 2012**
 
 Vote for date:
   * http://www.doodle.com/qzteweb62sqax5r6
