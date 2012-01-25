@@ -3,8 +3,10 @@
 Date:
   * **15:00 UTC, Tuesday, January 31, 2012**
 
-Utility:
+Utilities:
   * [[http://www.timeanddate.com/worldclock/converter.html|Time Converter]]
+  * IRC webchat: http://webchat.freenode.net/
+  * IRC client apps: http://en.wikipedia.org/wiki/Internet_Relay_Chat#Clients
 
 Place:
   * **#sip-router** IRC channel on **irc.freenode.net** server
@@ -22,7 +24,7 @@ Kamailio related:
 
 ===== Participants =====
 
-Following developers and community members announced intention to participate (add yourself, alphabetic order):
+Following developers and community members announced intention to participate (add yourself, alphabetic order, especially if you add items in the agenda):
   * Daniel-Constantin Mierla (dcm)
   * Elena-Ramona Modroiu (erm)
 
