@@ -28,5 +28,7 @@ Kamailio related:
 Following developers and community members announced intention to participate (add yourself, alphabetic order, especially if you add items in the agenda):
   * Daniel-Constantin Mierla (dcm)
   * Elena-Ramona Modroiu (erm)
+  * Jason Penton
+  * Richard Good
 
 Note that participation is open to anyone, just join the IRC channel if you want to participate.
