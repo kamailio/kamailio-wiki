@@ -18,4 +18,4 @@ Access type:
 
 ===== Meetings =====
 
-  * [[devel:irc-meetings:2012a|2012 - First Meeting]]
+  * [[devel:irc-meetings:2012a|2012 - First Meeting - Tuesday, January 31, 15:00UTC]]
