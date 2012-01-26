@@ -20,6 +20,7 @@ Kamailio related:
   * (dcm) documentation - suggestions to improve it and attract more contributions in this field
   * (dcm) ideas for new features
   * (dcm) administration - web site, mailing lists, etc ... do we miss some good resource out there that should be added in the eco-system?
+  * (JP & RG) IMS branch and related modules
 
 
 ===== Participants =====
