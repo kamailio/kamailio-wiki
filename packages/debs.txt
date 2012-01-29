@@ -1,6 +1,8 @@
 ====== DEB Packages ======
 
-Courtesy of [[http://sipdoc.net|Sipdoc Team]], **Kamailio SIP Server project** offers APT repositories with packages for Debian and Ubuntu distributions.
+Courtesy of [[http://sipdoc.net|Sipdoc Team]], **Kamailio SIP Server project** offers APT repositories with packages for Debian and Ubuntu distributions. The repository is hosted at **deb.kamailio.org**.
+
+A separate repository is hosted by OpenSUSE Build Service, offering only official release packages (no nightly builds, nor devel branch debs, only v3.2.x for the moment).
 
 
 ===== Status =====
