@@ -10,7 +10,7 @@ Courtesy of [[http://sipdoc.net|Sipdoc Team]], **Kamailio SIP Server project** o
   * Sources provided for stable releases
   * Nightly builds of supported branches
 
-===== Instructions =====
+===== Using deb.kamailio.org Repository =====
 
 First download and add our GPG key to your apt key list:
 
