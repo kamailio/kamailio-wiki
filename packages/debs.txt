@@ -148,6 +148,15 @@ apt-key add _pubkey
 
 Select from next list the repository URLs specific for desired Kamailio version and Operating System and add to your ''/etc/apt/sources.list''.
 
+**Important note**: apt may throw error, since **download.opensuse.org** can return 302 reply to redirect to a mirror. You have to update the URL in **sources.list** to use directly a mirror server. For that:
+  * find a mirror - based on your OS, browse:
+    * http://download.opensuse.org/repositories/home://kamailio://telephony-debs/Debian_5.0/Packages?mirrorlist
+    * http://download.opensuse.org/repositories/home://kamailio://telephony-debs/Debian_6.0/Packages?mirrorlist
+    * http://download.opensuse.org/repositories/home://kamailio://telephony-debs/xUbuntu_10.04/Packages?mirrorlist
+  * pick one of the mirrors listed in the browsed page, for example **widehat.opensuse.org**, select its listed URL and add to **sources.list** the URL without the last "/Packages", resulting in:
+    * http://widehat.opensuse.org/repositories/home:/kamailio:/telephony-debs/Debian_5.0
+    * http://widehat.opensuse.org/repositories/home:/kamailio:/telephony-debs/Debian_6.0
+    * http://widehat.opensuse.org/repositories/home:/kamailio:/telephony-debs/xUbuntu_10.04
 ==== Latest Kamailio stable release  ====
 
   * **v3.2.x**
