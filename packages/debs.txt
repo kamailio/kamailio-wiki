@@ -4,15 +4,16 @@ Courtesy of [[http://sipdoc.net|Sipdoc Team]], **Kamailio SIP Server project** o
 
 A separate repository is hosted by OpenSUSE Build Service, offering only official release packages (no nightly builds, nor devel branch debs, only v3.2.x for the moment).
 
+===== Using deb.kamailio.org Repository =====
 
-===== Status =====
+==== Status ====
 
   * Distributions: ''Debian 5.0 Lenny'',  ''Debian 6.0 Squeeze'',  ''Debian Wheezy'',  ''Ubuntu 10.04 Lucid''
   * Archs supported: ''amd64'', ''i386''
   * Sources provided for stable releases
   * Nightly builds of supported branches
 
-===== Using deb.kamailio.org Repository =====
+==== APT Key ====
 
 First download and add our GPG key to your apt key list:
 
@@ -125,3 +126,46 @@ deb http://deb.kamailio.org/kamailiodev-nightly wheezy main
 deb http://deb.kamailio.org/kamailiodev-nightly lucid main
 </code>
 
+
+===== Using OBS Repository =====
+
+==== Status ====
+
+  * Distributions: ''Debian 5.0 Lenny'',  ''Debian 6.0 Squeeze'',  ''Ubuntu 10.04 Lucid''
+  * Archs supported: ''amd64'', ''i386''
+  * Provides DEBS for stable releases, at this moment 3.2.x
+  * No source packages
+  * No nightly builds
+
+==== APT Key ====
+
+First download and add our GPG key to your apt key list:
+
+<code>
+wget https://api.opensuse.org/source/home:kamailio/_pubkey
+apt-key add _pubkey
+</code>
+
+Select from next list the repository URLs specific for desired Kamailio version and Operating System and add to your ''/etc/apt/sources.list''.
+
+==== Latest Kamailio stable release  ====
+
+  * **v3.2.x**
+
+=== ''Debian Lenny'' ===
+
+<code>
+deb http://download.opensuse.org/repositories/home:/kamailio:/telephony-debs/Debian_5.0 ./
+</code>
+
+=== ''Debian Squeeze'' ===
+
+<code>
+deb http://download.opensuse.org/repositories/home:/kamailio:/telephony-debs/Debian_6.0 ./
+</code>
+
+=== ''Ubuntu Lucid'' ===
+
+<code>
+deb http://download.opensuse.org/repositories/home:/kamailio:/telephony-debs/xUbuntu_10.04 ./
+</code>
