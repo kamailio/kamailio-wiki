@@ -13,5 +13,8 @@ Download links specific per distribution are:
   * http://download.opensuse.org/repositories/home:/kamailio:/telephony/CentOS_CentOS-5/
   * http://download.opensuse.org/repositories/home:/kamailio:/telephony/CentOS_CentOS-6/
   * http://download.opensuse.org/repositories/home:/kamailio:/telephony/RedHat_RHEL-5/
-  * http://download.opensuse.org/repositories/home:/kamailio:/telephony/Fedora_14/
+  * http://download.opensuse.org/repositories/home:/kamailio:/telephony/RedHat_RHEL-6/
+  * http://download.opensuse.org/repositories/home:/kamailio:/telephony/Fedora_15/
+  * http://download.opensuse.org/repositories/home:/kamailio:/telephony/Fedora_16/
   * http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_11.4/
+  * http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_12.1/
