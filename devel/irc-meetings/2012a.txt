@@ -14,13 +14,17 @@ Place:
 ===== Agenda =====
 
 Kamailio related:
-  * (dcm) kamailio 3.3.0 - roadmap to next major release
+
   * (dcm) outstanding issues at this time, if any
   * (dcm) packaging - ways to automate the process better
   * (dcm) documentation - suggestions to improve it and attract more contributions in this field
+  * (dcm) 'librarization' of presence modules - is there duplicated code that fit in an internal lib?
+  * (dcm) merging duplicated K|S modules
+  * (JP & RG) IMS branch and related modules
+  * (dcm) kamailio 3.3.0 - roadmap to next major release
   * (dcm) ideas for new features
   * (dcm) administration - web site, mailing lists, etc ... do we miss some good resource out there that should be added in the eco-system?
-  * (JP & RG) IMS branch and related modules
+
 
 
 ===== Participants =====
