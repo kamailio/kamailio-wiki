@@ -20,6 +20,7 @@ Kamailio related:
   * (dcm) documentation - suggestions to improve it and attract more contributions in this field
   * (dcm) 'librarization' of presence modules - is there duplicated code that fit in an internal lib?
   * (dcm) merging duplicated K|S modules
+  * (dcm) unique ids for user profiles
   * (JP & RG) IMS branch and related modules
   * (dcm) kamailio 3.3.0 - roadmap to next major release
   * (dcm) ideas for new features
