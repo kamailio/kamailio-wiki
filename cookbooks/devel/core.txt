@@ -1976,7 +1976,12 @@ Example:
               }
               resetflag(b);  # equiv. to resetflag(2) 
 
+==== is_int ====
+Checks if a pseudo variable argument contains integer value. 
 
+  if(is_int("$avp(foobar)")) {
+    log("foobar contains an integer\n");
+  }
 
 ==== log ====
 
