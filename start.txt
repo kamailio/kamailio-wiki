@@ -25,6 +25,7 @@
 
   * [[packages:debs|DEBS: Debian - Ubuntu]]
   * [[packages:rpms|RPMS: CentOS - RedHat - Fedora - OpenSUSE]]
+  * [[packages:alpinelinux|AlpineLinux]]
 
 ===== Cookbooks =====
 
