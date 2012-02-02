@@ -336,6 +336,11 @@ To reset $du:
 
 **$rm** - reference to request's method. Works also for replies (by using the CSeq header)
 
+==== Request Method ID ====
+
+**$rmid** - returns internal integer representation of SIP method type
+
+
 ==== SIP request's port ====
 
 **$rp** - reference to port of R-URI
