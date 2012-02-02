@@ -375,6 +375,10 @@ To reset $du:
 
 <fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
 
+==== URI Scheme of Request URI ====
+
+**$rz** - returns R-URI scheme, possible values: sip, sips, tel and tels, R-URI scheme parsing error should be reflected by value: none
+
 ==== Received IP address ====
 
 **$Ri** - reference to IP address of the interface where the request has been received
