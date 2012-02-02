@@ -259,6 +259,11 @@ To reset $du:
 
 **$ml** - reference to SIP message length
 
+==== SIP Message Type ====
+
+**$mt** - returns 1 if the sip message is a request, returns 2 if the sip message is a reply
+
+
 ==== Domain in SIP Request's original URI ====
 
 **$od** - reference to domain in request's original R-URI
