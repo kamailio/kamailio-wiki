@@ -65,6 +65,12 @@
     * {s.ltrim}
     * {s.rtrim}
     * {s.rm,match}
+  * support of URN parsing (e.g.: urn:service:sos.fire)
+    * $ru= "urn:service:sos.fire"
+    * $rz= "urn" (scheme)
+    * $rU= "service"
+    * $rd= "sos.fire"
+
 
 
 ==== rtimer ====
