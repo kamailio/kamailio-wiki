@@ -371,7 +371,7 @@ To reset $du:
 
 ==== Username in SIP Request's URI ====
 
-**$rU** - reference to username in request's URI or to the Namespace Identifier of a URN
+**$rU** - reference to username in request's URI or to the Namespace Identifier of a URN (see RFC 2141)
 
 <fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
 
