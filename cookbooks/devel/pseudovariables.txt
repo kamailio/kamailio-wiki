@@ -312,7 +312,7 @@ To reset $du:
 
 ==== Domain in SIP Request's URI ====
 
-**$rd** - reference to domain in request's URI or to the Namespace Specific String of a urn
+**$rd** - reference to domain in request's URI or to the Namespace Specific String of a URN
 
 <fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
 
