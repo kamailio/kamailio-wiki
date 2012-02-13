@@ -377,7 +377,7 @@ To reset $du:
 
 ==== URI Scheme of Request URI ====
 
-**$rz** - returns R-URI scheme, possible values: sip, sips, tel and tels, R-URI scheme parsing error should be reflected by value: none
+**$rz** - returns R-URI scheme, possible values: sip, sips, tel, tels and urn, R-URI scheme parsing error should be reflected by value: none
 
 ==== Received IP address ====
 
