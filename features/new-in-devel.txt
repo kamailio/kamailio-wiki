@@ -36,6 +36,17 @@
 
 ===== New in Old Modules =====
 
+==== dialog ====
+
+  * new event routes
+    * event_route[dialog:start] - executed when dialog starts (200 ok for initial INVITE)
+    * event_route[dialog:end] - executed when dialog is ended (BYE or dialog timeout)
+    * event_route[dialog:failed] - executed when initial INVITE fails (>300 reply)
+  * new parameters
+    * send_bye - set sending BYE flag for all dialogs automatically
+    * wait_ack - wait for ACK to be sent after a negative reply for initial INVITE
+  * dialog profiles and internal flags are stored to db and loaded upon restart
+
 ==== dialplan ====
 
   * new matching operator - fnmatch (match_op=2)
