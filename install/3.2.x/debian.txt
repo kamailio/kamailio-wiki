@@ -47,9 +47,8 @@ For example if you want to build for Debian Lenny and do not need the troublesom
 
   cd pkg/kamailio/deb
   mv debian debian-orig
-  ln -s lenny debian
+  ln -s squeeze debian
   cd ../../..
-
 ===== 5. Build the packages =====
 
   make deb
