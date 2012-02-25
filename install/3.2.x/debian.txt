@@ -43,7 +43,7 @@ For example in above example the custom build parameter "STUN=1" was added.
 
 Some new modules require libraries which are not in all Debian version. For example libjson0-dev is not available for Debian Lenny (5.0). In this case you either have to backport the required libraries to your Debian version or use the respective packaging files. In the second case, the respective modules will automatically disabled.
 
-For example if you want to build for Debian Lenny and do not need the troublesome modules:
+For example if you want to build for Debian Squeeze and do not need the troublesome modules:
 
   cd pkg/kamailio/deb
   mv debian debian-orig
