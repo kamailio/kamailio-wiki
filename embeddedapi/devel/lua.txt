@@ -482,6 +482,15 @@ Prototype
 sr.sqlops.reset("result")
 </code>
 
+==== sr.sqlops.xquery ====
+
+Execute SQL query and store in XAVP.
+
+Prototype
+
+<code c>
+sr.sqlops.xquery("connection", "query", "xavp")
+</code>
 
 ===== SR.RR Package =====
 
