@@ -36,6 +36,19 @@
 
 ===== New in Old Modules =====
 
+==== app_lua ====
+
+  * more SIP server internal functions exported as native Lua functions, among them, functions from modules such as:
+    * cfgutils (lock, unlock)
+    * sqlops (sql_xquery)
+    * msilo
+    * siputils
+    * textops
+    * pua_usrloc
+    * rls
+    * alias_db
+    * uac
+
 ==== dialog ====
 
   * new event routes
