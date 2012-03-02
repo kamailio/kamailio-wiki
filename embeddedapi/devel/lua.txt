@@ -734,3 +734,11 @@ sr.xhttp.reply(code, reason, content-type, body)
 ===== SR.UAC Package =====
 
 ==== sr.uac.replace_from ====
+
+===== SR.TMX Package =====
+
+==== sr.tmx.t_suspend ====
+
+===== SR.MQUEUE Package =====
+
+==== sr.mq.add ====
