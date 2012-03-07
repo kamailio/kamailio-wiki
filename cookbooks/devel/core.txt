@@ -994,6 +994,35 @@ listen=tcp:127.0.0.1:5060
 
 ==== statistics ====
 
+Kamailio has built-in support for statistics counter. This means, these counters can be increased, decreased, read and cleared. The statistics counter are defined either by the core (e.g. tcp counters), by modules (e.g. 2xx_transactions by "tmx" module) or by the script writer using the "statistics" module.
+
+The statistics counters are read/updated either automatically by Kamailio internally (e.g. tcp counters), by the script writer via the module functions of the "statistics" module, by the script writer using the $stat() pseudo variable (read-only), or via MI commands.
+
+Following are some examples how to access statistics variables:
+
+**script**
+<code>
+modparam("statistics", "variable", "NOTIFY")
+
+(if method == "NOTIFY") {
+  update_stat("NOTIFY", "+1");
+}
+
+xlog("Number of received NOTIFYs: $stat(NOTIFY)");
+</code>
+**MI**
+<code>
+# get counter value
+kamctl fifo get_statistics NOTIFY
+# set counter to zero
+kamctl fifo reset_statistics NOTIFY
+# get counter value and then set it to zero
+kamctl fifo clear_statistics NOTIFY
+
+# or use the sercmd tool
+sercmd mi get_statistics 1xx_replies
+</code>
+
 ==== stun_allow_fp ====
 Use FINGERPRINT attribute in STUN server
 
