@@ -122,6 +122,11 @@
 
   * new parameters:
     * renegotiation - enable/disable TLS cipher renegotiation
+
+==== xlog ====
+
+  * xlog(facility,log-level,message) allows to log messages with dedicated syslog facility
+
 ===== New in Core =====
 
 ==== Global Parameters ====
