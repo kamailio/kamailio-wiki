@@ -630,6 +630,13 @@ Example of usage:
 
   group="siprouter"
 
+==== http_reply_hack ====
+
+When enabled Kamailio can parse HTTP replies but does so by treating them as SIP replies (this is the hack).  When not enabled HTTP replies cannot be parsed.  This was previously a compile-time option, now it is run-time.  Defaults to no.
+
+Example of usage:
+
+  http_reply_hack=yes
 
 
 ==== listen ====
