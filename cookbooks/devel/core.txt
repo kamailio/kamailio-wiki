@@ -759,7 +759,7 @@ Example of usage:
 
 ==== max_while_loops ====
 
-The parameters set the value of maximum loops that can be done within a "while". Comes as a protection to avoid infinite loops in config file execution. Default is 100.
+The parameters set the value of maximum loops that can be done within a "while". Comes as a protection to avoid infinite loops in config file execution. Default is 100.  Setting to 0 disables the protection (you will still get a warning when you start Kamailio if you do something like while(1) {...}).
 
 Example of usage:
 
