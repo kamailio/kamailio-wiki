@@ -51,6 +51,10 @@
     * mqueue
     * tmx
 
+==== db_postgres ====
+
+  * affected_rows() DB API now supported
+
 ==== dialog ====
 
   * new event routes
@@ -74,12 +78,29 @@
     * probing is a mode that can be set for active and inactive states
   * added outbound_proxy modparam for use with dispatcher pings
 
+==== mi_rpc ====
+
+  * added MI command to run RPC commands
+
+==== msilo ====
+
+  * extra headers in MESSAGE requests now stored in the silo
+
 ==== pdt ====
 
   * new functions:
     * pd_translate(sdomain, rmode)
   * new rpc commands:
     * pdt.reload - reload database records in cache
+
+==== presence ====
+
+  * support for polite-block in pres_auth_status() exported function
+
+==== pua ====
+
+  * added DB only mode to PUA.  Useful for scaling presence/RLS across multiple servers.
+
 ==== pv ====
 
   * new transformation class **line**
@@ -97,7 +118,16 @@
     * $rU= "service"
     * $rd= "sos.fire"
 
+==== rls ====
 
+  * added DB only mode to RLS.  Useful for scaling RLS across multiple servers
+  * new modparam to not perform back-end subscriptions to non-local presentities
+  * rls_presentity table can be stored in a different DB to other RLS tables
+  * new modparam to limit the number of back-end subscribes for each RLS subscribe dialog
+
+==== rr ====
+
+  * added new record_route_advertised_address() exported function
 
 ==== rtimer ====
 
@@ -111,6 +141,11 @@
     * sdp_remove_media("type")
   * old functions
     * functions for keeping only a set of codecs can take a second parameter to filter the matching on certain media type
+
+==== sl ====
+
+  * new event_route[sl:local-response] that allows inspection of locally generated (configuration file or code) stateless responses.  This includes HTTP responses (enable new core option http_reply_hack if you are using this event_route and HTTP)
+
 ==== textopsx ====
 
   * new function: keep_hf(expr)
@@ -123,17 +158,37 @@
   * new parameters:
     * renegotiation - enable/disable TLS cipher renegotiation
 
+==== tm ====
+
+  * $snd() structure filled in for event_route[tm:local-request]
+  * new event_route[tm:local-response] that allows inspection of locally generated (configuration file or code) transaction stateful responses
+
 ==== xlog ====
 
   * xlog(facility,log-level,message) allows to log messages with dedicated syslog facility
 
 ===== New in Core =====
 
+==== Database Enhancements ====
+
+  * bitwise AND operation added to DB queries
+  * ability to specify DB connections as non-pooled in DB URLs
+
 ==== Global Parameters ====
 
 === fork_delay ===
 
   * number of usecs to wait before forking a process
+
+=== http_reply_hack ===
+
+  * does what the old HTTP_REPLY_HACK compile-time option did
+  * defaults to no (disabled)
+  * enable this if you use the new event_route[sl:local-response] and the embedded HTTP server module
+
+=== max_while_loops ===
+
+  * setting to 0 means infinite loops are allowed in configuration file (you still get a warning on start-up)
 
 === socket workers ===
 
