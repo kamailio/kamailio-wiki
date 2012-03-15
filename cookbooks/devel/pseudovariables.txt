@@ -661,6 +661,12 @@ onsend_route {
 }
 </code>
 
+===== Benchmark module Pseudo-Variables =====
+
+$BM_time_diff
+
+$BM_time_diff - the time difference elapsed between calls of bm_start_timer(name) and bm_log_timer(name). The value is 0 if no bm_log_timer() was called. 
+
 ===== Dialog module Pseudo-Variables =====
 
 ==== $dlg(attr) ====
