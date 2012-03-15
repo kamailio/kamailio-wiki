@@ -804,6 +804,31 @@ xlog("$shtcv(a=>x.*)");
 ...
 </code>
 
+==== $shtinc(htable=>key) ====
+
+Atomic increment of the value for the hash table item.
+
+<code>
+...
+modparam("htable", "htable", "a=>size=4;")
+...
+$sht(a=>$au) = 1;
+xlog("==== $shtinc(a=>$au)\n");
+...
+</code>
+
+==== $shtdec(htable=>key) ====
+
+Atomic decrement of the value for the hash table item.
+
+<code>
+...
+modparam("htable", "htable", "a=>size=4;")
+...
+$sht(a=>$au) = 1;
+xlog("==== $shtdec(a=>$au)\n");
+...
+</code>
 ===== Memcached module Pseudo-Variables =====
 
 ==== $mct(key) ====
