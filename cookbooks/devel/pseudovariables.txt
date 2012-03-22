@@ -186,6 +186,7 @@ $(branch(uri)[2]) = "sip:test@kamailio.org;transport=sctp";
 ==== Destination URI ====
 
 **$du** - reference to destination uri
+
 If loose_route() returns TRUE a destination uri is set according to the first Route header.
 $du is also set if lookup() function of 'registrar' module finds contact(s) behind NAT.
 
