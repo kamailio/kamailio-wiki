@@ -1213,3 +1213,46 @@ route {
 ...
 </code>
 
+==== Request-URI and Destination-URI parsing ====
+
+Following are some examples how RURI and DURI are parsed, for SIP-URIs, tel-URIs and Service-URNs:
+
+<code>
+=== Request URI contains SIP URI ===
+$ru = "sips:john.q.public:hispw@example.com:6061;transport=tls;foo=bar"
+  $rz = "sips"
+  $rU = "john.q.public"
+  $rd = "example.com"
+  $rp = "6061"
+  $rP = "tls"
+
+=== Request URI contains service URN ===
+$ru = "urn:service:sos.fire"
+  $rz = "urn"
+  $rU = "service"
+  $rd = "sos.fire"
+  $rp = "5060"
+  $rP = "UDP"
+
+=== Request URI contains tel: URI ===
+$ru = "tel:+1-201-555-0123"
+  $rz = "tel"
+  $rU = "+1-201-555-0123"
+  $rd = "<null>"
+  $rp = "5060"
+  $rP = "UDP"
+
+=== Request URI contains tel: URI with phone-context ===
+$ru = "tel:7042;phone-context=example.com"
+  $rz = "tel"
+  $rU = "7042"
+  $rd = "<null>"
+  $rp = "5060"
+  $rP = "UDP"
+
+=== Destination URI (must be a SIP(S) URI) ===
+$du = "sip:example.com:6061;transport=tls;foo=bar"
+  $dd = "example.com"
+  $dp = "6061"
+  $dP = "tls"
+</code>
