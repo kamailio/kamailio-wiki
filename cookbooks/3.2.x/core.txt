@@ -58,6 +58,8 @@ Available directives:
   * #!ifndef - check if a keyword is not defined
   * #!else - swtich to false branch of ifdef/ifndef region
   * #!endif - end ifdef/ifndef region
+  * #!trydef -  add a define if not already defined
+  * #!redefine - force redefinition even if already defined
 
 Among benefits:
   * easy way to enable/disable features (e.g., see default cfg for 3.0.0 -- controlling support of nat traversal, presence, etc...)
