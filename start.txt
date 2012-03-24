@@ -1,5 +1,8 @@
 ====== Kamailio SIP Server Documentation Wiki ======
 
+**NOTE: The wiki has the anonymous editing disabled for the moment due to spam bots passing the CAPTCHA system. You have to create an account via registration form:**
+  * **http://www.kamailio.org/wiki/start?do=register**
+
 <color blue>//This wiki site is work in progress, targeting to collect updated documentation for [[http://www.kamailio.org|Kamailio SIP Server]] v3.2.0 or newer. If you don't find on this site the documentation you are looking for, search for it on **Old Wiki Site**://</color>
 
   * [[http://www.kamailio.org/dokuwiki/|Link to Old Wiki Site]]
