@@ -117,7 +117,8 @@
     * $rz= "urn" (scheme)
     * $rU= "service"
     * $rd= "sos.fire"
-
+  * new pseudo variables
+    * $dic = Diversion header "counter" parameter value
 ==== rls ====
 
   * added DB only mode to RLS.  Useful for scaling RLS across multiple servers
