@@ -168,7 +168,9 @@ $(branch(uri)[2]) = "sip:test@kamailio.org;transport=sctp";
 
 **$dir** - reference to Diversion header "reason" parameter value
 
+==== Diversion "counter" parameter ====
 
+**$dic** - reference to Diversion header "counter" parameter value
 
 ==== Port of destination URI ====
 
