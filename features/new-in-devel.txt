@@ -15,6 +15,10 @@
   * new module offering a connector to Cassandra DB server
   * http://kamailio.org/docs/modules/devel/modules/db_cassandra.html
 
+==== db_cluster ====
+
+  * new module offering a generic database clustering
+  * http://kamailio.org/docs/modules/devel/modules_k/db_cluster.html
 ==== msrp ====
 
   * new module offering an embedded MSRP relay (RFC4975 and RFC4976)
