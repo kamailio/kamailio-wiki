@@ -191,6 +191,12 @@
   * defaults to no (disabled)
   * enable this if you use the new event_route[sl:local-response] and the embedded HTTP server module
 
+=== latency_limit_action ===
+
+=== latency_limit_db ===
+
+=== latency_log ===
+
 === max_while_loops ===
 
   * setting to 0 means infinite loops are allowed in configuration file (you still get a warning on start-up)
