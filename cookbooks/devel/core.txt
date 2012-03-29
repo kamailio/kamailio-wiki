@@ -640,6 +640,38 @@ Example of usage:
 
   http_reply_hack=yes
 
+==== latency_limit_action ====
+
+Limit of latency in ms for config actions. If a config action executed by cfg interpreter takes longer than its value, a message is printed in the logs, showing config path, line and action name when it is a module function, as well as internal action id.
+
+Default value is 0 (disabled).
+
+<code c>
+latency_limit_action=500
+</code>
+ 
+==== latency_limit_db ====
+
+Limit of latency in ms for db operations. If a db operation executed via DB API v1 takes longer that its value, a message is printed in the logs, showing the first 50 characters of the db query.
+
+
+Default value is 0 (disabled).
+
+<code c>
+latency_limit_db=500
+</code>
+
+
+==== latency_log ====
+
+Log level to print the messages related to latency.
+
+
+Default value is -1 (L_ERR).
+
+<code c>
+latency_log=3
+</code>
 
 ==== listen ====
 
