@@ -679,16 +679,29 @@ Set the network addresses the SIP server should listen to. It can be an IP addre
 
 Example of usage:
 
+<code c>
     listen=10.10.10.10
     listen=eth1:5062
     listen=udp:10.10.10.10:5064
+</code>
 
-If you omit this directive then the SIP server will listen on all interfaces. On start the SIP server reports all the interfaces that it is listening on. Even if you specify only UDP interfaces here, the server will start the TCP engine too. If you don't want this, you need to disable the TCP support completly with the core parameter disable_tcp.
+If you omit this directive then the SIP server will listen on all interfaces. On start the SIP server reports all the interfaces that it is listening on. Even if you specify only UDP interfaces here, the server will start the TCP engine too. If you don't want this, you need to disable the TCP support completely with the core parameter disable_tcp.
 
 If you specify IPv6 addresses, you should put them into square brackets, e.g.:
 
+<code c>
     listen=udp:[2a02:1850:1:1::13]:5060
+</code>
 
+You can specify an advertise address (like ip:port) per listening socket - it will be used to build headers such as Via and Record-Route:
+
+<code c>
+    listen=udp:10.10.10.10:5060 advertise  11.11.11.11:5060
+</code>
+
+The advertise address must be the format 'address:port', the protocol is taken from the bind socket. The advertise address is a convenient alternative to advertised_address / advertised_port cfg parameters or set_advertised_address() / set_advertised_port() cfg functions.
+
+A typical use case for advertise address is when running SIP server behind a NAT/Firewall, when the local IP address (to be used for bind) is different than the public IP address (to be used for advertising).
 ==== loadmodule ====
 
 Loads a module for later usage in the configuration script. The modules is searched in the path specified by **loadpath**.
