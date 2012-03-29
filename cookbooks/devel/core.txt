@@ -858,6 +858,30 @@ For example, memlog=2 means that memory statistics dumping is activated if the d
 
 Please see also [[#memdbg]] and [[#debug]].
 
+==== mem_join ====
+
+If set to 1, memory manger (e.g., q_malloc) does join of free fragments. It is effective if MEM_JOIN_FREE compile option is defined.
+
+It can be set via config reload framework.
+
+Default is 0 (disabled).
+
+<code c>
+mem_join=1
+</code>
+
+==== mem_safety ====
+
+Ff set to 1, memory free operation does not call abort() for double freeing a pointer or freeing an invalid address. The server still prints the alerting log messages.
+
+It can be set via config reload framework.
+
+Default is 0 (disabled).
+
+<code c>
+mem_safety=1
+</code>
+
 ==== mem_summary ====
 
 Parameter to control printing of mmemory debugging information displayed on exit or SIGUSR1. The value can be composed by following flags:
@@ -872,7 +896,7 @@ Default value: 3
 
 Example:
 
-<code>
+<code c>
 mem_summary=15
 </code>
 
