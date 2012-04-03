@@ -6,7 +6,7 @@ The RPM packages are built on OpenSUSE build server for Centos 5.5, Centos 6, Re
 
 The build service project is available at:
 
-  * https://build.opensuse.org/package/show?package=kamailio&project=home%3Akamailio%3Atelephony
+  * https://build.opensuse.org/package/show?package=kamailio32&project=home%3Akamailio%3Atelephony
 
 Download links specific per distribution are:
 
