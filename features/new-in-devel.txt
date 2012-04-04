@@ -75,13 +75,17 @@
   * new matching operator - fnmatch (match_op=2)
     * match using shell-like patterns
 
+==== domain(k) ====
+
+  * associated each domain name with a domain identifier (did), which can have zero on more attributes
+  * added lookup_domain() function that checks if a domain name is local and, if so, adds attributes of the domain's did to AVPs
+
 ==== dispatcher ====
 
   * refactored dispatcher destination states
     * states: active, trying, inactive, disabled
     * probing is a mode that can be set for active and inactive states
   * added outbound_proxy modparam for use with dispatcher pings
-
 ==== mi_rpc ====
 
   * added MI command to run RPC commands
