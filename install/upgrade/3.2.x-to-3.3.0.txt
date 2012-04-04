@@ -25,6 +25,12 @@ ALTER TABLE lcr_gw MODIFY ip_addr VARCHAR(47) NOT NULL;
 
 </code>
 
+<code sql>
+
+ALTER TABLE domain ADD did VARCHAR(64) DEFAULT NULL;
+
+</code>
+
 This is the translation of the above script for PostgreSQL (should work with 9.1.1, but is untested!)
 
 <code sql>
@@ -32,7 +38,6 @@ This is the translation of the above script for PostgreSQL (should work with 9.1
 ALTER TABLE lcr_gw ALTER COLUMN ip_addr TYPE VARCHAR(47);
 
 </code>
-
 ===== Modules =====
 
 ==== modules/your-module-here ====
