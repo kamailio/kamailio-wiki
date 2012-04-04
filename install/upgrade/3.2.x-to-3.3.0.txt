@@ -27,6 +27,21 @@ ALTER TABLE lcr_gw MODIFY ip_addr VARCHAR(47) NOT NULL;
 
 <code sql>
 
+CREATE TABLE domain_attrs (
+    id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    did VARCHAR(64) NOT NULL,
+    name VARCHAR(32) NOT NULL,
+    type INT UNSIGNED NOT NULL,
+    value VARCHAR(255) NOT NULL,
+    last_modified DATETIME DEFAULT '1900-01-01 00:00:01' NOT NULL,
+    CONSTRAINT domain_attrs_idx UNIQUE (did, name, value)
+) ENGINE=MyISAM;
+INSERT INTO version (table_name, table_version) values ('domain_attrs','1');
+
+</code>
+
+<code sql>
+
 ALTER TABLE domain ADD did VARCHAR(64) DEFAULT NULL;
 UPDATE version SET table_version=2 WHERE table_name='domain';
 
