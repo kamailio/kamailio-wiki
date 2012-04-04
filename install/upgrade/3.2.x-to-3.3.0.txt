@@ -28,6 +28,7 @@ ALTER TABLE lcr_gw MODIFY ip_addr VARCHAR(47) NOT NULL;
 <code sql>
 
 ALTER TABLE domain ADD did VARCHAR(64) DEFAULT NULL;
+UPDATE version SET table_version=2 WHERE table_name='domain';
 
 </code>
 
