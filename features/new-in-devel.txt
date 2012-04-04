@@ -77,7 +77,7 @@
 
 ==== domain(k) ====
 
-  * associated each domain name with a domain identifier (did), which can have zero on more attributes
+  * associated each domain name with a domain identifier (did), which can have zero or more attributes
   * added lookup_domain() function that checks if a domain name is local and, if so, adds attributes of the domain's did to AVPs
 
 ==== dispatcher ====
