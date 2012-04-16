@@ -178,6 +178,11 @@
   * $snd() structure filled in for event_route[tm:local-request]
   * new event_route[tm:local-response] that allows inspection of locally generated (configuration file or code) transaction stateful responses
 
+==== usrloc ====
+
+  * save unique string ID for each contact (ruid column)
+  * handle +sip.instance parameter from GRUU extension (rfc 5627)
+
 ==== xlog ====
 
   * xlog(facility,log-level,message) allows to log messages with dedicated syslog facility
