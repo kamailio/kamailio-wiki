@@ -55,12 +55,12 @@ These sections presents notes, listed by modules, about the structure of databas
   * table **aliases**
     * table version is 5
     * new columns:
-      * ruid VARCHAR(64) DEFAULT '' NOT NULL
+      * ruid VARCHAR(64) DEFAULT ' ' NOT NULL
       * instance VARCHAR(255) DEFAULT NULL
   * table **location**
     * table version is 5
     * new columns:
-      * ruid VARCHAR(64) DEFAULT '' NOT NULL
+      * ruid VARCHAR(64) DEFAULT ' ' NOT NULL
       * instance VARCHAR(255) DEFAULT NULL
 
 ==== SQL Commands ====
