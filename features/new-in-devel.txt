@@ -127,6 +127,11 @@
     * $rd= "sos.fire"
   * new pseudo variables
     * $dic = Diversion header "counter" parameter value
+==== registrar ====
+
+  * option to set max contact per REGISTER (via xavp)
+  * handle GRUU extension (RFC5627)
+
 ==== rls ====
 
   * added DB only mode to RLS.  Useful for scaling RLS across multiple servers
