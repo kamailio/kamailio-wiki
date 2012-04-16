@@ -13,30 +13,71 @@ These sections presents notes, listed by modules, about the structure of databas
     * new columns:
       * iflags INT(10) UNSIGNED DEFAULT 0 NOT NULL
       * xdata VARCHAR(512)
-    * column size changes:
+    * column definition changes:
       * caller_cseq VARCHAR(20) NOT NULL
       * callee_cseq VARCHAR(20) NOT NULL
+
+==== modules_k/domain ====
+  * new table **domain_attrs**
+  * table **domain**
+    * new column **did**
 
 ==== modules/lcr ====
 
   * table **lcr_gw**
     * ip_addr column has now the size varchar(47)
 
-==== modules_k/domain ====
-  * new table **domain_attrs**
-  * table **domain**
-    * new column **did**
+==== modules_k/msilo ====
+
+  * table **silo**
+    * table version is 6
+    * new columns:
+      * extra_hdrs TEXT DEFAULT ' ' NOT NULL
+
+==== modules/mtree ====
+
+  * table **mtrees**
+    * table version is 2
+    * definition changes:
+      * drop: CONSTRAINT tname_tprefix_idx UNIQUE (tname, tprefix)
+      * add: CONSTRAINT tname_tprefix_tvalue_idx UNIQUE (tname, tprefix, tvalue)
+
+==== modules_k/permissions ====
+
+  * table **address**
+    * table version is 5
+    * column definition changes:
+      * grp INT(11) UNSIGNED DEFAULT 1 NOT NULL
+      * ip_addr VARCHAR(48) NOT NULL
+      * mask INT DEFAULT 32 NOT NULL
+
+==== modules_k/usrloc ====
+  * table **aliases**
+    * table version is 5
+    * new columns:
+      * ruid VARCHAR(64) DEFAULT '' NOT NULL
+      * instance VARCHAR(255) DEFAULT NULL
+  * table **location**
+    * table version is 5
+    * new columns:
+      * ruid VARCHAR(64) DEFAULT '' NOT NULL
+      * instance VARCHAR(255) DEFAULT NULL
+
 ==== SQL Commands ====
 
 You can use next SQL commands (made for MySQL) to update the structure of existing tables in v3.2.x for v3.3.0:
 
 <code sql>
+-- DIALOG
+ALTER TABLE dialog ADD iflags INT(10) UNSIGNED DEFAULT 0 NOT NULL;
+ALTER TABLE dialog ADD xdata VARCHAR(512);
+ALTER TABLE dialog MODIFY caller_cseq VARCHAR(20) NOT NULL;
+ALTER TABLE dialog MODIFY callee_cseq VARCHAR(20) NOT NULL;
+UPDATE version SET table_version=7 WHERE table_name='dialog';
 
-ALTER TABLE lcr_gw MODIFY ip_addr VARCHAR(47) NOT NULL;
-
-</code>
-
-<code sql>
+-- DOMAIN
+ALTER TABLE domain ADD did VARCHAR(64) DEFAULT NULL;
+UPDATE version SET table_version=2 WHERE table_name='domain';
 
 CREATE TABLE domain_attrs (
     id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
@@ -49,13 +90,33 @@ CREATE TABLE domain_attrs (
 ) ENGINE=MyISAM;
 INSERT INTO version (table_name, table_version) values ('domain_attrs','1');
 
-</code>
+-- LCR
+ALTER TABLE lcr_gw MODIFY ip_addr VARCHAR(47) NOT NULL;
 
-<code sql>
+-- MSILO
+ALTER TABLE silo ADD extra_hdrs TEXT DEFAULT '' NOT NULL;
+UPDATE version SET table_version=6 WHERE table_name='silo';
 
-ALTER TABLE domain ADD did VARCHAR(64) DEFAULT NULL;
-UPDATE version SET table_version=2 WHERE table_name='domain';
+-- MTREE
 
+ALTER TABLE mtrees ADD CONSTRAINT tname_tprefix_idx UNIQUE (tname, tprefix);
+ALTER TABLE mtrees DROP CONSTRAINT tname_tprefix_tvalue_idx UNIQUE (tname, tprefix, tvalue);
+UPDATE version SET table_version=2 WHERE table_name='mtrees';
+
+-- PERMISSIONS
+ALTER TABLE address MODIFY grp INT(11) UNSIGNED DEFAULT 1 NOT NULL
+ALTER TABLE address MODIFY ip_addr VARCHAR(48) NOT NULL
+ALTER TABLE address MODIFY mask INT DEFAULT 32 NOT NULL
+UPDATE version SET table_version=5 WHERE table_name='address';
+
+-- USRLOC
+ALTER TABLE aliases ADD ruid VARCHAR(64) DEFAULT '' NOT NULL;
+ALTER TABLE aliases ADD instance VARCHAR(255) DEFAULT NULL;
+UPDATE version SET table_version=2 WHERE table_name='aliases';
+
+ALTER TABLE location ADD ruid VARCHAR(64) DEFAULT '' NOT NULL;
+ALTER TABLE location ADD instance VARCHAR(255) DEFAULT NULL;
+UPDATE version SET table_version=2 WHERE table_name='location';
 </code>
 
 This is the translation of the above script for PostgreSQL (should work with 9.1.1, but is untested!)
