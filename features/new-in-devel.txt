@@ -137,6 +137,7 @@
 ==== rr ====
 
   * added new record_route_advertised_address() exported function
+  * detect GRUU addresses and don't match 'myself' for them
 
 ==== rtimer ====
 
