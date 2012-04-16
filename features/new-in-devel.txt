@@ -207,10 +207,15 @@
   * enable this if you use the new event_route[sl:local-response] and the embedded HTTP server module
 
 === latency_limit_action ===
+  * time in micro seconds - if the execution of a config action takes longer than it, a log message is printed
 
 === latency_limit_db ===
 
+  * time in micro seconds - if the execution of a database query takes longer than it, a log message is printed
+
 === latency_log ===
+
+  * log level to print latency log messages
 
 === max_while_loops ===
 
