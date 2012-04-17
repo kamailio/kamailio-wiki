@@ -62,6 +62,7 @@ These sections presents notes, listed by modules, about the structure of databas
     * new columns:
       * ruid VARCHAR(64) DEFAULT ' ' NOT NULL
       * instance VARCHAR(255) DEFAULT NULL
+      * reg_id INT(11) DEFAULT 0 NOT NULL
 
 ==== SQL Commands ====
 
