@@ -113,10 +113,12 @@ UPDATE version SET table_version=5 WHERE table_name='address';
 -- USRLOC
 ALTER TABLE aliases ADD ruid VARCHAR(64) DEFAULT '' NOT NULL;
 ALTER TABLE aliases ADD instance VARCHAR(255) DEFAULT NULL;
+ALTER TABLE aliases ADD reg_id INT(11) DEFAULT 0 NOT NULL;
 UPDATE version SET table_version=2 WHERE table_name='aliases';
 
 ALTER TABLE location ADD ruid VARCHAR(64) DEFAULT '' NOT NULL;
 ALTER TABLE location ADD instance VARCHAR(255) DEFAULT NULL;
+ALTER TABLE location ADD reg_id INT(11) DEFAULT 0 NOT NULL;
 UPDATE version SET table_version=2 WHERE table_name='location';
 </code>
 
