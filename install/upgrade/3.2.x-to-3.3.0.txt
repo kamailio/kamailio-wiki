@@ -94,6 +94,10 @@ INSERT INTO version (table_name, table_version) values ('domain_attrs','1');
 
 -- LCR
 ALTER TABLE lcr_gw MODIFY ip_addr VARCHAR(47) NOT NULL;
+ALTER TABLE lcr_rule ADD COLUMN request_uri VARCHAR(64) DEFAULT NULL AFTER prefix;
+ALTER TABLE lcr_rule DROP KEY lcr_id_prefix_from_uri_idx;
+ALTER TABLE lcr_rule ADD CONSTRAINT UNIQUE lcrid_prefix_ruri_furi_idx(`lcr_id`,`prefix`, `request_uri`, `from_uri`);
+UPDATE version SET table_version=2 WHERE table_name='lcr_rule';
 
 -- MSILO
 ALTER TABLE silo ADD extra_hdrs TEXT DEFAULT '' NOT NULL;
