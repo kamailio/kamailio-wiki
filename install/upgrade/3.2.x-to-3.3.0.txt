@@ -26,7 +26,8 @@ These sections presents notes, listed by modules, about the structure of databas
 
   * table **lcr_gw**
     * ip_addr column has now the size varchar(47)
-
+  * table **lcr_rule**
+    * new column request_uri varchar(64)
 ==== modules_k/msilo ====
 
   * table **silo**
