@@ -111,9 +111,9 @@ ALTER TABLE mtrees DROP CONSTRAINT tname_tprefix_tvalue_idx UNIQUE (tname, tpref
 UPDATE version SET table_version=2 WHERE table_name='mtrees';
 
 -- PERMISSIONS
-ALTER TABLE address MODIFY grp INT(11) UNSIGNED DEFAULT 1 NOT NULL
-ALTER TABLE address MODIFY ip_addr VARCHAR(48) NOT NULL
-ALTER TABLE address MODIFY mask INT DEFAULT 32 NOT NULL
+ALTER TABLE address MODIFY grp INT(11) UNSIGNED DEFAULT 1 NOT NULL;
+ALTER TABLE address MODIFY ip_addr VARCHAR(48) NOT NULL;
+ALTER TABLE address MODIFY mask INT DEFAULT 32 NOT NULL;
 UPDATE version SET table_version=5 WHERE table_name='address';
 
 -- USRLOC
