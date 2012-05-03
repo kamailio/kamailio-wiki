@@ -513,7 +513,7 @@ if($(avp(x)[2])==1) { # TRUE
 }
 $(avp(x)[1]) = $null; # index will be ignored and top element removed from list
 # now: $avp(x) = $(avp(x)[0]) = 2, $(avp(x)[1]) = 1
-# $(avp(x)[*]) = $null; # all AVPs 'x' are deleted
+$(avp(x)[*]) = $null; # all AVPs 'x' are deleted
 </code>
 
 It is R/W variable (you can assign values to it directly in configuration file).
