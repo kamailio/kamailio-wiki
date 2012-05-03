@@ -137,6 +137,11 @@ ALTER TABLE lcr_gw ALTER COLUMN ip_addr TYPE VARCHAR(47);
 </code>
 ===== Modules =====
 
+==== modules_k/presence ====
+
+  * removed db_mode and fallback2db parameters
+  * added two new parameters subs_db_mode and publ_cache to replace the ones that were removed
+
 ==== modules/your-module-here ====
 
   * Add changes or additions reflected in kamailio config syntax here.
