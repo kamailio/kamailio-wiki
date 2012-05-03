@@ -481,7 +481,7 @@ The 'id' can be:
 
 $(avp(id)[0]) can be written in shorter form as $avp(id) and $avp(s:name) as $avp(name).
 
-AVPs are special variables that are attached to SIP transactions. It is a list of pairs (name,value). Before the transaction is created, the AVP list is attached to SIP request. Note that the AVP list works like a stack, last added value is retrieved first, and there can be many values for same AVP name, an assignment to the same AVP name does not overwrite old value, it will add the new value in the list.
+AVPs are special variables that are attached to SIP transactions. It is a list of pairs (name,value). Before the transaction is created, the AVP list is attached to SIP request. Note that the AVP list works like a stack, last added value is retrieved first, and there can be many values for same AVP name. An assignment to the same AVP name does not overwrite the existing AVP, but it will add an additional AVP to the list. When writing an AVP, the [N] index is ignored, except for [*].
 
 To delete the first AVP with name 'id' you have to assign to it '$null':
 <code c>
@@ -495,7 +495,7 @@ $(avp(id)[*]) = $null;
 
 To overwrite the value of the AVP with name 'id' you have to assign the new value to the index '*':
 <code c>
-$(avp(id)[*]) = newvalue;
+$(avp(id)[*]) = newvalue; # delete all existing AVPs with name 'id' and create a single AVP with newvalue
 </code>
 
 The value of an AVP can be integer or string. To assign a value as string, it has to be enclosed in double quotes. To assign the value as integer, it has to be a valid number given without quotes.
@@ -505,11 +505,15 @@ Example of usage:
 <code c>
 $avp(x) = 1;  # assign of integer value
 $avp(x) = 2;
+$avp(x) = 3;
+# now: $avp(x) = $(avp(x)[0]) = 3, $(avp(x)[1]) = 2, $(avp(x)[2]) = 1
 $avp(y) = "abc"; # assign of string value
-if($(avp(x)[1])==1) {
+if($(avp(x)[2])==1) { # TRUE
   ...
 }
-$(avp(x)[1]) = $null;
+$(avp(x)[1]) = $null; # index will be ignored and top element removed from list
+# now: $avp(x) = $(avp(x)[0]) = 2, $(avp(x)[1]) = 1
+# $(avp(x)[*]) = $null; # all AVPs 'x' are deleted
 </code>
 
 It is R/W variable (you can assign values to it directly in configuration file).
