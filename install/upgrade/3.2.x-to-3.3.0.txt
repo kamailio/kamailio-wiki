@@ -68,6 +68,8 @@ These sections presents notes, listed by modules, about the structure of databas
 
 ==== SQL Commands ====
 
+=== MySQL ===
+
 You can use next SQL commands (made for MySQL) to update the structure of existing tables in v3.2.x for v3.3.0:
 
 <code sql>
@@ -128,7 +130,9 @@ ALTER TABLE location ADD reg_id INT(11) DEFAULT 0 NOT NULL;
 UPDATE version SET table_version=2 WHERE table_name='location';
 </code>
 
-This is the translation of the above script for PostgreSQL (should work with 9.1.1, but is untested!)
+=== PostgreSQL ===
+
+This is the translation of the above MySQL script for PostgreSQL (should work with 9.1.1, but is untested!)
 
 <code sql>
 
