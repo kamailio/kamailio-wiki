@@ -73,61 +73,125 @@ These sections presents notes, listed by modules, about the structure of databas
 You can use next SQL commands (made for MySQL) to update the structure of existing tables in v3.2.x for v3.3.0:
 
 <code sql>
--- DIALOG
-ALTER TABLE dialog ADD iflags INT(10) UNSIGNED DEFAULT 0 NOT NULL;
-ALTER TABLE dialog ADD xdata VARCHAR(512);
-ALTER TABLE dialog MODIFY caller_cseq VARCHAR(20) NOT NULL;
-ALTER TABLE dialog MODIFY callee_cseq VARCHAR(20) NOT NULL;
-UPDATE version SET table_version=7 WHERE table_name='dialog';
 
--- DOMAIN
-ALTER TABLE domain ADD did VARCHAR(64) DEFAULT NULL;
-UPDATE version SET table_version=2 WHERE table_name='domain';
+-- PERMISSIONS module
+ALTER TABLE address CHANGE COLUMN ip_addr ip_addr varchar(48) NOT NULL; # was varchar(15) NOT NULL
+ALTER TABLE address CHANGE COLUMN grp grp int(11) unsigned NOT NULL DEFAULT '1'; # was smallint(5) unsigned NOT NULL DEFAULT '1'
+ALTER TABLE address CHANGE COLUMN mask mask int(11) NOT NULL DEFAULT '32'; # was tinyint(4) NOT NULL DEFAULT '32'
+
+-- DIALOG module
+DELETE FROM dialog;
+ALTER TABLE dialog CHANGE COLUMN caller_cseq caller_cseq varchar(20) NOT NULL; # was varchar(7) NOT NULL
+ALTER TABLE dialog CHANGE COLUMN callee_cseq callee_cseq varchar(20) NOT NULL; # was varchar(7) NOT NULL
+ALTER TABLE dialog DROP COLUMN toroute; # was int(10) unsigned NOT NULL DEFAULT '0'
+ALTER TABLE dialog ADD COLUMN iflags int(10) unsigned NOT NULL DEFAULT '0';
+ALTER TABLE dialog ADD COLUMN xdata varchar(512) DEFAULT NULL;
+
+DELETE FROM dialog_vars;
+
+-- LCR module
+ALTER TABLE lcr_gw CHANGE COLUMN ip_addr ip_addr varchar(47) DEFAULT NULL; # was varchar(15) DEFAULT NULL
+ALTER TABLE lcr_rule ADD COLUMN request_uri varchar(64) DEFAULT NULL;
+
+-- USRLOC module
+DELETE FROM location;
+ALTER TABLE location ADD COLUMN ruid varchar(64) NOT NULL DEFAULT '';
+ALTER TABLE location ADD COLUMN reg_id int(11) NOT NULL DEFAULT '0';
+ALTER TABLE location ADD COLUMN instance varchar(255) DEFAULT NULL;
+
+ALTER TABLE aliases ADD COLUMN ruid varchar(64) NOT NULL DEFAULT '';
+ALTER TABLE aliases ADD COLUMN reg_id int(11) NOT NULL DEFAULT '0';
+ALTER TABLE aliases ADD COLUMN instance varchar(255) DEFAULT NULL;
+
+-- MSILO module
+ALTER TABLE silo ADD COLUMN status int(11) NOT NULL DEFAULT '0';
+ALTER TABLE silo ADD COLUMN extra_hdrs text NOT NULL DEFAULT '';
+ALTER TABLE silo ADD COLUMN callid varchar(128) NOT NULL DEFAULT '';
+
+-- DOMAIN module
+ALTER TABLE domain CHANGE COLUMN domain domain varchar(64) NOT NULL; # was varchar(64) NOT NULL DEFAULT ''
+ALTER TABLE domain ADD COLUMN did varchar(64) DEFAULT NULL;
 
 CREATE TABLE domain_attrs (
-    id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    did VARCHAR(64) NOT NULL,
-    name VARCHAR(32) NOT NULL,
-    type INT UNSIGNED NOT NULL,
-    value VARCHAR(255) NOT NULL,
-    last_modified DATETIME DEFAULT '1900-01-01 00:00:01' NOT NULL,
-    CONSTRAINT domain_attrs_idx UNIQUE (did, name, value)
-) ENGINE=MyISAM;
+  id int(10) unsigned NOT NULL AUTO_INCREMENT,
+  did varchar(64) NOT NULL,
+  name varchar(32) NOT NULL,
+  type int(10) unsigned NOT NULL,
+  value varchar(255) NOT NULL,
+  last_modified datetime NOT NULL DEFAULT '1900-01-01 00:00:01',
+  PRIMARY KEY (id),
+  UNIQUE KEY domain_attrs_idx (did,name,value)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- PRESENCE modules
+DELETE FROM active_watchers;
+ALTER TABLE active_watchers ADD COLUMN from_domain varchar(64) NOT NULL;
+ALTER TABLE active_watchers ADD COLUMN updated_winfo int(11) NOT NULL;
+ALTER TABLE active_watchers ADD COLUMN updated int(11) NOT NULL;
+ALTER TABLE active_watchers ADD COLUMN from_user varchar(64) NOT NULL;
+ALTER TABLE active_watchers DROP INDEX active_watchers_idx; # was UNIQUE (presentity_uri,callid,to_tag,from_tag)
+ALTER TABLE active_watchers ADD UNIQUE active_watchers_idx (callid,to_tag,from_tag);
+ALTER TABLE active_watchers ADD INDEX active_watchers_expires (expires);
+ALTER TABLE active_watchers ADD INDEX active_watchers_pres (presentity_uri);
+ALTER TABLE active_watchers ADD INDEX updated_idx (updated);
+ALTER TABLE active_watchers ADD INDEX updated_winfo_idx (updated_winfo,presentity_uri);
+
+ALTER TABLE presentity ADD INDEX account_idx (username,domain,event);
+ALTER TABLE presentity ADD INDEX presentity_expires (expires);
+
+ALTER TABLE pua ADD INDEX tmp_record2_idx (pres_id,etag);
+ALTER TABLE pua ADD INDEX tmp_dlg2_idx (pres_id,pres_uri,call_id,from_tag);
+ALTER TABLE pua ADD INDEX tmp_record1_idx (pres_id);
+ALTER TABLE pua ADD INDEX dialog2_idx (pres_id,pres_uri);
+ALTER TABLE pua ADD INDEX dialog1_idx (call_id,from_tag,to_tag);
+ALTER TABLE pua ADD INDEX tmp_dlg1_idx (call_id,from_tag);
+ALTER TABLE pua ADD UNIQUE pua_idx (etag,tuple_id,call_id,from_tag);
+ALTER TABLE pua ADD UNIQUE expires_idx (expires);
+
+ALTER TABLE rls_presentity ADD INDEX rlsubs_idx (rlsubs_did);
+ALTER TABLE rls_presentity ADD INDEX expires_idx (expires);
+
+DELETE FROM rls_watchers;
+ALTER TABLE rls_watchers ADD COLUMN from_domain varchar(64) NOT NULL;
+ALTER TABLE rls_watchers ADD COLUMN updated int(11) NOT NULL;
+ALTER TABLE rls_watchers ADD COLUMN from_user varchar(64) NOT NULL;
+ALTER TABLE rls_watchers DROP INDEX rls_watcher_idx; # was UNIQUE (presentity_uri,callid,to_tag,from_tag)
+ALTER TABLE rls_watchers ADD UNIQUE rls_watcher_idx (callid,to_tag,from_tag);
+ALTER TABLE rls_watchers ADD INDEX rls_watchers_expires (expires);
+ALTER TABLE rls_watchers ADD INDEX updated_idx (updated);
+ALTER TABLE rls_watchers ADD INDEX rls_watchers_update (watcher_username,watcher_domain,event);
+ALTER TABLE rls_watchers ADD INDEX rls_watchers_delete (callid,to_tag);
+
+ALTER TABLE xcap DROP INDEX source_idx; # was INDEX (source)
+ALTER TABLE xcap DROP INDEX account_doc_type_idx; # was UNIQUE (username,domain,doc_type,doc_uri)
+ALTER TABLE xcap ADD INDEX account_doc_type_idx (username,domain,doc_type);
+ALTER TABLE xcap ADD INDEX account_doc_type_uri_idx (username,domain,doc_type,doc_uri);
+ALTER TABLE xcap ADD UNIQUE doc_uri_idx (doc_uri);
+ALTER TABLE xcap ADD INDEX account_doc_uri_idx (username,domain,doc_uri);
+
+
+-- VERSION table
+DELETE FROM version WHERE table_name='dialog';
+INSERT INTO version (table_name, table_version) values ('dialog','7');
+DELETE FROM version WHERE table_name='domain';
+INSERT INTO version (table_name, table_version) values ('domain','2');
+DELETE FROM version WHERE table_name='domain_attrs';
 INSERT INTO version (table_name, table_version) values ('domain_attrs','1');
+DELETE FROM version WHERE table_name='silo';
+INSERT INTO version (table_name, table_version) values ('silo','7');
+DELETE FROM version WHERE table_name='mtrees';
+INSERT INTO version (table_name, table_version) values ('mtrees','2');
+DELETE FROM version WHERE table_name='address';
+INSERT INTO version (table_name, table_version) values ('address','5');
+DELETE FROM version WHERE table_name='active_watchers';
+INSERT INTO version (table_name, table_version) values ('active_watchers','11');
+DELETE FROM version WHERE table_name='aliases';
+INSERT INTO version (table_name, table_version) values ('aliases','5');
+DELETE FROM version WHERE table_name='rls_watchers';
+INSERT INTO version (table_name, table_version) values ('rls_watchers','3');
+DELETE FROM version WHERE table_name='location';
+INSERT INTO version (table_name, table_version) values ('location','5');
 
--- LCR
-ALTER TABLE lcr_gw MODIFY ip_addr VARCHAR(47) NOT NULL;
-ALTER TABLE lcr_rule ADD COLUMN request_uri VARCHAR(64) DEFAULT NULL AFTER prefix;
-ALTER TABLE lcr_rule DROP KEY lcr_id_prefix_from_uri_idx;
-ALTER TABLE lcr_rule ADD CONSTRAINT UNIQUE lcrid_prefix_ruri_furi_idx(`lcr_id`,`prefix`, `request_uri`, `from_uri`);
-UPDATE version SET table_version=2 WHERE table_name='lcr_rule';
-
--- MSILO
-ALTER TABLE silo ADD extra_hdrs TEXT DEFAULT '' NOT NULL;
-UPDATE version SET table_version=6 WHERE table_name='silo';
-
--- MTREE
-
-ALTER TABLE mtrees ADD CONSTRAINT tname_tprefix_idx UNIQUE (tname, tprefix);
-ALTER TABLE mtrees DROP CONSTRAINT tname_tprefix_tvalue_idx UNIQUE (tname, tprefix, tvalue);
-UPDATE version SET table_version=2 WHERE table_name='mtrees';
-
--- PERMISSIONS
-ALTER TABLE address MODIFY grp INT(11) UNSIGNED DEFAULT 1 NOT NULL;
-ALTER TABLE address MODIFY ip_addr VARCHAR(48) NOT NULL;
-ALTER TABLE address MODIFY mask INT DEFAULT 32 NOT NULL;
-UPDATE version SET table_version=5 WHERE table_name='address';
-
--- USRLOC
-ALTER TABLE aliases ADD ruid VARCHAR(64) DEFAULT '' NOT NULL;
-ALTER TABLE aliases ADD instance VARCHAR(255) DEFAULT NULL;
-ALTER TABLE aliases ADD reg_id INT(11) DEFAULT 0 NOT NULL;
-UPDATE version SET table_version=2 WHERE table_name='aliases';
-
-ALTER TABLE location ADD ruid VARCHAR(64) DEFAULT '' NOT NULL;
-ALTER TABLE location ADD instance VARCHAR(255) DEFAULT NULL;
-ALTER TABLE location ADD reg_id INT(11) DEFAULT 0 NOT NULL;
-UPDATE version SET table_version=2 WHERE table_name='location';
 </code>
 
 === PostgreSQL ===
@@ -135,8 +199,8 @@ UPDATE version SET table_version=2 WHERE table_name='location';
 This is the translation of the above MySQL script for PostgreSQL (should work with 9.1.1, but is untested!)
 
 <code sql>
-
-ALTER TABLE lcr_gw ALTER COLUMN ip_addr TYPE VARCHAR(47);
+-- TO BE ADDED
+-- example alter command: ALTER TABLE lcr_gw ALTER COLUMN ip_addr TYPE VARCHAR(47);
 
 </code>
 ===== Modules =====
