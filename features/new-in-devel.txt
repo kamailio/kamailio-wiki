@@ -86,9 +86,14 @@
     * states: active, trying, inactive, disabled
     * probing is a mode that can be set for active and inactive states
   * added outbound_proxy modparam for use with dispatcher pings
+
 ==== mi_rpc ====
 
   * added MI command to run RPC commands
+
+==== lcr ====
+
+  * gateways with special LCR instance id 0 belong to all normal LCR instances
 
 ==== msilo ====
 
