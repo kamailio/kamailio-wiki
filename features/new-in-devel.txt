@@ -95,6 +95,7 @@
 ==== lcr ====
 
   * gateways with special LCR instance id 0 belong to all normal LCR instances
+  * added 'lcr.defunct_gw' rpc command
 
 ==== msilo ====
 
