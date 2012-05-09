@@ -99,6 +99,10 @@
 
   * extra headers in MESSAGE requests now stored in the silo
 
+==== permissions ====
+
+  * transport protocol argument of allow_trusted() function call can now have value "any" meaning that any transport protocol  is acceptable
+
 ==== pdt ====
 
   * new functions:
