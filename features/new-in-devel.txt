@@ -82,7 +82,7 @@
     * probing is a mode that can be set for active and inactive states
   * added outbound_proxy modparam for use with dispatcher pings
 
-==== domain(k) ====
+==== domain ====
 
   * added new function 'lookup_domain' that in addition to checking if domain is local, adds attributes of local domain into AVPs
   * domain attributes are stored in new table 'domain_attrs'
