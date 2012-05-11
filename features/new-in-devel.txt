@@ -88,22 +88,23 @@
   * domain attributes are stored in new table 'domain_attrs'
   * removed support for db only mode and, as consequence, removed 'db_mode' module variable
 
-==== mi_rpc ====
-
-  * added MI command to run RPC commands
-
 ==== lcr ====
 
   * gateways with special LCR instance id 0 belong to all normal LCR instances
   * added 'lcr.defunct_gw' rpc command
 
+==== mi_rpc ====
+
+  * added MI command to run RPC commands
+
 ==== msilo ====
 
   * extra headers in MESSAGE requests now stored in the silo
   * added storage of extra SIP headers from AVP when m_store() is called
-==== permissions ====
 
-  * transport protocol argument of allow_trusted() function call can now have value "any" meaning that any transport protocol  is acceptable
+==== mtree ====
+
+  * added 'mt_allow_duplicates' module variable
 
 ==== pdt ====
 
@@ -111,6 +112,10 @@
     * pd_translate(sdomain, rmode)
   * new rpc commands:
     * pdt.reload - reload database records in cache
+
+==== permissions ====
+
+  * transport protocol argument of allow_trusted() function call can now have value "any" meaning that any transport protocol  is acceptable
 
 ==== presence ====
 
