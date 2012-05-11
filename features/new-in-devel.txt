@@ -172,6 +172,10 @@
 
   * new event_route[sl:local-response] that allows inspection of locally generated (configuration file or code) stateless responses.  This includes HTTP responses (enable new core option http_reply_hack if you are using this event_route and HTTP)
 
+==== textops ====
+
+  * new function: in_list(subject, list, separator)
+
 ==== textopsx ====
 
   * new function: keep_hf(expr)
