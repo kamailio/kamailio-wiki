@@ -2129,7 +2129,7 @@ Example of usage:
 
 Try to close the connection (the one on which the message is sent out) after forwarding the current message. Can be used in same route blocks as set_forward_no_connect().
 
-Note: Use with care as you might not receive the replies anymore as the connection is closed.
+Note: Use with care as you might not receive the replies anymore as the connection is [[http://vdo.com.vn]] closed.
 
 
 ==== set_reply_no_connect ====
