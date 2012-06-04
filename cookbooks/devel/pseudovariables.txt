@@ -713,7 +713,13 @@ The 'attr' can be:
   * timeout_route
   * timeout_bye
 
+==== $dlg_var(key) ====
 
+Store and retrieve custom variable for current processed dialog.
+
+<fc #0000ff>It is R/W variable.</fc>
+
+The 'key' can be any string.
 ===== HTable module Pseudo-Variables =====
 
 ==== $sht(htable=>key) ====
