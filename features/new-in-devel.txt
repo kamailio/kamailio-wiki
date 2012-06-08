@@ -120,6 +120,7 @@
 ==== presence ====
 
   * support for polite-block in pres_auth_status() exported function
+  * added db only mode support for presentity table
 
 ==== pua ====
 
