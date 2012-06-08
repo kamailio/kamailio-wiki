@@ -107,6 +107,7 @@
     * states: active, trying, inactive, disabled
     * probing is a mode that can be set for active and inactive states
   * added outbound_proxy modparam for use with dispatcher pings
+  * MI/RPC ds_reload command can be executed even when using call load distribution
 
 ==== diversion ====
 
@@ -118,15 +119,26 @@
 
 ==== domain ====
 
-  * added new function 'lookup_domain' that in addition to checking if domain is local, adds attributes of local domain into AVPs
+  * added new function 'lookup_domain()' that in addition to checking if domain is local, adds attributes of local domain into AVPs
   * domain attributes are stored in new table 'domain_attrs'
   * removed support for db only mode and, as consequence, removed 'db_mode' module variable
+
+==== htable ====
+
+  * added 'updateexpire' parameter to the definition of an htable
+    * it permits one to change whether updating a value stored in the htable resets its time until expiration
+    * its default value is 1, to preserve existing behaviour
+    * however, if set to 0, updating a value will have no effect on how soon it will expire
 
 ==== lcr ====
 
   * gateways with special LCR instance id 0 belong to all normal LCR instances
   * added 'lcr.defunct_gw' rpc command
   * IPv6 addresses are supported
+
+==== kex ====
+
+  * new pv $sruid to return unique strings
 
 ==== mediaproxy ====
 
@@ -136,6 +148,12 @@
 
   * added MI command to run RPC commands
     * all RPC commands can be executed via MI
+
+==== mqueue ====
+
+  * queue names can now be in pseudo variables
+    * mq_add()/mq_fetch() can use pseudo variables (as well as strings) for queue names.
+    * $mqk()/$mqv() can use pseudo variables (as well as strings) for queue names
 
 ==== msilo ====
 
@@ -216,6 +234,8 @@
   * option to load database records in chunks
   * new modparam to disable remote (to a domain that is not local) back-end SUBSCRIBEs
   * table rls_presentity can be in a different DB than rls_watchers
+  * support for dedicated notifier processes
+  * made the number of notifier processes in RLS configurable
 
 ==== rr ====
 
@@ -328,6 +348,7 @@
   * option to set advertised address and port per socket
     * listen parameter can be like: 'listen=proto:ip:port advertise ip1:port1'
     * ip1 and port1 will be used to build Via and Route headers for messages using the socket
+  * allow send() without parameters - will use r-uri/dst-uri to send the msg buffer
 
 === lib/srutils ===
 
@@ -385,7 +406,7 @@
 
 === mem_join ===
 
-  * if set to 1, q_malloc does join of free memory fragments. Default is 0. In use if MEM_JOIN_FREE is defined
+  * if set to 1, q_malloc and f_malloc do join of free memory fragments. Default is 0. In use if MEM_JOIN_FREE is defined
 
 === mem_safety ===
 
