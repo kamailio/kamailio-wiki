@@ -108,6 +108,10 @@
     * probing is a mode that can be set for active and inactive states
   * added outbound_proxy modparam for use with dispatcher pings
 
+==== diversion ====
+
+  * added optional uri parameter to add_diversion()
+
 ==== dmq ====
 
   * added config function send_dmq message which exposes the same functionality as the API function
@@ -196,8 +200,12 @@
 
 ==== registrar ====
 
+  * new parameter xavp_cfg - defines the name of an XAVP container to hold per-REGISTER parameters
   * option to set max contact per REGISTER (via xavp)
   * handle GRUU extension (RFC5627)
+  * optional uri parameter
+    * removed aor_avp as it conflicted with unregister uri param
+    * save(), lookup() and register() can take an extra optional parameter to specify the URI for which to do the operation. It provides the same functionality as it was with aor_avp
 
 ==== rls ====
 
@@ -231,6 +239,7 @@
 
   * store method for SIP replies, using CSeq header
   * added HEPv2 support
+  * new parameter to allow the option of doing delayed insert to db (trace_delayed)
 
 ==== siputils ====
 
@@ -258,6 +267,9 @@
 ==== textops ====
 
   * new function: in_list(subject, list, separator)
+  * two functions to search and subst inside header fields
+    * search_hf(hf, re, flags) - search inside header field body
+    * subst_hf(hf, subst, flags) - perl-like substitution inside header field body
 
 ==== textopsx ====
 
@@ -293,6 +305,16 @@
 
   * xlog(facility,log-level,message) allows to log messages with dedicated syslog facility
 
+==== xmpp ====
+
+  * new parameter gwmap for sip-xmpp domain translation
+    * gwmap can get a valus as a list of 'sipdomain1=xmppdomain1;...;sipdomainN=xmppdomainN'
+    * whenever a sip-to-xmpp message is sent, any matching sipdomain in src or dst address is translated to appropiate xmppdomain
+    * the other way around, when a xmpp-to-sip message is sent, then any matching xmpp domain in src or dst address is translated to appropriate sip domain
+    * this allow getting rid of the URI encoding with delimiter
+    * if a domain is not found, the src/dst domains are preserved as they are in SIP to XMPP and vice verse
+    * if the xmppdomain is not provided explicitly, sipdomain is considered to be also the xmpp domain
+
 ===== New in Core =====
 
 ==== Components ====
@@ -302,7 +324,10 @@
   * added support for basic mili-second timers
   * support for receiving MSRP messages over TCP/TLS
   * setting max_while_loops to zero now allows infinite loops
-  * option to use name IDs for tos setting
+  * option to use name IDs for TOS setting
+  * option to set advertised address and port per socket
+    * listen parameter can be like: 'listen=proto:ip:port advertise ip1:port1'
+    * ip1 and port1 will be used to build Via and Route headers for messages using the socket
 
 === lib/srutils ===
 
@@ -328,6 +353,8 @@
 
   * bitwise AND operation added to DB queries
   * ability to specify DB connections as non-pooled in DB URLs
+  * updated DB API prototype for replace
+    * replace method takes two more parameters to allow implementation of replace functionality inside the db connector module, via update, affected rows and insert
 
 ==== Global Parameters ====
 
@@ -355,6 +382,15 @@
 === max_while_loops ===
 
   * setting to 0 means infinite loops are allowed in configuration file (you still get a warning on start-up)
+
+=== mem_join ===
+
+  * if set to 1, q_malloc does join of free memory fragments. Default is 0. In use if MEM_JOIN_FREE is defined
+
+=== mem_safety ===
+
+  * if set to 1, memory free operation does not call abort() for double freeing a pointer or freeing an invalid address
+  * default is 0, can be set via config framework
 
 === socket workers ===
 
