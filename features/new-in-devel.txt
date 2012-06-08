@@ -5,6 +5,10 @@
 //This is a draft of new features added in devel version, manually updated, thus not always synchronized with what is new in source code repository.//
 ===== New Modules =====
 
+==== acc ====
+
+  * new parameters cdr_start_id, cdr_end_id and cdr_duration_id to set the names of DLG variables for start time, end time and duration for calls
+
 ==== app_mono ====
 
   * new module for embedded execution of managed code, like C#
@@ -54,6 +58,24 @@
     * uac
     * mqueue
     * tmx
+  * speed up by using a cache to lookup PVs
+
+==== auth ====
+
+  * new function auth_challenge()
+    * combines www_challenge() and proxy_challenge() by calling the first for REGISTER and the second for the rest of request types
+  * new funtion to return WWW-Authenticate hdr in a PV
+
+==== auth_db ====
+
+  * new function auth_check()
+    * offers www/proxy_authenticate() behavior by using first for REGISTER and the second for the other requests
+    * it can do extra security checks based on parameters (e.g., check auth user against from/to user)
+
+==== ctl ====
+
+  * compile time option to use system memory allocator
+    * flag in module Makefile: -DCTL_SYSTEM_MALLOC
 
 ==== db_postgres ====
 
@@ -69,6 +91,10 @@
     * send_bye - set sending BYE flag for all dialogs automatically
     * wait_ack - wait for ACK to be sent after a negative reply for initial INVITE
   * dialog profiles and internal flags are stored to db and loaded upon restart
+  * support for handling early dialogs (for not ACK'ed dialogs)
+  * timeout route executed only for confirmed dialogs
+  * lookup dialog by (entry, label) if available for $dlg(...) - useful for timeout route where there is no SIP message passing through for the dialog
+  * new function to set dialog timeout by internal id - dlg_set_timeout(timeout , h_entry, h_id)
 
 ==== dialplan ====
 
@@ -82,6 +108,10 @@
     * probing is a mode that can be set for active and inactive states
   * added outbound_proxy modparam for use with dispatcher pings
 
+==== dmq ====
+
+  * added config function send_dmq message which exposes the same functionality as the API function
+
 ==== domain ====
 
   * added new function 'lookup_domain' that in addition to checking if domain is local, adds attributes of local domain into AVPs
@@ -92,10 +122,16 @@
 
   * gateways with special LCR instance id 0 belong to all normal LCR instances
   * added 'lcr.defunct_gw' rpc command
+  * IPv6 addresses are supported
+
+==== mediaproxy ====
+
+  * handle DLGCB_CONFIRMED event to catch ACKs with SDP
 
 ==== mi_rpc ====
 
   * added MI command to run RPC commands
+    * all RPC commands can be executed via MI
 
 ==== msilo ====
 
@@ -105,6 +141,10 @@
 ==== mtree ====
 
   * added 'mt_allow_duplicates' module variable
+
+==== ndb_redis ====
+
+  * reconnect if query to redis server fails
 
 ==== pdt ====
 
@@ -116,15 +156,23 @@
 ==== permissions ====
 
   * transport protocol argument of allow_trusted() function call can now have value "any" meaning that any transport protocol  is acceptable
+  * IPv6 addresses are supported
 
 ==== presence ====
 
   * support for polite-block in pres_auth_status() exported function
   * added db only mode support for presentity table
+  * option to load database records in chunks
 
 ==== pua ====
 
   * added DB only mode to PUA.  Useful for scaling presence/RLS across multiple servers.
+  * database records are loaded in chunks to cope better with large number of records
+
+==== pua_usrloc ====
+
+  * added branch_flag parameter
+    * mark the contact for sending PUBLISH via setbflag(branch_flag)
 
 ==== pv ====
 
@@ -144,6 +192,8 @@
     * $rd= "sos.fire"
   * new pseudo variables
     * $dic = Diversion header "counter" parameter value
+    * $sid = server_id value - server_id can be set via global parameter with same name
+
 ==== registrar ====
 
   * option to set max contact per REGISTER (via xavp)
@@ -155,6 +205,9 @@
   * new modparam to not perform back-end subscriptions to non-local presentities
   * rls_presentity table can be stored in a different DB to other RLS tables
   * new modparam to limit the number of back-end subscribes for each RLS subscribe dialog
+  * option to load database records in chunks
+  * new modparam to disable remote (to a domain that is not local) back-end SUBSCRIBEs
+  * table rls_presentity can be in a different DB than rls_watchers
 
 ==== rr ====
 
@@ -165,6 +218,24 @@
 
   * execute route blocks on micro-second timer base
 
+==== sanity ====
+
+  * SIP grammar checks can be done for SIP replies
+  * new checks for duplicates of tag params in To/From
+
+==== sipcapture ====
+
+  * added HEPv2 support
+
+==== siptrace ====
+
+  * store method for SIP replies, using CSeq header
+  * added HEPv2 support
+
+==== siputils ====
+
+  * allow use of is_uri_user_e164() from any route
+
 ==== sdpops ====
 
   * new functions
@@ -173,10 +244,16 @@
     * sdp_remove_media("type")
   * old functions
     * functions for keeping only a set of codecs can take a second parameter to filter the matching on certain media type
+  * support for codecs with same name and many different ids
+  * added new exported function get_sdp(...) to return the raw SDP to an AVP
 
 ==== sl ====
 
   * new event_route[sl:local-response] that allows inspection of locally generated (configuration file or code) stateless responses.  This includes HTTP responses (enable new core option http_reply_hack if you are using this event_route and HTTP)
+
+==== statistics ====
+
+  * update_stat() can now be called from ANY_ROUTE
 
 ==== textops ====
 
@@ -193,11 +270,19 @@
 
   * new parameters:
     * renegotiation - enable/disable TLS cipher renegotiation
+  *  TLS pre-init operations done at the time of loading module to allow other modules using SSL lib in parallel
+  * rpc tls.info prints the limit and opened tls connections
 
 ==== tm ====
 
   * $snd() structure filled in for event_route[tm:local-request]
   * new event_route[tm:local-response] that allows inspection of locally generated (configuration file or code) transaction stateful responses
+
+==== uac ====
+
+  * added reg_timer_interval modparam to set the frequency with which registrations are renewed and otherwise managed
+  * support for 407 challenge to registrations
+  * function to replace To header
 
 ==== usrloc ====
 
@@ -209,6 +294,35 @@
   * xlog(facility,log-level,message) allows to log messages with dedicated syslog facility
 
 ===== New in Core =====
+
+==== Components ====
+
+=== core code ===
+
+  * added support for basic mili-second timers
+  * support for receiving MSRP messages over TCP/TLS
+  * setting max_while_loops to zero now allows infinite loops
+  * option to use name IDs for tos setting
+
+=== lib/srutils ===
+
+  * new internal library to collect useful code to be shared by modules
+  * includes:
+    * JSON parser
+    * UUID generator
+    * time recurrence matching functions
+
+=== parser/uri ===
+
+  * support for URN
+    * uri parser has support for URNs (e.g. urn:service:sos.fire)
+    * t_relay() does not break on RURI with URNs
+    * PVs are set as follows:
+      * $ru= "urn:service:sos.fire"
+      * $rz= "urn"
+      * $rU= "service"
+      * $rd= "sos.fire"
+    * refer to http://tools.ietf.org/html/draft-ietf-ecrit-framework-13#page-29 for SIP signaling requirements for SIP proxy servers
 
 ==== Database Enhancements ====
 
@@ -253,6 +367,7 @@
 === tls_max_connections ===
 
   * limit the number of active tls connections
+
 ===== New RPC Commands =====
 
 ==== core.tcp_list ====
@@ -266,3 +381,19 @@
 ==== core.sockets_list ====
 
   * list local listen sockets
+
+===== Command Line Parameters =====
+
+  * -I - print details about default internal attributes
+
+===== Makefile System =====
+
+  * printmiface - new target to print module interface define
+  * option to print C compile flags
+
+===== Tools =====
+
+==== protoshoot ====
+
+  * tool for sending file content over network
+  * useful to re/send SIP messages stored in files
