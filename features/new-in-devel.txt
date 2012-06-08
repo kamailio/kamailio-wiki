@@ -138,7 +138,7 @@
 
 ==== kex ====
 
-  * new pv $sruid to return unique strings
+  * new pv $sruid to return unique strings based on sruid internal library
 
 ==== mediaproxy ====
 
@@ -167,6 +167,7 @@
 ==== ndb_redis ====
 
   * reconnect if query to redis server fails
+  * support for redis array reply
 
 ==== pdt ====
 
@@ -185,6 +186,8 @@
   * support for polite-block in pres_auth_status() exported function
   * added db only mode support for presentity table
   * option to load database records in chunks
+  * RFC 4827 (presence hard-state) support
+  * handle_subscribe() has a new optional parameter that can be used to specify watcher URI
 
 ==== pua ====
 
@@ -221,6 +224,7 @@
   * new parameter xavp_cfg - defines the name of an XAVP container to hold per-REGISTER parameters
   * option to set max contact per REGISTER (via xavp)
   * handle GRUU extension (RFC5627)
+  * added new parameter gruu_enabled - makes possible to turn off GRUU handling for REGISTER
   * optional uri parameter
     * removed aor_avp as it conflicted with unregister uri param
     * save(), lookup() and register() can take an extra optional parameter to specify the URI for which to do the operation. It provides the same functionality as it was with aor_avp
@@ -236,6 +240,7 @@
   * table rls_presentity can be in a different DB than rls_watchers
   * support for dedicated notifier processes
   * made the number of notifier processes in RLS configurable
+  * rls_handle_subscribe() has a new optional parameter that can be used to specify watcher URI
 
 ==== rr ====
 
@@ -246,6 +251,12 @@
 
   * execute route blocks on micro-second timer base
 
+==== rtpproxy ====
+
+  * send Via branch to rtpproxy
+    * introduce force/unforce options "1" and "2" to optionally send first or second Via branch to rtpproxy.
+    * this can be used to stop only a specific branch in the rtp proxy, which is needed for complex serial looping scenarios where in a race condition a new branch is processed before a previous branch is cancelled, where the cancel would whipe the whole call from the rtp proxy instead of just the old branch, causing the subsequent rtp proxy lookup to fail.
+    * 
 ==== sanity ====
 
   * SIP grammar checks can be done for SIP replies
@@ -264,6 +275,8 @@
 ==== siputils ====
 
   * allow use of is_uri_user_e164() from any route
+  * new function is_gruu(uri) - wrapper function to test quickly if a SIP URI indicates a GRUU
+      address or not
 
 ==== sdpops ====
 
@@ -320,6 +333,17 @@
 
   * save unique string ID for each contact (ruid column)
   * handle +sip.instance parameter from GRUU extension (rfc 5627)
+  * handle reg-id Contact parameter defined by RFC5626
+  * option to start own timer processes
+    * new parameter timer_procs
+    * default is 0, meaning the core timer process is used (like so far)
+    * if >0, a number of basic sync timers are started
+    * each own timer will take care of synchronizing the usrloc records, selecting specific slots in the internal hash table (load balancing mechanism) - this mode is useful for handling lot of usrloc records
+
+==== xcap_server ====
+
+  * added $xcapuri(u=>uri_adoc) pvar
+    * this gives access to the adoc field in the internal xuri data-structure (the xuri without xpath)
 
 ==== xlog ====
 
@@ -349,6 +373,10 @@
     * listen parameter can be like: 'listen=proto:ip:port advertise ip1:port1'
     * ip1 and port1 will be used to build Via and Route headers for messages using the socket
   * allow send() without parameters - will use r-uri/dst-uri to send the msg buffer
+  * added timeval field inside sip message structure
+  * added pid field inside sip message structure
+  * added support for basic timer + interval sync
+    * new functions to start basic timers that will sync the interval after executing the task. Useful if the task is taking long, the process will skip the delay in the sleep value
 
 === lib/srutils ===
 
@@ -369,6 +397,7 @@
       * $rU= "service"
       * $rd= "sos.fire"
     * refer to http://tools.ietf.org/html/draft-ietf-ecrit-framework-13#page-29 for SIP signaling requirements for SIP proxy servers
+    * support for GRUU specified by RFC5627
 
 ==== Database Enhancements ====
 
@@ -376,6 +405,7 @@
   * ability to specify DB connections as non-pooled in DB URLs
   * updated DB API prototype for replace
     * replace method takes two more parameters to allow implementation of replace functionality inside the db connector module, via update, affected rows and insert
+  * DB transaction support - added db_begin()/db_commit()/db_rollback() wrapper functions
 
 ==== Global Parameters ====
 
@@ -412,6 +442,11 @@
 
   * if set to 1, memory free operation does not call abort() for double freeing a pointer or freeing an invalid address
   * default is 0, can be set via config framework
+
+=== msg_time ===
+
+  * set the sip message timeval filed value at receive time (1 (on) by default, set to 0 to disable)
+  * the value is set automatically at received time based if msg_time=1 or first time when it is accessed
 
 === socket workers ===
 
