@@ -95,6 +95,9 @@
   * timeout route executed only for confirmed dialogs
   * lookup dialog by (entry, label) if available for $dlg(...) - useful for timeout route where there is no SIP message passing through for the dialog
   * new function to set dialog timeout by internal id - dlg_set_timeout(timeout , h_entry, h_id)
+  * possibility to send keep alives for dialogs
+    * keepalives are OPTIONS requests
+    * if keepalive request get 408 ot 481, dialog is timed out after 10 secs
 
 ==== dialplan ====
 
@@ -129,12 +132,16 @@
     * it permits one to change whether updating a value stored in the htable resets its time until expiration
     * its default value is 1, to preserve existing behaviour
     * however, if set to 0, updating a value will have no effect on how soon it will expire
+  * implemented "delete" mi/rpc function - delete specific keys from an htable via the MI or RPC interface
 
 ==== lcr ====
 
   * gateways with special LCR instance id 0 belong to all normal LCR instances
   * added 'lcr.defunct_gw' rpc command
   * IPv6 addresses are supported
+  * support for R-URI matching
+    * an additional request_uri column has been introduced
+    * if other than NULL, it also needs to match beside prefix and from_uri in order for the rule to be selected
 
 ==== kex ====
 
@@ -180,6 +187,7 @@
 
   * transport protocol argument of allow_trusted() function call can now have value "any" meaning that any transport protocol  is acceptable
   * IPv6 addresses are supported
+  * allow_trusted() can deal with HTTP requests
 
 ==== presence ====
 
@@ -188,11 +196,14 @@
   * option to load database records in chunks
   * RFC 4827 (presence hard-state) support
   * handle_subscribe() has a new optional parameter that can be used to specify watcher URI
+  * dedicated notifier processes
+    * new "notifier_processes" modparam - if set to 0, dedicated processes feature is disabled
 
 ==== pua ====
 
-  * added DB only mode to PUA.  Useful for scaling presence/RLS across multiple servers.
+  * added DB only mode to PUA.  Useful for scaling presence/RLS across multiple servers
   * database records are loaded in chunks to cope better with large number of records
+  * added MI command to "clean" the pua table
 
 ==== pua_usrloc ====
 
@@ -222,6 +233,8 @@
 ==== registrar ====
 
   * new parameter xavp_cfg - defines the name of an XAVP container to hold per-REGISTER parameters
+  * new parameter xavp_rcd - store details of UL record
+    * if set, the internal ruid field will be returned as inner xavp to it
   * option to set max contact per REGISTER (via xavp)
   * handle GRUU extension (RFC5627)
   * added new parameter gruu_enabled - makes possible to turn off GRUU handling for REGISTER
@@ -241,6 +254,7 @@
   * support for dedicated notifier processes
   * made the number of notifier processes in RLS configurable
   * rls_handle_subscribe() has a new optional parameter that can be used to specify watcher URI
+  * added MI command to "clean" the rlsubs and rlpres entries
 
 ==== rr ====
 
@@ -256,7 +270,8 @@
   * send Via branch to rtpproxy
     * introduce force/unforce options "1" and "2" to optionally send first or second Via branch to rtpproxy.
     * this can be used to stop only a specific branch in the rtp proxy, which is needed for complex serial looping scenarios where in a race condition a new branch is processed before a previous branch is cancelled, where the cancel would whipe the whole call from the rtp proxy instead of just the old branch, causing the subsequent rtp proxy lookup to fail.
-    * 
+    * handle UPDATE requests in rtpproxy_manage()
+
 ==== sanity ====
 
   * SIP grammar checks can be done for SIP replies
@@ -339,6 +354,9 @@
     * default is 0, meaning the core timer process is used (like so far)
     * if >0, a number of basic sync timers are started
     * each own timer will take care of synchronizing the usrloc records, selecting specific slots in the internal hash table (load balancing mechanism) - this mode is useful for handling lot of usrloc records
+  * option to check if contact DB UPDATE was successful
+    * use DB API affected_rows() when available to detect if the DB UPDATE operation for a contact was successful, if not, do an INSERT instead
+    * behaviour controlled by parameter db_check_update, default is 0 (no check for affected rows and no insert -- backward compatible)
 
 ==== xcap_server ====
 
@@ -348,6 +366,10 @@
 ==== xlog ====
 
   * xlog(facility,log-level,message) allows to log messages with dedicated syslog facility
+
+==== xmlrpc ====
+
+  * added support for nested structs in RPC reply via XMLRPC
 
 ==== xmpp ====
 
@@ -406,6 +428,7 @@
   * updated DB API prototype for replace
     * replace method takes two more parameters to allow implementation of replace functionality inside the db connector module, via update, affected rows and insert
   * DB transaction support - added db_begin()/db_commit()/db_rollback() wrapper functions
+
 
 ==== Global Parameters ====
 
