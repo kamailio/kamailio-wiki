@@ -1,4 +1,4 @@
-====== Kamailio SIP Server and SER v3.3.x (devel): Core Cookbook ======
+====== Kamailio SIP Server and SER v3.4.x (devel): Core Cookbook ======
 
 This tutorial collects the functions and parameters exported by Kamailio core to configuration file.
 
