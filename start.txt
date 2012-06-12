@@ -47,6 +47,7 @@
 ==== Database Structure ====
 
   * [[http://www.kamailio.org/docs/db-tables/kamailio-db-3.2.x.html|3.2.x Version]]
+  * [[http://www.kamailio.org/docs/db-tables/kamailio-db-3.3.x.html|3.3.x Version]]
   * [[http://www.kamailio.org/docs/db-tables/kamailio-db-devel.html|Devel Version]]
  ===== Alphabetic Indexes =====
 
