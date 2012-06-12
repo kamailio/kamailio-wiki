@@ -11,7 +11,8 @@ This is a step by step tutorial about how to install and maintain Kamailio SIP s
 
 The first version in release series 3.3 is 3.3.0. 3.3.x refers to the most recent version released at some point in time that starts with 3.3.
 
-
+Note that Kamailio provides APT repositories for several Debian/Ubuntu releases, you can use them to do the install from .deb packages, see:
+  * http://www.kamailio.org/wiki/packages/debs
 ==== Notes on Kamailio vs SER ====
 
 Since version 3.0.0, Kamailio and SER are built from same source code, meaning that they are more or less same application.
