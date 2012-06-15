@@ -2,7 +2,12 @@
 
 **Current devel version will be numbered 3.4.0 and it is planned to be released in early 2013**.
 
-//This is a draft of new features added in devel version, manually updated, thus not always synchronized with what is new in source code repository.//
+<fc #0000FF>
+**Previous devel version was 3.3.x (released in June 2012), see what was new in that release at:**
+</fc>
+  * <fc #0000FF>http://www.kamailio.org/wiki/features/new-in-3.3.x</fc>
+
+<fc #800000>//This is a draft of new features added in devel version, manually updated, thus not always synchronized with what is new in source code repository.//</fc>
 ===== New Modules =====
 
 ==== abc ====
