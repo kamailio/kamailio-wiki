@@ -6,9 +6,6 @@
 
 ===== New Modules =====
 
-==== acc ====
-
-  * new parameters cdr_start_id, cdr_end_id and cdr_duration_id to set the names of DLG variables for start time, end time and duration for calls
 
 ==== app_mono ====
 
