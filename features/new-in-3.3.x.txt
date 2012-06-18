@@ -1,6 +1,6 @@
 ====== Kamailio SIP Server and SER - New Features in v3.3.x ======
 
-**First release, v3.3.0, is planned to be out in June 18, 2012**.
+**First release, v3.3.0, was out on June 18, 2012**.
 
 //This is a draft of new features added in version 3.3.x, manually updated, thus not always synchronized with what is new in source code repository.//
 
