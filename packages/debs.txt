@@ -5,7 +5,7 @@ Starting from June 3rd, 2010 [[http://dev.sipdoc.net|Sipdoc Team]] provides a **
 
 ===== Status =====
 
-  * Supported Kamailio branches: '' latest stable'' (points to 3.2 now), ''3.0'', ''3.1'', ''3.2'' , ''3.3'', ''devel''
+  * Supported Kamailio branches: '' latest stable'' (points to 3.3 now), ''3.0'', ''3.1'', ''3.2'' , ''3.3'', ''devel''
   * Supported Distributions:''Debian 6.0 Squeeze'', ''Debian 7.0 Wheezy'' , ''Ubuntu 10.04 Lucid'', ''Ubuntu 12.04 Precise''
   * Deprecated Distributions: ''Debian 4.0 Etch'' (kamailio 3.0.x), ''Debian 5.0 Lenny'' (Kamailio 3.0.x, 3.1.x, 3.2.x)
   * Archs supported: ''amd64'', ''i386''
@@ -25,12 +25,6 @@ Then add the repository lines to your ''/etc/apt/sources.list'' file depending o
 
 
 
-* ''Debian Lenny''
-<code>
-deb http://deb.kamailio.org/kamailio lenny main
-deb-src http://deb.kamailio.org/kamailio lenny main
-</code>
-
 * ''Debian Squeeze''
 <code>
 deb http://deb.kamailio.org/kamailio squeeze main
@@ -48,6 +42,41 @@ deb-src http://deb.kamailio.org/kamailio wheezy main
 deb http://deb.kamailio.org/kamailio lucid main
 deb-src http://deb.kamailio.org/kamailio lucid main
 </code>
+
+* ''Ubuntu Precise''
+<code>
+deb http://deb.kamailio.org/kamailio precise main
+deb-src http://deb.kamailio.org/kamailio precise main
+</code>
+
+
+==== Latest Kamailio 3.3 release ====
+
+
+* ''Debian Squeeze''
+<code>
+deb http://deb.kamailio.org/kamailio33 squeeze main
+deb-src http://deb.kamailio.org/kamailio33 squeeze main
+</code>
+
+* ''Debian Wheezy''
+<code>
+deb http://deb.kamailio.org/kamailio33 wheezy main
+deb-src http://deb.kamailio.org/kamailio33 wheezy main
+</code>
+
+* ''Ubuntu Lucid''
+<code>
+deb http://deb.kamailio.org/kamailio33 lucid main
+deb-src http://deb.kamailio.org/kamailio33 lucid main
+</code>
+
+* ''Ubuntu Precise''
+<code>
+deb http://deb.kamailio.org/kamailio33 precise main
+deb-src http://deb.kamailio.org/kamailio33 precise main
+</code>
+
 
 ==== Latest Kamailio 3.2 release ====
 
@@ -198,6 +227,7 @@ deb http://deb.kamailio.org/kamailio32-nightly lucid main
 <code>
 deb http://deb.kamailio.org/kamailio32-nightly precise main
 </code>
+
 
 
 
