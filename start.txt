@@ -97,6 +97,7 @@
 
   * [[devel:active-contributors|Contributors - List of Active Developers]]
   * [[devel:irc-meetings|IRC Development Meetings]]
+  * [[devel:makefile-system|Makefile System]]
 ===== Disclaimer =====
 
 <color grey>
