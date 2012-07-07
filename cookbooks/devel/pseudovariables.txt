@@ -302,7 +302,7 @@ To reset $du:
 
 ==== Protocol of received message ====
 
-**$pr** or **$proto** - protocol of received message (UDP, TCP, TLS, SCTP)
+**$pr** or **$proto** - protocol of received message (UDP, TCP, TLS, SCTP, WS, WSS)
 
 ==== User in SIP Request's P-Preferred-Identity header URI ====
 
