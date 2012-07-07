@@ -21,7 +21,15 @@
 
 
 ===== New in Core =====
+==== Components ====
+=== core code ===
 
+  * support for receiving/sending WebSocket frames over TCP/TLS
+  * support for building Via: and Record-Route: (including double-RR) headers for WebSockets
 
+=== parser/uri ===
+
+  * support for WS and WSS transports in Via: lines
+  * support for ";transport=ws" in URIs
 ===== Tools =====
 
