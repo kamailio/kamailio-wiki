@@ -388,6 +388,18 @@ Example of usage:
   };
 </code>
 
+==== SCTP ====
+
+This keyword can be used to test the value of 'proto' and check whether the SIP packet was received over SCTP or not.
+
+Example of usage:
+<code c>
+  if(proto==SCTP)
+  {
+      log("the SIP message was received over SCTP\n");
+  };
+</code>
+
 ==== TCP ====
 
 This keyword can be used to test the value of 'proto' and check whether the SIP packet was received over TCP or not.
@@ -400,6 +412,17 @@ Example of usage:
   };
 </code>
 
+==== TLS ====
+
+This keyword can be used to test the value of 'proto' and check whether the SIP packet was received over TLS or not.
+
+Example of usage:
+<code c>
+  if(proto==TLS)
+  {
+      log("the SIP message was received over TLS\n");
+  };
+</code>
 ==== UDP ====
 
 This keyword can be used to test the value of 'proto' and check whether the SIP packet was received over UDP or not.
