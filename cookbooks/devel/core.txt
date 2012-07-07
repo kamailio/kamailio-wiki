@@ -435,6 +435,30 @@ Example of usage:
   };
 </code>
 
+==== WS ====
+
+This keyword can be used to test the value of 'proto' and check whether the SIP packet was received over WS or not.
+
+Example of usage:
+<code c>
+  if(proto==WS)
+  {
+      log("the SIP message was received over WS\n");
+  };
+</code>
+
+
+==== WSS ====
+
+This keyword can be used to test the value of 'proto' and check whether the SIP packet was received over WSS or not.
+
+Example of usage:
+<code c>
+  if(proto==WSS)
+  {
+      log("the SIP message was received over WSS\n");
+  };
+</code>
 ==== max_len ====
 
 Note: This command was removed.
