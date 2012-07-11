@@ -355,6 +355,10 @@ INSERT INTO version (table_name, table_version) VALUES ('location','5');
 </code>
 ===== Modules =====
 
+==== modules_k/domain ====
+
+  * Removed support for db only mode and, as consequence, removed db_mode module variable.
+
 ==== modules_k/presence ====
 
   * removed db_mode and fallback2db parameters
