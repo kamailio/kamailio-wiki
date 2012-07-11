@@ -123,6 +123,11 @@ CREATE TABLE domain_attrs (
   UNIQUE KEY domain_attrs_idx (did,name,value)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+GRANT ALL PRIVILEGES ON TABLE domain_attrs TO openser;
+GRANT SELECT ON TABLE domain_attrs TO openserro;
+GRANT ALL PRIVILEGES ON TABLE domain_attrs_id_seq TO openser;
+GRANT SELECT ON TABLE domain_attrs_id_seq TO openserro;
+
 -- PRESENCE modules
 DELETE FROM active_watchers;
 ALTER TABLE active_watchers ADD COLUMN from_domain varchar(64) NOT NULL;
