@@ -54,6 +54,7 @@
 \\
 
 |                     ^ Modules Parameters  ^ Modules Functions ^ MI Commands ^ Statistics ^ RPC Commands ^ 
+^ 3.4.x Version |  [[alphaindexes:3.4.x:modparameters|link]]  |  [[alphaindexes:3.4.x:modfunctions|link]]  |  [[alphaindexes:3.4.x:micommands|link]]  |  [[alphaindexes:3.4.x:modstatistics|link]]  |  [[http://www.kamailio.org/docs/docbooks/3.4.x/rpc_list/rpc_list.html|link]]  |
 ^ 3.3.x Version |  [[alphaindexes:3.3.x:modparameters|link]]  |  [[alphaindexes:3.3.x:modfunctions|link]]  |  [[alphaindexes:3.3.x:micommands|link]]  |  [[alphaindexes:3.3.x:modstatistics|link]]  |  [[http://www.kamailio.org/docs/docbooks/3.3.x/rpc_list/rpc_list.html|link]]  |
 ^ 3.2.x Version       |  [[alphaindexes:3.2.x:modparameters|link]]  |  [[alphaindexes:3.2.x:modfunctions|link]]  |  [[alphaindexes:3.2.x:micommands|link]]  |  [[alphaindexes:3.2.x:modstatistics|link]]  |  [[http://www.kamailio.org/docs/docbooks/3.2.x/rpc_list/rpc_list.html|link]]  |
 
