@@ -47,6 +47,9 @@
 
   * added support for websocket transport layer
 
+==== permissions ====
+
+  * added new cfg function allow_address_group(addr, port)
 ==== rtpproxy ====
 
   * allow script variables in set_rtp_proxy_set(...) parameter
