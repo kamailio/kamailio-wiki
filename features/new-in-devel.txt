@@ -27,6 +27,14 @@
 
 ===== New in Old Modules =====
 
+==== lcr ====
+
+  * added support for websocket transport layer
+
+==== nat_traversal ====
+
+  * added support for websocket transport layer
+
 ==== nathelper ====
 
   * use usrloc record unique id to generate the OPTIONS keepalives, allowing to match its reply with location record
