@@ -53,6 +53,10 @@
 ==== permissions ====
 
   * added new cfg function allow_address_group(addr, port)
+
+==== pv ====
+
+  * new variable $cnt(...) to count the number of other array variables
 ==== rtpproxy ====
 
   * allow script variables in set_rtp_proxy_set(...) parameter
