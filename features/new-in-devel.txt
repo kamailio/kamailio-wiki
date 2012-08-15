@@ -63,6 +63,10 @@
 ==== snmpstats ====
 
   * added support for websocket transport layer
+
+==== uac ====
+
+  * uac_replace_[from|to]() in AUTO mode can use dialog module to restore From/To
 ===== New in Core =====
 ==== Components ====
 === core code ===
