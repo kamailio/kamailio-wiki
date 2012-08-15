@@ -47,6 +47,13 @@
 
   * allow script variables in set_rtp_proxy_set(...) parameter
 
+==== seas ====
+
+  * added support for websocket transport layer
+
+==== snmpstats ====
+
+  * added support for websocket transport layer
 ===== New in Core =====
 ==== Components ====
 === core code ===
