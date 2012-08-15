@@ -27,6 +27,11 @@
 
 ===== New in Old Modules =====
 
+==== ipops ====
+
+  * added new exported function is_in_subnet()
+
+
 ==== lcr ====
 
   * added support for websocket transport layer
