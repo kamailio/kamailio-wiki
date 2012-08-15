@@ -55,6 +55,11 @@
 
   * added support for websocket transport layer
 
+==== sipcapture ====
+
+  * support multiple tables
+  * HEPv3 support
+
 ==== snmpstats ====
 
   * added support for websocket transport layer
