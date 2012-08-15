@@ -60,6 +60,7 @@
 
   * support for receiving/sending WebSocket frames over TCP/TLS
   * support for building Via: and Record-Route: (including double-RR) headers for WebSockets
+  * added Colin Plumb's MD5 implementation to be fully GPL compliant
 
 === parser/uri ===
 
