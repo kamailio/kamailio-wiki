@@ -31,6 +31,10 @@
 
   * added support for websocket transport layer
 
+==== mqueue ====
+
+  * added mq_size() function to get runtime size of mqueue in script
+  * added MI command to get current size of mqueue
 ==== nat_traversal ====
 
   * added support for websocket transport layer
