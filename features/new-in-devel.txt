@@ -39,6 +39,10 @@
 
   * use usrloc record unique id to generate the OPTIONS keepalives, allowing to match its reply with location record
 
+==== path ====
+
+  * added support for websocket transport layer
+
 ==== rtpproxy ====
 
   * allow script variables in set_rtp_proxy_set(...) parameter
