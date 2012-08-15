@@ -43,6 +43,9 @@
 
   * use usrloc record unique id to generate the OPTIONS keepalives, allowing to match its reply with location record
 
+==== ndb_redis ====
+
+  * ability to connect to redis server via unix domain socket
 ==== path ====
 
   * added support for websocket transport layer
