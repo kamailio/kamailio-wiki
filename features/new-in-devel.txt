@@ -10,6 +10,16 @@
 <fc #800000>//This is a draft of new features added in devel version, manually updated, thus not always synchronized with what is new in source code repository.//</fc>
 ===== New Modules =====
 
+==== CDP ====
+
+  * C Diameter Peer - core communication engine
+  * http://kamailio.org/docs/modules/devel/modules/cdp.html
+
+==== CDP_AVP ====
+
+  * C Diameter Peer - application extensions
+  * http://kamailio.org/docs/modules/devel/modules/cdp_avp.html
+
 ==== websocket ====
 
   * new module providing a WebSocket (RFC 6455) server for SIP over WebSockets (draft-ibc-sipcore-sip-websocket-02)
