@@ -65,6 +65,10 @@
 
   * added new cfg function allow_address_group(addr, port)
 
+==== prefix_route ====
+
+  * option to provide the value to match the prefix as parameter to prefix_route()
+  * option to disable config file execution exit upon prefix match
 ==== pv ====
 
   * new variable $cnt(...) to count the number of other array variables
