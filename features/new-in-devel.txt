@@ -92,6 +92,13 @@
   * uac_replace_[from|to]() in AUTO mode can use dialog module to restore From/To
 ===== New in Core =====
 ==== Components ====
+
+=== command line parameters ===
+  * -e - print colorful messages based on log level
+
+=== core parameters ===
+  * log_color - print colorful messages based on log level
+
 === core code ===
 
   * support for receiving/sending WebSocket frames over TCP/TLS
