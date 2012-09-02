@@ -20,6 +20,11 @@
   * C Diameter Peer - application extensions
   * http://kamailio.org/docs/modules/devel/modules/cdp_avp.html
 
+==== corex ====
+
+  * new module to export more internal core API to config
+  * http://kamailio.org/docs/modules/devel/modules/corex.html
+
 ==== websocket ====
 
   * new module providing a WebSocket (RFC 6455) server for SIP over WebSockets (draft-ibc-sipcore-sip-websocket-02)
