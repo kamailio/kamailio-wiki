@@ -52,6 +52,7 @@
 ==== nathelper ====
 
   * use usrloc record unique id to generate the OPTIONS keepalives, allowing to match its reply with location record
+  * option to remove UDP contacts that don't respond to OPTIONS keepalives
 
 ==== ndb_redis ====
 
