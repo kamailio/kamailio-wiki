@@ -96,6 +96,10 @@
 ==== uac ====
 
   * uac_replace_[from|to]() in AUTO mode can use dialog module to restore From/To
+
+==== xlog ====
+
+  * log_colors - new parameter to update the color scheme for core log levels
 ===== New in Core =====
 ==== Components ====
 
