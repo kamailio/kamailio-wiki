@@ -7,7 +7,7 @@
 ??? What is Kamailio?
 
 !!! Kamailio is a SIP server, implementing the specifications from RFC3261. Its root functionality is routing any kind of SIP packets. On top of that, many conceptual features are implemented, see more at:
-  * http://www.kamailio.org/w/features/
+  * [[http://www.kamailio.org/w/features/|Kamailio Features]]
 
 ??? Is Kamailio a B2BUA?
 
@@ -20,7 +20,7 @@
 ??? Does Kamailio relay media streams?
 
 !!! No, //however// Kamailio can be configured to proxy media if needed. 
-  * See rtpproxy, iprtpproxy, and mediaproxy http://www.kamailio.org/docs/modules/stable/
+  * [[http://www.kamailio.org/docs/modules/stable/|See rtpproxy, iprtpproxy, and mediaproxy]]
 
 ??? What codecs are supported by Kamailio?
 
