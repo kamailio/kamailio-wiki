@@ -71,7 +71,6 @@
 ===== Tutorials =====
 
   * [[tutorials:3.2.x:syslog|Kamailio and Syslog with Log Rotate]]
-  * [[Testing and Debugging TLS Connections]]
   * [[tutorials:tls:testing-and-debugging|Testing and Debugging TLS Connections]]
   * [[tutorials:faq:main|Frequently Asked Questions]]
 
