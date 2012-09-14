@@ -12,14 +12,16 @@
 
 =?==== Media Streams =====
 
-??? Is Kamailio relaying the media streams?
+??? Does Kamailio relay media streams?
 
-!!! No.
+!!! No, //however// Kamailio can be configured to proxy media if needed. (See rtpproxy, iprtpproxy, and mediaproxy http://www.kamailio.org/w/features/)
 
 ??? What codecs are supported by Kamailio?
 
-!!! All, including the ones to be available in the future. Kamailio does not handle the media streams at all, therefore it does not care of their content or used codecs.
+!!! **Kamailio supports all codecs** (//even codecs that haven't been created yet//).
+
+Since Kamailio is a SIP proxy, it does not handle the media streams. Codecs are negotiated between the two endpoints.
 
 ??? Can Kamailio be used for video calls?
 
-!!! Yes. You just have to use SIP phones capable of doing video calls.
+!!! Yes, Kamailio can be used for video calls. The two SIP phones must support video codecs/calling.
