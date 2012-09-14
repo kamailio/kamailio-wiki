@@ -18,7 +18,7 @@ Regeneration of the database creation scripts is done running the next command i
 make dbschema
 </code>
 
-This command generates the SQL or control files to be used by kamdbctl tool when creating the database structure.
+This command generates the SQL or control files to be used by kamdbctl tool when creating the database structure. It requires the tool **xsltproc** to process the XML files, tool which is also needed for generation of the readme files.
 
 Changing the structure of an existing database table requires only the above steps. Adding a new table requires as well:
   * adding the table to be part of a specific group of tables. If the table is used by a module that uses other tables, all of them have to be in the same group. Tables group definitions are stored in the files kamailio-groupname.xml . It is common to use the module name as the group name.
