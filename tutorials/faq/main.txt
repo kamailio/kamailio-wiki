@@ -1,0 +1,25 @@
+====== Frequently Asked Questions ======
+
+~~QNA~~
+
+=?==== General =====
+
+??? What is Kamailio?
+
+!!! Kamailio is a SIP server, implementing the specifications from RFC3261. Its root functionality is routing any kind of SIP packets. On top of that, many conceptual features are implemented, see more at:
+  * http://www.kamailio.org/w/features/
+
+
+=?==== Media Streams =====
+
+??? Is Kamailio relaying the media streams?
+
+!!! No.
+
+??? What codecs are supported by Kamailio?
+
+!!! All, including the ones to be available in the future. Kamailio does not handle the media streams at all, therefore it does not care of their content or used codecs.
+
+??? Can Kamailio be used for video calls?
+
+!!! Yes. You just have to use SIP phones capable of doing video calls.
