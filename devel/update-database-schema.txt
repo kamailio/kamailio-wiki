@@ -42,3 +42,9 @@ It is recommended to split the commit in two parts, because they affect differen
   * one for the XML files (they are part of internal library srdb1)
   * one for DB creation scripts (they are part of kamctl tool)
 
+This brings the benefit of easy backporting, because the commit to xml file is unlikely to create conflicts, changing one file in a group of lines related to same column, so it can be cherry-picked alone. Commits to database creation scripts affects many files and can result in conflicts if new columns were added meanwhile to the development version to that table.
+
+If there is a fix that has to be backported, always do it to master branch and then cherry-pick it in the stable branches. With split commits, the typical backport procedure is:
+  * cherry-pick only the commit to xml files
+  * regenerated the schema for the stable branch and commit the updates
+
