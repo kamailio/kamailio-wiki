@@ -12,7 +12,7 @@ Each table is defined in the file tablename.xml.
 
 Changing the database schema (adding new tables, adding/removing/updating columns) must be done creating or updating the XML files.
 
-Regeneration of the database creation scripts is done with the command:
+Regeneration of the database creation scripts is done running the next command inside the root folder of the source tree:
 
 <code>
 make dbschema
