@@ -1,11 +1,18 @@
 ====== Kamailio SIP Server Documentation Wiki ======
 
-**NOTE: The wiki has the anonymous editing disabled for the moment due to spam bots passing the CAPTCHA system. You have to create an account via registration form:**
+**<fc #0000FF>NOTE: The wiki has the anonymous editing disabled for the moment due to spam bots passing the CAPTCHA system. You have to create an account via registration form:</fc>**
   * **https://www.kamailio.org/wiki/start?do=register**
 
 **It is recommended you connect over HTTPS to log in and edit the wiki.**
 
-<color blue>//This wiki site is work in progress, targeting to collect updated documentation for [[http://www.kamailio.org|Kamailio SIP Server]] v3.2.0 or newer. If you don't find on this site the documentation you are looking for, search for it on **Old Wiki Site**://</color>
+Few guidelines to edit the wiki:
+  * everyone is welcome to add useful content to the wiki
+  * use namespaces when adding new pages
+  * if there is a root namespace that matches the new page topic, add it inside it, eventually create a new sub-namespace
+  * if you add many pages for the same subject, group them under same sub-namespace
+  * if you are not sure that the content is entirely correct, send an email to mailing lists <sr-users [at] lists.sip-router.org> asking for review
+
+<color blue>//IMPORTANT: This wiki site is work in progress, targeting to collect updated documentation for [[http://www.kamailio.org|Kamailio SIP Server]] v3.2.0 or newer. If you don't find on this site the documentation you are looking for, search for it on **Old Wiki Site**://</color>
 
   * [[http://www.kamailio.org/dokuwiki/|Link to Old Wiki Site]]
 
