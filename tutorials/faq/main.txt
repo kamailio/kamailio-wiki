@@ -27,6 +27,12 @@ Kamailio can be used to bridge between any combinations of these protocols, e.g.
 !!! No, you must restart after you update the configuration file.
 
 But note that many global parameters can be changed via RPC/MI commands without restart (e.g., TCP connecting timeout, debug level). Applying changes related to loaded modules or routing block require always a restart.
+
+=?==== Modules =====
+
+??? What is a Kamailio module?
+
+!!! A module is an extension that compiles in a separate object file and can be loaded at Kamailio startup. Usually a module exports new functions that can be used in configuration file routing blocks.
 =?==== Media Streams =====
 
 ??? Does Kamailio relay media streams?
