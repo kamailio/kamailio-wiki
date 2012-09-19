@@ -84,3 +84,15 @@ Since Kamailio is a SIP proxy, it does not handle the media streams. Codecs are 
 ??? Can Kamailio be used for video calls?
 
 !!! Yes, Kamailio can be used for video calls. The two SIP phones must support video codecs/calling.
+
+=?==== Getting Started =====
+
+??? What should be one familiar with before starting with Kamailio?
+
+To be familiar with Linux and understand Session Initiation Protocol (SIP - RFC3261).
+
+??? Any step-by-step guide to install Kamailio?
+
+Yes, see:
+  * http://www.kamailio.org/wiki/#installation
+
