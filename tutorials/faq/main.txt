@@ -87,7 +87,7 @@ Since Kamailio is a SIP proxy, it does not handle the media streams. Codecs are 
 
 =?==== Getting Started =====
 
-??? What should be one familiar with before starting with Kamailio?
+??? What are the minimum knowledge requirements before starting with Kamailio?
 
 To be familiar with Linux and understand Session Initiation Protocol (SIP - RFC3261).
 
