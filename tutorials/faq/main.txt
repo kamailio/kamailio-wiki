@@ -21,6 +21,12 @@
 At transport layer, Kamailio support UDP, TCP, TLS and SCTP. Transmission can be done in asynchronous mode (configuration option), inclusive for TCP and TLS.
 
 Kamailio can be used to bridge between any combinations of these protocols, e.g., receiving SIP packets on UDP over IPv4 and sending out on TLS over IPv6.
+
+??? Is it possible to reload Kamailio configuration file?
+
+!!! No, you must restart after you update the configuration file.
+
+But note that many global parameters can be changed via RPC/MI commands without restart (e.g., TCP connecting timeout, debug level). Applying changes related to loaded modules or routing block require always a restart.
 =?==== Media Streams =====
 
 ??? Does Kamailio relay media streams?
