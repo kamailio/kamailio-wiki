@@ -39,6 +39,30 @@ Starting with end of 2008, contributions to core and several modules are done un
 ??? What is a Kamailio module?
 
 !!! A module is an extension that compiles in a separate object file and can be loaded at Kamailio startup. Usually a module exports new functions that can be used in configuration file routing blocks.
+
+??? Where are Kamailio modules located?
+
+!!! Inside the source tree, there are three directories:
+  * modules/
+  * modules_k/
+  * modules_s/
+
+Each module is located in its own sub-folder. The documentation for modules that are bundled in Kamailio packages is available at:
+  * http://kamailio.org/docs/modules/stable/
+
+??? Which modules are compiled by default?
+
+The modules that have the same dependencies as the core of Kamailio. Those that are not compiled by default are kept in the variable 'exclude_modules' of Makefile.
+
+??? How can I compile and install a module that is excluded by default?
+
+Add it to the variable 'include_modules' to the command 'make cfg'. For example, compiling and installing the modules app_lua and db_mysql:
+
+<code>
+make FLAVOUR=kamailio include_modules="app_lua db_mysql" cfg
+make all
+make install
+</code>
 =?==== Media Streams =====
 
 ??? Does Kamailio relay media streams?
