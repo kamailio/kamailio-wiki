@@ -34,6 +34,11 @@ Kamailio is an open source application licensed under GNU Public License version
 
 Starting with end of 2008, contributions to core and several modules are done under BSD license. That means parts of it can be extracted and used under BSD license terms. But over all, when used as one application, the use must follow the terms of GPLv2, because GPLv2 is viral. 
 
+??? Are there public mailing list where one can ask questions about Kamailio?
+
+Yes, there are few of them, each addressing a particular category of topics, see the list at:
+  * http://www.kamailio.org/w/mailing-lists/
+
 =?==== Modules =====
 
 ??? What is a Kamailio module?
