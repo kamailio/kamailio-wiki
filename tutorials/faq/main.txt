@@ -28,6 +28,12 @@ Kamailio can be used to bridge between any combinations of these protocols, e.g.
 
 But note that many global parameters can be changed via RPC/MI commands without restart (e.g., TCP connecting timeout, debug level). Applying changes related to loaded modules or routing block require always a restart.
 
+??? What is the license of Kamailio?
+
+Kamailio is an open source application licensed under GNU Public License version 2 (aka GPLv2). It can be used for free "as in beer".
+
+Starting with end of 2008, contributions to core and several modules are done under BSD license. That means parts of it can be extracted and used under BSD license terms. But over all, when used as one application, the use must follow the terms of GPLv2, because GPLv2 is viral. 
+
 =?==== Modules =====
 
 ??? What is a Kamailio module?
