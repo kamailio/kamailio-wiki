@@ -1,5 +1,10 @@
 ====== Frequently Asked Questions ======
 
+This page is open for contributions, you must create an user account via registration form:
+  * https://www.kamailio.org/wiki/start?do=register
+
+If you have a question suitable for FAQ and you don't know the answer, add it and set the answer to 'TBA', others can read it and give the right answer.
+
 ~~QNA~~
 
 =?==== General =====
