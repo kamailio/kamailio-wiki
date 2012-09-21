@@ -1617,6 +1617,16 @@ Maximum bytes queued for write allowed globally. It has no effect if tcp_write_b
 
 Most of TLS layer attributes can be configured via TLS module parameters.
 
+==== tls_port_no ====
+
+The port the SIP server listens to for TLS connections.
+
+Default value is 5061.
+
+Example of usage:
+
+    tls_port_no=6061
+
 ==== tls_max_connections ====
 
 Maximum number of ls connections (if the number is exceeded no new ls connections will be accepted). It cannot exceed tcp_max_connections.
@@ -2852,4 +2862,3 @@ Note: internally == and != are converted on startup to eq/ne/ieq/ine  whenever p
       strempty(expr) - returns true if expr evaluates to the empty
                        string (equivalent to expr=="").
       Example: if (defined $v && !strempty($v)) $len=strlen($v);
-
