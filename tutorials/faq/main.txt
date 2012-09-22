@@ -19,6 +19,27 @@ If you have a question suitable for FAQ and you don't know the answer, add it an
 !!! No, Kamailio is a flexible SIP proxy. Many people integrate Asterisk, FreeSWITCH, SEMS, or other products with Kamailio for a B2BUA. 
    * [[http://ftp.iptel.org/pub/sems/doc/current/ModuleDoc_sbc.html|SEMS B2BUA]]
 
+??? Can Kamailio be used as SIP redirect server?
+
+!!! Yes.
+
+??? Can Kamailio be used as SIP registrar and location server?
+
+!!! Yes.
+
+??? Can Kamailio be used as SIP proxy server?
+
+!!! Yes.
+
+??? Can Kamailio be used as SIP load balancer server?
+
+!!! Yes.
+
+??? Can Kamailio be used as SIP least cost routing server?
+
+!!! Yes.
+
+
 ??? What transport layer protocols are implemented in Kamailio?
 
 !!! At network layer, Kamailio supports both IPv4 and IPv6.
