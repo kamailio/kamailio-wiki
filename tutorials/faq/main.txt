@@ -115,10 +115,34 @@ Since Kamailio is a SIP proxy, it does not handle the media streams. Codecs are 
 
 ??? What are the minimum knowledge requirements before starting with Kamailio?
 
-To be familiar with Linux and understand Session Initiation Protocol (SIP - RFC3261).
+!!! To be familiar with Linux and understand Session Initiation Protocol (SIP - RFC3261).
 
 ??? Any step-by-step guide to install Kamailio?
 
-Yes, see:
+!!! Yes, see:
   * http://www.kamailio.org/wiki/#installation
 
+=?==== Support =====
+
+??? Where I can post questions about Kamailio?
+
+!!! If the question is related to a stable version of Kamailio, then email to:
+  * sr-users [at] lists.sip-router.org
+  * mailing list web page:
+    * http://lists.sip-router.org/cgi-bin/mailman/listinfo/sr-users
+
+If the question is related to development version of Kamailio, then email to:
+  * sr-dev [at] lists.sip-router.org
+  * mailing list web page:
+    * http://lists.sip-router.org/cgi-bin/mailman/listinfo/sr-dev
+
+??? Where I can report an issue?
+
+!!! Use the bug tracker available at:
+  * http://sip-router.org/tracker
+
+??? Where can I buy commercial support?
+
+!!! See details posted at:
+  * http://www.kamailio.org/w/business-directory/
+  * http://www.kamailio.org/w/business/
