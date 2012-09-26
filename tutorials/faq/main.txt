@@ -120,7 +120,13 @@ Since Kamailio is a SIP proxy, it does not handle the media streams. Codecs are 
 
 =?==== Support =====
 
-??? Where I can post questions about Kamailio?
+
+??? Are there public mailing list where one can ask questions about Kamailio?
+
+!!! Yes, there are few of them, each addressing a particular category of topics, see the list at:
+  * http://www.kamailio.org/w/mailing-lists/
+
+??? What are the rules for posting questions about Kamailio?
 
 !!! If the question is related to a stable version of Kamailio, then email to:
   * sr-users [at] lists.sip-router.org
@@ -131,6 +137,11 @@ If the question is related to development version of Kamailio, then email to:
   * sr-dev [at] lists.sip-router.org
   * mailing list web page:
     * http://lists.sip-router.org/cgi-bin/mailman/listinfo/sr-dev
+
+If the question is related to commercial aspects of Kamailio, then email to:
+  * business [at] lists.kamailio.org
+  * mailing list web page:
+    * http://lists.kamailio.org/cgi-bin/mailman/listinfo/business
 
 ??? Where I can report an issue?
 
