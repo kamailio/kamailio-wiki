@@ -83,11 +83,11 @@ Each module is located in its own sub-folder. The documentation for modules that
 
 ??? Which modules are compiled by default?
 
-The modules that have the same dependencies as the core of Kamailio. Those that are not compiled by default are kept in the variable 'exclude_modules' of Makefile.
+!!! The modules that have the same dependencies as the core of Kamailio. Those that are not compiled by default are kept in the variable 'exclude_modules' of Makefile.
 
 ??? How can I compile and install a module that is excluded by default?
 
-Add it to the variable 'include_modules' to the command 'make cfg'. For example, compiling and installing the modules app_lua and db_mysql:
+!!! Add it to the variable 'include_modules' to the command 'make cfg'. For example, compiling and installing the modules app_lua and db_mysql:
 
 <code>
 make FLAVOUR=kamailio include_modules="app_lua db_mysql" cfg
