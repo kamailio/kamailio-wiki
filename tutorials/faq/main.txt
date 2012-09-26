@@ -128,7 +128,11 @@ Since Kamailio is a SIP proxy, it does not handle the media streams. Codecs are 
 
 ??? What are the rules for posting questions about Kamailio?
 
-!!! If the question is related to a stable version of Kamailio, then email to:
+!!! You must subscribe to be able to post questions. Subscription is free, instructions are presented at the link related to each mailing list.
+
+The most important rules are to use a decent vocabulary and post about something related to Kamailio.
+
+If the question is related to a stable version of Kamailio, then email to:
   * sr-users [at] lists.sip-router.org
   * mailing list web page:
     * http://lists.sip-router.org/cgi-bin/mailman/listinfo/sr-users
