@@ -12,7 +12,7 @@ Exported functions by **app_lua** are available in the Lua script as package **s
 
 References:
 
-  * **app_lua** module: [[http://kamailio.org/docs/modules/devel/modules/app_lua.html|README]]
+  * **app_lua** module: [[http://kamailio.org/docs/modules/3.3.x/modules/app_lua.html|README]]
   * **Lua**: http://www.lua.org
 
 Remarks:
