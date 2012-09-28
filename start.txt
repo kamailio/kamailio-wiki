@@ -93,6 +93,7 @@ Few guidelines to edit the wiki:
 
 |                     ^ - Lua - ^ - Mono - ^ - Perl - ^ - Python - ^ 
 ^ Devel Version       |  [[embeddedapi:devel:lua|link]]  |  [[embeddedapi:devel:mono|link]]  |  [[embeddedapi:devel:perl|link]]  |  [[embeddedapi:devel:python|link]]  |
+^ 3.3.x Version       |  [[embeddedapi:3.3.x:lua|link]]  |  [[embeddedapi:3.3.x:mono|link]]  |  [[embeddedapi:3.3.x:perl|link]]  |  [[embeddedapi:3.3.x:python|link]]  |
 ^ 3.2.x Version       |  [[embeddedapi:3.2.x:lua|link]]  |  -  |  [[embeddedapi:3.2.x:perl|link]]  |  [[embeddedapi:3.2.x:python|link]]  |
 
 \\ 
