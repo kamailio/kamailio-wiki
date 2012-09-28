@@ -1,4 +1,4 @@
-====== Lua API for Kamailio Devel Version ======
+====== Lua API for Kamailio v3.3.x ======
 
 ===== Overview =====
 
