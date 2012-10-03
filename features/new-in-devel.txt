@@ -76,6 +76,10 @@
 
   * allow script variables in set_rtp_proxy_set(...) parameter
 
+==== sdpops ====
+
+  * new function: sdp_remove_line_by_prefix(string)
+    * removes lines from SDP body that matches given prefix
 ==== seas ====
 
   * added support for websocket transport layer
