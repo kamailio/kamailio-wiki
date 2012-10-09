@@ -175,3 +175,45 @@ If the question is related to commercial aspects of Kamailio, then email to:
 ??? Can it do DSN-based (SRV) load balancing?
 
 !!! Yes.
+
+=?==== Instant Messaging and Presence =====
+
+??? Can it route SIP instant messaging requests (page mode, RFC3428)?
+
+!!! Yes. There is nothing special to do for that in configuration file, MESSAGE requests are simply routed as any other SIP request.
+
+??? Can it store instant messages for offline users and deliver them when the users become online?
+
+!!! Yes. See msilo module.
+
+??? Can it route instant messages using MSRP (RFC4975)?
+
+!!! Yes. Kamailio offers an embedded MSRP relay function via msrp module. You don't need any external application for relaying MSRP packets.
+
+??? Can it handle end-to-end presence requests?
+
+!!! Yes. There is nothing special to do for that in configuration file, SUBSCRIBE and NOTIFY requests are simply routed as any other SIP request.
+
+??? Does it have support for SIP SIMPLE Presence (presence agent model)?
+
+!!! Yes. You have to use presence and presence_xml modules to handle PUBLISH and SUBSCRIBE requests.
+
+??? Does it have support for Resource Lists Service?
+
+!!! Yes. You have to use rls module.
+
+??? Can it act as a presence user agent?
+
+!!! Yes. See pua module and its extensions named with 'pua_' prefix (such as pua_usrloc, pua_dialoginfo, etc.).
+
+??? Can it handle subscription requests for dialog states (aka, blinking lamps)?
+
+!!! Yes. You have to use dialog module together with presence_dialoginfo and pua_dialoginfo modules.
+
+??? Does it have support for handling XCAP?
+
+!!! Yes. Kamailio offers an embedded XCAP server via xcap_server module. It can receive and handle directly the XCAP requests without using any external application.
+
+The xcap_client module can be used when you want to interact with an external XCAP server (that could be another instance of Kamailio).
+
+
