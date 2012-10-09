@@ -157,3 +157,17 @@ If the question is related to commercial aspects of Kamailio, then email to:
 !!! See details posted at:
   * http://www.kamailio.org/w/business-directory/
   * http://www.kamailio.org/w/business/
+
+=?==== DNS =====
+
+??? Does it have support for ENUM?
+
+!!! Yes. See enum module.
+
+??? What kind of DNS queries can it do?
+
+!!! Kamailio can do next DNS query types: A-Name, C-Name, AAAA (IPv6), SRV, NAPTR and TXT.
+
+??? Can it do DSN-based (SRV) load balancing?
+
+!!! Yes.
