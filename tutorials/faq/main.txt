@@ -35,6 +35,10 @@ If you have a question suitable for FAQ and you don't know the answer, add it an
 
 !!! Yes.
 
+??? Can I load balance Asterisk or FreeSwitch with Kamailio?
+
+!!! Yes.
+
 ??? Can Kamailio be used as SIP least cost routing server?
 
 !!! Yes.
