@@ -175,7 +175,7 @@ If the question is related to commercial aspects of Kamailio, then email to:
 
 !!! Kamailio can do next DNS query types: A-Name, C-Name, AAAA (IPv6), SRV, NAPTR and TXT.
 
-??? Can it do DSN-based (SRV) load balancing?
+??? Can it do DNS-based (SRV) load balancing?
 
 !!! Yes.
 
