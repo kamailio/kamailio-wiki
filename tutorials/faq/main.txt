@@ -64,6 +64,9 @@ But note that many global parameters can be changed via RPC/MI commands without 
 
 Starting with end of 2008, contributions to core and several modules are done under BSD license. That means parts of it can be extracted and used under BSD license terms. But over all, when used as one application, the use must follow the terms of GPLv2, because GPLv2 is viral. 
 
+??? Can it be installed on Windows?
+
+!!! No. There is no official development pushed in this direction, Linux/Unix being the de facto for running servers. But it might not be big effort to make it compile using the Linux-like environments for Windows (such as cygwin).
 
 =?==== Modules =====
 
