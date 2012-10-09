@@ -223,7 +223,7 @@ The xcap_client module can be used when you want to interact with an external XC
 
 ??? Can Kamailio be used with phones connecting from behind NAT?
 
-Yes. One solution is to use nathelper and rtproxy modules with the rtpproxy (http://rtpproxy.org) application for relaying RTP packets.
+Yes, Kamailio supports the so called "far-end NAT traversal". One solution is to use nathelper for NAT traversal of SIP signaling, and rtpproxy modules with the rtpproxy (http://rtpproxy.org) application for relaying RTP packets.
 
 ??? Can Kamailio be installed behind NAT (e.g., like on Amazon EC2)?
 
