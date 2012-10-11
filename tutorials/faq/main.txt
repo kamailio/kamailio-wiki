@@ -106,7 +106,7 @@ make install
 ??? Does Kamailio relay media streams?
 
 !!! No, //however// Kamailio can be configured to proxy media if needed. 
-  * [[http://www.kamailio.org/docs/modules/stable/|See rtpproxy, iprtpproxy, and mediaproxy]]
+  * [[http://www.kamailio.org/docs/modules/stable/|See rtpproxy, iptrtpproxy, and mediaproxy]]
 
 ??? What codecs are supported by Kamailio?
 
