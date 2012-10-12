@@ -2043,7 +2043,7 @@ If destination parameter is missing, the forward will be done based on RURI.
 
 Example of usage:
 
-    forward("10.0.0.10:5060");
+    forward(10.0.0.10, 5060);
     #or
     forward();
 
