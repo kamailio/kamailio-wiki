@@ -809,7 +809,7 @@ Please see also [[#memdbg]] and [[#debug]].
 
 ==== mem_summary ====
 
-Parameter to control printing of mmemory debugging information displayed on exit or SIGUSR1. The value can be composed by following flags:
+Parameter to control printing of memory debugging information displayed on exit or SIGUSR1. The value can be composed by following flags:
   * 1 - dump all the pkg used blocks (status)
   * 2 - dump all the shm used blocks (status)
   * 4 - summary of pkg used blocks
