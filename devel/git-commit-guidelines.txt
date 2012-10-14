@@ -1,3 +1,35 @@
+====== Cloning GIT Repository ======
+
+You need to install the git command line tool, part of git-core (on Debian/Ubuntu) or git (Fedora/CentOS) package:
+
+<code>
+apt-get install git-core
+</code>
+
+Create the folder where you want to clone the repository, for example:
+
+<code>
+mkdir ~/kamailio
+cd ~/kamailio
+</code>
+
+If you have developer write access to GIT repository, clone the repository with:
+
+<code>
+git clone ssh://userid@git.sip-router.org/sip-router kamailio-dev
+</code>
+
+Replace **userid** with your developer GIT username.
+
+If you don't have developer write access, you can clone read-only the repository with:
+
+<code>
+git clone --depth 1 git://git.sip-router.org/sip-router kamailio-dev
+</code>
+
+The clone is tracking automatically the remote **master** branch (the development version).
+
+
 ====== GIT Commit Guidelines to Kamailio Repository ======
 
 Not an absolute **MUST**, but it **SHOULD** be used almost always. It helps to track changes and follow the development easier (better commit mail messages and ChangeLogs are easier to generate).
