@@ -3,3 +3,4 @@
 ===== Table of Content =====
 
   * [[devel:how-to:internal-lib|How to Create and Use an Internal Library]]
+  * [[devel:how-to:module-readme|How to Regenerate the Readme file for a Module]]
