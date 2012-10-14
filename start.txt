@@ -81,6 +81,11 @@ Few guidelines to edit the wiki:
   * [[tutorials:tls:testing-and-debugging|Testing and Debugging TLS Connections]]
   * [[tutorials:faq:main|Frequently Asked Questions]]
 
+==== External Tutorials ====
+
+  * [[http://kb.asipto.com/asterisk:index|Kamailio and Asterisk Integration]]
+  * [[http://kb.asipto.com/freeswitch:index|Kamailio and FreeSwitch Integration]]
+  * [[http://kb.asipto.com/kamailio:index|Various Kamailio Use Case Tutorials]]
 ===== Development =====
 
 ==== Development APIs ====
