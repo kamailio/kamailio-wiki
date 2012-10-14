@@ -1,6 +1,6 @@
-====== Download Sources of Kamailio from GIT Repository ======
+====== Download Sources of Kamailio v3.2.x from GIT Repository ======
 
-Instructions to download sources from GIT repository, specific for stable release branches and Kamailio flavour.
+Instructions to download sources from GIT repository, specific for stable branch 3.2 (release series v3.2.x) and Kamailio flavour.
 
 ===== Kamailio v3.2.x =====
 
