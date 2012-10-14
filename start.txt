@@ -33,6 +33,7 @@ Few guidelines to edit the wiki:
   * [[http://www.kamailio.org/w/download/|Main Download Page]]
   * [[http://www.kamailio.org/pub/kamailio/latest/src/|Download Tarball with Sources of Latest Stable Release]]
   * [[download:v3.2.x-from-git|Download Sources of v3.2.x from GIT Repository]]
+  * [[download:v3.2.x-from-git|Download Sources of v3.3.x from GIT Repository]]
 
 ==== Linux - Unix Distributions ====
 
