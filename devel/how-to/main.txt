@@ -1,5 +1,6 @@
 ====== Mini How-To Guides for Development ======
 
+This page collects a series of mini How-To guides that can be handy for new developers or people working with installations from source code.
 ===== Table of Content =====
 
   * [[devel:how-to:internal-lib|How to Create and Use an Internal Library]]
