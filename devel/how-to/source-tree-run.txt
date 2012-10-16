@@ -1,0 +1,36 @@
+====== How to Run Kamailio from Source Tree Directory ======
+
+As a developer (and not only), it is convenient many times to do short testing sessions without the need to completely install Kamailio.
+
+You can run it from the top directory where you keep Kamailio's source tree.
+
+Compile as usual:
+
+<code>
+make FLAVOUR=kamailio cfg
+make all
+</code>
+
+Then set **mpath** in your configuration file to be:
+
+<code c>
+mpath="modules_k/:modules/"
+</code>
+
+And run Kamailio:
+
+<code>
+./kamailio -f /path/to/your/config/file
+</code>
+
+Default configuration file has a define switch that allows to run from source tree directory, the command is:
+
+<code>
+./kamailio -f etc/kamailio.cfg -A WITH_SRCPATH
+</code>
+
+If you want to run it in debugging mode (print logs to terminal and be verbose), you can use:
+
+<code>
+./kamailio -f etc/kamailio.cfg -A WITH_SRCPATH -E -ddd
+</code>
