@@ -415,7 +415,7 @@ To reset $du:
 
 **$fs** - reference to the forced socket for message sending (if any) in the form proto:ip:port
 
-<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
+<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file). Transport proto can be omitted when assigning value, in which case it is taken from destination URI of the message.</fc>
 
 ==== To URI Domain ====
 
