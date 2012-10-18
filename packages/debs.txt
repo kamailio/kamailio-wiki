@@ -2,7 +2,7 @@
 
 Starting from June 3rd, 2010 [[http://dev.sipdoc.net|Sipdoc Team]] provides a **Kamailio DEB repository** for Debian and Ubuntu distributions.
 
-
+Sporadically, Debian packages may be available via OpenSuse Build Service (OBS), see details in a dedicated sub-section.
 ===== Status =====
 
   * Supported Kamailio branches: '' latest stable'' (points to 3.3 now), ''3.0'', ''3.1'', ''3.2'' , ''3.3'', ''devel''
