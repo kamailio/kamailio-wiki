@@ -470,6 +470,15 @@ Example of usage:
     alias=another.domain.com:5060
 </code>
 
+=== auto_bind_ipv6 ===
+
+When turned on, Kamailio will automatically bind to all IPv6 addresses (much like the default behaviour for IPv4).
+
+Example:
+
+<code>
+    auto_bind_ipv6=1
+</code>
 ==== check_via ====
 
 Check if the address in top most via of replies is local. Default value is 0 (check disabled).
