@@ -1,9 +1,8 @@
 ====== AlpineLinux Packages ======
 
-v3.2.x packages are now available for AlpineLinux
+v3.3.x packages are now available for AlpineLinux
 
 Package Info:
   * http://alpinelinux.org/apk/main/x86/kamailio
   * http://alpinelinux.org/apk/main/x86_64/kamailio
 
-Downloads from the normal distro mirrors (Edge version). 
