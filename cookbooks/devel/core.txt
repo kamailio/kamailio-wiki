@@ -519,6 +519,7 @@ Example of usage:
 
 ==== auto_aliases ====
 
+Kamailio by default discovers all IPv4 addresses on all interfaces and does a reverse DNS lookup on these addresses to find host names. To disable this, turn off auto_aliases.
 ==== auto_bind_ipv6 ====
 
 When turned on, Kamailio will automatically bind to all IPv6 addresses (much like the default behaviour for IPv4).
