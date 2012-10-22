@@ -519,7 +519,7 @@ Example of usage:
 
 ==== auto_aliases ====
 
-Kamailio by default discovers all IPv4 addresses on all interfaces and does a reverse DNS lookup on these addresses to find host names. To disable this, turn off auto_aliases.
+Kamailio by default discovers all IPv4 addresses on all interfaces and does a reverse DNS lookup on these addresses to find host names. Discovered host names are added to aliases list, matching the **myself** condition. To disable host names auto-discovery, turn off auto_aliases.
 
 Example:
 
