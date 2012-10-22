@@ -6,3 +6,4 @@ This page collects a series of mini How-To guides that can be handy for new deve
   * [[devel:how-to:internal-lib|How to Create and Use an Internal Library]]
   * [[devel:how-to:module-readme|How to Regenerate the Readme File for a Module]]
   * [[devel:how-to:source-tree-run|How to Run Kamailio from Source Tree Directory]]
+  * [[devel:how-to:install-custom-path|How to Install Kamailio in a Custom Path]]
