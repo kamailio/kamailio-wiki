@@ -73,6 +73,7 @@
 ==== pv ====
 
   * new variable $cnt(...) to count the number of other array variables
+  * added support for websocket transport layer
 ==== registrar ====
   * added support for websocket transport layer
 
