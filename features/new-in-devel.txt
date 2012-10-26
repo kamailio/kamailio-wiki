@@ -73,6 +73,9 @@
 
   * option to provide the value to match the prefix as parameter to prefix_route()
   * option to disable config file execution exit upon prefix match
+
+==== presence ====
+  * added support for websocket transport layer
 ==== pv ====
 
   * new variable $cnt(...) to count the number of other array variables
