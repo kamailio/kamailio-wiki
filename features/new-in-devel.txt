@@ -28,8 +28,8 @@
 ==== websocket ====
 
   * new module providing a WebSocket (RFC 6455) server for:
-    * SIP over WebSockets (draft-ietf-sipcore-sip-websocket)
-    * SIP over MSRP (draft-pd-msrp-websocket)
+    * SIP over WebSocket (draft-ietf-sipcore-sip-websocket)
+    * MSRP over WebSocket (draft-pd-msrp-websocket)
   * http://kamailio.org/docs/modules/devel/modules/websocket.html
 ===== New in Old Modules =====
 
