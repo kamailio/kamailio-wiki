@@ -33,6 +33,8 @@
   * http://kamailio.org/docs/modules/devel/modules/websocket.html
 ===== New in Old Modules =====
 
+==== db_postgres ====
+  * added support for row/table locking
 ==== ipops ====
 
   * added new exported function is_in_subnet()
