@@ -136,6 +136,9 @@
 
   * uac_replace_[from|to]() in AUTO mode can use dialog module to restore From/To
 
+==== xcap_server ====
+
+  * Support for org.openmobilealliance.xcap-directory auid
 ==== xlog ====
 
   * log_colors - new parameter to update the color scheme for core log levels
