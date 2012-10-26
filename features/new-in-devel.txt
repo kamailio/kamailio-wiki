@@ -65,7 +65,7 @@
 ==== permissions ====
 
   * added new cfg function allow_address_group(addr, port)
-
+  * added support for websocket transport layer
 ==== prefix_route ====
 
   * option to provide the value to match the prefix as parameter to prefix_route()
