@@ -33,6 +33,13 @@
   * http://kamailio.org/docs/modules/devel/modules/websocket.html
 ===== New in Old Modules =====
 
+==== auth ====
+
+  * added new variant of pv_www_authenticate() which takes method as a parameter
+
+==== auth_db ====
+
+  * added new variant of www_authenticate() which takes method as a parameter
 ==== db_postgres ====
   * added support for row/table locking
 ==== ipops ====
