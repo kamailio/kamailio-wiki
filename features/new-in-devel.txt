@@ -141,6 +141,6 @@
   * support for ";transport=ws" in URIs
 
 === lib/srdb1 ===
-  * added support for row/table locking
+  * added support for row/table locking (requires corresponding support in database modules)
 ===== Tools =====
 
