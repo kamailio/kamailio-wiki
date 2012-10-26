@@ -139,5 +139,8 @@
 
   * support for WS and WSS transports in Via: lines
   * support for ";transport=ws" in URIs
+
+=== lib/srdb1 ===
+  * added support for row/table locking
 ===== Tools =====
 
