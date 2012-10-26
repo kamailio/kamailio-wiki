@@ -78,7 +78,7 @@
   * allow script variables in set_rtp_proxy_set(...) parameter
 
 ==== sanity ====
-* added support for websocket transport layer
+  * added support for websocket transport layer
 
 ==== sdpops ====
 
