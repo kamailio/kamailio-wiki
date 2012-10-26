@@ -89,6 +89,8 @@
 ==== registrar ====
   * added support for websocket transport layer
 
+==== rls ====
+  * now uses DB row/table locking in DB only mode (where supported by the DB module)
 ==== rtpproxy ====
 
   * allow script variables in set_rtp_proxy_set(...) parameter
