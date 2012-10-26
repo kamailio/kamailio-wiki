@@ -79,6 +79,9 @@
 ==== presence ====
   * added support for websocket transport layer
   * now uses DB row/table locking in DB only mode (where supported by the DB module)
+
+==== pua ====
+  * now uses DB row/table locking in DB only mode (where supported by the DB module)
 ==== pv ====
 
   * new variable $cnt(...) to count the number of other array variables
