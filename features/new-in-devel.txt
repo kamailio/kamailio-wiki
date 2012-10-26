@@ -93,6 +93,8 @@
   * support multiple tables
   * HEPv3 support
 
+==== siptrace ====
+  * added support for websocket transport layer
 ==== snmpstats ====
 
   * added support for websocket transport layer
