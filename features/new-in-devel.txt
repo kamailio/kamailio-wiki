@@ -73,10 +73,12 @@
 ==== pv ====
 
   * new variable $cnt(...) to count the number of other array variables
+==== registrar ====
+  * added support for websocket transport layer
+
 ==== rtpproxy ====
 
   * allow script variables in set_rtp_proxy_set(...) parameter
-
 ==== sanity ====
   * added support for websocket transport layer
 
