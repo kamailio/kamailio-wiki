@@ -54,7 +54,7 @@
 
   * use usrloc record unique id to generate the OPTIONS keepalives, allowing to match its reply with location record
   * option to remove UDP contacts that don't respond to OPTIONS keepalives
-
+  * added support for websocket transport layer
 ==== ndb_redis ====
 
   * ability to connect to redis server via unix domain socket
