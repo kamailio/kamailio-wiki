@@ -25,6 +25,11 @@
   * new module to export more internal core API to config
   * http://kamailio.org/docs/modules/devel/modules/corex.html
 
+==== xhttp_pi ====
+
+  * new module - provides a web provisioning interface
+  * http://kamailio.org/docs/modules/devel/modules/xhttp_pi.html
+
 ==== websocket ====
 
   * new module providing a WebSocket (RFC 6455) server for:
