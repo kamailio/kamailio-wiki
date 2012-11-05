@@ -1200,6 +1200,8 @@ Example of usage:
 
 ===== DNS Parameters =====
 
+Note: See also file doc/dns.txt for details about Kamailio's DNS client.
+
 SIP-Router has an internal DNS resolver with caching capabilities. If this caching resolver is activated (default setting) then the system's stub resolver won't be used. Thus, also local name resolution configuration like /etc/hosts entries will not be used. If the dns cache is deactivated (use_dns_cache=no), then system's resolver will be used. The DNS failover functionality in tm module references directly records in the DNS cache (which saves a lot of memory) and hence DNS based failover only works if the internal DNS cache is enabled.
 
 ^ DNS resolver comparison   ^ internal resolver ^ system resolver ^
