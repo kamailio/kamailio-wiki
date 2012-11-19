@@ -18,6 +18,8 @@ Kamailio related:
   * (dcm) outstanding issues at this time, if any
   * (dcm) roadmap to next major release
   * (dcm) timeline for a new minor release
+  * (dcm) IMS extensions - anyone to provide an update?
+  * (dcm) SIMPLE extensions - anything critical missing?
   * (oej) v4.0 vs. v3.4 - due to major additions (e.g., websockets, msrp, outbound...)
 
 ===== Participants =====
