@@ -1,0 +1,25 @@
+====== IRC Devel Meeting - 2012-11-22 ======
+
+Date:
+  * **Proposed: 15:00 UTC, Thursday, November 22, 2012**
+
+Utilities:
+  * [[http://www.timeanddate.com/worldclock/converter.html|Time Converter]]
+  * IRC webchat: http://webchat.freenode.net/
+  * IRC client apps: http://en.wikipedia.org/wiki/Internet_Relay_Chat#Clients
+
+Place:
+  * **#sip-router** IRC channel on **irc.freenode.net** server
+
+===== Agenda =====
+
+Kamailio related:
+
+  * (dcm) outstanding issues at this time, if any
+  * (dcm) roadmap to next major release
+  * (dcm) timeline for a new minor release
+  * (oej) v4.0 vs. v3.4 - due to major additions (e.g., websockets, msrp, outbound...)
+
+===== Participants =====
+
+Note that participation is open to anyone, just join the IRC channel if you want to participate.
