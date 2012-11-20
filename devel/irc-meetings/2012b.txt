@@ -37,6 +37,12 @@ Kamailio related:
     * (pd) XCAP server: does not support XQuery
   * (oej) v4.0 vs. v3.4 - due to major additions (e.g., websockets, msrp, outbound...)
   * (pd) MSRP Relay - generation of failure reports
+  * (pd) Improved RTP proxy/relay needed?
+    * (pd) rtpproxy module: re-INVITE/UPDATE problems in failure cases
+    * (pd) rtpproxy module: possible early media issues related to above
+    * (pd) rtpproxy: can only bind to two networks - if you have lots of networks to bridge between you can end up with many rtpproxy instances
+    * (pd) rtpproxy: support for failover between proxies (media session surviving server failure)
+    * (pd) rtpproxy: RTP/SAVPF to RTP/AVP interworking support
 ===== Participants =====
 
 Note that participation is open to anyone, just join the IRC channel if you want to participate.
