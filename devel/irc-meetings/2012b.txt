@@ -40,9 +40,13 @@ Kamailio related:
   * (pd) Improved RTP proxy/relay needed?
     * rtpproxy module: re-INVITE/UPDATE problems in failure cases
     * rtpproxy module: possible early media issues related to above
+    * rtpproxy module: enable/disable rtpproxy instances (graceful, allow calls to end but don't send new ones)
+    * rtpproxy module: add/remove instances live (perhaps from DB table?)
+    * rtpproxy module: shouldn't block on connecting to rtpproxy instances during start-up - each unavailable instance can add 32 seconds to Kamailio start-up time
     * rtpproxy: can only bind to two networks - if you have lots of networks to bridge between you can end up with many rtpproxy instances
     * rtpproxy: support for failover between proxies (media session surviving server failure)
     * rtpproxy: RTP/SAVPF to RTP/AVP interworking support
+    * rtpproxy: STUN and TURN server support (so can be used by client or server)
   * (pd) OMA PAL (Presence Access Layer) module?
     * complements OMA presence SIMPLE (same internal data structures) but uses more efficient messaging based around "contextually aware perspective or view"
     * Push based architecture
