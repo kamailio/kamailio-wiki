@@ -21,7 +21,7 @@ Kamailio related:
   * (dcm) IMS extensions - anyone to provide an update?
   * (dcm) SIMPLE extensions - anything critical missing?
     * (pd) Presence: GEOPRIV
-    * (pd) Presence: External references in org.openmobilealliance.pres-rules documents
+    * (pd) Presence: External references in org.openmobilealliance.pres-rules documents (need to handle org.oma.pres-rules and pres-rules as different document types)
     * (pd) Presence: Polled presence (out-of-dialog SUBSCRIBE with Expires: 0)
     * (pd) Presence: Watcher filtering (XML in SUBSCRIBE body describing what parts of a presentity should be notified)
     * (pd) Presence: Anonymous fetch
