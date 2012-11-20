@@ -20,8 +20,23 @@ Kamailio related:
   * (dcm) timeline for a new minor release
   * (dcm) IMS extensions - anyone to provide an update?
   * (dcm) SIMPLE extensions - anything critical missing?
+    * (pd) Presence: GEOPRIV
+    * (pd) Presence: External references in org.openmobilealliance.pres-rules documents
+    * (pd) Presence: Polled presence (out-of-dialog SUBSCRIBE with Expires: 0)
+    * (pd) Presence: Watcher filtering (XML in SUBSCRIBE body describing what parts of a presentity should be notified)
+    * (pd) Presence: Anonymous fetch
+    * (pd) Presence: Capabilities and user discovery
+    * (pd) RLS: External references in resource-list documents
+    * (pd) RLS: Polled presence (out-of-dialog SUBSCRIBE with Expires: 0)
+    * (pd) RLS: Watcher filtering (XML in SUBSCRIBE body describing what parts of a presentity should be notified)
+    * (pd) RLS: Anonymous fetch
+    * (pd) Presence: Capabilities and user discovery
+    * (pd) XCAP client: does not use conditional requests (ETag:, If-Match:, If-Not-Match:)
+    * (pd) XCAP client: does not support xcap-diff (could be implemented using PUA)
+    * (pd) XCAP server: does not support xcap-diff
+    * (pd) XCAP server: does not support XQuery
   * (oej) v4.0 vs. v3.4 - due to major additions (e.g., websockets, msrp, outbound...)
-
+  * (pd) MSRP Relay - generation of failure reports
 ===== Participants =====
 
 Note that participation is open to anyone, just join the IRC channel if you want to participate.
