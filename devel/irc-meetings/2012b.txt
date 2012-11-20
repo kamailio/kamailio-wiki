@@ -43,6 +43,7 @@ Kamailio related:
     * (pd) rtpproxy: can only bind to two networks - if you have lots of networks to bridge between you can end up with many rtpproxy instances
     * (pd) rtpproxy: support for failover between proxies (media session surviving server failure)
     * (pd) rtpproxy: RTP/SAVPF to RTP/AVP interworking support
+  * (pd) OMA PAL (Presence Access Layer) module? (complements OMA presence SIMPLE - same internal data structures - but uses more efficient messaging based around "contextually aware perspective or view")
 ===== Participants =====
 
 Note that participation is open to anyone, just join the IRC channel if you want to participate.
