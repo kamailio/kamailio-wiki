@@ -47,8 +47,9 @@ Kamailio related:
     * rtpproxy module: shouldn't block on connecting to rtpproxy instances during start-up - each unavailable instance can add 32 seconds to Kamailio start-up time
     * rtpproxy: can only bind to two networks - if you have lots of networks to bridge between you can end up with many rtpproxy instances
     * rtpproxy: support for failover between proxies (media session surviving server failure)
-    * rtpproxy: RTP/SAVPF to RTP/AVP interworking support
+    * rtpproxy: RTP/SAVPF to RTP/AVP interworking support (for WebRTC)
     * rtpproxy: STUN and TURN server support (so can be used by client or server)
+    * rtpproxy: Handle ICE candidate lines (for WebRTC)
   * (pd) OMA PAL (Presence Access Layer) module?
     * complements OMA presence SIMPLE (same internal data structures) but uses more efficient messaging based around "contextually aware perspective or view"
     * Push based architecture
