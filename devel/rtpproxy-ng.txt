@@ -26,7 +26,9 @@ This page is intended to collate suggestions for improvements and new features f
   * Reload DB to change RTPProxy sets (and enable/disable proxies within sets) - probably needs hash-table data-structure changes.
   * Be able to mark RTPProxies enabled/disabled through MI command.  Existing calls (and re-INVITE/UPDATE) on disabled proxies should continue to work, but new calls should not go to a disabled proxy.
 
-
+=== Receive RTP timeout notifications ===
+  * rtpproxies should be able to notify, via the new rtpproxy protocol, media timeouts to the corresponding Kamailio instance (to the rtpproxy module).
+  * The rtpproxy module should be able to trigger some event route in which the user could decide to send a BYE in both directions, stop the accounting or whatever. No more HTTP XMLRPC for notifying timeouts to a single Kamailio server (hack).
 ==== RTPProxy ====
 === ICE Support ===
   * TURN Server as well as RTPProxy
