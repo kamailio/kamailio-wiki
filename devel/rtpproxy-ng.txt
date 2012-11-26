@@ -47,5 +47,5 @@ This page is intended to collate suggestions for improvements and new features f
   * Need to be able to terminate and originate RTCP messages for the stream from/to WebRTC (if the other side does not support WebRTC)
   * ICE support (above) will be required
 
-
-
+=== SRTP-RTP Gatewaying ===
+  * Works only if RTPProxy sees the session key (e.g. SDES: RFC 4568)
