@@ -43,6 +43,9 @@ This page is intended to collate suggestions for improvements and new features f
 === Failover ===
   * Deploy RTPProxies in pairs, replicate media sessions between them, fail-over/swap between instances.
 
+=== Media timeout notification ===
+  * If a media sessions timeouts (so rtpproxy closes its sockets) rtpproxy should notify it to the proper Kamailio instance by providing data enough to Kamailio about the session (call-id, from, to...).
+
 === RTP/AVP to RTP/SAVPF conversion ===
   * For WebRTC
   * Need to be able to decrypt traffic from WebRTC and encrypt traffic to WebRTC
