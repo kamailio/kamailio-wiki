@@ -1959,7 +1959,7 @@ add_local_rport();
 </code>
 ==== append_branch ====
 
-Similarly to t_fork_to, it extends destination set by a new entry. The difference is that current URI is taken as new entry. 
+append_branch extends destination set by a new entry. The difference is that current URI is taken as new entry. 
 
 Without parameter, the function copies the current URI into a new branch. Thus, leaving the main branch (the URI) for further manipulation.
 
