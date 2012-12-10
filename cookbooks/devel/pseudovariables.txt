@@ -551,7 +551,7 @@ $xavp(sf=>uri)="sip:10.10.10.12";
 $xavp(sf[0]=>fr_timer)=10;
 $xavp(sf[0]=>fr_inv_timer)=15;
 $xavp(sf[0]=>headers)="X-CustomerID: pw45\r\n";
-<(code>
+</code>
 
 xavps are read and write variables. You can create multilevel xavps, as xavps may contain xavps.
 
