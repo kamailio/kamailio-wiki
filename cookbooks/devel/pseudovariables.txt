@@ -517,6 +517,43 @@ $(avp(x)[1]) = $null;
 
 It is R/W variable (you can assign values to it directly in configuration file).
 
+===== XAVPs =====
+
+xavp - extended AVP's - are structures that can store multiple values. They work like a stack, much like AVPs, and are attached to SIP transactions. Each xavp has a name and can contain multiple named values, the structure name and the value name are separated by '=>' like $xavp(root=>branch) where "root" is the name of the structure and branch is a named value. To assign a value use
+<code c>
+$xavp(root=>branch)="value";
+</code>
+
+Like avps, xavp act like a stack. To refer to a new value, using index zero.
+<code c>
+$xavp(root[0]=>newbranch)=12;
+</code>
+
+If you assign a value without an index, a new xavp is allocated and the old one is pushed up the stack, becoming index [1]. Old index [1] becomes [2] etc.
+
+
+<code c>
+# Create new xavp
+$xavp(sf=>uri)="sip:10.10.10.10";
+
+#assign values
+$xavp(sf[0]=>fr_timer)=10;
+$xavp(sf[0]=>fr_inv_timer)=15;
+$xavp(sf[0]=>headers)="X-CustomerID: 1234\r\n";
+
+#create new xavp, moving previous one to sf[1]
+$xavp(sf=>uri)="sip:10.10.10.11";
+$xavp(sf[0]=>fr_timer)=20;
+$xavp(sf[0]=>fr_inv_timer)=35;
+
+#Create a third xavp
+$xavp(sf=>uri)="sip:10.10.10.12";
+$xavp(sf[0]=>fr_timer)=10;
+$xavp(sf[0]=>fr_inv_timer)=15;
+$xavp(sf[0]=>headers)="X-CustomerID: pw45\r\n";
+<(code>
+
+xavps are read and write variables. You can create multilevel xavps, as xavps may contain xavps.
 
 ===== Headers =====
 
