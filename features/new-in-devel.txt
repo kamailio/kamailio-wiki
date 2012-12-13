@@ -137,6 +137,10 @@
   * added t_is_set("target") function - returns true if the attribute specified by the target parameter is set for current transaction (e.g., failure_route, branch_route, onreply_route)
   * new parameter to control remapping of 503 response to 500
   * added support for websocket transport layer
+  * module parameter contacts_avp is now name of an xavp
+  * added new module parameter contact_flows_avp that must be defined if contacts_avp is defined
+  * added support for outbound by new script function t_next_contact_flows()
+
 ==== uac ====
 
   * uac_replace_[from|to]() in AUTO mode can use dialog module to restore From/To
