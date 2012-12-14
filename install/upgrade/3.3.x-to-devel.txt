@@ -1,0 +1,3 @@
+====== Upgrade Kamailio from v3.3.x to devel ======
+
+The page contains the details about the changes that were made to old components during the development of devel compared with what existed in v3.3.x. It does not include the brand new modules, focusing on how to upgrade database and configuration file from v3.3.x to run with Kamailio devel.
