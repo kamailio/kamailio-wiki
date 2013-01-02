@@ -110,6 +110,7 @@
 ==== rtpproxy ====
 
   * allow script variables in set_rtp_proxy_set(...) parameter
+  * possibility to add ice relay candidates to sdp streams if new module parameter ice_candidate_priority_avp has been defined
 ==== sanity ====
   * added support for websocket transport layer
 
