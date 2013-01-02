@@ -1597,10 +1597,11 @@ Example of usage:
 
 ==== tcp_rd_buf_size ====
 
-Buffer size used for tcp reads. A high buffer size increases performance on server with few connections and lot of traffic on them, but also increases memory consumption (so for lots of connection is better to use a low value). Note also that this value limits the maximum datagram size that can be received over tcp.
+Buffer size used for tcp reads. A high buffer size increases performance on server with few connections and lot of traffic on them, but also increases memory consumption (so for lots of connection is better to use a low value). Note also that this value limits the maximum message size (SIP, HTTP) that can be received over tcp. 
+
+The value is internally limited to 16MByte, for higher values recompile Kamailio with higher limit in tcp_options.c (search for "rd_buf_size" and 16777216). Further, you may need to increase the private memory, and if you process the message stateful you may also have to increase the shared memory.
 
 Default: 4096, can be changed at runtime.
-
 
 ==== tcp_send_timeout ====
 
