@@ -111,6 +111,7 @@
   * added support for websocket transport layer
 ==== registrar ====
   * added support for websocket transport layer
+  * new modparam to control requiring (and adding) outbound options-tag
 
 ==== rls ====
   * now uses DB row/table locking in DB only mode (where supported by the DB module)
