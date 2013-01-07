@@ -114,6 +114,9 @@
 
 ==== rls ====
   * now uses DB row/table locking in DB only mode (where supported by the DB module)
+
+==== rr ====
+  * bind to outbound module (if loaded before path) to enable RFC 5626 Edge Proxy behaviour
 ==== rtpproxy ====
 
   * allow script variables in set_rtp_proxy_set(...) parameter
