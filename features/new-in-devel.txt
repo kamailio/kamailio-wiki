@@ -88,6 +88,7 @@
 ==== path ====
 
   * added support for websocket transport layer
+  * bind to outbound module (if loaded before path) to enable RFC 5626 Edge Proxy behaviour
 
 ==== permissions ====
 
