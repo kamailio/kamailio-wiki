@@ -25,17 +25,23 @@
   * new module to export more internal core API to config
   * http://kamailio.org/docs/modules/devel/modules/corex.html
 
-==== xhttp_pi ====
+==== outbound ====
 
-  * new module - provides a web provisioning interface
-  * http://kamailio.org/docs/modules/devel/modules/xhttp_pi.html
+  * new module providing SIP Outbound (RFC 5626) Edge Proxy support
+  * http://kamailio.org/docs/modules/devel/modules_k/outbound.html
 
 ==== websocket ====
 
   * new module providing a WebSocket (RFC 6455) server for:
     * SIP over WebSocket (draft-ietf-sipcore-sip-websocket)
-    * MSRP over WebSocket (draft-pd-msrp-websocket)
+    * MSRP over WebSocket (draft-pd-dispatch-msrp-websocket)
   * http://kamailio.org/docs/modules/devel/modules/websocket.html
+
+==== xhttp_pi ====
+
+  * new module - provides a web provisioning interface
+  * http://kamailio.org/docs/modules/devel/modules/xhttp_pi.html
+
 ===== New in Old Modules =====
 
 ==== auth ====
@@ -175,4 +181,3 @@
 === lib/srdb1 ===
   * added support for row/table locking (requires corresponding support in database modules)
 ===== Tools =====
-
