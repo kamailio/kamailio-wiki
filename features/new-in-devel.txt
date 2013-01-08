@@ -112,6 +112,7 @@
 ==== registrar ====
   * added support for websocket transport layer
   * new modparam to control requiring (and adding) outbound options-tag
+  * new modparam to control adding Flow-Timer: header to 200 OK responses to REGISTER requests.
 
 ==== rls ====
   * now uses DB row/table locking in DB only mode (where supported by the DB module)
