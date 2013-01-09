@@ -12,7 +12,7 @@ This is a step by step tutorial about how to install and maintain Kamailio SIP s
 
 ==== Notes on Kamailio vs SER ====
 
-Since version 4.0.0, Kamailio and SER are completely merged, no duplicated module anymore.
+Since version 4.0.0, Kamailio and SER are completely merged, no duplicated modules anymore.
 
 The 3.x.x series offered the possibility to build Kamailio and SER from same source code, meaning that they were more or less same application, but there were some overlapping modules using different database table structures.
 
