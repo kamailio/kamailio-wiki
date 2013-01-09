@@ -302,7 +302,7 @@ The maintenance process is very simple right now. You have to be user 'root' and
   /etc/init.d/kamailio restart
 </code>
 
-Now you have the latest Kamailio (OpenSER) devel running on your system.
+Now you have the latest Kamailio devel running on your system.
 
 
 ===== 12. Time for maintenance service =====
