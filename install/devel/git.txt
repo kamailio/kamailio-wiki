@@ -53,13 +53,11 @@ Download the sources from GIT using the following commands.
 
 ===== 3.Tuning Makefiles =====
 
-The **most important and first step** is to set build flavour to **kamailio**.
+The first step is to generate build config files.
 
 <code>
-  make FLAVOUR=kamailio cfg
+  make cfg
 </code>
-
-If you forget to set the flavour to kamailio, the default build is SER (note that SER flavour does not enable by default Kamailio's statistics support and application server extensions in tm module needed only by **seas** module, otherwise is the same application, just using a different name).
 
 Next step is to enable the MySQL module. Edit **modules.lst** file:
 
@@ -80,19 +78,20 @@ NOTE: this is one mechanism to enable modules which are not compiled by default,
 Alternative is to set 'include_modules' variable to specify what extra modules to be included for compilation when building Makefile cfg:
 
 <code>
-make FLAVOUR=kamailio include_modules="db_mysql dialplan" cfg
+make include_modules="db_mysql dialplan" cfg
 </code>
 
 If you want to install everything in one directory (so you can delete all installed files at once), say /usr/local/kamailio-devel, then set PREFIX variable to the install path in 'make cfg ...' command:
 
 <code>
-make PREFIX="/usr/local/kamailio-devel" FLAVOUR=kamailio  include_modules="db_mysql dialplan" cfg
+make PREFIX="/usr/local/kamailio-devel" include_modules="db_mysql dialplan" cfg
 </code>
 
 
 More hints about Makefile system at: 
   * http://sip-router.org/wiki/tutorials/makefile-system
 
+NOTE: Previous release series 3.x.x used FLAVOUR mechanism to set the name of the application to **kamailio**. Starting with 4.0.0, the default is **kamailio**. From now on, if you want to build **ser** flavour, use **FLAVOUR=ser** in the make command to generate the build configs.
 ===== 4. Compile Kamailio =====
 
 Once you added the mysql module to the list of enabled modules, you can compile Kamailio:
