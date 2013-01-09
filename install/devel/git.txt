@@ -192,7 +192,7 @@ The script will add two users in MySQL:
 
 - **kamailio** - (with default password 'kamailiorw') - user which has full access rights to 'kamailio' database
 
-- **kamailio** - (with default password 'kamailioro') - user which has read-only access rights to 'kamailio' database
+- **kamailioro** - (with default password 'kamailioro') - user which has read-only access rights to 'kamailio' database
 
 **__Do change the passwords for these two users to something different that the default values that come with sources.__**
 
