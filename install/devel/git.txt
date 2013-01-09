@@ -12,13 +12,9 @@ This is a step by step tutorial about how to install and maintain Kamailio SIP s
 
 ==== Notes on Kamailio vs SER ====
 
-Since version 3.0.0, Kamailio and SER are built from same source code, meaning that they are more or less same application.
+Since version 4.0.0, Kamailio and SER are completely merged, no duplicated module anymore.
 
-The difference is in few compile time options that are enabled in Kamailio. These are:
-  * enable Kamailio-style statistics framework - if you don't know what they are, then you don't need them anyhow
-  * enable application server extensions in TM module needed only by seas module - unless you use seas module, these extensions make no difference to you
-
-You can build as well SER with these extensions by editing the Makefiles. Also, all modules work with Kamailio-style statistics framework disabled.
+The 3.x.x series offered the possibility to build Kamailio and SER from same source code, meaning that they were more or less same application, but there were some overlapping modules using different database table structures.
 
 ===== 1. Prerequisites =====
 
