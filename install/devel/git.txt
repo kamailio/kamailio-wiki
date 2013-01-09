@@ -314,4 +314,4 @@ Module: sip-router
 Branch: master
 </code>
 
-then an update has been made to Kamailio (OpenSER) devel version and it will be available to the public GIT in no time.
+then an update has been made to Kamailio devel version and it will be available to the public GIT in no time.
