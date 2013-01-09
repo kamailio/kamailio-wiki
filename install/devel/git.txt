@@ -218,7 +218,7 @@ You can browse [[http://git.sip-router.org/cgi-bin/gitweb.cgi?p=sip-router;a=blo
 
 ===== 9. The init.d script =====
 
-The init.d script can be used to start/stop the Kamailio (OpenSER) server in a nicer way. A sample of init.d script for Kamailio (OpenSER) is provided at:
+The init.d script can be used to start/stop the Kamailio server in a nicer way. A sample of init.d script for Kamailio is provided at:
 
 <code>
   /usr/local/src/kamailio-devel/pkg/kamailio/debian/kamailio.init
@@ -264,7 +264,7 @@ adduser --quiet --system --group --disabled-password \
 chown kamailio:kamailio /var/run/kamailio
 </code>
 
-Then you can start/stop Kamailio (OpenSER) using the following commands:
+Then you can start/stop Kamailio using the following commands:
 
 <code>
   /etc/init.d/kamailio start
