@@ -15,7 +15,7 @@
   * C Diameter Peer - core communication engine
   * http://kamailio.org/docs/modules/devel/modules/cdp.html
 
-==== CDP_AVP ====
+==== cdp_avp ====
 
   * C Diameter Peer - application extensions
   * http://kamailio.org/docs/modules/devel/modules/cdp_avp.html
