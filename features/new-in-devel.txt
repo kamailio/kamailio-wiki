@@ -20,6 +20,38 @@
   * C Diameter Peer - application extensions
   * http://kamailio.org/docs/modules/devel/modules/cdp_avp.html
 
+==== dialog_ng ====
+
+  * new module providing the NG framework for tracking SIP dialogs
+
+==== ims_auth ====
+
+  * new module to provide authentication for IMS
+
+==== ims_icscf ====
+
+  * new module to provide IMS ICSCF component
+
+==== ims_isc ====
+
+  * new module to provide IMS ICS component
+
+==== ims_registrar_pcscf ====
+
+  * new module to provide IMS PCSCF registrar component
+
+==== ims_registrar_scscf ====
+
+  * new module to provide IMS SCSCF registrar component
+
+==== ims_usrloc_pcscf ====
+
+  * new module to provide IMS PCSCF user location component
+
+==== ims_usrloc_scscf ====
+
+  * new module to IMS SCSCF user location component
+
 ==== corex ====
 
   * new module to export more internal core API to config
