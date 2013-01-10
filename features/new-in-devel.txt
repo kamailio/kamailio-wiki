@@ -74,6 +74,38 @@
   * new module - provides a web provisioning interface
   * http://kamailio.org/docs/modules/devel/modules/xhttp_pi.html
 
+===== SER Modules =====
+
+This modules are imported from SER flavour, being new from Kamailio packaging point of view (they were not part of Kamailio distribution in the past).
+
+==== avp ====
+
+==== db2_ldap ====
+
+==== db2_ops ====
+
+==== malloc_test ====
+
+==== mangler ====
+
+==== print ====
+
+==== print_lib ====
+
+==== timer ====
+
+==== uid_auth_db ====
+
+==== uid_avp_db ====
+
+==== uid_domain ====
+
+==== uid_gflags ====
+
+==== uid_uri_db ====
+
+==== xprint ====
+
 ===== New in Old Modules =====
 
 ==== auth ====
