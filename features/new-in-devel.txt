@@ -36,6 +36,9 @@
 
   * new module to provide IMS ICS component
 
+==== ims_qos ====
+
+  * new module to provide Diameter Rx IMS interface between PCSCF and PCRF functions
 ==== ims_registrar_pcscf ====
 
   * new module to provide IMS PCSCF registrar component
