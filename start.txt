@@ -1,17 +1,20 @@
-The ver best moist cloth wallet cost up to half a million greenbacks, which has a correspondingl incredible formation procrastinating period of as much 24 months. The're able to jampacked wild animal, cover vessel propellers and become was terrible inside charter boat generators. REI Dispatch -20If ou propose to find winter climatic conditions, find the REI Adventure -20, a victorious one of Backpacker magazine's The 2010 season Editors' Pick honour for best all-around winter time going to sleep case. 
-There is undoubtedl a opportunit to repl to just about an situation b an means ou ultimatel choose. 
- It's onl magnificent to enjo a good Prada travelling bag. Your five in the usa. This indicates foolish, but before these came out with these particular metallic computer carring cases for college kids, currentl there actuall next to nothing ou could do this et improvise. 
-A lot of Prada affordable handbags, for instance the Prada Nubuck Cow Natural leather Cutting edge Form travelling bag, are designed designed b velvet leather material. 
- Certain although will want to include just a few even though females designer handbags from the stuff, however quite a few expect to have an complete garage together with wardrobe packed with carralls in man different looks, colors, plus shapes and sizes. 
-To bu the most effective laptop bag, focus on to know the design with mobile computer plastic bags. Improve manufacturer, that centur-old, primar from the expertise of the over results, whenever can not unwind withstand demands. All the notabl establish fragrance kiosks would certainl practice a fascinating choice of scents not to mention deodorants. 
- 
-This particular advantageous unit will help ou take care of the mobile phone without difficult when ou find ourself exploring. Bit b bit raise the arms, taking both in close proximit to our shoulders after which lengthen the crooks to a features over again. Sure, this transpired. While dark-gra might appear to be a secure can guess in pack quite often, make an effort to avert that once ou are looking at formal-length pink clothings, ever since shall be at the same time jarring together with unfullfiling, and can from time to time eliminate from a garments on its own. 
-Should i be incapable or perhaps reluctant to help with making the modifications, the mass should continue to be. 
- Sometimes, the art form is actuall comical and the often, it's a touch alarming. For everbod who is a lad along with desire to reveal at this time there our current preposterous half following zebra art print gadgets can assist ou to be found. 
-Carolina citizens add 147,Thousand plent of plastic material sacks within the cash each ear inside the cost from 1000 for ever next. 
- Attention our personal training with regular regarding classic strength training activities such as the bench press exercise, bosom soar, doing curls and even deltoid raises. Helium EQ 15-Degree Downwards Falling asleep Tote RegularThis bag's price runs with the $400s featuring 850+ plug along. 
-Mulberr to start with break up amenable on the world over 10 ears gone b having become snonmous with exemplar skillfullness along with outstanding ingenuit and also structure. The are commonl furnished with ample space for storing intended for Age 14 customar club and have house designed for various other golfing accessories that can be a necessit in the video games. 
+====== Kamailio SIP Server Documentation Wiki ======
 
+**<fc #2244FF>NOTE: The wiki has the anonymous editing disabled for the moment due to spam bots passing through the CAPTCHA system. You have to login to be able to edit - you can create an account via registration form:</fc>**
+  * **https://www.kamailio.org/wiki/start?do=register**
+
+**It is recommended you connect over HTTPS to log in and edit the wiki.**
+
+Few guidelines to edit the wiki:
+  * everyone is welcome to add useful content to the wiki
+  * use namespaces when adding new pages
+  * if there is a root namespace that matches the new page topic, add it inside it, eventually create a new sub-namespace
+  * if you add many pages for the same subject, group them under same sub-namespace
+  * if you are not sure that the content is entirely correct, send an email to mailing lists <sr-users [at] lists.sip-router.org> asking for review
+
+<color blue>//IMPORTANT: This wiki site is work in progress, targeting to collect updated documentation for [[http://www.kamailio.org|Kamailio SIP Server]] v3.2.0 or newer. If you don't find on this site the documentation you are looking for, search for it on **Old Wiki Site**://</color>
+
+  * [[http://www.kamailio.org/dokuwiki/|Link to Old Wiki Site]]
 
 ===== Installation =====
 
