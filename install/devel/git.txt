@@ -143,6 +143,7 @@ Kamailio (OpenSER) modules are installed in:
   /usr/local/lib/kamailio/modules/
   /usr/local/lib/kamailio/modules_k/
 </code>
+Note: On 64 bit systems, /usr/local/lib64 may be used.
 
 The documentation and readme files are installed in:
 
