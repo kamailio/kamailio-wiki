@@ -23,37 +23,47 @@
 ==== dialog_ng ====
 
   * new module providing the NG framework for tracking SIP dialogs
+  * http://kamailio.org/docs/modules/devel/modules/dialog_ng.html
 
 ==== ims_auth ====
 
   * new module to provide authentication for IMS
+  * http://kamailio.org/docs/modules/devel/modules/ims_auth.html
 
 ==== ims_icscf ====
 
   * new module to provide IMS ICSCF component
+  * http://kamailio.org/docs/modules/devel/modules/ims_icscf.html
 
 ==== ims_isc ====
 
   * new module to provide IMS ICS component
+  * http://kamailio.org/docs/modules/devel/modules/ims_isc.html
 
 ==== ims_qos ====
 
   * new module to provide Diameter Rx IMS interface between PCSCF and PCRF functions
+  * http://kamailio.org/docs/modules/devel/modules/ims_qos.html
+
 ==== ims_registrar_pcscf ====
 
   * new module to provide IMS PCSCF registrar component
+  * http://kamailio.org/docs/modules/devel/modules/ims_registrar_pcscf.html
 
 ==== ims_registrar_scscf ====
 
   * new module to provide IMS SCSCF registrar component
+  * http://kamailio.org/docs/modules/devel/modules/ims_registrar_scscf.html
 
 ==== ims_usrloc_pcscf ====
 
   * new module to provide IMS PCSCF user location component
+  * http://kamailio.org/docs/modules/devel/modules/ims_usrloc_pcscf.html
 
 ==== ims_usrloc_scscf ====
 
   * new module to IMS SCSCF user location component
+  * http://kamailio.org/docs/modules/devel/modules/ims_usrloc_scscf.html
 
 ==== corex ====
 
@@ -83,31 +93,59 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 
 ==== avp ====
 
+  * avp manipulation tools
+
 ==== db2_ldap ====
+
+  * DB API v2 connector for LDAP
 
 ==== db2_ops ====
 
+  * DB API v2 script operations
+
 ==== malloc_test ====
+
+  * test drive module for memory managers
 
 ==== mangler ====
 
+  * SIP message mangling tools
+
 ==== print ====
+
+  * sample module (for devel)
 
 ==== print_lib ====
 
+  * sample module depending on internal library (for devel)
+
 ==== timer ====
+
+  * routing block execution on core timers
 
 ==== uid_auth_db ====
 
+  * authentication using db structure based on unique user id
+
 ==== uid_avp_db ====
+
+  * per user APV loading from db structure based on unique user id
 
 ==== uid_domain ====
 
+  * multi-domain management using db structure based on unique user id
+
 ==== uid_gflags ====
+
+  * global flags and AVPs management using db structure based on unique user id
 
 ==== uid_uri_db ====
 
+  * uri management using db structure based on unique user id
+
 ==== xprint ====
+
+  * log messages from scrip using %xy specifiers (former SER xlog module)
 
 ===== New in Old Modules =====
 
