@@ -19,16 +19,21 @@ These sections presents notes, listed by modules, about changes that need to be 
 Next are the SQL statements that must be executed to get the database structure required by modules that existed in v3.3.x.
 
 <code sql>
-ALTER TABLE active_watchers DROP INDEX active_watchers_pres; # was INDEX (presentity_uri)
-ALTER TABLE active_watchers ADD INDEX active_watchers_pres (presentity_uri,event);
 ALTER TABLE address CHANGE COLUMN ip_addr ip_addr varchar(50) NOT NULL; # was varchar(48) NOT NULL
+
 ALTER TABLE aliases CHANGE COLUMN expires expires datetime NOT NULL DEFAULT '2030-05-28 21:32:15'; # was datetime NOT NULL DEFAULT '2020-05-28 21:32:15'
 ALTER TABLE aliases ADD UNIQUE ruid_idx (ruid);
+
 ALTER TABLE lcr_gw CHANGE COLUMN ip_addr ip_addr varchar(50) DEFAULT NULL; # was varchar(47) DEFAULT NULL
+
 ALTER TABLE location CHANGE COLUMN path path varchar(512) DEFAULT NULL; # was varchar(128) DEFAULT NULL
 ALTER TABLE location CHANGE COLUMN expires expires datetime NOT NULL DEFAULT '2030-05-28 21:32:15'; # was datetime NOT NULL DEFAULT '2020-05-28 21:32:15'
 ALTER TABLE location ADD UNIQUE ruid_idx (ruid);
 ALTER TABLE location ADD INDEX expires_idx (expires);
+
+ALTER TABLE active_watchers DROP INDEX active_watchers_pres; # was INDEX (presentity_uri)
+ALTER TABLE active_watchers ADD INDEX active_watchers_pres (presentity_uri,event);
+
 ALTER TABLE pua DROP INDEX tmp_record2_idx; # was INDEX (pres_id,etag)
 ALTER TABLE pua DROP INDEX tmp_dlg2_idx; # was INDEX (pres_id,pres_uri,call_id,from_tag)
 ALTER TABLE pua DROP INDEX tmp_record1_idx; # was INDEX (pres_id)
@@ -38,7 +43,9 @@ ALTER TABLE pua DROP INDEX dialog1_idx; # was INDEX (call_id,from_tag,to_tag)
 ALTER TABLE pua ADD INDEX dialog1_idx (pres_id,pres_uri);
 ALTER TABLE pua DROP INDEX tmp_dlg1_idx; # was INDEX (call_id,from_tag)
 ALTER TABLE pua ADD INDEX record_idx (pres_id);
+
 ALTER TABLE rls_watchers DROP INDEX rls_watchers_delete; # was INDEX (callid,to_tag)
+
 ALTER TABLE version ADD UNIQUE table_name_idx (table_name);
 
 CREATE TABLE location_attrs (
