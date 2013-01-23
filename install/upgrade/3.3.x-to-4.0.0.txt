@@ -40,7 +40,7 @@ ALTER TABLE pua DROP INDEX tmp_dlg1_idx; # was INDEX (call_id,from_tag)
 ALTER TABLE pua ADD INDEX record_idx (pres_id);
 ALTER TABLE rls_watchers DROP INDEX rls_watchers_delete; # was INDEX (callid,to_tag)
 ALTER TABLE version ADD UNIQUE table_name_idx (table_name);
-INSERT INTO version (table_name, table_version) values ('location_attrs','1');
+
 CREATE TABLE location_attrs (
   id int(10) unsigned NOT NULL AUTO_INCREMENT,
   ruid varchar(64) NOT NULL DEFAULT '',
@@ -54,6 +54,16 @@ CREATE TABLE location_attrs (
   KEY account_record_idx (username,domain,ruid),
   KEY last_modified_idx (last_modified)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+INSERT INTO version (table_name, table_version) values ('location_attrs','1');
+DELETE FROM version WHERE table_name='address';
+INSERT INTO version (table_name, table_version) values ('address','6');
+DELETE FROM version WHERE table_name='lcr_gw';
+INSERT INTO version (table_name, table_version) values ('lcr_gw','3');
+DELETE FROM version WHERE table_name='aliases';
+INSERT INTO version (table_name, table_version) values ('aliases','6');
+DELETE FROM version WHERE table_name='location';
+INSERT INTO version (table_name, table_version) values ('location','6');
 </code>
 
 ==== MySQL - New database tables ====
