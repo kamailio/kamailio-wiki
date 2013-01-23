@@ -183,3 +183,13 @@ CREATE TABLE uid_user_attrs (
   UNIQUE KEY userattrs_idx (uid,name,value)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 </code>
+
+===== SER Modules =====
+
+SER modules that had no equivalent in Kamailio were moved to **modules/** folder. Several of them were renamed:
+
+  * auth_db => uid_auth_db
+  * avp_db => uid_auth_db
+  * domain => uid_domain
+  * gflags => uid_gflags
+  * uri_db => uid_uri_db
