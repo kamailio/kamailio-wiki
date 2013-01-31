@@ -2787,19 +2787,19 @@ Assignments together with string and arithmetic operations can be done directly 
 ==== Assignment ====
 
 Assignments can be done like in C, via '=' (equal). The following pseudo-variables can be used in left side of an assignment:
-* AVPs - to set the value of an AVP
-* script variables ($var(...)) -  to set the value of a script variable
-* shared variables ($shv(...))
-* $ru - to set R-URI
-* $rd - to set domain part of R-URI
-* $rU - to set user part of R-URI
-* $rp - to set the port of R-URI
-* $du - to set dst URI
-* $fs - to set send socket
-* $br - to set branch
-* $mf - to set message flags value
-* $sf - to set script flags value
-* $bf - to set branch flags value
+  * Unordered List Item AVPs - to set the value of an AVP
+  * script variables ($var(...)) -  to set the value of a script variable
+  * shared variables ($shv(...))
+  * $ru - to set R-URI
+  * $rd - to set domain part of R-URI
+  * $rU - to set user part of R-URI
+  * $rp - to set the port of R-URI
+  * $du - to set dst URI
+  * $fs - to set send socket
+  * $br - to set branch
+  * $mf - to set message flags value
+  * $sf - to set script flags value
+  * $bf - to set branch flags value
 
 <code>
 $var(a) = 123;
