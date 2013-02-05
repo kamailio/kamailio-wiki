@@ -31,7 +31,7 @@ If you don't have developer write access, you can clone read-only the repository
 git clone --depth 1 git://git.sip-router.org/sip-router kamailio-dev
 </code>
 
-When cloning the in read only mode, you can commit your changes to the local clone, but you cannot push the patches to the remote repository. Export the patches and attach them to an email to mailing list <sr-dev [at] lists.sip-router.org> or to an issue on bug tracker. An developer can pick them and commit in your behalf.
+When cloning in read only mode, you can commit your changes to the local clone, but you cannot push the patches to the remote repository. Export the patches and attach them to an email to mailing list <sr-dev [at] lists.sip-router.org> or to an issue on bug tracker. A developer can pick them and commit in your behalf.
 
 You can export the local commit with git format-patch, for example, exporting last commit:
 
