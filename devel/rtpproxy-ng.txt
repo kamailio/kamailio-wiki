@@ -54,3 +54,6 @@ This page is intended to collate suggestions for improvements and new features f
 
 === SRTP-RTP Gatewaying ===
   * Works only if RTPProxy sees the session key (e.g. SDES: RFC 4568)
+
+=== Session Statistics ===
+  * The current statistics give little information about the media session. The most obvious missing informations is the codec used during the session.
