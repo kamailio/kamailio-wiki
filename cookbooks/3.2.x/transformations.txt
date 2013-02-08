@@ -453,7 +453,7 @@ $var(x) = "a=1;b=22;c=333";
 $(var(x){param.value,$(var(x){param.name,1})}{s.len}) = 2
 </code>
 
-* Test if whether is un-registration or not
+* Test whether is un-registration or not
 
 <code>
 if(is_method("REGISTER") && is_present_hf("Expires") && $(hdr(Expires){s.int})==0)
