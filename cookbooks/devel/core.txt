@@ -1184,7 +1184,7 @@ Value for the REFRESH INTERVAL attribute of the internal STUN server
 
 
 ==== syn_branch ====
-The parameter controls how the branch parameter is calculated for stateless forwarding.  It also applies to statefull forwarding of ACK requests following 2xx responses.
+This parameter controls how the branch parameter is calculated for stateless forwarding.  It also applies to stateful forwarding of ACK requests following 2xx responses.
 
 If syn_branch is turned off, calculation is derived from transaction key, i.e., as an md5 of From/To/CallID/
 CSeq exactly the same way as TM does. This is good for reboot - than messages belonging to transaction lost due to reboot will still be forwarded with the same branch parameter and will be match-able downstream.
