@@ -3,6 +3,13 @@ This page contains some notes describing the work to fully complete outbound (RF
 ===== Work required to complete registrar support =====
   * registrar module
     * New exported function allowing a specific contact to be removed (to be used when Edge Proxy returns 430 to the registrar)
+    * Add a required header in mode 2 if the client supports outbound.
+    * 
+<code>If outbound registration succeeded, as indicated by the presence of
+   the outbound option-tag in the Require header field of a successful
+   registration response, the UA begins sending keep-alives as described
+   in Section 4.4.
+   </code>
     * Support for RFC 5626 section 6:
 <code>
    When receiving a REGISTER request, the registrar MUST check from its
@@ -17,7 +24,6 @@ This page contains some notes describing the work to fully complete outbound (RF
    (First Hop Lacks Outbound Support) response; otherwise, the registrar
    MUST ignore the "reg-id" parameter of the Contact header.
 </code>
-
 ===== Single-server (combined edge proxy and registrar) =====
   * registrar module
     * Update lookup() so that (in single-server mode) Path: header from location table is added as a Record-Route:.  If parallel forking is in use each branch must have a different Record-Route: added.  lookup() must also set $du based on the flow-token from the Record-Route: header it adds for that branch.
