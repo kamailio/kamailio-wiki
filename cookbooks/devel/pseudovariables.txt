@@ -67,7 +67,7 @@ Predefined pseudo-variables are listed in alphabetical order.
 
 **$branch(name)** - reference to attribute 'name' of a branch
 
-This pseudo variable gives you access to the "additional branches" only, not to the "main branch". E.g. if there are 3 clients registered for the same AoR, after lookup() you will have one contact in the "main branch" and two "additional branches". Using $branch() you can access the additional branches, the main branch can be accessed using $ru and $du. (Note: In branch_routes there is no distinction between the main and the additional branches - the branch_route will be called for all of them.)
+This pseudo variable gives you access to the "additional branches" only, not to the "main branch". E.g. if there are 3 clients registered for the same AoR, after lookup() you will have one contact in the "main branch" and two "additional branches". Using $branch() you can access the additional branches, the main branch can be accessed using $ru and $du. (Note: In branch_routes there is no distinction between the main and the additional branches - the branch_route will be called once for each one of them.)
 
 The 'name' can be:
 
