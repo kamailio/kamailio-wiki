@@ -796,7 +796,7 @@ This can be used to simplify the loadmodule parameter and can include many paths
 Example of usage: 
 
 <code c>
-    loadpath "/usr/local/lib/sip-router/modules:/usr/local/lib/sip-router/modules_k"
+    loadpath "/usr/local/lib/kamailio/modules:/usr/local/lib/kamailio/mymodules"
 
     loadmodule "mysql"
     loadmodule "uri"
@@ -807,24 +807,7 @@ Example of usage:
 
 The proxy tries to find the modules in a smart way, e.g: loadmodule "uri" tries to find uri.so in the loadpath, but also uri/uri.so.
 
-If you have installed Kamailio and ser modules, and want to load them in a certain order, you can for example use the following technique:
 
-<code>
-# common modules
-loadpath "/usr/lib/sip-router/modules"
-loadmodule "db_mysql"
-...
-
-# Kamailio modules
-loadpath "/usr/lib/sip-router/modules_k"
-loadmodule "cfgutils"
-... 
-
-# ser modules
-loadpath "/usr/lib/sip-router/modules_s"
-loadmodule "ctl"
-...
-</code>
 
 
 ==== log_facility ====
