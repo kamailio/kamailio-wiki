@@ -22,7 +22,7 @@ Pseudo-variables can be used with many modules, among them:
   * uac
   * xlog 
 
-===== The list of pseudo-variables=====
+===== The list of pseudo-variables =====
 
 
 Predefined pseudo-variables are listed in alphabetical order.
