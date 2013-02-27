@@ -777,10 +777,10 @@ If modulepath is only modulename or modulename.so, then Kamailio will try to sea
 
 Example of usage:
 <code c>
-    loadpath "/usr/local/lib/sip-router/:usr/local/lib/sip-router/modules/"
+    loadpath "/usr/local/lib/kamailio/:usr/local/lib/kamailio/modules/"
 
-    loadmodule "/usr/local/lib/sip-router/modules/db_mysql.so"
-    loadmodule "modules_k/usrloc.so"
+    loadmodule "/usr/local/lib/kamailio/modules/db_mysql.so"
+    loadmodule "modules/usrloc.so"
     loadmodule "tm"
     loadmodule "dialplan.so"
 </code>
