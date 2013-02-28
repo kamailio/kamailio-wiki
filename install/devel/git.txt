@@ -213,7 +213,7 @@ Follow the instruction in the comments to enable usage of MySQL. Basically you h
 #!define WITH_USRLOCDB
 </code>
 
-If you changed the password for the 'openser' user of MySQL, you have to update the value for 'db_url' parameters.
+If you changed the password for the 'kamailio' user of MySQL, you have to update the value for 'db_url' parameters.
 
 You can browse [[http://git.sip-router.org/cgi-bin/gitweb.cgi?p=sip-router;a=blob;f=etc/kamailio.cfg|kamailio.cfg]] online on GIT repository.
 
