@@ -74,6 +74,7 @@ Few guidelines to edit the wiki:
 ===== Features =====
 
   * [[features:new-in-devel|New Features in Devel Version]]
+  * [[features:new-in-4.0.x|New Features in Release 4.0.x]]
   * [[features:new-in-3.3.x|New Features in Release 3.3.x]]
   * [[features:new-in-3.2.x|New Features in Release 3.2.x]]
 
