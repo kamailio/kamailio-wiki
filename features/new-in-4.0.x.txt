@@ -1,0 +1,295 @@
+====== Kamailio SIP Server (SER) - New Features in v4.0.0 ======
+
+**Version 4.0.0 is planned to be released in the first half of 2013**.
+
+<fc #0000FF>
+**Previous major version was 3.3.x (released in June 2012), see what was new in that release at:**
+</fc>
+  * <fc #0000FF>http://www.kamailio.org/wiki/features/new-in-3.3.x</fc>
+
+<fc #800000>//This is a draft of new features added in v4.0.0, manually updated, thus not always synchronized with what is new in source code repository.//</fc>
+
+===== New Modules =====
+
+==== cdp ====
+
+  * C Diameter Peer - core communication engine
+  * http://kamailio.org/docs/modules/devel/modules/cdp.html
+
+==== cdp_avp ====
+
+  * C Diameter Peer - application extensions
+  * http://kamailio.org/docs/modules/devel/modules/cdp_avp.html
+
+==== dialog_ng ====
+
+  * new module providing the NG framework for tracking SIP dialogs
+  * http://kamailio.org/docs/modules/devel/modules/dialog_ng.html
+
+==== ims_auth ====
+
+  * new module to provide authentication for IMS
+  * http://kamailio.org/docs/modules/devel/modules/ims_auth.html
+
+==== ims_icscf ====
+
+  * new module to provide IMS ICSCF component
+  * http://kamailio.org/docs/modules/devel/modules/ims_icscf.html
+
+==== ims_isc ====
+
+  * new module to provide IMS ICS component
+  * http://kamailio.org/docs/modules/devel/modules/ims_isc.html
+
+==== ims_qos ====
+
+  * new module to provide Diameter Rx IMS interface between PCSCF and PCRF functions
+  * http://kamailio.org/docs/modules/devel/modules/ims_qos.html
+
+==== ims_registrar_pcscf ====
+
+  * new module to provide IMS PCSCF registrar component
+  * http://kamailio.org/docs/modules/devel/modules/ims_registrar_pcscf.html
+
+==== ims_registrar_scscf ====
+
+  * new module to provide IMS SCSCF registrar component
+  * http://kamailio.org/docs/modules/devel/modules/ims_registrar_scscf.html
+
+==== ims_usrloc_pcscf ====
+
+  * new module to provide IMS PCSCF user location component
+  * http://kamailio.org/docs/modules/devel/modules/ims_usrloc_pcscf.html
+
+==== ims_usrloc_scscf ====
+
+  * new module to IMS SCSCF user location component
+  * http://kamailio.org/docs/modules/devel/modules/ims_usrloc_scscf.html
+
+==== corex ====
+
+  * new module to export more internal core API to config
+  * http://kamailio.org/docs/modules/devel/modules/corex.html
+
+==== outbound ====
+
+  * new module providing SIP Outbound (RFC 5626) Edge Proxy support
+  * http://kamailio.org/docs/modules/devel/modules_k/outbound.html
+
+==== websocket ====
+
+  * new module providing a WebSocket (RFC 6455) server for:
+    * SIP over WebSocket (draft-ietf-sipcore-sip-websocket)
+    * MSRP over WebSocket (draft-pd-dispatch-msrp-websocket)
+  * http://kamailio.org/docs/modules/devel/modules/websocket.html
+
+==== xhttp_pi ====
+
+  * new module - provides a web provisioning interface
+  * http://kamailio.org/docs/modules/devel/modules/xhttp_pi.html
+
+===== SER Modules =====
+
+This modules are imported from SER flavour, being new from Kamailio packaging point of view (they were not part of Kamailio distribution in the past).
+
+==== avp ====
+
+  * avp manipulation tools
+
+==== db2_ldap ====
+
+  * DB API v2 connector for LDAP
+
+==== db2_ops ====
+
+  * DB API v2 script operations
+
+==== malloc_test ====
+
+  * test drive module for memory managers
+
+==== mangler ====
+
+  * SIP message mangling tools
+
+==== print ====
+
+  * sample module (for devel)
+
+==== print_lib ====
+
+  * sample module depending on internal library (for devel)
+
+==== timer ====
+
+  * routing block execution on core timers
+
+==== uid_auth_db ====
+
+  * authentication using db structure based on unique user id
+
+==== uid_avp_db ====
+
+  * per user APV loading from db structure based on unique user id
+
+==== uid_domain ====
+
+  * multi-domain management using db structure based on unique user id
+
+==== uid_gflags ====
+
+  * global flags and AVPs management using db structure based on unique user id
+
+==== uid_uri_db ====
+
+  * uri management using db structure based on unique user id
+
+==== xprint ====
+
+  * log messages from scrip using %xy specifiers (former SER xlog module)
+
+===== New in Old Modules =====
+
+==== auth ====
+
+  * added new variant of pv_www_authenticate() which takes method as a parameter
+
+==== auth_db ====
+
+  * added new variant of www_authenticate() which takes method as a parameter
+==== db_postgres ====
+  * added support for row/table locking
+==== ipops ====
+
+  * added new exported function is_in_subnet()
+
+
+==== lcr ====
+
+  * added support for websocket transport layer
+
+==== mqueue ====
+
+  * added mq_size() function to get runtime size of mqueue in script
+  * added MI command to get current size of mqueue
+
+==== msrp ====
+
+  * added support for websocket transport layer
+==== nat_traversal ====
+
+  * added support for websocket transport layer
+
+==== nathelper ====
+
+  * use usrloc record unique id to generate the OPTIONS keepalives, allowing to match its reply with location record
+  * option to remove UDP contacts that don't respond to OPTIONS keepalives
+  * added support for websocket transport layer
+
+==== nat_traversal ====
+  * added support for websocket transport layer
+==== ndb_redis ====
+
+  * ability to connect to redis server via unix domain socket
+==== path ====
+
+  * added support for websocket transport layer
+  * bind to outbound module (if loaded before path) to enable RFC 5626 Edge Proxy behaviour
+
+==== permissions ====
+
+  * added new cfg function allow_address_group(addr, port)
+  * added support for websocket transport layer
+==== prefix_route ====
+
+  * option to provide the value to match the prefix as parameter to prefix_route()
+  * option to disable config file execution exit upon prefix match
+
+==== presence ====
+  * added support for websocket transport layer
+  * now uses DB row/table locking in DB only mode (where supported by the DB module)
+
+==== pua ====
+  * now uses DB row/table locking in DB only mode (where supported by the DB module)
+==== pv ====
+
+  * new variable $cnt(...) to count the number of other array variables
+  * added support for websocket transport layer
+==== registrar ====
+  * added support for websocket transport layer
+  * new modparam to control requiring (and adding) outbound options-tag
+  * new modparam to control adding Flow-Timer: header to 200 OK responses to REGISTER requests
+
+==== rls ====
+  * now uses DB row/table locking in DB only mode (where supported by the DB module)
+
+==== rr ====
+  * bind to outbound module (if loaded before rr) to enable RFC 5626 Edge Proxy behaviour
+==== rtpproxy ====
+
+  * allow script variables in set_rtp_proxy_set(...) parameter
+  * possibility to add ice relay candidates to sdp streams if new module parameter ice_candidate_priority_avp has been defined
+==== sanity ====
+  * added support for websocket transport layer
+
+==== sdpops ====
+
+  * new function: sdp_remove_line_by_prefix(string)
+    * removes lines from SDP body that matches given prefix
+==== seas ====
+
+  * added support for websocket transport layer
+
+==== sipcapture ====
+
+  * support multiple tables
+  * HEPv3 support
+
+==== siptrace ====
+  * added support for websocket transport layer
+==== snmpstats ====
+
+  * added support for websocket transport layer
+
+==== tm ====
+
+  * added t_is_set("target") function - returns true if the attribute specified by the target parameter is set for current transaction (e.g., failure_route, branch_route, onreply_route)
+  * new parameter to control remapping of 503 response to 500
+  * added support for websocket transport layer
+  * module parameter contacts_avp is now name of an xavp
+  * added new module parameter contact_flows_avp that must be defined if contacts_avp is defined
+  * added support for outbound by new script function t_next_contact_flows()
+
+==== uac ====
+
+  * uac_replace_[from|to]() in AUTO mode can use dialog module to restore From/To
+
+==== xcap_server ====
+
+  * Support for org.openmobilealliance.xcap-directory auid
+==== xlog ====
+
+  * log_colors - new parameter to update the color scheme for core log levels
+===== New in Core =====
+==== Components ====
+
+=== command line parameters ===
+  * -e - print colorful messages based on log level
+
+=== core parameters ===
+  * log_color - print colorful messages based on log level
+
+=== core code ===
+
+  * support for receiving/sending WebSocket frames over TCP/TLS
+  * support for building Via: and Record-Route: (including double-RR) headers for WebSockets
+  * added Colin Plumb's MD5 implementation to be fully GPL compliant
+
+=== parser/uri ===
+
+  * support for WS and WSS transports in Via: lines
+  * support for ";transport=ws" in URIs
+
+=== lib/srdb1 ===
+  * added support for row/table locking (requires corresponding support in database modules)
+===== Tools =====
