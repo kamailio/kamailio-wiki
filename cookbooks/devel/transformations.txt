@@ -1,8 +1,8 @@
-====== Kamailio SIP Server and SER v3.4.x (devel): Transformations ======
+====== Kamailio SIP Server v4.1.x (devel): Transformations ======
 
 <code>
 Main author:
-   Daniel-Constantin Mierla <miconda (at) asipto.com>
+   Daniel-Constantin Mierla <miconda (at) gmail.com>
 </code>
 
 **Transformation** is basically a function that is applied to a pseudo-variable (PV) to get a special value from it. The value of PV is not affected at all.
