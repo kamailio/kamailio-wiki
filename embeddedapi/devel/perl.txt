@@ -4,7 +4,7 @@ Module **perl** allows execution of Perl scripts from SIP router configuration f
 
 References:
 
-  * **perl** module: [[http://kamailio.org/docs/modules/devel/modules/perl.html|README]]
+  * **perl** module: [[http://kamailio.org/docs/modules/devel/modules/app_perl.html|README]]
   * **Perl**: http://www.perl.org
 
 Perl API documentation is part of module README.
