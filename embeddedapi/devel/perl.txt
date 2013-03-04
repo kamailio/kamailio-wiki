@@ -1,6 +1,6 @@
 ====== Perl API for Kamailio Devel Version ======
 
-Module **perl** allows execution of Perl scripts from SIP router configuration file, providing access to SIP message which is processed at that time. Exported functions by **perl** are available in the Perl script as package OpenSER.
+Module **perl** allows execution of Perl scripts from SIP router configuration file, providing access to SIP message which is processed at that time. Exported functions by **perl** are available in the Perl script as package Kamailio.
 
 References:
 
