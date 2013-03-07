@@ -1,6 +1,6 @@
 ====== List of Registered Contributors ======
 
-This is the list of contributors over the time that are still affiliated with the project (have developer account at Nov 2011, with write access to GIT repository). The list may not be completely up to date, as new people could join the development team and this page is not automatically regenerated.
+This is the list of contributors over the time that are still affiliated with the project (have developer account at the starting point Nov 2011, with write access to GIT repository). The list may not be completely up to date, as new people could join the development team and this page is not automatically regenerated.
 
 Those that have the role **admin** can be contacted for administrative purposes related to GIT repository (e.g., adding new developers). All people listed here should be available on our development mailing list **sr-dev [at] lists.sip-router.org**.
 
@@ -71,3 +71,13 @@ The list is alphabetic order by name.
 | Vladimir Marek | vlada | - | - |
 | Will Quan | willquan | - | - |
 
+
+====== List of External Contributors ======
+
+
+This is the list of contributors that don't have developer account (no direct write access to GIT repository), but who submitted relevant patches that were accepted by existing developers.
+
+===== List of Names =====
+
+^ Name ^ Contact ^ Affiliation ^ References to Contributions ^
+| - | - | - | - |
