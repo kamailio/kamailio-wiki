@@ -1,4 +1,4 @@
-====== List of Registered Contributors ======
+====== Registered Contributors ======
 
 This is the list of contributors over the time that are still affiliated with the project (have developer account at the starting point Nov 2011, with write access to GIT repository). The list may not be completely up to date, as new people could join the development team and this page is not automatically regenerated.
 
@@ -72,7 +72,7 @@ The list is alphabetic order by name.
 | Will Quan | willquan | - | - |
 
 
-====== List of External Contributors ======
+====== External Contributors ======
 
 
 This is the list of contributors that don't have developer account (no direct write access to GIT repository), but who submitted relevant patches that were accepted by existing developers.
