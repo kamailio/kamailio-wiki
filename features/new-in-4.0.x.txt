@@ -14,79 +14,79 @@
 ==== cdp ====
 
   * C Diameter Peer - core communication engine
-  * http://kamailio.org/docs/modules/devel/modules/cdp.html
+  * http://kamailio.org/docs/modules/4.0.x/modules/cdp.html
 
 ==== cdp_avp ====
 
   * C Diameter Peer - application extensions
-  * http://kamailio.org/docs/modules/devel/modules/cdp_avp.html
-
-==== dialog_ng ====
-
-  * new module providing the NG framework for tracking SIP dialogs
-  * http://kamailio.org/docs/modules/devel/modules/dialog_ng.html
-
-==== ims_auth ====
-
-  * new module to provide authentication for IMS
-  * http://kamailio.org/docs/modules/devel/modules/ims_auth.html
-
-==== ims_icscf ====
-
-  * new module to provide IMS ICSCF component
-  * http://kamailio.org/docs/modules/devel/modules/ims_icscf.html
-
-==== ims_isc ====
-
-  * new module to provide IMS ICS component
-  * http://kamailio.org/docs/modules/devel/modules/ims_isc.html
-
-==== ims_qos ====
-
-  * new module to provide Diameter Rx IMS interface between PCSCF and PCRF functions
-  * http://kamailio.org/docs/modules/devel/modules/ims_qos.html
-
-==== ims_registrar_pcscf ====
-
-  * new module to provide IMS PCSCF registrar component
-  * http://kamailio.org/docs/modules/devel/modules/ims_registrar_pcscf.html
-
-==== ims_registrar_scscf ====
-
-  * new module to provide IMS SCSCF registrar component
-  * http://kamailio.org/docs/modules/devel/modules/ims_registrar_scscf.html
-
-==== ims_usrloc_pcscf ====
-
-  * new module to provide IMS PCSCF user location component
-  * http://kamailio.org/docs/modules/devel/modules/ims_usrloc_pcscf.html
-
-==== ims_usrloc_scscf ====
-
-  * new module to IMS SCSCF user location component
-  * http://kamailio.org/docs/modules/devel/modules/ims_usrloc_scscf.html
+  * http://kamailio.org/docs/modules/4.0.x/modules/cdp_avp.html
 
 ==== corex ====
 
   * new module to export more internal core API to config
-  * http://kamailio.org/docs/modules/devel/modules/corex.html
+  * http://kamailio.org/docs/modules/4.0.x/modules/corex.html
+
+==== dialog_ng ====
+
+  * new module providing the NG framework for tracking SIP dialogs
+  * http://kamailio.org/docs/modules/4.0.x/modules/dialog_ng.html
+
+==== ims_auth ====
+
+  * new module to provide authentication for IMS
+  * http://kamailio.org/docs/modules/4.0.x/modules/ims_auth.html
+
+==== ims_icscf ====
+
+  * new module to provide IMS ICSCF component
+  * http://kamailio.org/docs/modules/4.0.x/modules/ims_icscf.html
+
+==== ims_isc ====
+
+  * new module to provide IMS ICS component
+  * http://kamailio.org/docs/modules/4.0.x/modules/ims_isc.html
+
+==== ims_qos ====
+
+  * new module to provide Diameter Rx IMS interface between PCSCF and PCRF functions
+  * http://kamailio.org/docs/modules/4.0.x/modules/ims_qos.html
+
+==== ims_registrar_pcscf ====
+
+  * new module to provide IMS PCSCF registrar component
+  * http://kamailio.org/docs/modules/4.0.x/modules/ims_registrar_pcscf.html
+
+==== ims_registrar_scscf ====
+
+  * new module to provide IMS SCSCF registrar component
+  * http://kamailio.org/docs/modules/4.0.x/modules/ims_registrar_scscf.html
+
+==== ims_usrloc_pcscf ====
+
+  * new module to provide IMS PCSCF user location component
+  * http://kamailio.org/docs/modules/4.0.x/modules/ims_usrloc_pcscf.html
+
+==== ims_usrloc_scscf ====
+
+  * new module to IMS SCSCF user location component
+  * http://kamailio.org/docs/modules/4.0.x/modules/ims_usrloc_scscf.html
 
 ==== outbound ====
 
   * new module providing SIP Outbound (RFC 5626) Edge Proxy support
-  * http://kamailio.org/docs/modules/devel/modules_k/outbound.html
+  * http://kamailio.org/docs/modules/4.0.x/modules_k/outbound.html
 
 ==== websocket ====
 
   * new module providing a WebSocket (RFC 6455) server for:
     * SIP over WebSocket (draft-ietf-sipcore-sip-websocket)
     * MSRP over WebSocket (draft-pd-dispatch-msrp-websocket)
-  * http://kamailio.org/docs/modules/devel/modules/websocket.html
+  * http://kamailio.org/docs/modules/4.0.x/modules/websocket.html
 
 ==== xhttp_pi ====
 
   * new module - provides a web provisioning interface
-  * http://kamailio.org/docs/modules/devel/modules/xhttp_pi.html
+  * http://kamailio.org/docs/modules/4.0.x/modules/xhttp_pi.html
 
 ===== SER Modules =====
 
@@ -95,58 +95,72 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 ==== avp ====
 
   * avp manipulation tools
+  * http://kamailio.org/docs/modules/4.0.x/modules/
 
 ==== db2_ldap ====
 
   * DB API v2 connector for LDAP
+  * http://kamailio.org/docs/modules/4.0.x/modules/
 
 ==== db2_ops ====
 
   * DB API v2 script operations
+  * http://kamailio.org/docs/modules/4.0.x/modules/
 
 ==== malloc_test ====
 
   * test drive module for memory managers
+  * http://kamailio.org/docs/modules/4.0.x/modules/
 
 ==== mangler ====
 
   * SIP message mangling tools
+  * http://kamailio.org/docs/modules/4.0.x/modules/
 
 ==== print ====
 
   * sample module (for devel)
+  * http://kamailio.org/docs/modules/4.0.x/modules/
 
 ==== print_lib ====
 
   * sample module depending on internal library (for devel)
+  * http://kamailio.org/docs/modules/4.0.x/modules/
 
 ==== timer ====
 
   * routing block execution on core timers
+  * http://kamailio.org/docs/modules/4.0.x/modules/
 
 ==== uid_auth_db ====
 
   * authentication using db structure based on unique user id
+  * http://kamailio.org/docs/modules/4.0.x/modules/
 
 ==== uid_avp_db ====
 
   * per user APV loading from db structure based on unique user id
+  * http://kamailio.org/docs/modules/4.0.x/modules/
 
 ==== uid_domain ====
 
   * multi-domain management using db structure based on unique user id
+  * http://kamailio.org/docs/modules/4.0.x/modules/
 
 ==== uid_gflags ====
 
   * global flags and AVPs management using db structure based on unique user id
+  * http://kamailio.org/docs/modules/4.0.x/modules/
 
 ==== uid_uri_db ====
 
   * uri management using db structure based on unique user id
+  * http://kamailio.org/docs/modules/4.0.x/modules/
 
 ==== xprint ====
 
   * log messages from scrip using %xy specifiers (former SER xlog module)
+  * http://kamailio.org/docs/modules/4.0.x/modules/
 
 ===== New in Old Modules =====
 
