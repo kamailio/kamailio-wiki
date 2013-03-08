@@ -166,6 +166,10 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 
   * added new variant of www_authenticate() which takes method as a parameter
 
+==== db_cassandra ====
+
+  * added raw query support for CQL format
+
 ==== db_postgres ====
 
   * added support for row/table locking
