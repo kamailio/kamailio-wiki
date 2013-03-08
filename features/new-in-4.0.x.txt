@@ -204,6 +204,7 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
   * use usrloc record unique id to generate the OPTIONS keepalives, allowing to match its reply with location record
   * option to remove UDP contacts that don't respond to OPTIONS keepalives
   * added support for websocket transport layer
+  * add_contact_alias() can now be given ip addr port, and proto as parameters
 
 ==== nat_traversal ====
 
