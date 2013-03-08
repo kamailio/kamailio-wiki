@@ -150,6 +150,14 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 
 ===== New in Old Modules =====
 
+==== acc ====
+
+  * table name for db acc can be dynamic
+
+==== app_lua ====
+
+  * extended the API with registrar:save_uri()
+
 ==== auth ====
 
   * added new variant of pv_www_authenticate() which takes method as a parameter
@@ -157,8 +165,11 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 ==== auth_db ====
 
   * added new variant of www_authenticate() which takes method as a parameter
+
 ==== db_postgres ====
+
   * added support for row/table locking
+
 ==== ipops ====
 
   * added new exported function is_in_subnet()
@@ -176,6 +187,7 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 ==== msrp ====
 
   * added support for websocket transport layer
+
 ==== nat_traversal ====
 
   * added support for websocket transport layer
@@ -187,10 +199,20 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
   * added support for websocket transport layer
 
 ==== nat_traversal ====
+
   * added support for websocket transport layer
+
 ==== ndb_redis ====
 
   * ability to connect to redis server via unix domain socket
+  * new cfg function redis_free() to free the redis reply on demand
+  * redis_cmd() can take variable number of parameters
+  * added redisc_exec_argv() function
+
+==== p_usrloc ====
+
+  * ported gruu and outbound API changes to p_usrloc module
+
 ==== path ====
 
   * added support for websocket transport layer
@@ -198,37 +220,57 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 
 ==== permissions ====
 
-  * added new cfg function allow_address_group(addr, port)
+  * added new cfg function allow_address_group(addr, port) - return group of matching address and port record in address table
   * added support for websocket transport layer
+
 ==== prefix_route ====
 
   * option to provide the value to match the prefix as parameter to prefix_route()
   * option to disable config file execution exit upon prefix match
 
 ==== presence ====
+
   * added support for websocket transport layer
   * now uses DB row/table locking in DB only mode (where supported by the DB module)
 
+==== presence_xml ====
+
+  * module parameter xcapauth_usedel_reason to allow admin to set the reason in Subscription-Status header when a user is deleted from contact list
+
 ==== pua ====
+
   * now uses DB row/table locking in DB only mode (where supported by the DB module)
+
 ==== pv ====
 
   * new variable $cnt(...) to count the number of other array variables
   * added support for websocket transport layer
+  * new pv class $version(key)
+    * return attributes of the software version
+    * key can be:
+      * num - return version number
+      * full - return all version string
+      * hash - return git hash code and status
+
 ==== registrar ====
+
   * added support for websocket transport layer
   * new modparam to control requiring (and adding) outbound options-tag
   * new modparam to control adding Flow-Timer: header to 200 OK responses to REGISTER requests
 
 ==== rls ====
+
   * now uses DB row/table locking in DB only mode (where supported by the DB module)
 
 ==== rr ====
+
   * bind to outbound module (if loaded before rr) to enable RFC 5626 Edge Proxy behaviour
+
 ==== rtpproxy ====
 
   * allow script variables in set_rtp_proxy_set(...) parameter
   * possibility to add ice relay candidates to sdp streams if new module parameter ice_candidate_priority_avp has been defined
+
 ==== sanity ====
   * added support for websocket transport layer
 
@@ -236,17 +278,20 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 
   * new function: sdp_remove_line_by_prefix(string)
     * removes lines from SDP body that matches given prefix
+
 ==== seas ====
 
   * added support for websocket transport layer
 
 ==== sipcapture ====
 
-  * support multiple tables
+  * support for storing the information to multiple sql tables
   * HEPv3 support
 
 ==== siptrace ====
+
   * added support for websocket transport layer
+
 ==== snmpstats ====
 
   * added support for websocket transport layer
@@ -259,21 +304,32 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
   * module parameter contacts_avp is now name of an xavp
   * added new module parameter contact_flows_avp that must be defined if contacts_avp is defined
   * added support for outbound by new script function t_next_contact_flows()
+  * enhanced t_replicate() so that if a NULL string is used, it replicates to $du
 
 ==== uac ====
 
-  * uac_replace_[from|to]() in AUTO mode can use dialog module to restore From/To
+  * uac_replace_[from|to]() in AUTO mode can use dialog module to restore From/To - in this mode the URIs are stored as dialog
+    variables.
+
+==== usrloc ====
+
+  * for DB_ONLY module, run timer only when timer_interval > 0, to allow database to be cleaned up by external processes
+  * keep time of the last keepalive for natted UDP contacts
 
 ==== xcap_server ====
 
   * Support for org.openmobilealliance.xcap-directory auid
+
 ==== xlog ====
 
   * log_colors - new parameter to update the color scheme for core log levels
+
 ===== New in Core =====
+
 ==== Components ====
 
 === command line parameters ===
+
   * -e - print colorful messages based on log level
 
 === core parameters ===
@@ -284,6 +340,7 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
   * support for receiving/sending WebSocket frames over TCP/TLS
   * support for building Via: and Record-Route: (including double-RR) headers for WebSockets
   * added Colin Plumb's MD5 implementation to be fully GPL compliant
+  * update printing of socket lists to show the advertised address if set for the socket
 
 === parser/uri ===
 
@@ -291,5 +348,14 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
   * support for ";transport=ws" in URIs
 
 === lib/srdb1 ===
+
   * added support for row/table locking (requires corresponding support in database modules)
+
 ===== Tools =====
+
+  * kamctl
+    * stats command can print a single group of statistics - groupid can be given as command parameter
+
+===== kamailio.cfg =====
+
+  * use add_contact_alias()/handle_uri_alias() for NATed calls
