@@ -275,6 +275,7 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 
   * allow script variables in set_rtp_proxy_set(...) parameter
   * possibility to add ice relay candidates to sdp streams if new module parameter ice_candidate_priority_avp has been defined
+  * new options "x" for automatic bridging between IPv4 and IPv6, based on the following assumption: "i" is the IPv4 interface and "e" is the IPv6 interface on the RTPProxy
 
 ==== sanity ====
   * added support for websocket transport layer
