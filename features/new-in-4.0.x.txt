@@ -361,6 +361,9 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 
   * kamctl
     * stats command can print a single group of statistics - groupid can be given as command parameter
+  * Makefile
+    * added new target 'printvar' - prints the value of a Makefile variable whose name is provided in
+      variable 'v', e.g.,: make printvar v=exclude_modules
 
 ===== kamailio.cfg =====
 
