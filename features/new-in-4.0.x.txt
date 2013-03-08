@@ -261,6 +261,7 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
   * added support for websocket transport layer
   * new modparam to control requiring (and adding) outbound options-tag
   * new modparam to control adding Flow-Timer: header to 200 OK responses to REGISTER requests
+  * new function lookup_branches(domain) - lookup the contacts for r-uri and additional branches - only branches that are clean (i.e., have only r-uri set) are used
 
 ==== rls ====
 
