@@ -389,6 +389,9 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
   * support for building Via: and Record-Route: (including double-RR) headers for WebSockets
   * added Colin Plumb's MD5 implementation to be fully GPL compliant
   * update printing of socket lists to show the advertised address if set for the socket
+  * added DNSSEC support for DNS queries
+    * this is available by setting the USE_DNSSEC compile flag. It requires libval-threads and libres (part of dnssec-tools dnssec-tools.org)
+    * the custom resolvers were replaced by val_gethostbyname, val_gethostbyname and val_res_query (for SRV)
 
 === parser/uri ===
 
