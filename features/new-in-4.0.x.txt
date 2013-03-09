@@ -197,6 +197,9 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 
   * added support for row/table locking
 
+==== db_text ====
+
+  * new rpc command 'db_text.dump' - allows forcing a write back to disk for modified tables
 ==== dialog ====
 
   * added dlg_set_timeout_by_profile() route script function
