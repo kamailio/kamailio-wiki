@@ -437,6 +437,7 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 === command line parameters ===
 
   * -e - print colorful messages based on log level
+  * command line option -v replaced with -K - -v was exposing to misuse instead of -V (version), now is aliased to it
 
 === core parameters ===
   * log_color - print colorful messages based on log level
