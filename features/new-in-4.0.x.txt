@@ -343,6 +343,7 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
   * new modparam to control adding Flow-Timer: header to 200 OK responses to REGISTER requests
   * new function lookup_branches(domain) - lookup the contacts for r-uri and additional branches - only branches that are clean (i.e., have only r-uri set) are used
   * $ulc(...) returns ruid, reg-id and instance
+  * execute event route when a contact expires - the name of the routing block is event_route[usrloc:contact-expired]
 
 ==== rls ====
 
