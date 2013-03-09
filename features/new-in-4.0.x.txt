@@ -369,7 +369,8 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 
 ==== xcap_server ====
 
-  * Support for org.openmobilealliance.xcap-directory auid
+  * support for org.openmobilealliance.xcap-directory auid
+  * use a static table to keep the list of supported auids - adding new auid requires an entry in this table and define of the internal type
 
 ==== xlog ====
 
