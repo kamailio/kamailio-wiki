@@ -348,8 +348,10 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 
 ==== uac ====
 
-  * uac_replace_[from|to]() in AUTO mode can use dialog module to restore From/To - in this mode the URIs are stored as dialog
-    variables.
+  * uac_replace_[from|to]() in AUTO mode can use dialog module to restore From/To - in this mode the URIs are stored as dialog variables
+  * new paramter restore_dlg
+    * if set to 1, then the module uses dialog variables to store the initial and new values for From/To headers
+    * default set to 0 - otherwise all calls that have changes to From/To headers must be tracked by dialog
 
 ==== usrloc ====
 
