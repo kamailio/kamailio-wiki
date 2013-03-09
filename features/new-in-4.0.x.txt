@@ -378,6 +378,7 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 
   * support for storing the information to multiple sql tables
   * HEPv3 support
+  * added RPC command to turn on/off or check status
 
 ==== siptrace ====
 
