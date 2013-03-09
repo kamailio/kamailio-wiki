@@ -285,6 +285,9 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
       * TLS - return PROTO_TLS
       * SCTP - return PROTO_SCTP
     * it can be used to compare the values from other pvs, such as $af(id), $snd(af), $snd(proto)
+  * new transformation {s.stripto,c} - remove the prefix until meeting 'c'
+    * "abcdef"{s.stripto,d} => "def"
+    * the char can be given in a pv
 
 ==== registrar ====
 
