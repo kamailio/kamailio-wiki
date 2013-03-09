@@ -265,14 +265,17 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 
 ==== pv ====
 
-  * new variable $cnt(...) to count the number of other array variables (e.g., $cnt($avp(x)) )
+  * new pv class - $cnt(...) - to count the number of other array variables (e.g., $cnt($avp(x)) )
   * added support for websocket transport layer
-  * new pv class $version(key)
-    * return attributes of the software version
+  * new pv class - $version(key) - return attributes of the software version
     * key can be:
       * num - return version number
       * full - return all version string
       * hash - return git hash code and status
+  * new pv class - $af(key) - return address family for received message
+    * key can be:
+      * id: return integer representation for IPv4 or IPv6 (value of AF_INET and AF_INET6)
+      * name: return "IPv4" or "IPv6"
 
 ==== registrar ====
 
