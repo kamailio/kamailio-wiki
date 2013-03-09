@@ -183,6 +183,8 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 ==== auth_db ====
 
   * added new variant of www_authenticate() which takes method as a parameter
+  * new function is_subscriber(uri, dbtable, flags)
+    * check if URI corresponds to a subscriber record in dbtable and load credentials for it
 
 ==== ctl ====
 
