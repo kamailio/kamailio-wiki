@@ -276,6 +276,15 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
     * key can be:
       * id: return integer representation for IPv4 or IPv6 (value of AF_INET and AF_INET6)
       * name: return "IPv4" or "IPv6"
+  * new pv class - $K(key) - return the value for internal constant keywords
+    * key can be:
+      * IPv4 - returns AF_INET
+      * IPv6 - returns AF_INET6
+      * UDP - return PROTO_UDP
+      * TCP - return PROTO_TCP
+      * TLS - return PROTO_TLS
+      * SCTP - return PROTO_SCTP
+    * it can be used to compare the values from other pvs, such as $af(id), $snd(af), $snd(proto)
 
 ==== registrar ====
 
