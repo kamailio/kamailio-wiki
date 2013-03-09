@@ -176,6 +176,9 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 
   * added new variant of pv_www_authenticate() which takes method as a parameter
   * new function has_credentials(realm) - returns true if an authorization header matching the realm is found
+  * new function pv_auth_check(...)
+    * equivalent of auth_check(...) from auth_db, but taking the password from a PV -- combines pv_proxy_authenticate() and pv_www_authenticate()
+    * new module parameter use_domain that controls whether the domain part of URIs should be used or not to make the identity checks upon authentication with pv_auth_check(...)
 
 ==== auth_db ====
 
