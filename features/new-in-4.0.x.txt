@@ -421,3 +421,4 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
   * use add_contact_alias()/handle_uri_alias() for NATed calls
   * test if DBURL is already defined before defining it - allow to set it via command line with -A DBURL='...'
   * kamailio-local.cfg is attempted to be loaded if exists in the same folder, allowing to set defines/paramters inside it without changing main kamailio.cfg
+  * add option to set pstn gw port
