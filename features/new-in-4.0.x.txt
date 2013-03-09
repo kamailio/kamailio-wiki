@@ -404,9 +404,10 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
   * keep time of the last keepalive for natted UDP contacts
   * added +sip.instance and reg-id to mi_usrloc_show_contact
   * option to store xavp per contact
-    * stored only in memory for the moment
     * the xavp can contain a list of xavps
     * new config parameter to specify the name of xavp
+  * store per-contact attributes in database
+    * attributes table is the name of table used for save/lookup plus suffix '_attrs' (e.g., location_attrs)
 
 ==== xcap_server ====
 
