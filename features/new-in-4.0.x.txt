@@ -383,6 +383,7 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 ==== siptrace ====
 
   * added support for websocket transport layer
+  * added RPC command for turning on/off tracing
 
 ==== sl ====
 
