@@ -424,6 +424,7 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
   * added reg_db_table parameter to specify table name for registrations
   * skip realm matching when realm pv for uac_auth() is empty or null
   * uac_reg - skip realm checking if realm attribute is empty
+  * uac_reg - add reg_retry_interval parameter. The new parameter allows to retry failed registration attempts. Instead of unconditionally marking the entry as disabled, the registration will be retried after the set interval. Setting it to 0 (default) retains the old behaviour.
 
 ==== usrloc ====
 
