@@ -426,6 +426,9 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
       * MEMDBG is used now to set the debug mode for each of the managers
         * 0 - no debug info
         * 1 - debug info enabled
+    * default memory manager set to q_malloc
+      * debug option is left unset (no DBG_QM_MALLOC)
+      * lower memory chunk overhead with faster join
     
 
 ===== kamailio.cfg =====
