@@ -494,6 +494,8 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
     * stats command can print a single group of statistics - groupid can be given as command parameter
     * new command 'db showg' - uses \G at end of sql query, resulting in line-formated output (at least for mysql)
     * added definition of tables for uid modules
+  * kamdbctl
+    * new command - kamdbctl pframework create - creates a provisioning framework for the installed db tables
   * Makefile
     * added new target 'printvar' - prints the value of a Makefile variable whose name is provided in variable 'v', e.g.,: make printvar v=exclude_modules
     * added uninstall target - it prints hints and commands to perform uninstall when installation is done from sources
