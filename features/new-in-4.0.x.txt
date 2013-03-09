@@ -349,6 +349,7 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 ==== rr ====
 
   * bind to outbound module (if loaded before rr) to enable RFC 5626 Edge Proxy behaviour
+  * added option to set custom username for Record-Route URI
 
 ==== rtpproxy ====
 
