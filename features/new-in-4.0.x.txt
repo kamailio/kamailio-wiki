@@ -197,6 +197,10 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 
   * added support for row/table locking
 
+==== dialog ====
+
+  * added dlg_set_timeout_by_profile() route script function
+    * this function allows the same dialog timeout to be set across all the dialogs in a profile (with or without values).
 ==== ipops ====
 
   * added new exported function is_in_subnet()
