@@ -327,6 +327,7 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 
   * new function: sdp_remove_line_by_prefix(string)
     * removes lines from SDP body that matches given prefix
+  * added sdp_content() - return true of there is a sdp part in the body of sip message
 
 ==== seas ====
 
