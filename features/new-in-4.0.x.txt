@@ -212,6 +212,7 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 ==== htbale ====
 
   * added RPC command for listing one item in a hash table
+  * added new RPC htable.listTables - this RPC list all defined tables and their settings
 
 ==== ipops ====
 
