@@ -293,6 +293,10 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 
   * module parameter xcapauth_usedel_reason to allow admin to set the reason in Subscription-Status header when a user is deleted from contact list
 
+==== pipelimit ====
+
+  * added a new set of RPC commands
+
 ==== pua ====
 
   * now uses DB row/table locking in DB only mode (where supported by the DB module)
