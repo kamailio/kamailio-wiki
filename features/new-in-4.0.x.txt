@@ -377,6 +377,10 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 ==== statistics ====
 
   * update_stat(...) can get PV as value parameter
+
+==== textops ====
+
+  * added functions that operate on header value
 ==== tm ====
 
   * added t_is_set("target") function - returns true if the attribute specified by the target parameter is set for current transaction (e.g., failure_route, branch_route, onreply_route)
