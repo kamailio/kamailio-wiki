@@ -412,6 +412,7 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
   * added support for outbound by new script function t_next_contact_flows()
   * enhanced t_replicate() so that if a NULL string is used, it replicates to $du
   * added option to check callid when matching transactions
+  * remember per-branch onreply_route and onfailure_route settings
 
 ==== tmx ====
 
