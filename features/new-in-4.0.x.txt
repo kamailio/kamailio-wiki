@@ -221,6 +221,10 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 
   * added support for websocket transport layer
 
+==== maxfwd ====
+
+  * max_limit module param can be changed at runtime
+
 ==== mqueue ====
 
   * added mq_size() function to get runtime size of mqueue in script
