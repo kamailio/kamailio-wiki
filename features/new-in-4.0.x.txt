@@ -234,6 +234,9 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 ==== msrp ====
 
   * added support for websocket transport layer
+  * added internal map table to track msrp connections
+  * added rpc command to list active connections
+  * new parameter use_path_addr - specify host and port for usage in Use-Path header
 
 ==== nat_traversal ====
 
