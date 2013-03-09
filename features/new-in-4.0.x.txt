@@ -421,6 +421,9 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
   * new paramter restore_dlg
     * if set to 1, then the module uses dialog variables to store the initial and new values for From/To headers
     * default set to 0 - otherwise all calls that have changes to From/To headers must be tracked by dialog
+  * added reg_db_table parameter to specify table name for registrations
+  * skip realm matching when realm pv for uac_auth() is empty or null
+  * uac_reg - skip realm checking if realm attribute is empty
 
 ==== usrloc ====
 
