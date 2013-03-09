@@ -499,6 +499,7 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
     * stats command can print a single group of statistics - groupid can be given as command parameter
     * new command 'db showg' - uses \G at end of sql query, resulting in line-formated output (at least for mysql)
     * added definition of tables for uid modules
+    * added option to grant sql access from a remote host - set DBACCESSHOST in kamctlrc
   * kamdbctl
     * new command - kamdbctl pframework create - creates a provisioning framework for the installed db tables
   * Makefile
