@@ -265,7 +265,7 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 
 ==== pv ====
 
-  * new variable $cnt(...) to count the number of other array variables
+  * new variable $cnt(...) to count the number of other array variables (e.g., $cnt($avp(x)) )
   * added support for websocket transport layer
   * new pv class $version(key)
     * return attributes of the software version
