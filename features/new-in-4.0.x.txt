@@ -246,6 +246,7 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
   * added support for websocket transport layer
   * add_contact_alias() can now be given ip addr port, and proto as parameters
   * added the select for rewriting the contact
+  * new test 128 to check port in contact against source port
 
 ==== nat_traversal ====
 
