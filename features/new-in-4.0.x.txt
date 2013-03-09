@@ -426,6 +426,7 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
     * new config parameter to specify the name of xavp
   * store per-contact attributes in database
     * attributes table is the name of table used for save/lookup plus suffix '_attrs' (e.g., location_attrs)
+  * added RPC command for AOR lookup
 
 ==== xcap_server ====
 
