@@ -278,6 +278,7 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 
   * added new cfg function allow_address_group(addr, port) - return group of matching address and port record in address table
   * added support for websocket transport layer
+  * added RPC commands 
 
 ==== pike ====
 
