@@ -334,7 +334,8 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
     * "abcdef"{s.stripto,d} => "def"
     * the char can be given in a pv
   * new function: typeof(pvar, vtype) - test the type of the pseudo-variable
-  * new function: not_empty(pvar) - test if the type is string and the value not empt
+  * new function: not_empty(pvar) - test if the type is string and the value not empty
+  * make individual flags accessible via $Mf(idx), $Bf(idx) and $Sf(idx)
 
 ==== registrar ====
 
