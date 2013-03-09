@@ -434,6 +434,7 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
     * this is available by setting the USE_DNSSEC compile flag. It requires libval-threads and libres (part of dnssec-tools dnssec-tools.org)
     * the custom resolvers were replaced by val_gethostbyname, val_gethostbyname and val_res_query (for SRV)
   * added instance and reg_id fields to sip_msg_t - also added set_instance and reset_instance functions
+  * extended xavp api - functions to add an avp last in a list or inserted at a specific position, to extract an avp from top of the list
 
 === parser/uri ===
 
