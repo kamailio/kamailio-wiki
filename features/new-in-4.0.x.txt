@@ -250,6 +250,9 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
   * added support for websocket transport layer
   * bind to outbound module (if loaded before path) to enable RFC 5626 Edge Proxy behaviour
 
+==== pdt ====
+
+  * added pdt.list command to dump memory structure via rpc
 ==== permissions ====
 
   * added new cfg function allow_address_group(addr, port) - return group of matching address and port record in address table
