@@ -189,6 +189,10 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 ==== ctl ====
 
   * support of no limitation on number of message chunks
+
+==== cpl-c ====
+
+  * added an optional parameter to cpl_run_scritp() to provide the URI - the parameter will be used instead of taking the URI from headers or R-URI
 ==== db_cassandra ====
 
   * added raw query support for CQL format
