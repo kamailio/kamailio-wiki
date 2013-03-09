@@ -407,6 +407,7 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 
 ===== Tools =====
 
+  * sercmd is installed as kamcmd
   * kamctl
     * stats command can print a single group of statistics - groupid can be given as command parameter
   * Makefile
