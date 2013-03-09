@@ -419,6 +419,13 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
   * Makefile
     * added new target 'printvar' - prints the value of a Makefile variable whose name is provided in variable 'v', e.g.,: make printvar v=exclude_modules
     * added uninstall target - it prints hints and commands to perform uninstall when installation is done from sources
+  * Makefile.defs
+    * added MEMMNG to allow selection of memory manager
+      * MEMMNG=0 => fast malloc is used (f_malloc)
+      * MEMMNG=1 => quick malloc is used (q_malloc)
+      * MEMDBG is used now to set the debug mode for each of the managers
+        * 0 - no debug info
+        * 1 - debug info enabled
     
 
 ===== kamailio.cfg =====
