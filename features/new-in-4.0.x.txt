@@ -95,72 +95,72 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 ==== avp ====
 
   * avp manipulation tools
-  * http://kamailio.org/docs/modules/4.0.x/modules/
+  * http://kamailio.org/docs/modules/4.0.x/modules/avp.html
 
 ==== db2_ldap ====
 
   * DB API v2 connector for LDAP
-  * http://kamailio.org/docs/modules/4.0.x/modules/
+  * http://kamailio.org/docs/modules/4.0.x/modules/db2_ldap.html
 
 ==== db2_ops ====
 
   * DB API v2 script operations
-  * http://kamailio.org/docs/modules/4.0.x/modules/
+  * http://kamailio.org/docs/modules/4.0.x/modules/db2_ops.html
 
 ==== malloc_test ====
 
   * test drive module for memory managers
-  * http://kamailio.org/docs/modules/4.0.x/modules/
+  * http://kamailio.org/docs/modules/4.0.x/modules/malloc_test.html
 
 ==== mangler ====
 
   * SIP message mangling tools
-  * http://kamailio.org/docs/modules/4.0.x/modules/
+  * http://kamailio.org/docs/modules/4.0.x/modules/mangler.html
 
 ==== print ====
 
   * sample module (for devel)
-  * http://kamailio.org/docs/modules/4.0.x/modules/
+  * http://kamailio.org/docs/modules/4.0.x/modules/print.html
 
 ==== print_lib ====
 
   * sample module depending on internal library (for devel)
-  * http://kamailio.org/docs/modules/4.0.x/modules/
+  * http://kamailio.org/docs/modules/4.0.x/modules/print_lib.html
 
 ==== timer ====
 
   * routing block execution on core timers
-  * http://kamailio.org/docs/modules/4.0.x/modules/
+  * http://kamailio.org/docs/modules/4.0.x/modules/timer.html
 
 ==== uid_auth_db ====
 
   * authentication using db structure based on unique user id
-  * http://kamailio.org/docs/modules/4.0.x/modules/
+  * http://kamailio.org/docs/modules/4.0.x/modules/uid_auth_db.html
 
 ==== uid_avp_db ====
 
   * per user APV loading from db structure based on unique user id
-  * http://kamailio.org/docs/modules/4.0.x/modules/
+  * http://kamailio.org/docs/modules/4.0.x/modules/uid_avp_db.html
 
 ==== uid_domain ====
 
   * multi-domain management using db structure based on unique user id
-  * http://kamailio.org/docs/modules/4.0.x/modules/
+  * http://kamailio.org/docs/modules/4.0.x/modules/uid_domain.html
 
 ==== uid_gflags ====
 
   * global flags and AVPs management using db structure based on unique user id
-  * http://kamailio.org/docs/modules/4.0.x/modules/
+  * http://kamailio.org/docs/modules/4.0.x/modules/uid_gflags.html
 
 ==== uid_uri_db ====
 
   * uri management using db structure based on unique user id
-  * http://kamailio.org/docs/modules/4.0.x/modules/
+  * http://kamailio.org/docs/modules/4.0.x/modules/uid_uri_db.html
 
 ==== xprint ====
 
   * log messages from scrip using %xy specifiers (former SER xlog module)
-  * http://kamailio.org/docs/modules/4.0.x/modules/
+  * http://kamailio.org/docs/modules/4.0.x/modules/xprint.html
 
 ===== New in Old Modules =====
 
