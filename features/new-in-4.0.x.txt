@@ -370,6 +370,11 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 
   * added support for websocket transport layer
 
+==== sl ====
+
+  * new function sl_forward_reply(...)
+    * forward the received reply fron configuration, before it would be done by the core. It has the option to change the status code and reason phrase
+    * the forwarding is statelessy, not affecting the tm states
 ==== snmpstats ====
 
   * added support for websocket transport layer
