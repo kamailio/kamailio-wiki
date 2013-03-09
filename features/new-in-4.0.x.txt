@@ -171,6 +171,7 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 ==== app_lua ====
 
   * extended the API with registrar:save_uri()
+  * support for URI lookup from registrar
 
 ==== auth ====
 
