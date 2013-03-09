@@ -414,6 +414,7 @@ This modules are imported from SER flavour, being new from Kamailio packaging po
 ==== tmx ====
 
   * added $T_reply_reason PV - useful especially for internally generated (faked) replies to get the reason phrase
+  * added t_is_reply_route() - function to determine if the top executed route block is a reply
 ==== uac ====
 
   * uac_replace_[from|to]() in AUTO mode can use dialog module to restore From/To - in this mode the URIs are stored as dialog variables
