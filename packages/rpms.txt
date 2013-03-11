@@ -2,7 +2,7 @@
 
 ===== Kamailio 4.0.x =====
 
-The RPM packages are built on OpenSUSE build server for Centos 5.5, Centos 6, RedHat 5, RedHat 6, Fedora 15, Fedora 16, Fedora 17, OpenSuse 11.4 and OpenSuse 12.1, on i586 and x86_64 architectures.
+The RPM packages are built on OpenSUSE build server for Centos 5.5, Centos 6, RedHat 5, RedHat 6, Fedora 15, Fedora 16, Fedora 17, Fedora 18, OpenSuse 11.4 and OpenSuse 12.1, on i586 and x86_64 architectures.
 
 The build service project is available at:
 
@@ -17,6 +17,7 @@ Download links specific per distribution are:
   * http://download.opensuse.org/repositories/home:/kamailio:/telephony/Fedora_15/
   * http://download.opensuse.org/repositories/home:/kamailio:/telephony/Fedora_16/
   * http://download.opensuse.org/repositories/home:/kamailio:/telephony/Fedora_17/
+  * http://download.opensuse.org/repositories/home:/kamailio:/telephony/Fedora_18/
   * http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_11.4/
   * http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_12.1/
 
