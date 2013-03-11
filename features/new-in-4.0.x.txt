@@ -74,7 +74,7 @@
 ==== outbound ====
 
   * new module providing SIP Outbound (RFC 5626) Edge Proxy support
-  * http://kamailio.org/docs/modules/4.0.x/modules_k/outbound.html
+  * http://kamailio.org/docs/modules/4.0.x/modules/outbound.html
 
 ==== websocket ====
 
