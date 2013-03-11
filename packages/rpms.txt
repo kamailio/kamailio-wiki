@@ -1,5 +1,25 @@
 ====== RPM Packages ======
 
+===== Kamailio 4.0.x =====
+
+The RPM packages are built on OpenSUSE build server for Centos 5.5, Centos 6, RedHat 5, RedHat 6, Fedora 15, Fedora 16, Fedora 17, OpenSuse 11.4 and OpenSuse 12.1, on i586 and x86_64 architectures.
+
+The build service project is available at:
+
+  * https://build.opensuse.org/package/show?package=kamailio40&project=home%3Akamailio%3Atelephony
+
+Download links specific per distribution are:
+
+  * http://download.opensuse.org/repositories/home:/kamailio:/telephony/CentOS_CentOS-5/
+  * http://download.opensuse.org/repositories/home:/kamailio:/telephony/CentOS_CentOS-6/
+  * http://download.opensuse.org/repositories/home:/kamailio:/telephony/RedHat_RHEL-5/
+  * http://download.opensuse.org/repositories/home:/kamailio:/telephony/RedHat_RHEL-6/
+  * http://download.opensuse.org/repositories/home:/kamailio:/telephony/Fedora_15/
+  * http://download.opensuse.org/repositories/home:/kamailio:/telephony/Fedora_16/
+  * http://download.opensuse.org/repositories/home:/kamailio:/telephony/Fedora_17/
+  * http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_11.4/
+  * http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_12.1/
+
 ===== Kamailio 3.3.x =====
 
 The RPM packages are built on OpenSUSE build server for Centos 5.5, Centos 6, RedHat 5, RedHat 6, Fedora 15, Fedora 16, Fedora 17, OpenSuse 11.4 and OpenSuse 12.1, on i586 and x86_64 architectures.
@@ -27,6 +47,7 @@ This is an alternative repository packaging Kamailio 3.3.0 for Enterprise Linux 
 See details at:
 
   * http://dl.dropbox.com/u/9300853/yum/index.html
+
 ===== Kamailio 3.2.x =====
 
 The RPM packages are built on OpenSUSE build server for Centos 5.5, Centos 6, RedHat 5, RedHat 6, Fedora 15, Fedora 16, OpenSuse 11.4 and OpenSuse 12.1, on i586 and x86_64 architectures.
