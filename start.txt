@@ -118,6 +118,17 @@ Few guidelines to edit the wiki:
   * [[devel:update-database-schema|Update Database Schema]]
   * [[devel:how-to:main|Mini How-To Guides for Development]]
 
+==== Troubleshooting ====
+When troubleshooting problems with Kamailio, one should always start by insuring that Kamailio is acting the way the RFCs specify. The only exception to this is if the docs says it can act otherwise.
+  * Troubleshooting basic calling issues : RFC3261
+  * Troubleshooting presence issues
+    * PUBLISH related issues - RFC3903
+    * SUBSCRIBE/NOTIFY related issues - RFC3265
+  * Troubleshooting REFER ( call transfers ) - RFC3515
+  * SIP INFO - RFC2976
+
+If your Kamailio is buggy or is crashing because you are not following spec, you probably won't get any answers from the mailing list. Before writing to the mailing list or IRC, make sure that you have run packet traces and compared the results with the RFCs to make sure you are compliant. Minor deviations ( such as a single missing header ) can cause Kamailio to work improperly.
+
 ==== Misc ====
 
   * [[devel:active-contributors|Contributors - List of Active Developers]]
