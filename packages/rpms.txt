@@ -20,6 +20,8 @@ Download links specific per distribution are:
   * http://download.opensuse.org/repositories/home:/kamailio:/telephony/Fedora_18/
   * http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_11.4/
   * http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_12.1/
+  * http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_12.2/
+  * http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_12.3/
 
 ==== Peter Dunkley's YUM Repository ====
 
