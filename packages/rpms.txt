@@ -21,6 +21,14 @@ Download links specific per distribution are:
   * http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_11.4/
   * http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_12.1/
 
+==== Peter Dunkley's YUM Repository ====
+
+This is an alternative repository packaging Kamailio for Enterprise Linux 6 (CentOS/RHEL/similar) i386, x86_64, and Fedora 17 arm (Raspberry Pi), i386, x86_64.
+
+See details at:
+
+  * http://dl.dropbox.com/u/9300853/yum/index.html
+
 ===== Kamailio 3.3.x =====
 
 The RPM packages are built on OpenSUSE build server for Centos 5.5, Centos 6, RedHat 5, RedHat 6, Fedora 15, Fedora 16, Fedora 17, OpenSuse 11.4 and OpenSuse 12.1, on i586 and x86_64 architectures.
@@ -41,13 +49,6 @@ Download links specific per distribution are:
   * http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_11.4/
   * http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_12.1/
 
-==== Peter Dunkley's YUM Repository ====
-
-This is an alternative repository packaging Kamailio 3.3.0 for Enterprise Linux 6 (CentOS/RHEL/similar) i386, x86_64, and Fedora 17 arm (Raspberry Pi), i386, x86_64.
-
-See details at:
-
-  * http://dl.dropbox.com/u/9300853/yum/index.html
 
 ===== Kamailio 3.2.x =====
 
