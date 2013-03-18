@@ -118,21 +118,6 @@ Few guidelines to edit the wiki:
   * [[devel:update-database-schema|Update Database Schema]]
   * [[devel:how-to:main|Mini How-To Guides for Development]]
 
-==== Troubleshooting ====
-
-Always check your logs, set verbosity to INFO. You can set it to info by setting debug=2 in your configuration. You can also try debug=3 to get heavy debugging output, but this can sometimes generate more information than you need.
-
-If your Kamailio develops intermittent bugs that nobody else has, your server may not be respecting the RFCs. Run a packet trace and compare your packets to the behaviour called for by the RFCs. Here are a list of some RFCs that define different SIP behaviours.
-
-  * Troubleshooting basic calling issues : RFC3261
-  * Troubleshooting presence issues
-    * PUBLISH related issues - RFC3903
-    * SUBSCRIBE/NOTIFY related issues - RFC3265
-  * Troubleshooting REFER ( call transfers ) - RFC3515
-  * SIP INFO - RFC2976
-
-A lot of intermittent and quirky behaviour can be resolved simply by insuring that your Kamailio is running according to spec.
-
 ==== Misc ====
 
   * [[devel:active-contributors|Contributors - List of Active Developers]]
