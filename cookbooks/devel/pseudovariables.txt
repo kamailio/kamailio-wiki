@@ -73,11 +73,12 @@ The 'name' can be:
 
   * uri - return uri of the branch
   * dst_uri - return destination uri (next hop address)
-  * q - return the q value of the branch
   * path - return the path vector for the branch
+  * q - return the q value of the branch
   * send_socket - return the socket to be used to send the branch
-  * flags - return the branch flags value
   * count - return the number of the branches
+  * flags - return the branch flags value
+  * ruid - return the ruid of the branch (Record internal Unique ID from usrloc)
 
 The PV can take an index to access a specif branch: $(branch(name)[index])
 
