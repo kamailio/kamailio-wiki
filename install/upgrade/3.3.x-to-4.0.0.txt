@@ -6,7 +6,11 @@ The page contains the details about the changes that were made to old components
 
 These sections presents notes, listed by modules, about changes that need to be made to Kamailio configuration file when upgrading from Kamailio v3.3.x to devel.
 
-==== modules/tm ====
+==== kex ====
+
+  * km_append_branch() has been replaced with append_branch() from **corex** module
+
+==== tm ====
 
   * Changed value of module parameter contacts_avp from AVP definition to XAVP name (string).
   * Added new module parameter contact_flows_avp that needs to be defined if contacts_avp parameter has been defined.
