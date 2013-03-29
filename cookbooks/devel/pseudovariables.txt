@@ -379,6 +379,11 @@ To reset $du:
 
 <fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
 
+
+==== Record internal Unique ID ====
+
+**$ruid** - the Record internal Unique ID for the location record selected by calling registrar:lookup()
+
 ==== URI Scheme of Request URI ====
 
 **$rz** - returns R-URI scheme, possible values: sip, sips, tel, tels and urn, R-URI scheme parsing error should be reflected by value: none
