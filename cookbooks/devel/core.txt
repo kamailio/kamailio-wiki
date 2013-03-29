@@ -1151,11 +1151,6 @@ sercmd mi get_statistics 1xx_replies
 
 
 
-==== stun_refresh_interval ====
-Value for the REFRESH INTERVAL attribute of the internal STUN server
-
-   stun_refresh_interval = number in millisecond (default 0)
-
 
 ==== syn_branch ====
 This parameter controls how the branch parameter is calculated for stateless forwarding.  It also applies to stateful forwarding of ACK requests following 2xx responses.
