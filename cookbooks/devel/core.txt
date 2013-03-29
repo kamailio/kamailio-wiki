@@ -1150,11 +1150,6 @@ sercmd mi get_statistics 1xx_replies
 </code>
 
 
-==== stun_allow_stun ====
-Activate internal STUN server.
-  stun_allow_stun = 0 | 1 (off | on); default 1
-
-Note: STUN support is only available if sip-router/Kamailio was compiled with STUN support ("make STUN=1 cfg")
 
 ==== stun_refresh_interval ====
 Value for the REFRESH INTERVAL attribute of the internal STUN server
