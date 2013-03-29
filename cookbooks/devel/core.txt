@@ -1149,10 +1149,6 @@ kamctl fifo clear_statistics NOTIFY
 sercmd mi get_statistics 1xx_replies
 </code>
 
-==== stun_allow_fp ====
-Use FINGERPRINT attribute in STUN server
-
-  stun_allow_fp = 0 | 1 (off | on); default: 1
 
 ==== stun_allow_stun ====
 Activate internal STUN server.
