@@ -76,6 +76,11 @@
   * new module providing SIP Outbound (RFC 5626) Edge Proxy support
   * http://kamailio.org/docs/modules/4.0.x/modules/outbound.html
 
+==== sca ====
+
+  * new module providing Broadsoft Shared Call Appearances support
+  * http://kamailio.org/docs/modules/4.0.x/modules/sca.html
+
 ==== websocket ====
 
   * new module providing a WebSocket (RFC 6455) server for:
