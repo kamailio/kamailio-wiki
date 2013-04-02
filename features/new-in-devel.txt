@@ -14,6 +14,8 @@
 
 ===== New in Old Modules =====
 
+== SNMPstats ==
+The SNMPstats module has been extended with a large set of new data, and the KAMAILIO-MIB has been extended with new OIDs. The new data reflects the Kamailio server process (memory, configuration at compile time), network transports and modules.
 ===== New in Core =====
 
 ==== Components ====
