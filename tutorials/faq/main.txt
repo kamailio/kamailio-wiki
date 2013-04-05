@@ -101,6 +101,44 @@ make FLAVOUR=kamailio include_modules="app_lua db_mysql" cfg
 make all
 make install
 </code>
+=?==== SIP Message Processing =====
+
+??? Why changes made to headers or body are not visible immediately?
+
+!!! Kamailio is working always with the received SIP message (request or reply). Changes done to headers or body are kept as a list of operations to be applied before writing to the network. If you want changes to be applied immediately, use **msg_apply_changes()** from textopsx module:
+
+  * http://kamailio.org/docs/modules/stable/modules/textopsx.html#textopsx.msg_apply_changes
+
+Be careful with it and don't use it after record_route(), because this function has to insert a header containing the IP address from the local socket that is going to be used for forwarding - the socket is not yet know during configuration file execution.
+
+For example, considering that X-Hdr does not exist in incoming message, here are some cases:
+
+  * without applying changes
+
+<code>
+append_hf("X-Hdr: xyz\r\n");
+
+if(is_present_hf("X-Hdr")) {
+   # this part is not executed
+} else {
+   # this part is executed
+}
+</code>
+
+  * with applying changes
+
+<code>
+append_hf("X-Hdr: xyz\r\n");
+
+msg_apply_changes();
+
+if(is_present_hf("X-Hdr")) {
+   # this part is executed
+} else {
+   # this part is not executed
+}
+</code>
+
 =?==== Media Streams =====
 
 ??? Does Kamailio relay media streams?
