@@ -118,6 +118,7 @@ Few guidelines to edit the wiki:
   * [[devel:git-commit-guidelines|GIT Commit Guidelines]]
   * [[devel:update-database-schema|Update Database Schema]]
   * [[devel:how-to:main|Mini How-To Guides for Development]]
+  * [[devel:module-docbook-readme|Writing Docbook Files for Module Readme]]
 
 ==== Misc ====
 
