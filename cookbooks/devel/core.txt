@@ -2626,6 +2626,18 @@ event_route [tm:local-request] { # Handle locally generated requests
 }
 </code>
 
+  * **event_route [tm:branch-failure]** - executed on all failure responses.
+<code c>
+event_route [tm:failure-branch] { # Handle failure response
+  xlog("L_INFO", "Handling $T_reply_code response to $rm to <$ru>\n");
+  if (t_check_status("430")) { # Outbound flow failed
+    unregister("location", "$tu", "$T_reply_ruid");
+    if (t_next_contact_flow()) {
+      t_relay();
+    }
+  }
+}
+</code>
 
 ===== Script statements =====
 
