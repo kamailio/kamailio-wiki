@@ -330,6 +330,26 @@ Example:
   listen=udp:10.10.10.10:5060 advertise 11.11.11.11:5060
 </code>
 
+=?==== Troubleshooting =====
+
+??? I get 'out of memory' errors, what can be done?
+
+!!! Most probably you run out of memory allocated for Kamailio. The application does not use the entire system memory, but up to a configured size.
+
+There are two memory pools used by Kamailio:
+  * shared memory - shm - common at application level, where most of the data needed for long time is stored (such as location records, least cost routing records, transactions, etc.). The default size is 32MB.
+  * private memory - pkg - allocated per process, used for local storage and temporary operations. The default size is 4MB.
+
+To increase the sizes for memory pools you have to give following command line parameters:
+  * **-m SIZE** - specify the shared memory size in MB
+  * **-M SIZE** - specify the shared memory size in MB
+
+For example, start Kamailio with 512MB of shared memory and 8MB of private memory:
+
+<code>
+/usr/local/bin/kamailio -m 512 -M 8 ...
+</code>
+
 =?==== Tools =====
 
 ??? How to generate HA1 value in command line?
