@@ -9,12 +9,12 @@ If you have a question suitable for FAQ and you don't know the answer, add it an
 
 =?==== General =====
 
-??? What is Kamailio?
+??? ~~#~~ What is Kamailio?
 
 !!! Kamailio is a SIP server, implementing the specifications from RFC3261. Its root functionality is routing any kind of SIP packets. On top of that, many conceptual features are implemented, see more at:
   * [[http://www.kamailio.org/w/features/|Kamailio Features]]
 
-??? Is Kamailio a B2BUA?
+??? ~~#~~ Is Kamailio a B2BUA?
 
 !!! No, Kamailio is a flexible SIP proxy. Many people integrate Asterisk, FreeSWITCH, SEMS, or other products with Kamailio for a B2BUA. 
    * [[http://ftp.iptel.org/pub/sems/doc/current/ModuleDoc_sbc.html|SEMS B2BUA]]
