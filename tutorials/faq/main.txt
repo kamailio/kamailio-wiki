@@ -386,7 +386,14 @@ If you want to do it on purpose, you can delete the AVP using assignment to $nul
 $avp(name) = $null;
 </code>
 
+??? What is a pseudo-variable?
 
+!!! A pseudo-variable is a special token that is expanded at runtume with a specific value. It can be used inside the parameters of some functions or in configuration file expressions.
+
+A pseudo-variable can refer to the value of an avp, body of a header, part of a SIP message or other variables from system.
+
+For more see:
+  * http://www.kamailio.org/wiki/cookbooks/devel/pseudovariables
 =?==== Troubleshooting =====
 
 ??? I get 'out of memory' errors, what can be done?
