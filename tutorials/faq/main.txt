@@ -380,6 +380,13 @@ alias=domainname
 
 where domainname has to be replaced with name of domain, which you wish to serve by Kamailio and which appears in request-URIs.
 
+
+??? I send SIP requests to Kamailio, but nothing happens, why?
+
+!!! Check if you have a firewall rule dropping traffic on SIP port (5060). Note that network sniffing tools have hooks in kernel before the firewall, so even if you see the SIP packets with ngrep or wireshark, they may be dropped by the firewall.
+
+You can increase the debug parameter value to 3 in the configuration file, restart kamailio and watch syslog messages to see if there is any text printed by kamailio. For each SIP packet received on the networks, Kamailio is printing at least few debug messages.
+
 =?==== Troubleshooting =====
 
 ??? I get 'out of memory' errors, what can be done?
