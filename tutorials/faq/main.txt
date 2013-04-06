@@ -330,6 +330,45 @@ Example:
   listen=udp:10.10.10.10:5060 advertise 11.11.11.11:5060
 </code>
 
+=?==== Configuration File Processing =====
+
+??? Do I have to delete the AVPs added in the configuration file for a SIP message?
+
+!!! No. The AVPs are automatically deleted when associated SIP transaction is destroyed.
+
+If you want to do it on purpose, you can delete the AVP using assignment to $null, like:
+
+<code>
+$avp(name) = $null;
+</code>
+
+=?==== SIP Requests Routing =====
+
+??? Why the SIP requests are replied with "483 Too Many Hops" or "513 Message Too Large"?
+
+!!! In both cases, the reason is probably an error in request routing script which caused an infinite loop.
+
+You can easily verify whether this happens by watching SIP traffic on loopback interface, for example using ngrep:
+
+<code>
+ngrep -d lo -qt -W byline port 5060
+</code>
+
+
+A typical reason for misrouting is a failure to match local domain correctly. If a server fails to recognize a request for itself, it will try to forward it to current URI in believe it would forward them to a foreign domain.
+
+Alas, it forwards the request to itself again. This continues to happen until value of the max_forwards header field reaches zero or the request grows too big.
+
+The solution: make sure that domain matching is correctly configured.
+
+A quick way to achieve that is to introduce a config option to kamailio.cfg:
+
+<code>
+alias=domainname
+</code>
+
+where domainname has to be replaced with name of domain, which you wish to serve by Kamailio and which appears in request-URIs.
+
 =?==== Troubleshooting =====
 
 ??? I get 'out of memory' errors, what can be done?
