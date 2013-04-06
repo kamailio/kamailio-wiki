@@ -235,6 +235,21 @@ If the question is related to commercial aspects of Kamailio, then email to:
 
 !!! Yes.
 
+
+??? How to avoid reverse DNS for **src_ip** comparison?
+
+!!! Do not enclose the IP address between quotes. Use like:
+
+<code>
+if(src_ip==1.2.3.4) { ...
+</code>
+
+The next example results in reverse DNS operation, because src_ip is compared with a string:
+
+<code>
+if(src_ip=="1.2.3.4") { ...
+</code>
+
 =?==== Instant Messaging and Presence =====
 
 ??? Can it route SIP instant messaging requests (page mode, RFC3428)?
