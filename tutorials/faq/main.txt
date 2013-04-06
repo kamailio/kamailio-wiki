@@ -406,3 +406,18 @@ echo -n 'user:realm:password' | md5sum | awk '{ print $1 }'
 <code>
 echo -n 'user@realm:realm:password' | md5sum | awk '{ print $1 }'
 </code>
+
+??? Kamctl gives an error regarding opening FIFO file, why?
+
+!!! Kamctl couldn't connect to FIFO file for sending MI commands - default FIFO file is **/tmp/kamailio_fifo**.
+
+Check if your configuration loads the mi_fifo module and configures a fifo name.
+
+Example for the configuration syntax:
+<code>
+loadmodule "mi_fifo.so"
+
+modparam("mi_fifo", "fifo_name", "/tmp/kamailio_fifo")
+</code>
+
+Check also the access privileges of the FIFO file in order to be sure that the user running kamctl can read and write to the file.
