@@ -332,6 +332,17 @@ Example:
 
 =?==== Configuration File Processing =====
 
+
+??? Can I check the configuration files for syntax errors?
+
+!!! Yes. Use '-c' command line parameter, like:
+
+<code>
+/usr/local/sbin/kamailio -c -f /usr/local/etc/kamailio/kamailio.cfg
+</code>
+
+Note that even configuration file is reported to be ok, there might still be troubles starting kamailio with the respective configuration file. For example, the database URL can be syntactically correct, but the access itself is not working due to wrong username or password, causing kamailio to fail starting.
+
 ??? Do I have to delete the AVPs added in the configuration file for a SIP message?
 
 !!! No. The AVPs are automatically deleted when associated SIP transaction is destroyed.
