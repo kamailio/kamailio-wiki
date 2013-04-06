@@ -82,15 +82,19 @@ Starting with end of 2008, contributions to core and several modules are done un
 
 !!! Inside the source tree, there are three directories:
   * modules/
-  * modules_k/
-  * modules_s/
+  * modules_k/ - no longer used since version 4.0.0
+  * modules_s/ - no longer used since version 4.0.0
 
 Each module is located in its own sub-folder. The documentation for modules that are bundled in Kamailio packages is available at:
   * http://kamailio.org/docs/modules/stable/
 
 ??? Which modules are compiled by default?
 
-!!! The modules that have the same dependencies as the core of Kamailio. Those that are not compiled by default are kept in the variable 'exclude_modules' of Makefile.
+!!! The modules that have the same dependencies as the core of Kamailio. Those that are not compiled by default are kept in the variable 'exclude_modules' of Makefile. To print the list of excluded modules:
+
+<code>
+make printvar v=exclude_modules
+</code>
 
 ??? How can I compile and install a module that is excluded by default?
 
@@ -100,6 +104,16 @@ Each module is located in its own sub-folder. The documentation for modules that
 make FLAVOUR=kamailio include_modules="app_lua db_mysql" cfg
 make all
 make install
+</code>
+
+??? I use 'make all', but I can't get the db_mysql.so. How can I get this?
+
+!!! The module is not compiled by default, because depends on libmysqlclient. Use following commands to get in compiled and installed:
+
+<code>
+make modules include_modules="db_mysql"
+
+make install include_modules="db_mysql" 
 </code>
 =?==== SIP Message Processing =====
 
