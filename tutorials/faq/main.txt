@@ -52,9 +52,11 @@ At transport layer, Kamailio support UDP, TCP, TLS and SCTP. Transmission can be
 
 Kamailio can be used to bridge between any combinations of these protocols, e.g., receiving SIP packets on UDP over IPv4 and sending out on TLS over IPv6.
 
+Starting with version 4.0.0, Kamailio supports WebSocket transport protocol, allowing modern web browsers to call between them directly through Kamailio.
+
 ??? Does Kamailio have support for WebSockets?
 
-!!! Yes, but only in development version at this time (Oct 2012), to become stable release 3.4.0. Releases 3.3.x or earlier do not have support for websockets.
+!!! Yes, starting with version 4.0.0. It supports WebSockets over TCP (WS) and over TLS (WSS), on both IPv4 and IPv6.
 
 ??? Is it possible to reload Kamailio configuration file?
 
