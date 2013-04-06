@@ -279,14 +279,42 @@ The xcap_client module can be used when you want to interact with an external XC
 
 ??? Can Kamailio be used with phones connecting from behind NAT?
 
-Yes, Kamailio supports the so called "far-end NAT traversal". One solution is to use nathelper for NAT traversal of SIP signaling, and rtpproxy modules with the rtpproxy (http://rtpproxy.org) application for relaying RTP packets.
+!!! Yes, Kamailio supports the so called "far-end NAT traversal". One solution is to use nathelper for NAT traversal of SIP signaling, and rtpproxy modules with the rtpproxy (http://rtpproxy.org) application for relaying RTP packets.
+
+Read the comments at top of default configuration file shipped with Kamailio, to enable NAT traversal logic there, one has to enable the define WITH_NAT:
+
+<code>
+#!define WITH_NAT
+</code>
 
 ??? Can Kamailio be installed behind NAT (e.g., like on Amazon EC2)?
 
-Yes. You have to set the public IP address as advertised attribute to listen parameter:
+!!! Yes. You have to set the public IP address as advertised attribute to listen parameter:
 
+<code>
   listen=_localsocket_ advertise _publicaddr_
+</code>
 
 Example:
 
+<code>
   listen=udp:10.10.10.10:5060 advertise 11.11.11.11:5060
+</code>
+
+=?==== Tools =====
+
+??? How to generate HA1 value in command line?
+
+!!! Use following command:
+
+<code>
+echo -n 'user:realm:password' | md5sum | awk '{ print $1 }'
+</code>
+
+??? How to generate HA1B value in command line?
+
+!!! Use following command:
+
+<code>
+echo -n 'user@realm:realm:password' | md5sum | awk '{ print $1 }'
+</code>
