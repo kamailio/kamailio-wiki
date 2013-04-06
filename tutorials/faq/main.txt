@@ -81,7 +81,7 @@ Starting with version 4.0.0, Kamailio supports WebSocket transport protocol, all
 
 !!! Yes. You can use Kamailio to receive SIP message on one transport and send out on a different transport. For example, receive TLS on IPv6 and send out UDP on IPv4.
 
-??? Can Kamailio used to call from web browsers to classic SIP phones?
+??? Can Kamailio be used to call from web browsers (webrtc) to classic SIP phones?
 
 !!! Yes, from signaling point of view. Remember that Kamailio is SIP packet router, not handling media plane at all. Simply, Kamailio can do gatewaying from WebSocket to UDP, TCP, TLS or SCTP for all SIP messages.
 
