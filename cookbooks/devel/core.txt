@@ -2283,15 +2283,6 @@ Examples of usage:
     route(REGISTER_REQUEST);
     route(@received.proto + "_proto_" + $var(route_set));
 
-==== send ====
-
-Send the original SIP message to a specific destination in stateless mode. No changes are applied to received message, no Via header is added. Host can be an IP or hostname. Used protocol: UDP
-
-Parameter is mandatory and has string format.
-
-Example of usage:
-
-   send("10.10.10.10:5070");
 
 ==== send_tcp ====
 
