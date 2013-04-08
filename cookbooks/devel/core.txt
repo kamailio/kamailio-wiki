@@ -2090,7 +2090,7 @@ Example of usage:
     $du = "sip:10.0.0.10:5060;transport=tcp";
     forward();
 
-==== forward_sctp ====
+
 
 ==== forward_tcp ====
 
