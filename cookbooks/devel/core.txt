@@ -2083,15 +2083,11 @@ much time), all the port aliases are removed.
 
 ==== forward ====
 
-Forward the SIP request to the given destination in stateless mode. This has the format of [proto:]host[:port]. Host can be an IP or hostname; supported protocols are UDP, TCP and TLS. (For TLS, you need to compile the TLS support into core).
-If proto or port are not specified, NAPTR and SRV lookups will be used to determine them (if possible).
-
-If destination parameter is missing, the forward will be done based on RURI.
+Forward the SIP request to destination stored in $du in stateless mode.
 
 Example of usage:
 
-    forward("10.0.0.10:5060");
-    #or
+    $du = "sip:10.0.0.10:5060;transport=tcp";
     forward();
 
 ==== forward_sctp ====
