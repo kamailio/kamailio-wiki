@@ -98,6 +98,14 @@ Return encoding in hexa of PV value
 
 Return decoding from hexa of PV value
 
+==== {s.encode.base64} ====
+
+Return base64 encoding of PV value
+
+==== {s.decode.base64} ====
+
+Decode base64 encoded PV and return value
+
 
 
 ==== {s.escape.common} ====
