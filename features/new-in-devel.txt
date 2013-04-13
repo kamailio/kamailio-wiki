@@ -20,7 +20,7 @@ The SNMPstats module has been extended with a large set of new data, and the KAM
 == CFGutils ==
 The CFGutils module has a few new functions. Route_if_exists() calls a routing block only if it exists in the configuration script. check_route_exists() checks if a routing block exists in the script.
 
-== sipops ==
+== siputils ==
 New function is_supported(option) that can be used to check if request has a Supported header listing the given option.
 ===== New in Core =====
 
