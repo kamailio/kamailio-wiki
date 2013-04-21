@@ -170,6 +170,14 @@ The script will add two users in MySQL:
 
 **__Do change the passwords for these two users to something different that the default values that come with sources.__**
 
+==== Adding SIP Users ====
+
+Kamctl can be used for adding users, for example adding user **test** with password **testpasswd**:
+
+<code>
+kamctl add test testpasswd
+</code>
+
 ===== Update Kamailio Configuration File =====
 
 Next step is to enable user authentication, persistent location service and add dnssec module. You have to edit the configuration file.
