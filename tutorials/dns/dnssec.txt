@@ -1,11 +1,15 @@
 ====== Kamailio with DNSEC ======
 
-The **dnssec** module was added during the development of v4.1.0 (expected to be released later in 2013). Therefore this tutorial presents how to add DNSSEC module in the default configuration file of Kamailio, following GIT installation guidelines.
+The **dnssec** module in Kamailio was added during the development of v4.1.0 (expected to be released later in 2013). Therefore this tutorial presents how to add DNSSEC module in the default configuration file of Kamailio, following GIT installation guidelines.
 
 In short, this tutorial focuses on:
   * install Kamailio development version from GIT repository on Ubuntu 12.04 32b
   * enable user authentication and persistent location service using MySQL server
   * add DNSSEC support to configuration file
+
+**Note:** the DNSSEC module is several days old at the time of writing initial version of this tutorial. For any assistance, email to **<sr-users [at] sip-router.org>** -- it is a public mailing list that requires subscription, see more details at:
+
+  * http://lists.sip-router.org/cgi-bin/mailman/listinfo/sr-users
 
 **Note:** Ubuntu 12.04 was chosen because dnssec tools devel library are provided for this distribution, making the installation of the required dependencies much easier. There are packages for other Linux distribution (e.g., Fedora), most of the steps provided in this tutorial being valid (the rest have to updated for the specifics of the distribution, e.g., how to install packages, create system users or init.d scripts).
 ===== About DNSSEC =====
