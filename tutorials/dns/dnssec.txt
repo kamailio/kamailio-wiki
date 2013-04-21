@@ -188,4 +188,14 @@ Follow the instruction in the comments to enable usage of MySQL. Basically you h
 
 If you changed the password for the 'kamailio' user of MySQL, you have to update the value for **DBURL** define.
 
+==== Add DNSSEC Module ====
 
+You have to load dnssec module in kamailio.cfg:
+
+<code>
+loadmodule "dnssec.so"
+</code>
+
+Add the above line somewhere before the first line starting with **modparam**.
+
+The module does not require any parameter, you are ready to use the configuration file now.
