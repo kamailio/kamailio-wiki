@@ -263,3 +263,9 @@ Start Kamailio with:
 <code>
 /etc/init.d/kamailio start
 </code>
+
+===== Remarks =====
+
+  * setup of a DNS server with DNSSEC support is left for future updates of this tutorial
+  * the DNSSEC module overwrites the API in the core for doing DNS queries, therefore is nothing else required to do apart of loading the module
+  * Kamailio will do a DNS query each time it has to forward a SIP request based on hostname
