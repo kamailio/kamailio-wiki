@@ -7,7 +7,7 @@ In short, this tutorial focuses on:
   * enable user authentication and persistent location service using MySQL server
   * add DNSSEC support to configuration file
 
-**Note:** Ubuntu 12.04 was chosen because dnssec tools devel library are provided for this distribution.
+**Note:** Ubuntu 12.04 was chosen because dnssec tools devel library are provided for this distribution, making the installation of the required dependencies much easier. There are packages for other Linux distribution (e.g., Fedora), most of the steps provided in this tutorial being valid (the rest have to updated for the specifics of the distribution, e.g., how to install packages, create system users or init.d scripts).
 ===== About DNSSEC =====
 
 For reading more about DNSSEC, head to:
