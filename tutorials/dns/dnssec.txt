@@ -1,0 +1,51 @@
+====== Kamailio with DNSEC ======
+
+The **dnssec** module was added during the development of v4.1.0 (expected to be released later in 2013). Therefore this tutorial presents how to add DNSSEC module in the default configuration file of Kamailio, following GIT installation guidelines.
+
+In short, this tutorial focuses on:
+  * install Kamailio development version from GIT repository on Debian/Ubuntu systems
+  * enable user authentication and persistent location service using MySQL server
+  * add DNSSEC support to configuration file
+
+
+===== About DNSSEC =====
+
+For reading more about DNSSEC, head to:
+
+  * http://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions
+
+Many related resources, including the required libraries for Kamailio's DNSSEC module, are available at:
+
+  * http://www.dnssec-tools.org/
+
+===== Kamailio Installation =====
+
+Here is a quick guide to install Kamailio development version from GIT repository. If you look for a more detailed tutorial, check:
+
+  * [[install:devel:git|Install Kamailio Devel Version From GIT]]
+
+==== Prerequisites ====
+
+Install the packages needed to build Kamailio:
+
+<code>
+apt-get install make autoconf gcc flex bison git-core
+apt-get install libmysqlclient-dev libssl-dev
+</code>
+
+==== Fetch Sources from GIT Repository ====
+
+
+First of all, you have to create a directory on the file system where the sources will be stored. 
+
+<code>
+  mkdir -p /usr/local/src/kamailio-devel
+  cd /usr/local/src/kamailio-devel
+</code>
+
+Download the sources from GIT using the following commands.
+
+<code>
+  git clone --depth 1 git://git.sip-router.org/sip-router kamailio
+  cd kamailio
+</code>
