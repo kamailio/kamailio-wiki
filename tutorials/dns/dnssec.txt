@@ -49,3 +49,15 @@ Download the sources from GIT using the following commands.
   git clone --depth 1 git://git.sip-router.org/sip-router kamailio
   cd kamailio
 </code>
+
+==== Compile and Install ====
+
+Run next set of commands:
+
+<code>
+  cd /usr/local/src/kamailio-devel/kamailio
+  make cfg include_modules="db_mysql dnssec"
+  make all
+  make install
+</code>
+
