@@ -208,15 +208,11 @@ Edit the file **/etc/default/kamailio** and set:
 
 You can edit the other options at your convenience.
 
-Create the directory for pid file:
+Next step is to create the directory for pid file, plus the system user and group to run kamailio:
 
 <code>
 mkdir -p /var/run/kamailio
-</code>
 
-Default setting is to run Kamailio as user "kamailio" and group "kamailio". For that you need to create the user:
-
-<code>
 adduser --quiet --system --group --disabled-password \
         --shell /bin/false --gecos "Kamailio" \
         --home /var/run/kamailio kamailio
@@ -225,7 +221,7 @@ adduser --quiet --system --group --disabled-password \
 chown kamailio:kamailio /var/run/kamailio
 </code>
 
-Then you can start/stop Kamailio using the following commands:
+Now you can start/stop Kamailio using the following commands:
 
 <code>
   /etc/init.d/kamailio start
