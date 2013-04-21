@@ -88,3 +88,52 @@ Run next set of commands:
   make install
 </code>
 
+==== Installation Details ====
+
+The binaries and executable scripts were installed in:
+
+<code>
+  /usr/local/sbin
+</code>
+
+
+These are:
+
+  * __kamailio__ - Kamailio SIP server
+  * __kamdbctl__ - script to create and manage the databases
+  * __kamctl__ - script to manage and control Kamailio SIP server
+  * __kamcmd__ - CLI - command line tool to interface with Kamailio SIP server
+
+To be able to use the binaries from command line, make sure that '/usr/local/sbin' is set in PATH environment variable. You can check that with 'echo $PATH'. If not and you are using 'bash', open '/root/.bash_profile' and at the end add:
+
+<code>
+  PATH=$PATH:/usr/local/sbin
+  export PATH
+</code>
+
+Kamailio modules are installed in:
+
+<code>
+  /usr/local/lib/kamailio/modules/
+</code>
+
+Note: On 64 bit systems, /usr/local/lib64 may be used.
+
+The documentation and readme files are installed in:
+
+<code>
+  /usr/local/share/doc/kamailio/
+</code>
+
+The man pages are installed in:
+
+<code>
+  /usr/local/share/man/man5/
+  /usr/local/share/man/man8/
+</code>
+
+The configuration file was installed in:
+
+<code>
+  /usr/local/etc/kamailio/kamailio.cfg
+</code>
