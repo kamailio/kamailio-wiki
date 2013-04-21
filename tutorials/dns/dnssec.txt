@@ -137,3 +137,35 @@ The configuration file was installed in:
 <code>
   /usr/local/etc/kamailio/kamailio.cfg
 </code>
+
+==== Kamctl Setup ====
+
+kamctl is command line tool useful to control Kamailio. It can add or remove SIP user profiles.
+
+Edit **/usr/local/etc/kamailio/kamctlrc**, locate DBENGINE variable and set it to MYSQL:
+
+<code>
+DBENGINE=MYSQL
+</code>
+
+Also, you can set **SIP_DOMAIN** to you server hostname or IP address.
+
+You can change other values in **kamctlrc** file, at least it is recommended to change the default passwords for the users to be created to connect to database.
+
+==== Database Setup ====
+
+Once you are done updating **kamctlrc** file, run the script to create the database used by Kamailio:
+
+<code>
+  /usr/local/sbin/kamdbctl create
+</code>
+
+You can call this script without any parameter to get some help for the usage. You will be asked for the domain name Kamailio is going to serve (e.g., mysipserver.com) and the password of the 'root' MySQL user. The script will create a database named 'kamailio' containing the tables required by Kamailio. You can change the default settings in the kamctlrc file mentioned above.
+
+The script will add two users in MySQL:
+
+- **kamailio** - (with default password 'kamailiorw') - user which has full access rights to 'kamailio' database
+
+- **kamailioro** - (with default password 'kamailioro') - user which has read-only access rights to 'kamailio' database
+
+**__Do change the passwords for these two users to something different that the default values that come with sources.__**
