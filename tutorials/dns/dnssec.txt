@@ -18,6 +18,13 @@ Many related resources, including the required libraries for Kamailio's DNSSEC m
 
   * http://www.dnssec-tools.org/
 
+==== DNSSEC Tools Installation ====
+
+The dnssec-tools package should be available on recent Debian/Ubuntu, to install it us:
+
+<code>
+  apt-get install dnssec-tools
+</code>
 ===== Kamailio Installation =====
 
 Here is a quick guide to install Kamailio development version from GIT repository. If you look for a more detailed tutorial, check:
