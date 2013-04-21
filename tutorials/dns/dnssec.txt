@@ -169,3 +169,23 @@ The script will add two users in MySQL:
 - **kamailioro** - (with default password 'kamailioro') - user which has read-only access rights to 'kamailio' database
 
 **__Do change the passwords for these two users to something different that the default values that come with sources.__**
+
+===== Update Kamailio Configuration File =====
+
+Next step is to enable user authentication, persistent location service and add dnssec module. You have to edit the configuration file.
+
+<code>
+  /usr/local/etc/kamailio/kamailio.cfg
+</code>
+
+Follow the instruction in the comments to enable usage of MySQL. Basically you have to add several lines at the top of config file, like:
+
+<code>
+#!define WITH_MYSQL
+#!define WITH_AUTH
+#!define WITH_USRLOCDB
+</code>
+
+If you changed the password for the 'kamailio' user of MySQL, you have to update the value for **DBURL** define.
+
+
