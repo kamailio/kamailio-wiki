@@ -3,11 +3,11 @@
 The **dnssec** module was added during the development of v4.1.0 (expected to be released later in 2013). Therefore this tutorial presents how to add DNSSEC module in the default configuration file of Kamailio, following GIT installation guidelines.
 
 In short, this tutorial focuses on:
-  * install Kamailio development version from GIT repository on Debian/Ubuntu systems
+  * install Kamailio development version from GIT repository on Ubuntu 12.04 32b
   * enable user authentication and persistent location service using MySQL server
   * add DNSSEC support to configuration file
 
-
+Note: Ubuntu 12.04 was chosen because dnssec tools devel library are provided for this distribution.
 ===== About DNSSEC =====
 
 For reading more about DNSSEC, head to:
