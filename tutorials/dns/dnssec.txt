@@ -28,7 +28,7 @@ The dnssec-tools package should be available on recent Debian/Ubuntu, to install
 
 ==== DNSSEC Tools Devel Libraries Installation ====
 
-You need these libraries to compile Kamailio's DNSSEC module. You can download the libraries from:
+You need DNSSEC tools devel libraries to compile Kamailio's DNSSEC module. You can download the libraries from:
 
   * http://dnssec-tools.org/download/#gotoBinaries
 
@@ -37,8 +37,8 @@ The files are:
 <code>
 dns-validator_2.0-1_i386.deb
 libval-threads_2.0-1_i386.deb
-libsres_2.0-1_i386.deb
 libval-threads-dev_2.0-1_i386.deb
+libsres_2.0-1_i386.deb
 libsres-dev_2.0-1_i386.deb
 </code>
 
