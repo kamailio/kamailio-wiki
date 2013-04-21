@@ -257,3 +257,9 @@ loadmodule "dnssec.so"
 Add the above line somewhere before the first line starting with **modparam**.
 
 The module does not require any parameter, you are ready to use the configuration file now.
+
+Start Kamailio with:
+
+<code>
+/etc/init.d/kamailio start
+</code>
