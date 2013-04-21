@@ -264,6 +264,12 @@ Start Kamailio with:
 /etc/init.d/kamailio start
 </code>
 
+===== DNS Server DNSSEC Enabled =====
+
+This tutorial does not include yet (left for future updates) how to setup a DNSSEC-enabled DNS server, there are many useful resources on the web. Among them:
+
+  * http://www.howtoforge.com/configuring-dnssec-on-bind9-9.7.3-on-debian-squeeze-ubuntu-11.10
+  * http://wiki.wsartori.com/wiki/The_Perfect_BIND_DNS_Server_DNSSEC_enabled
 ===== Testing =====
 
 One way to test is to setup two instances of Kamailio, one serving domainA.com and the second domainB.com.
