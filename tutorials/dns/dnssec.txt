@@ -187,52 +187,31 @@ kamctl add test testpasswd
 The init.d script can be used to start/stop the Kamailio server in a nicer way. A sample of init.d script for Kamailio is provided at:
 
 <code>
-/usr/local/src/kamailio-devel/kamailio/pkg/kamailio/deb/debian/kamailio.init
+  /usr/local/src/kamailio-devel/kamailio/pkg/kamailio/deb/debian/kamailio.init
 </code>
 
+The default file for init.d script is provided at:
 
-Next is a script to install it and its default config:
 
 <code>
-  cp /usr/local/src/kamailio-devel/kamailio/pkg/kamailio/deb/debian/kamailio.init /etc/init.d/kamailio
-  chmod 755 /etc/init.d/kamailio
-  cp /usr/local/src/kamailio-devel/pkg/kamailio/debian/kamailio.default /etc/default/kamailio
+  /usr/local/src/kamailio-devel/kamailio/pkg/kamailio/debian/kamailio.default
 </code>
 
-Edit the file **/etc/init.d/kamailio** to update the DAEMON and CFGFILE values:
+Run next command to deploy the init.d scripts:
 
 <code>
-  DAEMON=/usr/local/sbin/kamailio
-  CFGFILE=/usr/local/etc/kamailio/kamailio.cfg
+  make install-initd-debian
 </code>
 
-Edit the file **/etc/default/kamailio** and set:
+It will create also user and group **kamailio**, plus runtime directory **/var/run/kamailio**.
 
-<code>
-  RUN_KAMAILIO=yes
-</code>
-
-You can edit the other options at your convenience.
-
-Next step is to create the directory for pid file, plus the system user and group to run kamailio:
-
-<code>
-mkdir -p /var/run/kamailio
-
-adduser --quiet --system --group --disabled-password \
-        --shell /bin/false --gecos "Kamailio" \
-        --home /var/run/kamailio kamailio
-
-# set ownership to /var/run/kamailio
-chown kamailio:kamailio /var/run/kamailio
-</code>
-
-Now you can start/stop Kamailio using the following commands:
+Now Kamailio can be started or stopped with:
 
 <code>
   /etc/init.d/kamailio start
   /etc/init.d/kamailio stop
 </code>
+
 
 ===== Update Kamailio Config File =====
 
