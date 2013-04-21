@@ -228,7 +228,7 @@ Now you can start/stop Kamailio using the following commands:
   /etc/init.d/kamailio stop
 </code>
 
-===== Update Kamailio Configuration File =====
+===== Update Kamailio Config File =====
 
 Next step is to enable user authentication, persistent location service and add dnssec module. You have to edit the configuration file.
 
