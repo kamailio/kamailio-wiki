@@ -238,6 +238,7 @@ Just copy the init file into the /etc/init.d/kamailio. Then change the permissio
 </code>
 
 then edit the file updating the $DAEMON and $CFGFILE values:
+
 <code>
   DAEMON=/usr/local/sbin/kamailio
   CFGFILE=/usr/local/etc/kamailio/kamailio.cfg
