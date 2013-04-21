@@ -264,6 +264,12 @@ Start Kamailio with:
 /etc/init.d/kamailio start
 </code>
 
+===== Testing =====
+
+One way to test is to setup two instances of Kamailio, one serving domainA.com and the second domainB.com.
+
+Then alice@domainA.com can call bob@domainB.com. Kamailio instance serving domainA.com will do DNS lookup do discover the IP address of domainB.com
+
 ===== Remarks =====
 
   * setup of a DNS server with DNSSEC support is left for future updates of this tutorial
