@@ -236,7 +236,7 @@ Next step is to enable user authentication, persistent location service and add 
   /usr/local/etc/kamailio/kamailio.cfg
 </code>
 
-Follow the instruction in the comments to enable usage of MySQL. Basically you have to add several lines at the top of config file, like:
+Follow the instruction in the comments to enable usage of MySQL. Basically you have to add several lines at the top of config file (but after the first line), like:
 
 <code>
 #!define WITH_MYSQL
