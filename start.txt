@@ -87,6 +87,7 @@ Few guidelines to edit the wiki:
   * [[tutorials:3.2.x:syslog|Kamailio and Syslog with Log Rotate]]
   * [[tutorials:tls:testing-and-debugging|Testing and Debugging TLS Connections]]
   * [[tutorials:faq:main|Frequently Asked Questions]]
+  * [[tutorials:dns:dnssec|Kamailio with DNSEC]]
 
 ==== External Tutorials ====
 
