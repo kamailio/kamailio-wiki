@@ -178,6 +178,61 @@ Kamctl can be used for adding users, for example adding user **test** with passw
 kamctl add test testpasswd
 </code>
 
+==== Init.d Script ====
+
+The init.d script can be used to start/stop the Kamailio server in a nicer way. A sample of init.d script for Kamailio is provided at:
+
+<code>
+/usr/local/src/kamailio-devel/kamailio/pkg/kamailio/deb/debian/kamailio.init
+</code>
+
+
+Next is a script to install it:
+Just copy the init file into the /etc/init.d/kamailio. Then change the permisions:
+
+<code>
+  cp /usr/local/src/kamailio-devel/kamailio/pkg/kamailio/deb/debian/kamailio.init /etc/init.d/kamailio
+  chmod 755 /etc/init.d/kamailio
+  cp /usr/local/src/kamailio-devel/pkg/kamailio/debian/kamailio.default /etc/default/kamailio
+</code>
+
+Edit the file **/etc/init.d/kamailio** to update the $DAEMON value:
+<code>
+  DAEMON=/usr/local/sbin/kamailio
+</code>
+
+Edit the file **/etc/default/kamailio** and set:
+
+<code>
+  RUN_KAMAILIO=yes
+</code>
+
+You can edit the other options at your convenience.
+
+Create the directory for pid file:
+
+<code>
+mkdir -p /var/run/kamailio
+</code>
+
+Default setting is to run Kamailio as user "kamailio" and group "kamailio". For that you need to create the user:
+
+<code>
+adduser --quiet --system --group --disabled-password \
+        --shell /bin/false --gecos "Kamailio" \
+        --home /var/run/kamailio kamailio
+
+# set ownership to /var/run/kamailio
+chown kamailio:kamailio /var/run/kamailio
+</code>
+
+Then you can start/stop Kamailio using the following commands:
+
+<code>
+  /etc/init.d/kamailio start
+  /etc/init.d/kamailio stop
+</code>
+
 ===== Update Kamailio Configuration File =====
 
 Next step is to enable user authentication, persistent location service and add dnssec module. You have to edit the configuration file.
