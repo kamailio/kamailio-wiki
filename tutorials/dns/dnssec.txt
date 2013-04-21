@@ -187,7 +187,7 @@ The init.d script can be used to start/stop the Kamailio server in a nicer way. 
 </code>
 
 
-Next is a script to install it:
+Next is a script to install it and its default config:
 
 <code>
   cp /usr/local/src/kamailio-devel/kamailio/pkg/kamailio/deb/debian/kamailio.init /etc/init.d/kamailio
