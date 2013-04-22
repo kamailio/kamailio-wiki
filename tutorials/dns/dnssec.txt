@@ -233,6 +233,10 @@ If you changed the password for the 'kamailio' user of MySQL, you have to update
 
 ==== Add DNSSEC Module ====
 
+The README of DNSSEC module is available at:
+
+  * http://kamailio.org/docs/modules/devel/modules/dnssec.html
+
 You have to load dnssec module in kamailio.cfg:
 
 <code>
