@@ -1232,6 +1232,27 @@ The number of next hops - it is the number of addresses in To-Path header minus 
 ==== $msrp(conid) ====
 
 The internal integer id for TCP/TLS connection.
+
+===== SIPT module Pseudo-Variables =====
+
+==== $sipt_presentation ====
+Returns the value of the Address presentation restricted indicator contained in the Calling Party Number header of the IAM message if it exists. Returns -1 if there isn't a Calling Party Number header.
+
+==== $sipt_screening ====
+Returns the value of the Screening Indicator contained in the Calling Party Number header of the IAM message if it exists. Returns -1 if there isn't a Calling Party Number header.
+
+==== $sipt_hop_counter ====
+Returns the value of the Hop Counter for the IAM message if it exists. Returns -1 if there isn't a hop counter.
+
+==== $sipt_cpc ====
+Returns the value of the Calling Party Category for the IAM message. Returns -1 if there is a parsing error.
+
+==== $sipt_calling_party_nai ====
+Returns the value of the Nature of Address Indicator of the Calling Party for the IAM message. Returns -1 if there is a parsing error or if the Calling Party Number is not present.
+
+==== $sipt_called_party_nai ====
+Returns the value of the Nature of Address Indicator of the Called Party for the IAM message. Returns -1 if there is a parsing error.
+
 ===== Special pseudo-variables - Escape Sequences =====
 
 
