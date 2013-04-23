@@ -1063,7 +1063,7 @@ $uac_req(method)="OPTIONS";
 $uac_req(ruri)="sip:kamailio.org";
 $uac_req(furi)="sip:kamailio.org";
 $uac_req(turi)="sip:kamailio.org";
-uac_send_req();
+uac_req_send();
 </code>
 ===== Nathelper module Pseudo-Variables =====
 
