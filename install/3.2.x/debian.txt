@@ -23,8 +23,18 @@ Execute (Note: Do not specify other build options here. You can specify them in 
 
 This instructs the build process to use pkg/kamailio/deb/debian/rules for creating the Debian packages.
 
+===== 3. Choose the Debian version =====
 
-===== 3. (optional) Add build options to the rules file =====
+Some new modules require libraries which are not in all Debian version. For example libjson0-dev is not available for Debian Lenny (5.0). In this case you either have to backport the required libraries to your Debian version or use the respective packaging files. In the second case, the respective modules will automatically disabled.
+
+For example if you want to build for Debian Squeeze and do not need the troublesome modules:
+
+  cd pkg/kamailio/deb
+  mv debian debian-orig
+  ln -s squeeze debian
+  cd ../../..
+
+===== 4. (optional) Add build options to the rules file =====
 
 If you want to activate certain build features, you can specify them in the Debian rules file.
 
@@ -39,16 +49,6 @@ configure-stamp:
 
 For example in above example the custom build parameter "STUN=1" was added.
 
-===== 4. Choose the Debian version =====
-
-Some new modules require libraries which are not in all Debian version. For example libjson0-dev is not available for Debian Lenny (5.0). In this case you either have to backport the required libraries to your Debian version or use the respective packaging files. In the second case, the respective modules will automatically disabled.
-
-For example if you want to build for Debian Squeeze and do not need the troublesome modules:
-
-  cd pkg/kamailio/deb
-  mv debian debian-orig
-  ln -s squeeze debian
-  cd ../../..
 ===== 5. Build the packages =====
 
   make deb
