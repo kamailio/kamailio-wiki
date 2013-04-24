@@ -974,6 +974,16 @@ Locks all ser pages into memory making it unswappable (in general one doesn't wa
 
   mlock_pages = yes |no (default no)
 
+==== modinit_delay ====
+
+Number of microseconds to wait after initializing a module - useful to cope with systems where are rate limits on new connections to database or other systems.
+
+Default value is 0 (no wait).
+
+<code>
+modinit_delay=100000
+</code>
+
 ==== modparam ====
 The modparam command will be used to set the options of the modules. 
 
