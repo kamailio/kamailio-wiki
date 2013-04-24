@@ -22,6 +22,7 @@ Few guidelines to edit the wiki:
   * [[install:4.0.x:git|Install Kamailio v4.0.x From GIT]]
   * [[install:3.3.x:git|Install Kamailio v3.3.x From GIT]]
   * [[install:3.2.x:git|Install Kamailio v3.2.x From GIT]]
+  * [[install:4.0.x:debian|Install Kamailio v4.0.x By Building Debian Packages]]
   * [[install:3.2.x:debian|Install Kamailio v3.2.x By Building Debian Packages]]
 
 ==== Upgrade ====
