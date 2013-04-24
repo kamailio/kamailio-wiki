@@ -328,7 +328,7 @@ $xavp(test=>three) = 3;
 </code>
 
 <code c>
-t = sr.xavp.get_keys("xavp_name", 0)
+t = sr.xavp.get_keys("test", 0)
 for k,v in pairs(t) do
   print(string.format("%d:%s\n", k, v)
 end
