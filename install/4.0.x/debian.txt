@@ -67,5 +67,5 @@ Install Kamailio and the relevant Kamailio modules. For example to install Kamai
 
 <code>
 cd ..
-sudo dpkg -i kamailio_3.2.0_i386.deb kamailio-mysql-modules_3.2.0_i386.deb kamailio-tls-modules_3.2.0_i386.deb kamailio-utils-modules_3.2.0_i386.deb kamailio-xml-modules_3.2.0_i386.deb kamailio-xmlrpc-modules_3.2.0_i386.deb
+sudo dpkg -i kamailio_4.0.0_i386.deb kamailio-mysql-modules_4.0.0_i386.deb kamailio-tls-modules_4.0.0_i386.deb kamailio-utils-modules_4.0.0_i386.deb kamailio-xml-modules_4.0.0_i386.deb kamailio-xmlrpc-modules_4.0.0_i386.deb
 </code>
