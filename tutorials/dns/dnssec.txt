@@ -1,4 +1,4 @@
-====== Kamailio with DNSEC ======
+====== Kamailio with DNSSEC ======
 
 The **dnssec** module in Kamailio was added during the development of v4.1.0 (expected to be released later in 2013). Therefore this tutorial presents how to add DNSSEC module in the default configuration file of Kamailio, following GIT installation guidelines.
 
@@ -264,6 +264,21 @@ This tutorial does not include yet (left for future updates) how to setup a DNSS
 One way to test is to setup two instances of Kamailio, one serving domainA.com and the second domainB.com.
 
 Then alice@domainA.com can call bob@domainB.com. Kamailio instance serving domainA.com will do DNS lookup do discover the IP address of domainB.com
+
+One easy way to test is to use a Open DNS resolver that provides Recursive DNSSEC capabilities. One of those is 8.8.8.8 ( Google Open DNS). 
+As per the FAQ, DNSSEC support is enabled (https://developers.google.com/speed/public-dns/faq#dnssec)
+
+Edit /etc/resolv.conf and modify your nameserver definition to have 'nameserver 8.8.8.8'.
+
+Launch Kamailio with DNSSEC module enabled and try to send a SIP package to the domain www.dnssec-failed.org. DNS resolving for this domain should fail, as it is a test domain which provides an incorrect signature. Kamailio should report:
+"0(70805) INFO: dnssec [dnssec_func.c:145]: invalid domain www.dnssec-failed.org reason VAL_UNTRUSTED_ANSWER"
+
+
+
+
+
+
+
 
 ===== Remarks =====
 
