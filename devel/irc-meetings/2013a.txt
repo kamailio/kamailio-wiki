@@ -6,6 +6,7 @@ Date:
 Time of the meeting across the world:
   * 16:00 - Berlin, Germany
   * 15:00 - London, UK
+  * 10:00 - New York, USA
 
 Utilities:
   * [[http://www.timeanddate.com/worldclock/converter.html|Time Converter]]
