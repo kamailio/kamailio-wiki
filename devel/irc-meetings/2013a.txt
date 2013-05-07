@@ -1,0 +1,36 @@
+====== IRC Devel Meeting - 2013-05-16 ======
+
+Date:
+  * **Proposed: 14:00 UTC, Thursday, May 16, 2013**
+
+Time of the meeting across the world:
+  * 16:00 - Berlin, Germany
+  * 15:00 - London, UK
+
+Utilities:
+  * [[http://www.timeanddate.com/worldclock/converter.html|Time Converter]]
+  * IRC webchat: http://webchat.freenode.net/
+  * IRC client apps: http://en.wikipedia.org/wiki/Internet_Relay_Chat#Clients
+
+Place:
+  * **#sip-router** IRC channel on **irc.freenode.net** server
+
+===== Participants =====
+
+Participation is open to anyone, just join the IRC channel if you want to participate.
+
+People adding notes in the agenda using abbreviations:
+
+  * dcm - Daniel-Constantin Mierla
+
+===== Agenda =====
+
+Kamailio related:
+
+  * (dcm) outstanding issues at this time, if any
+  * (dcm) roadmap to next major release
+  * (dcm) timeline for a new minor release
+
+===== Transcripts =====
+
+To be added.
