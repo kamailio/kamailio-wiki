@@ -31,7 +31,10 @@ Kamailio related:
   * (dcm) outstanding issues at this time, if any
   * (dcm) roadmap to next major release
   * (dcm) timeline for a new minor release
-
+  * (pd) Outbound/GRUU - is any more development needed (in-dialog failures and single-server) (my thoughts are here [[devel:completing_outbound]])
+  * (pd) MSRP (see [[devel:completing_msrp]])
+  * (pd) RTCWeb Breaker - can we do something like the breaker function from here [[http://webrtc2sip.org/]] using rtpproxy/mediaproxy/mediaproxy-ng/etc and a Kamailio module?
+  * (pd) Presence - does anyone have the time/interest to move this forward at the moment (list of features needed for complete implementation here [[devel:completing_presence]])
 ===== Transcripts =====
 
 To be added.
