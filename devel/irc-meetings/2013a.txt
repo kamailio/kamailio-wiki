@@ -36,6 +36,11 @@ Kamailio related:
   * (pd) MSRP (see [[devel:completing_msrp]])
   * (pd) RTCWeb Breaker (see [[devel:rtcweb_breaker]])
   * (pd) Presence - does anyone have the time/interest to move this forward at the moment (see [[devel:completing_presence]])
+  * (pd) Any interest in [[http://aws.amazon.com/dynamodb/|Amazon DynamoDB]] support?
+    * Amazon proprietary NoSQL database
+    * .NET, Java, and PHP SDKs available
+    * A bit like a managed Cassandra installation (so in theory can be used for domain, location, and subscriber tables)
+
 ===== Transcripts =====
 
 To be added.
