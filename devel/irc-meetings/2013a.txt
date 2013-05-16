@@ -52,6 +52,9 @@ Kamailio related:
     * improve the API by providing a response buffer to build in http replies
     * improve the API to allow sending an HTTP reply in chunks
     * integrate xhttp with xmlrpc
+  * (hpw) Suggested feature - debug level per module
+    * E.g. 'debug presence 3'
+    * Would allow debugging modules without spamming from other modules (e.g. database)
 ===== Transcripts =====
 
 To be added.
