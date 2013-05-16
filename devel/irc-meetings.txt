@@ -1,7 +1,7 @@
 ====== IRC Development Meetings ======
 
 IRC-based meetings hosted at:
-  * channel: **#sip-router**
+  * channel: **#kamailio**
   * server: **irc.freenode.net**
 
 Scope:
