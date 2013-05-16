@@ -32,6 +32,11 @@ Kamailio related:
   * (dcm) outstanding issues at this time, if any
   * (dcm) roadmap to next major release
   * (dcm) timeline for a new minor release
+  * (dcm) moving compile time options to module to be able to load them at runtime
+    * sctp module
+    * what else?
+  * (dcm) failure route handles on local delivery errors
+    * execute failure routes when tcp connection is not open
   * (pd) Outbound/GRUU - is any more development needed (in-dialog failures and single-server) (see [[devel:completing_outbound]])
   * (pd) MSRP (see [[devel:completing_msrp]])
   * (pd) RTCWeb Breaker (see [[devel:rtcweb_breaker]])
