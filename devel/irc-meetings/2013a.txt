@@ -48,6 +48,7 @@ Kamailio related:
     * Amazon proprietary NoSQL database
     * .NET, Java, and PHP SDKs available
     * A bit like a managed Cassandra installation (so in theory can be used for domain, location, and subscriber tables)
+  * (pd) event_route for TCP connection close
   * (osas) xhttp module
     * improve the API by providing a response buffer to build in http replies
     * improve the API to allow sending an HTTP reply in chunks
