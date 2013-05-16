@@ -37,6 +37,7 @@ Kamailio related:
     * what else?
   * (dcm) failure route handles on local delivery errors
     * execute failure routes when tcp connection is not open
+  * (dcm) dialog vs dialog_ng
   * (pd) Outbound/GRUU - is any more development needed (in-dialog failures and single-server) (see [[devel:completing_outbound]])
   * (pd) MSRP (see [[devel:completing_msrp]])
   * (pd) RTCWeb Breaker (see [[devel:rtcweb_breaker]])
