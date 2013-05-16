@@ -25,6 +25,7 @@ People adding notes in the agenda using abbreviations:
   * dcm - Daniel-Constantin Mierla
   * pd - Peter Dunkley
   * osas - Ovidiu Sas
+  * hpw - Hugh Waite
 ===== Agenda =====
 
 Kamailio related:
