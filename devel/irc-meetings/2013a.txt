@@ -14,7 +14,7 @@ Utilities:
   * IRC client apps: http://en.wikipedia.org/wiki/Internet_Relay_Chat#Clients
 
 Place:
-  * to be decided soon between **#kamailio** and **#sip-router** IRC channels on **irc.freenode.net** server
+  * to be decided soon between **#kamailio** IRC channels on **irc.freenode.net** server
 
 ===== Participants =====
 
