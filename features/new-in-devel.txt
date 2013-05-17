@@ -28,3 +28,6 @@ New function is_supported(option) that can be used to check if request has a Sup
 
 
 ===== Tools =====
+
+== kamctl ==
+Now it's possible to add the contact path: ''kamctl ul add <user> <uri> <expires> <path>''
