@@ -22,6 +22,15 @@ The CFGutils module has a few new functions. Route_if_exists() calls a routing b
 
 == siputils ==
 New function is_supported(option) that can be used to check if request has a Supported header listing the given option.
+
+== usrloc ==
+Added more RPC commands:
+  * ul.rm
+  * ul.rm_contact
+  * ul.flush
+  * ul.add
+
+ul.add RPC and ul_add MI commands modified to be able to set the contact path
 ===== New in Core =====
 
 ==== Components ====
