@@ -956,7 +956,7 @@ xlog("counter is now $mct(cnt)");
 ...
 </code>
 
-===== Presence_xml Pseudo-Variables =====
+===== XMLOPS Pseudo-Variables =====
 
 ==== $xml(name=>spec) ====
 
