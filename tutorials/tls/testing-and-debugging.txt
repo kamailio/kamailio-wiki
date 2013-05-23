@@ -137,6 +137,17 @@ To decode TLS connections configure Wireshark and Kamailio:
 
 If you have problems decoding the TLS session you should enable debugging in Wireshark: Edit -> Preferences -> Protocols -> SSL -> SSL Debug File
 
+===== Unencrypted TLS (NULL cipher)  =====
+
+TLS allows unencrypted useage when using the NULL cipher. This is very useful for debugging TLS connection, as you immediately see the SIP traffic.
+
+The NULL cipher is usually disabled, thus it must be explicitly enabled. In Kamailio this can be done by configuring the TLS module:
+<code>
+modparam("tls", "cipher_list", "NULL")
+</code>
+
+Of course also the SIP client must be configured to use the NULL cipher. Unfortunately this is hardly supported by SIP clients.
+
 ===== TLS Clients =====
 
 Following a list of TLS clients and the certificate store they use (please extend):
