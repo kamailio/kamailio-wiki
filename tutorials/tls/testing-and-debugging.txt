@@ -145,3 +145,9 @@ Following a list of TLS clients and the certificate store they use (please exten
   * Internet Explorer: Windows certificate store
   * Chrome: Windows certificate store
   * Firefox: Dedicated Firefox certificate store
+
+===== SIP Clients with TLS Client Certificate Support =====
+
+Following a list of SIP clients that support TLS user certificates (needed for incoming TLS connections, of if the TLS server requires mutual TLS (MTLS))
+  * QjSimple: select private key and certificate file in configuration dialog
+  * Jitis: Settings -> Advanced -> TLS
