@@ -211,6 +211,12 @@ To reset $du:
 
 **$fn** - reference to display name of 'From' header
 
+==== $fs - Forced socket ====
+
+**$fs** - reference to the forced socket for message sending (if any) in the form proto:ip:port
+
+<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file). Transport proto can be omitted when assigning value, in which case it is taken from destination URI of the message.</fc>
+
 ==== $ft - From tag ====
 
 **$ft** - reference to tag parameter of 'From' header
@@ -372,95 +378,88 @@ To reset $du:
 
 **$rz** - returns R-URI scheme, possible values: sip, sips, tel, tels and urn, R-URI scheme parsing error should be reflected by value: none
 
-==== Received IP address ====
+==== $Ri - Received IP address ====
 
 **$Ri** - reference to IP address of the interface where the request has been received
 
-==== Received port ====
+==== $Rp - Received port ====
 
 **$Rp** - reference to the port where the message was received
 
-==== Script flags ====
+==== $sf - Script flags ====
 
 **$sf** - reference to script flags - decimal output
 
-
-==== Script flags ====
+==== $sF - Script flags ====
 
 **$sF** - reference to script flags - hexa output
 
-==== IP source address ====
+==== $si - Source IP address ====
 
 **$si** - reference to IP source address of the message
 
-==== Source port ====
+==== $sp - Source port ====
 
 **$sp** - reference to the source port of the message
 
-==== Statistics ====
+==== $stat(name) - Statistics ====
 
 **$stat(name)** - return the value of statistic item specified by 'name'
 
-==== Forced socket ====
 
-**$fs** - reference to the forced socket for message sending (if any) in the form proto:ip:port
-
-<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file). Transport proto can be omitted when assigning value, in which case it is taken from destination URI of the message.</fc>
-
-==== To URI Domain ====
+==== $td - To URI Domain ====
 
 **$td** - reference to domain in URI of 'To' header
 
-==== To display name ====
+==== $tn - To display name ====
 
 **$tn** - reference to display name of 'To' header
 
-==== To tag ====
+==== $tt - To tag ====
 
 **$tt** - reference to tag parameter of 'To' header
 
-==== To URI ====
+==== $tu - To URI ====
 
 **$tu** - reference to URI of 'To' header
 
-
-==== To URI Username ====
+==== $tU - To URI Username ====
 
 **$tU** - reference to username in URI of 'To' header
-==== Kamailio startup (boot) timestamp ====
+
+==== $Tb - Kamailio startup (boot) timestamp ====
 
 **$Tb** - reference to unix timestamp of the time at which kamailio was started
 
-
-==== String formatted time - cached ====
+==== $Tf - String formatted time - cached ====
 
 **$Tf** - reference string formatted time
 
 Note: the system time is retrieved only once for each processed SIP message. Subsequent calls of $Tf for same SIP message will return same value.
 
-==== String formatted time - current ====
+==== $TF - String formatted time - current ====
 
 **$TF** - reference string formatted time
 
 Note: the system time is computed for each call of $TF. Subsequent calls of $TF for same SIP message may return different values.
 
-==== Unix time stamp - cached ====
+==== $Ts - Unix time stamp - cached ====
 
 **$Ts** - reference to unix time stamp
 
 Note: the system time is retrieved only once for each processed SIP message. Subsequent calls of $Ts for same SIP message will return same value. 
 
-==== Unix time stamp - current ====
+==== $TS - Unix time stamp - current ====
 
 **$TS** - reference to unix time stamp
 
 Note: the system time is computed for each call of $TS. Subsequent calls of $TS for same SIP message may return different values.
 
-==== User agent header ====
+==== $ua - User agent header ====
 
 **$ua** - reference to user agent header field
 
-===== AVPs =====
+===== $avp(id) - AVPs =====
 
 **$avp(id)** - the value of the AVP identified by 'id'.
 
@@ -507,7 +506,7 @@ $(avp(x)[1]) = $null;
 
 It is R/W variable (you can assign values to it directly in configuration file).
 
-===== XAVPs =====
+===== $xavp(id) - XAVPs =====
 
 xavp - extended AVP's - are structures that can store multiple values. They work like a stack, much like AVPs, and are attached to SIP transactions. Each xavp has a name and can contain multiple named values, the structure name and the value name are separated by '=>' like $xavp(root=>branch) where "root" is the name of the structure and branch is a named value. To assign a value use
 <code c>
@@ -555,7 +554,7 @@ $xavp(sf[0]=>headers)="X-CustomerID: pw45\r\n";
 
 xavps are read and write variables. You can create multilevel xavps, as xavps may contain xavps.
 
-===== Headers =====
+===== $hdr(name) - Headers =====
 
 
 **$hdr(name)** - represents the body of first header identified by 'name'
@@ -576,7 +575,7 @@ if($hdr(From)=~"sip-router\.org") {
 
 <fc #0000ff>It is read-only variable. You can remove or add headers using functions from textops module.</fc>
 
-===== Script private variables =====
+===== $var(name) - Private memory variables =====
 
 **$var(name)** - refers to variables that can be used in configuration script, having integer or string value. This kind of variables are faster the AVPs, being referenced directly to memory location. The value of script variables persists over the processing of SIP messages, being specific per each SIP-Router process.
 
@@ -601,7 +600,7 @@ Setting a variable to null is actually initializing the value to integer '0'. Sc
 
 **pv** module can be used to initialize the script variables.
 
-===== Script shared variables =====
+===== $shv(name) - Shared memory variables =====
 
 **$shv(name)**  - it is a class of pseudo-variables stored in shared memory. The value of $shv(name) is visible across all openser processes. Each “shv” has single value and it is initialised to integer 0. You can use “shvset” parameter of **pv module** to initialize the shared variable. The module exports a set of MI functions to get/set the value of shared variables.
 
@@ -619,7 +618,7 @@ if ($shv(debug) == 1) {
 
 <fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
 
-===== Broken-down time =====
+===== $time(name) - Broken-down time =====
 
 **$time(name)** - the PV provides access to broken-down time attributes.
 
@@ -645,7 +644,7 @@ if ($time(year) == 2008) {
 </code>
 
 
-===== Strftime Formatted Time =====
+===== $timef(format) - Strftime Formatted Time =====
 
 **$timef(format)** - return current time as formatted by strftime 'format'. See 'man strftime' to see the available time attribute specifiers.
 
@@ -655,7 +654,7 @@ Example:
 xlog("Today is $timef(%m/%d/%y)\n");
 </code>
 
-===== Selects =====
+===== $sel(name) - Selects =====
 
 **$sel(name)** - return the value of **select** specified by name. **select** refers a class of config variables introduced by SER 2.0, allowing to select and return parts of sip messages and not only.
 
@@ -674,9 +673,15 @@ if($sel(via[1].host)=="10.10.10.10")
 
 ===== Send Address Attributes =====
 
+==== $sndfrom(name) ====
+
 **$snd(name)** - return attributes of the address from where the request is going to be sent (local socket).
 
 **$sndfrom(name)** - return attributes of the address from where the request is going to be sent (local socket, same as $snd(name)).
+
+The name can have same values as for $sndto(...).
+
+==== $sndto(name) ====
 
 **$sndto(name)** - return attributes of the address to where the request is going to be sent (remote socket).
 
@@ -757,6 +762,7 @@ Store and retrieve custom variable for current processed dialog.
 <fc #0000ff>It is R/W variable.</fc>
 
 The 'key' can be any string.
+
 ===== HTable module Pseudo-Variables =====
 
 ==== $sht(htable=>key) ====
