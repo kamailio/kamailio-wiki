@@ -353,9 +353,9 @@ To reset $du:
 
 **$rP** - reference to transport protocol of R-URI
 
-==== $rr - SIP reply reason (Reason-Phrase) ====
+==== $rr - SIP reply reason phrase ====
 
-**$rr** - reference to reply's reason
+**$rr** - reference to reply's reason phrase (the text after reply code)
 
 ==== $rs - SIP reply code ====
 
