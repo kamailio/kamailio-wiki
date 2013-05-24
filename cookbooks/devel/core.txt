@@ -1162,17 +1162,7 @@ sercmd mi get_statistics 1xx_replies
 
 
 
-==== syn_branch ====
-This parameter controls how the branch parameter is calculated for stateless forwarding.  It also applies to stateful forwarding of ACK requests following 2xx responses.
 
-If syn_branch is turned off, calculation is derived from transaction key, i.e., as an md5 of From/To/CallID/
-CSeq exactly the same way as TM does. This is good for reboot - than messages belonging to transaction lost due to reboot will still be forwarded with the same branch parameter and will be match-able downstream.
-
-If it is turned on (default, value is 1), just a simple value is put into the branch parameter (better for performance)
-
-<code c>
-syn_branch=0
-</code>
 ==== tos ====
 
 The TOS (Type Of Service) to be used for the sent IP packages (both TCP and UDP).
