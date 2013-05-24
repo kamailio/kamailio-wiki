@@ -1237,10 +1237,7 @@ Returns the value of the Nature of Address Indicator of the Calling Party for th
 ==== $sipt_called_party_nai ====
 Returns the value of the Nature of Address Indicator of the Called Party for the IAM message. Returns -1 if there is a parsing error.
 
-===== Special pseudo-variables - Escape Sequences =====
 
-
-These pseudo variables are exported, and mainly used, by xlog module to print messages in many colors (foreground and background) using escape sequences. 
 
 
 ==== Foreground and background colors ====
