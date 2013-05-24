@@ -1240,8 +1240,7 @@ Returns the value of the Nature of Address Indicator of the Called Party for the
 
 
 
-==== Foreground and background colors ====
-
+===== $C(xy) - Foreground and background colors =====
 
 
 $C(xy) - reference to an escape sequence. “x” represents the foreground color and “y” represents the background color.
