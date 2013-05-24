@@ -33,6 +33,8 @@ Added more RPC commands:
 ul.add RPC and ul_add MI commands modified to be able to set the contact path
 ===== New in Core =====
 
+Its not possible to compile Kamailio without IPv6 anymore, improving the code maintainability in the core and several modules.
+
 ==== Components ====
 
 
