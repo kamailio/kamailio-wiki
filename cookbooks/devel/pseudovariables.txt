@@ -31,7 +31,19 @@ Predefined pseudo-variables are listed in alphabetical order.
 
 **$$** - represents the character '$'
 
-==== $ai - URI in SIP Request's P-Asserted-Identity header ====
+==== $_s(format) - Evaluate dynamic format ====
+
+**$_s(format)** - returns the string after evaluating all pseudo-variables in format
+
+<code>
+    $var(x) = "sip:" + $rU + "@" + $fd;
+
+    # is equivalent of:
+
+    $var(x) = $_s(sip:$rU@$fd);
+</code>
+
+==== $ai - URI inP-Asserted-Identity header ====
 
 **$ai** - reference to URI in request's P-Asserted-Identity header (see RFC 3325)
 
@@ -258,34 +270,33 @@ To reset $du:
 **$mt** - returns 1 if the sip message is a request, returns 2 if the sip message is a reply
 
 
-==== $od - Domain in SIP Request's original URI ====
+==== $od - Domain original R-URI ====
 
 **$od** - reference to domain in request's original R-URI
 
-==== $op - Port of SIP request's original URI ====
+==== $op - Port in original R-URI ====
 
 **$op** - reference to port of original R-URI
 
-==== $oP - Transport protocol of SIP request original URI ====
+==== $oP - Protocol of original R-URI ====
 
 **$oP** - reference to transport protocol of original R-URI
 
-==== $ou - SIP Request's original URI ====
+==== $ou - Original R-URI ====
 
 **$ou** - reference to request's original URI
 
-==== $oU - Username in SIP Request's original URI ====
+==== $oU - Username in original R-URI ====
 
 **$oU** - reference to username in request's original URI
 
-==== $pd - Domain in SIP Request's P-Preferred-Identity header URI ====
+==== $pd - Domain in P-Preferred-Identity header URI ====
 
 **$pd** - reference to domain in request's P-Preferred-Identity header URI (see RFC 3325)
 
-==== $pn - Display Name in SIP Request's P-Preferred-Identity header ====
+==== $pn - Display Name in P-Preferred-Identity header ====
 
 **$pn** - reference to Display Name in request's P-Preferred-Identity header (see RFC 3325)
-
 
 ==== $pp - Process id ====
 
@@ -295,16 +306,15 @@ To reset $du:
 
 **$pr** or **$proto** - protocol of received message (UDP, TCP, TLS, SCTP, WS, WSS)
 
-==== $pU - User in SIP Request's P-Preferred-Identity header URI ====
+==== $pU - User in P-Preferred-Identity header URI ====
 
 **$pU** - reference to user in request's P-Preferred-Identity header URI (see RFC 3325)
 
-==== $pu - URI in SIP Request's P-Preferred-Identity header ====
+==== $pu - URI in P-Preferred-Identity header ====
 
 **$pu** - reference to URI in request's P-Preferred-Identity header (see RFC 3325)
 
-
-==== $ru - Domain in SIP Request's URI ====
+==== $ru - Domain in R-URI ====
 
 **$rd** - reference to domain in request's URI (without port) or to the Namespace Specific String of a URN (see RFC 2141)
 
@@ -313,8 +323,6 @@ To reset $du:
 ==== $rb - Body of request/reply ====
 
 **$rb** - reference to message body
-
-
 
 ==== $rc - Returned code ====
 
@@ -326,55 +334,54 @@ To reset $du:
 
 **$re** - reference to Remote-Party-ID header URI
 
-==== $rm - SIP request's method ====
+==== $rm - SIP method ====
 
 **$rm** - reference to request's method. Works also for replies (by using the CSeq header)
 
-==== $rmid - Request Method ID ====
+==== $rmid - SIP Method ID ====
 
 **$rmid** - returns internal integer representation of SIP method type
 
 
-==== $rp - SIP request's port ====
+==== $rp - Port in R-URI ====
 
 **$rp** - reference to port of R-URI
 
 <fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
 
-==== $rP - Transport protocol of SIP request URI ====
+==== $rP - Protocol of R-URI ====
 
 **$rP** - reference to transport protocol of R-URI
 
-==== $rr - SIP reply's reason (Reason-Phrase) ====
+==== $rr - SIP reply reason (Reason-Phrase) ====
 
 **$rr** - reference to reply's reason
 
-==== $rs - SIP reply's status (status-code, response-code, reply-code)====
+==== $rs - SIP reply code ====
 
-**$rs** - reference to reply's status
+**$rs** - reference to reply's status (status-code, response-code, reply-code)
 
 ==== $rt - Refer-to URI ====
 
 **$rt** - reference to URI of refer-to header
 
-==== $ru - SIP Request's URI ====
+==== $ru - Request URI ====
 
-**$ru** - reference to request's URI
+**$ru** - reference to request's URI (address in the first line of a SIP request)
 
 <fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
 
-==== $rU - Username in SIP Request's URI ====
+==== $rU - Username in R-URI ====
 
 **$rU** - reference to username in request's URI or to the Namespace Identifier of a URN (see RFC 2141)
 
 <fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
 
-
 ==== $ruid - Record internal Unique ID ====
 
 **$ruid** - the Record internal Unique ID for the location record selected by calling registrar:lookup()
 
-==== $rz - URI Scheme of Request URI ====
+==== $rz - URI Scheme of R-URI ====
 
 **$rz** - returns R-URI scheme, possible values: sip, sips, tel, tels and urn, R-URI scheme parsing error should be reflected by value: none
 
@@ -406,7 +413,6 @@ To reset $du:
 
 **$stat(name)** - return the value of statistic item specified by 'name'
 
-
 ==== $td - To URI Domain ====
 
 **$td** - reference to domain in URI of 'To' header
@@ -427,9 +433,9 @@ To reset $du:
 
 **$tU** - reference to username in URI of 'To' header
 
-==== $Tb - Kamailio startup (boot) timestamp ====
+==== $Tb - Startup timestamp ====
 
-**$Tb** - reference to unix timestamp of the time at which kamailio was started
+**$Tb** - reference to unix timestamp of the time at which kamailio was started (boot time)
 
 ==== $Tf - String formatted time - cached ====
 
