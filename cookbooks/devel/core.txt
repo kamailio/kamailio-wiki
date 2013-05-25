@@ -1707,7 +1707,7 @@ Can be changed at runtime (e.g.:  sercmd cfg.set_now_int sctp max_assocs 10 ). W
 When ser/sip-router tries to open a new association and the max_assocs is exceeded the exact behaviour depends on whether or not
 sctp_assoc_tracking is on. If on, the send triggering the active open will gracefully fail, before actually opening the new association and no packet will be sent. However if sctp_assoc_tracking is off, the association will first be opened and then immediately closed. In general this means that the initial sip packet will be sent (as part of the 4-way handshake).
 
-==== sctp_max_assocs ====
+
 
   sctp_max_assocs = number
 
