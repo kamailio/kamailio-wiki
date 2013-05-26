@@ -42,23 +42,30 @@
   * http://kamailio.org/docs/modules/devel/modules/stun.html
 ===== New in Old Modules =====
 
-== SNMPstats ==
-The SNMPstats module has been extended with a large set of new data, and the KAMAILIO-MIB has been extended with new OIDs. The new data reflects the Kamailio server process (memory, configuration at compile time), network transports and modules.
+==== SNMPstats ====
 
-== CFGutils ==
-The CFGutils module has a few new functions. Route_if_exists() calls a routing block only if it exists in the configuration script. check_route_exists() checks if a routing block exists in the script.
+  * the SNMPstats module has been extended with a large set of new data, and the KAMAILIO-MIB has been extended with new OIDs
+  * the new data reflects the Kamailio server process (memory, configuration at compile time), network transports and modules.
 
-== siputils ==
-New function is_supported(option) that can be used to check if request has a Supported header listing the given option.
+==== CFGutils ====
 
-== usrloc ==
-Added more RPC commands:
-  * ul.rm
-  * ul.rm_contact
-  * ul.flush
-  * ul.add
+  * new functions
+    * route_if_exists() calls a routing block only if it exists in the configuration script
+    * check_route_exists() checks if a routing block exists in the script.
 
-ul.add RPC and ul_add MI commands modified to be able to set the contact path
+==== siputils ====
+
+  * new functions:
+    * is_supported(option) that can be used to check if request has a Supported header listing the given option.
+
+==== usrloc ====
+
+  * new RPC commands:
+    * ul.rm
+    * ul.rm_contact
+    * ul.flush
+    * ul.add
+  * ul.add RPC and ul_add MI commands modified to be able to set the contact path
 ===== New in Core =====
 
 Its not possible to compile Kamailio without IPv6 anymore, improving the code maintainability in the core and several modules.
