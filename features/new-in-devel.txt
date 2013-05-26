@@ -11,7 +11,35 @@
 
 ===== New Modules =====
 
+==== app_java ====
 
+  * embedded Java interpreter
+  * http://kamailio.org/docs/modules/devel/modules/app_java.html
+
+==== cnxcc ====
+
+  * credit control module - prepaid system
+  * http://kamailio.org/docs/modules/devel/modules/cnxcc.html
+
+==== dnssec ====
+
+  * DNSSEC implementation
+  * http://kamailio.org/docs/modules/devel/modules/dnssec.html
+
+==== sctp ====
+
+  * SCTP transport layer
+  * http://kamailio.org/docs/modules/devel/modules/sctp.html
+
+==== sipt ====
+
+  * SIP-T and SIP-I operations
+  * http://kamailio.org/docs/modules/devel/modules/sipt.html
+
+==== stun ====
+
+  * STUN requirements for SIP outbound
+  * http://kamailio.org/docs/modules/devel/modules/stun.html
 ===== New in Old Modules =====
 
 == SNMPstats ==
