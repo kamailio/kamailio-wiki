@@ -76,5 +76,6 @@
 
 ===== Tools =====
 
-== kamctl ==
-Now it's possible to add the contact path: ''kamctl ul add <user> <uri> <expires> <path>''
+==== kamctl ====
+
+  * added parameters to add the contact path: ''kamctl ul add <user> <uri> <expires> <path>''
