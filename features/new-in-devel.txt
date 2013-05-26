@@ -73,6 +73,8 @@
 
 ==== Components ====
 
+  * SCTP support implementation from core was moved as a module. No need to recompile everything to get SCTP support, just load sctp module 
+
 
 ===== Tools =====
 
