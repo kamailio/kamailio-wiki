@@ -68,9 +68,8 @@
   * ul.add RPC and ul_add MI commands modified to be able to set the contact path
 ===== New in Core =====
 
-Its not possible to compile Kamailio without IPv6 anymore, improving the code maintainability in the core and several modules.
-
-The syn_branch parameter has been removed from the core, as Kamailio was not fully standard compliant if this was activated.
+  * IPv6 compile time flag removed - it is not possible to compile Kamailio without IPv6 anymore, improving the code maintainability in the core and several modules
+  * the syn_branch parameter has been removed from the core, as Kamailio was not fully standard compliant if this was activated.
 
 ==== Components ====
 
