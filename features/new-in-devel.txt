@@ -16,6 +16,10 @@
   * embedded Java interpreter
   * http://kamailio.org/docs/modules/devel/modules/app_java.html
 
+==== auth_ephemeral ====
+
+  * user authentication with ephemeral credentials
+  * http://kamailio.org/docs/modules/devel/modules/auth_ephemeral.html
 ==== cnxcc ====
 
   * credit control module - prepaid system
