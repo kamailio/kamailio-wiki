@@ -46,16 +46,22 @@
   * http://kamailio.org/docs/modules/devel/modules/stun.html
 ===== New in Old Modules =====
 
-==== SNMPstats ====
 
-  * the SNMPstats module has been extended with a large set of new data, and the KAMAILIO-MIB has been extended with new OIDs
-  * the new data reflects the Kamailio server process (memory, configuration at compile time), network transports and modules.
-
-==== CFGutils ====
+==== cfgutils ====
 
   * new functions
     * route_if_exists() calls a routing block only if it exists in the configuration script
     * check_route_exists() checks if a routing block exists in the script.
+
+==== debugger ====
+
+  * per module debug level
+  * options to enable/disable per module log level as well as set per module log level at runtime via RPC commands
+
+==== snmpstats ====
+
+  * the SNMPstats module has been extended with a large set of new data, and the KAMAILIO-MIB has been extended with new OIDs
+  * the new data reflects the Kamailio server process (memory, configuration at compile time), network transports and modules.
 
 ==== siputils ====
 
