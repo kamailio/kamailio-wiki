@@ -89,6 +89,7 @@ Few guidelines to edit the wiki:
   * [[tutorials:tls:testing-and-debugging|Testing and Debugging TLS Connections]]
   * [[tutorials:faq:main|Frequently Asked Questions]]
   * [[tutorials:dns:dnssec|Kamailio with DNSSEC]]
+  * [[tutorials:mini-howto-admin:main|Mini HowTo Tutorials]]
 
 ==== External Tutorials ====
 
