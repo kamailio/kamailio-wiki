@@ -54,6 +54,7 @@ Download the sources from GIT using the following commands.
   git checkout -b 4.0 origin/4.0
 </code>
 
+//Note: if your git client version does not support **--no-single-branch** command line parameter, then just remove it.// 
 
 ===== 3.Tuning Makefiles =====
 
