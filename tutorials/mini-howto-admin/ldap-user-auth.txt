@@ -67,7 +67,7 @@ route[LDAPAUTH] {
     # do ldap search to fetch the password
     ldap_search("ldap://sipaccounts/ou=sip,dc=example,dc=com?SIPPassword?one?(cn=$fU)");
     $var(rc) = $rc;
-    if ($var(rc)<0)) {
+    if ($var(rc)<0) {
         switch ($var(rc)) {
             case -1:
                 # no LDAP entry found
