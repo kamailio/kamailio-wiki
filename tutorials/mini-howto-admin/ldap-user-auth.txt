@@ -8,7 +8,7 @@ Content is specific for Kamailio v4.0.x and OpenLDAP on a Debian/Ubuntu system.
   * read the documentation of auth module:
     * http://kamailio.org/docs/modules/stable/modules/auth.html
   * read the documentation of ldap module:
-    * http://kamailio.org/docs/modules/stable/modules_k/ldap.html
+    * http://kamailio.org/docs/modules/stable/modules/ldap.html
 
 ===== LDAP Tree =====
 
