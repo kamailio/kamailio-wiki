@@ -394,6 +394,22 @@ A pseudo-variable can refer to the value of an avp, body of a header, part of a 
 
 For more see:
   * http://www.kamailio.org/wiki/cookbooks/devel/pseudovariables
+
+??? How to iterate through the items in a comma separated string?
+
+!!! If you have a variable holding a string like "a,b,c,d" and want to get each character separately, you have to use a WHILE loop and {s.select,index,separator} transformation. If there is no value at the given index, then the transformation will return $null, thus you have to use a variable as index, incrementing it until you get a $null.
+
+Here is an example:
+
+<code c>
+$var(x) = "a,b,c,d";
+$var(i) = 0;
+
+while( $(var(x){s.select,$var(i),,})!=$null ) {
+   xlog("token at position $var(i) is: $(var(x){s.select,$var(i),,})\n");
+   $var(i) = $var(i) + 1;
+}
+</code>
 =?==== Troubleshooting =====
 
 ??? I get 'out of memory' errors, what can be done?
