@@ -164,7 +164,7 @@ $(branch(uri)[2]) = "sip:test@kamailio.org;transport=sctp";
 **$ct** - reference to body of contact header
 
 
-==== $ct - Content-Type ====
+==== $cT - Content-Type ====
 
 **$cT** - reference to body of content-type header
 
