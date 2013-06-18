@@ -1,0 +1,48 @@
+<fc #FF0000>**This is a work in progress**</fc>
+
+The Configuration File
+
+Configuration Directives
+
+There are five (5) types of configuration directives used with Kamailio.
+
+- C-Style Control Directives
+- Apache-Like Name/Value Pairs (delimited by a space, value within quotes)
+- Normal Name/Value Pairs (delimited by an equals sign)
+- Modify Parameter Procedure
+- Route Functions
+
+Comments
+
+Configuration file comments are PHP style, without the double-slash line comment.  Only hash (#) will work for line comments.
+
+This is confusing, since the hash-bang (#!) is used at the beginning of the C-Style Control Directives.
+
+/* block comment
+   block comment */
+// this is NOT a line comment
+# this is a line comment
+#!c_style_directive
+
+Instruction Separator
+
+The semicolon works with all forms of configuration directives as an instruction separator.  Allowing for comments or additional configuration directives on the same line.
+
+configuration_directive_a; configuration_directive_b
+configuration_directive; # comment about the configuration directive
+
+
+C-Style Control Directives
+
+ Available directives:
+
+    #!define NAME - define a keyword
+    #!define NAME VALUE - define a keyword with value
+    #!ifdef NAME - check if a keyword is defined
+    #!ifndef - check if a keyword is not defined
+    #!else - swtich to false branch of ifdef/ifndef region
+    #!endif - end ifdef/ifndef region
+    #!trydef - add a define if not already defined
+    #!redefine - force redefinition even if already defined
+    #!subst
+    #!substdef
