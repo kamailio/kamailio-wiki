@@ -20,7 +20,7 @@ There are five (5) types of configuration directives used with Kamailio.\\
 <fc #AA0000>**Each configuration directive type uses its own syntax!**</fc>
 
   - C-Style Control Directives
-  - Apache Name/Value Pairs
+  - Apache-Like Name/Value Pairs
   - Normal Name/Value Pairs
   - Modify Parameter Procedure
   - Route Functions
