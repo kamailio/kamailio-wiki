@@ -72,7 +72,7 @@ configuration_directive; # comment about the configuration directive
   loadmodule "module_name.so"
   loadmodule "another_module.so"
   include_file "file_to_include.cfg"
-  import_file "file_to_import.cfg"
+  import_file "/path/to/file_to_import.cfg"
 
   
 ==== Normal Name/Value Pairs ====
