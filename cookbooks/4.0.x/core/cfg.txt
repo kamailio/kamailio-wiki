@@ -42,20 +42,64 @@ configuration_directive; # comment about the configuration directive
 
  Available directives:
 
-    #!define NAME - define a keyword
-    #!define NAME VALUE - define a keyword with value
-    #!ifdef NAME - check if a keyword is defined
-    #!ifndef - check if a keyword is not defined
-    #!else - swtich to false branch of ifdef/ifndef region
-    #!endif - end ifdef/ifndef region
-    #!trydef - add a define if not already defined
-    #!redefine - force redefinition even if already defined
-    #!subst
-    #!substdef
+  * #!define NAME - define a keyword
+  * #!define NAME VALUE - define a keyword with value
+  * #!ifdef NAME - check if a keyword is defined
+  * #!ifndef - check if a keyword is not defined
+  * #!else - swtich to false branch of ifdef/ifndef region
+  * #!endif - end ifdef/ifndef region
+  * #!trydef - add a define if not already defined
+  * #!redefine - force redefinition even if already defined
+  * #!subst
+  * #!substdef
+
+<code>
+#!define MODULE_NAME
+
+#!ifdef MODULE_NAME
+ .. set directives ..
+#!else
+ .. set alternate directives .. 
+#!endif
+</code>
 
 ==== Apache Name/Value Pairs ====
- (delimited by a space, value within quotes) 
+
+  name "value"
+
+<fc #FF0000>//The value MUST be enclosed in quotes.//</fc>
+
+  loadmodule "module_name.so"
+  loadmodule "another_module.so"
+  include_file "file_to_include.cfg"
+  import_file "file_to_import.cfg"
+
+  
 ==== Normal Name/Value Pairs ====
+
+  name=value
  (delimited by an equals sign) 
+
+[[../core#core_parameters|core_parameters]]
+
+<code>
+memdbg=5
+memlog=5
+log_facility=LOG_LOCAL0
+fork=yes
+children=4
+#disable_tcp=yes
+auto_aliases=no
+alias="sip.mydomain.com"
+</code>
+
 ==== Modify Parameter Procedure ====
+
+<code>
+modparam("first_module", "module_parameter_text", "new_value");  # Set Text Value
+modparam("second_module", "module_parameter_number", 10000);      # Set Numeric Value
+modparam("second_module", "module_parameter_on", 1);              # Enable Parameter
+modparam("third_module", "module_parameter_on", 0);             # Disable Parameter
+</code>
+
 ==== Route Functions ====
