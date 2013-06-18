@@ -6,23 +6,20 @@
 
 For the sake and sanity of the user of this software, we need to cover the basic elements of the configuration before getting to the meat and potatoes.
 
-  * Configuration Directives
   * Comments
+  * Configuration Directives
   * Instruction Separator
-==== Configuration Directives ====
-
-There are five (5) types of configuration directives used with Kamailio.
-
-  - [[cfg#c-style_control_directives|C-Style Control Directives]]
-  - [[cfg#apache_namevalue_pairs|Apache Name/Value Pairs]]
-  - [[cfg#normal_namevalue_pairs|Normal Name/Value Pairs]]
-  - [[cfg#modify_parameter_procedure|Modify Parameter Procedure]]
-  - [[cfg#route_functions|Route Functions]]
 
 ==== Comments ====
 
-Configuration file comments are PHP style, without the double-slash line comment.  Only hash (#) will work for line comments.\\ 
+<fc #FF0000>**The first thing you need to understand is the comment syntax used in the configuration file.\\ \\ **</fc>
+Comments in the configuration file are a mixture of C-Style (**not C++**) and scripting language syntax.\\ 
+It closely resembles the PHP style, **except** you can not use double-slash (//) for line comments, only hash (#) can be used for line comments.\\ \\ 
+Because the C-Style Control Directives ([[cfg#c-style_control_directives|explained later]]) begin with a hash-bang (#!), while normal line comments begin with a hash (#).
+
+
 <fc #FF0000>//This gets confusing since the hash-bang (#!) is used at the beginning of the C-Style Control Directives.//</fc>
+
 
 <code>
 /* block comment
@@ -32,6 +29,15 @@ Configuration file comments are PHP style, without the double-slash line comment
 #!c_style_directive
 </code>
 
+==== Configuration Directives ====
+
+There are five (5) types of configuration directives used with Kamailio.
+
+  - [[cfg#c-style_control_directives|C-Style Control Directives]]
+  - [[cfg#apache_namevalue_pairs|Apache Name/Value Pairs]]
+  - [[cfg#normal_namevalue_pairs|Normal Name/Value Pairs]]
+  - [[cfg#modify_parameter_procedure|Modify Parameter Procedure]]
+  - [[cfg#route_functions|Route Functions]]
 
 ==== Instruction Separator ====
 
