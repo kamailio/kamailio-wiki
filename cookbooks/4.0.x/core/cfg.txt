@@ -14,19 +14,15 @@ For the sake and sanity of the user of this software, we need to cover the basic
 
 <fc #FF0000>**The first thing you need to understand is the comment syntax used in the configuration file.\\ \\ **</fc>
 Comments in the configuration file are a mixture of C-Style (**not C++**) and scripting language syntax.\\ 
-It closely resembles the PHP style, **except** you can not use double-slash (//) for line comments, only hash (#) can be used for line comments.\\ \\ 
-Because the C-Style Control Directives ([[cfg#c-style_control_directives|explained later]]) begin with a hash-bang (#!), while normal line comments begin with a hash (#).
-
-
-<fc #FF0000>//This gets confusing since the hash-bang (#!) is used at the beginning of the C-Style Control Directives.//</fc>
-
+It closely resembles the PHP style, **//except//** you **can not use** double-slash ( ⁄ ⁄ ), only a hash (#) may be used for line comments.\\ \\ 
+It can be confusing seeing the C-Style Control Directives ([[cfg#c-style_control_directives|explained later]]) that begining with a hash-bang (#!) and line comments begin with a hash (#).
 
 <code>
 /* block comment
    block comment */
 // this is NOT a line comment
 # this is a line comment
-#!c_style_directive
+#!c_style_directive  <-- VALID CONFIGURATION DIRECTIVE
 </code>
 
 ==== Configuration Directives ====
