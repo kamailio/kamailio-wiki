@@ -18,18 +18,22 @@ Configuration file comments are PHP style, without the double-slash line comment
 
 This is confusing, since the hash-bang (#!) is used at the beginning of the C-Style Control Directives.
 
+<code>
 /* block comment
    block comment */
 // this is NOT a line comment
 # this is a line comment
 #!c_style_directive
+</code>
 
 Instruction Separator
 
 The semicolon works with all forms of configuration directives as an instruction separator.  Allowing for comments or additional configuration directives on the same line.
 
+<code>
 configuration_directive_a; configuration_directive_b
 configuration_directive; # comment about the configuration directive
+</code>
 
 
 C-Style Control Directives
