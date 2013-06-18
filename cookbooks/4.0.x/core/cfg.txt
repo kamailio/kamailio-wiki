@@ -15,7 +15,8 @@ For the sake and sanity of the user of this software, we need to cover the basic
 
 ==== Configuration Directives ====
 
-There are five (5) types of configuration directives used with Kamailio.
+There are five (5) types of configuration directives used with Kamailio.\\ 
+<fc #AA0000>**It is important to understand that each type has its own syntax!**</fc>
 
   - C-Style Control Directives
   - Apache Name/Value Pairs
