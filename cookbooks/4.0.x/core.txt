@@ -1,6 +1,6 @@
 ====== Kamailio SIP Server v4.0.x (stable): Core Cookbook ======
 
-This tutorial collects the functions and parameters exported by Kamailio core to configuration file.
+This tutorial collects the functions and parameters exported by Kamailio core to [[cookbooks:4.0.x:core:cfg|configuration file]].
 
 **Note:** The parameters on this page are **NOT** in alphabetical order.
 
