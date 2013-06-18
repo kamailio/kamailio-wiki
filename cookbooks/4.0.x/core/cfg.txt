@@ -63,6 +63,13 @@ configuration_directive_e; # comment about the configuration directive
 -----
 
 ===== Configuration Directives =====
+
+^ Type ^ Format ^ Comment ^
+| C-Style Control Directives | #!directive NAME VALUE | Begins with hash-bang (#!) |
+| Apache-Like Name/Value Pairs | name "value" | Delimited by a space & Value within quotes |
+| Normal Name/Value Pairs | name=value | Delimited by an equals sign |
+| Modify Parameter Procedure | modparam("MODULE", "PARAMETER", "VALUE") | |
+| Route Functions | route {...} | Scripting Language |
 ==== C-Style Control Directives ====
 
  Available directives:
