@@ -168,6 +168,43 @@ if(is_present_hf("X-Hdr")) {
 </code>
 
 
+??? How to remove a single header field when a header appears multiple times?
+
+!!! SIP allows that certain header fields may appear multiple times in a SIP message. This header fields (e.g. Via, Route, Record-Route, Contact) may be written either on a single line (with comma separated) or on multiple lines (see [[http://tools.ietf.org/html/rfc3261#section-7.3|RFC 3261 section 7.3]] for details).
+
+The remove_hf() function from textops module always removes all header fields with a certain name, thus it can not be used in this case.
+
+To address a certain header (regardless if headers are in a single line or in separate lines) use the @hf_value select. The trick is to load the textopsx module (this select used to be in ser's textops module). Note, header names must use '_' instead of '-'. To delete or manipulate a certain header also use the functions from the textopsx module, e.g: remove_hf_value(). Note, here '-' is used for headers with '-'
+
+For example, incoming message:
+<code>
+Record-Route: <sip:1.1.1.1;lr=on;nat=yes>
+Record-Route: <sip:2.2.2.2:5060;lr;transport=udp>,
+   <sip:3.3.3.3:22506;lr;transport=udp>
+</code>
+
+Dump all headers:
+<code>
+xlog("$sel(@hf_value.Record_Route)");
+</code>
+
+Dump the first header (<sip:1.1.1.1;lr=on;nat=yes>):
+<code>
+xlog("$sel(@hf_value.Record_Route[1])");
+</code>
+
+Dump the second last header (<sip:2.2.2.2:5060;lr;transport=udp>):
+<code>
+xlog("$sel(@hf_value.Record_Route[-2])");
+</code>
+
+Remove the last header (<sip:3.3.3.3:22506;lr;transport=udp>):
+<code>
+remove_hf_value("Record-Route[-1]");
+#or in above case:
+remove_hf_value("Record-Route[3]");
+</code>
+
 ??? Why the SIP requests are replied with "483 Too Many Hops" or "513 Message Too Large"?
 
 !!! In both cases, the reason is probably an error in request routing script which caused an infinite loop.
