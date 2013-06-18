@@ -14,9 +14,8 @@ There are five (5) types of configuration directives used with Kamailio.
 
 ==== Comments ====
 
-Configuration file comments are PHP style, without the double-slash line comment.  Only hash (#) will work for line comments.
-
-This is confusing, since the hash-bang (#!) is used at the beginning of the C-Style Control Directives.
+Configuration file comments are PHP style, without the double-slash line comment.  Only hash (#) will work for line comments.\\ 
+<fc #FF0000>//This gets confusing since the hash-bang (#!) is used at the beginning of the C-Style Control Directives.//</fc>
 
 <code>
 /* block comment
@@ -25,6 +24,7 @@ This is confusing, since the hash-bang (#!) is used at the beginning of the C-St
 # this is a line comment
 #!c_style_directive
 </code>
+
 
 ==== Instruction Separator ====
 
