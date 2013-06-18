@@ -1,6 +1,8 @@
 <fc #FF0000>**This is a work in progress**</fc>
 
-===== The Configuration File =====
+====== The Configuration File ======
+
+===== Configuration Elements =====
 
 ==== Configuration Directives ====
 
@@ -35,8 +37,8 @@ configuration_directive_a; configuration_directive_b
 configuration_directive; # comment about the configuration directive
 </code>
 
-
-C-Style Control Directives
+===== Configuration Directives =====
+==== C-Style Control Directives ====
 
  Available directives:
 
@@ -50,3 +52,8 @@ C-Style Control Directives
     #!redefine - force redefinition even if already defined
     #!subst
     #!substdef
+
+==== Apache-Like Name/Value Pairs (delimited by a space, value within quotes) ====
+==== Normal Name/Value Pairs (delimited by an equals sign) ====
+==== Modify Parameter Procedure ====
+==== Route Functions ====
