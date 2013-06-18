@@ -24,7 +24,7 @@ There are five (5) types of configuration directives used with Kamailio.
   - Modify Parameter Procedure
   - Route Functions
 
-<fc #AA0000>**Each type has its own syntax!**</fc>
+<fc #AA0000>**Each configuration directive type uses its own syntax!**</fc>
 
 -----
 
