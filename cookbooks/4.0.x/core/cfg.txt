@@ -1,18 +1,18 @@
 <fc #FF0000>**This is a work in progress**</fc>
 
-The Configuration File
+===== The Configuration File =====
 
-Configuration Directives
+==== Configuration Directives ====
 
 There are five (5) types of configuration directives used with Kamailio.
 
-- C-Style Control Directives
-- Apache-Like Name/Value Pairs (delimited by a space, value within quotes)
-- Normal Name/Value Pairs (delimited by an equals sign)
-- Modify Parameter Procedure
-- Route Functions
+  - C-Style Control Directives
+  - Apache-Like Name/Value Pairs (delimited by a space, value within quotes)
+  - Normal Name/Value Pairs (delimited by an equals sign)
+  - Modify Parameter Procedure
+  - Route Functions
 
-Comments
+==== Comments ====
 
 Configuration file comments are PHP style, without the double-slash line comment.  Only hash (#) will work for line comments.
 
@@ -26,7 +26,7 @@ This is confusing, since the hash-bang (#!) is used at the beginning of the C-St
 #!c_style_directive
 </code>
 
-Instruction Separator
+==== Instruction Separator ====
 
 The semicolon works with all forms of configuration directives as an instruction separator.  Allowing for comments or additional configuration directives on the same line.
 
