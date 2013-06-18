@@ -9,10 +9,10 @@
 There are five (5) types of configuration directives used with Kamailio.
 
   - [[cfg#c-style_control_directives|C-Style Control Directives]]
-  - Apache-Like Name/Value Pairs (delimited by a space, value within quotes)
-  - Normal Name/Value Pairs (delimited by an equals sign)
-  - Modify Parameter Procedure
-  - Route Functions
+  - [[cfg#apache_namevalue_pairs|Apache Name/Value Pairs]]
+  - [[cfg#normal_namevalue_pairs|Normal Name/Value Pairs]]
+  - [[cfg#modify_parameter_procedure|Modify Parameter Procedure]]
+  - [[cfg#route_functions|Route Functions]]
 
 ==== Comments ====
 
@@ -53,7 +53,7 @@ configuration_directive; # comment about the configuration directive
     #!subst
     #!substdef
 
-==== Apache-Like Name/Value Pairs ====
+==== Apache Name/Value Pairs ====
  (delimited by a space, value within quotes) 
 ==== Normal Name/Value Pairs ====
  (delimited by an equals sign) 
