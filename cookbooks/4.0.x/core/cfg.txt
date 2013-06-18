@@ -8,7 +8,7 @@
 
 There are five (5) types of configuration directives used with Kamailio.
 
-  - C-Style Control Directives
+  - [[cfg#c-style_control_directives|C-Style Control Directives]]
   - Apache-Like Name/Value Pairs (delimited by a space, value within quotes)
   - Normal Name/Value Pairs (delimited by an equals sign)
   - Modify Parameter Procedure
