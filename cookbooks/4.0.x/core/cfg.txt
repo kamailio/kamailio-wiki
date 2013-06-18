@@ -6,9 +6,22 @@
 
 For the sake and sanity of the user of this software, we need to cover the basic elements of the configuration before getting to the meat and potatoes.
 
-  * Comments
   * Configuration Directives
+  * Comments
   * Instruction Separator
+
+
+-----
+
+==== Configuration Directives ====
+
+There are five (5) types of configuration directives used with Kamailio.
+
+  - C-Style Control Directives
+  - Apache Name/Value Pairs
+  - Normal Name/Value Pairs
+  - Modify Parameter Procedure
+  - Route Functions
 
 ==== Comments ====
 
@@ -22,27 +35,25 @@ It can be confusing seeing the C-Style Control Directives ([[cfg#c-style_control
    block comment */
 // this is NOT a line comment
 # this is a line comment
-#!c_style_directive  <-- VALID CONFIGURATION DIRECTIVE
+#!c_style_directive <-- VALID CONFIGURATION DIRECTIVE / NOT A COMMENT
 </code>
-
-==== Configuration Directives ====
-
-There are five (5) types of configuration directives used with Kamailio.
-
-  - [[cfg#c-style_control_directives|C-Style Control Directives]]
-  - [[cfg#apache_namevalue_pairs|Apache Name/Value Pairs]]
-  - [[cfg#normal_namevalue_pairs|Normal Name/Value Pairs]]
-  - [[cfg#modify_parameter_procedure|Modify Parameter Procedure]]
-  - [[cfg#route_functions|Route Functions]]
 
 ==== Instruction Separator ====
 
-The semicolon works with all forms of configuration directives as an instruction separator.  Allowing for comments or additional configuration directives on the same line.
+<fc #438D80>Just getting this out of the way before covering the Configuration Directives.</fc>
+
+The semicolon (;) is **//not required//** and **//may//** be used as an instruction separator for all configuration directives **//except//** Route Functions((Route Functions use scripting language syntax and **must** be terminated with a semicolon at the end of each statement.)).\\ 
+
+The general use is to allow for comments or additional configuration directives on the same line.
 
 <code>
-configuration_directive_a; configuration_directive_b
-configuration_directive; # comment about the configuration directive
+configuration_directive_a
+configuration_directive_b;
+configuration_directive_c; configuration_directive_d
+configuration_directive_e; # comment about the configuration directive
 </code>
+
+-----
 
 ===== Configuration Directives =====
 ==== C-Style Control Directives ====
