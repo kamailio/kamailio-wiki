@@ -50,7 +50,7 @@ It can be confusing seeing the C-Style Control Directives ([[cfg#c-style_control
 
 The semicolon (;) is **//not required//** and **//may//** be used as an instruction separator for all configuration directives **//except//** Route Functions((Route Functions use scripting language syntax and **must** be terminated with a semicolon at the end of each statement.)).\\ 
 
-The general use is to allow for comments or additional configuration directives on the same line.
+The general use is to allow for comments or additional configuration directives be placed on the same line.
 
 <code>
 configuration_directive_a
