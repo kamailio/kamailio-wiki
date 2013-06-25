@@ -900,6 +900,8 @@ The “key” can be:
   * static string - set of characters without pseudo-variables
   * dynamic string - set of characters that include pseudo-variables. The pseudo-variables will be evaluated at runtime.
 
+When assigning values, the default expiry will be used.
+
 <code>
 ...
 $mct($au) = 1;
@@ -907,6 +909,19 @@ $mct($ru) = $fu;
 $mct(test) = 1;
 xlog("stored value is $mct(test)");
 $mct(test) = null; # delete it
+xlog("stored value is $mct(test)"); # will return <null>
+...
+</code>
+
+==== $mct(key=>expiry) ====
+
+Using this alternative format, the default expiry may be overidden by including a custom value at time of assignment.
+
+<code>
+...
+$mct(test=>30) = 1; # set expire time to 30 seconds
+xlog("stored value is $mct(test)");
+# sleep 30 seconds
 xlog("stored value is $mct(test)"); # will return <null>
 ...
 </code>
