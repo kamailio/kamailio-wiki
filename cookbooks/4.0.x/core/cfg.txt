@@ -35,8 +35,8 @@ It closely resembles the PHP style, **//except//** you **can not use** double-sl
 It can be confusing seeing the C-Style Control Directives ([[cfg#c-style_control_directives|explained later]]) that begin with a hash-bang (#!) mixed with line comments begin with a hash (#).
 
 <code>
-/* block comment
-   block comment */
+/* This is a ...
+   block comment */   
 // this is NOT a line comment
 # this is a line comment
 #!c_style_directive <-- VALID CONFIGURATION DIRECTIVE / NOT A COMMENT
