@@ -110,7 +110,7 @@ configuration_directive_e; # comment about the configuration directive
 ==== Normal Name/Value Pairs ====
 
 ^ Syntax: |
-|<code>name=value</code>|
+|<code c>name=value</code>|
  (delimited by an equals sign) 
 
 [[../core#core_parameters|core_parameters]]
