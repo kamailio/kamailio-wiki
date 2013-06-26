@@ -106,7 +106,7 @@ configuration_directive_e; # comment about the configuration directive
   include_file "file_to_include.cfg"
   import_file "/path/to/file_to_import.cfg"
 
-  
+-----  
 ==== Normal Name/Value Pairs ====
 
   name=value
