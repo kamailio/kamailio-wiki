@@ -34,13 +34,13 @@ Comments in the configuration file are a mixture of C-Style (**not C++**) and sc
 It closely resembles the PHP style, **//except//** you **can not use** double-slash ( ⁄ ⁄ ) for line comments.  Only the hash (#) may be used for line comments.\\ \\ 
 It can be confusing seeing the C-Style Control Directives ([[cfg#c-style_control_directives|explained later]]) that begin with a hash-bang (#!) mixed with line comments begin with a hash (#).
 
-<code>
+^ Examples:  |
+|Block Comment:<code c>
 /* This is a ...
-   block comment */   
-// this is NOT a line comment
-# this is a line comment
-#!c_style_directive <-- VALID CONFIGURATION DIRECTIVE / NOT A COMMENT
-</code>
+   block comment */</code>  |
+|<fc #FF0000>**Not a Comment:**</fc><code> // this is NOT a line comment </code>|
+|Line Comment:<code c># this is a line comment </code>|
+|**<fc #FF0000>Valid Configuration Directive:</fc>**<code>#!c_style_directive</code>|
 
 -----
 
