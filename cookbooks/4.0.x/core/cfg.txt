@@ -114,12 +114,12 @@ import_file "/path/to/file_to_import.cfg"
 -----  
 ==== Normal Name/Value Pairs ====
 
-These name/value pairs are normally delimited by an equal sign.\\ There are a few situations where the value needs to be enclosed in quotes.
+These name/value pairs are normally delimited by an equal sign.
 
 ^ Syntax: |
-|<code c>name=value
-name="fqdn.example.com"</code>|
+|<code c>name=value</code>|
 
+<fc #FF0000>There are a couple situations where the value needs to be enclosed in quotes.</fc>\\ 
 Check the [[../core#core_parameters|core parameters]] for the required syntax.
 
 ^ Examples:  |
