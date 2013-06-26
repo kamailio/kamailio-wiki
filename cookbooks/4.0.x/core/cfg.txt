@@ -85,15 +85,16 @@ configuration_directive_e; # comment about the configuration directive
   * #!subst
   * #!substdef
 
-<code>
+^ Example:  |
+|<code c>
 #!define MODULE_NAME
 
 #!ifdef MODULE_NAME
- .. set directives ..
+ ".. set directives .."
 #!else
- .. set alternate directives .. 
+ ".. set alternate directives .." 
 #!endif
-</code>
+</code>|
 -----
 ==== Apache Name/Value Pairs ====
 
