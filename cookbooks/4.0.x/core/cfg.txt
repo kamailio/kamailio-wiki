@@ -111,7 +111,7 @@ loadmodule "another_module.so"
 include_file "file_to_include.cfg"
 import_file "/path/to/file_to_import.cfg"
 </code>|
------  
+-------
 ==== Normal Name/Value Pairs ====
 
 These name/value pairs are normally delimited by an equal sign.
