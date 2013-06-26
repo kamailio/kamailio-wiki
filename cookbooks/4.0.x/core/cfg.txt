@@ -4,7 +4,7 @@
 
 ===== Configuration Elements =====
 
-For the sake and sanity of the user of this software, we need to cover the basic elements of the configuration before getting to the meat and potatoes.
+For the sake and sanity of the user of this software, we should cover the basic elements of the configuration before getting to the meat and potatoes.  There are three basic configuration elements to be concerned about.
 
   * Configuration Directives
   * Comments
