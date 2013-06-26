@@ -52,12 +52,13 @@ The semicolon (;) is **//not required//** and **//may//** be used as an instruct
 
 The general use is to allow for comments or additional configuration directives be placed on the same line.
 
-<code>
+^ Examples:  |
+|<code>
 configuration_directive_a
 configuration_directive_b;
 configuration_directive_c; configuration_directive_d
 configuration_directive_e; # comment about the configuration directive
-</code>
+</code>|
 
 -----
 -----
