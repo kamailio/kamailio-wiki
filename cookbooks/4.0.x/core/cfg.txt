@@ -127,11 +127,21 @@ alias="sip.mydomain.com"
 -----
 ==== Modify Parameter Procedure ====
 
-<code>
+The modify parameter is similar to other types programming procedure.\\
+You call the procedure and it modifies the defined modules parameter.
+
+^ Syntax:  |
+| <code>modparam ( string $module , string $parameter , mixed $value )</code> |
+  
+<fc #800000>Strings should be enclosed in quotes.</fc>
+
+^ Examples:  |  
+|<code>
 modparam("first_module", "module_parameter_text", "new_value");  # Set Text Value
 modparam("second_module", "module_parameter_number", 10000);      # Set Numeric Value
 modparam("second_module", "module_parameter_on", 1);              # Enable Parameter
 modparam("third_module", "module_parameter_on", 0);             # Disable Parameter
-</code>
+</code>|
+
 -----
 ==== Route Functions ====
