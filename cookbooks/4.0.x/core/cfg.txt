@@ -97,7 +97,8 @@ configuration_directive_e; # comment about the configuration directive
 -----
 ==== Apache Name/Value Pairs ====
 
-  name "value"
+^ Syntax  |
+| <code c>name "value"</code>  |
 
 <fc #FF0000>//The value MUST be enclosed in quotes.//</fc>
 
