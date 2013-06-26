@@ -155,8 +155,7 @@ modparam("third_module", "module_parameter_on", 0);             # Disable Parame
 -----
 ==== Route Functions ====
 
-I will not go into too much detail here, it should be covered elsewhere in this wiki.\\ 
-The Route Functions are basically a scripting language.
+I will not go into too much detail here, the scripting methods, functions, and procdedures should be covered elsewhere in this wiki.\\ 
 
 
 ^ Example:  |
