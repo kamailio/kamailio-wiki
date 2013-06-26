@@ -145,7 +145,7 @@ You call the procedure and it modifies the defined modules parameter.
   
 <fc #800000>Strings should be enclosed in quotes.</fc>
 
-See the [[http://www.kamailio.org/docs/modules/4.0.x/modules/app_mono.html|module documentation]] for support parameter settings.
+See the [[http://www.kamailio.org/docs/modules/4.0.x/|module documentation]] for support parameter settings.
 
 ^ Examples:  |  
 |<code>
