@@ -132,7 +132,7 @@ The modify parameter is similar to other types programming procedure.\\
 You call the procedure and it modifies the defined modules parameter.
 
 ^ Syntax:  |
-| <code>modparam ( string $module , string $parameter , mixed $value )</code> |
+| <code c>modparam ( string "$module" , string "$parameter" , mixed "$value" )</code> |
   
 <fc #800000>Strings should be enclosed in quotes.</fc>
 
