@@ -154,3 +154,17 @@ modparam("third_module", "module_parameter_on", 0);             # Disable Parame
 
 -----
 ==== Route Functions ====
+
+
+^ Example:  |
+|<code c>request_route {
+        route(REQINIT); # Request Initial
+        route(NATDETECT); # NAT Detection
+
+        # CANCEL ??
+        if (is_method("CANCEL")) {
+         exit;
+        }
+
+        # OTHER SCRIPT CODE HERE
+}</code>|
