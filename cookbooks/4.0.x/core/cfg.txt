@@ -124,7 +124,7 @@ children=4
 auto_aliases=no
 alias="sip.mydomain.com"
 </code>
-
+-----
 ==== Modify Parameter Procedure ====
 
 <code>
