@@ -1,5 +1,3 @@
-<fc #FF0000>**This is a work in progress**</fc>
-
 ====== The Configuration File ======
 
 ===== Configuration Elements =====
