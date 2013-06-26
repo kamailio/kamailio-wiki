@@ -103,11 +103,13 @@ configuration_directive_e; # comment about the configuration directive
 
 <fc #FF0000>//The value MUST be enclosed in quotes.//</fc>
 
-  loadmodule "module_name.so"
-  loadmodule "another_module.so"
-  include_file "file_to_include.cfg"
-  import_file "/path/to/file_to_import.cfg"
-
+^ Examples  |
+|<code>
+loadmodule "module_name.so"
+loadmodule "another_module.so"
+include_file "file_to_include.cfg"
+import_file "/path/to/file_to_import.cfg"
+</code>|
 -----  
 ==== Normal Name/Value Pairs ====
 
