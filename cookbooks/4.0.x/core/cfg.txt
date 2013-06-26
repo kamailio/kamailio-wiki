@@ -27,7 +27,8 @@ There are five (5) types of configuration directives used with Kamailio.\\
 
 ==== Comments ====
 
-<fc #FF0000>**The first thing you should understand is the comment syntax used in the configuration file.\\ \\ **</fc>
+^  <fc #800000>**The first thing you should understand is the comment syntax used in the configuration file.**</fc>  |
+
 Comments in the configuration file are a mixture of C-Style (**not C++**) and scripting language syntaxes.\\ 
 It closely resembles the PHP style, **//except//** you **can not use** double-slash ( ⁄ ⁄ ) for line comments.  Only the hash (#) may be used for line comments.\\ \\ 
 It can be confusing seeing the C-Style Control Directives ([[cfg#c-style_control_directives|explained later]]) that begin with a hash-bang (#!) mixed with line comments beginning with a hash (#).
@@ -36,9 +37,9 @@ It can be confusing seeing the C-Style Control Directives ([[cfg#c-style_control
 |Block Comment:<code c>
 /* This is a ...
    block comment */</code>  |
-|<fc #FF0000>**Not a Comment:**</fc><code> // this is NOT a line comment </code>|
+|<fc #800000>**Not a Comment:**</fc><code> // this is NOT a line comment </code>|
 |Line Comment:<code c># this is a line comment </code>|
-|**<fc #FF0000>Valid Configuration Directive:</fc>**<code>#!c_style_directive</code>|
+|**<fc #800000>Valid Configuration Directive:</fc>**<code>#!c_style_directive</code>|
 
 -----
 
