@@ -117,7 +117,8 @@ configuration_directive_e; # comment about the configuration directive
 
 [[../core#core_parameters|core_parameters]]
 
-<code>
+^ Examples:  |
+|<code>
 memdbg=5
 memlog=5
 log_facility=LOG_LOCAL0
@@ -126,7 +127,7 @@ children=4
 #disable_tcp=yes
 auto_aliases=no
 alias="sip.mydomain.com"
-</code>
+</code>|
 -----
 ==== Modify Parameter Procedure ====
 
