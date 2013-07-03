@@ -323,8 +323,8 @@ Example
 
 <code c>
 $xavp(test=>one) = 1;
-$xavp(test=>two) = "two";
-$xavp(test=>three) = 3;
+$xavp(test[0]=>two) = "two";
+$xavp(test[0]=>three) = 3;
 </code>
 
 <code c>
