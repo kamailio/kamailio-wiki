@@ -68,6 +68,7 @@ The list is alphabetic order by name.
 | Timo Teras | tteras | - | - |
 | Tomas Mandys | tma0 | - | - |
 | Vaclav Kubart | kubartk | - | - |
+| Victor Seva Lopez | linuxmaniac | - | - |
 | Vladimir Marek | vlada | - | - |
 | Will Quan | willquan | - | - |
 
