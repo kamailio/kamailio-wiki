@@ -345,11 +345,12 @@ Result
 ==== sr.xavp.get ====
 
 returns a dictionary table with the values of the xavp variable.
+Third param choose between get all the values of a key ( 0, default) or just the first ones (1)
 
 Prototype
 
 <code c>
-t = sr.xavp.get("xavp_name", 1)
+t = sr.xavp.get("xavp_name", 1, 0)
 </code>
 
 Example
@@ -364,11 +365,16 @@ $xavp(test[0]=>b) = "three";
 </code>
 
 <code c>
-t = sr.xavp.get("test", 0)
+t = sr.xavp.get("test", 0, 0)
 for k,t2 in pairs(t) do
  for i,v in ipairs(t2) do
    sr.log("info", string.format("%s[%d]:%s[%s]\n", k, i, tostring(v), type(v)))
  end
+end
+
+t = sr.xavp.get("test", 0, 1)
+for k,v in pairs(t) do
+ sr.log("info", string.format("%s:%s[%s]\n", k, v, tostring(v), type(v)))
 end
 </code>
 
@@ -381,6 +387,9 @@ a[3]:1[number]
 b[1]:three[string]
 b[2]:two[string]
 b[3]:one[string]
+
+a:3[number]
+b:three[string]
 </code>
 ===== SR.SL Package =====
 
