@@ -58,6 +58,7 @@
   * per module debug level
   * options to enable/disable per module log level as well as set per module log level at runtime via RPC commands
   * new log_assign parameter. It enables the log of every single assign action on config
+  * new dbg_pv_dump function. It dumps in json format the pv_cache content.
 
 ==== htable ====
 
