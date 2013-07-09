@@ -330,7 +330,7 @@ $xavp(test[0]=>three) = 3;
 <code c>
 t = sr.xavp.get_keys("test", 0)
 for k,v in pairs(t) do
-  print(string.format("%d:%s\n", k, v)
+  sr.log("info", string.format("%d:%s\n", k, v))
 end
 </code>
 
