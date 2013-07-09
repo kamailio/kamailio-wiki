@@ -345,7 +345,7 @@ Result
 ==== sr.xavp.get ====
 
 returns a dictionary table with the values of the xavp variable.
-Third param choose between get all the values of a key ( 0, default) or just the first ones (1)
+Third param is optional and it choose between get all the values of a key ( 0, default) or just the first ones (1)
 
 Prototype
 
