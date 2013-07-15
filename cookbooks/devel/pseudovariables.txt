@@ -1267,6 +1267,35 @@ Returns the value of the Nature of Address Indicator of the Called Party for the
 
 
 
+===== $dns(pvid=>key) - DNS Query Result =====
+
+This variable stores the DNS result details after a call of dns_query(hostname, pvid) function from ipops module.
+
+  * pvid can be any string
+  * key can be:
+    * count - number of addresses
+    * ipv4 - set to 1 if at least one ipv4 address (otherwise 0)
+    * ipv6 - set to 1 if at least one ipv6 address (otherwise 0)
+    * addr[index] - the address as string from position index in the list (0 based indexing)
+    * type[index] - the type of address from position index in the list (0 based indexing), the value is 4 for ipv4 and 6 for ipv6
+
+The index can be an integer or a variable with integer value. First address has the index 0. If negative value, the returned address is counted from the end of the list, -1 being the last address. If no index is provided, then the first address is returned.
+
+<code c>
+if(dns_query("test.com", "xyz"))
+{
+    xlog(" number of addresses: $dns(xyz=>count)\n");
+    xlog(" ipv4 address found: $dns(xyz=>ipv4)\n");
+    xlog(" ipv6 address found: $dns(xyz=>ipv6)\n");
+    $var(i) = 0;
+    while($var(i)&lt;$dns(xyz=>count)) {
+        xlog(" #[$var(i)] type ($dns(xyz=>type[$var(i)]))"
+             " addr [$dns(xyz=>addr[$var(i)])]\n");
+        $var(i) = $var(i) + 1;
+    }
+}
+</code>
+
 ===== $C(xy) - Foreground and background colors =====
 
 
