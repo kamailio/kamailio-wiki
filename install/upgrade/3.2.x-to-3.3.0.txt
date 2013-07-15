@@ -201,7 +201,7 @@ INSERT INTO version (table_name, table_version) values ('location','5');
 
 === PostgreSQL ===
 
-This is the translation of the above MySQL script for PostgreSQL (should work with 9.1.1, but is untested!)
+This is the translation of the above MySQL script for PostgreSQL (Should work with 9.1.1, partially tested on 9.1.5.)
 
 <code sql>
 ﻿-- PERMISSIONS module
@@ -283,6 +283,11 @@ CREATE TABLE domain_attrs (
   UNIQUE (did,name,value)
 );
  
+GRANT ALL PRIVILEGES ON TABLE domain_attrs TO openser;
+GRANT SELECT ON TABLE domain_attrs TO openserro;
+GRANT ALL PRIVILEGES ON TABLE domain_attrs_id_seq TO openser;
+GRANT SELECT ON TABLE domain_attrs_id_seq TO openserro;
+
 -- PRESENCE modules
 DELETE FROM active_watchers;
 ALTER TABLE active_watchers ADD COLUMN from_domain varchar(64);
@@ -339,6 +344,8 @@ CREATE INDEX xcap_account_doc_uri_idx on xcap(username,domain,doc_uri);
 -- VERSION table
 DELETE FROM version WHERE table_name='dialog';
 INSERT INTO version (table_name, table_version) VALUES ('dialog','7');
+DELETE FROM version WHERE table_name='lcr_rule';
+INSERT INTO version (table_name, table_version) VALUES ('lcr_rule','2');
 DELETE FROM version WHERE table_name='domain';
 INSERT INTO version (table_name, table_version) VALUES ('domain','2');
 DELETE FROM version WHERE table_name='domain_attrs';
