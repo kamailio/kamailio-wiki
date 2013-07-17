@@ -1069,7 +1069,8 @@ key can be:
   * body - Body
   * auser - authentication username
   * apasswd - authentication password
-  * all - alias useful to rest all fields - $uac_req(all) = null;
+  * sock - local socket to be used for sending (proto:address:port)
+  * all - alias useful to reset all fields - $uac_req(all) = $null;
 
 <code c>
 $uac_req(method)="OPTIONS";
