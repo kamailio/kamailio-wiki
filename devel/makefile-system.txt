@@ -128,7 +128,7 @@ make modules-doc doc_format=xhtml modules=modules/auth
 
 <code>
 make dbschema
-<code>
+</code>
 
 ===== Various Helpful Commands =====
 
