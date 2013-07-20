@@ -36,8 +36,6 @@ make proper
 
 <code>
 make modules
-make modules_k
-make modules_s
 </code>
 
 ===== Generate Config for Makefile =====
@@ -72,7 +70,7 @@ The same can be accomplished with <code>make cfg include_modules=<name_of_the_mo
 Various parameters can be given to make command, an example:
 
 <code c>
-make prefix=/opt/sip-router \
+make prefix=/opt/kamailio \
      SCTP=1 \
      CC_EXTRA_OPTS=-I/usr/gnu/include \
      group_include="standard postgres presence" \
@@ -84,11 +82,11 @@ make prefix=/opt/sip-router \
 
 or you can save them in the config (they will be used by future make invocations) by givin the same parameters to make cfg:
 <code c>
-make cfg prefix=/opt/sip-router \
+make cfg prefix=/opt/kamailio \
      SCTP=1 \
      CC_EXTRA_OPTS=-I/usr/gnu/include \
      group_include="standard postgres presence" \
-     include_modules="snmpstats perl tls"
+     include_modules="snmpstats lcr tls"
 </code>
 
 ===== Generate README For Modules =====
@@ -97,23 +95,15 @@ make cfg prefix=/opt/sip-router \
 <code>
 make modules-readme
 </code>
-  * all READMEs for modules located in directory **modules_k**
+  * README for one module. Example for **modules/dispatcher**:
 <code>
-make modules_k-readme
-</code>
-  * all READMEs for modules located in directory **modules_s**
-<code>
-make modules_s-readme
-</code>
-  * README for one module. Example for **modules_k/dispatcher**:
-<code>
-make modules-readme modules=modules_k/dispatcher
+make modules-readme modules=modules/dispatcher
 </code>
 
 or
 
 <code>
-make -C modules_k/dispatcher/doc readme
+make -C modules/dispatcher/doc readme
 </code>
 
 ===== Generate Different Formats For Modules Documentation =====
@@ -131,5 +121,50 @@ make modules-doc doc_format=format modules=path/to/module
 
 Example: generate single xhtml file for **auth** module:
 <code>
-make modules-doc doc_format=xhtml modules=modules_k/auth
+make modules-doc doc_format=xhtml modules=modules/auth
 </code>
+
+===== Regenerated Database Scripts =====
+
+<code>
+make dbschema
+<code>
+
+===== Various Helpful Commands =====
+
+==== Print Uninstall Details ====
+
+<code>
+make uninstall
+</code>
+
+==== Install Debian init.d Scripts ====
+
+<code>
+make install-initd-debian
+</code>
+
+==== Install CentOS init.d Scripts ====
+
+<code>
+make install-initd-centos
+</code>
+
+==== Print C Define Flags ====
+
+<code>
+make printcdefs
+</code>
+
+==== Print Content of Variable ====
+
+<code>
+make printvar v=varname
+</code>
+
+Printing $(C_DEFS) content.
+
+<code>
+make printvar v=C_DEFS
+</code>
+
