@@ -1,0 +1,105 @@
+**Note: This document is work in progress and yet unfinished!**
+
+This is a short installation howto for Debian Squeeze (old-stable). It should work as well with current stable, but that has not yet been tested.
+
+This installation howto has been derived from here: http://uctimsclient.berlios.de/openimscore_on_ubuntu_howto.html
+
+====== General preparations ======
+
+We recommend, you install all components into a dedicated virtual machine. In our lab we use OpenVz-Containers, but you can also use any other virtual environment.
+
+If you are not familiar with OpenVz or any other, please try [[http://www.proxmox.com/|Proxmox]] or similar.
+
+===== Installation of the DNS-Server =====
+
+**Important note:** A properly configured DNS-Server is mandatory for IMS, just adding according entries in your /etc/hosts/ will not be enough!
+
+If you are running the DNS on your own machine then edit the file /etc/dhcp3/dhclient.conf and uncomment this line:
+
+  prepend domain_name_servers 127.0.0.1;
+
+Copy the open-ims-DNS file to the bind folder and add these lines to /etc/bind/named.conf.local:
+
+  zone "open-ims.test" {
+              type master;
+              file "/etc/bind/open-ims.dnszone";
+  };
+  
+//You will need to restart bind for these changes to take effect.//
+
+  /etc/init.d/bind9 restart
+  
+Check that this all works. Try a ping and see if you get a response:
+
+  ping pcscf.open-ims.test
+
+====== Installation of the Kamailio-IMS-Packages ======
+
+===== Configuration of the repository (All nodes) =====
+
+First, install the Key for our repository:
+
+  wget -O - http://repository.ng-voice.com/PublicKey | apt-key add -
+
+Then add the repository to your "/etc/apt/sources.list":
+
+  echo "deb http://repository.ng-voice.com squeeze ims rtpproxy" >> /etc/apt/sources.list
+
+And update the available packets:
+
+ apt-get update
+
+===== Proxy-CSCF =====
+
+Install the modules:
+
+  apt-get install kamailio kamailio-ims-modules kamailio-presence-modules kamailio-sqlite-modules kamailio-tls-modules kamailio-xml-modules kamailio-xmlrpc-modules
+
+If you want to have an RTP-Proxy/RTP-Relay, 
+
+For I-CSCF you will also need a database structure:
+
+mysql -uroot -p < icscf.sql
+(on the database server)
+
+Copy the required config to kamailio.cfg (e.g. pcscf.cfg), adapt the config to your needs (change "ng-voice.com" and the IP to your domain/IP, please remember also the escaped versions of the domain and the IP, e.g. "pcscf\.ng-voice\.com). For components with Diameter-Interface (e.g. I-/S-CSCF) you will need to modify the according XML-files, e.g. "pcscf.xml").
+
+Finally, you should edit the "/etc/default/kamailio"-File, in order to run the component.
+
+Now the Component should be able to start:
+
+pcscf:/# /etc/init.d/kamailio start
+Starting kamailio: kamailioloading modules under /usr/lib/kamailio/modules:/usr/lib/kamailio/modules_s:/usr/lib/kamailio/modules_k
+Listening on
+           udp: 109.239.50.67:5060
+           tcp: 109.239.50.67:5060
+Aliases:
+           tcp: pcscf:5060
+           udp: pcscf:5060
+           *: pcscf.ng-voice.com:5060
+And voila: Your component is running!
+
+Installation of the FHoSS
+
+Note: You will need to add the “non-free” packages to your repository:
+
+deb http://ftp.de.debian.org/debian lenny main non-free
+deb http://security.debian.org/ lenny/updates main non-free
+Install the FHoSS from our repository:
+
+apt-get install openimscore-fhoss
+Create the data in the database:
+
+mysql -uroot -p < /etc/fhoss/sql_files/hssdb.sql
+Add some sample data, if you like:
+
+mysql -uroot -p < /etc/fhoss/sql_files/userdata.sql
+The Webinterface should be reachable on port “8080″.
+
+The following config files (/etc/fhoss) may be of interest:
+
+DiameterPeerHSS.xml: The Diameter Interconnects and listening IP definition
+hss.properties: The listening IP definition for the Web-Interface
+hibernate.properties: The database interconnection for the HSS
+conf/tomcat-users.xml: Usernames and Passwords for the Web-User (default Username is: “hssAdmin” and password “hss”)
+Note: You will need to restart the FHoSS (“/etc/init.d/openimscore-fhoss restart”) in order to apply changes.
