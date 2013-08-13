@@ -57,11 +57,13 @@
 
   * new parametes:
     * per module debug level
-    * log_assign. It enables the log of every single assign action on config
+    * log_assign. Enables the log of every single assign action on config
+    * reset_msgid. Enables the ability to reset the msgid ( $mi ) through the RPC command.
   * new functions:
     * dbg_pv_dump. It dumps in json format the pv_cache content.
   * new RPC commands:
     * options to enable/disable per module log level as well as set per module log level at runtime.
+    * dbg.reset_msg: resets the msgid ( $mi ).
 ==== htable ====
 
   * new htable.sets and htable.seti RPC commands
