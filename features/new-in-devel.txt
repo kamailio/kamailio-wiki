@@ -47,6 +47,9 @@
 ===== New in Old Modules =====
 
 
+==== avpops ====
+  * avp_check re operation can now use a pseudo variable as second parameter.
+
 ==== cfgutils ====
 
   * new functions
