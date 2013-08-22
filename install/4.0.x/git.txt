@@ -92,6 +92,7 @@ If you want to install everything in one directory (so you can delete all instal
 make PREFIX="/usr/local/kamailio-4.0" include_modules="db_mysql" cfg
 </code>
 
+If you set this PREFIX you have to change most of the paths below from '/usr/local/...' to '/usr/local/kamailio-4.0/...'. 
 
 More hints about Makefile system at: 
   * http://sip-router.org/wiki/tutorials/makefile-system
