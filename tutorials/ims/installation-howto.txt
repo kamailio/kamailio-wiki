@@ -97,19 +97,20 @@ And voila: Your component is running!
 
 Note: You will need to add the “non-free” packages to your repository:
 
-deb http://ftp.de.debian.org/debian lenny main non-free
-deb http://security.debian.org/ lenny/updates main non-free
+  deb http://ftp.de.debian.org/debian lenny main non-free
+  deb http://security.debian.org/ lenny/updates main non-free
 
 Install the FHoSS from our repository:
 
-apt-get install openimscore-fhoss
+  apt-get install openimscore-fhoss
 
 Create the data in the database:
 
-mysql -uroot -p < /etc/fhoss/sql_files/hssdb.sql
+  mysql -uroot -p < /etc/fhoss/sql_files/hssdb.sql
 
 Add some sample data, if you like:
-mysql -uroot -p < /etc/fhoss/sql_files/userdata.sql
+
+  mysql -uroot -p < /etc/fhoss/sql_files/userdata.sql
 
 The Webinterface should be reachable on port “8080″.
 
