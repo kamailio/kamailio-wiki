@@ -82,18 +82,17 @@ Finally, you should edit the "/etc/default/kamailio"-File, in order to run the c
 
 Now the Component should be able to start:
 
-pcscf:/# /etc/init.d/kamailio start
-Starting kamailio: kamailioloading modules under /usr/lib/kamailio/modules:/usr/lib/kamailio/modules_s:/usr/lib/kamailio/modules_k
-Listening on
+  pcscf:/# /etc/init.d/kamailio start
+  Starting kamailio: kamailioloading modules under /usr/lib/kamailio/modules:/usr/lib/kamailio/modules_s:/usr/lib/kamailio/modules_k
+  Listening on
            udp: 109.239.50.67:5060
            tcp: 109.239.50.67:5060
-Aliases:
+  Aliases:
            tcp: pcscf:5060
            udp: pcscf:5060
            *: pcscf.ng-voice.com:5060
            *
 And voila: Your component is running!
-
 ===== Installation of the FHoSS =====
 
 Note: You will need to add the “non-free” packages to your repository:
