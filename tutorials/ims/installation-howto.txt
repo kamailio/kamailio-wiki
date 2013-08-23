@@ -45,6 +45,8 @@ Then add the repository to your "/etc/apt/sources.list":
 
   echo "deb http://repository.ng-voice.com squeeze ims rtpproxy" >> /etc/apt/sources.list
 
+(replace squeeze with wheezy for Debian7).
+
 And update the available packets:
 
  apt-get update
