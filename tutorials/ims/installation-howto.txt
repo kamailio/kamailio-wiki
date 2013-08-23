@@ -51,20 +51,32 @@ And update the available packets:
 
  apt-get update
 
-===== Proxy-CSCF =====
+===== Installation of Proxy-/Interrogating-/Serving-CSCF Binary packages =====
 
 Install the modules:
 
   apt-get install kamailio kamailio-ims-modules kamailio-presence-modules kamailio-sqlite-modules kamailio-tls-modules kamailio-xml-modules kamailio-xmlrpc-modules
 
-If you want to have an RTP-Proxy/RTP-Relay, 
+If you want to have an RTP-Proxy/RTP-Relay, you find the "mediaproxy-ng" from sipwise in that repository as well,
 
+
+  apt-get install ngcp-mediaproxy-ng
+  
 For I-CSCF you will also need a database structure:
 
 mysql -uroot -p < icscf.sql
 (on the database server)
 
-Copy the required config to kamailio.cfg (e.g. pcscf.cfg), adapt the config to your needs (change "ng-voice.com" and the IP to your domain/IP, please remember also the escaped versions of the domain and the IP, e.g. "pcscf\.ng-voice\.com). For components with Diameter-Interface (e.g. I-/S-CSCF) you will need to modify the according XML-files, e.g. "pcscf.xml").
+===== Configuration of the network entities =====
+
+You find the according configs in the examples folder of Kamailio (Trunk). For the Proxy-CSCF, use the configurations in examples/pcscf, for the Interrogating-CSCF in examples/icscf/, for the Serving-CSCF in examples/scscf/.
+
+The configuration for each server consists of minimum two files:
+  * kamailio.cfg - the main configuration-file (general for each entity)
+  * pcscf.cfg / icscf.cfg / scscf.cfg - inidividual configurations for the P-/I-/S-CSCF (everything, that's individual per server)
+  * pcscf.xml / icscf.xml / scscf.xml - Diameter configurations
+
+Copy the required config files to your /etc/kamailio/-folder, adapt the config in the pcscf.cfg/pcscf.xml to your needs (change "ng-voice.com" and the IP to your domain/IP, please remember also the escaped versions of the domain and the IP, e.g. "pcscf\.ng-voice\.com). For components with Diameter-Interface (e.g. I-/S-CSCF) you will need to modify the according XML-files, e.g. "pcscf.xml").
 
 Finally, you should edit the "/etc/default/kamailio"-File, in order to run the component.
 
@@ -79,29 +91,33 @@ Aliases:
            tcp: pcscf:5060
            udp: pcscf:5060
            *: pcscf.ng-voice.com:5060
+           *
 And voila: Your component is running!
 
-Installation of the FHoSS
+===== Installation of the FHoSS =====
 
 Note: You will need to add the “non-free” packages to your repository:
 
 deb http://ftp.de.debian.org/debian lenny main non-free
 deb http://security.debian.org/ lenny/updates main non-free
+
 Install the FHoSS from our repository:
 
 apt-get install openimscore-fhoss
+
 Create the data in the database:
 
 mysql -uroot -p < /etc/fhoss/sql_files/hssdb.sql
-Add some sample data, if you like:
 
+Add some sample data, if you like:
 mysql -uroot -p < /etc/fhoss/sql_files/userdata.sql
+
 The Webinterface should be reachable on port “8080″.
 
 The following config files (/etc/fhoss) may be of interest:
 
-DiameterPeerHSS.xml: The Diameter Interconnects and listening IP definition
-hss.properties: The listening IP definition for the Web-Interface
-hibernate.properties: The database interconnection for the HSS
-conf/tomcat-users.xml: Usernames and Passwords for the Web-User (default Username is: “hssAdmin” and password “hss”)
-Note: You will need to restart the FHoSS (“/etc/init.d/openimscore-fhoss restart”) in order to apply changes.
+  * DiameterPeerHSS.xml: The Diameter Interconnects and listening IP definition
+  * hss.properties: The listening IP definition for the Web-Interface
+  * hibernate.properties: The database interconnection for the HSS
+  * conf/tomcat-users.xml: Usernames and Passwords for the Web-User (default Username is: “hssAdmin” and password “hss”)
+  * Note: You will need to restart the FHoSS (“/etc/init.d/openimscore-fhoss restart”) in order to apply changes.
