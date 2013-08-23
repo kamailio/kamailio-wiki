@@ -1,6 +1,6 @@
 **Note: This document is work in progress and yet unfinished!**
 
-This is a short installation howto for Debian Squeeze (old-stable). It should work as well with current stable, but that has not yet been tested.
+This is a short installation howto for Debian Squeeze and Wheezy (stable and oldstable). 
 
 This installation howto has been derived from here: http://uctimsclient.berlios.de/openimscore_on_ubuntu_howto.html
 
@@ -20,10 +20,12 @@ If you are running the DNS on your own machine then edit the file /etc/dhcp3/dhc
 
 Copy the open-ims-DNS file to the bind folder and add these lines to /etc/bind/named.conf.local:
 
-  zone "open-ims.test" {
+  zone "kamailio-ims.org" {
               type master;
-              file "/etc/bind/open-ims.dnszone";
+              file "/etc/bind/kamailio-ims.org.dnszone";
   };
+  
+**You can find a very basic dnszone-file in "examples/ims_dnszone"-folder of the Kamailio repository**  
   
 //You will need to restart bind for these changes to take effect.//
 
@@ -31,7 +33,7 @@ Copy the open-ims-DNS file to the bind folder and add these lines to /etc/bind/n
   
 Check that this all works. Try a ping and see if you get a response:
 
-  ping pcscf.open-ims.test
+  ping pcscf.kamailio-ims.org
 
 ====== Installation of the Kamailio-IMS-Packages ======
 
