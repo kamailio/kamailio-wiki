@@ -93,7 +93,7 @@ Now the Component should be able to start:
            *: pcscf.ng-voice.com:5060
            *
 And voila: Your component is running!
-===== Installation of the FHoSS =====
+==== Installation of the FHoSS ====
 
 The Fraunhofer HSS (FHoSS) requires the original Java from Oracle/Sun. Using OpenJDK won't work.
 
