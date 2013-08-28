@@ -30,6 +30,11 @@
   * DNSSEC implementation
   * http://kamailio.org/docs/modules/devel/modules/dnssec.html
 
+==== rtpproxy-ng ====
+
+  * ng control protocol for RTP relay applications (e.g., useful for NAT traversal)
+  * supports encoding/decoding WebRTC/SRTP to bare RTP (when using with mediaproxy-ng from sipwise)
+  * http://kamailio.org/docs/modules/devel/modules/rtpproxy-ng.html
 ==== sctp ====
 
   * SCTP transport layer
