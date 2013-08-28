@@ -110,7 +110,7 @@ Oracle Java is no longer available in the official repository. However, there ar
 
 * http://www.webupd8.org/2012/06/how-to-install-oracle-java-7-in-debian.html
 
-==== Install the FHoSS ====
+=== Install the FHoSS ===
 
 Install the FHoSS from our repository:
 
