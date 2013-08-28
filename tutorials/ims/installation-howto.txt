@@ -97,7 +97,7 @@ And voila: Your component is running!
 
 The Fraunhofer HSS (FHoSS) requires the original Java from Oracle/Sun. Using OpenJDK won't work.
 
-==== Install Sun Java (on Lenny) ====
+===== Install Sun Java (on Lenny) =====
 
 Note: You will need to add the “non-free” packages to your repository:
 
