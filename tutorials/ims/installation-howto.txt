@@ -58,7 +58,7 @@ Install the modules:
 
   apt-get install kamailio kamailio-ims-modules kamailio-presence-modules kamailio-sqlite-modules kamailio-tls-modules kamailio-xml-modules kamailio-xmlrpc-modules
 
-If you want to have an RTP-Proxy/RTP-Relay, you find the "mediaproxy-ng" from sipwise in that repository as well,
+If you want to have an RTP-Proxy/RTP-Relay, you find the "mediaproxy-ng" from [[:www.sipwise.com|Sipwise]] in that repository as well,
 
 
   apt-get install ngcp-mediaproxy-ng
