@@ -65,9 +65,8 @@ If you want to have an RTP-Proxy/RTP-Relay, you find the "mediaproxy-ng" from [[
   
 For I-CSCF you will also need a database structure:
 
-mysql -uroot -p < icscf.sql
+  mysql -uroot -p < icscf.sql
 (on the database server)
-
 ===== Configuration of the network entities =====
 
 You find the according configs in the examples folder of Kamailio (Trunk). For the Proxy-CSCF, use the configurations in examples/pcscf, for the Interrogating-CSCF in examples/icscf/, for the Serving-CSCF in examples/scscf/.
