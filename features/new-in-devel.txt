@@ -119,3 +119,7 @@
 ==== kamctl ====
 
   * added parameters to add the contact path: ''kamctl ul add <user> <uri> <expires> <path>''
+
+==== kamdbctl ====
+
+  * new command 'add-tables <gid>' to create only specific table grouped under same <gid> name
