@@ -104,13 +104,13 @@ Note: You will need to add the “non-free” packages to your repository:
   deb http://ftp.de.debian.org/debian lenny main non-free
   deb http://security.debian.org/ lenny/updates main non-free
 
-==== Install Oracle Java (on Squeeze) ====
+===== Install Oracle Java (on Squeeze) =====
 
 Oracle Java is no longer available in the official repository. However, there are several ways to install Oracle Java, here is one possible way:
 
 * http://www.webupd8.org/2012/06/how-to-install-oracle-java-7-in-debian.html
 
-=== Install the FHoSS ===
+===== Install the FHoSS-Packages =====
 
 Install the FHoSS from our repository:
 
