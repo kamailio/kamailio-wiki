@@ -24,6 +24,7 @@ People adding notes in the agenda using abbreviations:
 
   * dcm - Daniel-Constantin Mierla
   * pd - Peter Dunkley
+  * vseva - Victor Seva
 
 ===== Agenda =====
 
