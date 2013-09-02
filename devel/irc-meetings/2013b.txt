@@ -36,3 +36,5 @@ Kamailio related:
   * (pd + others) github clone
     * benefits
     * administration
+  * (vseva) status to deal with OpenSSL and GPL incompatibility
+    * https://people.gnome.org/~markmc/openssl-and-the-gpl.html  
