@@ -40,3 +40,6 @@ Kamailio related:
     * https://people.gnome.org/~markmc/openssl-and-the-gpl.html
   * ongoing work
     * xcap-diff - purpose and testing
+  * dialog modules
+    * dialog vs dialog_ng - what's the state of the second module
+    * cleaning matching modes in dialog modle
