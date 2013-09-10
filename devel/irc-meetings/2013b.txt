@@ -37,4 +37,6 @@ Kamailio related:
     * benefits
     * administration
   * (vseva) status dealing with OpenSSL and GPL incompatibility
-    * https://people.gnome.org/~markmc/openssl-and-the-gpl.html  
+    * https://people.gnome.org/~markmc/openssl-and-the-gpl.html
+  * ongoing work
+    * xcap-diff - purpose and testing
