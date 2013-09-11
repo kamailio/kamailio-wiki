@@ -144,9 +144,16 @@ To be able to use the binaries from command line, make sure that '/usr/local/sbi
 
 Kamailio (OpenSER) modules are installed in:
 
+**32-Bit**
 <code>
   /usr/local/lib/kamailio/modules/
   /usr/local/lib/kamailio/modules_k/
+</code>
+
+**64-Bit**
+<code>
+  /usr/local/lib64/kamailio/modules/
+  /usr/local/lib64/kamailio/modules_k/
 </code>
 
 Replace **.../lib/...** with **../lib64/...** in most of 64b architectures.
