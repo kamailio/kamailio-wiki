@@ -42,4 +42,8 @@ Kamailio related:
     * xcap-diff - purpose and testing
   * dialog modules
     * dialog vs dialog_ng - what's the state of the second module
-    * cleaning matching modes in dialog modle
+    * cleaning matching modes in dialog module
+  * (dcm) administration
+    * Kamailio World 2014
+    * world wide events
+    * admin+tech action groups for releases and maintenance
