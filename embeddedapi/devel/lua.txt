@@ -311,7 +311,7 @@ xavp management functions.
 
 ==== sr.xavp.get_keys ====
 
-returns a array table with the key names of the xavp variable.
+returns an array table with the key names of the xavp variable.
 
 Prototype
 
