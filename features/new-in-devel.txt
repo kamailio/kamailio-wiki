@@ -30,6 +30,11 @@
   * DNSSEC implementation
   * http://kamailio.org/docs/modules/devel/modules/dnssec.html
 
+==== gzcompress ====
+
+  * compress/decompress body using zlib controlled via SIP header
+  * http://kamailio.org/docs/modules/devel/modules/gzcompress.html
+
 ==== rtpproxy-ng ====
 
   * ng control protocol for RTP relay applications (e.g., useful for NAT traversal)
