@@ -697,13 +697,17 @@ Example of usage:
 
   group="siprouter"
 
-==== http_reply_hack ====
+==== http_reply_parse ====
 
-When enabled Kamailio can parse HTTP replies but does so by treating them as SIP replies (this is the hack).  When not enabled HTTP replies cannot be parsed.  This was previously a compile-time option, now it is run-time.  Defaults to no.
+Alias: http_reply_hack
+
+When enabled, Kamailio can parse HTTP replies, but does so by treating them as SIP replies.  When not enabled HTTP replies cannot be parsed. This was previously a compile-time option, now it is run-time.
+
+Default value is 'no'.
 
 Example of usage:
 
-  http_reply_hack=yes
+  http_reply_parse=yes
 
 ==== latency_limit_action ====
 
