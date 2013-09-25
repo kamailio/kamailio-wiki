@@ -308,7 +308,7 @@ The name of the transformation starts with 'param.'. The PV value is considered 
 Available transformations in this class:
 
 
-==== {param.value,name} ====
+==== {param.value,name[, delimiter]} ====
 
 Return the value of parameter 'name'
 
@@ -319,7 +319,9 @@ Example:
 
 'name' can be a pseudo-variable
 
-==== {param.valueat,index} ====
+'delimiter' allows you to specify a single character to use as the parameter delimiter. For example, when parsing HTTP URL query strings use '&'.
+
+==== {param.valueat,index[, delimiter]} ====
 
 Return the value of parameter at position give by 'index' (0-based index)
 
@@ -330,7 +332,9 @@ Example:
 
 'index' can be a pseudo-variable
 
-==== {param.name,index} ====
+'delimiter' allows you to specify a single character to use as the parameter delimiter. For example, when parsing HTTP URL query strings use '&'.
+
+==== {param.name,index[, delimiter]} ====
 
 Return the name of parameter at position 'index'.
 
@@ -339,8 +343,9 @@ Example:
 "a=1;b=2;c=3"{param.name,1} = "b"
 </code>
 
+'delimiter' allows you to specify a single character to use as the parameter delimiter. For example, when parsing HTTP URL query strings use '&'.
 
-==== {param.count} ====
+==== {param.count[, delimiter]} ====
 
 Return the number of parameters in the list.
 
@@ -348,6 +353,8 @@ Example:
 <code>
 "a=1;b=2;c=3"{param.count} = 3
 </code>
+
+'delimiter' allows you to specify a single character to use as the parameter delimiter. For example, when parsing HTTP URL query strings use '&'.
 
 ===== Name-address Transformations =====
 
@@ -567,3 +574,30 @@ if(is_method("REGISTER") && is_present_hf("Expires") && $(hdr(Expires){s.int})==
     xlog("This is an un-registration\n");
 </code>
 
+===== HTTP URL Transformations =====
+
+<fc #0000ff>This transformation class is exported by **xhttp** module.</fc>
+
+==== {url.path} ====
+
+Path part of an HTTP URL.
+
+For example,
+<code>
+# When the first line of HTTP request is
+# "GET /path/to/file/?this=is&the=querystring"
+
+$(hu{url.path}) => "/path/to/file/"
+</code>
+
+==== {url.querystring} ====
+
+Query string part of an HTTP URL.
+For example,
+
+<code>
+# When the first line of HTTP request is
+# "GET /path/to/file/?this=is&the=querystring"
+
+$(hu{url.querystring}) => "this=is&the=querystring"
+</code>
