@@ -22,3 +22,4 @@ Access type:
   * [[devel:irc-meetings:2012b|2012 - Second Meeting - Thursday, November 22, 15:00UTC]]
   * [[devel:irc-meetings:2013a|2013 - First Meeting - Thursday, May 16, 14:00UTC]]
   * [[devel:irc-meetings:2013b|2013 - Second Meeting - Thursday, September 12, 14:00UTC]]
+  * [[devel:irc-meetings:2013blog|2013 - Second Meeting Log - Thursday, September 12, 14:00UTC]]
