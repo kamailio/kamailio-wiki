@@ -1265,9 +1265,20 @@ Returns the value of the Nature of Address Indicator of the Calling Party for th
 ==== $sipt_called_party_nai ====
 Returns the value of the Nature of Address Indicator of the Called Party for the IAM message. Returns -1 if there is a parsing error.
 
+===== $cfg(key) - Config File Attributes =====
 
+Attributes related to configuration file.
 
+The key can be:
 
+* line - return current line in config
+* name - return the name of current config file
+
+Example:
+
+<code c>
+send_reply("404", "Not found at line $cfg(line)");
+</code>
 ===== $dns(pvid=>key) - DNS Query Result =====
 
 This variable stores the DNS result details after a call of dns_query(hostname, pvid) function from ipops module.
