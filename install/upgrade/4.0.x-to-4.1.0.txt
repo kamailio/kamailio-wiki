@@ -1,0 +1,31 @@
+====== Upgrade Kamailio from v4.0.x to v4.1.0 ======
+
+The page contains the details about the changes that were made to old components during the development of v4.1.0 compared with what existed in v4.0.x. It does not include the brand new modules, focusing on how to upgrade database and configuration file from v4.0.x to run with Kamailio devel.
+
+===== Previous Stable Release =====
+
+If you look for the guidelines to upgrade to previous stable release, see:
+
+  * [[install:upgrade:3.3.x-to-4.0.0|Upgrade Kamailio v3.3.x to v4.0.0]].
+
+===== Modules =====
+
+These sections presents notes, listed by modules, about changes that need to be made to Kamailio configuration file when upgrading from Kamailio v4.0.x to devel.
+
+==== TBA ====
+
+  * short description
+
+
+===== Database =====
+
+==== MySQL - Updates to old database tables ====
+
+Next are the SQL statements that must be executed to get the database structure required by modules that existed in v4.0.x.
+
+<code sql>
+TBA
+</code>
+
+===== Configuration File Language =====
+
