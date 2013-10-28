@@ -157,7 +157,7 @@ $(branch(uri)[2]) = "sip:test@kamailio.org;transport=sctp";
 
 ==== $cs - CSeq ====
 
-**$cs** - reference to the sequence number in the cseq header. The method in the CSeq header is identical to the request method, thus use $rm to get the methode (works also for responses).
+**$cs** - reference to the sequence number in the cseq header. The method in the CSeq header is identical to the request method, thus use $rm to get the method (works also for responses).
 
 ==== $ct - Contact header ====
 
