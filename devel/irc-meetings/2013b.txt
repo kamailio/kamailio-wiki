@@ -47,3 +47,7 @@ Kamailio related:
     * Kamailio World 2014
     * world wide events
     * admin+tech action groups for releases and maintenance
+
+===== Minutes =====
+
+  * [[devel:irc-meetings:2013blog|2013 - Second Meeting Chat Log - Thursday, September 12, 14:00UTC]]
