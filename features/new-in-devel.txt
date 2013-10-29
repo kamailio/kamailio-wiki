@@ -35,6 +35,10 @@
   * compress/decompress body using zlib controlled via SIP header
   * http://kamailio.org/docs/modules/devel/modules/gzcompress.html
 
+==== mohqueue ====
+
+  * music on hold queue
+  * http://kamailio.org/docs/modules/devel/modules/mohqueue.html
 ==== rtpproxy-ng ====
 
   * ng control protocol for RTP relay applications (e.g., useful for NAT traversal)
