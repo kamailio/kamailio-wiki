@@ -126,3 +126,6 @@ ALTER TABLE xcap ENGINE=InnoDB DEFAULT CHARSET=latin1; # was ENGINE=MyISAM DEFAU
 </code>
 ===== Configuration File Language =====
 
+==== Core Parameters ====
+
+* syn_branch has been removed - core acts now always as syn_branch=0 - the Via header branch value is computed based on transaction attributes
