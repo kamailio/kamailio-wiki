@@ -86,6 +86,7 @@
 ==== htable ====
 
   * new htable.sets and htable.seti RPC commands
+  * cross-server replication via DMQ module integration
 
 ==== snmpstats ====
 
