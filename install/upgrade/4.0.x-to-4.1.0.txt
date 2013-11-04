@@ -27,6 +27,8 @@ Next are the SQL statements that must be executed to get the database structure 
 ALTER TABLE dbaliases DROP INDEX alias_idx; # was UNIQUE (alias_username,alias_domain)
 ALTER TABLE dbaliases ADD INDEX alias_idx (alias_username,alias_domain);
 ALTER TABLE dbaliases ADD INDEX alias_user_idx (alias_username);
+
+INSERT INTO version (table_name, table_version) values ('acc_cdrs','1');
 CREATE TABLE acc_cdrs (
   id int(10) unsigned NOT NULL AUTO_INCREMENT,
   start_time varchar(32) NOT NULL DEFAULT '',
@@ -36,6 +38,7 @@ CREATE TABLE acc_cdrs (
   KEY start_time_idx (start_time)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+INSERT INTO version (table_name, table_version) values ('mohqcalls','1');
 CREATE TABLE mohqcalls (
   id int(10) unsigned NOT NULL AUTO_INCREMENT,
   mohq_id int(10) unsigned NOT NULL,
@@ -48,6 +51,7 @@ CREATE TABLE mohqcalls (
   UNIQUE KEY mohqcalls_idx (call_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+INSERT INTO version (table_name, table_version) values ('mohqueues','1');
 CREATE TABLE mohqueues (
   id int(10) unsigned NOT NULL AUTO_INCREMENT,
   name varchar(25) NOT NULL,
