@@ -132,6 +132,7 @@
 ==== kamctl ====
 
   * added parameters to add the contact path: ''kamctl ul add <user> <uri> <expires> <path>''
+  * command for dialog module management
 
 ==== kamdbctl ====
 
