@@ -315,7 +315,7 @@ Notification about GIT commits are sent to the mailing list: **sr-dev@lists.sip-
 
 <code>
 Module: sip-router
-Branch: master
+Branch: 4.1
 </code>
 
 then an update has been made to Kamailio devel version and it will be available to the public GIT in no time.
