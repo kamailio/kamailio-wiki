@@ -46,7 +46,7 @@ First of all, you have to create a directory on the file system where the source
 Download the sources from GIT using the following commands.
 
 <code>
-  git clone --depth 1 --no-single-branch git://git.sip-router.org/sip-router kamailio
+  git clone --depth 1 --no-single-branch git://git.sip-router.org/kamailio kamailio
   cd kamailio
 </code>
 
@@ -141,7 +141,6 @@ Kamailio (OpenSER) modules are installed in:
 
 <code>
   /usr/local/lib/kamailio/modules/
-  /usr/local/lib/kamailio/modules_k/
 </code>
 Note: On 64 bit systems, /usr/local/lib64 may be used.
 
