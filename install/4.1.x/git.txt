@@ -9,7 +9,7 @@ This is a step by step tutorial about how to install and maintain Kamailio SIP S
 
 <color blue>//This document focuses on Kamailio v4.1.x with MySQL support, using a Debian unstable system.//</color>
 
-The first version in release series 4.1 is 4.1.0, 4.0.x refers to the most recent version released at some point in time that starts with 4.0.
+The first version in release series 4.1 is 4.1.0, 4.1.x refers to the most recent version released at some point in time that starts with 4.1.
 
 Note that Kamailio provides APT repositories for several Debian/Ubuntu releases, you can use them to do the install from .deb packages, see:
   * http://www.kamailio.org/wiki/packages/debs
