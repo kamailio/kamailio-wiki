@@ -225,6 +225,7 @@
   * added additional unregister() exported function to allow the removal of a specific contact - contact is removed by using the ruid (unique ID for the location record)
   * set_q_override API function - override the value of the q parameter from the Contact header in subsequent calls to the save() function for the current request
   * regid_mode parameter - control if REGISTER contact regid (if present) is used when REGISTER request is saved even if request does not indicate support for outbound
+  * option to take the socket from an xavp - child named "socket" of xavp named by xavp_cfg parameter
 
 ==== rr ====
 
