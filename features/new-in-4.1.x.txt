@@ -158,6 +158,11 @@
     * ul.flush
     * ul.add
   * ul.add RPC and ul_add MI commands modified to be able to set the contact path
+  * new option for db_mode - DB_READONLY (4)
+    * location records are loaded only at startup
+    * no write back to database, not even at shutdown
+    * useful when registrations are replicated to another node that does the db storage at runtime
+
 
 
 ===== New in Core =====
