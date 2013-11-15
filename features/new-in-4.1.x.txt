@@ -35,6 +35,11 @@
   * compress/decompress body using zlib controlled via SIP header
   * http://kamailio.org/docs/modules/devel/modules/gzcompress.html
 
+==== ims_charging ====
+
+
+  * IMS charging module
+  * http://kamailio.org/docs/modules/devel/modules/ims_charging.html
 ==== mohqueue ====
 
   * music on hold queue
