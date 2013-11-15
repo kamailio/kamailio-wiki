@@ -201,6 +201,8 @@
       * and enabled with the function: t_on_branch_failure("myroute")
   * asynchronous processing of SIP responses in configuration file
   * use angle brackets around From/To URI for local generated requests
+  * new parameter - failure_exec_mode
+    * specify whether to consider or not execution of failure routing blocks for branches that had local delivery error (e.g., no open tcp connection and set_forward_no_connect() used in config)
 
 ==== tmx ====
 
