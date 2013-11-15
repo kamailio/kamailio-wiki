@@ -111,6 +111,10 @@
 ==== memcached ====
 
   * use the newer libmemcached library
+
+==== mtree ====
+
+  * mtree.reload rpc command
 ==== nathelper ====
 
   * new option - natping_disable_bflag can be set on a per-registration basis to disable NAT pings completely
