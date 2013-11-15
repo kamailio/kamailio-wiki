@@ -63,7 +63,9 @@
 
 ==== app_lua ====
 
-  * add app_lua.list and app_lua.reload rpc commands
+  * app_lua.list and app_lua.reload rpc commands
+  * added sr.xavp.get_keys function
+  * added sr.xavp.get function - get a table with all the values of a xavp
 
 ==== avpops ====
   * avp_check re operation can now use a pseudo variable as second parameter.
