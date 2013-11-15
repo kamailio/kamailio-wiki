@@ -173,8 +173,9 @@
 ==== sdpops ====
 
   * new functions:
-    * sdp_with_transport(string). Checks if is a media with the transport string.
-    * sdp_remove_transport(string). Removes the media info from the SDP that matches string transport.
+    * sdp_with_transport(string) - hecks if is a media with the transport string.
+    * sdp_remove_transport(string) - emoves the media info from the SDP that matches string transport.
+    * sdp_get_line_startswith(avpvar, string)
 
 ==== sipcapture ====
 
