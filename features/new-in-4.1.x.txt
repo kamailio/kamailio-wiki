@@ -275,6 +275,7 @@
 
   * added parameters to add the contact path: ''kamctl ul add <user> <uri> <expires> <path>''
   * command for dialog module management
+  * added show command to display user attributes in subscriber table
 
 ==== kamdbctl ====
 
