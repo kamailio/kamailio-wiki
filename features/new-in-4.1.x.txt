@@ -157,6 +157,7 @@
 ==== sipcapture ====
 
   * table param for sip_capture() function
+  * allow customization for X-CID header
 ==== siputils ====
 
   * new functions:
