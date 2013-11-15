@@ -296,6 +296,10 @@
   * added two new rpc commands ul.db_users and ul.db_contacts - for accessing number of different AoRs and contacts in a location table
   * new command ul.db_expired_contacts tells number of expired contacts
 
+==== utils ====
+
+  * support for sending POST-Requests to http_query() method
+
 ==== websocket ====
 
   * added "cors_mode" parameter to enable "Cross-origin resource sharing" on WebSocket handshakes
