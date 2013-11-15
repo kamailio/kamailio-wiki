@@ -355,6 +355,10 @@
     kamctl db nmatch subscriber id 123
 </code>
 
+  * new command add-tables
+    * creates only tables that are groupped under same id, thus have the sql script in a file
+    * syntax: kamdbctl add-tables <gid>
+    * there has to be a <gid>-create.sql script, eg: kamdbctl add-tables lcr
 
 ==== kamdbctl ====
 
