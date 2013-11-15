@@ -111,7 +111,7 @@
   * cross-server replication via DMQ module integration
   * two new functions to lock htable slots based on item name
     * sht_lock("htable=>key") and sht_unlock("htable=>key")
-    * useful to update existing items without aditional locks
+    * useful to update existing items without additional locks
 
 ==== memcached ====
 
