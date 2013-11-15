@@ -280,6 +280,11 @@
   * added parameters to add the contact path: ''kamctl ul add <user> <uri> <expires> <path>''
   * command for dialog module management
   * added show command to display user attributes in subscriber table
+  * new commands can be defined in separate files
+    * write new kamctl commands either in CFGDIR/kamctl.newcmd.ext or ~/.kamctl/kamctl.newcmd.ext
+    * 'newcmd' has to be replaced with the name of the command
+    * the file must include cmd_newcmd() function which is executed with the parameters after the command name
+
 
 ==== kamdbctl ====
 
