@@ -257,6 +257,10 @@
   * SCTP support implementation from core was moved as a module. No need to recompile everything to get SCTP support, just load sctp module 
   * STUN implementation from core was moved as a module
 
+==== Makefile ====
+
+  * added install-initd-centos target - install centos specific init.d scripts
+
 
 ===== Tools =====
 
