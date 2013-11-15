@@ -271,6 +271,8 @@
     * $uac_req(apasswd) - specify the authentication password
     * if both attributes above are set and the request is challenged with 401/407, then the request is resent with auth header
   * ability to set Call-Id through $uac_req(callid)
+  * $uac_req(sock) - new attribute to set local send socket for generated requests
+    * $uac_req(sock) = "udp:127.0.0.1:5060";
 
 ==== usrloc ====
 
