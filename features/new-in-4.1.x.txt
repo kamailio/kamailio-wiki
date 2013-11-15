@@ -38,7 +38,7 @@
 ==== ims_charging ====
 
 
-  * IMS charging module
+  * IMS charging module for Diameter-Ro-Operations
   * http://kamailio.org/docs/modules/devel/modules/ims_charging.html
 ==== mohqueue ====
 
