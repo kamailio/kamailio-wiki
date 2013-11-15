@@ -72,6 +72,10 @@
     * route_if_exists() calls a routing block only if it exists in the configuration script
     * check_route_exists() checks if a routing block exists in the script.
 
+==== db_mysql ====
+
+  * new module parameter - insert_delayed - if set to 1, then all INSERT API queries will be converted in INSERT DELAYED (only DB API insert, not for raw queries)
+
 ==== db_postgres ====
 
   * handle prepare statements in DB APIv2
