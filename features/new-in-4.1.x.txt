@@ -76,6 +76,8 @@
     * time_attr value can be set via parameter with same name - it represents syslog value or db table column
     * for db accounting, when time_mode==1, the type of column has to be int, and for time_mode==2, the type of column has to be double
     * features implemented only for syslog and db accounting
+    * new parameter acc_time_format - specify the format to print time as string for acc_time_mode=3 (using localtime) and acc_time_mode=4 (using gmtime)
+      * default value is "%Y-%m-%d %H:%M:%S"
   * option to write dialog-based cdrs to database
     * new module parameter cdrs_table has to be set and classic db accounting enabled at compile time and db_url set
     * cdr_log_enable - new parameter to turn off writing cdrs to syslog, cdr_enable being now used as top level control flag for both cdrs to syslog or db
