@@ -197,6 +197,9 @@
   * the SNMPstats module has been extended with a large set of new data, and the KAMAILIO-MIB has been extended with new OIDs
   * the new data reflects the Kamailio server process (memory, configuration at compile time), network transports and modules.
 
+==== textopsx ====
+
+  * enable usage of msg_apply_changes() for sip replies
 ==== tm ====
 
   * new event route to be executed for each branch failure
