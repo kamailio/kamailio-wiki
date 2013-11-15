@@ -225,6 +225,7 @@
 
   * table param for sip_capture() function
   * allow customization for X-CID header
+  * added support for multiple capture modes
 ==== siputils ====
 
   * new functions:
