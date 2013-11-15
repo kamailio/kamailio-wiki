@@ -183,8 +183,8 @@
     * branch failure routes must be named with the format:
       * event_route[tm:branch-failure:myroute]
       * and enabled with the function: t_on_branch_failure("myroute")
-
   * asynchronous processing of SIP responses in configuration file
+  * use angle brackets around From/To URI for local generated requests
 
 ==== tmx ====
 
