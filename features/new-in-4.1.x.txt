@@ -247,6 +247,7 @@
     * example: if acc module is loaded, MOD_acc is defined in cfg
   * new parameters:
     * modinit_delay - specify microseconds to sleep after initializing a module in order to cope with systems having rate limits on new connections to db or other servers
+  * removed syn_branch functionality for calculating Via branch parameter
 
 
 ==== Components ====
