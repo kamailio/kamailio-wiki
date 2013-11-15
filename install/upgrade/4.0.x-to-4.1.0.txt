@@ -64,6 +64,15 @@ CREATE TABLE mohqueues (
   UNIQUE KEY mohqueue_name_idx (name)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+INSERT INTO version (table_name, table_version) values ('rtpproxy','1');
+CREATE TABLE rtpproxy (
+    id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    setid VARCHAR(32) DEFAULT 00 NOT NULL,
+    url VARCHAR(64) DEFAULT '' NOT NULL,
+    flags INT DEFAULT 0 NOT NULL,
+    weight INT DEFAULT 1 NOT NULL,
+    description VARCHAR(64) DEFAULT '' NOT NULL
+);
 </code>
 
 The default engine has been set to InnoDB. Not really necessary for most of the tables, but if you want to change it, use following statements:
