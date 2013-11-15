@@ -130,7 +130,7 @@
 
 ==== rtpproxy ====
 
-  * Add database support to rtpproxy
+  * database support to rtpproxy
     * if db_url modparam is set rtpproxy sets will be loaded from database
     * if the instance is marked as disabled in database it will be loaded as disabled
 
