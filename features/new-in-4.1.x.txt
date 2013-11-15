@@ -113,6 +113,9 @@
 
   * use the newer libmemcached library
 
+==== misc_radius ====
+
+  * new parameter - common_response - get the radius response specific attributes in avps
 ==== mtree ====
 
   * mtree.reload rpc command
