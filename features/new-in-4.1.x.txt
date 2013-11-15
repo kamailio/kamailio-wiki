@@ -102,7 +102,8 @@
 
 ==== dialog ====
 
-  * SDP can be passed to MI/RPC dlg_bridge
+  * SDP can be passed to MI/RPC dlg_bridge command
+  * added timer process to clean unconfirmed dialogs older than 5min
 ==== htable ====
 
   * new htable.sets and htable.seti RPC commands
