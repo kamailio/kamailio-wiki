@@ -88,6 +88,9 @@
   * new htable.sets and htable.seti RPC commands
   * cross-server replication via DMQ module integration
 
+==== registrar ====
+
+  * add Supported headers for outbound extensions
 ==== snmpstats ====
 
   * the SNMPstats module has been extended with a large set of new data, and the KAMAILIO-MIB has been extended with new OIDs
