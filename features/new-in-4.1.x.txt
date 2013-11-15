@@ -263,6 +263,11 @@
 
   * added install-initd-centos target - install centos specific init.d scripts
 
+==== kamailio.cfg ====
+
+  * use "co" flags for engaging rtpproxy
+  * route SUBSCRIBE for event message-summary to voicemail server
+  * reset $du for voicemail re-routing in failure route
 
 ===== Tools =====
 
