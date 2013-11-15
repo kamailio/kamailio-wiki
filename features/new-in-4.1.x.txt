@@ -355,10 +355,11 @@
     kamctl db nmatch subscriber id 123
 </code>
 
-  * new command add-tables
-    * creates only tables that are groupped under same id, thus have the sql script in a file
-    * syntax: kamdbctl add-tables <gid>
-    * there has to be a <gid>-create.sql script, eg: kamdbctl add-tables lcr
+  * added commands to set extra columns in subscriber table
+    * useful to deal with columns added for load_credentials of auth_db module
+      * 'sets' - sets a column with string value
+      * 'setn' - sets a column with numeric value
+
 
 ==== kamdbctl ====
 
