@@ -193,6 +193,7 @@
 ==== mtree ====
 
   * mtree.reload rpc command
+  *  added 'multi' param to mtree definition - new 'multi' param makes it possible to store both integer and string typed mtrees into single db table
 ==== nathelper ====
 
   * new option - natping_disable_bflag can be set on a per-registration basis to disable NAT pings completely
