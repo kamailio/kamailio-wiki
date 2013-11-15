@@ -61,7 +61,7 @@
 ===== New in Old Modules =====
 
 
-===== app_lua =====
+==== app_lua ====
 
   * add app_lua.list and app_lua.reload rpc commands
 
