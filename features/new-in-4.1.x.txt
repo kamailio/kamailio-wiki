@@ -88,6 +88,9 @@
   * new htable.sets and htable.seti RPC commands
   * cross-server replication via DMQ module integration
 
+==== nathelper ====
+
+  * new option - sipping_disable_bflag can be set on a per-registration basis to disable NAT pings completely
 ==== registrar ====
 
   * add Supported headers for outbound extensions
