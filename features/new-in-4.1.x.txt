@@ -193,6 +193,9 @@
 
   * new option - natping_disable_bflag can be set on a per-registration basis to disable NAT pings completely
   * removed natping_proceses limit
+  * set_contact_alias() new function for adding alias parameter to contact uri
+    * similar to add_contact_alias(), but this works like fix_nated_contact(), in the way that new contact uri is immediately visible to other modules (e.g., dialog, presence)
+
 
 
 ==== outbound ====
