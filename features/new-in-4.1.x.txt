@@ -104,6 +104,11 @@
 
   * SDP can be passed to MI/RPC dlg_bridge command
   * added timer process to clean unconfirmed dialogs older than 5min
+
+==== dispatcher ====
+
+  * new parameter to specify the pv where to store attrs for matched address in ds_is_from_list()
+    * attrs_pvname can be set to get attributes of matched address in config file
 ==== htable ====
 
   * new htable.sets and htable.seti RPC commands
