@@ -172,7 +172,7 @@
 
 ==== tm ====
 
-  * new event route to be executed for each branch failure - branch_failure_route
+  * new event route to be executed for each branch failure
   * asynchronous processing of SIP responses in configuration file
 
 ==== tmx ====
