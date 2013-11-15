@@ -72,6 +72,9 @@
     * route_if_exists() calls a routing block only if it exists in the configuration script
     * check_route_exists() checks if a routing block exists in the script.
 
+==== db_postgres ====
+
+  * handle prepare statements in DB APIv2
 ==== debugger ====
 
   * new parametes:
