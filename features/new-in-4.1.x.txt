@@ -212,7 +212,9 @@
   * new parameter db_obs_ruid - if set to 1, db update/delete operations are done using ruid value
     * if paramter set to 0 (default) the old style using aor, contact and call-id is done
 
+==== websocket ====
 
+  * added "cors_mode" parameter to enable "Cross-origin resource sharing" on WebSocket handshakes
 
 ===== New in Core =====
 
