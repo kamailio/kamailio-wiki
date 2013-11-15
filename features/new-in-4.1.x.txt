@@ -127,10 +127,6 @@
   * new functions:
     * is_supported(option) that can be used to check if request has a Supported header listing the given option.
 
-==== tm ====
-
-  * new event route to be executed for each branch failure
-  * asynchronous processing of SIP responses in configuration file
 
 ==== snmpstats ====
 
