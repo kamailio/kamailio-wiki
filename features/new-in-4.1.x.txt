@@ -232,7 +232,7 @@
     * useful when registrations are replicated to another node that does the db storage at runtime
   * new parameter db_obs_ruid - if set to 1, db update/delete operations are done using ruid value
     * if paramter set to 0 (default) the old style using aor, contact and call-id is done
-  * added two new rpc commands ul.users and ul.contacts - for accessing number of different AoRs and contacts in a location table
+  * added two new rpc commands ul.db_users and ul.db_contacts - for accessing number of different AoRs and contacts in a location table
 
 ==== websocket ====
 
