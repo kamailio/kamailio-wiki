@@ -115,10 +115,7 @@
 
   * private hold handling
 
-==== snmpstats ====
 
-  * the SNMPstats module has been extended with a large set of new data, and the KAMAILIO-MIB has been extended with new OIDs
-  * the new data reflects the Kamailio server process (memory, configuration at compile time), network transports and modules.
 
 ==== sdpops ====
 
