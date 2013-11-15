@@ -166,6 +166,9 @@
   * new event route to be executed for each branch failure - branch_failure_route
   * asynchronous processing of SIP responses in configuration file
 
+==== tmx ====
+
+  * $T_reply_ruid - pv to return ruid for a branch reply
 ==== usrloc ====
 
   * new RPC commands:
