@@ -118,6 +118,7 @@
   * two new functions to lock htable slots based on item name
     * sht_lock("htable=>key") and sht_unlock("htable=>key")
     * useful to update existing items without additional locks
+  * lifted then limit for max number of slots, previously being 2^31
 
 ==== ipops ====
 
