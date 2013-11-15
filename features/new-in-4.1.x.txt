@@ -111,6 +111,10 @@
   * RFC 5626 section 6 support - behaviour when outbound in use but first edge proxy does not support it
   * added additional unregister() exported function to allow the removal of a specific contact - contact is removed by using the ruid (unique ID for the location record)
   * set_q_override API function - override the value of the q parameter from the Contact header in subsequent calls to the save() function for the current request
+==== sca ====
+
+  * private hold handling
+
 ==== snmpstats ====
 
   * the SNMPstats module has been extended with a large set of new data, and the KAMAILIO-MIB has been extended with new OIDs
