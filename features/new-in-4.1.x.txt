@@ -142,6 +142,7 @@
 
   * RPC commands shvGet and shvSet to manipulate and list shared variables
   * new transformations - encode.base64 and decode.base64
+  * new $conid PV - returns the TCP connection ID that the current message arrived on (for TCP/TLS/WS/WSS) or $null (for UDP/SCTP)
 ==== registrar ====
 
   * add Supported headers for outbound extensions in replies
