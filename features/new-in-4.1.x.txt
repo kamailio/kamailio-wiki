@@ -187,6 +187,14 @@
 ==== tmx ====
 
   * $T_reply_ruid - pv to return ruid for a branch reply
+
+==== uac ====
+
+  * added possibility to authenticate generated requests
+    * $uac_req(auser) - specify the authentication username
+    * $uac_req(apasswd) - specify the authentication password
+    * if both attributes above are set and the request is challenged with 401/407, then the request is resent with auth header
+
 ==== usrloc ====
 
   * new RPC commands:
