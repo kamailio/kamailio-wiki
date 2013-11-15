@@ -119,6 +119,10 @@
     * sht_lock("htable=>key") and sht_unlock("htable=>key")
     * useful to update existing items without additional locks
 
+==== ipops ====
+
+  * dns_sys_match_ip(hostname, ipaddr) - do dns query for the hostname and compare the result to see if is a match with ipaddr
+  * dsn_int_match_ip(hostname, ipaddr) - function that uses the internal resolver to match a hostname with an ip (similar operation like 'scr_ip=="hostname"')
 ==== memcached ====
 
   * use the newer libmemcached library
