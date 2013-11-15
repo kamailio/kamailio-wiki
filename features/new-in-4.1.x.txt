@@ -179,6 +179,7 @@
 ===== New in Core =====
 
   * IPv6 compile time flag removed - it is not possible to compile Kamailio without IPv6 anymore, improving the code maintainability in the core and several modules
+  * set TOS for IPv6 sctp sockets
   * the syn_branch parameter has been removed from the core, as Kamailio was not fully standard compliant if this was activated.
   * auto-define cfg directive MOD_modname for each loaded module
     * example: if acc module is loaded, MOD_acc is defined in cfg
