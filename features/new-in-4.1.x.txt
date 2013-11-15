@@ -153,6 +153,10 @@
   * new functions:
     * sdp_with_transport(string). Checks if is a media with the transport string.
     * sdp_remove_transport(string). Removes the media info from the SDP that matches string transport.
+
+==== sipcapture ====
+
+  * table param for sip_capture() function
 ==== siputils ====
 
   * new functions:
