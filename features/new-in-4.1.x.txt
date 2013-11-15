@@ -336,6 +336,14 @@
     * write new kamctl commands either in CFGDIR/kamctl.newcmd.ext or ~/.kamctl/kamctl.newcmd.ext
     * 'newcmd' has to be replaced with the name of the command
     * the file must include cmd_newcmd() function which is executed with the parameters after the command name
+  * shortcut command to do q query to a database based on key and value
+    * kamctl db smatch table key value - return the record from table that has column key matching the value as string (quoted value)
+    * kamctl db nmatch table key value - return the record from table that has column key matching the value as non-quoted
+    * examples:
+<code>
+    kamctl db smatch subscriber username test
+    kamctl db nmatch subscriber id 123
+</code>
 
 
 ==== kamdbctl ====
