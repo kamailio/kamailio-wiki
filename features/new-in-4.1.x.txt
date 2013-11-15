@@ -144,6 +144,7 @@
   * RFC 5626 section 6 support - behaviour when outbound in use but first edge proxy does not support it
   * added additional unregister() exported function to allow the removal of a specific contact - contact is removed by using the ruid (unique ID for the location record)
   * set_q_override API function - override the value of the q parameter from the Contact header in subsequent calls to the save() function for the current request
+  * regid_mode parameter - control if REGISTER contact regid (if present) is used when REGISTER request is saved even if request does not indicate support for outbound
 
 ==== rr ====
 
