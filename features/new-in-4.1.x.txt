@@ -93,7 +93,7 @@
 
 ==== nathelper ====
 
-  * new option - sipping_disable_bflag can be set on a per-registration basis to disable NAT pings completely
+  * new option - natping_disable_bflag can be set on a per-registration basis to disable NAT pings completely
 ==== presence ====
 
   * RPC command presence.cleanup
