@@ -64,8 +64,8 @@
 ==== acc ====
 
   * new parameter time_mode
-    * store additional time value in time_attr attribute/db column
-    * if time_mode==1, then time_attr stores the microseconds
+    * store additional time values in time_attr and time_exten attributes/db columns
+    * if time_mode==1, save timestamp in time_attr and microsecs in time_exten
     * if time_mode==2, then time_attr store the seconds.miliseconds
     * if time_mode==0 (default), then it is like now, only timestamp stored
     * time_attr value can be set via parameter with same name - it represents syslog value or db table column
