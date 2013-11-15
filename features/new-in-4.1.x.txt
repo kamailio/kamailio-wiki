@@ -1,0 +1,139 @@
+====== Kamailio SIP Server (SER) - New Features in v4.1.x ======
+
+**First release in this series is to be numbered 4.1.0 and it is planned to be released in by end of November 2013**.
+
+<fc #0000FF>
+**Previous stable version was 4.0.x (released in March 2013), see what was new in that release at:**
+</fc>
+  * <fc #0000FF>http://www.kamailio.org/wiki/features/new-in-4.0.x</fc>
+
+<fc #800000>//This is a draft of new features added for v.4.1.x, manually updated, thus not always synchronized with what is new in source code repository.//</fc>
+
+===== New Modules =====
+
+==== app_java ====
+
+  * embedded Java interpreter
+  * http://kamailio.org/docs/modules/devel/modules/app_java.html
+
+==== auth_ephemeral ====
+
+  * user authentication with ephemeral credentials
+  * http://kamailio.org/docs/modules/devel/modules/auth_ephemeral.html
+==== cnxcc ====
+
+  * credit control module - prepaid system
+  * http://kamailio.org/docs/modules/devel/modules/cnxcc.html
+
+==== dnssec ====
+
+  * DNSSEC implementation
+  * http://kamailio.org/docs/modules/devel/modules/dnssec.html
+
+==== gzcompress ====
+
+  * compress/decompress body using zlib controlled via SIP header
+  * http://kamailio.org/docs/modules/devel/modules/gzcompress.html
+
+==== mohqueue ====
+
+  * music on hold queue
+  * http://kamailio.org/docs/modules/devel/modules/mohqueue.html
+==== rtpproxy-ng ====
+
+  * ng control protocol for RTP relay applications (e.g., useful for NAT traversal)
+  * supports encoding/decoding WebRTC/SRTP to bare RTP (when using with mediaproxy-ng from sipwise)
+  * http://kamailio.org/docs/modules/devel/modules/rtpproxy-ng.html
+==== sctp ====
+
+  * SCTP transport layer
+  * http://kamailio.org/docs/modules/devel/modules/sctp.html
+
+==== sipt ====
+
+  * SIP-T and SIP-I operations
+  * http://kamailio.org/docs/modules/devel/modules/sipt.html
+
+==== stun ====
+
+  * STUN requirements for SIP outbound
+  * http://kamailio.org/docs/modules/devel/modules/stun.html
+===== New in Old Modules =====
+
+
+==== avpops ====
+  * avp_check re operation can now use a pseudo variable as second parameter.
+  * avp_check with xavp as second parameter can now be used with [*] index on the second key.
+
+
+==== cfgutils ====
+
+  * new functions
+    * route_if_exists() calls a routing block only if it exists in the configuration script
+    * check_route_exists() checks if a routing block exists in the script.
+
+==== debugger ====
+
+  * new parametes:
+    * per module debug level
+    * log_assign. Enables the log of every single assign action on config
+    * reset_msgid. Enables the ability to reset the msgid ( $mi ) through the RPC command.
+  * new functions:
+    * dbg_pv_dump() dumps the pv_cache content in json format.
+  * new RPC commands:
+    * options to enable/disable per module log level as well as set per module log level at runtime.
+    * dbg.reset_msg: resets the msgid ( $mi ).
+==== htable ====
+
+  * new htable.sets and htable.seti RPC commands
+  * cross-server replication via DMQ module integration
+
+==== snmpstats ====
+
+  * the SNMPstats module has been extended with a large set of new data, and the KAMAILIO-MIB has been extended with new OIDs
+  * the new data reflects the Kamailio server process (memory, configuration at compile time), network transports and modules.
+
+==== sdpops ====
+
+  * new functions:
+    * sdp_with_transport(string). Checks if is a media with the transport string.
+    * sdp_remove_transport(string). Removes the media info from the SDP that matches string transport.
+==== siputils ====
+
+  * new functions:
+    * is_supported(option) that can be used to check if request has a Supported header listing the given option.
+
+==== tm ====
+
+  * new event route to be executed for each branch failure
+  * asynchronous processing of SIP responses in configuration file
+
+==== usrloc ====
+
+  * new RPC commands:
+    * ul.rm
+    * ul.rm_contact
+    * ul.flush
+    * ul.add
+  * ul.add RPC and ul_add MI commands modified to be able to set the contact path
+===== New in Core =====
+
+  * IPv6 compile time flag removed - it is not possible to compile Kamailio without IPv6 anymore, improving the code maintainability in the core and several modules
+  * the syn_branch parameter has been removed from the core, as Kamailio was not fully standard compliant if this was activated.
+
+==== Components ====
+
+  * SCTP support implementation from core was moved as a module. No need to recompile everything to get SCTP support, just load sctp module 
+  * STUN implementation from core was moved as a module
+
+
+===== Tools =====
+
+==== kamctl ====
+
+  * added parameters to add the contact path: ''kamctl ul add <user> <uri> <expires> <path>''
+  * command for dialog module management
+
+==== kamdbctl ====
+
+  * new command 'add-tables <gid>' to create only specific table grouped under same <gid> name
