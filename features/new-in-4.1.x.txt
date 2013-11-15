@@ -217,6 +217,9 @@
   * the syn_branch parameter has been removed from the core, as Kamailio was not fully standard compliant if this was activated.
   * auto-define cfg directive MOD_modname for each loaded module
     * example: if acc module is loaded, MOD_acc is defined in cfg
+  * new parameters:
+    * modinit_delay - specify microseconds to sleep after initializing a module in order to cope with systems having rate limits on new connections to db or other servers
+
 
 ==== Components ====
 
