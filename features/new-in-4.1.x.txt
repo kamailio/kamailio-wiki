@@ -61,6 +61,10 @@
 ===== New in Old Modules =====
 
 
+===== app_lua =====
+
+  * add app_lua.list and app_lua.reload rpc commands
+
 ==== avpops ====
   * avp_check re operation can now use a pseudo variable as second parameter.
   * avp_check with xavp as second parameter can now be used with [*] index on the second key.
