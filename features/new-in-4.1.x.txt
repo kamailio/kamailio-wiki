@@ -109,6 +109,7 @@
 
   * new parameter to specify the pv where to store attrs for matched address in ds_is_from_list()
     * attrs_pvname can be set to get attributes of matched address in config file
+  * allow pv in ds_is_from_list(setid) parameter
 ==== htable ====
 
   * new htable.sets and htable.seti RPC commands
