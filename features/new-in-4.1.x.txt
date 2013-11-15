@@ -106,6 +106,9 @@
   * new htable.sets and htable.seti RPC commands
   * cross-server replication via DMQ module integration
 
+==== memcached ====
+
+  * use the newer libmemcached library
 ==== nathelper ====
 
   * new option - natping_disable_bflag can be set on a per-registration basis to disable NAT pings completely
