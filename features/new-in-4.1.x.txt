@@ -126,6 +126,8 @@
 ==== nathelper ====
 
   * new option - natping_disable_bflag can be set on a per-registration basis to disable NAT pings completely
+  * removed natping_proceses limit
+
 
 ==== outbound ====
 
