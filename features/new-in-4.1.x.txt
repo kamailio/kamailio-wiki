@@ -91,6 +91,10 @@
 ==== nathelper ====
 
   * new option - sipping_disable_bflag can be set on a per-registration basis to disable NAT pings completely
+==== presence ====
+
+  * RPC command presence.cleanup
+
 ==== registrar ====
 
   * add Supported headers for outbound extensions in replies
