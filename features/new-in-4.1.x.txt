@@ -151,6 +151,7 @@
     * useful to update existing items without additional locks
   * lifted the limit for max number of slots, now is 2^31
   * added rpc command htable.stats - print stats about htables: name, number of slots, number of items, max number of items per slot, min number of items per slot
+  * dmq integration
 
 
 
