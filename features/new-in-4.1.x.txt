@@ -132,6 +132,7 @@
 
   * SDP can be passed to MI/RPC dlg_bridge command
   * added timer process to clean unconfirmed dialogs older than 5min
+  * decode alias parameter from contact address and use it as dst uri - makes dialog module to work with set_contact_alias() as first hop after a nat router
 
 ==== dispatcher ====
 
