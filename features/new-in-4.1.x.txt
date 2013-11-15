@@ -264,6 +264,7 @@
     * control reuse of the receive socket for additional branches added by dns failover
     * if 1, the rcv socket is used, if not it depends on mhomed - when that is 0, the first socket is used, otherwise will be selected based on routing table
     * default is 0
+  * new function t_set_disable_internal_reply(0|1) to disable|enable internal reply option per transaction
 
 ==== tmx ====
 
