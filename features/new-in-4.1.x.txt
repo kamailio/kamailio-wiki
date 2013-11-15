@@ -93,7 +93,8 @@
   * new option - sipping_disable_bflag can be set on a per-registration basis to disable NAT pings completely
 ==== registrar ====
 
-  * add Supported headers for outbound extensions
+  * add Supported headers for outbound extensions in replies
+  * RFC 5626 section 6 support - behaviour when outbound in use but first edge proxy does not support it
 ==== snmpstats ====
 
   * the SNMPstats module has been extended with a large set of new data, and the KAMAILIO-MIB has been extended with new OIDs
