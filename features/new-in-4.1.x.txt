@@ -216,6 +216,7 @@
   * PV to provide access to the user-agent string retrieved from usrloc
   * added $_s(format) variable - evaluate the format as a dynamic string ($var(x) = "sip:" + $rU + "@" + $fd; is equivalent of: $var(x) = $_s(sip:$rU@$fd);)
   * added transformations for url encode/decode
+  * param transformation can (optionally) specify what the parameter delimiter is
 
 ==== registrar ====
 
