@@ -198,6 +198,7 @@
   * removed natping_proceses limit
   * set_contact_alias() new function for adding alias parameter to contact uri
     * similar to add_contact_alias(), but this works like fix_nated_contact(), in the way that new contact uri is immediately visible to other modules (e.g., dialog, presence)
+  * udpping_from_path - enable sending UDP pings with raw sockets from Path address
 
 
 
