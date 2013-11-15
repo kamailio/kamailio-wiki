@@ -188,6 +188,8 @@
 
   * new functions:
     * is_supported(option) that can be used to check if request has a Supported header listing the given option.
+    * is_first_hop() - detect if it is first hop after original sender
+
 
 
 ==== snmpstats ====
