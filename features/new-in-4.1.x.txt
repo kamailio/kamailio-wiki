@@ -336,6 +336,8 @@
   * removed syn_branch functionality for calculating Via branch parameter
   * allow c++ style of one line comments (i.e., / / comment ...) - can make easier the read of config files with defines and comments
   * execute event_route[core:receive-parse-error] block on error of initial sip message parsing - note that the SIP message is broken in this case, but it gets access to source and local socket addresses (ip, port, proto, af) as well as the whole message buffer and its size
+  * store current executed cfg action in a global variable - can be retrieved by module to access name of config file and the line
+
 
 
 ==== Components ====
