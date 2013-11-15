@@ -207,6 +207,8 @@
     * location records are loaded only at startup
     * no write back to database, not even at shutdown
     * useful when registrations are replicated to another node that does the db storage at runtime
+  * new parameter db_obs_ruid - if set to 1, db update/delete operations are done using ruid value
+    * if paramter set to 0 (default) the old style using aor, contact and call-id is done
 
 
 
