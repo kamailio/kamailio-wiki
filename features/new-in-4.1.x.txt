@@ -69,7 +69,9 @@
   * avp_check re operation can now use a pseudo variable as second parameter.
   * avp_check with xavp as second parameter can now be used with [*] index on the second key.
 
+==== cdp ====
 
+  * framework for Credit Control Application - initial support for RFC 4006, used for IMS Ro charging interface TS32.299
 ==== cfgutils ====
 
   * new functions
