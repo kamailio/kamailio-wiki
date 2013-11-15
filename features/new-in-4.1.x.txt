@@ -139,7 +139,7 @@
 
 ==== tm ====
 
-  * new event route to be executed for each branch failure
+  * new event route to be executed for each branch failure - branch_failure_route
   * asynchronous processing of SIP responses in configuration file
 
 ==== usrloc ====
