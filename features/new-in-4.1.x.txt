@@ -226,6 +226,7 @@
 ==== websocket ====
 
   * added "cors_mode" parameter to enable "Cross-origin resource sharing" on WebSocket handshakes
+  * new function ws_close() - enables immediate closure of a WebSocket connection from the configuration file.
 
 ===== New in Core =====
 
