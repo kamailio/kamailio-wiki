@@ -85,6 +85,7 @@
 ==== avpops ====
   * avp_check re operation can now use a pseudo variable as second parameter.
   * avp_check with xavp as second parameter can now be used with [*] index on the second key.
+  * allow xavp as parameter where avp is allowed
 
 ==== cdp ====
 
