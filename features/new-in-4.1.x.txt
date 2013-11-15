@@ -212,6 +212,10 @@
 ==== textopsx ====
 
   * enable usage of msg_apply_changes() for sip replies
+
+==== tls ====
+
+  * config param can now specify a file or directory
 ==== tm ====
 
   * new event route to be executed for each branch failure
