@@ -94,6 +94,10 @@
   * new RPC commands:
     * options to enable/disable per module log level as well as set per module log level at runtime.
     * dbg.reset_msg: resets the msgid ( $mi ).
+
+==== dialog ====
+
+  * SDP can be passed to MI/RPC dlg_bridge
 ==== htable ====
 
   * new htable.sets and htable.seti RPC commands
