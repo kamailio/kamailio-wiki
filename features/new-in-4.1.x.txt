@@ -207,6 +207,10 @@
   * use angle brackets around From/To URI for local generated requests
   * new parameter - failure_exec_mode
     * specify whether to consider or not execution of failure routing blocks for branches that had local delivery error (e.g., no open tcp connection and set_forward_no_connect() used in config)
+  * new module parameter - dns_reuse_rcv_socket
+    * control reuse of the receive socket for additional branches added by dns failover
+    * if 1, the rcv socket is used, if not it depends on mhomed - when that is 0, the first socket is used, otherwise will be selected based on routing table
+    * default is 0
 
 ==== tmx ====
 
