@@ -132,6 +132,11 @@
   * new event route to be executed for each branch failure
   * asynchronous processing of SIP responses in configuration file
 
+==== snmpstats ====
+
+  * the SNMPstats module has been extended with a large set of new data, and the KAMAILIO-MIB has been extended with new OIDs
+  * the new data reflects the Kamailio server process (memory, configuration at compile time), network transports and modules.
+
 ==== usrloc ====
 
   * new RPC commands:
@@ -140,6 +145,8 @@
     * ul.flush
     * ul.add
   * ul.add RPC and ul_add MI commands modified to be able to set the contact path
+
+
 ===== New in Core =====
 
   * IPv6 compile time flag removed - it is not possible to compile Kamailio without IPv6 anymore, improving the code maintainability in the core and several modules
