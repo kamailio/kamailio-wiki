@@ -1325,6 +1325,12 @@ Maximum memory used for the dns cache in KB (default 500 K)
 
 Tells how long to keep negative DNS responses in cache.  If set to 0, disables caching of negative responses. Default is 60 (seconds).
 
+==== dns_naptr_ignore_rfc ====
+
+If the dns lookup should ignore the remote side's protocol preferences, as indicated by the Order field in the NAPTR records and mandated by RFC 2915.
+
+    dns_naptr_ignore rfc = yes | no (default yes)
+
 ==== dns_retr_no ====
 
 Number of dns retransmissions before giving up. Default value is system specific, depends also on the '/etc/resolv.conf' content (usually 4).
