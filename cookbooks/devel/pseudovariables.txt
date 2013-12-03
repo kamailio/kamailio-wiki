@@ -1,4 +1,4 @@
-====== Kamailio SIP Server v4.1.x (devel): Pseudo-Variables ======
+====== Kamailio SIP Server v4.2.x (devel): Pseudo-Variables ======
 
 ===== Introduction =====
 
