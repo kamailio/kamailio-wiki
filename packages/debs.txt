@@ -317,6 +317,26 @@ apt-key add _pubkey
 
 Select from next list the repository URLs specific for desired Kamailio version and Operating System and add to your ''/etc/apt/sources.list''.
 
+==== APT Repositories for Kamailio v4.1.x  ====
+
+=== ''Debian Squeeze'' ===
+
+<code>
+deb http://download.opensuse.org/repositories/home:/kamailio:/telephony-debs/Debian_6.0 ./
+</code>
+
+=== ''Debian Wheezy'' ===
+
+<code>
+deb http://download.opensuse.org/repositories/home:/kamailio:/telephony-debs/Debian_7.0 ./
+</code>
+
+=== ''Ubuntu Precise'' ===
+
+<code>
+deb http://download.opensuse.org/repositories/home:/kamailio:/telephony-debs/xUbuntu_12.04 ./
+</code>
+
 ==== APT Repositories for Kamailio v3.2.x  ====
 
 === ''Debian Lenny'' ===
