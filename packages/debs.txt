@@ -288,6 +288,18 @@ deb http://deb.kamailio.org/kamailio32-nightly precise main
 
 ==== Status ====
 
+OBS Project:
+
+  * https://build.opensuse.org/project/show/home:kamailio:telephony-debs
+
+Download Repositories:
+
+  * http://download.opensuse.org/repositories/home:/kamailio:/telephony-debs/Debian_7.0/
+  * http://download.opensuse.org/repositories/home:/kamailio:/telephony-debs/Debian_6.0/
+  * http://download.opensuse.org/repositories/home:/kamailio:/telephony-debs/Debian_5.0/
+  * http://download.opensuse.org/repositories/home:/kamailio:/telephony-debs/xUbuntu_12.04/
+  * http://download.opensuse.org/repositories/home:/kamailio:/telephony-debs/xUbuntu_10.04/
+
 === Overview ===
 
   * No source packages
