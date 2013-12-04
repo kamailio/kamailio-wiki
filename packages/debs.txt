@@ -343,7 +343,9 @@ deb http://download.opensuse.org/repositories/home:/kamailio:/telephony-debs/xUb
   * find a mirror - based on your OS, browse:
     * http://download.opensuse.org/repositories/home://kamailio://telephony-debs/Debian_5.0/Packages?mirrorlist
     * http://download.opensuse.org/repositories/home://kamailio://telephony-debs/Debian_6.0/Packages?mirrorlist
+    * http://download.opensuse.org/repositories/home://kamailio://telephony-debs/Debian_7.0/Packages?mirrorlist
     * http://download.opensuse.org/repositories/home://kamailio://telephony-debs/xUbuntu_10.04/Packages?mirrorlist
+    * http://download.opensuse.org/repositories/home://kamailio://telephony-debs/xUbuntu_12.04/Packages?mirrorlist
   * pick one of the mirrors listed in the browsed page, for example **widehat.opensuse.org**, select its listed URL and add to **sources.list** the URL without the last "/Packages", resulting in:
     * http://widehat.opensuse.org/repositories/home:/kamailio:/telephony-debs/Debian_5.0
     * http://widehat.opensuse.org/repositories/home:/kamailio:/telephony-debs/Debian_6.0
