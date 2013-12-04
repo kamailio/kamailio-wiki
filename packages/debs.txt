@@ -317,9 +317,7 @@ apt-key add _pubkey
 
 Select from next list the repository URLs specific for desired Kamailio version and Operating System and add to your ''/etc/apt/sources.list''.
 
-==== Latest Kamailio stable release  ====
-
-  * **v3.2.x**
+==== APT Repositories for Kamailio v3.2.x  ====
 
 === ''Debian Lenny'' ===
 
