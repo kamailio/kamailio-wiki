@@ -40,6 +40,7 @@ Few guidelines to edit the wiki:
   * [[download:v3.2.x-from-git|Download Sources of v3.2.x from GIT Repository]]
   * [[download:v3.3.x-from-git|Download Sources of v3.3.x from GIT Repository]]
   * [[download:v4.0.x-from-git|Download Sources of v4.0.x from GIT Repository]]
+  * [[download:v4.1.x-from-git|Download Sources of v4.1.x from GIT Repository]]
 ==== Linux - Unix Distributions ====
 
   * [[packages:debs|DEBS: Debian - Ubuntu]]
