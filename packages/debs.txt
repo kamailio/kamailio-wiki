@@ -288,11 +288,23 @@ deb http://deb.kamailio.org/kamailio32-nightly precise main
 
 ==== Status ====
 
-  * Distributions: ''Debian 5.0 Lenny'',  ''Debian 6.0 Squeeze'',  ''Ubuntu 10.04 Lucid''
-  * Archs supported: ''amd64'', ''i386''
-  * Provides DEBS for stable releases, at this moment 3.2.x
+=== Overview ===
+
   * No source packages
   * No nightly builds
+
+=== Kamailio v4.1.x ===
+
+  * Distributions: ''Debian 6.0 Squeeze'',  ''Debian 7.0 Wheezy'',  ''Ubuntu 12.04 Precise''
+  * Archs supported: ''amd64'', ''i386''
+
+
+=== Kamailio v3.2.x ===
+
+  * Distributions: ''Debian 5.0 Lenny'',  ''Debian 6.0 Squeeze'',  ''Ubuntu 10.04 Lucid''
+  * Archs supported: ''amd64'', ''i386''
+
+
 
 ==== APT Key ====
 
