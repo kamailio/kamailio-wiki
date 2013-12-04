@@ -11,10 +11,10 @@
 
 ===== New Modules =====
 
-==== xyz placeholder ====
+==== ndb_cassandra ====
 
-  * xyz placeholder
-  * http://kamailio.org/docs/modules/devel/modules/xyz.html
+  * configuration script connector for Cassandra NoSQL engine
+  * http://kamailio.org/docs/modules/devel/modules/ndb_cassandra.html
 
 
 ===== New in Old Modules =====
