@@ -166,7 +166,7 @@ Should return true if there was no value assigned to $avp(x).
 
 However, some variables are defined always (eventually initialized to 0), such as $var(a) or $shv(b).
 
-Starting with v3.0.0 when the core from Kamailio point of view was refactored, as part of integration with SER, the comparison with $null was considered as comparison with integer 0 (zero).
+Starting with v3.0.0 when the core from Kamailio point of view was refactored, as part of integration with SER, the comparison with $null mistakenly became the same as comparison with integer 0 (zero).
 
 Some of the comparisons kept working, but some gave wrong result:
 
