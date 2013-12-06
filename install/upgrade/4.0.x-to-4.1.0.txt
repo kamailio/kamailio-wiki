@@ -143,3 +143,45 @@ ALTER TABLE xcap ENGINE=InnoDB DEFAULT CHARSET=latin1; # was ENGINE=MyISAM DEFAU
 
   * **syn_branch** has been removed - core acts now always as syn_branch=0 - the Via header branch value is computed based on transaction attributes
   * **dns_naptr_ignore_rfc** has been added. Specifies if the Order field in a NAPTR record should be respected. Old code, and still default, is to ignore.
+
+==== Behaviour ====
+
+=== Comparison with $null ===
+
+In short
+  * now: if($var(a)==$null) is always false
+  * previous: if($var(a)==$null) was true if $var(a) had the value 0
+
+**//Details//**
+
+**$null** is a special variable that was meant to test if a variable is defined or not (exists or not). It was introduced during Kamailio 1.x series (OpenSER at that time).
+
+For example:
+
+<code c>
+if($avp(x)==$null)
+</code>
+
+Should return true if there was no value assigned to $avp(x).
+
+However, some variables are defined always (eventually initialized to 0), such as $var(a) or $shv(b).
+
+Starting with v3.0.0 when the core from Kamailio point of view was refactored, as part of integration with SER, the comparison with $null was considered as comparison with integer 0 (zero).
+
+Some of the comparisons kept working, but some gave wrong result:
+
+<code c>
+$avp(x)=0;
+if($avp(x)==$null)
+</code>
+
+was true, but actually $avp(x) was defined, having value 0.
+
+Issue was reported on:
+  * https://sip-router.org/tracker/index.php?do=details&task_id=358&project=1
+
+
+**//Solution//**
+
+Don't compare $var(...) and $shv(...) with $null, they are always defined and initialized to 0.
+
