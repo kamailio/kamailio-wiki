@@ -183,5 +183,5 @@ Issue was reported on:
 
 **//Solution//**
 
-Don't compare $var(...) and $shv(...) with $null, they are always defined and initialized to 0.
+Don't compare $var(...) and $shv(...) with $null, they are always defined and initialized to 0. You can eventually compare them with 0 (instead of $null).
 
