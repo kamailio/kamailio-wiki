@@ -342,7 +342,9 @@ To reset $du:
 
 **$rmid** - returns internal integer representation of SIP method type
 
+==== $route_uri - URI in first Route header ====
 
+**$route_uri** - returns the string with URI field in the first Route header
 ==== $rp - Port in R-URI ====
 
 **$rp** - reference to port of R-URI
