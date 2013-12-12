@@ -314,7 +314,7 @@ To reset $du:
 
 **$pu** - reference to URI in request's P-Preferred-Identity header (see RFC 3325)
 
-==== $ru - Domain in R-URI ====
+==== $rd - Domain in R-URI ====
 
 **$rd** - reference to domain in request's URI (without port) or to the Namespace Specific String of a URN (see RFC 2141)
 
