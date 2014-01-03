@@ -347,15 +347,24 @@ Result
 returns a dictionary table with the values of the xavp variable.
 Third param is optional and it choose between get all the values of a key ( 0, default) or just the first ones (1)
 
+If second param is nil will return all indexes. If second param is <0 will return the index counting from then end ( -1 is the last value )
+
 Prototype
 
 <code c>
-t = sr.xavp.get("xavp_name", 1, 0)
+ sr.xavp.get(xavp_name, indx, flag)
 </code>
 
 Example
 
 <code c>
+$xavp(test=>a) = 4;
+$xavp(test[0]=>b) = "four";
+$xavp(test[0]=>a) = 5;
+$xavp(test[0]=>b) = "five";
+$xavp(test[0]=>a) = 6;
+$xavp(test[0]=>b) = "six";
+
 $xavp(test=>a) = 1;
 $xavp(test[0]=>a) = 2;
 $xavp(test[0]=>a) = 3;
@@ -365,31 +374,26 @@ $xavp(test[0]=>b) = "three";
 </code>
 
 <code c>
-t = sr.xavp.get("test", 0, 0)
-for k,t2 in pairs(t) do
- for i,v in ipairs(t2) do
-   sr.log("info", string.format("%s[%d]:%s[%s]\n", k, i, tostring(v), type(v)))
- end
-end
-
-t = sr.xavp.get("test", 0, 1)
-for k,v in pairs(t) do
- sr.log("info", string.format("%s:%s[%s]\n", k, v, tostring(v), type(v)))
-end
+ t = sr.xavp.get("test", 0, 0)
+ sr.log("dbg", string.format("sr.xavp.get('test', 0, 0)->%s\n", table.tostring(t)))
+ t = sr.xavp.get("test", 0, 1)
+ sr.log("dbg", string.format("sr.xavp.get('test', 0, 1)->%s\n", table.tostring(t)))
+ t = sr.xavp.get("test", nil, 0)
+ sr.log("dbg", string.format("sr.xavp.get('test', nil, 0)->%s\n", table.tostring(t)))
+ t = sr.xavp.get("test", nil, 1)
+ sr.log("dbg", string.format("sr.xavp.get('test', nil, 1)->%s\n", table.tostring(t)))
+ t = sr.xavp.get("test", -1, 1)
+ sr.log("dbg", string.format("sr.xavp.get('test', -1, 1)->%s\n", table.tostring(t)))
 </code>
 
 Result
 
 <code c>
-a[1]:3[number]
-a[2]:2[number]
-a[3]:1[number]
-b[1]:three[string]
-b[2]:two[string]
-b[3]:one[string]
-
-a:3[number]
-b:three[string]
+ sr.xavp.get('test', 0, 0)->{a={3,2,1},b={"three","two","one"}}
+ sr.xavp.get('test', 0, 1)->{a=3,b="three"}
+ sr.xavp.get('test', nil, 0)->{{a={3,2,1},b={"three","two","one"}},{a={6,5,4},b={"six","five","four"}}}
+ sr.xavp.get('test', nil, 1)->{{a=3,b="three"},{a=6,b="six"}}
+ sr.xavp.get('test', -1, 1)->{a=6,b="six"}
 </code>
 ===== SR.SL Package =====
 
