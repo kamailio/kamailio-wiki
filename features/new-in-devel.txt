@@ -23,8 +23,8 @@
 ==== app_perl ====
   * option to reset embedded interpreter after a number of executions
 
-
-
+==== app_lua ====
+  * sr.xavp.get now can return all indexes and can be used with indx <0 to return values counting from the end.
 ===== New in Core =====
 
 
