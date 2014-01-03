@@ -20,6 +20,9 @@
 ===== New in Old Modules =====
 
 
+==== acc ====
+  * acc functions can now be used with strings containing pseudo variables.
+
 ==== app_perl ====
   * option to reset embedded interpreter after a number of executions
 
