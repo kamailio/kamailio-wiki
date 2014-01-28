@@ -104,7 +104,7 @@ Few guidelines to edit the wiki:
   * [[tutorials:mini-howto-admin:main|Mini HowTo Tutorials]]
   * [[tutorials:IMS:installation-howto|Howto install and  configure IMS with Kamailio]]
   * [[tutorials:Security:Security-threads|Overview of Security issues for SIP routers]]
-
+  * [[tutorials:Security:Kamailio-Security|Overview of security related config snippets]]
 ==== External Tutorials ====
 
   * [[http://kb.asipto.com/asterisk:index|Kamailio and Asterisk Integration]]
