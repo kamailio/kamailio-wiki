@@ -191,3 +191,57 @@ kamctl fifo sht_dump ipban
 
 ==== Fail2Ban ====
 
+Fail2ban can scan syslog files for specific messages based on regular expressions and act upon matching by banning IP addresses.
+
+Therefore you can print such message to syslog using xlog(). Fail2ban will match it and ban the traffic coming from the IP address you mention in the message.
+
+Create /etc/fail2ban/filter.d/kamailio.conf with following content:
+
+<code>
+[Definition]
+# filter for kamailio messages
+failregex = Blocking traffic from <HOST>
+</code>
+
+Edit /etc/fail2ban/jail.conf and add:
+
+<code>
+findtime  = 600
+
+[kamailio-iptables]
+enabled  = true
+filter   = kamailio
+action   = iptables-allports[name=KAMAILIO, protocol=all]
+logpath  = /var/log/kamailio.log # update it with your kamailio log path
+maxretry = 10
+bantime  = 1800
+</code>
+
+In Kamailio configuration, use next line whenever you want to ban an IP for half an hour:
+
+<code>
+xlog("Blocking traffic from $si\n");
+</code>
+
+Note: $si is a config file variable that expands at runtime to source IP address. In the syslog you will get messages like:
+
+... Blocking traffic from 1.2.3.4
+For example, plugging it in the above Kamailio snippets:
+
+<code>
+...
+	$var(exp) = $Ts - 900;
+        if($sht(a=>$au::last_auth) > $var(exp))
+        {
+            sl_send_reply("403", "Try later");
+            xlog("Blocking traffic from $si\n");
+            exit;
+        } else {
+            $sht(a=>$au::auth_count) = 0;
+        }
+...
+</code>
+
+Now, with this logic, if a user fails to authenticate 3 times in a row during 15 minutes, then the IP address of last registration attempt is blocked in firewall for half an hour by fail2ban.
+
+You can do something similar for pike alerts.
