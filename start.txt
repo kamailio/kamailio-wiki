@@ -103,6 +103,7 @@ Few guidelines to edit the wiki:
   * [[tutorials:dns:dnssec|Kamailio with DNSSEC]]
   * [[tutorials:mini-howto-admin:main|Mini HowTo Tutorials]]
   * [[tutorials:IMS:installation-howto|Howto install and  configure IMS with Kamailio]]
+  * [[tutorials:Security:Security-threads|Overview of Security issues for SIP routers]]
 
 ==== External Tutorials ====
 
