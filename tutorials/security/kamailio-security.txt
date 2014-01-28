@@ -101,8 +101,92 @@ You can change this by adding the below line in your config (somewhere above the
 server_header="Server: MS Lync"
 </code>
 
+Or you can just tell Kamailio to not put a server header:
+
+<code>
+server_signature=no
+</code>
+
 ===== Anti-Flood =====
 
+The moment you put a machine on the Internet, it will be scanned. And it won't take long until a <i>Friendly-Scanner</i> floods your machine.
+
+Three types of attacks are to be recognized:
+
+1/ bruteforcing username/password: 
+
+Your Kamailio setup can process thousands of SIP packets per second, and at those rates it is worthwhile for attackers to guess credentials which allow them to call out. When users are allowed to create their own passwords, there will be weak passwords.
+
+2/ bruteforcing prefixes:
+
+A typical configuration error is to take shortcuts in your config. In SS7 a typical method to arrange routing, is by adding prefixes to URI's. Attackers know this, and attempt to guess prefixes which behave differently.
+
+3/ Denial of Service:
+
+Whenever you have a packet arriving on your Kamailio machine, it will require a bit of time of your CPU. For some packets there is additional processing done, e.g. whenever credentials are checked you can have a query being executed. 
+
+When debugging your setup, it can be very annoying when you see thousands of packets passing over your screen. (stealing content from [[http://kb.asipto.com/kamailio:usage:k31-sip-scanning-attack|asipto]])
+
+==== Pike ====
+
+The pike module tracks the number of SIP messages per source IP address, per period. Pike is a very easy to add to your config:
+
+<code>
+loadmodule "pike.so"
+ 
+...
+ 
+# ----- pike params -----
+modparam("pike", "sampling_time_unit", 2)
+modparam("pike", "reqs_density_per_unit", 20)
+modparam("pike", "remove_latency", 4)
+ 
+...
+ 
+route {
+  if (!pike_check_req()) {
+    xlog("L_ALERT","ALERT: pike block $rm from $fu (IP:$si:$sp)\n");
+    exit;
+  }
+  ...
+}
+</code>
+
+In recent sample configs you can just enable #!define WITH_ANTIFLOOD in your config to have this done. 
+
+==== Banning for a period of time ====
+
+You can add htable module with a special hash table that can store the list of banned IPs and forbid traffic from it for a period of time. Here is an example blocking the IP 5 minutes (autoexpires value in seconds for htable definition):
+
+<code>
+loadmodule "htable.so"
+...
+modparam("htable", "htable", "ipban=>size=8;autoexpire=300;")
+ 
+...
+ 
+route {
+  if($sht(ipban=>$si)!=$null)
+  {
+     # ip is already blocked - keep the node warm
+     pike_check_req();
+     xdbg("request from blocked IP - $rm from $fu (IP:$si:$sp)\n");
+     exit;
+  }
+  if (!pike_check_req()) {
+     $sht(ipban=>$si) = 1;
+     xlog("L_ALERT","ALERT: pike block $rm from $fu (IP:$si:$sp)\n");
+     exit;
+  }
+...
+}
+</code>
+
+So, even if the attacker lowers the rate, it is still banned for 5 minutes. This approach has the benefit of printing the PIKE alert every 5 minutes, being easier to sport in syslog file the IP addresses that persist in flooding. By configuration, htable module will delete the entry automatically after 300sec.
+
+Also, you can print the list of banned IP addresses using Siremis (via MI Commands panel) or kamctl:
+
+kamctl fifo sht_dump ipban
 
 
 ==== Fail2Ban ====
