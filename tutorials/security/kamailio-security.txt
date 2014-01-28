@@ -1,0 +1,109 @@
+====== Overview of Security related config snippets ======
+
+<code>
+Author of initial tutorial:
+Davy Van De Moere
+  <davy.van.de.moere@gmail.com>
+</code>
+
+A list of config snippets you can use in Kamailio to have more fun with Hackers!
+
+===== Security by Obscurity =====
+
+==== Topoh module ====
+
+Albeit being a bad principle, obscuring your networks insecurities as a part of a wider scheme is a good way to keep malicious people away from your network.
+
+In Kamailio there is a great module called topoh, read Daniels post [[http://by-miconda.blogspot.be/2010/01/best-of-new-in-kamailio-300-10-topology.html|here]].
+
+It helps you to hide details, typical use cases being:
+  * protect the addresses of your PSTN gateways - will protect you against people trying to attack them to get free calls
+  * protect your internal network topology - when having a big platform with many servers, you do not disclose their addresses
+  * interconnection provider - to keep the details of connected parties secret to the other, to prevent a bypass of its service in the future
+(bluntly [[http://by-miconda.blogspot.be/2010/01/best-of-new-in-kamailio-300-10-topology.html|copied]])
+
+<code>
+loadmodule "/usr/local/lib64/kamailio/modules/topoh.so"
+modparam("topoh", "mask_key", "YouDoHaveToChangeThisKey")
+modparam("topoh", "mask_ip", "10.0.0.1")
+modparam("topoh", "mask_callid", 1)
+</code>
+
+To further protect the topology of your network, add RTPProxy to your config, this makes sure your Asterisk/FreeSwitch/... boxes can be fully hidden.
+
+==== Firewalling ====
+
+Portscans are inevitable, but we can fight back by making sure the portscan takes very long and gives random results, consider an iptables setup like the one below, it needs for sure some tweaking to work for you, but it will make an nmap to your box slow and close to fully useless
+
+<code>
+*filter
+:INPUT DROP [0:0]
+:FORWARD DROP [0:0]
+:OUTPUT DROP [0:0]
+:CHECK_TCP - [0:0]
+:ICMP - [0:0]
+:PRIVATE - [0:0]
+:PSD - [0:0]
+:SERVICES - [0:0]
+-A INPUT -i lo -j ACCEPT 
+-A INPUT -i eth0 -p ipv6 -j ACCEPT 
+-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT 
+-A INPUT -j SERVICES 
+-A OUTPUT -o lo -j ACCEPT 
+-A OUTPUT -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT 
+-A CHECK_TCP -p tcp -m tcp ! --tcp-flags SYN,RST,ACK SYN -m state --state NEW -j DROP 
+-A CHECK_TCP -p tcp -m tcp --tcp-flags FIN,SYN,RST,PSH,ACK,URG FIN,SYN,RST,ACK -j DROP 
+-A CHECK_TCP -p tcp -m tcp --tcp-flags FIN,SYN,RST,PSH,ACK,URG FIN,PSH,URG -j DROP 
+-A CHECK_TCP -p tcp -m tcp --tcp-flags FIN,ACK FIN -m state --state INVALID,NEW,RELATED -j DROP 
+-A CHECK_TCP -p tcp -m tcp --tcp-flags FIN,SYN,RST,PSH,ACK,URG FIN,SYN -j DROP 
+-A CHECK_TCP -p tcp -m tcp --tcp-flags FIN,SYN FIN,SYN -j DROP 
+-A CHECK_TCP -p tcp -m tcp --tcp-flags SYN,RST SYN,RST -j DROP 
+-A CHECK_TCP -p tcp -m tcp --tcp-flags FIN,RST FIN,RST -j DROP 
+-A CHECK_TCP -p tcp -m tcp --tcp-flags PSH,ACK PSH -j DROP 
+-A CHECK_TCP -p tcp -m tcp --tcp-flags ACK,URG URG -j DROP 
+-A CHECK_TCP -p tcp -m tcp --tcp-flags FIN,SYN,RST,PSH,ACK,URG NONE -j DROP 
+-A CHECK_TCP -p tcp -m tcp --tcp-flags FIN,SYN,RST,PSH,ACK,URG FIN,SYN,RST,PSH,ACK,URG -j DROP 
+-A CHECK_TCP -p tcp -m tcp --tcp-option 64 -j DROP 
+-A CHECK_TCP -p tcp -m tcp --tcp-option 128 -j DROP 
+-A ICMP -p icmp -m icmp --icmp-type 11/1 -m limit --limit 5/sec -m state --state NEW -j ACCEPT 
+-A ICMP -p icmp -m icmp --icmp-type 11/0 -m limit --limit 5/sec -m state --state NEW -j ACCEPT 
+-A ICMP -p icmp -m icmp --icmp-type 3 -m limit --limit 10/sec -m state --state NEW -j ACCEPT 
+-A ICMP -p icmp -m icmp --icmp-type 8 -m limit --limit 10/sec --limit-burst 10 -m state --state NEW -j ACCEPT 
+-A ICMP -p icmp -j DROP 
+-A PRIVATE -d 192.168.0.0/16 -j DROP 
+-A PRIVATE -d 172.16.0.0/12 -j DROP 
+-A PRIVATE -d 10.0.0.0/8 -j DROP 
+-A PRIVATE -j RETURN 
+-A PSD -p tcp -m statistic --mode random --probability 0.050000 -j REJECT --reject-with icmp-port-unreachable 
+-A PSD -p tcp -m statistic --mode random --probability 0.050000 -j TARPIT  --reset 
+-A PSD -p tcp -m statistic --mode random --probability 0.500000 -j TARPIT  --tarpit 
+-A PSD -p udp -m statistic --mode random --probability 0.050000 -j REJECT --reject-with icmp-port-unreachable 
+-A PSD -m statistic --mode random --probability 0.050000 -j REJECT --reject-with icmp-host-unreachable  
+-A SERVICES -p icmp -m state --state INVALID -j DROP 
+-A SERVICES -p icmp -j ICMP 
+-A SERVICES -p tcp -j CHECK_TCP 
+-A SERVICES -p udp -m udp --dport 123 -m state --state NEW -j ACCEPT 
+-A SERVICES -p udp -m udp --dport 53 -m state --state NEW -j ACCEPT 
+-A SERVICES -p tcp -m tcp --dport 53 -m state --state NEW -j ACCEPT 
+-A SERVICES -p tcp -m udp -m multiport --dports 5060 -m state --state NEW -j ACCEPT 
+-A SERVICES -p tcp -m udp -m multiport --dports 5061 -m state --state NEW -j ACCEPT 
+-A SERVICES -i eth0 -j PSD 
+COMMIT
+</code>
+
+==== Change the server header ====
+
+When Kamailio sends you a packet back, it will be friendly enough to tell you which version of Kamailio is running. This informs the attacker which types of attacks might make sense.
+
+You can change this by adding the below line in your config (somewhere above the loadmodules), you can use this to obscure which version you're running.
+
+<code>
+server_header="Server: MS Lync"
+</code>
+
+===== Anti-Flood =====
+
+
+
+==== Fail2Ban ====
+
