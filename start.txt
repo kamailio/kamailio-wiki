@@ -106,7 +106,7 @@ Few guidelines to edit the wiki:
 
 ==== Security related tutorials ====
 
-  * [[tutorials:Security:Security-threads|Overview of Security issues for SIP routers]]
+  * [[tutorials:Security:Security-threats|Overview of Security issues for SIP routers]]
   * [[tutorials:Security:Kamailio-Security|Overview of Security related config snippets]]
 ==== External Tutorials ====
 
