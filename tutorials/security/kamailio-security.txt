@@ -6,7 +6,7 @@ Davy Van De Moere
   <davy.van.de.moere@gmail.com>
 </code>
 
-A list of config snippets you can use in Kamailio to have more fun with Hackers!
+Being responsible for VoIP infrastructure means you will have to co-exist with Hackers. This page is an attempt to list (all) config snippets you can use in Kamailio to have more fun and success in your eternal battle!
 
 ===== Security by Obscurity =====
 
