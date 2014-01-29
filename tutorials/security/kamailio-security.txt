@@ -248,4 +248,49 @@ You can do something similar for pike alerts.
 
 ==== Accept their traffic ====
 
-Give them false positives.
+Give them false positives. Even if the above techniques quickly block off every scanning attempt, and even have iptables firewall them away from your Kamailio, when you have a tshark or ngrep running, their futile attempts are just really really annoying.
+
+Hence, one of the things I personally like doing is instead of blocking them off after the 3 wrong authentication errors, is just having all their traffic forwarded to a different kamailio, which is setup to just accept whatever they are sending. A fun variation is, I have a phone (a good old Snom360) on my desk which receives all the Invites coming to my honeypot kamailio. 
+
+The end result is, the automated scanners will get false positives and will typically stop. And even more fun, typically the attackers will manually check if the route they have found actually work, so they will actually call you, and then you can have a fun conversation with them :-p
+
+==== Detect and block malicious attempts ====
+
+The Homer project has a few methods to detect common attacks. It makes sense to add this to you config, as these attacks should just not be given any attention.
+
+Config is based on the [[https://code.google.com/p/homer/source/browse/configs/kamailio.cfg?r=e10bad0893cb56dc8f63c52947601e4c9981d254|work of the Homer team]]
+
+<code>
+#!define WITH_HOMER_SECURITY_CHECKS
+
+...
+
+route[HOMER_SECURITY_CHECKS] {
+#!ifdef WITH_HOMER_SECURITY_CHECKS
+  if (is_method("INVITE|REGISTER")) {
+
+                if($ua =~ "(friendly-scanner|sipvicious)") {
+                   xlog("L_INFO","On more scriptkiddie, coming from $si, blocking");
+                   exit;
+                }
+
+                #hostname in contact
+                if($sel(contact.uri.host) =~ "^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})$") {
+                   xlog("L_INFO","Someone coming form $si using IP addressess instead of DNS ? blocking");
+                   exit;
+                }
+
+
+                if($au =~ "(\=)|(\-\-)|(')|(\#)|(\%27)|(\%24)" and $au != $null) {
+                   xlog("L_INFO","Someone from $si is doing an sql injection attack, blocking!");
+                   exit;
+                }
+
+                if($(hdr(Record-Route)[0]{nameaddr.uri}) != $si and $(hdr(Record-Route)[0]{nameaddr.uri}) != $null) {
+                   xlog("L_INFO","Spoofing attack detected from $si, blocking");
+                   exit;
+                }
+  }
+#!endif
+}
+</code>
