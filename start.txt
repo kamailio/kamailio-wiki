@@ -102,10 +102,10 @@ Few guidelines to edit the wiki:
   * [[tutorials:faq:main|Frequently Asked Questions]]
   * [[tutorials:dns:dnssec|Kamailio with DNSSEC]]
   * [[tutorials:mini-howto-admin:main|Mini HowTo Tutorials]]
+  * [[tutorials:IMS:installation-howto|Howto install and  configure IMS with Kamailio]]
 
 === Security related tutorials ===
 
-  * [[tutorials:IMS:installation-howto|Howto install and  configure IMS with Kamailio]]
   * [[tutorials:Security:Security-threads|Overview of Security issues for SIP routers]]
   * [[tutorials:Security:Kamailio-Security|Overview of Security related config snippets]]
 ==== External Tutorials ====
