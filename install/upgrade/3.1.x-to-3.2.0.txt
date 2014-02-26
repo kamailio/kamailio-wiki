@@ -13,7 +13,7 @@ These sections presents notes, listed by modules, about the structure of databas
   * table **missed_calls**
     * callid column in has now the size varchar(255)
 
-==== modules_k/acc ====
+==== modules_k/htable ====
 
   * table **htable**
     * table version is 2
