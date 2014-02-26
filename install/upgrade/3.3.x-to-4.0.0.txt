@@ -56,7 +56,7 @@ CREATE TABLE location_attrs (
   id int(10) unsigned NOT NULL AUTO_INCREMENT,
   ruid varchar(64) NOT NULL DEFAULT '',
   username varchar(64) NOT NULL DEFAULT '',
-  domain varchar(64) DEFAULT NULL,
+  `domain` varchar(64) DEFAULT NULL,
   aname varchar(64) NOT NULL DEFAULT '',
   atype int(11) NOT NULL DEFAULT '0',
   avalue varchar(255) NOT NULL DEFAULT '',
