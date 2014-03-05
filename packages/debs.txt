@@ -135,32 +135,6 @@ deb-src http://deb.kamailio.org/kamailio33 precise main
 
 
 
-==== Latest Kamailio 3.1 release ====
-
-* ''Debian Lenny''
-<code>
-deb http://deb.kamailio.org/kamailio31 lenny main
-deb-src http://deb.kamailio.org/kamailio31 lenny main
-</code>
-
-* ''Debian Squeeze''
-<code>
-deb http://deb.kamailio.org/kamailio31 squeeze main
-deb-src http://deb.kamailio.org/kamailio31 squeeze main
-</code>
-
-* ''Debian Wheezy''
-<code>
-deb http://deb.kamailio.org/kamailio31 wheezy main
-deb-src http://deb.kamailio.org/kamailio31 wheezy main
-</code>
-
-* ''Ubuntu Lucid''
-<code>
-deb http://deb.kamailio.org/kamailio31 lucid main
-deb-src http://deb.kamailio.org/kamailio31 lucid main
-</code>
-
 
 ==== Latest Kamailio 3.0 release ====
 
