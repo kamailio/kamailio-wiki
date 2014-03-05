@@ -1,6 +1,6 @@
 ====== DEB Packages ======
 
-Starting from May 3, 2014 [[http://www.sipwise.com|Sipwise Team]] provides a **Kamailio DEB repository** for Debian and Ubuntu distributions.
+Starting from March 3, 2014 [[http://www.sipwise.com|Sipwise Team]] provides a **Kamailio DEB repository** for Debian and Ubuntu distributions.
 
 Sporadically, Debian packages may be available via OpenSuse Build Service (OBS), see details in a dedicated sub-section.
 ===== Status =====
