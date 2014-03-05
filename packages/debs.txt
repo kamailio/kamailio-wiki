@@ -178,9 +178,9 @@ deb http://deb.kamailio.org/kamailiodev-nightly squeeze main
 deb http://deb.kamailio.org/kamailiodev-nightly wheezy main
 </code>
 
-* ''Ubuntu Lucid''
+* ''Debian Jessie''
 <code>
-deb http://deb.kamailio.org/kamailiodev-nightly lucid main
+deb http://deb.kamailio.org/kamailiodev-nightly jessie main
 </code>
 
 * ''Ubuntu Precise''
