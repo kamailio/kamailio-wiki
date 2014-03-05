@@ -64,7 +64,7 @@ deb http://deb.kamailio.org/kamailio41 wheezy main
 deb-src http://deb.kamailio.org/kamailio41 wheezy main
 </code>
 
-* ''Ubuntu Lucid''
+* ''Debian Jessie''
 <code>
 deb http://deb.kamailio.org/kamailio41 jessie main
 deb-src http://deb.kamailio.org/kamailio41 jessie main
