@@ -49,6 +49,34 @@ deb-src http://deb.kamailio.org/kamailio precise main
 </code>
 
 
+==== Latest Kamailio 4.1 release ====
+
+
+* ''Debian Squeeze''
+<code>
+deb http://deb.kamailio.org/kamailio41 squeeze main
+deb-src http://deb.kamailio.org/kamailio41 squeeze main
+</code>
+
+* ''Debian Wheezy''
+<code>
+deb http://deb.kamailio.org/kamailio41 wheezy main
+deb-src http://deb.kamailio.org/kamailio41 wheezy main
+</code>
+
+* ''Ubuntu Lucid''
+<code>
+deb http://deb.kamailio.org/kamailio41 jessie main
+deb-src http://deb.kamailio.org/kamailio41 jessie main
+</code>
+
+* ''Ubuntu Precise''
+<code>
+deb http://deb.kamailio.org/kamailio41 precise main
+deb-src http://deb.kamailio.org/kamailio41 precise main
+</code>
+
+
 ==== Latest Kamailio 4.0 release ====
 
 
