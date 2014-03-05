@@ -36,10 +36,10 @@ deb http://deb.kamailio.org/kamailio wheezy main
 deb-src http://deb.kamailio.org/kamailio wheezy main
 </code>
 
-* ''Ubuntu Lucid''
+* ''Debian Jessie''
 <code>
-deb http://deb.kamailio.org/kamailio lucid main
-deb-src http://deb.kamailio.org/kamailio lucid main
+deb http://deb.kamailio.org/kamailio jessie main
+deb-src http://deb.kamailio.org/kamailio jessie main
 </code>
 
 * ''Ubuntu Precise''
