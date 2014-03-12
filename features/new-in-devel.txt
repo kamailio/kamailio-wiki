@@ -11,12 +11,20 @@
 
 ===== New Modules =====
 
+==== evapi ====
+
+  * push details of events to remote applications via tcp
+  * http://kamailio.org/docs/modules/devel/modules/evapi.html
+
 ==== ndb_cassandra ====
 
   * configuration script connector for Cassandra NoSQL engine
   * http://kamailio.org/docs/modules/devel/modules/ndb_cassandra.html
 
+==== uuid ====
 
+  * variables returning unique variables using libuid
+  * http://kamailio.org/docs/modules/devel/modules/uuid.html
 ===== New in Old Modules =====
 
 
