@@ -319,7 +319,7 @@ Offcourse, the math needs to be a bit more complex, and in SIP it's generally ba
 A SIP digest looks like:
 
 <code>
-Authorization: Digest username="replayuser", realm="mobilevikings.com", nonce="Uu+v01LvrXvRLxDlRFmj8f+x1sDLIA2ERmialM3+jEm2cBJ0R33hCxp8zyeA", 
+Authorization: Digest username="replayuser", realm="mslync.com", nonce="Uu+v01LvrXvRLxDlRFmj8f+x1sDLIA2ERmialM3+jEm2cBJ0R33hCxp8zyeA", 
 uri="sip:lync.com", response="c9295a60ag08554d26a7e17b7aac780b"
 </code>
 
