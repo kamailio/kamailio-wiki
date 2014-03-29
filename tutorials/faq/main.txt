@@ -459,7 +459,7 @@ There are two memory pools used by Kamailio:
 
 To increase the sizes for memory pools you have to give following command line parameters:
   * **-m SIZE** - specify the shared memory size in MB
-  * **-M SIZE** - specify the shared memory size in MB
+  * **-M SIZE** - specify the private memory size in MB
 
 For example, start Kamailio with 512MB of shared memory and 8MB of private memory:
 
