@@ -1946,65 +1946,6 @@ Example of usage:
 <code c>
 add_local_rport();
 </code>
-==== append_branch ====
-
-Function append_branch extends destination set by a new entry.
-
-Without parameter, the function copies the current URI into a new branch. Thus, leaving the main branch (the URI) for further manipulation.
-
-With a parameter, the function copies the URI in the parameter into a new branch. Thus, the current URI is not manipulated. Note: append_branch(uri) still copies the destination URI, which is usually not what you want. Thus it is better to call append_branch without parameter and then modify the main branch.
-
-Note that it's not possible to append a new branch in "on_failure_route" block if a 6XX response has been previously received (it would be against RFC 3261).
-
-Example of usage:
-<code>
-    # if someone calls B, the call should be forwarded to C too.
-    #
-    if (method=="INVITE" && uri=~"sip:B@xx.xxx.xx ")
-    {
-        # copy the current branch (branches[0]) into
-        # a new branch (branches[1])
-        append_branch();
-        # all URI manipulation functions work on branches[0]
-        # thus, URI manipulation does not touch the 
-        # appended branch (branches[1])
-        seturi("sip:C@domain");
-        
-        # now: branch 0 = C@domain
-        #      branch 1 = B@xx.xx.xx.xx
-        
-        # and if you need a third destination ...
-        
-        # copy the current branch (branches[0]) into
-        # a new branch (branches[2])
-        append_branch();
-        
-        # all URI manipulation functions work on branches[0]
-        # thus, URI manipulation does not touch the 
-        # appended branch (branches[1-2])
-        seturi("sip:D@domain");
-        
-        # now: branch 0 = D@domain
-        #      branch 1 = B@xx.xx.xx.xx
-        #      branch 2 = C@domain
-        
-        t_relay();
-        exit;
-    };
-
-    # You could also use append_branch("sip:C@domain") which adds a branch with the new URI:
-    
-    
-    if(method=="INVITE" && uri=~"sip:B@xx.xxx.xx ") {
-        # append a new branch with the second destionation
-        append_branch("sip:user@domain");
-        # now: branch 0 = B@xx.xx.xx.xx
-        # now: branch 1 = C@domain
-
-        t_relay();
-        exit;
-}
-</code>
 
 ==== avpflags ====
 ==== break ====
