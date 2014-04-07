@@ -1,3 +1,12 @@
-====== Upgrade from latest stable version to development branch ======
+====== Upgrade Kamailio from v4.1.x to v4.2.0 (devel) ======
 
-See [[install:upgrade:4.0.x-to-4.1.0|Upgrade Kamailio v4.0.x to v4.1.0]].
+The page contains the details about the changes that were made to old components during the development of v4.2.0 compared with what existed in v4.1.x. It does not include the brand new modules, focusing on how to upgrade database and configuration file from v4.1.x to run with Kamailio devel.
+
+===== Previous Stable Release =====
+
+If you look for the guidelines to upgrade to previous stable release, see:
+
+  * [[install:upgrade:4.0.x-to-4.1.0|Upgrade Kamailio v4.0.x to v4.1.0]]
+
+===== Modules =====
+
