@@ -1175,6 +1175,51 @@ if($gip(src=>cc)==$gip(dst=>cc))
 
 ===== TLS module Pseudo-Variables =====
 
+==== $tls_version ====
+==== $tls_description ====
+==== $tls_cipher_info ====
+==== $tls_cipher_bits ====
+==== $tls_peer_version ====
+==== $tls_my_version ====
+==== $tls_peer_serial ====
+==== $tls_my_serial ====
+==== $tls_peer_subject ====
+==== $tls_peer_issuer ====
+==== $tls_my_subject ====
+==== $tls_my_issuer ====
+==== $tls_peer_subject_cn ====
+==== $tls_peer_issuer_cn ====
+==== $tls_my_subject_cn ====
+==== $tls_my_issuer_cn ====
+==== $tls_peer_subject_locality ====
+==== $tls_peer_issuer_locality ====
+==== $tls_my_subject_locality ====
+==== $tls_my_issuer_locality ====
+==== $tls_peer_subject_country ====
+==== $tls_peer_issuer_country ====
+==== $tls_my_subject_country ====
+==== $tls_my_issuer_country ====
+==== $tls_peer_subject_state ====
+==== $tls_peer_issuer_state ====
+==== $tls_my_subject_state ====
+==== $tls_my_issuer_state ====
+==== $tls_peer_subject_organization ====
+==== $tls_peer_issuer_organization ====
+==== $tls_my_subject_organization ====
+==== $tls_my_issuer_organization ====
+==== $tls_peer_subject_unit ====
+==== $tls_peer_issuer_unit ====
+==== $tls_my_subject_unit ====
+==== $tls_my_issuer_unit ====
+==== $tls_peer_san_email ====
+==== $tls_my_san_email ====
+==== $tls_peer_san_hostname ====
+==== $tls_my_san_hostname ====
+==== $tls_peer_san_uri ====
+==== $tls_my_san_uri ====
+==== $tls_peer_san_ip ====
+==== $tls_my_san_ip ====
+
 ===== XHTTP module Pseudo-Variables =====
 
 ==== $hu ====
