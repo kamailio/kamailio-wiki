@@ -151,6 +151,13 @@ $(branch(uri)[2]) = "sip:test@kamailio.org;transport=sctp";
 
 **$cl** - reference to body of content-length header
 
+==== $cnt(pv) - Count number of pvs ====
+
+**$cnt(avp)** - return the number of avps
+
+<code c>
+xlog("$$avp(x) fount $cnt($avp(x)) times\n");
+</code>
 ==== $conid - TCP Connection ID ====
 
 **$conid** - The TCP connection ID of the connection the current message arrived on for TCP, TLS, WS, and WSS.  Set to $null for SCTP and UDP.
