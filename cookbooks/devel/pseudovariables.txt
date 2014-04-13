@@ -1358,6 +1358,19 @@ if(dns_query("test.com", "xyz"))
 }
 </code>
 
+===== $HN(key) - Hostname details =====
+
+Give local hostname details (implemented by ipops module).
+
+The key can be:
+  * n - the hostname
+  * f - the fullname
+  * d - the domain
+  * i - the ip address
+
+<code c>
+xlog("local hostanme is $HN(n)\n");
+</code>
 ===== $C(xy) - Foreground and background colors =====
 
 
