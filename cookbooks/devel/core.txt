@@ -517,6 +517,18 @@ Example of usage:
     alias=another.domain.com:5060
 </code>
 
+==== async_workers ====
+
+Specify how many child processes to create for asynchronous execution. These are processes that can receive tasks from various components and execute them locally, which is different process than the task sender.
+
+Default: 0 (asynchronous framework is disabled).
+
+Example:
+
+<code>
+    async_workers=4
+</code>
+
 ==== auto_aliases ====
 
 Kamailio by default discovers all IPv4 addresses on all interfaces and does a reverse DNS lookup on these addresses to find host names. Discovered host names are added to aliases list, matching the **myself** condition. To disable host names auto-discovery, turn off auto_aliases.
