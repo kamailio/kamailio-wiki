@@ -1000,6 +1000,10 @@ $xml(x=>xpath:/a/b) = "1234";
 ==== $T_reply_ruid ====
 
   * the ruid stored in the current branch of the transaction. The ruid is stored in a branch from the details in a contact binding. In a event_route[tm:branch-failure] block, this is the ruid of the branch that sent a failure reply. In a failure_route[] block, this is the ruid of the winning failure response.
+
+==== $T_reply_flags ====
+
+  * the branch flags stored in the current branch of the transaction. In a event_route[tm:branch-failure] block, this is the branch flags of the branch that sent a failure reply. In a failure_route[] block, this is the branch flags of the winning failure response.
 ==== $T_reply_code ====
 
   * the code of the reply, as follows: in request_route will be the last stateful sent reply; in reply_route will be the current processed reply; in failure_route will be the negative winning reply. In case of no-reply or error, '0' value is returned
