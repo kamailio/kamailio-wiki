@@ -1067,6 +1067,15 @@ The **name** can be:
 
 Note: the pair (id_index,id_label) uniquely identifies a transaction.
 
+==== $T_branch(name) ====
+
+  * pseudo-variable class to access TM branch attributes
+
+The **name** can be:
+
+  * flags - flags of the branch
+
+
 ===== UAC module Pseudo-Variables =====
 
 ==== $uac_req(key) ====
