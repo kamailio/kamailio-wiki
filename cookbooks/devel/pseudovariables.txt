@@ -1073,7 +1073,7 @@ Note: the pair (id_index,id_label) uniquely identifies a transaction.
 
 The **name** can be:
 
-  * flags - flags of the branch
+  * flags - Flags of the branch. In a event_route[tm:branch-failure] block, this is the flags of the branch that sent a failure reply. In a failure_route[] block, this is the flags of the winning failure response.
 
 
 ===== UAC module Pseudo-Variables =====
