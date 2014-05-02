@@ -448,7 +448,7 @@ while( $(var(x){s.select,$var(i),,})!=$null ) {
 }
 </code>
 
-??? How is the return code for a function interpreted?
+??? How is the return code for a function interpreted in conditions?
 
 !!! Configuration file interpreter evaluates the return code of a function as follow:
 
@@ -478,6 +478,15 @@ if(function_returns_zero()) {
    # it doesn't go here
 }
 </code>
+
+Note that you can use $rc to get the return code value, like:
+
+<code c>
+function();
+xlog("returned code by function() is $rc\n");
+</code>
+
+However, if return code is 0, the next action after function() is not executed. It can be used only of positive or negative response code.
 =?==== Troubleshooting =====
 
 ??? I get 'out of memory' errors, what can be done?
