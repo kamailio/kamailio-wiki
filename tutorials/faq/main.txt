@@ -447,6 +447,37 @@ while( $(var(x){s.select,$var(i),,})!=$null ) {
    $var(i) = $var(i) + 1;
 }
 </code>
+
+??? How is the return code for a function interpreted?
+
+!!! Configuration file interpreter evaluates the return code of a function as follow:
+
+  * <0 (negative value) - it is evaluated to false
+  * >0 (positive value) - it is evaluated to true
+  * =0 (zero) - it is evaluated as exit (stop execution of configuration file)
+
+Example:
+
+<code c>
+
+if(function_returns_one()) {
+   # it goes here
+} else {
+   # it doesn't go here
+}
+...
+if(function_returns_minus_one()) {
+   # it doesn't go here
+} else {
+   # it goes here
+}
+...
+if(function_returns_zero()) {
+   # it doesn't go here
+} else {
+   # it doesn't go here
+}
+</code>
 =?==== Troubleshooting =====
 
 ??? I get 'out of memory' errors, what can be done?
