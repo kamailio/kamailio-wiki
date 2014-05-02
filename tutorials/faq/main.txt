@@ -448,7 +448,7 @@ while( $(var(x){s.select,$var(i),,})!=$null ) {
 }
 </code>
 
-??? How is the return code for a function interpreted in conditions?
+??? How is the function return code evaluated in conditions?
 
 !!! Configuration file interpreter evaluates the return code of a function as follow:
 
