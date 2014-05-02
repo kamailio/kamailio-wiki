@@ -1329,7 +1329,7 @@ Tells how long to keep negative DNS responses in cache.  If set to 0, disables c
 
 If the dns lookup should ignore the remote side's protocol preferences, as indicated by the Order field in the NAPTR records and mandated by RFC 2915.
 
-    dns_naptr_ignore rfc = yes | no (default yes)
+    dns_naptr_ignore_rfc = yes | no (default yes)
 
 ==== dns_retr_no ====
 
