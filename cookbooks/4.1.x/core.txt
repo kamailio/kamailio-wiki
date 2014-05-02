@@ -2173,9 +2173,9 @@ You can test the value returned by a route using [[devel#retcode|$retcode]] or $
 
 return(0) is same as [[devel#exit|exit()]];
 
-In bool expressions:
+In boolean expressions:
 
-  * Negative and ZERO is FALSE
+  * Negative is FALSE
   * Positive is TRUE
 
 If no value is specified, or a route reaches its end without executing a return statement, it returns 1. If return is used in the top level route is equivalent with exit [val].
