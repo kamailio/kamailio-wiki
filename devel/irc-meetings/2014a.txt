@@ -42,7 +42,13 @@ Kamailio related:
     * mirrors
     * world wide events
 
+===== Continuous Integration (CI) =====
 
+  * (vseva) functional testing. Framework ??
+  * (vseva) memory checks: ( basic functional testing needed )
+    * valgrind
+  * (vseva) static code analysis:
+    * cppcheck ( jenkins jobs already there )
 ===== Minutes =====
 
   * TBA
