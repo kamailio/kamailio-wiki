@@ -1,0 +1,45 @@
+====== IRC Devel Meeting - 2014-05-15 ======
+
+Date:
+  * **Proposed: 14:00 UTC, Thursday, May 15, 2014**
+
+Time of the meeting across the world:
+  * 16:00 - Berlin, Germany
+  * 15:00 - London, UK
+  * 10:00 - New York, USA
+
+Utilities:
+  * [[http://www.timeanddate.com/worldclock/converter.html|Time Converter]]
+  * IRC webchat: http://webchat.freenode.net/
+  * IRC client apps: http://en.wikipedia.org/wiki/Internet_Relay_Chat#Clients
+
+Place:
+  * **#kamailio** IRC channel on **irc.freenode.net** server
+
+===== Participants =====
+
+Participation is open to anyone, just join the IRC channel if you want to participate.
+
+People adding notes in the agenda using abbreviations:
+
+  * dcm - Daniel-Constantin Mierla
+
+
+===== Agenda =====
+
+Kamailio related:
+
+  * (dcm) outstanding issues at this time, if any
+  * (dcm) roadmap to next major release
+  * (dcm) timeline for a new minor release
+  * (dcm) status of various patches (add here if you are aware of one lost in dust)
+    * websocket without libunistring
+  * (dcm) administration
+    * continuous integration - discussion started at KW14 (add dedicated section if you have proposals, etc.)
+    * mirrors
+    * world wide events
+
+
+===== Minutes =====
+
+  * TBA
