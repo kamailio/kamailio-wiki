@@ -1,10 +1,10 @@
 ====== IRC Devel Meeting - 2014-05-15 ======
 
 Date:
-  * **Proposed: 14:00 UTC, Thursday, May 15, 2014** (dcm, vseva)
+  * **Proposed: 14:00 UTC, Thursday, May 15, 2014** (dcm, vsl)
   * Alternatives (add your id if you can attend)
-    * May 14 (oej, vseva)
-    * May 16 (dcm, oej, vseva)
+    * May 14 (oej, vsl)
+    * May 16 (dcm, oej, vsl)
 
 Time of the meeting across the world:
   * 16:00 - Berlin, Germany
