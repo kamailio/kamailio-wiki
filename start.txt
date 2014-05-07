@@ -147,7 +147,7 @@ Few guidelines to edit the wiki:
   * [[devel:active-contributors|Contributors - List of Active Developers]]
   * [[devel:irc-meetings|IRC Development Meetings]]
   * [[devel:makefile-system|Makefile System]]
-  * [kamailio Chinese Community-中文社区|www.kamailio.org.cn]
+  * [[http://www.kamailio.org.cn|Kamailio Chinese Community-中国社区]]
 ===== Disclaimer =====
 
 <color grey>
