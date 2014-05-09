@@ -50,6 +50,7 @@ Kamailio related:
     * valgrind
   * (vsl) static code analysis:
     * cppcheck ( jenkins jobs already there )
+      * https://kamailio.sipwise.com/view/cppcheck/ 
 ===== Minutes =====
 
   * TBA
