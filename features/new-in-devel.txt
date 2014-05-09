@@ -36,6 +36,9 @@
 
 ==== app_lua ====
   * sr.xavp.get now can return all indexes and can be used with indx <0 to return values counting from the end.
+
+==== utils ====
+  * http_query() now stores result also in case of 4xx replies
 ===== New in Core =====
 
 
