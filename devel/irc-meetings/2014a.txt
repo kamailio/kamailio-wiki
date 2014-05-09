@@ -1,9 +1,8 @@
-====== IRC Devel Meeting - 2014-05-15 ======
+====== IRC Devel Meeting - 2014-05-14 ======
 
 Date:
-  * **Proposed: 14:00 UTC, Thursday, May 15, 2014** (dcm, vsl)
+  * **Proposed: 14:00 UTC, Wednesday, May 14, 2014** (dcm, oej, vsl)
   * Alternatives (add your id if you can attend)
-    * May 14 (oej, vsl)
     * May 16 (dcm, oej, vsl)
 
 Time of the meeting across the world:
