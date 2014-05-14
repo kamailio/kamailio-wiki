@@ -1,6 +1,6 @@
 **Note: This document is work in progress and yet unfinished!**
 
-This is a short installation howto for Debian Squeeze and Wheezy (stable and oldstable). 
+This is a short installation howto for Debian Wheezy (stable). 
 
 This installation howto has been derived from here: http://uctimsclient.berlios.de/openimscore_on_ubuntu_howto.html
 
@@ -45,9 +45,7 @@ First, install the Key for our repository:
 
 Then add the repository to your "/etc/apt/sources.list":
 
-  echo "deb http://repository.ng-voice.com squeeze ims rtpproxy" >> /etc/apt/sources.list
-
-(replace squeeze with wheezy for Debian7).
+  echo "deb http://repository.ng-voice.com wheezy ims rtpproxy" >> /etc/apt/sources.list
 
 And update the available packets:
 
@@ -111,6 +109,10 @@ Oracle Java is no longer available in the official repository. However, there ar
 * http://www.webupd8.org/2012/06/how-to-install-oracle-java-7-in-debian.html
 
 ===== Install the FHoSS-Packages =====
+
+Add our repository to your "/etc/apt/sources.list":
+
+  echo "deb http://repository.ng-voice.com wheezy fhoss" >> /etc/apt/sources.list
 
 Install the FHoSS from our repository:
 
