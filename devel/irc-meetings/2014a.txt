@@ -37,6 +37,7 @@ Kamailio related:
   * (dcm) timeline for a new minor release
   * (dcm) status of various patches (add here if you are aware of one lost in dust)
     * websocket without libunistring
+    * multipart body
   * (dcm) administration
     * continuous integration - discussion started at KW14 (add dedicated section if you have proposals, etc.)
     * mirrors
