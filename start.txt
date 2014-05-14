@@ -148,6 +148,7 @@ Few guidelines to edit the wiki:
   * [[devel:irc-meetings|IRC Development Meetings]]
   * [[devel:makefile-system|Makefile System]]
   * [[http://www.kamailio.org.cn|Kamailio Chinese Community-中国社区]]
+  * [[scripts:toc|Various Scripts]]
 ===== Disclaimer =====
 
 <color grey>
