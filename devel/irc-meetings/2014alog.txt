@@ -1,0 +1,660 @@
+====== Chat log IRC Devel Meeting - 2014-05-14 ======
+
+===== outstanding issues at this time, if any =====
+[2014-05-14 16:06:41] <miconda> apparently is a race for cleaning up dialog which goes from initial state to terminated state\\
+[2014-05-14 16:06:44] <miconda> reported recentrly\\
+[2014-05-14 16:07:04] <miconda> i looked a bit, couldn’t reproduce, but I expect is under high load\\
+[2014-05-14 16:07:25] <miconda> as a lead now, could be due to pre/post-script callbacks\\
+[2014-05-14 16:07:25] <abalashov> I also brought up the topic of CONFIRMED_NA dialogs getting stuck until dialog_timeout, but with no response (that I saw).\\
+[2014-05-14 16:08:06] <miconda> abalashov: yes, together with delayed release of event route reported by osas\\
+[2014-05-14 16:08:16] <miconda> will make a bit of work on dialog\\
+[2014-05-14 16:08:41] <miconda> which might end up in getting rid of dependency on tm … which is not that useful, imo\\
+[2014-05-14 16:08:59] <miconda> dialog can handle the requests and replies by itself\\
+[2014-05-14 16:09:04] <miconda> i will see\\
+[2014-05-14 16:09:15] <abalashov> Agree that knowledge of transaction state is not really essential to dialog functionality; it's just convenient.\\
+[2014-05-14 16:09:35] <miconda> it is not exported to dialog api in any way\\
+[2014-05-14 16:09:45] <oej> Doesn't other modules that depend on dialog depend on transaction state?\\
+[2014-05-14 16:09:48] <oej> Like dialog\\
+[2014-05-14 16:09:48] <miconda> just convenience in matching replies some time\\
+[2014-05-14 16:09:50] <abalashov> And can sometimes break things -- if dialog-altering sequential request comes through but in some way improperly (say, no Route set) and TM doesn't trigger the right callbacks / doesn't know about the transaction.\\
+[2014-05-14 16:10:15] <miconda> oej: what do you mean with ‘Like dialog’?\\
+[2014-05-14 16:10:22] <oej> http://kamailio.org/docs/modules/devel/modules/pua_dialoginfo.html \\
+[2014-05-14 16:10:25] <oej> Depends on dialog\\
+[2014-05-14 16:10:35] <miconda> ahh, ok, pua_dialoginfo\\
+[2014-05-14 16:10:43] <oej> And dialoginfo shows transaction states of the invite trans\\
+[2014-05-14 16:10:46] <miconda> no, they don’t depend on transaction state\\
+[2014-05-14 16:10:56] <miconda> only on dialog states\\
+[2014-05-14 16:10:59] <oej> according to the spec it does\\
+[2014-05-14 16:11:18] <miconda> well, the states are initial, ringing, confirmed\\
+[2014-05-14 16:11:46] <osas> dialog relies on tm for getting back replies\\
+[2014-05-14 16:11:46] <miconda> which correspond to some of transaction states, but in the code, dialog doesn’t propagate tm info\\
+[2014-05-14 16:12:57] <osas> no, it doesn't\\
+[2014-05-14 16:13:06] <abalashov> miconda, it seems I neglected to see your reply on the CONFIRMED_NA topic ... http://lists.sip-router.org/pipermail/sr-dev/2014-April/023862.html -- sorry for the misapprehension. \\
+[2014-05-14 16:13:58] <abalashov> miconda: The proxy does get BYEs in this scenario, but because the dialog is not yet confirmed+established they do not result in tearing down the dialog.\\
+[2014-05-14 16:14:11] <miconda> abalashov: ok\\
+[2014-05-14 16:14:36] <abalashov> miconda: This generally happens due to 200 OK-CANCEL race, but can also happen due to malformed ACKs and whatnot.\\
+[2014-05-14 16:14:41] <miconda> found another one recently, when the dialog was not destroyed on timeout if bye failed to be sent\\
+[2014-05-14 16:15:05] <miconda> to conclude, dialog needs a bit of hammering :-)\\
+[2014-05-14 16:15:07] <abalashov> Dialog is a very messy piece of the proxy, it just happens to be very extremely useful in the applied dimension.\\
+[2014-05-14 16:16:30] <miconda> other issues?\\
+[2014-05-14 16:17:30] <abalashov> miconda: I hear you on setting the dialog timeout to one timer prior to ACK and another after, but maybe there should be a separate timeout setting for unconfirmed dialogs? Or is that asking too much?\\
+[2014-05-14 16:17:40] <abalashov> miconda: It's an extremely common problem in high-pace environments due to 200 OK/CANCEL race.\\
+[2014-05-14 16:18:17] <miconda> abalashov: separate timeout can be added indeed\\
+[2014-05-14 16:18:26] <abalashov> miconda: I'd be willing to work on that.\\
+[2014-05-14 16:18:36] <abalashov> miconda: Problem is it's so difficult to simulate a 200 OK/CANCEL race deliberately.\\
+[2014-05-14 16:19:07] <abalashov> miconda: I might take the approach of sending some bullshit ACK instead. Maybe with the wrong From tag. That reliably works, I know from unfortunate personal experience with the VOS3000.\\
+[2014-05-14 16:19:20] <miconda> abalashov: we will give you a free license for devel purposes\\
+[2014-05-14 16:19:21] <abalashov> (or rather, wrong To tag, actually)\\
+[2014-05-14 16:19:22] <miconda> :-)\\
+[2014-05-14 16:20:13] <linuxmaniac> sorry for asking but what is the difference between dialog and dialog_ng?\\
+[2014-05-14 16:20:26] <abalashov> That's a good question. I am unclear on this as well.\\
+[2014-05-14 16:20:51] <miconda> dialog_ng - dialog = _ng\\
+[2014-05-14 16:20:59] <abalashov> Hah!\\
+[2014-05-14 16:21:09] <miconda> _ng version is an attempt to rework dialog\\
+[2014-05-14 16:21:11] <abalashov> linuxmaniac: In theory it is supposed to be a next generation dialog module that deals better with spirals and forking.\\
+[2014-05-14 16:21:19] <abalashov> linuxmaniac: In practice I am unsure as to what the practical difference is at this point.\\
+[2014-05-14 16:21:21] <miconda> it was a discussion some time ago\\
+[2014-05-14 16:21:41] <miconda> but apparently dialog_ng doesn’t have all features of dialog\\
+[2014-05-14 16:21:50] <abalashov> Right, so in practice I don't see it being so usable.\\
+[2014-05-14 16:21:59] <miconda> there is a wiki page about the discusion on dialog_ng\\
+[2014-05-14 16:22:08] <linuxmaniac> but, is anyone working on it?\\
+[2014-05-14 16:22:19] <carstenbock> We are making heavy use of dialog_ng for IMS topics.\\
+[2014-05-14 16:22:22] <miconda> and, if i got it right, is mostly ims oriented now\\
+[2014-05-14 16:22:26] <miconda> the ims devs\\
+[2014-05-14 16:22:32] <carstenbock> Here we are!\\
+[2014-05-14 16:22:55] <linuxmaniac> any plans to get all the features of dialog?\\
+[2014-05-14 16:23:01] <abalashov> Nevertheless, this is likely to be confusing to the general public and newbies and so on.\\
+[2014-05-14 16:23:01] <caruizdiaz> by Jason Penton: "Dialog2 is a start at the following: http://www.kamailio.org/dokuwiki/doku.php/modules-new-design:dialog-module-design  We needed this functionality for the IMS modules. In IMS a proxy can take the same session in both terminating and originating modes (ie 2 dialogs for the same session). dialog 1 does not support this. Dialog2 has been tested to at least support the functionality we required and we will build \\
+[2014-05-14 16:23:03] <miconda> so carstenbock can say the diff between dialog and dialog_ng\\
+[2014-05-14 16:23:13] <caruizdiaz> dialog2 was the original name of dialog_ng\\
+[2014-05-14 16:23:45] <abalashov> My personal reading when I first ran into it was, "Oh, it's _ng, that sounds like some avant garde stuff, I don't think I'll use it."  But in the case of rtpproxy_ng this would be incorrect thinking.  :-)\\
+[2014-05-14 16:23:59] <linuxmaniac> :-)\\
+[2014-05-14 16:24:17] <qxork> avant garde\\
+[2014-05-14 16:24:18] <linuxmaniac> now we don't have any _ng\\
+[2014-05-14 16:24:25] <abalashov> Yeah, I know.\\
+[2014-05-14 16:24:34] <abalashov> rtpengine_ng - specially for IMS :-)\\
+[2014-05-14 16:24:45] <carstenbock> At the moment the development on the dialog_ng module is on "per demand" basis.\\
+[2014-05-14 16:24:58] <caruizdiaz> AFAIR, the only missing thing in dialog_ng, is the full database support\\
+[2014-05-14 16:25:15] <linuxmaniac> so there is no intension to replace dialog with dialog_ng in the long term\\
+[2014-05-14 16:25:30] <abalashov> ... contrary to the triumphant announcement in the dialog_ng documentation ...\\
+[2014-05-14 16:26:26] <linuxmaniac> I'm just asking because it seems dialog need some work\\
+[2014-05-14 16:26:30] <caruizdiaz> maybe in a future. Currently I believe it would be impractical to do that.\\
+[2014-05-14 16:26:58] <linuxmaniac> OK, moving on\\
+[2014-05-14 16:27:33] <abalashov> caruizdiaz: I think the dialog_ng module should perhaps be amended to take a more moderate stance, then. As it is written now, it states, "El nuevo dialog! Viva la revolucion!"\\
+[2014-05-14 16:27:42] <abalashov> caruizdiaz: + documentation\\
+[2014-05-14 16:28:03] <oej> +7\\
+[2014-05-14 16:28:48] <carstenbock> Maybe an option would be, to rename dialog_ng to dialog_ims, to reduce the confusion.\\
+[2014-05-14 16:29:09] <carstenbock> (at least as long as it's mostly used for IMS)\\
+[2014-05-14 16:29:09] <caruizdiaz> abalashov: jajajaj, maybe yes, but I don't think it is affecting the new comers. I did not read any inquiry or doubt about which of them to use.\\
+[2014-05-14 16:29:26] <carstenbock> True...\\
+[2014-05-14 16:29:31] <miconda> ok, so are we done?\\
+[2014-05-14 16:29:34] <oej> We had it in a release so it's late for rename\\
+[2014-05-14 16:29:43] <miconda> with dlg vs dlg_ng …\\
+[2014-05-14 16:29:46] <oej> But improving the docs is a good thing to avoid any confusion\\
+[2014-05-14 16:29:52] <carstenbock> Okay, agreed.\\
+[2014-05-14 16:30:11] <linuxmaniac> done\\
+[2014-05-14 16:30:12] <oej> Assigned to carstenbock aka "The IMS Guy"\\
+[2014-05-14 16:30:23] <carstenbock> Damn!\\
+[2014-05-14 16:30:24] <carstenbock> :-)\\
+[2014-05-14 16:30:26] <caruizdiaz> :D:D\\
+[2014-05-14 16:30:42] <javar> :)\\
+
+===== major release =====
+[2014-05-14 16:31:04] <miconda> most probably autumn time frame\\
+[2014-05-14 16:31:55] <miconda> it fits the development cycle interval and I guess summer is not the ideal for testing a frozen branch\\
+[2014-05-14 16:32:26] <miconda> perhaps we can decide the date to freeze development at the end of summer, via mailing list\\
+[2014-05-14 16:32:39] <oej> +1\\
+[2014-05-14 16:32:44] <oej> What's new?\\
+[2014-05-14 16:32:51] <oej> Event stuff\\
+[2014-05-14 16:32:52] <miconda> i think there are like 3 new modules now\\
+[2014-05-14 16:32:53] <abalashov> Will it be Kamailio 5.0? :)  Or is it time for it to become Kamailio Vista?\\
+[2014-05-14 16:33:11] <miconda> plus quite a lot in other old modules\\
+[2014-05-14 16:33:12] <caruizdiaz> :D\\
+[2014-05-14 16:33:20] <oej> Kamailio 95\\
+[2014-05-14 16:33:27] <oej> Inspired by SAAB 95\\
+[2014-05-14 16:33:29] <miconda> afaik, there are 3-4 modules to be added soon …\\
+[2014-05-14 16:33:30] <oej> (of course)\\
+[2014-05-14 16:33:33] <oej> What's that?\\
+[2014-05-14 16:33:36] <qxork> Kamailio_NG\\
+[2014-05-14 16:34:00] <miconda> two erlang modules are on github in a different repo\\
+[2014-05-14 16:34:08] <abalashov> Actually, I assume it will be Kamailio 4.2. Right?\\
+[2014-05-14 16:34:19] <miconda> i discussed with the developer, he wants more polishing before incorporating them\\
+[2014-05-14 16:34:32] <oej> Erlang? Cool.\\
+[2014-05-14 16:34:45] <caruizdiaz> do you have the links?\\
+[2014-05-14 16:35:04] <miconda> one module by kazoo guys to be reviewed and adjusted to be more generic if it is the case (on github as well)\\
+[2014-05-14 16:35:25] <miconda> caruizdiaz: searching on github should reveal them\\
+[2014-05-14 16:35:28] <linuxmaniac> No Go yet?\\
+[2014-05-14 16:35:38] <caruizdiaz> ok, tks\\
+[2014-05-14 16:35:56] <abalashov> linuxmaniac: No indeed, and neither Haskell.\\
+[2014-05-14 16:36:12] <miconda> the developer of json modules said at some point in time that they refactored, but i haven’t seen any updates yet\\
+[2014-05-14 16:36:40] <abalashov> miconda: Has there been any movement on the topic of how exactly the evapi should work?\\
+[2014-05-14 16:36:57] <miconda> abalashov: “at your will”\\
+[2014-05-14 16:37:03] <miconda> no format enforced now\\
+[2014-05-14 16:37:12] <abalashov> What about subscriptions and filtering?\\
+[2014-05-14 16:38:25] <miconda> nothing yet — looks like a busy summer for you :-)\\
+[2014-05-14 16:38:34] <abalashov> :-)\\
+[2014-05-14 16:38:53] <abalashov> Previously I had done all this with uac_req_send().\\
+[2014-05-14 16:38:57] <abalashov> This offers a novel approach.\\
+[2014-05-14 16:39:29] <miconda> to conclude, I’m sure there will be plenty of new modules by the time of the next major release\\
+[2014-05-14 16:39:38] <oej> Cool\\
+[2014-05-14 16:40:01] <miconda> those are what I am aware at this time to be on pipeline\\
+[2014-05-14 16:40:16] <abalashov> Are there are any defunct and unmaintained modules that should be deprecated?\\
+[2014-05-14 16:40:39] <abalashov> I have my eye on 'seas', not sure what it's status is.\\
+[2014-05-14 16:40:41] <miconda> and maybe 1-2 more from me … let’s see how the time goes\\
+[2014-05-14 16:40:44] <abalashov> *its\\
+[2014-05-14 16:40:54] <miconda> seas should work ok\\
+[2014-05-14 16:41:07] <stangrze> hi\\
+[2014-05-14 16:41:08] <miconda> iirc, some stuff related to tcp was missing there\\
+[2014-05-14 16:41:19] <miconda> but for udp, should be no problems\\
+[2014-05-14 16:41:58] <abalashov> I get lots of questions about fleshing out the Kamailio SNMP MIB with something more useful, since bellheads love SNMP.\\
+[2014-05-14 16:42:08] <miconda> and, being asked up here, it’s going to be 4.2.0\\
+[2014-05-14 16:42:13] <abalashov> I always just tell them to wrap custom OIDs with kamctl queries.\\
+[2014-05-14 16:42:38] <miconda> 5.0 when we deprecate ipv4 and we support ipv6 and ipv9\\
+[2014-05-14 16:42:48] <abalashov> aka Kamailio Vista\\
+[2014-05-14 16:43:07] <stangrze> erlang module is at github.com/stangrze/sip-router-erlang-module\\
+[2014-05-14 16:43:45] <miconda> abalashov: should not be hard to add to snmpstats, oej did latel several of them\\
+[2014-05-14 16:43:59] <miconda> stangrze: hello! thanks for the link to erlang module\\
+[2014-05-14 16:44:00] <stangrze> its quite usable now, would appreciate is someone dares to test it wit dome complex config\\
+[2014-05-14 16:44:01] <caruizdiaz> topic suggestion: modifying/enhancing the db api to support nosql databases\\
+[2014-05-14 16:44:22] <miconda> stangrze: i was just going to ask abotu the state\\
+[2014-05-14 16:44:25] <stangrze> ...some..\\
+[2014-05-14 16:44:49] <miconda> stangrze: going to see if I can hunt some erlang fans\\
+[2014-05-14 16:45:21] <miconda> stangrze: perhaps testing will come easier for everyone when the module gets into main repo\\
+[2014-05-14 16:45:42] <stangrze> database interface for srdb1 is quite complete, you can use boss_db app to connect to mysql database, and it should doo all stuff\\
+[2014-05-14 16:46:26] <miconda> ok, let’s conclude with major release: autumn, decision on date by end of summer\\
+[2014-05-14 16:47:14] <stangrze> i got busy with broadcom's as-feature-event stuff i need for my work, than i'll get back to erlang\\
+[2014-05-14 16:47:39] <abalashov> stangrze: You mean Broadsoft?  :)\\
+[2014-05-14 16:47:53] <stangrze> broadsoft, sory ;-)\\
+
+===== minor release =====
+[2014-05-14 16:49:00] <miconda> planning one by end of may, early june\\
+[2014-05-14 16:49:13] <miconda> before starting the holidays season\\
+[2014-05-14 16:50:00] <miconda> most probably for both latest stable branches this time — 4.0 and 4.1\\
+[2014-05-14 16:50:18] <miconda> so this was short — I gues …\\
+[2014-05-14 16:50:27] <miconda> we get back to proposed topics later\\
+[2014-05-14 16:50:36] <linuxmaniac> jessie will freeze at 6th of November 2014\\
+[2014-05-14 16:50:51] <miconda> just to finish what we have on wiki\\
+[2014-05-14 16:51:07] <miconda> linuxmaniac: so we have to do a major release before to get it in, right?\\
+[2014-05-14 16:51:14] <linuxmaniac> yes\\
+[2014-05-14 16:51:16] <oej> I will freeze in october already...\\
+[2014-05-14 16:51:19] <miconda> ok\\
+[2014-05-14 16:51:24] <miconda> :-)\\
+[2014-05-14 16:51:36] <eZz> hello\\
+[2014-05-14 16:51:41] <linuxmaniac> and afer that long maintain work\\
+[2014-05-14 16:51:45] <caruizdiaz> xD\\
+[2014-05-14 16:52:01] <miconda> next topic: old or forgotten patches\\
+[2014-05-14 16:52:05] <linuxmaniac> just security patches for stable release\\
+[2014-05-14 16:52:28] <linuxmaniac> multipart bodies!!! :-(\\
+[2014-05-14 16:52:32] <linuxmaniac> jaja\\
+[2014-05-14 16:52:43] <abalashov> My patch that deprecates IPv4 and non-TLS connections was forgotten. But it's probably best left forgotten.\\
+[2014-05-14 16:53:02] <miconda> linuxmaniac: should be done soon\\
+[2014-05-14 16:53:15] <miconda> the one for textops is more scarry\\
+[2014-05-14 16:53:34] <miconda> but will be finished soon\\
+[2014-05-14 16:53:34] <linuxmaniac> yes, and now I'm working on dialplan \\
+[2014-05-14 16:53:57] <linuxmaniac> this will be even scarier \\
+[2014-05-14 16:53:57] <miconda> the one for websockets, Peter responded on mailing list, as he cannot attend here\\
+[2014-05-14 16:54:48] <miconda> my plan for the one on websockets (to get rid of libunistring) is to have defines to select one or another …\\
+[2014-05-14 16:55:07] <miconda> in some OSes is hard to get libunistring\\
+[2014-05-14 16:55:20] <miconda> eZz: hello!\\
+
+===== mirrors =====
+[2014-05-14 16:55:57] <caruizdiaz> +1 to get rid of libunistring\\
+[2014-05-14 16:56:33] <linuxmaniac> I have to say that the Makefiles can be improved, I had recently a report because kamailio couldn't build without pkg-config\\
+[2014-05-14 16:56:33] <miconda> we may get some US-located server\\
+[2014-05-14 16:56:35] <oej> What's the alternative to libunistring\\
+[2014-05-14 16:56:51] <oej> (sorry, missed "next topic" . MOve on!)\\
+[2014-05-14 16:56:54] <miconda> oej: embedded version\\
+[2014-05-14 16:57:04] <miconda> oej: no problem …\\
+[2014-05-14 16:57:32] <miconda> oej: there was a patch to replace the function used from libunistring with one to be inside the module\\
+[2014-05-14 16:57:39] <oej> ok\\
+[2014-05-14 16:57:48] <miconda> because it is about conversion from utf8 to ascii, or so ...\\
+[2014-05-14 16:57:56] <oej> Unicode is not easy, so we need to make sure it works properly\\
+[2014-05-14 16:58:18] <miconda> don’t remember by heart now exactly\\
+[2014-05-14 16:58:37] <miconda> but yes, we will keep both options by compile time to be able to switch in case of problems\\
+[2014-05-14 16:58:58] <oej> Ok, back to "Mirrors"\\
+[2014-05-14 16:59:05] <miconda> anything else for old patches?\\
+[2014-05-14 16:59:15] <miconda> ok then, back to mirrors\\
+[2014-05-14 16:59:23] <miconda> as said, we may get some US-located server\\
+[2014-05-14 16:59:36] <miconda> thanks to qxork\\
+[2014-05-14 16:59:45] <oej> Thanks Qxork\\
+[2014-05-14 16:59:51] <abalashov> Thanks qxork !\\
+[2014-05-14 17:00:00] <miconda> and I thought of mirroring the debian apt repos\\
+[2014-05-14 17:00:01] <oej> MIrror of what btw?\\
+[2014-05-14 17:00:25] <eZz> please tell me when will be a free talk, I did not declared any topics\\
+[2014-05-14 17:00:27] <miconda> and build a rpm repo\\
+[2014-05-14 17:00:55] <miconda> oej: so we get a server (virtual)\\
+[2014-05-14 17:01:00] <miconda> and we can use it\\
+[2014-05-14 17:01:23] <miconda> we are ok with apt repos\\
+[2014-05-14 17:01:31] <miconda> but rpms are on open suse build servers\\
+[2014-05-14 17:01:49] <miconda> and doesn’t appear to be easy to get via some package manager\\
+[2014-05-14 17:01:55] <linuxmaniac> mika: there is an easy way to build rpm too in jenkins?\\
+[2014-05-14 17:02:17] <mika> linuxmaniac: nope, i've a buddy working on it, but it needs work\\
+[2014-05-14 17:02:25] <linuxmaniac> Ok\\
+[2014-05-14 17:02:32] <miconda> not being a rpm-base distro user, I just thought of cloning the rpms and building a repository out of them\\
+[2014-05-14 17:03:10] <mika> clean rpm builds similar to what we do with debs would be nice though :) what distris do you have in mind?\\
+[2014-05-14 17:03:15] <miconda> then eventually set a mirror for apt repos as well, although I understood from sipwise guys that the current one is on amazon, so it is distributed already\\
+[2014-05-14 17:03:50] <linuxmaniac> miconda: been in amazon doesn't mean distributed\\
+[2014-05-14 17:03:50] <miconda> mika: now we (I) do for centos, redhat, opensuse and fedora\\
+[2014-05-14 17:04:03] <miconda> various versions\\
+[2014-05-14 17:04:14] <miconda> supported by opensuse build service\\
+[2014-05-14 17:04:28] <miconda> linuxmaniac: ok, right, wanted to say more reliable :-)\\
+[2014-05-14 17:04:30] <mika> miconda: alright\\
+[2014-05-14 17:04:59] <oej> Gotta leave the office, or they will lock me in. Have a good meeting!\\
+[2014-05-14 17:05:20] <caruizdiaz> glad that rpm based distros are taken into account :)\\
+[2014-05-14 17:05:38] <caruizdiaz> bye oej :)\\
+[2014-05-14 17:05:40] <eZz> have a great evening, oej!\\
+[2014-05-14 17:06:04] <miconda> for reference: https://build.opensuse.org/project/show/home:kamailio:telephony \\
+[2014-05-14 17:06:49] <miconda> so my question would have been: anyone here knowing to set a yum/whatsoever repository?\\
+[2014-05-14 17:06:52] <caruizdiaz> thanks\\
+[2014-05-14 17:07:24] <miconda> caruizdiaz: so you wanted to say that you can take care of?!?\\
+[2014-05-14 17:07:56] <caruizdiaz> jajaja, I could, but it will take me some time to get used to the rpm build system.\\
+[2014-05-14 17:08:02] <caruizdiaz> can you wait? ;)\\
+[2014-05-14 17:08:19] <eZz> some years ago I was a maintainer of Slackware packages mirror and did it automaticaly\\
+[2014-05-14 17:08:28] <miconda> build service is done, that’s easy\\
+[2014-05-14 17:08:56] <mika> IIRC createrepo should even work on Debian to provide a yum mirror\\
+[2014-05-14 17:08:59] <caruizdiaz> then it would be repo configuration only\\
+[2014-05-14 17:09:00] <miconda> needed: a script to download the rpms and build a yum/etc repo\\
+[2014-05-14 17:09:42] <miconda> ok … let’s get back on this when we have the server\\
+[2014-05-14 17:09:54] <miconda> will discuss on mailing list\\
+[2014-05-14 17:10:01] <eZz> btw, checkinstall can create rpm/debian/slack/etc else packages\\
+[2014-05-14 17:10:31] <caruizdiaz> I think peter had done some work on this topic for his centos servers. I will catch up with his work and see how I can help\\
+[2014-05-14 17:10:43] <miconda> ok\\
+
+===== world wide events =====
+[2014-05-14 17:10:53] <miconda> next topic: world wide events …\\
+[2014-05-14 17:11:36] <miconda> if anyone here is participating to an event and approaches something touching kamailio, we can put news, etc… on site\\
+[2014-05-14 17:11:46] <carstenbock> I'll add to the docs in the Wiki, how to use the SUSE services as a yum-repo...\\
+[2014-05-14 17:12:17] <eZz> I'm working on 2 new modules according to security\\
+[2014-05-14 17:12:23] <miconda> or if you know an event that should be attended, send and email and we will see if anyone can attend\\
+[2014-05-14 17:12:43] <miconda> eZz: great, wait a bit and we will get on that topic\\
+[2014-05-14 17:12:55] <eZz> miconda: ok\\
+[2014-05-14 17:13:40] <miconda> to conclude on events — Cluecon and Astricon will be on our radar\\
+[2014-05-14 17:14:04] <caruizdiaz> what about TADHack?\\
+[2014-05-14 17:14:09] <miconda> but also smaller events are good, those kind of meetups\\
+[2014-05-14 17:14:24] <miconda> caruizdiaz: looks interesting, overlaps with vacation\\
+[2014-05-14 17:14:38] <miconda> but would be good if anyone can participate on site or remote\\
+[2014-05-14 17:14:43] <caruizdiaz> it's not vacation in here :D\\
+[2014-05-14 17:15:05] <miconda> here we done one every 10 years, so …\\
+[2014-05-14 17:15:05] <caruizdiaz> I think I will. I will let you know if so.\\
+[2014-05-14 17:15:06] <miconda> :-)\\
+[2014-05-14 17:15:11] <miconda> ok\\
+[2014-05-14 17:15:17] <qxork> have to run!\\
+[2014-05-14 17:15:32] <miconda> next topic: ipv6, security\\
+[2014-05-14 17:15:43] <miconda> oej is gone, so it should be short :-)\\
+[2014-05-14 17:15:53] <caruizdiaz> xD\\
+[2014-05-14 17:16:02] <miconda> any experiences with IPv6, any issues?\\
+[2014-05-14 17:16:16] <miconda> not much production from my interactions …\\
+[2014-05-14 17:17:06] <miconda> anyhow, for new modules dealing with ip addresses, ipv6 should be considered from early phase\\
+[2014-05-14 17:17:24] <miconda> some providers in germany started to shift to ipv6\\
+[2014-05-14 17:17:50] <linuxmaniac> miconda: we have some clients with ipv6\\
+[2014-05-14 17:18:03] <miconda> to conclude: I am not aware of any issue, just wanted to get a round of others’ opinions\\
+[2014-05-14 17:18:23] <miconda> linuxmaniac: ok, so it’s working …\\
+[2014-05-14 17:18:37] <linuxmaniac> I not aware of any issue \\
+[2014-05-14 17:18:41] <miconda> do you have any figures (estimations) of subscribers on ipv6\\
+[2014-05-14 17:18:49] <miconda> like order of magnitude\\
+[2014-05-14 17:18:57] <linuxmaniac> not me, but maybe Daniel or Andrew\\
+[2014-05-14 17:18:59] <miconda> 1000+, 10 000+ …\\
+[2014-05-14 17:19:05] <miconda> ok\\
+
+===== security =====
+[2014-05-14 17:19:26] <miconda> security then …\\
+[2014-05-14 17:19:34] <carstenbock> We wanted to put IPv6 in a customer network, but then we noticed that basically all fibre-modems and ISDN boxes in that network did not support IPv6 and it's not on the roadmap of the manufacturers :-(\\
+[2014-05-14 17:19:57] <miconda> there is the issue of tls-only listen …\\
+[2014-05-14 17:20:06] <miconda> that should be fixed soon\\
+[2014-05-14 17:20:52] <miconda> before the next major release I will review to see if anything else needs to be addresses in tls module\\
+[2014-05-14 17:21:05] <miconda> now we support up to tlsv1.2, iirc\\
+[2014-05-14 17:21:16] <miconda> tls1.3 is out? anyone knows....\\
+[2014-05-14 17:21:44] <miconda> eZz: as we are on security, you said something about two new modules\\
+[2014-05-14 17:21:48] <miconda> can you give more details?\\
+[2014-05-14 17:22:56] <miconda> eZz: are you around? otherwise we came back later to them\\
+[2014-05-14 17:23:12] <miconda> anything else we should do from security point of view?\\
+[2014-05-14 17:23:38] <miconda> it was a proposal with an alerts mailing list?!? or I am mixing it with something else...\\
+[2014-05-14 17:24:53] <linuxmaniac> miconda: it will be great for the future jessie maintenance a way to know security related problems\\
+[2014-05-14 17:25:37] <miconda> linuxmaniac: ok\\
+[2014-05-14 17:25:50] <miconda> perhaps we can discuss it on mailing list to get the others involved\\
+[2014-05-14 17:25:56] <linuxmaniac> +1\\
+[2014-05-14 17:26:03] <miconda> lets go to next topic: continuous integration\\
+[2014-05-14 17:26:14] <linuxmaniac> \o/\\
+[2014-05-14 17:26:19] <miconda> and now it’s linuxmaniac on stage\\
+[2014-05-14 17:26:28] <linuxmaniac> mika... come to rescue me!\\
+[2014-05-14 17:26:57] <linuxmaniac> It will be great to start a discussion about it\\
+[2014-05-14 17:27:06] <mika> linuxmaniac: :)\\
+[2014-05-14 17:27:22] <linuxmaniac> what are our plans, wishes and manpower\\
+[2014-05-14 17:27:52] <linuxmaniac> from my part\\
+[2014-05-14 17:28:21] <linuxmaniac> I've created the initial jobs for static analysis using cppcheck at jenkins\\
+[2014-05-14 17:28:42] <miconda> linuxmaniac: cppcheck on jenkins shows 0\\
+[2014-05-14 17:28:46] <miconda> when i checked\\
+[2014-05-14 17:28:46] <mmike_> Hello to all. Don't know if anyone can hel me.\\
+[2014-05-14 17:28:59] <linuxmaniac> miconda: the are two kinds of jobs\\
+[2014-05-14 17:29:00] <miconda> was it run?\\
+[2014-05-14 17:29:26] <mmike_> we use Kamailio in our voip network and now we're facing an interoperability problem with a voip provider.\\
+[2014-05-14 17:29:32] <linuxmaniac> cppcheck-full is a complete run of everything\\
+[2014-05-14 17:29:51] <mmike_> it requires support to PRACK while out voip switch doesn't support it.\\
+[2014-05-14 17:29:53] <linuxmaniac> but cppcheck is just a check for the files changed in last commit\\
+[2014-05-14 17:30:14] <linuxmaniac> s/last commit/from the last commit checked/\\
+[2014-05-14 17:30:24] <miconda> linuxmaniac: ok\\
+[2014-05-14 17:30:38] <linuxmaniac> the full check is quite heavy\\
+[2014-05-14 17:30:44] <mmike_> Would it be possible to configure kamailio to generate the PRACK requests and OK to PRACKs?\\
+[2014-05-14 17:30:46] <linuxmaniac> like more than 8 hours\\
+[2014-05-14 17:30:46] <miconda> so are there thing reported on all source?\\
+[2014-05-14 17:31:02] <miconda> s/thing/things/\\
+[2014-05-14 17:31:18] <linuxmaniac> https://kamailio.sipwise.com/view/cppcheck/job/kamailio40-cppcheck-full/1/cppcheckResult/ \\
+[2014-05-14 17:31:33] <linuxmaniac> https://kamailio.sipwise.com/view/cppcheck/job/kamailio41-cppcheck-full/2/cppcheckResult/ \\
+[2014-05-14 17:31:54] <linuxmaniac> I didn't have time to check the results yet\\
+[2014-05-14 17:32:20] <miconda> ok\\
+[2014-05-14 17:32:21] <linuxmaniac> but Alex did a fast check on some and there are some stupid withs\\
+[2014-05-14 17:32:24] <miconda> looking over them soon\\
+[2014-05-14 17:32:25] <linuxmaniac> things\\
+[2014-05-14 17:32:41] <miconda> btw, you wanted to send allerts to mailing list\\
+[2014-05-14 17:32:42] <linuxmaniac> for sure there are some false positives\\
+[2014-05-14 17:32:44] <miconda> that would be good\\
+[2014-05-14 17:33:05] <miconda> let me know the email address to be used for sending alerts and I can allow it to sr-dev\\
+[2014-05-14 17:33:05] <linuxmaniac> miconda: yes, I would like to send mails when a job fails\\
+[2014-05-14 17:33:22] <linuxmaniac> mika: ^\\
+[2014-05-14 17:33:33] <eZz> miconda: sorry, I was afk, now here\\
+[2014-05-14 17:33:35] <linuxmaniac> miconda: ok\\
+[2014-05-14 17:33:51] <mika> yeah, np to notify mailing list, i just need a mail adr :)\\
+[2014-05-14 17:34:07] <mika> checking what we have as outgoing, a sec\\
+[2014-05-14 17:34:20] <linuxmaniac> I plan to trigger the full jobs once a mouth\\
+[2014-05-14 17:34:23] <linuxmaniac> mounth\\
+[2014-05-14 17:34:26] <eZz> miconda: please tell me later, when I can tell something about those modules\\
+[2014-05-14 17:35:15] <linuxmaniac> mika: it should send mails to sr-dev@lists.sip-router.org\\
+[2014-05-14 17:35:29] <linuxmaniac> miconda: correct?\\
+[2014-05-14 17:36:02] <linuxmaniac> So, static analysis done, ok?\\
+[2014-05-14 17:36:15] <miconda> yes, to ser-dev@…\\
+[2014-05-14 17:36:21] <miconda> sr-dev@…\\
+[2014-05-14 17:36:24] <mika> alright\\
+[2014-05-14 17:36:46] <miconda> linuxmaniac: ok\\
+[2014-05-14 17:36:49] <linuxmaniac> BTW, If you detect false positives, please report them to me in order to filter them\\
+[2014-05-14 17:37:07] <linuxmaniac> next, functional testing\\
+[2014-05-14 17:37:13] <miconda> for valgrind, kamailio can be compiled with system malloc\\
+[2014-05-14 17:37:23] <miconda> insted of pkg_malloc/pkg_free\\
+[2014-05-14 17:37:50] <linuxmaniac> miconda: but for shm?\\
+[2014-05-14 17:38:07] <linuxmaniac> I think valgrind needs to be teached\\
+[2014-05-14 17:38:28] <linuxmaniac> of our *_malloc *_free functions\\
+[2014-05-14 17:38:53] <linuxmaniac> doesn't it?\\
+[2014-05-14 17:39:01] <miconda> don’t know how\\
+[2014-05-14 17:39:05] <miconda> could be possible\\
+[2014-05-14 17:39:24] <miconda> I was thinking to try to replace shm_malloc with pkg malloc\\
+[2014-05-14 17:39:47] <linuxmaniac> miconda: http://valgrind.org/docs/manual/mc-manual.html#mc-manual.mempools \\
+[2014-05-14 17:40:05] <linuxmaniac> there is an API to teach valgrind of custom allocators\\
+[2014-05-14 17:40:15] <miconda> ok\\
+[2014-05-14 17:40:19] <miconda> that might be better\\
+[2014-05-14 17:40:30] <linuxmaniac> if we can do that...\\
+[2014-05-14 17:40:40] <linuxmaniac> we can test all the memory allocators\\
+[2014-05-14 17:41:04] <miconda> because replacing shm with system malloc might work only for static analysis, definitely not runtime\\
+[2014-05-14 17:41:26] <linuxmaniac> I was aware of the API\\
+[2014-05-14 17:41:47] <linuxmaniac> so that's why I'm sure we can do this\\
+[2014-05-14 17:41:52] <miconda> ok\\
+[2014-05-14 17:42:17] <miconda> so, now: functional testing …\\
+[2014-05-14 17:42:22] <linuxmaniac> I tried myself to figure out how to do it, but failed\\
+[2014-05-14 17:42:45] <linuxmaniac> yes, we need some tests in order to be able to do some automatic testing\\
+[2014-05-14 17:43:27] <miconda> is there a framework, or what is your proposal?\\
+[2014-05-14 17:43:30] <linuxmaniac> In sipwise I've created some testings with customs scripts\\
+[2014-05-14 17:43:43] <miconda> can the existing test scripts be reused?\\
+[2014-05-14 17:43:44] <mika> miconda: enabled, mails should be sent from admin@kamailio.sipwise.com\\
+[2014-05-14 17:44:32] <linuxmaniac> miconda: https://github.com/sipwise/kamailio-config-tests \\
+[2014-05-14 17:44:48] <linuxmaniac> this is heavily based in our platform \\
+[2014-05-14 17:45:11] <miconda> mika: ok, I will allow the address\\
+[2014-05-14 17:45:16] <linuxmaniac> But I would like to discuss something generic\\
+[2014-05-14 17:45:23] <mika> miconda: alright, just let me know if there are any problems\\
+[2014-05-14 17:45:39] <linuxmaniac> mika: thanks :-)\\
+[2014-05-14 17:45:58] <miconda> linuxmaniac: in current source code we have ‘test/unit/*’\\
+[2014-05-14 17:46:05] <miconda> scripts done by Henning a while ago\\
+[2014-05-14 17:46:18] <miconda> not sure how actual, not much activity with them lately\\
+[2014-05-14 17:47:14] <linuxmaniac> oej point me to asterisk testing framework or something like that\\
+[2014-05-14 17:47:29] <miconda> the one from sipwise uses sipp?\\
+[2014-05-14 17:47:36] <linuxmaniac> miconda: yes\\
+[2014-05-14 17:48:03] <miconda> and is any framework there\\
+[2014-05-14 17:48:07] <linuxmaniac> the idea is: set the subscribers, settings, etc... \\
+[2014-05-14 17:48:10] <miconda> or something developed inhouse?\\
+[2014-05-14 17:48:18] <linuxmaniac> this is done calling our API\\
+[2014-05-14 17:48:31] <stangrze> there is nice collection of sipp scripts on github\\
+[2014-05-14 17:49:01] <_gv_> If it's of interest, in Truphone Labs we use both sipp and pjsua, triggered by Jenkins. pjsua has a nice interface to manage this\\
+[2014-05-14 17:49:12] <linuxmaniac> and then fire some sipp processes, parse the kamailio log, and test the results\\
+[2014-05-14 17:49:43] <linuxmaniac> with this we can test the kamailio config flow\\
+[2014-05-14 17:49:50] <linuxmaniac> var contents\\
+[2014-05-14 17:50:04] <linuxmaniac> sip in an out messages\\
+[2014-05-14 17:50:16] <miconda> _gv_: anything public? expecially with pjsua?\\
+[2014-05-14 17:50:36] <linuxmaniac> This is really inhouse\\
+[2014-05-14 17:50:51] <miconda> linuxmaniac: yes, I expect this fits for a specific config\\
+[2014-05-14 17:51:07] <miconda> but probably we can get something for generic parts\\
+[2014-05-14 17:51:22] <miconda> eg., authentication, location registration and lookup\\
+[2014-05-14 17:51:35] <_gv_> miconda: not that I'm aware of, but I can see what's not sensitive and share\\
+[2014-05-14 17:51:44] <linuxmaniac> miconda: yes, you know about my work in debugger in order to be able to check config vars\\
+[2014-05-14 17:51:54] <miconda> _gv_: ok, thanks\\
+[2014-05-14 17:52:31] <linuxmaniac> but that is the issue we need to figure out how we want to do this\\
+[2014-05-14 17:53:02] <miconda> if there is a known/good framework that can be reused, we can look at\\
+[2014-05-14 17:53:15] <miconda> but I am not familiar with this, so suggestions are welcome\\
+[2014-05-14 17:53:18] <linuxmaniac> I don't know of any\\
+[2014-05-14 17:53:41] <miconda> if not, reuse old scripts or what so ever can be reused from sipwise thing\\
+[2014-05-14 17:54:09] <miconda> the old scripts are shell, calling various commands\\
+[2014-05-14 17:54:43] <miconda> and, iirc, sending emails if they fail\\
+[2014-05-14 17:54:52] <miconda> at some point they were enabled on devel.kamailio.org\\
+[2014-05-14 17:54:54] <linuxmaniac> maybe I can write a page in the wiki to summarize the proposal/issue\\
+[2014-05-14 17:55:05] <miconda> linuxmaniac: that will be very good\\
+[2014-05-14 17:55:15] <linuxmaniac> I will try to find the time\\
+[2014-05-14 17:55:37] <miconda> linuxmaniac: updatedb; locate time\\
+[2014-05-14 17:55:53] <linuxmaniac> :-)\\
+[2014-05-14 17:56:01] <miconda> so we continue this via wiki and mailing lists\\
+[2014-05-14 17:56:13] <miconda> just don’t foget to get the topic there\\
+[2014-05-14 17:56:39] <stangrze> python test framework is quite nice, would be good fit if we would use pjsip to send/receive messages\\
+[2014-05-14 17:56:40] <miconda> and let’s see if _gv_ can plug some goodies\\
+[2014-05-14 17:56:44] <linuxmaniac> Ack\\
+[2014-05-14 17:57:19] <miconda> stangrze: noted. prefering erlang over python, but I can leave with for a test framework :-)\\
+[2014-05-14 17:57:43] <miconda> eZz: still around?\\
+[2014-05-14 17:57:43] <linuxmaniac> I would like python too\\
+[2014-05-14 17:57:51] <caruizdiaz> libjitsi could also be an option. Everyone knows java :D\\
+[2014-05-14 17:57:58] <eZz> miconda: yeah\\
+[2014-05-14 17:58:25] <stangrze> erlang test frameworks are even nicer  ;-)\\
+[2014-05-14 17:58:26] <miconda> eZz: ok, you can say the details about the new module\\
+[2014-05-14 17:58:28] <eZz> well\\
+[2014-05-14 17:58:38] <miconda> stangrze: I am sure :-)\\
+[2014-05-14 17:58:50] <eZz> I'm working on 2 new modules (basically, 3 but 2 can be mixed)\\
+[2014-05-14 17:58:52] <caruizdiaz> erlang and golang are pending topics for me. Will learn them this year.\\
+[2014-05-14 17:58:58] <eZz> the first one is sec_dnsbl\\
+[2014-05-14 17:59:05] <eZz> block list using rbl lists\\
+[2014-05-14 17:59:32] <eZz> caused a recent atack to my kamailio :-)\\
+[2014-05-14 17:59:55] <eZz> the 2nd is sec_ids, intrussion detect system\\
+[2014-05-14 18:00:20] <eZz> that is for blocking portscans and various malicious attempts to scan peers (e.g. asterisk and so on)\\
+[2014-05-14 18:00:42] <linuxmaniac> eZz... fail2ban?\\
+[2014-05-14 18:01:19] <eZz> for kamailio? yes, a good idea but need to create a many rules\\
+[2014-05-14 18:01:41] <eZz> btw how about a thresholds and attempts counting?\\
+[2014-05-14 18:01:41] <linuxmaniac> many rules?\\
+[2014-05-14 18:01:49] <eZz> I'm using bayessian filters\\
+[2014-05-14 18:02:46] <eZz> linuxmaniac: I did not found any flexible solution to cover it\\
+[2014-05-14 18:02:53] <eZz> fail2ban is just an optional\\
+[2014-05-14 18:02:59] <miconda> eZz: for the first module you query dnsbl and block if coming from such ip?\\
+[2014-05-14 18:03:07] <eZz> yes\\
+[2014-05-14 18:03:33] <miconda> the second is not clear for me…\\
+[2014-05-14 18:03:42] <eZz> if that IP is listed in public block lists\\
+[2014-05-14 18:04:14] <miconda> the sec_ids?\\
+[2014-05-14 18:04:44] <eZz> no, it is for sec_dnsbl\\
+[2014-05-14 18:04:53] <miconda> ok, that is clear\\
+[2014-05-14 18:05:08] <miconda> but sec_ids what does exactly?\\
+[2014-05-14 18:05:34] <eZz> if you know there was a such project as snort\\
+[2014-05-14 18:06:22] <eZz> it is a ids for linux servers, I'm using a database of known attempts to hack the peers\\
+[2014-05-14 18:06:59] <miconda> so again, interogating a server/database to see if an ip is potentially mallicious or not?\\
+[2014-05-14 18:07:26] <eZz> yes, it is using 3rd party database\\
+[2014-05-14 18:07:39] <miconda> eZz: btw, are the module in planning phase or kind of done already?\\
+[2014-05-14 18:07:55] <eZz> it is in the progress\\
+[2014-05-14 18:08:03] <miconda> s/module/modules/\\
+[2014-05-14 18:08:12] <miconda> ok\\
+[2014-05-14 18:08:17] <eZz> I did not pushed this yet\\
+[2014-05-14 18:08:29] <eZz> it is unstable for now\\
+[2014-05-14 18:08:55] <eZz> and for dnsbl module it is a problem of delays of requests\\
+[2014-05-14 18:08:59] <caruizdiaz> do you have it publicly available so we can take a look?\\
+[2014-05-14 18:09:16] <eZz> not yes\\
+[2014-05-14 18:09:20] <eZz> yet\\
+[2014-05-14 18:09:28] <eZz> I'll push them as soon as possible\\
+[2014-05-14 18:09:37] <caruizdiaz> that would be great\\
+[2014-05-14 18:09:38] <eZz> at least you can test dnsbl\\
+[2014-05-14 18:10:00] <miconda> for dnsbl, there could be some caching eventually\\
+[2014-05-14 18:10:08] <eZz> yes\\
+[2014-05-14 18:10:16] <eZz> it has negative and positive cache\\
+[2014-05-14 18:10:26] <miconda> ok\\
+[2014-05-14 18:10:38] <eZz> and white/black lists\\
+[2014-05-14 18:10:51] <miconda> then looking forward to get the first versions out there for a deeper look and test\\
+[2014-05-14 18:11:03] <eZz> alright :-)\\
+[2014-05-14 18:11:39] <miconda> the last topic, iirc from the discussion above: caruizdiaz and some nosql\\
+[2014-05-14 18:11:40] <eZz> well, another plan is to fix docs for app_python and minor bugs for app_java\\
+[2014-05-14 18:11:46] <eZz> I'm done\\
+[2014-05-14 18:12:16] <miconda> eZz: you can do that directly … documentation is important, fixing bugs even more important :-)\\
+[2014-05-14 18:12:31] <eZz> yes :-)\\
+[2014-05-14 18:13:10] <miconda> maybe we can run python test framwork from app_python, linuxmaniac will love to do that :-)\\
+[2014-05-14 18:13:14] <caruizdiaz> yes, I wanted to ask if there were any plans to natively support nosql databases\\
+[2014-05-14 18:13:28] <miconda> what do you mean natively?\\
+[2014-05-14 18:13:48] <caruizdiaz> currently, db API is purely SQL (aka, SQL DDL and DML)\\
+[2014-05-14 18:14:19] <miconda> well, the sql is in modules like db_mysql, db_postgress…\\
+[2014-05-14 18:14:20] <caruizdiaz> if we want to add, for example, mongodb, redis, etc, we have no way of using the current API to do so\\
+[2014-05-14 18:14:26] <stangrze> i think you can connect to couchdb using json module\\
+[2014-05-14 18:14:40] <miconda> but there is also cassandra implementation for db api\\
+[2014-05-14 18:14:41] <eZz> I'm also using mongodb and redis\\
+[2014-05-14 18:14:47] <eZz> and my module is using redis btw\\
+[2014-05-14 18:14:49] <caruizdiaz> currently, we support cassandra, but only because cassandra has CQL, which resembles a poor SQL\\
+[2014-05-14 18:15:12] <caruizdiaz> and it is buggy for that reason.\\
+[2014-05-14 18:15:21] <miconda> but the db api is structure based\\
+[2014-05-14 18:15:34] <miconda> it doesn’t expose any sql\\
+[2014-05-14 18:15:43] <caruizdiaz> yes, but it has SQL embedded\\
+[2014-05-14 18:15:43] <miconda> plus there is db_berkely\\
+[2014-05-14 18:15:58] <miconda> caruizdiaz: where is the sql embedded?\\
+[2014-05-14 18:16:25] <caruizdiaz> usrloc for example: it has some plain sql queries that make it impossible to use with a dbms that does not suport sql\\
+[2014-05-14 18:16:33] <eZz> what about hadoop?\\
+[2014-05-14 18:16:47] <miconda> caruizdiaz: iirc, that is for db only mode\\
+[2014-05-14 18:17:04] <miconda> to get the natted clients\\
+[2014-05-14 18:17:40] <miconda> anyhow, that is done via db api raw_query\\
+[2014-05-14 18:17:55] <miconda> which can be made mod param to specify the format of the query\\
+[2014-05-14 18:18:14] <stangrze> +1 for this\\
+[2014-05-14 18:18:15] <caruizdiaz> what do you suggest to support nosql databases in the database layer?\\
+[2014-05-14 18:18:51] <miconda> caruizdiaz: not understanding your question exactly\\
+[2014-05-14 18:18:52] <caruizdiaz> maybe I am confused, but I remember seeing SQL in usrloc to load contacts from the database\\
+[2014-05-14 18:19:15] <miconda> caruizdiaz: should not be\\
+[2014-05-14 18:19:41] <caruizdiaz> will check that out later, but I am 90% sure there is.\\
+[2014-05-14 18:19:56] <caruizdiaz> let me explain it with an example\\
+[2014-05-14 18:20:29] <caruizdiaz> If I wanted to add a redis database to Kamailio, with the full feature set of including the modules that need a database backend, that would be impossible to my understanding\\
+[2014-05-14 18:21:05] <caruizdiaz> and the reason for this is that Kamailio is tied to SQL databases.\\
+[2014-05-14 18:21:12] <linuxmaniac> sure, how can you query a nonsql???\\
+[2014-05-14 18:21:13] <miconda> the only one is for db only mode, to fetch the natted contacts\\
+[2014-05-14 18:21:15] <eZz> will be a problems with object mapping only\\
+[2014-05-14 18:21:23] <eZz> but not with native formats\\
+[2014-05-14 18:21:30] <miconda> so it does a custom match on flags column, to find those if nat flag set\\
+[2014-05-14 18:21:53] <caruizdiaz> and that's precisely a reason it can't be used even with Cassandra\\
+[2014-05-14 18:22:19] <caruizdiaz> because the syntax is incorrect for CQL parser\\
+[2014-05-14 18:22:25] <miconda> caruizdiaz: you have to write a connector implementing the api\\
+[2014-05-14 18:22:31] <miconda> as i said, there is one for bdb\\
+[2014-05-14 18:22:35] <miconda> there is one for db_text\\
+[2014-05-14 18:23:00] <miconda> none of them have any sql\\
+[2014-05-14 18:23:05] <caruizdiaz> that was the hint I was looking for, thank you :)\\
+[2014-05-14 18:23:23] <miconda> the api itself is not for sql\\
+[2014-05-14 18:23:32] <caruizdiaz> and what about usrloc (and maybe others), do we need to remove that raw sql query?\\
+[2014-05-14 18:24:14] <miconda> for usrloc can be a mod param to specify the query\\
+[2014-05-14 18:24:31] <miconda> it is the query to get natted contact in db only mode\\
+[2014-05-14 18:24:47] <caruizdiaz> ok, I was not aware of that param\\
+[2014-05-14 18:24:50] <miconda> and that might not be supported by the connector you work with\\
+[2014-05-14 18:24:55] <miconda> it is not a param now\\
+[2014-05-14 18:24:58] <miconda> but can be added\\
+[2014-05-14 18:25:12] <caruizdiaz> but in either case, if we are going to be database agnostic, we should fully use the db abstraction layer\\
+[2014-05-14 18:25:39] <miconda> right now it is embedded, because it was for db sql mode only\\
+[2014-05-14 18:25:46] <stangrze> caruizdiaz: i know what you mean, i went through this writing erlang connector\\
+[2014-05-14 18:26:13] <miconda> when there will be db nosql only mode, then it can extended\\
+[2014-05-14 18:26:23] <caruizdiaz> maybe we could work on this together stangrze :)\\
+[2014-05-14 18:26:31] <miconda> but db api is not really tied in any way to sql\\
+[2014-05-14 18:26:43] <miconda> again, you can look at db_berkely\\
+[2014-05-14 18:26:45] <caruizdiaz> thank you for the clarification\\
+[2014-05-14 18:26:48] <miconda> also db_ldap\\
+[2014-05-14 18:26:53] <caruizdiaz> I will, thanks.\\
+[2014-05-14 18:26:56] <miconda> but db_ldap is for v2\\
+[2014-05-14 18:26:57] <stangrze> would be nice if all queries could be configurabe parameters, not constructed by c code\\
+[2014-05-14 18:27:02] <miconda> perhaps is db2_ldap\\
+[2014-05-14 18:27:28] <caruizdiaz> it's really important to support nosql database since is precisely the kind of databases we use in this industry, for performance reasons\\
+[2014-05-14 18:27:29] <miconda> stangrze: are you aware of any other place than usrloc?\\
+[2014-05-14 18:27:31] <stangrze> user cuold than use sql stored functions in postgresql in examble\\
+[2014-05-14 18:27:38] <miconda> where there are embedded queries?\\
+[2014-05-14 18:28:23] <miconda> caruizdiaz: db api was added in 2001 for that reason\\
+[2014-05-14 18:28:24] <stangrze> i dont remember that now, there are modules which refuses to load if raw_query capability is not provided\\
+[2014-05-14 18:28:36] <miconda> and db_berkely is probably 10 years old\\
+[2014-05-14 18:28:57] <miconda> but in my industry there were no nosql big demands\\
+[2014-05-14 18:29:08] <stangrze> take look how this stuff is done in gnugk\\
+[2014-05-14 18:29:08] <caruizdiaz> wow, I was in high school 10 years ago :D\\
+[2014-05-14 18:29:18] <eZz> :)\\
+[2014-05-14 18:29:24] <miconda> the object model doesn’t fit always the purpose\\
+[2014-05-14 18:30:15] <miconda> caruizdiaz: apparently only 7 years old\\
+[2014-05-14 18:30:29] <caruizdiaz> *only* :D\\
+[2014-05-14 18:30:43] <miconda> contributed by a guy from Cisco …\\
+[2014-05-14 18:30:50] <stangrze> caruizdiaz: you may try use my db_erlang module and some intermediate code in erlang to connect to nosql\\
+[2014-05-14 18:30:58] <stangrze> it works with riak\\
+[2014-05-14 18:31:26] <miconda> anyhow, to conclude\\
+[2014-05-14 18:31:40] <miconda> it should work to connect to nosql modules with current db api\\
+[2014-05-14 18:31:48] <miconda> but a connector module has to be written\\
+[2014-05-14 18:31:57] <caruizdiaz> I already starred your repo stangrze ;)\\
+[2014-05-14 18:32:05] <miconda> and, if there is need for adjustments in the db api, then we can do it, no problem\\
+[2014-05-14 18:32:21] <caruizdiaz> cool\\
+[2014-05-14 18:32:23] <miconda> db api evolved over the time … and can still be changed with new versions\\
+[2014-05-14 18:32:47] <miconda> the main problem with nosql is defining the objects\\
+[2014-05-14 18:32:59] <miconda> which is not something that can be really generic\\
+[2014-05-14 18:33:21] <miconda> because each company/service/system design the object to be optimized for their specific use case\\
+[2014-05-14 18:33:23] <caruizdiaz> that's right\\
+[2014-05-14 18:33:51] <caruizdiaz> there are probably some tables that could be exported because of the way there were conceived, but we can work on that as well\\
+[2014-05-14 18:34:31] <caruizdiaz> they*\\
+[2014-05-14 18:34:59] <stangrze> maybe we could start a srdb3 library, which would solve those issues\\
+[2014-05-14 18:35:17] <caruizdiaz> yes\\
+[2014-05-14 18:35:30] <stangrze> there is no dierence in approach between srdb1 and 2\\
+[2014-05-14 18:35:43] <miconda> btw, the db_perlvdb might be used as well\\
+[2014-05-14 18:35:53] <caruizdiaz> this is actually a major software design task, and we should start a thread of the mailing list to gather some opinions and hints\\
+[2014-05-14 18:36:44] <linuxmaniac> +1\\
+[2014-05-14 18:37:20] <miconda> ok, anything else?\\
+[2014-05-14 18:37:39] <miconda> running over 2h30min by now …\\
+[2014-05-14 18:38:01] <stangrze> yes\\
+[2014-05-14 18:38:34] <miconda> last chance to add something in discussion\\
+[2014-05-14 18:38:41] <stangrze> i'd like someone to suggest me a name for that broadsoft as-feature-sync module\\
+[2014-05-14 18:38:57] <stangrze> this is generaly presence related\\
+[2014-05-14 18:39:11] <miconda> isn’t that like sca module?\\
+[2014-05-14 18:39:16] <miconda> or something else?\\
+[2014-05-14 18:39:21] <linuxmaniac> I have to leave, see you!\\
+[2014-05-14 18:39:36] <stangrze> its a subscibtion and sync for stuff like dnd and callforward\\
+[2014-05-14 18:39:44] <miconda> http://kamailio.org/docs/modules/stable/modules/sca.html \\
+[2014-05-14 18:39:54] <miconda> ok, so not for blinking lamps, etc…\\
+[2014-05-14 18:39:58] <stangrze> you can to that on cisco/linksys phones\\
+[2014-05-14 18:40:41] <caruizdiaz> chau Victor\\
+[2014-05-14 18:41:08] <stangrze> this is not sca\\
+[2014-05-14 18:41:46] <miconda> linuxmaniac: thanks for all here, have a nice evening!\\
+[2014-05-14 18:42:12] <stangrze> it let you set stuff using phone gui, and get this propagated to application server, and back after phone reboot in ex.\\
+[2014-05-14 18:42:33] <miconda> stangrze: from phone to kamailio is sip?\\
+[2014-05-14 18:42:52] <miconda> is the classic subscribe/notify used around?\\
+[2014-05-14 18:43:02] <stangrze> yes,\\
+[2014-05-14 18:43:06] <stangrze> http://community.polycom.com/polycom/attachments/polycom/VoIP/2233/1/DeviceFeatureKeySynchronizationFD.pdf \\
+[2014-05-14 18:43:21] <stangrze> yes, but somehow spoiled, see spec\\
+[2014-05-14 18:43:49] <miconda> is it going to reuse presence or pua modules in any way?\\
+[2014-05-14 18:43:56] <stangrze> yes\\
+[2014-05-14 18:43:58] <miconda> or is going to be all standalone module?\\
+[2014-05-14 18:44:16] <miconda> ok, then you can prefix it with presence_ or pua_, depending on which one relies on\\
+[2014-05-14 18:44:21] <miconda> and then add some suffic\\
+[2014-05-14 18:44:38] <miconda> presence_dksf\\
+[2014-05-14 18:45:03] <stangrze> i guessd that, ;-) but presence_what? broadsoft? could have trademark issues\\
+[2014-05-14 18:45:10] <miconda> _dfks - Device Feature Key Synchronization\\
+[2014-05-14 18:45:18] <stangrze> ok, cool\\
+[2014-05-14 18:45:21] <stangrze> thanks\\
+[2014-05-14 18:45:43] <miconda> welcome\\
+[2014-05-14 18:45:59] <miconda> is this a planned module?\\
+[2014-05-14 18:46:11] <stangrze> i actually have some stuff working\\
+[2014-05-14 18:46:33] <miconda> ok\\
+[2014-05-14 18:46:54] <miconda> any other topics to discuss?\\
+[2014-05-14 18:46:57] <stangrze> using pathed pua, and pua_mi i can preload doc for initial subscription, and get that on phone screen\\
+[2014-05-14 18:48:16] <stangrze> i thin ther eis an issue in pua, it is using some bit flags to mark event types, it is not good for adding features\\
+[2014-05-14 18:48:41] <stangrze> and more event types\\
+[2014-05-14 18:48:53] <miconda> stangrze: yes, that has to be reworked somehow\\
+[2014-05-14 18:49:18] <stangrze> ok, i'm done, thanks\\
+[2014-05-14 18:49:43] <miconda> welcome! looking forward to all these modules\\
+[2014-05-14 18:49:59] <miconda> then, we are finished!\\
+[2014-05-14 18:50:06] <caruizdiaz> :)\\
+[2014-05-14 18:50:32] <miconda> thank everyone!\\
+[2014-05-14 18:50:34] <caruizdiaz> have you all GMT +x people a nice evening :)\\
+[2014-05-14 18:50:47] <javar> miconda: thank you!\\
+[2014-05-14 18:50:52] <caruizdiaz> thanks to you\\
+[2014-05-14 18:51:15] <miconda> hopefully I have the chat history on, so I will publish the relevant discussion on wiki\\
+[2014-05-14 18:51:56] <miconda> have a productive day or nice evening, depending where you are!\\
+[2014-05-14 18:52:17] <caruizdiaz> it's the middle of the day here: productive day ahead\\
+[2014-05-14 18:54:07] <eZz> thanks to all\\
+[2014-05-14 18:54:19] <eZz> have a great evening/night!\\
+[2014-05-14 18:54:45] <caruizdiaz> bye bye\\
+[2014-05-14 18:55:01] <miconda> bye\\
