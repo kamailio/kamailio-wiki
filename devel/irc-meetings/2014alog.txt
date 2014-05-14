@@ -297,7 +297,6 @@
 [2014-05-14 17:19:05] <miconda> ok\\
 
 ===== security =====
-[2014-05-14 17:19:26] <miconda> security then …\\
 [2014-05-14 17:19:34] <carstenbock> We wanted to put IPv6 in a customer network, but then we noticed that basically all fibre-modems and ISDN boxes in that network did not support IPv6 and it's not on the roadmap of the manufacturers :-(\\
 [2014-05-14 17:19:57] <miconda> there is the issue of tls-only listen …\\
 [2014-05-14 17:20:06] <miconda> that should be fixed soon\\
@@ -313,7 +312,8 @@
 [2014-05-14 17:25:37] <miconda> linuxmaniac: ok\\
 [2014-05-14 17:25:50] <miconda> perhaps we can discuss it on mailing list to get the others involved\\
 [2014-05-14 17:25:56] <linuxmaniac> +1\\
-[2014-05-14 17:26:03] <miconda> lets go to next topic: continuous integration\\
+
+===== continuous integration =====
 [2014-05-14 17:26:14] <linuxmaniac> \o/\\
 [2014-05-14 17:26:19] <miconda> and now it’s linuxmaniac on stage\\
 [2014-05-14 17:26:28] <linuxmaniac> mika... come to rescue me!\\
@@ -447,6 +447,8 @@
 [2014-05-14 17:57:51] <caruizdiaz> libjitsi could also be an option. Everyone knows java :D\\
 [2014-05-14 17:57:58] <eZz> miconda: yeah\\
 [2014-05-14 17:58:25] <stangrze> erlang test frameworks are even nicer  ;-)\\
+
+===== open discussion =====
 [2014-05-14 17:58:26] <miconda> eZz: ok, you can say the details about the new module\\
 [2014-05-14 17:58:28] <eZz> well\\
 [2014-05-14 17:58:38] <miconda> stangrze: I am sure :-)\\
