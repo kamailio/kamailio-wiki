@@ -48,9 +48,9 @@ Kamailio related:
 
 ===== Continuous Integration (CI) =====
 
-  * (vsl) functional testing. Framework ??
+  * (vsl) functional testing. Framework ?? https://github.com/sipwise/kamailio-config-tests
   * (vsl) memory checks: ( basic functional testing needed )
-    * valgrind
+    * valgrind http://valgrind.org/docs/manual/mc-manual.html#mc-manual.mempools
   * (vsl) static code analysis:
     * cppcheck ( jenkins jobs already there )
       * https://kamailio.sipwise.com/view/cppcheck/ 
