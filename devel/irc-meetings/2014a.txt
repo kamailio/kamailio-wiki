@@ -41,6 +41,9 @@ Kamailio related:
     * continuous integration - discussion started at KW14 (add dedicated section if you have proposals, etc.)
     * mirrors
     * world wide events
+  * (dcm) status updates
+    * security
+    * IPv6
 
 ===== Continuous Integration (CI) =====
 
