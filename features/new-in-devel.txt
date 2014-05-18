@@ -37,6 +37,12 @@
 ==== app_lua ====
   * sr.xavp.get now can return all indexes and can be used with indx <0 to return values counting from the end.
 
+==== textops ====
+  * new functions to manage multipart bodies:
+    * set_body_multipart([txt,content_type][,boundary])
+    * append_body_part(txt,content_type[, content_disposition])
+    * remove_body_part(content_type)
+ 
 ==== utils ====
   * http_query() now stores result also in case of 4xx replies
 ===== New in Core =====
