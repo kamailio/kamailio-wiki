@@ -2,12 +2,9 @@
 
 === Automated Debian/Ubuntu package building ===
 
-The new build system for Debian and Ubuntu packages is now in place.
-This service is kindly sponsored by [[http://www.sipwise.com|Sipwise]].
-Sipwise is providing the hosting and man power to create and manage this new system.
+The build system for Debian and Ubuntu packages service is kindly sponsored by [[http://www.sipwise.com|Sipwise]]. Sipwise is providing the hosting and man power to create and manage this system.
 
-deb.kamailio.org is based on [[https://github.com/mika/jenkins-debian-glue|jenkins-debian-glue]] project running on AWS EC2 environment thanks to [[http://michael-prokop.at/|Michael Prokop]] and myself. All the
-needed files, scripts and info to reproduce this system is kept public at [[https://github.com/sipwise/kamailio-deb-jenkins|github]].
+[[http://deb.kamailio.org|deb.kamailio.org]] is based on [[https://github.com/mika/jenkins-debian-glue|jenkins-debian-glue]] project running on AWS EC2 environment thanks to [[http://michael-prokop.at/|Michael Prokop]] and myself. All the needed files, scripts and info to reproduce this system is kept public at [[https://github.com/sipwise/kamailio-deb-jenkins|github]].
 
   * nightly builds are been built if a change is detected in the branch, once by night.
     * kamailiodev-nightly \\ branch: 'master' \\ distributions: jessie, wheezy, squeeze, precise
