@@ -1315,23 +1315,26 @@ The internal integer id for TCP/TLS connection.
 
 ===== SIPT module Pseudo-Variables =====
 
-==== $sipt_presentation ====
+==== $sipt(calling_party_number.presentation) / $sipt_presentation ====
 Returns the value of the Address presentation restricted indicator contained in the Calling Party Number header of the IAM message if it exists. Returns -1 if there isn't a Calling Party Number header.
 
-==== $sipt_screening ====
+==== $sipt(calling_party_number.screening) / $sipt_screening ====
 Returns the value of the Screening Indicator contained in the Calling Party Number header of the IAM message if it exists. Returns -1 if there isn't a Calling Party Number header.
 
-==== $sipt_hop_counter ====
+====  $sipt(hop_counter) / $sipt_hop_counter ====
 Returns the value of the Hop Counter for the IAM message if it exists. Returns -1 if there isn't a hop counter.
 
-==== $sipt_cpc ====
+==== $sipt(calling_party_category) / $sipt(cpc) / $sipt_cpc ====
 Returns the value of the Calling Party Category for the IAM message. Returns -1 if there is a parsing error.
 
-==== $sipt_calling_party_nai ====
+==== $sipt(calling_party_number.nature_of_address) / $sipt.(calling_party_number.nai) / $sipt_calling_party_nai ====
 Returns the value of the Nature of Address Indicator of the Calling Party for the IAM message. Returns -1 if there is a parsing error or if the Calling Party Number is not present.
 
-==== $sipt_called_party_nai ====
+====  $sipt(called_party_number.nature_of_address) / $sipt(called_party_number.nai) / $sipt_called_party_nai ====
 Returns the value of the Nature of Address Indicator of the Called Party for the IAM message. Returns -1 if there is a parsing error.
+
+==== $sipt(event_info) ===
+Returns the value  of the Event Info header of the CPG message. Returns -1 if there is a parsing error.
 
 ===== $cfg(key) - Config File Attributes =====
 
