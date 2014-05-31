@@ -1251,7 +1251,7 @@ SIP-Router has an internal DNS resolver with caching capabilities. If this cachi
 * Of course you can use the resolving name servers configured in /etc/resolv.conf as caching nameservers.
 
 If the internal resolver/cache is enabled you can add/remove records by hand (using sercmd or xmlrpc) using the DNS RPCs, e.g. dns.add_a,
-dns.add_srv, dns.delete_a a.s.o. For more info on DNS RPCs see http://sip-router.org/docbook/sip-router/branch/master/rpc_list/rpc_list.html#dns.add_a
+dns.add_srv, dns.delete_a a.s.o. For more info on DNS RPCs see http://www.kamailio.org/docs/docbooks/4.0.x/rpc_list/rpc_list.html#dns.add_a
 
 Note: During startup of SIP-Router, before the internal resolver is loaded, the system resolver will be used (it will be used for queries done from module register functions or modparams fixups, but not for queries done from mod_init() or normal fixups). 
 
