@@ -51,7 +51,7 @@
   * http_query() now stores result also in case of 4xx replies
 ===== New in Core =====
 
-* struct action has now routename info.
+ * struct action has now routename info.
 
 
 ===== Tools =====
