@@ -37,6 +37,10 @@
 ==== app_lua ====
   * sr.xavp.get now can return all indexes and can be used with indx <0 to return values counting from the end.
 
+==== debugger ====
+  * show routename in cfgtrace output
+
+
 ==== textops ====
   * new functions to manage multipart bodies:
     * set_body_multipart([txt,content_type][,boundary])
