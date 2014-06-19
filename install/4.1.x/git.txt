@@ -227,12 +227,13 @@ You can browse [[http://git.sip-router.org/cgi-bin/gitweb.cgi?p=sip-router;a=blo
 The init.d script can be used to start/stop the Kamailio server in a nicer way. A sample of init.d script for Kamailio is provided at:
 
 <code>
-/usr/local/src/kamailio-devel/kamailio/pkg/kamailio/deb/debian/kamailio.init
+/usr/local/src/kamailio-4.1/kamailio/pkg/kamailio/deb/debian/kamailio.init
 </code>
 
 Just copy the init file into the /etc/init.d/kamailio. Then change the permisions:
 
 <code>
+  cp /usr/local/src/kamailio-4.1/kamailio/pkg/kamailio/deb/debian/kamailio.init /etc/init.d/kamailio
   chmod 755 /etc/init.d/kamailio 
 </code>
 
