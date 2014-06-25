@@ -251,6 +251,9 @@ Note that changing the From: header may break backwards compatibility with SIP 1
 
 **$fU** - reference to username in URI of 'From' header
 
+<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
+
+Note that changing the From: header may break backwards compatibility with SIP 1.0 devices.
 ==== $mb - SIP message buffer ====
 
 **$mb** - reference to SIP message buffer
