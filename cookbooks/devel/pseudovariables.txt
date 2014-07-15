@@ -139,6 +139,8 @@ $(branch(uri)[2]) = "sip:test@kamailio.org;transport=sctp";
 
 **$bF** - reference to branch flags of branch 0 (RURI) - hexa output
 
+<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
+
 ==== $bs - Body size ====
 
 **$bs** - body size
