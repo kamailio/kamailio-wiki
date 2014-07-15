@@ -134,7 +134,7 @@ $(branch(uri)[2]) = "sip:test@kamailio.org;transport=sctp";
 
 **$bf** - reference to branch flags of branch 0 (RURI) - decimal output
 
-
+It is R/W variable (you can assign values to it directly in configuration file)
 ==== $bF - Branch flags ====
 
 **$bF** - reference to branch flags of branch 0 (RURI) - hexa output
