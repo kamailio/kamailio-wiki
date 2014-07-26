@@ -50,7 +50,12 @@
     * set_body_multipart([txt,content_type][,boundary])
     * append_body_part(txt,content_type[, content_disposition])
     * remove_body_part(content_type)
- 
+
+==== tm ====
+  * t_replicate() without outbound proxy address
+
+==== tmx ====
+  * t_cancel_callid() can set the Reason header in generated CANCEL
 ==== uac ====
   * enhancements to remote registration
     * new rpc commands:
