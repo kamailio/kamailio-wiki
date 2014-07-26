@@ -21,6 +21,10 @@
   * configuration script connector for Cassandra NoSQL engine
   * http://kamailio.org/docs/modules/devel/modules/ndb_cassandra.html
 
+==== nosip ====
+
+  * allow handling non-sip traffic via event_route
+  * http://kamailio.org/docs/modules/devel/modules/nosip.html
 ==== uuid ====
 
   * variables returning unique variables using libuid
