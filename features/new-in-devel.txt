@@ -51,6 +51,13 @@
     * append_body_part(txt,content_type[, content_disposition])
     * remove_body_part(content_type)
  
+==== uac ====
+  * enhancements to remote registration
+    * new rpc commands:
+      * reload records from database
+      * enable/disable a record for remote registration
+      * refresh details of a record from database or add a new one
+
 ==== utils ====
   * http_query() now stores result also in case of 4xx replies
 ===== New in Core =====
