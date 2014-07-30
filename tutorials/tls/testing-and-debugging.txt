@@ -156,6 +156,7 @@ Following a list of TLS clients and the certificate store they use (please exten
   * Internet Explorer: Windows certificate store
   * Chrome: Windows certificate store
   * Firefox: Dedicated Firefox certificate store
+  * Asterisk: Configured in sip.conf
 
 ===== SIP Clients with TLS Client Certificate Support =====
 
