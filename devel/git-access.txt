@@ -78,3 +78,9 @@ This kind of branch is recommended when many developers experiment with new code
       * http://sip-router.org/tracker
     * pushed first in a private branch
   * patches to own modules can be pushed at any time. However, if you want to discuss on sr-dev mailing lists, you are welcome to send an email
+
+===== Further Guidelines =====
+
+Several tutorials about committing with Git and backporting are available at:
+
+  * [[:start#guidelines|Guidelines TOC]]
