@@ -119,6 +119,7 @@ Few guidelines to edit the wiki:
 
   * [[http://www.kamailio.org/docs/docbooks/3.2.x/rpc_api/rpc_api.html|RPC Control Interface - API]]
   * [[http://www.asipto.com/pub/kamailio-devel-guide/|Kamailio Development Guide]]
+  * [[devel:git-access|Developer Git Access]]
 
 ==== Embedded APIs ====
 
