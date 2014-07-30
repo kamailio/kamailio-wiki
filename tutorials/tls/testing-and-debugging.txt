@@ -163,3 +163,10 @@ Following a list of TLS clients and the certificate store they use (please exten
 Following a list of SIP clients that support TLS user certificates (needed for incoming TLS connections, of if the TLS server requires mutual TLS (MTLS))
   * QjSimple: select private key and certificate file in configuration dialog
   * Jitis: Settings -> Advanced -> TLS
+
+
+==== Trunking with Microsoft Lync ====
+
+For Microsoft Lync it is very important that the CN in the Kamailio server (and client) certificate use the name configured in the Topology as the PSTN trunk. Other names may be in the SubjectAltName fields.
+Lync by default asks for a TLS client certificate when connecting to it using TLS. MS calls this MTLS - Mutual TLS.
+  * Microsoft: TLS and MTLS in Lync http://technet.microsoft.com/en-us/library/gg195752(v=ocs.14).aspx
