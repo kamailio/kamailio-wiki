@@ -67,6 +67,30 @@ Return md5 over PV value
 xlog("md5 over From username: $(fU{s.md5})");
 </code>
 
+==== {s.sha256} ====
+
+Return sha 256 over PV value
+
+<code>
+xlog("sha 256 over From username: $(fU{s.sha256})");
+</code>
+
+==== {s.sha384} ====
+
+Return sha 384 over PV value
+
+<code>
+xlog("sha 384 over From username: $(fU{s.sha384})");
+</code>
+
+==== {s.sha512} ====
+
+Return sha 512 over PV value
+
+<code>
+xlog("sha 512 over From username: $(fU{s.sha512})");
+</code>
+
 ==== {s.substr,offset,length} ====
 
 Return substring starting at offset having size of 'length'. If offset is negative, then it is counted from the end of PV value, -1 being the last char. In case of positive value, 0 is first char. Length must be positive, in case of 0, substring to the end of PV value is returned. offset and length can be PV as well.
