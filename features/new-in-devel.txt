@@ -16,6 +16,10 @@
   * push details of events to remote applications via tcp
   * http://kamailio.org/docs/modules/devel/modules/evapi.html
 
+==== jsonrcp-s ====
+
+  * implementation of JSONRPC server over HTTP
+  * http://kamailio.org/docs/modules/devel/modules/jsonrpc-s.html
 ==== ndb_cassandra ====
 
   * configuration script connector for Cassandra NoSQL engine
