@@ -29,6 +29,12 @@
 
   * allow handling non-sip traffic via event_route
   * http://kamailio.org/docs/modules/devel/modules/nosip.html
+
+==== rtpengine ====
+
+  * control rtpengine application for RTP relaying or WebRTC gatewaying
+  * successor of rtpproxy-ng
+  * http://kamailio.org/docs/modules/devel/modules/rtpengine.html
 ==== uuid ====
 
   * variables returning unique variables using libuid
