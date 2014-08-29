@@ -36,7 +36,7 @@
 | **append_branches (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/ims_registrar_scscf.html | ims_registrar_scscf]] |
 | **append_branches (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/registrar.html | registrar]] |
 | **append_fromtag (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/rr.html#append-fromtag-id | rr]] |
-| **array_size_suffix (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/htable.html | htable]] |
+| **array_size_suffix (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/htable.html#htable.p.array_size_suffix | htable]] |
 | **attribute_column (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/avpops.html#avpops.p.attribute_column | avpops]] |
 | **attrs_avp (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/dispatcher.html#dispatcher.p.attrs_avp | dispatcher]] |
 | **attrs_avp (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/drouting.html | drouting]] |
@@ -78,6 +78,7 @@
 | **backend(string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/xmpp.html | xmpp]] |
 | **base_dn (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/h350.html | h350]] |
 | **bflags (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/uac_redirect.html | uac_redirect]] |
+| **bind_addr (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/evapi.html#evapi.p.bind_addr | evapi]] |
 | **bind_tm (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/sl.html#bind_tm | sl]] |
 | **binrpc (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/ctl.html#binrpc | ctl]] |
 | **binrpc_max_body_size (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/ctl.html#binrpc_max_body_size | ctl]] |
@@ -143,6 +144,7 @@
 | **cdr_duration_id (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/acc.html#acc.p.cdr_duration_id | acc]] |
 | **cdr_enable (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/acc.html#acc.p.cdr_enable | acc]] |
 | **cdr_end_id (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/acc.html#acc.p.cdr_end_id | acc]] |
+| **cdr_expired_dlg_enable (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/acc.html#acc.p.cdr_expired_dlg_enable | acc]] |
 | **cdr_extra (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/acc.html#acc.p.cdr_extra | acc]] |
 | **cdr_facility (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/acc.html#acc.p.cdr_facility | acc]] |
 | **cdr_log_enable (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/acc.html#acc.p.cdr_log_enable | acc]] |
@@ -217,7 +219,7 @@
 ^ Name ^ Module Path ^ Module Name ^
 | **db_check_update (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/usrloc.html#usrloc.p.db_check_update | usrloc]] |
 | **db_err_threshold (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/p_usrloc.html | p_usrloc]] |
-| **db_expires (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/htable.html | htable]] |
+| **db_expires (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/htable.html#htable.p.db_expires | htable]] |
 | **db_extra (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/acc.html#acc.p.db_extra | acc]] |
 | **db_fetch_rows (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/dialog.html | dialog]] |
 | **db_fetch_rows (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/dialog_ng.html | dialog_ng]] |
@@ -225,6 +227,7 @@
 | **db_insert_mode (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/acc.html#acc.p.db_insert_mode | acc]] |
 | **db_insert_mode (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/sipcapture.html#sipcapture.p.db_insert_mode | sipcapture]] |
 | **db_missed_flag (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/acc.html#acc.p.db_missed_flag | acc]] |
+| **db_mode (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/ims_usrloc_pcscf.html | ims_usrloc_pcscf]] |
 | **db_mode (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/pua.html | pua]] |
 | **db_mode (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/db_text.html | db_text]] |
 | **db_mode (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/dialog.html | dialog]] |
@@ -246,6 +249,7 @@
 | **db_table (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/prefix_route.html#prefixroute.db_table | prefix_route]] |
 | **db_table (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/uri_db.html | uri_db]] |
 | **db_table_acc (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/acc.html#acc.p.db_table_acc | acc]] |
+| **db_table_lock_type (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/presence.html | presence]] |
 | **db_table_missed_calls (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/acc.html#acc.p.db_table_missed_calls | acc]] |
 | **db_transaction_level (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/p_usrloc.html | p_usrloc]] |
 | **db_update_as_insert (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/usrloc.html#usrloc.p.db_update_as_insert | usrloc]] |
@@ -253,8 +257,9 @@
 | **db_update_period (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/presence.html | presence]] |
 | **db_update_period (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/dialog.html | dialog]] |
 | **db_update_period (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/dialog_ng.html | dialog_ng]] |
+| **db_url (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/ims_usrloc_pcscf.html | ims_usrloc_pcscf]] |
 | **db_url (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/alias_db.html | alias_db]] |
-| **db_url (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/htable.html | htable]] |
+| **db_url (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/htable.html#htable.p.db_url | htable]] |
 | **db_url (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/imc.html | imc]] |
 | **db_url (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/mohqueue.html#url.parms | mohqueue]] |
 | **db_url (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/pua.html | pua]] |
@@ -430,7 +435,7 @@
 | **enable (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/benchmark.html | benchmark]] |
 | **enabled_column (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/lcr.html | lcr]] |
 | **enable_crypto_hardware_support** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/osp.html | osp]] |
-| **enable_dmq (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/htable.html | htable]] |
+| **enable_dmq (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/htable.html#htable.p.enable_dmq | htable]] |
 | **enable_double_rr (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/rr.html | rr]] |
 | **enable_full_lr (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/rr.html | rr]] |
 | **enable_socket_mismatch_warning (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/rr.html | rr]] |
@@ -443,18 +448,20 @@
 | **escape_cr (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/xmlrpc.html#escape_cr | xmlrpc]] |
 | **exec (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/rtimer.html | rtimer]] |
 | **exit (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/prefix_route.html#prefixroute.exit | prefix_route]] |
-| **expire (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/memcached.html#dmq.p.expire | memcached]] |
-| **expires_column (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/htable.html | htable]] |
+| **expire (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/memcached.html#memcached.p.expire | memcached]] |
+| **expires_column (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/htable.html#htable.p.expires_column | htable]] |
 | **expires_column (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/usrloc.html#usrloc.p.expires_column | usrloc]] |
 | **expires_grace (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/ims_isc.html | ims_isc]] |
 | **expires_offset (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/presence.html | presence]] |
 | **expires_offset (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/rls.html | rls]] |
+| **expires_range (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/registrar.html | registrar]] |
 | **expire_time (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/msilo.html | msilo]] |
 | **expire_time (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/p_usrloc.html | p_usrloc]] |
 | **export_registrar (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/snmpstats.html#snmpstats.p.export_registrar | snmpstats]] |
 | **extra_hdrs (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/imc.html | imc]] |
 | **extra_hdrs (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/msilo.html | msilo]] |
 | **extra_hdrs_avp (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/msilo.html | msilo]] |
+| **extra_id_pv (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/rtpengine.html#rtpengine.p.extra_id_pv | rtpengine]] |
 | **extra_id_pv (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/rtpproxy.html | rtpproxy]] |
 
 ===== [F] =====
@@ -471,7 +478,7 @@
 | **fetch_rows (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/dialplan.html | dialplan]] |
 | **fetch_rows (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/drouting.html | drouting]] |
 | **fetch_rows (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/carrierroute.html | carrierroute]] |
-| **fetch_rows (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/htable.html | htable]] |
+| **fetch_rows (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/htable.html#htable.p.fetch_rows | htable]] |
 | **fetch_rows (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/lcr.html | lcr]] |
 | **fetch_rows (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/mtree.html | mtree]] |
 | **fetch_rows (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/pdt.html | pdt]] |
@@ -502,6 +509,7 @@
 | **force_dst (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/dispatcher.html#dispatcher.p.force_dst | dispatcher]] |
 | **force_no_outbound_flag (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/outbound.html | outbound]] |
 | **force_outbound_flag (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/outbound.html | outbound]] |
+| **force_send_sock (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/siptrace.html | siptrace]] |
 | **force_single_dialog (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/presence_dialoginfo.html | presence_dialoginfo]] |
 | **force_socket (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/nathelper.html | nathelper]] |
 | **force_stateless_reply (boolean)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/auth.html#auth.p.force_stateless_reply | auth]] |
@@ -541,9 +549,11 @@
 ^ Name ^ Module Path ^ Module Name ^
 | **handle_lost_tcp (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/usrloc.html#usrloc.p.handle_lost_tcp | usrloc]] |
 | **handshake_timeout (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/tls.html#tls.p.handshake_timeout | tls]] |
+| **hashing_type (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/ims_usrloc_pcscf.html | ims_usrloc_pcscf]] |
 | **hash_file (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/cfgutils.html#cfgutils.p.hash_file | cfgutils]] |
 | **hash_pvar (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/dispatcher.html#dispatcher.p.hash_pvar | dispatcher]] |
 | **hash_size (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/ims_usrloc_pcscf.html | ims_usrloc_pcscf]] |
+| **hash_size (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/pipelimit.html#pipelimit.p.hash_size | pipelimit]] |
 | **hash_size (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/pua.html | pua]] |
 | **hash_size (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/rls.html | rls]] |
 | **hash_size (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/dialog.html | dialog]] |
@@ -563,7 +573,7 @@
 | **host (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/ndb_cassandra.html | ndb_cassandra]] |
 | **hostname (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/iptrtpproxy.html#hostname | iptrtpproxy]] |
 | **hostname_column (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/lcr.html | lcr]] |
-| **htable (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/htable.html | htable]] |
+| **htable (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/htable.html#htable.p.htable | htable]] |
 | **httpProxy_host (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/purple.html | purple]] |
 | **httpProxy_port (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/purple.html | purple]] |
 | **http_query_timeout (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/utils.html#utils.p.http_query_timeout | utils]] |
@@ -588,6 +598,8 @@
 | **initial_gflags (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/cfgutils.html#cfgutils.p.initial_gflags | cfgutils]] |
 | **initial_probability (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/cfgutils.html#cfgutils.p.initial_propability | cfgutils]] |
 | **insert_delayed (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/db_mysql.html#db_mysql.p.insert_delayed | db_mysql]] |
+| **insert_retries (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/sipcapture.html#sipcapture.p.insert_retries | sipcapture]] |
+| **insert_retry_timeout (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/sipcapture.html#sipcapture.p.insert_retry_timeout | sipcapture]] |
 | **instance_column (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/usrloc.html#usrloc.p.instance_column | usrloc]] |
 | **integrated_xcap_server (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/presence_xml.html | presence_xml]] |
 | **integrated_xcap_server (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/rls.html | rls]] |
@@ -615,9 +627,9 @@
 | **keepalive_processes (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/websocket.html#websocket.p.keepalive.processes | websocket]] |
 | **keepalive_timeout (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/nathelper.html | nathelper]] |
 | **keepalive_timeout (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/websocket.html#websocket.p.keepalive_timeout | websocket]] |
-| **key_name_column (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/htable.html | htable]] |
-| **key_type_column (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/htable.html | htable]] |
-| **key_value_column (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/htable.html | htable]] |
+| **key_name_column (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/htable.html#htable.p.key_name_column | htable]] |
+| **key_type_column (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/htable.html#htable.p.key_type_column | htable]] |
+| **key_value_column (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/htable.html#htable.p.key_value_column | htable]] |
 
 ===== [L] =====
 
@@ -655,10 +667,12 @@
 | **log_flag (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/acc.html#acc.p.log_flag | acc]] |
 | **log_level (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/debugger.html#dbg.p.log_level | debugger]] |
 | **log_level (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/acc.html#acc.p.log_level | acc]] |
+| **log_level_name (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/debugger.html#dbg.p.log_level_name | debugger]] |
 | **log_missed_flag (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/acc.html#acc.p.log_missed_flag | acc]] |
 | **log_prefix (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/debugger.html#dbg.p.log_prefix | debugger]] |
 | **long_format (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/xlog.html | xlog]] |
 | **lookup_append_branches (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/cpl-c.html | cpl-c]] |
+| **lookup_check_received (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/ims_usrloc_pcscf.html | ims_usrloc_pcscf]] |
 | **lookup_domain (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/cpl-c.html | cpl-c]] |
 | **low_mem_threshold1 (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/tls.html#tls.p.low_mem_threshold1 | tls]] |
 | **low_mem_threshold2 (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/tls.html#tls.p.low_mem_threshold2 | tls]] |
@@ -694,9 +708,10 @@
 | **max_nonce_reuse (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/ims_auth.html | ims_auth]] |
 | **max_noninv_lifetime (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/tm.html#max_noninv_lifetime | tm]] |
 | **max_notify_body_length (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/rls.html | rls]] |
+| **max_query_length (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/db_cluster.html#db_cluster.p.max_query_length | db_cluster]] |
 | **max_sms_parts (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/sms.html#max_sms_parts | sms]] |
 | **members_table (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/imc.html | imc]] |
-| **memory (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/memcached.html#dmq.p.memory | memcached]] |
+| **memory (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/memcached.html#memcached.p.memory | memcached]] |
 | **methods_column (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/usrloc.html#usrloc.p.methods_column | usrloc]] |
 | **method_filtering (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/ims_registrar_scscf.html | ims_registrar_scscf]] |
 | **method_filtering (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/registrar.html | registrar]] |
@@ -705,7 +720,7 @@
 | **min_expires (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/registrar.html | registrar]] |
 | **min_se (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/sst.html#sst.p.min_se | sst]] |
 | **mode (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/ctl.html#mode | ctl]] |
-| **mode (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/memcached.html#dmq.p.mode | memcached]] |
+| **mode (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/memcached.html#memcached.p.mode | memcached]] |
 | **mode (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/xmlrpc.html#param_mode | xmlrpc]] |
 | **modems (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/sms.html#modems | sms]] |
 | **modpath (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/app_perl.html#app_perl.p.modpath | app_perl]] |
@@ -715,9 +730,13 @@
 | **mod_level_mode (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/debugger.html#dbg.p.mod_level_mode | debugger]] |
 | **mohdir (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/mohqueue.html#dir.parms | mohqueue]] |
 | **moh_maxcalls (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/mohqueue.html#maxcalls.parms | mohqueue]] |
-| **mqueue (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/mqueue.html | mqueue]] |
+| **mqueue (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/mqueue.html#mqueue.p.mqueue | mqueue]] |
 | **MsgQueueMajorThreshold (Integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/snmpstats.html#snmpstats.p.MsqQueueMajorTreshold | snmpstats]] |
 | **MsgQueueMinorThreshold (Integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/snmpstats.html#snmpstats.p.MsqQueueMinorTreshold | snmpstats]] |
+| **msg_avp (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/corex.html | corex]] |
+| **msg_match (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/nosip.html | nosip]] |
+| **msg_min_len (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/corex.html | corex]] |
+| **msg_skip (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/nosip.html | nosip]] |
 | **msg_timeout (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/auth_identity.html | auth_identity]] |
 | **mtree (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/mtree.html | mtree]] |
 | **mt_allow_duplicates (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/mtree.html | mtree]] |
@@ -741,7 +760,9 @@
 | **nat_bflag (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/usrloc.html#usrloc.p.nat_bflag | usrloc]] |
 | **nc_array_order (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/auth.html#auth.p.nc_array_order | auth]] |
 | **nc_array_size (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/auth.html#auth.p.nc_array_size | auth]] |
+| **netstring_format (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/evapi.html#evapi.p.netstring_format | evapi]] |
 | **networks (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/sms.html#networks | sms]] |
+| **network_io_intercept (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/corex.html | corex]] |
 | **new_uri_column (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/speeddial.html | speeddial]] |
 | **nid_pool_no (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/auth.html#auth.p.nid_pool_no | auth]] |
 | **noisy_ctimer (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/tm.html#noisy_ctimer | tm]] |
@@ -804,13 +825,19 @@
 | **peer_tag_avp (AVP string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/permissions.html | permissions]] |
 | **peer_tag_mode (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/permissions.html | permissions]] |
 | **periodical_query(int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/xcap_client.html | xcap_client]] |
+| **perl_destroy_func (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/app_perl.html#app_perl.p.perl_destroy_func | app_perl]] |
 | **persistence** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/osp.html | osp]] |
 | **pike_log_level (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/pike.html#pike.p.pike_log_level | pike]] |
 | **ping_application_data (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/websocket.html#websocket.p.ping_application_data | websocket]] |
+| **ping_from (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/lcr.html | lcr]] |
+| **ping_inactivate_threshold (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/lcr.html | lcr]] |
 | **ping_interval (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/db_unixodbc.html | db_unixodbc]] |
 | **ping_interval (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/db_mysql.html | db_mysql]] |
+| **ping_interval (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/lcr.html | lcr]] |
 | **ping_interval(int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/dmq.html#dmq.p.ping_interval | dmq]] |
 | **ping_nated_only (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/nathelper.html | nathelper]] |
+| **ping_socket (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/lcr.html | lcr]] |
+| **ping_valid_reply_codes (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/lcr.html | lcr]] |
 | **pipe (integer:string:integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/ratelimit.html | ratelimit]] |
 | **plain_password_column (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/uid_auth_db.html#plain_password_column | uid_auth_db]] |
 | **plp_algorithm_column (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/pipelimit.html#pipelimit.p.plp_algorithm_column | pipelimit]] |
@@ -821,6 +848,7 @@
 | **port_col (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/permissions.html | permissions]] |
 | **port_column (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/lcr.html | lcr]] |
 | **port_override_avp (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/domainpolicy.html | domainpolicy]] |
+| **precheck_trans** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/tmx.html#tmx.p.precheck_trans | tmx]] |
 | **prefix (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/xlog.html | xlog]] |
 | **prefix (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/pdt.html | pdt]] |
 | **prefix_column (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/lcr.html | lcr]] |
@@ -829,6 +857,7 @@
 | **presentity_table(str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/presence.html | presence]] |
 | **pres_db_url (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/utils.html#utils.p.pres_db_url | utils]] |
 | **pres_htable_size (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/presence.html | presence]] |
+| **pretty_format (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/jsonrpc-s.html | jsonrpc-s]] |
 | **priority_col (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/dispatcher.html#dispatcher.p.priority_col | dispatcher]] |
 | **priority_column (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/lcr.html | lcr]] |
 | **privatekey_path (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/auth_identity.html | auth_identity]] |
@@ -885,6 +914,7 @@
 | **realm_prefix (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/auth.html#auth.p.realm_prefix | auth]] |
 | **realm_prefix (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/cpl-c.html | cpl-c]] |
 | **realm_prefix (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/registrar.html | registrar]] |
+| **reason_from_hf (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/acc.html#acc.p.reason_from_hf | acc]] |
 | **received_avp (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/nathelper.html | nathelper]] |
 | **received_avp (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/registrar.html | registrar]] |
 | **received_column (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/usrloc.html#usrloc.p.received_column | usrloc]] |
@@ -965,10 +995,15 @@
 | **rr_param (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/dialog.html | dialog]] |
 | **rr_param (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/dialog_ng.html | dialog_ng]] |
 | **rr_to_store_param (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/uac.html#uac.p.rr_to_store_param | uac]] |
+| **rtpengine_disable_tout (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/rtpengine.html#rtpengine.p.rtpengine_disable_tout | rtpengine]] |
+| **rtpengine_retr (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/rtpengine.html#rtpengine.p.rtpengine_retr | rtpengine]] |
+| **rtpengine_sock (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/rtpengine.html#rtpengine.p.rtpengine_sock | rtpengine]] |
+| **rtpengine_tout (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/rtpengine.html#rtpengine.p.rtpengine_tout | rtpengine]] |
 | **rtpproxy_disable_tout (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/rtpproxy.html | rtpproxy]] |
 | **rtpproxy_retr (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/rtpproxy.html | rtpproxy]] |
 | **rtpproxy_sock (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/rtpproxy.html | rtpproxy]] |
 | **rtpproxy_tout (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/rtpproxy.html | rtpproxy]] |
+| **rtp_inst_pvar (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/rtpproxy.html | rtpproxy]] |
 | **ruid_column (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/usrloc.html#usrloc.p.ruid_column | usrloc]] |
 | **rule_id_column (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/lcr.html | lcr]] |
 | **ruri_avp (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/drouting.html | drouting]] |
@@ -1036,7 +1071,7 @@
 | **separator (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/tmrec.html | tmrec]] |
 | **server (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/ndb_redis.html#ndb_redis.p.server | ndb_redis]] |
 | **server (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/pdb.html | pdb]] |
-| **servers (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/memcached.html#dmq.p.servers | memcached]] |
+| **servers (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/memcached.html#memcached.p.servers | memcached]] |
 | **servers (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/jsonrpc-c.html | jsonrpc-c]] |
 | **server_address (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/presence.html | presence]] |
 | **server_address (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/rls.html | rls]] |
@@ -1054,11 +1089,13 @@
 | **service_type (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/auth_radius.html | auth_radius]] |
 | **session_cache (boolean)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/tls.html#tls.p.session_cache | tls]] |
 | **session_id (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/tls.html#tls.p.session_id | tls]] |
+| **setid_avp (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/rtpengine.html#rtpengine.p.setid_pv | rtpengine]] |
 | **setid_col (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/dispatcher.html#dispatcher.p.setid_col | dispatcher]] |
 | **setid_pvname (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/dispatcher.html#dispatcher.p.setid_pvname | dispatcher]] |
 | **setvars (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/exec.html | exec]] |
 | **sflags_column (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/dialog.html | dialog]] |
 | **shvset (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/pv.html | pv]] |
+| **single_ro_session_per_dialog(integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/ims_charging.html | ims_charging]] |
 | **sipEntityType (String)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/snmpstats.html#snmpstats.p.sipentitytape | snmpstats]] |
 | **sipmsg (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/msrp.html | msrp]] |
 | **sipping_bflag (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/nathelper.html | nathelper]] |
@@ -1094,6 +1131,7 @@
 | **step_usleep (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/debugger.html#dbg.p.step_usleep | debugger]] |
 | **stopper_column (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/lcr.html | lcr]] |
 | **store_profile_dereg (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/ims_registrar_scscf.html | ims_registrar_scscf]] |
+| **stringify (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/memcached.html#memcached.p.stringify | memcached]] |
 | **strip_column (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/lcr.html | lcr]] |
 | **str_param (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/print.html#str_param | print]] |
 | **subscriber_carrier_col (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/carrierroute.html | carrierroute]] |
@@ -1128,7 +1166,7 @@
 | **tag_column (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/lcr.html | lcr]] |
 | **tel_uri_params (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/enum.html | enum]] |
 | **timeout (fixedpoint)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/db_oracle.html | db_oracle]] |
-| **timeout (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/memcached.html#dmq.p.timeout | memcached]] |
+| **timeout (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/memcached.html#memcached.p.timeout | memcached]] |
 | **timeout (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/pdb.html | pdb]] |
 | **timeout** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/osp.html | osp]] |
 | **timeout_avp (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/dialog.html#timeout-avp-id | dialog]] |
@@ -1136,6 +1174,7 @@
 | **timeout_avp (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/sst.html#sst.p.timeout_avp | sst]] |
 | **timeout_column (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/dialog.html | dialog]] |
 | **timeout_interval (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/db_mysql.html | db_mysql]] |
+| **timeout_noreset (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/dialog.html | dialog]] |
 | **timeout_rm_subs (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/presence.html | presence]] |
 | **timeout_socket (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/rtpproxy.html | rtpproxy]] |
 | **timer (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/rtimer.html | rtimer]] |
@@ -1143,11 +1182,12 @@
 | **timer_buffer(int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/ims_charging.html | ims_charging]] |
 | **timer_interval (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/ims_usrloc_pcscf.html | ims_usrloc_pcscf]] |
 | **timer_interval (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/msrp.html | msrp]] |
-| **timer_interval (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/htable.html | htable]] |
+| **timer_interval (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/htable.html#htable.p.timer_interval | htable]] |
 | **timer_interval (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/pipelimit.html#pipelimit.p.timer_interval | pipelimit]] |
 | **timer_interval (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/ratelimit.html | ratelimit]] |
 | **timer_interval (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/usrloc.html#usrloc.p.timer_interval | usrloc]] |
-| **timer_mode (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/htable.html | htable]] |
+| **timer_mode (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/htable.html#htable.p.timer_mode | htable]] |
+| **timer_procs (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/dialog.html#dialog.p.timer_procs | dialog]] |
 | **timer_procs (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/usrloc.html#usrloc.p.timer_procs | usrloc]] |
 | **time_attr (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/acc.html#acc.p.time_attr | acc]] |
 | **time_exten (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/acc.html#acc.p.time_exten | acc]] |
@@ -1264,7 +1304,7 @@
 | **value_col (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/domain.html | domain]] |
 | **value_column (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/avpops.html#avpops.p.value_column | avpops]] |
 | **value_column (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/uid_avp_db.html | uid_avp_db]] |
-| **value_type_column (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/htable.html | htable]] |
+| **value_type_column (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/htable.html#htable.p.value_type_column | htable]] |
 | **variable (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/statistics.html | statistics]] |
 | **varset (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/pv.html | pv]] |
 | **vars_h_entry_column (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/dialog.html | dialog]] |
@@ -1278,6 +1318,10 @@
 | **verify_source_service_type (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/peering.html | peering]] |
 | **version_table (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/auth_db.html | auth_db]] |
 | **via1_matching (integer)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/tm.html#via1_matching | tm]] |
+| **video_rating_group(string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/ims_charging.html | ims_charging]] |
+| **video_service_identifier(string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/ims_charging.html | ims_charging]] |
+| **voice_rating_group(string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/ims_charging.html | ims_charging]] |
+| **voice_service_identifier(string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/ims_charging.html | ims_charging]] |
 | **vparam_name (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/topoh.html | topoh]] |
 | **vparam_prefix (str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/topoh.html | topoh]] |
 
@@ -1290,6 +1334,7 @@
 | **watchers_table(str)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/presence.html | presence]] |
 | **weight_column (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/lcr.html | lcr]] |
 | **workers (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/async.html | async]] |
+| **workers (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/evapi.html#evapi.p.workers | evapi]] |
 | **write_db_url (string)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/p_usrloc.html | p_usrloc]] |
 | **write_on_db (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/p_usrloc.html | p_usrloc]] |
 | **write_on_master_db (int)** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/p_usrloc.html | p_usrloc]] |
