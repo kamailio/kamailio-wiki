@@ -107,6 +107,7 @@
 
 ^ Name ^ Module Path ^ Module Name ^
 | **mt_list** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/mtree.html | mtree]] |
+| **mt_match** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/mtree.html | mtree]] |
 | **mt_reload** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/mtree.html | mtree]] |
 | **mt_summary** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/mtree.html | mtree]] |
 
@@ -114,7 +115,9 @@
 
 ^ Name ^ Module Path ^ Module Name ^
 | **nh_enable_ping** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/nathelper.html | nathelper]] |
+| **nh_enable_rtpp** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/rtpengine.html#rtpengine.m.nh_enable_rtpp | rtpengine]] |
 | **nh_enable_rtpp** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/rtpproxy.html | rtpproxy]] |
+| **nh_show_rtpp** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/rtpengine.html#rtpengine.m.nh_show_rtpp | rtpengine]] |
 | **nh_show_rtpp** | //modules// | [[http://www.kamailio.org/docs/modules/4.2.x/modules/rtpproxy.html | rtpproxy]] |
 
 ===== [O] =====
