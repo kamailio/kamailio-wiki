@@ -47,6 +47,10 @@ Predefined pseudo-variables are listed in alphabetical order.
 
 **$ai** - reference to URI in request's P-Asserted-Identity header (see RFC 3325)
 
+==== $aa - Auth Algorithm ====
+
+**$aa** - Algorithm from from Authorization or Proxy-Authorization header.
+
 ==== $adu - Auth Digest URI ====
 
 **$adu** - URI from Authorization or Proxy-Authorization header. This URI is used when calculating the HTTP Digest Response.
