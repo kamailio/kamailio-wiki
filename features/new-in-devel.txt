@@ -16,14 +16,30 @@
   * push details of events to remote applications via tcp
   * http://kamailio.org/docs/modules/devel/modules/evapi.html
 
+==== db_mongodb ====
+
+  * DB APIv1 connector implementation for MongoDB NoSQL engine
+  * http://kamailio.org/docs/modules/devel/modules/db_mongodb.html
+
 ==== jsonrcp-s ====
 
   * implementation of JSONRPC server over HTTP
   * http://kamailio.org/docs/modules/devel/modules/jsonrpc-s.html
+
+==== kazoo ====
+
+  * middle layer communication message queue for Kazoo platform
+  * http://kamailio.org/docs/modules/devel/modules/kazoo.html
+
 ==== ndb_cassandra ====
 
   * configuration script connector for Cassandra NoSQL engine
   * http://kamailio.org/docs/modules/devel/modules/ndb_cassandra.html
+
+==== ndb_mongodb ====
+
+  * configuration script connector for MongoDB NoSQL engine
+  * http://kamailio.org/docs/modules/devel/modules/ndb_mongodb.html
 
 ==== nosip ====
 
@@ -35,6 +51,12 @@
   * control rtpengine application for RTP relaying or WebRTC gatewaying
   * successor of rtpproxy-ng
   * http://kamailio.org/docs/modules/devel/modules/rtpengine.html
+
+==== tsilo ====
+
+  * attach attributes and add new branches to ongoing transaction
+  * http://kamailio.org/docs/modules/devel/modules/tsilo.html
+
 ==== uuid ====
 
   * variables returning unique variables using libuid
