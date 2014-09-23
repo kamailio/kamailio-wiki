@@ -22,7 +22,7 @@ These sections presents notes, listed by modules, about changes that need to be 
 
 Next are the SQL statements that must be executed to get the database structure required by modules that existed in v3.3.x.
 
-<code sql>
+<code ->
 ALTER TABLE address CHANGE COLUMN ip_addr ip_addr varchar(50) NOT NULL; # was varchar(48) NOT NULL
 
 ALTER TABLE aliases CHANGE COLUMN expires expires datetime NOT NULL DEFAULT '2030-05-28 21:32:15'; # was datetime NOT NULL DEFAULT '2020-05-28 21:32:15'
@@ -81,7 +81,7 @@ INSERT INTO version (table_name, table_version) values ('location','6');
 
 Next are the SQL statements that must be executed to get the database structure required by new modules added in v4.0.0.
 
-<code sql>
+<code ->
 CREATE TABLE sca_subscriptions (
   id int(10) unsigned NOT NULL AUTO_INCREMENT,
   subscriber varchar(255) NOT NULL,
