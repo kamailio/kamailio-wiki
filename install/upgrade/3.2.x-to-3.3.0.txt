@@ -72,7 +72,7 @@ These sections presents notes, listed by modules, about the structure of databas
 
 You can use next SQL commands (made for MySQL) to update the structure of existing tables in v3.2.x for v3.3.0:
 
-<code sql>
+<code ->
 
 -- PERMISSIONS module
 ALTER TABLE address CHANGE COLUMN ip_addr ip_addr varchar(48) NOT NULL; # was varchar(15) NOT NULL
