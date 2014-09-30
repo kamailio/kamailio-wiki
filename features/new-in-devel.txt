@@ -69,6 +69,10 @@
 
 ==== app_perl ====
   * option to reset embedded interpreter after a number of executions
+  * ability to run on Mac OS X - Darwin
+  * new param perl_destroy_func to specify Perl function to be executed before destroying the embedded interpreter
+  * new parameter reset_cycles to specify after how many executions the embedded interpreter is going to be re-initialized
+  * synchronized log level values
 
 ==== app_lua ====
   * sr.xavp.get now can return all indexes and can be used with indx <0 to return values counting from the end.
