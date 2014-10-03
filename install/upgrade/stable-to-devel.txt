@@ -10,3 +10,14 @@ If you look for the guidelines to upgrade to previous stable release, see:
 
 ===== Modules =====
 
+==== usrloc ====
+
+  * default value for hash_size is 10 (1024 slots) (informational - no action required in old config)
+
+===== Core =====
+
+==== Parameters ====
+
+Changes to default values:
+
+  * pkg (private) memory size: 8MB (informational - no action required in old config)
