@@ -21,3 +21,30 @@ If you look for the guidelines to upgrade to previous stable release, see:
 Changes to default values:
 
   * pkg (private) memory size: 8MB (informational - no action required in old config)
+
+===== Database =====
+
+==== MySQL ====
+
+=== Old Tables ===
+
+Run following SQL statements in MySQL client to upgrade database structure from v4.1 to v4.2:
+
+<code sql>
+-- table: acc
+ALTER TABLE acc CHANGE COLUMN sip_reason sip_reason varchar(128) DEFAULT '' NOT NULL;
+DELETE FROM version WHERE table_name='acc';
+INSERT INTO version (`table_name`, `table_version`) values ('acc','5');
+
+-- table: dialplan
+ALTER TABLE dialplan CHANGE COLUMN repl_exp repl_exp varchar(64) NOT NULL; 
+ALTER TABLE dialplan CHANGE COLUMN attrs attrs varchar(64) NOT NULL;
+DELETE FROM version WHERE table_name='dialplan';
+INSERT INTO version (`table_name`, `table_version`) values ('dialplan','2');
+
+-- table: missed_calls
+ALTER TABLE missed_calls CHANGE COLUMN sip_reason sip_reason varchar(128) DEFAULT '' NOT NULL;
+DELETE FROM version WHERE table_name='missed_calls';
+INSERT INTO version (`table_name`, `table_version`) values ('missed_calls','4');
+
+</code>
