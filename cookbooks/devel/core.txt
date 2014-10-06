@@ -1312,8 +1312,8 @@ Default is no.
   dns_cache_flags = number (default 0) - 
     dns cache specific resolver flags, used for overriding the default behaviour (low level).
     Possible values:
-      1 - ipv4 only: only DNS A requests are performed, even if ser listens also on ipv6 addresses.
-      2 - ipv6 only: only DNS AAAA requests are performed. Ignored if dns_try_ipv6 is off or ser 
+      1 - ipv4 only: only DNS A requests are performed, even if Kamailio also listens on ipv6 addresses.
+      2 - ipv6 only: only DNS AAAA requests are performed. Ignored if dns_try_ipv6 is off or Kamailio 
           doesn't listen on any ipv6 address.
       4 - prefer ipv6: try first to resolve a host name to an ipv6 address (DNS AAAA request) and only
           if this fails try an ipv4 address (DNS A request). By default the ipv4 addresses are preferred.
