@@ -19,6 +19,7 @@ Few guidelines to edit the wiki:
 ===== Installation =====
 
   * [[install:devel:git|Install Kamailio Devel Version From GIT]]
+  * [[install:4.2.x:git|Install Kamailio v4.2.x From GIT]]
   * [[install:4.1.x:git|Install Kamailio v4.1.x From GIT]]
   * [[install:4.0.x:git|Install Kamailio v4.0.x From GIT]]
   * [[install:3.3.x:git|Install Kamailio v3.3.x From GIT]]
