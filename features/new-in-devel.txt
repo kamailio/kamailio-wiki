@@ -108,3 +108,6 @@
 
 ===== Tools =====
 
+==== Kamctl ====
+
+  * dispatcher command updated to handle all available columns in database table
