@@ -1,245 +1,27 @@
 ====== Kamailio SIP Server (SER) - New Features in Devel Version ======
 
-**Current devel version will be numbered 4.2.0 and it is planned to be released about mid of October, 2014**.
+**Current devel version will be numbered 4.3.0 and it is planned to be released during 2015**.
 
 <fc #0000FF>
-**Previous devel version was 4.1.x (released on December 04, 2013), see what was new in that release at:**
+**Previous devel version was 4.2.x (released on October 16, 2014), see what was new in that release at:**
 </fc>
-  * <fc #0000FF>http://www.kamailio.org/wiki/features/new-in-4.1.x</fc>
+  * <fc #0000FF>http://www.kamailio.org/wiki/features/new-in-4.2.x</fc>
 
 <fc #800000>//This is a draft of new features added in devel version, manually updated, thus not always synchronized with what is new in source code repository.//</fc>
 
 ===== New Modules =====
 
-==== evapi ====
-
-  * push details of events to remote applications via tcp
-  * http://kamailio.org/docs/modules/devel/modules/evapi.html
-
-==== db_mongodb ====
-
-  * DB APIv1 connector implementation for MongoDB NoSQL engine
-  * http://kamailio.org/docs/modules/devel/modules/db_mongodb.html
-
-==== jsonrcp-s ====
-
-  * implementation of JSONRPC server over HTTP
-  * http://kamailio.org/docs/modules/devel/modules/jsonrpc-s.html
-
-==== kazoo ====
-
-  * middle layer communication message queue for Kazoo platform
-  * http://kamailio.org/docs/modules/devel/modules/kazoo.html
-
-==== ndb_cassandra ====
-
-  * configuration script connector for Cassandra NoSQL engine
-  * http://kamailio.org/docs/modules/devel/modules/ndb_cassandra.html
-
-==== ndb_mongodb ====
-
-  * configuration script connector for MongoDB NoSQL engine
-  * http://kamailio.org/docs/modules/devel/modules/ndb_mongodb.html
-
-==== nosip ====
-
-  * allow handling non-sip traffic via event_route
-  * http://kamailio.org/docs/modules/devel/modules/nosip.html
-
-==== rtpengine ====
-
-  * control rtpengine application for RTP relaying or WebRTC gatewaying
-  * successor of rtpproxy-ng
-  * http://kamailio.org/docs/modules/devel/modules/rtpengine.html
-
-==== tsilo ====
-
-  * attach attributes and add new branches to ongoing transaction
-  * http://kamailio.org/docs/modules/devel/modules/tsilo.html
-
-==== uuid ====
-
-  * variables returning unique variables using libuid
-  * http://kamailio.org/docs/modules/devel/modules/uuid.html
-
 
 ===== New in Old Modules =====
 
 
-==== acc ====
-  * acc functions can now be used with strings containing pseudo variables.
-
-==== app_lua ====
-  * sr.xavp.get now can return all indexes and can be used with indx <0 to return values counting from the end.
-
-==== app_perl ====
-  * option to reset embedded interpreter after a number of executions
-  * ability to run on Mac OS X - Darwin
-  * new param perl_destroy_func to specify Perl function to be executed before destroying the embedded interpreter
-  * new parameter reset_cycles to specify after how many executions the embedded interpreter is going to be re-initialized
-  * synchronized log level values
-
-==== carrierroute ====
-
-  * removed dependency on libconfuse
-
-==== db_cluster ====
-
-  * new parameter max_query_length - set threshold in second after which a connection is marked inactive if the query fails
-  * allow to let connectioncs being active if the error is due to some sql mistake - default is 0 (set connection inactive immediately, same behavior as so far)
-      
-==== debugger ====
-  * show route name in cfgtrace output
-  * new parameter log_level_name - allow overwriting default log level name for cfgtrace messages
-
-==== dialog ====
-  * added parameter and dialog property to disable timeout reset
-
-==== dmq ====
-  * added function to broadcast message from config file
-
-==== ims_charging ====
-  * allow E164 to be used as subscription-type in CCR requests
-  * new capability to add dialog data to contact when charging session is created
-
-==== ims_registrar_pcscf ====
-
-  * new features to support P-CSCF subscription and publishing reg event
-  * new modparam hashing_type - hash storage based on IP:PORT
-  * new exported function pcscf_assert_called_identity() - used to assert the identity for SIP responses
-    * function retrieves Called-Party-ID AVP from SIP request and adds to SIP response as P-Asserted-Identity as per TS 24.229 section 5.2.6.4.4
-
-==== ims_registrar_scscf ====
-
-  * new features to fully support subscription to reg_event
-
-==== ims_qos ====
-
-  * use p_asserted_identity as default subscription-id for AAR requests
-  * allow E164 to be used as subscription type for AAR requests
-
-==== ims_usrloc_pcscf ====
-
-  * added DB support for persistent storage
-  * added storage for security data (IPSEC/TLS)
-
-==== ims_usrloc_scscf ====
-
-  * new features to fully support subscription to reg_event
-  * add dialog data to contact and tear down dialog when contact is removed
-
-==== kex ====
-
-  * rpc commands for statistics
-
-==== lcr ====
-
-  * added capability to inactive a faulty gateway and re-activate it automatically by successful response to OPTIONS ping
-
-==== memcached ====
-
-  * new parameter 'stringify' to the memcached module to force the module to evaluate all returned values as strings. This is useful if other parts of the memcached infrastructure are not able to set the correct value flags
-
-==== mqueue ====
-
-  * new psuedo-variable to return mqueue size
-
-==== mtree ====
-
-  * added 'multi' param to mtree definition
-    * new 'multi' param makes it possible to store both integer and string typed mtrees into single db table
-  * added mi/rpc command to match against records in memory trees
-
-==== nathelper ====
-
-  * added matching carrier grade nat address space (rfc6598)
-
-==== permissions ====
-
-  * set peer tag avp for allow_address_group(), also for allow_source_address_group()
-
-==== presence_dialoginfo ====
-
-  * handle all states to get most relevant xml
-
-==== pv ====
-
-  * added sha256, sha384 and sha512 string transformations
-
-==== pua_reginfo ====
-
-  * reflect use domain from usrloc
-  * avoid duplicate contacts if domain is not considered
-
-==== registrar ====
-
-  * new parameter expire_range: allow randomization of expire value coming from UA
-    
-==== rtpproxy ====
-
-  * new parameter to specify an AVP where to store the chosen RTPProxy instance IP address
-  * allow any config variable for rtpproxy instance
-
-==== sca ====
-
-  * sca_call_info_update can now take an int argument (1=caller, 2=callee) limiting call-info state update to only that leg's AoR
-  * use sca_create_canonical_aor in INVITE/2OO OK handler
-
-==== sipcapture ====
-
-  * added X-Rtp stats from Siemens and RTPEngine
-
-==== textops ====
-  * new functions to manage multipart bodies:
-    * set_body_multipart([txt,content_type][,boundary])
-    * append_body_part(txt,content_type[, content_disposition])
-    * remove_body_part(content_type)
-
-==== tls ====
-   * extended supportd tls methods - TLSv1.1 and TLSv1.2 (from openssl 1.0.1e on)
-
-==== tm ====
-  * t_replicate() without outbound proxy address
-
-==== tmx ====
-  * t_cancel_callid() can set the Reason header in generated CANCEL
-==== uac ====
-  * enhancements to remote registration
-    * new rpc commands:
-      * reload records from database
-      * enable/disable a record for remote registration
-      * refresh details of a record from database or add a new one
-
-==== utils ====
-  * http_query() now stores result also in case of 4xx replies
 
 ===== New in Core =====
 
 ==== Code ====
 
-  * struct action has now route name info.
-  * dns_naptr_ignore_rfc - new parameter to control the order field in NAPTR, as required by RFC 2915
-  * -f parameter can take the value '-' to read config from stdin
-    * allows piping the config from various sources (e.g., downloading from web)
-    * example: cat /etc/kamailio/kamailio.cfg | /usr/sbin/kamailio -f -
-  *  L_NPRL aliased to L_ALERT-1 to allow printing messages without level name
-    * new defines LM_NPRL() and NPRL() are using it
-  * new maro LOG__(...) to allow overwriting default name for log level
-  * LOG_LN() new macro to print log messages overwriting log level name
-  * new global parameter max_recursive_level
-    * replace define ROUTE_MAX_REC_LEV with config paramter
-    * number of allowed recursive levels can be set in config no
-    * it affects calls of route blocks and chained if { ... } else if { ... } else ...
-
 ==== Default Config ====
-
-  * kamailio.cfg: catch friendly-scanner if anti-flood is enabled
 
 ===== Tools =====
 
 ==== Kamctl ====
-
-  * dispatcher command updated to handle all available columns in database table
-  * added shortcuts for dialog mi commands
-  * new command 'trap' - useful to get a full bt dump of all kamailio processes
-  * db connect - new command for db management subset - execute to command line client tool and stay connected using the attributes from kamctlrc
