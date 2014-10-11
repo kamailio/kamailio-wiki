@@ -152,6 +152,11 @@
     * manage non-local profiles from configuration file
     * cmd can be add (insert a remote profile) and rm (remove a remote profile)
   * allow '_' in dlg profile names
+  * replicate profiles to other nodes via dmq module
+  * add option to increment cseq upon local authentication to next hop
+    * feature has to be enabled via module parameter track_cseq_updates
+    * it does it only for downstream direction (requests from caller and callee, as it is the typical use case of calling via a provider, after authenticating the caller locally, provider asks for another 'trunk' authentication
+    * diff of cseq value is stored in dialog var named 'cseq_diff', therefore be sure it is not overwritten from config
 
 ==== dialog_ng ====
 
