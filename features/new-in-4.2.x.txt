@@ -300,7 +300,9 @@
     * return the min and max of expires value for sip message
     * contact headers are checked with higher priority, if no expires parameter there, then Expires header is used
     * if none is found, $null is returned
-  * added pseudo-variable ($aa) for access to algorithm in autorization header
+  * added pseudo-variable ($aa) for access to algorithm in authorization header
+  * new variable $su to return source address in uri format
+    * $su is expanded "sip:$si:$sp;transport=$pr" - example: "sip:127.0.0.1:5060;transport=udp"
 
 ==== registrar ====
 
