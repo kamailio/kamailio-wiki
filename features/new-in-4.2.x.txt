@@ -166,6 +166,14 @@
 
   * expand attrs while running rpc command dispatcher.list
   * ds_select_dst/domain can take args as string (not only int) - internal conversion of string->int (if possible)
+  * new variant - ds_is_from_list(groupid, uri, mode)
+    * can match against records in dispatcher groups
+    * if groupid==1 - will match against all groups
+    * if uri is empty, then will match against source address (ip, port, proto). Otherwise it has to be a full SIP URI value. The matching is not taking in consideration any parameter apart of transport
+      * mode is a bitmask to tell the matching rules
+        * if it is 0, will match everything: ip, port and protocol
+        * if bit one is set, will skip matching the port
+        * if bit two is set, will skip matching the protocol
 
 ==== dmq ====
 
