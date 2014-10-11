@@ -185,6 +185,7 @@
   * add event route when htable entries expire
     * event_route[htable:expired:<table>] called when an entry expires
     * pseudo-vars $shtrecord(key) and $shtrecord(value) access the expired content
+  * new config function sht_reset("tname") - remove all items in the hash table
 
 ==== ims_auth ====
 
