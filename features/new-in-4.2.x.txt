@@ -1,6 +1,6 @@
 ====== Kamailio SIP Server (SER) - New Features in 4.2.x Version ======
 
-**First release in this series is numbered 4.2.0, released on October 16, 2014.**.
+**First release in this series is numbered 4.2.0, released on October 16, 2014.**
 
 <fc #0000FF>
 **Previous stable version was 4.1.x (released on December 04, 2013), see what was new in that release at:**
