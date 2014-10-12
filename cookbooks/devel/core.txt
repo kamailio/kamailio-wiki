@@ -1019,6 +1019,12 @@ Example:
 
 See the documenation of the respective module to find out the available options.
 
+==== onsend_route_reply ====
+
+If set to 1 (yes, on), onsend_route block is executed for received replies that are sent out. Default is 0.
+
+    onsend_route_reply=yes
+
 ==== open_files_limit ====
 
 If set and bigger than the current open file limit, sip-router will try to increase its open file limit to this number. Note: sip-router must be started as root to be able to increase a limit past the hard limit (which, for open files, is 1024 on most systems).
