@@ -399,6 +399,11 @@
 ==== usrloc ====
 
   * generate callid at startup and increase cseq for records added via mi/rpc commands
+  * option to set datetime columns as bigint
+    * should handle better daylight shifting
+    * new parameter expires_type - if set to 1, it expects expires and last modified columns to be bigint
+    * the change to the type of columns has to be done manually to the database server
+    * default values is 0, expecting to work with datetime columns (existing behavior)
 
 ==== utils ====
 
