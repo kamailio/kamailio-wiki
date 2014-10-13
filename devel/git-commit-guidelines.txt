@@ -192,3 +192,62 @@ git commit modules/auth/
 
   * prefix the first line of the commit message with "library name:"
 
+===== Useful Commands =====
+
+This section collects some useful GIT commands.
+
+==== Reset Last Local Commit ====
+
+  * hard reset - purge the commit (warning: changes done for the commit are lost):
+
+<code>
+git reset --hard HEAD~1
+</code>
+
+  * commit reset - drop the last commit, without losing the changes in the files:
+
+<code>
+git reset HEAD~1
+</code>
+
+  * soft reset - leave the last commit and changes in the files -- next commit command will do the same commit
+
+<code>
+git reset --soft HEAD~1
+</code>
+
+==== Checkout Remote Branch ====
+
+<code>
+git checkout -b local-branch-name origin/remote-branch-name
+</code>
+
+==== Abort File Changes ====
+
+<code>
+git checkout -- file-name
+</code>
+
+==== Modify Previous Commit Message ====
+
+<code>
+git commit --amend
+</code>
+
+==== Partial Change Checkin ====
+
+<code>
+git add --edit
+</code>
+
+==== Undo Previous Commit ====
+
+<code>
+git revert HEAD^
+</code>
+
+==== Delete Remote Branch ====
+
+<code>
+git push origin :<branchName>
+</code>
