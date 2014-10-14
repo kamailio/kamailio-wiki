@@ -18,7 +18,7 @@ If you look for the guidelines to upgrade to previous stable release, see:
 
 Following tokens are used to mark the changes:
 
-  * INF - the change doesn't really have any direct impact - no action required in old config
+  * INF - the change doesn't really have any direct impact to config content - no action required in old config
   * CPM - the change was used with the new value via explicit parameter in default config file from old releases
   * RCM - the change is recommended to be done if you had an explicit different or lower value for this parameter in old config
 
