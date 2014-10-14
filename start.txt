@@ -69,12 +69,7 @@ Few guidelines to edit the wiki:
 
 \\ 
 
-==== Database Structure ====
 
-  * [[http://www.kamailio.org/docs/db-tables/kamailio-db-devel.html|Devel Version]]
-  * [[http://www.kamailio.org/docs/db-tables/kamailio-db-4.1.x.html|4.1.x Version]]
-  * [[http://www.kamailio.org/docs/db-tables/kamailio-db-3.3.x.html|3.3.x Version]]
-  * [[http://www.kamailio.org/docs/db-tables/kamailio-db-3.2.x.html|3.2.x Version]]
  ===== Alphabetic Indexes =====
 
 \\
