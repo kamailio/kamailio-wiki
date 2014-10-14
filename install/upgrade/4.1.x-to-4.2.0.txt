@@ -1,6 +1,12 @@
 ====== Upgrade Kamailio from v4.1.x to v4.2.0 ======
 
-The page contains the details about the changes that were made to old components during the development of v4.2.0 compared with what existed in v4.1.x. It does not include the brand new modules, focusing on how to upgrade database and configuration file from v4.1.x to run with Kamailio 4.2.x.
+The page contains the details about the changes that were made to old components during the development of v4.2.0 compared with what existed in v4.1.x.
+
+It does not include the brand new modules, focusing on how to upgrade database and configuration file from v4.1.x to run with Kamailio 4.2.x.
+
+The draft with what is new in release 4.2.x is available at:
+
+  * [[features:new-in-4.2.x|New Features in Release 4.2.x]]
 
 ===== Previous Stable Release =====
 
