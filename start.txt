@@ -29,11 +29,15 @@ Few guidelines to edit the wiki:
 
 ==== Upgrade ====
 
-  * [[install:upgrade:3.1.x-to-3.2.0|Upgrade Kamailio v3.1.x to v3.2.0]]
-  * [[install:upgrade:3.2.x-to-3.3.0|Upgrade Kamailio v3.2.x to v3.3.0]]
-  * [[install:upgrade:3.3.x-to-4.0.0|Upgrade Kamailio v3.3.x to v4.0.0]]
-  * [[install:upgrade:4.0.x-to-4.1.0|Upgrade Kamailio v4.0.x to v4.1.0]]
   * [[install:upgrade:stable-to-devel|Upgrade Kamailio stable to devel]]
+  * [[install:upgrade:4.1.x-to-4.2.0|Upgrade Kamailio v4.1.x to v4.2.0]]
+  * [[install:upgrade:4.0.x-to-4.1.0|Upgrade Kamailio v4.0.x to v4.1.0]]
+  * [[install:upgrade:3.3.x-to-4.0.0|Upgrade Kamailio v3.3.x to v4.0.0]]
+  * [[install:upgrade:3.2.x-to-3.3.0|Upgrade Kamailio v3.2.x to v3.3.0]]
+  * [[install:upgrade:3.1.x-to-3.2.0|Upgrade Kamailio v3.1.x to v3.2.0]]
+
+
+
 ===== Download =====
 
   * [[http://www.kamailio.org/w/download/|Main Download Page]]
