@@ -1,4 +1,4 @@
-====== Kamailio SIP Server v4.2.x (devel): Core Cookbook ======
+====== Kamailio SIP Server v4.3.x (devel): Core Cookbook ======
 
 This tutorial collects the functions and parameters exported by Kamailio core to configuration file.
 
