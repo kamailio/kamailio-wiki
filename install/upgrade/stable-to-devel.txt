@@ -8,11 +8,24 @@ If you look for the guidelines to upgrade to previous stable release, see:
 
   * [[install:upgrade:4.0.x-to-4.1.0|Upgrade Kamailio v4.0.x to v4.1.0]]
 
+===== Remarks =====
+
+Following tokens are used to mark the changes:
+
+  * INF - the change doesn't really have any direct impact - no action required in old config
+  * CPM - the change was used with the new value via modparam in default config file from old releases
+  * RCM - the change is recommended to be done if you had an explicit different or lower value for this parameter in old config
+
 ===== Modules =====
 
 ==== usrloc ====
 
-  * default value for hash_size is 10 (1024 slots) (informational - no action required in old config)
+  * default value for hash_size is 10 (1024 slots) (INF)
+  * parameter db_ops_ruid is set to 1 (RCM)
+
+==== tm ====
+
+  * parameter failure_reply_mode is set to 3 (CPM)
 
 ===== Core =====
 
@@ -20,13 +33,21 @@ If you look for the guidelines to upgrade to previous stable release, see:
 
 Changes to default values:
 
-  * pkg (private) memory size: 8MB (informational - no action required in old config)
+  * pkg (private) memory size: 8MB (INF)
+  * shm (shared) memory size: 64MB (INF)
+  * tcp read buffer size: 16kB (RCM)
+  * pv print buffer size: 8kB (RCM)
 
 ===== Database =====
 
-==== MySQL ====
+There are quite minimal changes to the database structure, in short:
 
-=== Old Tables ===
+  * acc table has the size of column sip_reason increased to 128
+  * dialplan table has the size of column repl_exp increased to 64
+  * dialplan table has the size of column repl_attrs increased to 64
+  * missed_calls table has the size of column sip_reason increased to 128
+
+==== Upgrade Old MySQL Database Structure ====
 
 Run following SQL statements in MySQL client to upgrade database structure from v4.1 to v4.2:
 
