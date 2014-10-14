@@ -1,0 +1,71 @@
+====== Upgrade Kamailio from v4.1.x to v4.2.0 ======
+
+The page contains the details about the changes that were made to old components during the development of v4.2.0 compared with what existed in v4.1.x. It does not include the brand new modules, focusing on how to upgrade database and configuration file from v4.1.x to run with Kamailio devel.
+
+===== Previous Stable Release =====
+
+If you look for the guidelines to upgrade to previous stable release, see:
+
+  * [[install:upgrade:4.0.x-to-4.1.0|Upgrade Kamailio v4.0.x to v4.1.0]]
+
+===== Remarks =====
+
+Following tokens are used to mark the changes:
+
+  * INF - the change doesn't really have any direct impact - no action required in old config
+  * CPM - the change was used with the new value via modparam in default config file from old releases
+  * RCM - the change is recommended to be done if you had an explicit different or lower value for this parameter in old config
+
+===== Modules =====
+
+==== usrloc ====
+
+  * default value for hash_size is 10 (1024 slots) (INF)
+  * parameter db_ops_ruid is set to 1 (RCM)
+
+==== tm ====
+
+  * parameter failure_reply_mode is set to 3 (CPM)
+
+===== Core =====
+
+==== Parameters ====
+
+Changes to default values:
+
+  * pkg (private) memory size: 8MB (INF)
+  * shm (shared) memory size: 64MB (INF)
+  * tcp read buffer size: 16kB (RCM)
+  * pv print buffer size: 8kB (RCM)
+
+===== Database =====
+
+There are quite minimal changes to the database structure, in short:
+
+  * acc table has the size of column sip_reason increased to 128
+  * dialplan table has the size of column repl_exp increased to 64
+  * dialplan table has the size of column repl_attrs increased to 64
+  * missed_calls table has the size of column sip_reason increased to 128
+
+==== Upgrade Old MySQL Database Structure ====
+
+Run following SQL statements in MySQL client to upgrade database structure from v4.1 to v4.2:
+
+<code sql>
+-- table: acc
+ALTER TABLE acc CHANGE COLUMN sip_reason sip_reason varchar(128) DEFAULT '' NOT NULL;
+DELETE FROM version WHERE table_name='acc';
+INSERT INTO version (`table_name`, `table_version`) values ('acc','5');
+
+-- table: dialplan
+ALTER TABLE dialplan CHANGE COLUMN repl_exp repl_exp varchar(64) NOT NULL; 
+ALTER TABLE dialplan CHANGE COLUMN attrs attrs varchar(64) NOT NULL;
+DELETE FROM version WHERE table_name='dialplan';
+INSERT INTO version (`table_name`, `table_version`) values ('dialplan','2');
+
+-- table: missed_calls
+ALTER TABLE missed_calls CHANGE COLUMN sip_reason sip_reason varchar(128) DEFAULT '' NOT NULL;
+DELETE FROM version WHERE table_name='missed_calls';
+INSERT INTO version (`table_name`, `table_version`) values ('missed_calls','4');
+
+</code>
