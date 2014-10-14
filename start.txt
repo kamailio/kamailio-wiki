@@ -119,6 +119,13 @@ Few guidelines to edit the wiki:
   * [[http://kb.asipto.com/asterisk:index|Kamailio and Asterisk Integration]]
   * [[http://kb.asipto.com/freeswitch:index|Kamailio and FreeSwitch Integration]]
   * [[http://kb.asipto.com/kamailio:index|Various Kamailio Use Case Tutorials]]
+
+==== Database Structure ====
+
+  * [[http://www.kamailio.org/docs/db-tables/kamailio-db-devel.html|Devel Version]]
+  * [[http://www.kamailio.org/docs/db-tables/kamailio-db-4.1.x.html|4.1.x Version]]
+  * [[http://www.kamailio.org/docs/db-tables/kamailio-db-3.3.x.html|3.3.x Version]]
+  * [[http://www.kamailio.org/docs/db-tables/kamailio-db-3.2.x.html|3.2.x Version]]
 ===== Development =====
 
 ==== Development APIs ====
