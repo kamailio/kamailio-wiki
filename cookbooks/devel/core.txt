@@ -842,6 +842,19 @@ Example of usage:
 
 Allows to configure a log_name prefix which will be used when printing to syslog. This is useful to filter log messages when running many instance of sip-router on same server
 
+<code>
+log_name="kamailio"
+</code>
+
+==== log_prefix ====
+
+Specify the text to be prefixed to the log messages printed by Kamailio while processing a SIP message. It can contain script variables that are evaluated at runtime.
+
+Example - prefix with message type (1 - request, 2 - response), CSeq and Call-ID:
+
+<code>
+log_prefix="{$mt $hdr(CSeq) $ci} "
+</code>
 
 ==== log_stderror ====
 
