@@ -14,53 +14,53 @@
 ==== evapi ====
 
   * push details of events to remote applications via tcp
-  * http://kamailio.org/docs/modules/devel/modules/evapi.html
+  * http://kamailio.org/docs/modules/4.2.x/modules/evapi.html
 
 ==== db_mongodb ====
 
   * DB APIv1 connector implementation for MongoDB NoSQL engine
-  * http://kamailio.org/docs/modules/devel/modules/db_mongodb.html
+  * http://kamailio.org/docs/modules/4.2.x/modules/db_mongodb.html
 
 ==== jsonrcp-s ====
 
   * implementation of JSONRPC server over HTTP
-  * http://kamailio.org/docs/modules/devel/modules/jsonrpc-s.html
+  * http://kamailio.org/docs/modules/4.2.x/modules/jsonrpc-s.html
 
 ==== kazoo ====
 
   * middle layer communication message queue for Kazoo platform
-  * http://kamailio.org/docs/modules/devel/modules/kazoo.html
+  * http://kamailio.org/docs/modules/4.2.x/modules/kazoo.html
 
 ==== ndb_cassandra ====
 
   * configuration script connector for Cassandra NoSQL engine
-  * http://kamailio.org/docs/modules/devel/modules/ndb_cassandra.html
+  * http://kamailio.org/docs/modules/4.2.x/modules/ndb_cassandra.html
 
 ==== ndb_mongodb ====
 
   * configuration script connector for MongoDB NoSQL engine
-  * http://kamailio.org/docs/modules/devel/modules/ndb_mongodb.html
+  * http://kamailio.org/docs/modules/4.2.x/modules/ndb_mongodb.html
 
 ==== nosip ====
 
   * allow handling non-sip traffic via event_route
-  * http://kamailio.org/docs/modules/devel/modules/nosip.html
+  * http://kamailio.org/docs/modules/4.2.x/modules/nosip.html
 
 ==== rtpengine ====
 
   * control rtpengine application for RTP relaying or WebRTC gatewaying
   * successor of rtpproxy-ng
-  * http://kamailio.org/docs/modules/devel/modules/rtpengine.html
+  * http://kamailio.org/docs/modules/4.2.x/modules/rtpengine.html
 
 ==== tsilo ====
 
   * attach attributes and add new branches to ongoing transaction
-  * http://kamailio.org/docs/modules/devel/modules/tsilo.html
+  * http://kamailio.org/docs/modules/4.2.x/modules/tsilo.html
 
 ==== uuid ====
 
   * variables returning unique variables using libuid
-  * http://kamailio.org/docs/modules/devel/modules/uuid.html
+  * http://kamailio.org/docs/modules/4.2.x/modules/uuid.html
 
 
 ===== New in Old Modules =====
