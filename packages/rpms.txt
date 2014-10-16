@@ -2,7 +2,7 @@
 
 ===== Kamailio 4.2.x =====
 
-The RPM packages are built on OpenSUSE build server for CentOS 5, 6 and 7, Fedora 18, 19 and 20, RedHat 5, 6 and 7, OpenSUSE 12.3, 13.1 and 13.2, on i586 and x86_64 architectures.
+The RPM packages are built on OpenSUSE Build Service for CentOS 5, 6 and 7, Fedora 18, 19 and 20, RedHat 5, 6 and 7, OpenSUSE 12.3, 13.1 and 13.2, on i586 and x86_64 architectures.
 
 A mirror of the packages is hosted by:
 
