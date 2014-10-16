@@ -1,5 +1,32 @@
 ====== RPM Packages ======
 
+===== Kamailio 4.2.x =====
+
+The RPM packages are built on OpenSUSE build server for CentOS 5, 6 and 7, Fedora 18, 19 and 20, RedHat 5, 6 and 7, OpenSUSE 12.3, 13.1 and 13.2, on i586 and x86_64 architectures.
+
+A mirror of the packages is hosted by:
+
+  * http://rpm.kamailio.org
+
+The OpenSuse build service project is available at:
+
+  * https://build.opensuse.org/project/show/home:kamailio:v4.2.x-rpms
+
+Download links specific per distribution are:
+
+  * http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/CentOS_5/
+  * http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/CentOS_6/
+  * http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/CentOS_7/
+  * http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/Fedora_18/
+  * http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/Fedora_19/
+  * http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/Fedora_20/
+  * http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/RHEL_5/
+  * http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/RHEL_6/
+  * http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/RHEL_7/
+  * http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/openSUSE_12.3/
+  * http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/openSUSE_13.1/
+  * http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/openSUSE_13.2/
+
 ===== Kamailio 4.0.x and 4.1.x =====
 
 The RPM packages are built on OpenSUSE build server for Centos 5.5 and 6, RedHat 5 and 6, Fedora 16, 17, 18 and 19, OpenSuse 12.1, 12.2, 12.3 and 13.1, on i586 and x86_64 architectures.
