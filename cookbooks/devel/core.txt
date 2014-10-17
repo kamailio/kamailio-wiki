@@ -893,13 +893,6 @@ Example of usage:
 <code>
 max_branches=16
 </code>
-==== sql_buffer_size ====
-
-The size in bytes of the SQL buffer created for data base queries. For database drivers that use the core db_query library, this will be maximum size object that can be written or read from a database. Default value is 65535.
-
-Example of usage:
-
-    sql_buffer_size=131070
 
 ==== max_recursive_level ====
 
