@@ -879,7 +879,20 @@ The size in bytes not to be exceeded during the auto-probing procedure of descov
 Example of usage:
 
     maxbuffer=65536
-    
+
+==== max_branches ====
+
+The maximum number of outgoing branches for each SIP request. It has impact on the size of destination set created in core (e.g., via append_branch()) as well as the serial and parallel forking done via tm module. It replaces the old defined constant MAX_BRANCHES.
+
+The value has to be at least 1 and the upper limit is 31.
+
+Default value: 12
+
+Example of usage:
+
+<code>
+max_branches=16
+</code>
 ==== sql_buffer_size ====
 
 The size in bytes of the SQL buffer created for data base queries. For database drivers that use the core db_query library, this will be maximum size object that can be written or read from a database. Default value is 65535.
