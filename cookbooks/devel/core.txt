@@ -1178,6 +1178,15 @@ listen=tcp:127.0.0.1:5060
 
   * it will start 2 workers to handle traffic on tcp:127.0.0.1:5080 and 4 to handle traffic on both tcp:127.0.0.1:5070 and tcp:127.0.0.1:5060. In total there are 6 worker processes
 
+==== sql_buffer_size ====
+
+The size in bytes of the SQL buffer created for data base queries. For database drivers that use the core db_query library, this will be maximum size object that can be written or read from a database. Default value is 65535.
+
+Example of usage:
+
+    sql_buffer_size=131070
+
+
 ==== statistics ====
 
 Kamailio has built-in support for statistics counter. This means, these counters can be increased, decreased, read and cleared. The statistics counter are defined either by the core (e.g. tcp counters), by modules (e.g. 2xx_transactions by "tmx" module) or by the script writer using the "statistics" module.
