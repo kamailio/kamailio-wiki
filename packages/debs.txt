@@ -49,6 +49,40 @@ deb-src http://deb.kamailio.org/kamailio precise main
 </code>
 
 
+
+==== Latest Kamailio 4.2 release ====
+
+
+* ''Debian Squeeze''
+<code>
+deb http://deb.kamailio.org/kamailio42 squeeze main
+deb-src http://deb.kamailio.org/kamailio42 squeeze main
+</code>
+
+* ''Debian Wheezy''
+<code>
+deb http://deb.kamailio.org/kamailio42 wheezy main
+deb-src http://deb.kamailio.org/kamailio42 wheezy main
+</code>
+
+* ''Debian Jessie''
+<code>
+deb http://deb.kamailio.org/kamailio42 jessie main
+deb-src http://deb.kamailio.org/kamailio42 jessie main
+</code>
+
+* ''Ubuntu Trusty''
+<code>
+deb http://deb.kamailio.org/kamailio42 trusty main
+deb-src http://deb.kamailio.org/kamailio42 trusty main
+</code>
+
+* ''Ubuntu Precise''
+<code>
+deb http://deb.kamailio.org/kamailio42 precise main
+deb-src http://deb.kamailio.org/kamailio42 precise main
+</code>
+
 ==== Latest Kamailio 4.1 release ====
 
 
