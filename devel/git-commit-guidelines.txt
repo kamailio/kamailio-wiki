@@ -1,4 +1,6 @@
-====== Cloning GIT Repository ======
+====== GIT Commit Guidelines ======
+
+===== Cloning GIT Repository =====
 
 You need to install the git command line tool, part of git-core (on Debian/Ubuntu) or git (Fedora/CentOS) package:
 
