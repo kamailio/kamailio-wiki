@@ -204,7 +204,7 @@ Example commit message:
 <code>
 lib/srutils: more detailed log message for uuid generation
 </code>
-===== Backportin Commits =====
+===== Backporting Commits =====
 
 Commits that include fixes to issues affecting stable branches must be backported using:
 
@@ -221,6 +221,8 @@ git cherry-pick -x a8bc3d
 Parameter **-x** is important to be able to keep track easier of backported commits.
 
 The **git cherry-pick** command must be executed inside the branch where the commit has to be backported, after doing a **git pull origin**.
+
+**Note**: the commit must be done first time in master, then backported to the latest stable branch, using cherry-pick -x with commit id from master. The backported commit gets a new id in the latest stable branch, that commit id must be used when cherry-picking to the previous stable branch. When willing to backport to older versions, keep using the commit id from the next stable branch.
 
 ===== Useful Commands =====
 
