@@ -190,6 +190,11 @@ git commit modules/auth/
     * (k) - for modules located in modules_k
     * (s) - for modules located in modules_s
 
+Example commit message to auth module:
+
+<code>
+auth: improved documentation for www_challenge()
+</code>
 ===== Library Commits =====
 
   * prefix the first line of the commit message with "library name:"
