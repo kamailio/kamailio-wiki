@@ -199,6 +199,11 @@ auth: improved documentation for www_challenge()
 
   * prefix the first line of the commit message with "library name:"
 
+Example commit message:
+
+<code>
+lib/srutils: more detailed log message for uuid generation
+</code>
 ===== Useful Commands =====
 
 This section collects some useful GIT commands.
