@@ -1,3 +1,4 @@
+======Troubleshooting kamailio 'out of memory' errors ======
 ===== Potential causes =====
 
 There are two cause that may lead to memory starvation:
@@ -8,9 +9,7 @@ b) memory leak - some memory did not properly freed, making all the memory unava
 
 Stop all traffic to the system and wait about 20 minutes. This will release memory allocated to transactions etc.
 Test the system again by placing a small number of calls. If the errors start immediately, there is a memory leak.
-
-If the memory starvation is because of a too small pool of memory, by stopping the traffic on the proxy (without stopping the proxy), the allocated memory will be freed in time (as transactions and location records are freed).
-TEST: wait ~ 20 minutes without any kind of load the proxy. Test the proxy by placing several calls; if the memory erros pop up again once the traffic is resumed, it means it's a memory leak somewhere; If not sure of the result, consider it's a memory leak.
+If you are not sure of the result, consider it as a memory leak.
 
 ===== How to handle it =====
 ==== Memory pool is too small ====
@@ -24,12 +23,12 @@ When installed as an RPM on RedHat or CentOS, these values may be set in /etc/sy
 This requires memory debug support compiled into the application.
 run kamailio -V
 
-''version: kamailio 4.2.0 (x86_64/linux)
-flags: STATS: Off, USE_TCP, USE_TLS, TLS_HOOKS, USE_RAW_SOCKS, DISABLE_NAGLE, USE_MCAST, DNS_IP_HACK, SHM_MEM, SHM_MMAP, PKG_MALLOC, **F_MALLOC, DBG_F_MALLOC**, USE_FUTEX, FAST_LOCK-ADAPTIVE_WAIT, USE_DNS_CACHE, USE_DNS_FAILOVER, USE_NAPTR, USE_DST_BLACKLIST, HAVE_RESOLV_RES
-ADAPTIVE_WAIT_LOOPS=1024, MAX_RECV_BUFFER_SIZE 262144, MAX_LISTEN 16, MAX_URI_SIZE 1024, BUF_SIZE 65535, DEFAULT PKG_SIZE 8MB
-poll method support: poll, epoll_lt, epoll_et, sigio_rt, select.
-id: unknown
-compiled on 11:59:44 Nov  3 2014 with gcc 4.4.7''
+  version: kamailio 4.2.0 (x86_64/linux)
+  flags: STATS: Off, USE_TCP, USE_TLS, TLS_HOOKS, USE_RAW_SOCKS, DISABLE_NAGLE, USE_MCAST, DNS_IP_HACK, SHM_MEM, SHM_MMAP, PKG_MALLOC, F_MALLOC, DBG_F_MALLOC, USE_FUTEX, FAST_LOCK-ADAPTIVE_WAIT, USE_DNS_CACHE, USE_DNS_FAILOVER, USE_NAPTR, USE_DST_BLACKLIST, HAVE_RESOLV_RES
+  ADAPTIVE_WAIT_LOOPS=1024, MAX_RECV_BUFFER_SIZE 262144, MAX_LISTEN 16, MAX_URI_SIZE 1024, BUF_SIZE 65535, DEFAULT PKG_SIZE 8MB
+  poll method support: poll, epoll_lt, epoll_et, sigio_rt, select.
+  id: unknown
+  compiled on 11:59:44 Nov  3 2014 with gcc 4.4.7
 
 This example was compiled using the F_MALLOC memory manager and has debug support enabled.
 The alternative memory manager will show QM_MALLOC and DBG_QM_MALLOC.
@@ -81,7 +80,7 @@ Print used chunks of the first 2000 to 10000 if compiled with DBG_QM_MALLOC:
   set $i = $i + 1
   end
 
-Print used chunks of the first 2000 to 10000 if compiled with DBG_QM_MALLOC:
+Print used chunks of the first 2000 to 10000 if compiled with DBG_F_MALLOC:
   set $i=0
   set $a = mem_block->first_frag
   while($i<10000)
