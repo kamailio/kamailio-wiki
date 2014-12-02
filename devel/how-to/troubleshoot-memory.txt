@@ -1,0 +1,95 @@
+===== Potential causes =====
+
+There are two cause that may lead to memory starvation:
+a) a small pool of memory - the configured amount of memory is not enough and no more memory can be allocated.
+b) memory leak - some memory did not properly freed, making all the memory unavailable (not used, but still allocated)
+
+===== Determining the cause =====
+
+Stop all traffic to the system and wait about 20 minutes. This will release memory allocated to transactions etc.
+Test the system again by placing a small number of calls. If the errors start immediately, there is a memory leak.
+
+If the memory starvation is because of a too small pool of memory, by stopping the traffic on the proxy (without stopping the proxy), the allocated memory will be freed in time (as transactions and location records are freed).
+TEST: wait ~ 20 minutes without any kind of load the proxy. Test the proxy by placing several calls; if the memory erros pop up again once the traffic is resumed, it means it's a memory leak somewhere; If not sure of the result, consider it's a memory leak.
+
+===== How to handle it =====
+==== Memory pool is too small ====
+
+If the memory pool is too small, adjust the value for package or shared memory and restart kamailio.
+On the command line this is done using the -M and -m switches for pkg and shared mem respectively.
+When installed as an RPM on RedHat or CentOS, these values may be set in /etc/sysconfig/kamailio
+
+==== Investigating a memory leak ====
+
+This requires memory debug support compiled into the application.
+run kamailio -V
+
+''version: kamailio 4.2.0 (x86_64/linux)
+flags: STATS: Off, USE_TCP, USE_TLS, TLS_HOOKS, USE_RAW_SOCKS, DISABLE_NAGLE, USE_MCAST, DNS_IP_HACK, SHM_MEM, SHM_MMAP, PKG_MALLOC, **F_MALLOC, DBG_F_MALLOC**, USE_FUTEX, FAST_LOCK-ADAPTIVE_WAIT, USE_DNS_CACHE, USE_DNS_FAILOVER, USE_NAPTR, USE_DST_BLACKLIST, HAVE_RESOLV_RES
+ADAPTIVE_WAIT_LOOPS=1024, MAX_RECV_BUFFER_SIZE 262144, MAX_LISTEN 16, MAX_URI_SIZE 1024, BUF_SIZE 65535, DEFAULT PKG_SIZE 8MB
+poll method support: poll, epoll_lt, epoll_et, sigio_rt, select.
+id: unknown
+compiled on 11:59:44 Nov  3 2014 with gcc 4.4.7''
+
+This example was compiled using the F_MALLOC memory manager and has debug support enabled.
+The alternative memory manager will show QM_MALLOC and DBG_QM_MALLOC.
+
+
+If the memory debug support is not compiled, follow the next steps:
+  - edit Makefile.defs file and remove from the DEFS string the F_MALLOC define (delete ”-DF_MALLOC” line) and add the DBG_QM_MALLOC define (insert a ”-DDBG_QM_MALLOC” line).
+  - recompile everything
+  - set memlog=1 in your configuration script (to get the memory messages the “memlog” value must be smaller or equal to the “debug” value)
+  - restart your proxy
+
+Now, you may check the memory status in two situations:
+  - At shutdown - just stop the proxy - the memory manager will dump the memory status is the memlog value is less than the debug value. Normally most of the memory is cleaned during shutdown. If there is memory leak, it should be visible as not-freed memory. A memory status looks like:
+
+   0(17665) Memory status (shm):
+   0(17665) qm_status (0xb5a7e000):
+   0(17665)  heap size= 33554432
+   0(17665)  used= 1592952, used+overhead=1811564, free=31742868
+   0(17665)  max used (+overhead)= 1811564
+   0(17665) dumping all alloc'ed. fragments:
+   0(17665)       0. N  address=0xb5ab240c frag=0xb5ab23f4 size=4 used=1
+   0(17665)             alloc'd from mem/shm_mem.c: shm_mem_init_mallocs(199)
+   0(17665)         start check=f0f0f0f0, end check= c0c0c0c0, abcdefed
+   0(17665)       1. N  address=0xb5ab2440 frag=0xb5ab2428 size=4 used=1 
+   0(17665)             alloc'd from timer.c: init_timer(52)
+   0(17665)         start check=f0f0f0f0, end check= c0c0c0c0, abcdefed
+
+  - At run time - you may check the memory status by sending SIGUSR1 signal to the process (do “kill -SIGUSR1 OPENSER_PID”) - it will dump the SHM and PKG (only for that process) memory status. It is highly recommended to do this after waiting about 20 minutes to be sure that as much memory as possible is freed - all temporary memory used during processing is freed by lack of load on the proxy. Go through the log and see if there is something suspicious, like too much memory still allocated from same place, etc.
+If you have no clue how to interpret the logs for memory status, post it on a FTP or HTTP server and send the link on the devel@lists.kamailio.org mailing list.
+
+With versions > 3.x, if you have the ctl and cfg_rpc modules loaded, execute:
+sercmd cfg.set_now_int core mem_dump_pkg <pid>
+When processing of first SIP message in the process with that PID, you will get the status of pkg memory in syslog.
+
+==== Walking through package memory with gdb ====
+
+These gdb scripts can be used on a dumped core file or when attached to a running process that has excessive memory used.
+
+Print used chunks of the first 2000 to 10000 if compiled with DBG_QM_MALLOC:
+  set $i=0
+  set $a = mem_block->first_frag
+  while($i<10000)
+  if($i>2000)
+  if($a->u.is_free==0)
+  p *$a
+  end
+  end
+  set $a = ((struct qm_frag*)((char*)($a)+sizeof(struct qm_frag)+((struct qm_frag*)$a)->size+sizeof(struct qm_frag_end)))
+  set $i = $i + 1
+  end
+
+Print used chunks of the first 2000 to 10000 if compiled with DBG_QM_MALLOC:
+  set $i=0
+  set $a = mem_block->first_frag
+  while($i<10000)
+  if($i>2000)
+  if($a->u.reserved==0)
+  p *$a
+  end
+  end
+  set $a = ((struct fm_frag*)((char*)($a)+sizeof(struct fm_frag)+((struct fm_frag*)$a)->size))
+  set $i = $i + 1
+  end
