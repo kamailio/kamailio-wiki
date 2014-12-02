@@ -2,8 +2,8 @@
 ===== Potential causes =====
 
 There are two cause that may lead to memory starvation:
-a) a small pool of memory - the configured amount of memory is not enough and no more memory can be allocated.
-b) memory leak - some memory did not properly freed, making all the memory unavailable (not used, but still allocated)
+  - a small pool of memory - the configured amount of memory is not enough and no more memory can be allocated.
+  - memory leak - some memory did not properly freed, making all the memory unavailable (not used, but still allocated)
 
 ===== Determining the cause =====
 
