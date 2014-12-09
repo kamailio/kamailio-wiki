@@ -30,4 +30,38 @@ modparam("usrloc", "use_domain", 1)
 modparam("nathelper|registrar", "received_avp", "$avp(s:rcv)")
 </code>
 
+<code>
+# -------------------------  request routing logic -------------------
+# main routing logic
 
+route {
+
+        # per request initial checks
+        route(SANITY_CHECK);
+
+        # CANCEL processing
+        if (is_method("CANCEL")) {
+                if (t_check_trans()) {
+                        t_relay();
+                }
+                exit;
+        }
+
+        route(CHECK_SOURCE_IP);
+
+        ##################################
+        ### HANDLE SEQUENTIAL REQUESTS ###
+        route(WITHINDLG);
+
+        ###############################
+        ### HANDLE INITIAL REQUESTS ###
+        t_check_trans();
+
+        route(REGISTER);
+
+        route(INVITE);
+
+        route(RELAY);
+
+}
+</code>
