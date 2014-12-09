@@ -2,7 +2,7 @@
 
 This guide is designed to illustrate how to setup auth_db and usrloc to do digest authentication using a database backend. I will be using a postgresql database in this example. 
 
-Also, the following modules are required: usrloc, registrar, auth, auth_db
+The following modules are required: usrloc, registrar, auth, auth_db
 
 
 ====== General preparations ======
