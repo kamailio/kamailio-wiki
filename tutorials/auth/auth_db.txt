@@ -7,5 +7,5 @@ This guide is designed to illustrate how to setup auth_db and usrloc to do diges
 
 You'll probably want to setup your database and add a few users. I will briefly go over how to setup the tables using the schema provided with kamailio.
 
-====== Installation of the Kamailio Auth, Auth_DB, USRLOC ======
+====== Installation of the Kamailio Auth, Auth_DB, usrloc ======
 
