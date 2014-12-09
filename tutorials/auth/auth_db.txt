@@ -1,6 +1,6 @@
 **Note: This document is work in progress and yet unfinished!**
 
-Written by Emmanuel Schmidbauer (eschmidbauer@gmail.com)
+written by Emmanuel Schmidbauer (eschmidbauer@gmail.com)
 
 This guide is designed to illustrate how to setup auth_db and usrloc to do digest authentication using a database backend. I will be using a postgresql database in this example. 
 
