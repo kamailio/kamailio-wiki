@@ -35,7 +35,6 @@ modparam("nathelper|registrar", "received_avp", "$avp(s:rcv)")
 # main routing logic
 
 route {
-
         # per request initial checks
         route(SANITY_CHECK);
 
@@ -62,6 +61,5 @@ route {
         route(INVITE);
 
         route(RELAY);
-
 }
 </code>
