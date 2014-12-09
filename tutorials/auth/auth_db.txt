@@ -63,3 +63,39 @@ route {
         route(RELAY);
 }
 </code>
+
+<code>
+route[REGISTER]
+{
+        if (is_method("REGISTER")) {
+                # auth user/pass
+                if(!www_authenticate("$fd", "user_extension")) {
+                        www_challenge("$fd", "1");
+                }
+
+                if (!save("sip_registration")) {
+                        sl_reply_error();
+                }
+                exit;
+        }
+
+}
+</code>
+
+<code>
+# Handle INVITE + REFER
+route[INVITE]
+{
+        # record routing for dialog forming requests (in case they are routed)
+        # remove preloaded route headers
+        remove_hf("Route");
+        if (is_method("INVITE|REFER")) {
+                record_route();
+               # auth user/pass
+                if (!proxy_authenticate("$fd", "user_extension")) {
+                        proxy_challenge("$fd", "1");
+                        exit;
+                }
+        }
+}
+</code>
