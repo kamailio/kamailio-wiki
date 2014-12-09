@@ -110,6 +110,7 @@ Few guidelines to edit the wiki:
   * [[tutorials:dns:dnssec|Kamailio with DNSSEC]]
   * [[tutorials:mini-howto-admin:main|Mini HowTo Tutorials]]
   * [[tutorials:IMS:installation-howto|Howto install and  configure IMS with Kamailio]]
+  * [[tutorials:auth:auth_db|Howto setup auth_db and usrloc]]
 
 ==== Security related tutorials ====
 
