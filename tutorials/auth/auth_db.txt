@@ -1,3 +1,11 @@
-Howto setup auth_db and usrloc
+**Note: This document is work in progress and yet unfinished!**
 
-UNDER CONSTRUCTION
+This guide is designed to illustrate how to setup auth_db and usrloc to do digest authentication using a database backend. I will be using a postgresql database in this example. 
+
+
+====== General preparations ======
+
+You'll probably want to setup your database and add a few users. I will briefly go over how to setup the tables using the schema provided with kamailio.
+
+====== Installation of the Kamailio Auth, Auth_DB, USRLOC ======
+
