@@ -11,3 +11,14 @@ You'll probably want to setup your database and add a few users. I will briefly 
 
 ====== Installation of the Kamailio modules: auth, auth_db, usrloc ======
 
+<code>
+loadmodule "usrloc.so"
+loadmodule "registrar.so"
+loadmodule "auth.so"
+loadmodule "auth_db.so"
+</code>
+
+
+
+
+
