@@ -9,7 +9,7 @@ The following modules are required: usrloc, registrar, auth, auth_db
 
 You'll probably want to setup your database and add a few users. I will briefly go over how to setup the tables using the schema provided with kamailio.
 
-====== Installation of the Kamailio modules: auth, auth_db, usrloc ======
+====== Modules: auth, auth_db, usrloc ======
 
 <code>
 loadmodule "usrloc.so"
