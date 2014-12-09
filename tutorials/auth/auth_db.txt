@@ -9,16 +9,25 @@ The following modules are required: usrloc, registrar, auth, auth_db
 
 You'll probably want to setup your database and add a few users. I will briefly go over how to setup the tables using the schema provided with kamailio.
 
-====== Modules: auth, auth_db, usrloc ======
+====== Modules: auth, auth_db, usrloc, registrar ======
 
 <code>
-loadmodule "usrloc.so"
-loadmodule "registrar.so"
 loadmodule "auth.so"
 loadmodule "auth_db.so"
+loadmodule "usrloc.so"
+loadmodule "registrar.so"
 </code>
 
-
-
+<code>
+modparam("auth_db|usrloc", "db_url", DB_URL)
+modparam("auth_db", "use_domain", 1)
+modparam("auth_db", "calculate_ha1", 1)
+modparam("usrloc", "db_mode", 3 )
+modparam("usrloc", "desc_time_order", 1 )
+modparam("usrloc", "nat_bflag", 1 )
+modparam("usrloc", "timer_interval", 5 )
+modparam("usrloc", "use_domain", 1)
+modparam("nathelper|registrar", "received_avp", "$avp(s:rcv)")
+</code>
 
 
