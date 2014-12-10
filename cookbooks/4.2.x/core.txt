@@ -1535,7 +1535,7 @@ Example of usage:
 
 ==== tcp_conn_wq_max ====
 
-Maximum bytes queued for write allowed per connection. Attempting to queue more bytes would result in an error and in the connection being closed (too slow). If tcp_write_buf is not enabled, it has no effect.
+Maximum bytes queued for write allowed per connection. Attempting to queue more bytes would result in an error and in the connection being closed (too slow). If tcp_async is not enabled, it has no effect.
 
   tcp_conn_wq_max = bytes (default 32 K)
   
@@ -1652,7 +1652,7 @@ Default: 2100 (~ 2 INVITEs), can be changed at runtime.
 
 ==== tcp_wq_max ====
 
-Maximum bytes queued for write allowed globally. It has no effect if tcp_write_buf is not enabled.
+Maximum bytes queued for write allowed globally. It has no effect if tcp_async is not enabled.
 
   tcp_wq_max = bytes (default 10 Mb)
 
