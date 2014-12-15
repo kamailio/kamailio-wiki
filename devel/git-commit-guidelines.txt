@@ -1,5 +1,15 @@
 ====== GIT Commit Guidelines ======
 
+===== GIT Repository Location =====
+
+Starting with December 15, 2014, the main GITH repository of Kamailio project is hosted on Github at:
+
+  * https://github.com/kamailio/kamailio
+
+A read-only mirror is maintained at:
+
+  * git.kamailio.org (still accessible via git.sip-router.org)
+
 ===== Cloning GIT Repository =====
 
 You need to install the git command line tool, part of git-core (on Debian/Ubuntu) or git (Fedora/CentOS) package:
