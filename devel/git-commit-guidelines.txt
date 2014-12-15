@@ -36,7 +36,13 @@ The clone is tracking automatically the remote **master** branch (the developmen
 If you don't have developer write access, you can clone read-only the repository with:
 
 <code>
-git clone --depth 1 git://git.sip-router.org/sip-router kamailio-dev
+git clone https://github.com/kamailio/kamailio.git kamailio-dev
+</code>
+
+You can also clone (read-only, not for developers that want to push back commits) from the real-time mirror server:
+
+<code>
+git clone --depth 1 git://git.kamailio.org/kamailio kamailio-dev
 </code>
 
 When cloning in read only mode, you can commit your changes to the local clone, but you cannot push the patches to the remote repository. Export the patches and attach them to an email to mailing list <sr-dev [at] lists.sip-router.org> or to an issue on bug tracker. A developer can pick them and commit in your behalf.
