@@ -8,7 +8,8 @@ Starting with December 15, 2014, the main GITH repository of Kamailio project is
 
 A read-only mirror is maintained at:
 
-  * git.kamailio.org (still accessible via git.sip-router.org)
+  * git.kamailio.org (still accessible via git.sip-router.org) - web interface:
+    * http://git.kamailio.org
 
 ===== Cloning GIT Repository =====
 
