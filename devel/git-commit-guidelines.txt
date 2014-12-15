@@ -18,10 +18,16 @@ cd ~/kamailio
 If you have developer write access to GIT repository, clone the repository with:
 
 <code>
-git clone ssh://userid@git.sip-router.org/sip-router kamailio-dev
+git clone https://github.com/kamailio/kamailio.git kamailio-dev
 </code>
 
-Replace **userid** with your developer GIT username.
+or if you prefer via ssh:
+
+<code>
+git clone ssh+git://git@github.com/kamailio/kamailio.git kamailio-dev
+</code>
+
+You may be asked for your Github username and password.
 
 The clone is tracking automatically the remote **master** branch (the development version).
 
