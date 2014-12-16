@@ -971,7 +971,7 @@ mem_join=1
 
 ==== mem_safety ====
 
-Ff set to 1, memory free operation does not call abort() for double freeing a pointer or freeing an invalid address. The server still prints the alerting log messages.
+If set to 1, memory free operation does not call abort() for double freeing a pointer or freeing an invalid address. The server still prints the alerting log messages.
 
 It can be set via config reload framework.
 
