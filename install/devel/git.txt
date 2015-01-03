@@ -73,7 +73,7 @@ include_modules= db_mysql
 
 Save the **modules.lst** and exit.
 
-NOTE: this is one mechanism to enable modules which are not compiled by default, such as lcr, dialplan, presence -- add the modules to **include_modules** variable inside the **modules.lst** file.
+**NOTE**: this is one mechanism to enable modules which are not compiled by default, such as lcr, dialplan, presence -- add the modules to **include_modules** variable inside the **modules.lst** file.
 
 Alternative is to set 'include_modules' variable to specify what extra modules to be included for compilation when building Makefile cfg:
 
@@ -81,7 +81,7 @@ Alternative is to set 'include_modules' variable to specify what extra modules t
 make include_modules="db_mysql dialplan" cfg
 </code>
 
-If you want to install everything in one directory (so you can delete all installed files at once), say /usr/local/kamailio-devel, then set PREFIX variable to the install path in 'make cfg ...' command:
+**NOTE**: If you want to install everything in one directory (so you can delete all installed files at once), say /usr/local/kamailio-devel, then set PREFIX variable to the install path in 'make cfg ...' command:
 
 <code>
 make PREFIX="/usr/local/kamailio-devel" include_modules="db_mysql dialplan" cfg
@@ -91,7 +91,7 @@ make PREFIX="/usr/local/kamailio-devel" include_modules="db_mysql dialplan" cfg
 More hints about Makefile system at: 
   * http://sip-router.org/wiki/tutorials/makefile-system
 
-NOTE: Previous release series 3.x.x used FLAVOUR mechanism to set the name of the application to **kamailio**. Starting with 4.0.0, the default is **kamailio**. From now on, if you want to build **ser** flavour, use **FLAVOUR=ser** in the make command to generate the build configs.
+**NOTE**: Previous release series 3.x.x used FLAVOUR mechanism to set the name of the application to **kamailio**. Starting with 4.0.0, the default is **kamailio**. From that version, if you want to build **ser** flavour, use **FLAVOUR=ser** in the make command to generate the build configs.
 ===== 4. Compile Kamailio =====
 
 Once you added the mysql module to the list of enabled modules, you can compile Kamailio:
