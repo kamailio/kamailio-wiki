@@ -292,7 +292,7 @@ If you are asked for SIP_DOMAIN environment variable do one of the following opt
   export SIP_DOMAIN=mysipserver.com
 
   2.
-  edit '/root/.kamctlrc' and add:
+  edit '/usr/local/etc/kamailio/kamctlrc' (or per user file, like '/root/.kamctlrc') and add:
   SIP_DOMAIN=mysipserver.com
 </code>
 
