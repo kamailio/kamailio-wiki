@@ -169,7 +169,7 @@ The configuration file was installed in:
   /usr/local/etc/kamailio/kamailio.cfg
 </code>
 
-In case you set the PREFIX variable in 'make cfg ...' command, then replace **/usr/local** in all paths above with the value of PREFIX in order to locate the files installed.
+**NOTE**; In case you set the **PREFIX** variable in 'make cfg ...' command, then replace **/usr/local** in all paths above with the value of PREFIX in order to locate the files installed.
 
 ===== 7. Create MySQL database =====
 
