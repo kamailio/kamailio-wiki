@@ -134,7 +134,7 @@ These are:
   * __kamailio__ - Kamailio SIP server
   * __kamdbctl__ - script to create and manage the Databases
   * __kamctl__ - script to manage and control Kamailio SIP server
-  * __sercmd__ - CLI - command line tool to interface with Kamailio SIP server
+  * __kamcmd__ - CLI - command line tool to interface with Kamailio SIP server
 
 To be able to use the binaries from command line, make sure that '/usr/local/sbin' is set in PATH environment variable. You can check that with 'echo $PATH'. If not and you are using 'bash', open '/root/.bash_profile' and at the end add:
 
