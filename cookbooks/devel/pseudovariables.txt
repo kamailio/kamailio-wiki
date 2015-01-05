@@ -603,31 +603,55 @@ if($hdr(From)=~"sip-router\.org") {
 
 <fc #0000ff>It is read-only variable. You can remove or add headers using functions from textops module.</fc>
 
-===== $var(name) - Private memory variables =====
+===== $var(name) - Private memory variables (zero) =====
 
-**$var(name)** - refers to variables that can be used in configuration script, having integer or string value. This kind of variables are faster the AVPs, being referenced directly to memory location. The value of script variables persists over the processing of SIP messages, being specific per each SIP-Router process.
+**$var(name)** - refers to variables that can be used in configuration script, having integer or string value. This kind of variables are faster than AVPs, being referenced directly to memory location.
 
 Example of usage:
 
-<code>
-$var(a) = 2; -- sets the value of variable 'a' to integer '2'
-$var(a) = "2"; -- sets the value of variable 'a' to string '2'
+<code c>
+$var(a) = 2; #-- sets the value of variable 'a' to integer '2'
+$var(a) = "2"; #-- sets the value of variable 'a' to string '2'
+$var(a) = "sip:" + $au + "@" + $fd; #-- compose a value from authentication username and From URI domain
 $var(a) = 3 + (7&(~2));
-$var(a) = "sip:" + $au + "@" + $fd; -- compose a value from authentication username and From URI domain
 
-if( [ $var(a) & 4 ] ) {
+if( $var(a) & 4 ) {
   xlog("var a has third bit set\n");
 }
 </code>
 
-Setting a variable to null is actually initializing the value to integer '0'. Script variables don't have NULL value.
+**Note:** Setting a variable to $null is actually initializing the value to integer '0'. This type of script variables doesn't have $null value.
 
-**Note:** A script variable persists over the SIP-Router process in which it was initialized, so be sure of giving it a new value before reading it or you'll get the value asigned in any other previous message processed by the same SIP-Router process (pid).
+<code c>
+$var(x) = $null;
+
+if($var(x)==0) { # this is true
+  ...
+}
+</code>
+**Note:** A script variable persists over the Kamailio process in which it was initialized, so be sure of giving it a new value before reading it or you'll get the value asigned in any other previous message processed by the same Kamailio process (pid).
 
 <fc #0000FF>It is R/W variable (you can assign values to it directly in configuration file)</fc>
 
 **pv** module can be used to initialize the script variables.
 
+===== $vz(name) - Private memory variables (zero) =====
+
+Same as $var(name) -- added to pair with $vn(name).
+
+===== $vn(name) - Private memory variables (null) =====
+
+Similar to $var(name) and able to hold $null (which is the default value). The value is kept in private memory (pkg) and it is persistent across SIP message processing, within the space of each Kamailio process.
+
+Example of usage:
+
+<code c>
+$vn(x) = 1;
+$vn(x) = "abc";
+$vn(x) = $null;
+
+if($vn(x) == $null) { ... }
+</code>
 ===== $shv(name) - Shared memory variables =====
 
 **$shv(name)**  - it is a class of pseudo-variables stored in shared memory. The value of $shv(name) is visible across all openser processes. Each “shv” has single value and it is initialised to integer 0. You can use “shvset” parameter of **pv module** to initialize the shared variable. The module exports a set of MI functions to get/set the value of shared variables.
