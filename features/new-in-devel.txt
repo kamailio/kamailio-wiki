@@ -17,6 +17,11 @@
 ==== PV ====
 
 New variable type: $vn() that can hold a $NULL value. The existing $var() can not have a $NULL value.
+- similar to $var(name) and able to hold $null
+- default value is $null
+	$vn(x) = 0; $vn(x) = "abc"; $vn(x) = $null;
+- $vz(name) aliased to $var(name)
+
 ==== dispatcher ====
 
   * new function ds_list_exist() to check if a dispatcher set exists.
