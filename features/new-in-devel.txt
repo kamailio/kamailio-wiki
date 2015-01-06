@@ -13,6 +13,9 @@
 
 ==== Usrloc_dmq ====
 A module to distribute USRLOC location database changes between Kamailio servers
+
+==== Statsd ====
+A module that gathers data for the statsd framework.
 ===== New in Old Modules =====
 
 ==== PV ====
