@@ -12,9 +12,11 @@
 ===== New Modules =====
 
 
-===== New in Old Modules =====
+==== New in Old Modules ====
 
+===== PV ====
 
+New variable type: $vn() that can hold a $NULL value. The existing $var() can not have a $NULL value.
 ==== dispatcher ====
 
   * new function ds_list_exist() to check if a dispatcher set exists.
