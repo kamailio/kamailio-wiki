@@ -11,7 +11,8 @@
 
 ===== New Modules =====
 
-
+==== Usrloc_dmq ====
+A module to distribute USRLOC location database changes between Kamailio servers
 ===== New in Old Modules =====
 
 ==== PV ====
