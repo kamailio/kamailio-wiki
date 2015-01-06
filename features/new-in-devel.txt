@@ -27,6 +27,14 @@ New variable type: $vn() that can hold a $NULL value. The existing $var() can no
 	$vn(x) = 0; $vn(x) = "abc"; $vn(x) = $null;
  - $vz(name) aliased to $var(name)
 
+==== xlog ====
+xlog: new log function xlogm(...) - logs with method filtering
+
+ - same as xlog(level, message), fitering on methods
+ - new parameter methods_filter - a bitmask with internal sip method ids to be skipped from printing logs. Default -1 (skip all)
+ - parameter can be set at runtime via cfg reload framework kamcmd cfg.set_now_int xlog methods_filter 15
+ - alternative implementation of FS#81
+
 ==== dispatcher ====
 
   * new function ds_list_exist() to check if a dispatcher set exists.
