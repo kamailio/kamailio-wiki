@@ -339,9 +339,9 @@ This variable can be used to test the value of URI from To header.
 
 Example of usage:
 <code c>
-  if(to_uri=~"sip:.+@sip-router.org")
+  if(to_uri=~"sip:.+@kamailio.org")
   {
-      log("this is a request for sip-router.org users\n");
+      log("this is a request for kamailio.org users\n");
   };
 </code>
 
