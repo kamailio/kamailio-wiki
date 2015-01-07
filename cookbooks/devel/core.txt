@@ -218,7 +218,7 @@ Example of usage:
 
 ==== dst_port ====
 
-The local port where the SIP packet was received. When SIP-Router is listening on many ports, it is useful to learn which was the one that received the SIP packet.
+The local port where the SIP packet was received. When Kamailio is listening on many ports, it is useful to learn which was the one that received the SIP packet.
 
 Example of usage:
 <code c>
