@@ -1286,7 +1286,7 @@ Example of usage:
 
 Note: See also file doc/dns.txt for details about Kamailio's DNS client.
 
-SIP-Router has an internal DNS resolver with caching capabilities. If this caching resolver is activated (default setting) then the system's stub resolver won't be used. Thus, also local name resolution configuration like /etc/hosts entries will not be used. If the dns cache is deactivated (use_dns_cache=no), then system's resolver will be used. The DNS failover functionality in tm module references directly records in the DNS cache (which saves a lot of memory) and hence DNS based failover only works if the internal DNS cache is enabled.
+Kamailio has an internal DNS resolver with caching capabilities. If this caching resolver is activated (default setting) then the system's stub resolver won't be used. Thus, also local name resolution configuration like /etc/hosts entries will not be used. If the DNS cache is deactivated (use_dns_cache=no), then system's resolver will be used. The DNS failover functionality in the tm module references directly records in the DNS cache (which saves a lot of memory) and hence DNS based failover only works if the internal DNS cache is enabled.
 
 ^ DNS resolver comparison   ^ internal resolver ^ system resolver ^
 | Caching of resolved records | yes | no* |
@@ -1295,14 +1295,14 @@ SIP-Router has an internal DNS resolver with caching capabilities. If this cachi
 
 * Of course you can use the resolving name servers configured in /etc/resolv.conf as caching nameservers.
 
-If the internal resolver/cache is enabled you can add/remove records by hand (using sercmd or xmlrpc) using the DNS RPCs, e.g. dns.add_a,
+If the internal resolver/cache is enabled you can add/remove records by hand (using kamcmd or xmlrpc) using the DNS RPCs, e.g. dns.add_a,
 dns.add_srv, dns.delete_a a.s.o. For more info on DNS RPCs see http://www.kamailio.org/docs/docbooks/devel/rpc_list/rpc_list.html#dns.add_a
 
-Note: During startup of SIP-Router, before the internal resolver is loaded, the system resolver will be used (it will be used for queries done from module register functions or modparams fixups, but not for queries done from mod_init() or normal fixups). 
+Note: During startup of Kamailio, before the internal resolver is loaded, the system resolver will be used (it will be used for queries done from module register functions or modparams fixups, but not for queries done from mod_init() or normal fixups). 
 
 Note: The dns cache uses the DNS servers configured on your server (/etc/resolv.conf), therefore even if you use the internal resolver you should have a working DNS resolving configuration on your server.
 
-SIP-Router also allows you to finetune the DNS resolver settings.
+Kamailio also allows you to finetune the DNS resolver settings.
 
 The maximum time a dns request can take (before failing) is (if dns_try_ipv6 is yes, mutliply it again by 2; if SRV and NAPTR lookups are enabled, it can take even longer!):
 
