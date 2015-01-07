@@ -466,7 +466,7 @@ Note: This command was removed.
 
 ==== myself ====
 
-It is a reference to the list of local IP addresses, hostnames and aliases that has been set in SIP-Router configuration file. This lists contain the domains served by SIP-Router.
+This is a reference to the list of local IP addresses, hostnames and aliases that has been set in the Kamailio configuration file. This lists contain the domains served by Kamailio.
 
 The variable can be used to test if the host part of an URI is in the list. The usefulness of this test is to select the messages that has to be processed locally or has to be forwarded to another server.
 
@@ -479,7 +479,7 @@ Example of usage:
     };
 </code>
 
-
+Note: You can also use the is_myself() function.
 ===== Core parameters =====
 
 ==== advertised_address ====
