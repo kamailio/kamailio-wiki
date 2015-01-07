@@ -494,7 +494,7 @@ address from where the request will be sent is used.
 
 Example of usage:
 
-    advertised_address="sip-router.org"
+    advertised_address="kamailio.org"
 
 ==== advertised_port ====
 
