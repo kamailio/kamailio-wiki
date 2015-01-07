@@ -567,7 +567,7 @@ Example of usage:
 
 ==== chroot ====
 
-The value must be a valid path in the system. If set, sip-router will chroot (change root directory) to its value.
+The value must be a valid path in the system. If set, Kamailio will chroot (change root directory) to its value.
 
 Example of usage:
 
