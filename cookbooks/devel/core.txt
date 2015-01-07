@@ -236,7 +236,7 @@ This script variable is a reference to the URI of 'From' header. It can be used 
 Example of usage:
 
 <code c>
-    if(is_method("INVITE") && from_uri=~".*@sip-router.org")
+    if(is_method("INVITE") && from_uri=~".*@kamailio.org")
     {
         log("the caller is from sip-router.org\n");
     };
