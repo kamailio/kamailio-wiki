@@ -238,7 +238,7 @@ Example of usage:
 <code c>
     if(is_method("INVITE") && from_uri=~".*@kamailio.org")
     {
-        log("the caller is from sip-router.org\n");
+        log("the caller is from kamailio.org\n");
     };
 </code>
 
