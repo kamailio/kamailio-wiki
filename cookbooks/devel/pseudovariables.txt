@@ -599,7 +599,7 @@ The module should identify compact header names. It is recommended to use dedica
 Example of usage:
 
 <code c>
-if($hdr(From)=~"sip-router\.org") {
+if($hdr(From)=~"kamailio\.org") {
 ...
 }
 </code>
