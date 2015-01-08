@@ -949,7 +949,7 @@ Please see also [[#memlog]] and [[#debug]].
 
 **Alias name: mem_log**
 
-This parameter specifies on which log level the memory statistics will be logged. If memlog is active, sip-router will log memory statistics on shutdown (or if requested via signal SIGUSR1). This can be useful for debugging of memory leaks. 
+This parameter specifies on which log level the memory statistics will be logged. If memlog is active, Kamailio will log memory statistics on shutdown (or if requested via signal SIGUSR1). This can be useful for debugging of memory leaks. 
 
 Default value: L_DBG (memlog=3) 
 
