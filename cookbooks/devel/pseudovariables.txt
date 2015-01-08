@@ -714,7 +714,7 @@ xlog("Today is $timef(%m/%d/%y)\n");
 **$sel(name)** - return the value of **select** specified by name. **select** refers a class of config variables introduced by SER 2.0, allowing to select and return parts of sip messages and not only.
 
 List of available selects:
-  * http://sip-router.org/wiki/cookbooks/selects/devel
+  * http://www.kamailio.org/wiki/cookbooks/devel/selects
 
 Example:
 
@@ -725,7 +725,6 @@ if($sel(via[1].host)=="10.10.10.10")
   ...
 }
 </code>
-
 ===== Send Address Attributes =====
 
 ==== $sndfrom(name) ====
