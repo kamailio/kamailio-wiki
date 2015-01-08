@@ -648,9 +648,8 @@ Example of usage:
 
     disable_tls=yes
 
-In sip-router TLS is implemented as a module. Thus, the TLS configuration is done as module configuration. For more details see the README of the TLS module:
-http://sip-router.org/docbook/sip-router/branch/master/modules/tls/tls.html
-
+In Kamailio TLS is implemented as a module. Thus, the TLS configuration is done as module configuration. For more details see the README of the TLS module:
+http://kamailio.org/docs/modules/devel/modules/tls.html
 ==== enable_tls ====
 
 **Alias name: tls_enable**
