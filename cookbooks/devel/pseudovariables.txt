@@ -220,13 +220,16 @@ xlog("$$avp(x) fount $cnt($avp(x)) times\n");
 **$du** - reference to destination uri
 
 If loose_route() returns TRUE a destination uri is set according to the first Route header.
-$du is also set if lookup() function of 'registrar' module finds contact(s) behind NAT.
+$du is also set if lookup() function of 'registrar' module finds contact(s) behind NAT. You can
+set $du to any SIP URI.
+   sip:kamailio.org
+   sip:pbx123.kamailio.org;transport=udp
+   sip:[2001:DB8::33:2]:5980;transport=tls
 
 <fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
 
 To reset $du:
   $du = null;
-
 
 ==== $fd - From URI domain ====
 
