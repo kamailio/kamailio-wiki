@@ -828,7 +828,7 @@ The proxy tries to find the modules in a smart way, e.g: loadmodule "uri" tries 
 
 ==== log_facility ====
 
-If sip-router logs to syslog, you can control the facility for logging. Very useful when you want to divert all sip-router logs to a different log file. See the man page syslog(3) for more details.
+If Kamailio logs to syslog, you can control the facility for logging. Very useful when you want to divert all Kamailio logs to a different log file. See the man page syslog(3) for more details.
 
 For more see: http://www.kamailio.org/dokuwiki/doku.php/tutorials:debug-syslog-messages
 
