@@ -840,7 +840,7 @@ Example of usage:
 
 ==== log_name ====
 
-Allows to configure a log_name prefix which will be used when printing to syslog. This is useful to filter log messages when running many instance of Kamailio on same server
+Allows to configure a log_name prefix which will be used when printing to syslog. This is useful to filter log messages when running many instances of Kamailio on same server
 
 <code>
 log_name="kamailio"
