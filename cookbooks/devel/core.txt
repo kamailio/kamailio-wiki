@@ -858,7 +858,7 @@ log_prefix="{$mt $hdr(CSeq) $ci} "
 
 ==== log_stderror ====
 
-With this parameter you can make sip-router to write log and debug messages to standard error. Possible values are:
+With this parameter you can make Kamailio to write log and debug messages to standard error. Possible values are:
 
 - "yes" - write the messages to standard error
 
