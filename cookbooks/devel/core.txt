@@ -703,7 +703,7 @@ fork_delay=5000
 
 **Alias name: gid**
 
-The group id to run sip-router.
+The group id to run Kamailio.
 
 Example of usage:
 
