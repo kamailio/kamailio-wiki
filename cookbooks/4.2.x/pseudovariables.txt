@@ -222,7 +222,7 @@ xlog("$$avp(x) found $cnt($avp(x)) times\n");
 If loose_route() returns TRUE a destination uri is set according to the first Route header.
 $du is also set if lookup() function of 'registrar' module finds contact(s) behind NAT.
 
-<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
+<fc #0000ff>It is a R/W variable (you can assign values to it directly in configuration file)</fc>
 
 To reset $du:
   $du = null;
