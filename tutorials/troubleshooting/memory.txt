@@ -1,0 +1,168 @@
+====== Troubleshooting Memory ======
+
+Details on how to monitor and collect information about memory usage by Kamailio.
+
+A typical case is to investigate the cases when "out of memory" or "no more memory" log messages are printed in syslog and Kamailio stops working properly.
+
+===== Memory Size =====
+
+Kamailio is using a custom memory manager. The main reason to implement and use own memory manager is simplifying access to shared memory. The custom memory manager allocates a big zone of virtual memory at Kamailio startup and then manages the allocation and free of smaller chunks inside the zone.
+
+There are two types of memory used by Kamailio:
+
+  * private memory - allocated for each Kamailio process
+    * one zone per child - no syncronization needed to access it
+    * referred also as pkg (the operations in the code are done with pkg_malloc()/pkg_free()/...)
+  * shared memory - allocated for entire Kamailio instances
+    * all processes use the same zone - syncronization (mutex) required to access it
+    * referred also as shm (the operations in the code are done with shm_malloc()/shm_free()/...)
+
+As of v4.2.0, default size for private memory is 8MB and for shared memory is 64MB. You can run 'kamailio -I' to check these values - they are printed as:
+
+<code c>
+  DEFAULT PKG_SIZE=8MB
+  DEFAULT SHM_SIZE=64MB
+</code>
+
+The size for private or shared memory can be specified via command line parameter -M (for pkg) and -m (for shm). Let's say kamailio should use up to 12MB of pkg and 128MB of shm, the command line should be:
+
+<code>
+kamailio -M 12 -m 128 ...
+</code>
+
+===== Insufficient Memory =====
+
+There could be two reasons for getting insufficient memory log messages:
+
+  * too small PKG or SHM - insufficient size to accommodate all data needed to be stored in memory
+  * memory leak - some part of code allocates memory at runtine and does not free it
+
+===== Monitoring Memory =====
+
+Keeping an eye on memory is highly recommended. Kamailio keeps internally several counters that present how much memory was allocated, used, free, etc.
+
+The statistics for SHM memory can be seen with:
+
+<code>
+kamctl stats shmem
+</code>
+
+The statistics for PKG memory can be seen with:
+
+<code>
+kamcmd pkg.stats
+</code>
+
+Notice that for SHM only one group of statistics is printed, being one zone of memory, while for PKG you get a list with many groups of statistics, each specific for a Kamailio process (child).
+
+===== Analysis of Memory Incidents =====
+
+If the free memory size from printed statistics continues to decrease constantly then:
+
+  * if you have growth on the service, like new subscribers, more calls, then it can be the reason for increase in memory usage and you may need to restart with higher values if free size is getting too small. If possible, stop sending traffic to that instance (in case there can be added some traffic redirection) and watch to see if the memory usage starts decreasing, getting back to a state like at the moment when Kamailio was started.
+  * if the number of subscribers, traffic is constant, no larger data was reloaded (e.g., dispacher, lcr), then there is very likely a memory leak that has to be discovered and fixed
+
+===== Troubleshooting =====
+
+===== Memory Manager Debugging =====
+
+Kamailio can be compiled with memory manager in debugging mode. Practically, at that moment for each allocated chunk, the memory manager stores more details, such as function name, file path and line from where the allocation was done.
+
+To see if the memory manager is compiled in debugging mode, run:
+
+<code>
+kamailio -I | grep DBG_QM_MALLOC
+</code>
+
+If it is printed, then it is, if not, then Kamailio has to be recompiled with:
+
+<code>
+MEMMNG=1 MEMDBG=1 make cfg ...
+</code>
+
+Instead of ... add your other make cfg parameters (e.g., include_modules="...").
+
+Then run the typical:
+
+<code>
+make all
+make install
+</code>
+
+Check again with "kamailio -I | grep DBG_QM_MALLOC" to be sure the memory manager debugging was turned on.
+
+Set the following global parameters in kamailio.cfg
+
+<code c>
+memlog=0
+</code>
+
+Then restart and wait a bit for getting some traffic processed.
+
+To get the list of chunks from memory manager, there are two ways:
+
+  * stop kamailio - the log messages at kamailio shutdown will contain them
+  * send a rpc command during runtime
+    * for PKG memory:
+<code>
+kamcmd cfg.set_now_int core mem_dump_pkg _PID_
+</code>
+      * notes for PKG dump:
+        * replace _PID_ with Kamailio process id you want to troubleshoot - it can be taken via: kamctl ps
+        * along with the processing of first SIP message coming to that PID, you get the status of pkg memory in syslog
+
+    * for SHM memory:
+<code>
+kamcmd cfg.set_now_int core mem_dump_shm
+</code>
+
+The log file will contain the messages detailing the chunks from memory manager. The ones for SHM should look like:
+
+<code>
+   0(17665) Memory status (shm):
+   0(17665) qm_status (0xb5a7e000):
+   0(17665)  heap size= 33554432
+   0(17665)  used= 1592952, used+overhead=1811564, free=31742868
+   0(17665)  max used (+overhead)= 1811564
+   0(17665) dumping all alloc'ed. fragments:
+   0(17665)       0. N  address=0xb5ab240c frag=0xb5ab23f4 size=4 used=1
+   0(17665)             alloc'd from mem/shm_mem.c: shm_mem_init_mallocs(199)
+   0(17665)         start check=f0f0f0f0, end check= c0c0c0c0, abcdefed
+   0(17665)       1. N  address=0xb5ab2440 frag=0xb5ab2428 size=4 used=1 
+   0(17665)             alloc'd from timer.c: init_timer(52)
+   0(17665)         start check=f0f0f0f0, end check= c0c0c0c0, abcdefed
+</code>
+
+For PKG is similar format, just SHM replaced with PKG in messages.
+
+===== Using GDB =====
+
+GDB, the GNU Debugger, can be used to attach to a Kamailio process and print the details of memory manager chunks from memory.
+
+Next is a GDB batch script to print used PKG chunks, the first 2000 are not printed (very likely to be allocated at startup for config parsing, etc), up to 10000.  Note again that Kamailio has to be compiled with memory manager debugging. The range of used PKG chunks can be adjusted, just replace the 2000 and 10000 numbers in the script.
+
+<code c>
+set $i=0
+set $a = mem_block->first_frag
+while($i<10000)
+if($i>2000)
+if($a->u.is_free==0)
+p *$a
+end
+end
+set $a = ((struct qm_frag*)((char*)($a)+sizeof(struct qm_frag)+((struct qm_frag*)$a)->size+sizeof(struct qm_frag_end)))
+set $i = $i + 1
+end
+</code>
+
+If the batch file is saved in /tmp/kamailio-dump-used-pkg.gdb, you can run it with:
+
+<code>
+gdb --batch --command=/tmp/kamailio-dump-used-pkg.gdb /path/to/kamailio _PID_
+</code>
+
+Again, be sure the path to kamailio is appropriate for the installation and the _PID_ is replaced with the pid of Kamailio process you want to troubleshoot. The real command should be like:
+
+<code>
+gdb --batch --command=/tmp/kamailio-dump-used-pkg.gdb /usr/sbin/kamailio 21907
+</code>
