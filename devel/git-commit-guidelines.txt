@@ -306,3 +306,9 @@ git revert HEAD^
 <code>
 git push origin :<branchName>
 </code>
+
+As of Git v1.7.0, a remote branch can be deleted using:
+
+<code>
+git push origin --delete <branchName>
+</code>
