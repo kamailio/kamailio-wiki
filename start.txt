@@ -113,7 +113,7 @@ Few guidelines to edit the wiki:
   * [[tutorials:mini-howto-admin:main|Mini HowTo Tutorials]]
   * [[tutorials:IMS:installation-howto|Howto install and  configure IMS with Kamailio]]
   * [[tutorials:auth:auth_db|Howto setup auth_db and usrloc]]
-
+  * [[tutorials:troubleshooting:memory|Troubleshooting - Memory]]
 ==== Security related tutorials ====
 
   * [[tutorials:Security:Security-threats|Overview of Security issues for SIP routers]]
