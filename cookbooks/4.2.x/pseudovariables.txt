@@ -162,7 +162,7 @@ $(branch(uri)[2]) = "sip:test@kamailio.org;transport=sctp";
 **$cnt(avp)** - return the number of avps
 
 <code c>
-xlog("$$avp(x) fount $cnt($avp(x)) times\n");
+xlog("$$avp(x) found $cnt($avp(x)) times\n");
 </code>
 ==== $conid - TCP Connection ID ====
 
