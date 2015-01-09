@@ -87,8 +87,8 @@ This pseudo variable gives you access to the "additional branches" only, not to 
 
 The 'name' can be:
 
-  * uri - return uri of the branch
-  * dst_uri - return destination uri (next hop address)
+  * uri - return URI of the branch
+  * dst_uri - return destination URI (next hop address)
   * path - return the path vector for the branch
   * q - return the q value of the branch
   * send_socket - return the socket to be used to send the branch
@@ -117,7 +117,7 @@ $(branch(attr)[index]) = value;
 
 If index is missing, first branch is used. If index is -1 the last branch is used.
 
-Assigning $null to uri attribute will drop the branch, for the rest of attributes will just set the value to null.
+Assigning $null to the uri attribute will drop the branch, for the rest of attributes will just set the value to null.
 
 <code c>
 $(branch(uri)[2]) = "sip:test@kamailio.org;transport=sctp";
@@ -128,7 +128,7 @@ $(branch(uri)[2]) = "sip:test@kamailio.org;transport=sctp";
 
 **$br** - reference to request's first branch
 
-<fc #0000ff>It is R/W variable, you can assign values to it directly in configuration file (will add a new branch).</fc>
+<fc #0000ff>It is a R/W variable, you can assign values to it directly in configuration file (will add a new branch).</fc>
 
 ==== $bR - Request's all branches ====
 
@@ -138,12 +138,12 @@ $(branch(uri)[2]) = "sip:test@kamailio.org;transport=sctp";
 
 **$bf** - reference to branch flags of branch 0 (RURI) - decimal output
 
-<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
+<fc #0000ff>It is a R/W variable (you can assign values to it directly in configuration file)</fc>
 ==== $bF - Branch flags ====
 
 **$bF** - reference to branch flags of branch 0 (RURI) - hexa output
 
-<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
+<fc #0000ff>It is a R/W variable (you can assign values to it directly in configuration file)</fc>
 
 ==== $bs - Body size ====
 
@@ -183,7 +183,7 @@ xlog("$$avp(x) found $cnt($avp(x)) times\n");
 
 ==== $dd - Domain of destination URI ====
 
-**$dd** - reference to domain of destination uri (without port)
+**$dd** - reference to domain of destination URI (without port)
 
 
 ==== $di - Diversion header URI ====
@@ -204,11 +204,11 @@ xlog("$$avp(x) found $cnt($avp(x)) times\n");
 
 ==== $dp - Port of destination URI ====
 
-**$dp** - reference to port of destination uri
+**$dp** - reference to port of destination URI
 
 ==== $dP - Transport protocol of destination URI ====
 
-**$dP** - reference to transport protocol of destination uri
+**$dP** - reference to transport protocol of destination URI
 
 ==== $ds - Destination set ====
 
@@ -217,9 +217,9 @@ xlog("$$avp(x) found $cnt($avp(x)) times\n");
 
 ==== $du - Destination URI ====
 
-**$du** - reference to destination uri
+**$du** - reference to destination URI
 
-If loose_route() returns TRUE a destination uri is set according to the first Route header.
+If loose_route() returns TRUE a destination URI is set according to the first Route header.
 $du is also set if lookup() function of 'registrar' module finds contact(s) behind NAT.
 
 <fc #0000ff>It is a R/W variable (you can assign values to it directly in configuration file)</fc>
@@ -240,7 +240,7 @@ To reset $du:
 
 **$fs** - reference to the forced socket for message sending (if any) in the form proto:ip:port
 
-<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file). Transport proto can be omitted when assigning value, in which case it is taken from destination URI of the message.</fc>
+<fc #0000ff>It is a R/W variable (you can assign values to it directly in configuration file). Transport proto can be omitted when assigning value, in which case it is taken from destination URI of the message.</fc>
 
 ==== $ft - From tag ====
 
@@ -250,14 +250,14 @@ To reset $du:
 
 **$fu** - reference to URI of 'From' header
 
-<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
+<fc #0000ff>It is a R/W variable (you can assign values to it directly in configuration file)</fc>
 
 Note that changing the From: header may break backwards compatibility with SIP 1.0 devices.
 ==== $fU - From URI username ====
 
 **$fU** - reference to username in URI of 'From' header
 
-<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
+<fc #0000ff>It is a R/W variable (you can assign values to it directly in configuration file)</fc>
 
 Note that changing the From: header may break backwards compatibility with SIP 1.0 devices.
 ==== $mb - SIP message buffer ====
@@ -268,13 +268,13 @@ Note that changing the From: header may break backwards compatibility with SIP 1
 
 **$mf** - reference to message/transaction flags set for current SIP request
 
-<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
+<fc #0000ff>It is a R/W variable (you can assign values to it directly in configuration file)</fc>
 
 ==== $mF - Flags in hexadecimal ====
 
 **$mF** -reference to message/transaction flags set for current SIP request in hexa-decimal
 
-<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
+<fc #0000ff>It is a R/W variable (you can assign values to it directly in configuration file)</fc>
 
 ==== $mi - SIP message id ====
 
@@ -337,7 +337,7 @@ Note that changing the From: header may break backwards compatibility with SIP 1
 
 **$rd** - reference to domain in request's URI (without port) or to the Namespace Specific String of a URN (see RFC 2141)
 
-<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
+<fc #0000ff>It is a R/W variable (you can assign values to it directly in configuration file)</fc>
 
 ==== $rb - Body of request/reply ====
 
@@ -369,7 +369,7 @@ Note that changing the From: header may break backwards compatibility with SIP 1
 
 **$rp** - reference to port of R-URI
 
-<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
+<fc #0000ff>It is a R/W variable (you can assign values to it directly in configuration file)</fc>
 
 ==== $rP - Protocol of R-URI ====
 
@@ -391,13 +391,13 @@ Note that changing the From: header may break backwards compatibility with SIP 1
 
 **$ru** - reference to request's URI (address in the first line of a SIP request)
 
-<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
+<fc #0000ff>It is a R/W variable (you can assign values to it directly in configuration file)</fc>
 
 ==== $rU - Username in R-URI ====
 
 **$rU** - reference to username in request's URI or to the Namespace Identifier of a URN (see RFC 2141)
 
-<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
+<fc #0000ff>It is a R/W variable (you can assign values to it directly in configuration file)</fc>
 
 ==== $ruid - Record internal Unique ID ====
 
@@ -532,7 +532,7 @@ if($(avp(x)[1])==1) {
 $(avp(x)[1]) = $null;
 </code>
 
-It is R/W variable (you can assign values to it directly in configuration file).
+It is a R/W variable (you can assign values to it directly in configuration file).
 
 ===== $xavp(id) - XAVPs =====
 
@@ -624,7 +624,7 @@ Setting a variable to null is actually initializing the value to integer '0'. Sc
 
 **Note:** A script variable persists over the SIP-Router process in which it was initialized, so be sure of giving it a new value before reading it or you'll get the value asigned in any other previous message processed by the same SIP-Router process (pid).
 
-<fc #0000FF>It is R/W variable (you can assign values to it directly in configuration file)</fc>
+<fc #0000FF>It is a R/W variable (you can assign values to it directly in configuration file)</fc>
 
 **pv** module can be used to initialize the script variables.
 
@@ -644,7 +644,7 @@ if ($shv(debug) == 1) {
 ...
 </code>
 
-<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
+<fc #0000ff>It is a R/W variable (you can assign values to it directly in configuration file)</fc>
 
 ===== $time(name) - Broken-down time =====
 
@@ -757,9 +757,9 @@ The 'attr' can be:
   * dflags - dialog internal flags
   * sflags - dialog script flags
   * callid - sip call id
-  * to_uri - To uri
+  * to_uri - To URI
   * to_tag - To tag
-  * from_uri - From uri
+  * from_uri - From URI
   * from_tag - From tag
   * toroute - timeout route
   * lifetime - timeout inteval
@@ -775,7 +775,7 @@ The 'attr' can be:
 
 Return the attribute of the context for current processed dialog.
 
-<fc #0000ff>It is R/W variable.</fc>
+<fc #0000ff>It is a R/W variable.</fc>
 
 The 'attr' can be:
   * set
@@ -787,7 +787,7 @@ The 'attr' can be:
 
 Store and retrieve custom variable for current processed dialog.
 
-<fc #0000ff>It is R/W variable.</fc>
+<fc #0000ff>It is a R/W variable.</fc>
 
 The 'key' can be any string.
 
@@ -797,7 +797,7 @@ The 'key' can be any string.
 
 Access hash table entries.
 
-<fc #0000ff>It is R/W variable, you can assign values to it directly in configuration file.</fc>
+<fc #0000ff>It is a R/W variable, you can assign values to it directly in configuration file.</fc>
 
 The “htname” must be a hash table name defined via “htable” parameter.
 
@@ -819,7 +819,7 @@ $sht(a=>$ru) = $fu;
 
 Access hash table entry expire value. Value represents the seconds until the htable entry will expire and be deleted from htable.
 
-<fc #0000ff>It is R/W variable, you can assign values to it directly in configuration file.</fc>
+<fc #0000ff>It is a R/W variable, you can assign values to it directly in configuration file.</fc>
 
 The “htname” must be a hash table name defined via “htable” parameter and have auto-expire greater than 0.
 
@@ -915,7 +915,7 @@ xlog("==== $shtdec(a=>$au)\n");
 
 Access hash table entries stored in the memcached server.
 
-<fc #0000ff>It is R/W variable, you can assign values to it directly in configuration file.</fc>
+<fc #0000ff>It is a R/W variable, you can assign values to it directly in configuration file.</fc>
 
 The “key” can be:
 
@@ -952,7 +952,7 @@ xlog("stored value is $mct(test)"); # will return <null>
 
 Do a atomic increment operation on the value stored in memcached. You need to add a value previously.
 
-<fc #0000ff>It is R/W variable, you can assign values to it directly in configuration file.</fc>
+<fc #0000ff>It is a R/W variable, you can assign values to it directly in configuration file.</fc>
 
 The “key” can be:
 
@@ -971,7 +971,7 @@ xlog("counter is now $mct(cnt)");
 
 Do a atomic decrement operation on the value stored in memcached. You need to add a value previously.
 
-<fc #0000ff>It is R/W variable, you can assign values to it directly in configuration file.</fc>
+<fc #0000ff>It is a R/W variable, you can assign values to it directly in configuration file.</fc>
 
 The “key” can be:
 
