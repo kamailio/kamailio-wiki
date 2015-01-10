@@ -1644,7 +1644,7 @@ tcp_rd_buf_size=65536
 </code>
 ==== tcp_send_timeout ====
 
-Time in seconds after a TCP connection will be closed if it is not available for writing in this interval (and sip-router wants to send something on it). Lower this value for faster detection of broken TCP connections. The default value is 10s.
+Time in seconds after a TCP connection will be closed if it is not available for writing in this interval (and Kamailio wants to send something on it). Lower this value for faster detection of broken TCP connections. The default value is 10s.
 
 Example of usage:
 
