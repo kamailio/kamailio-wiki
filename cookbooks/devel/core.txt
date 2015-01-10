@@ -1046,7 +1046,7 @@ If set to 1 (yes, on), onsend_route block is executed for received replies that 
 
 ==== open_files_limit ====
 
-If set and bigger than the current open file limit, sip-router will try to increase its open file limit to this number. Note: sip-router must be started as root to be able to increase a limit past the hard limit (which, for open files, is 1024 on most systems).
+If set and bigger than the current open file limit, Kamailio will try to increase its open file limit to this number. Note: Kamailio must be started as root to be able to increase a limit past the hard limit (which, for open files, is 1024 on most systems). "Files" include network sockets, so you need one for every concurrent session (especially if you use connection-oriented transports, like TCP/TLS).
 
 Example of usage:
 
