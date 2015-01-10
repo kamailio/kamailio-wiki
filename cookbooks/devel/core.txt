@@ -2054,7 +2054,7 @@ Stop the execution of the configuration script -- it has the same behaviour as r
 
 ==== force_rport ====
 
-Force_rport() adds the rport parameter to the first Via header of the received message. Thus, sip-router will add the received  port to the top most via header in the SIP message, even if the client does not indicate support for rport. This enables subsequent SIP messages to return to the proper port later on in a SIP transaction.
+Force_rport() adds the rport parameter to the first Via header of the received message. Thus, Kamailio will add the received  port to the top most Via header in the SIP message, even if the client does not indicate support for rport. This enables subsequent SIP messages to return to the proper port later on in a SIP transaction.
 
 This is useful for NAT traversal, to enforce symmetric response signaling.
 
