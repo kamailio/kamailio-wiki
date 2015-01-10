@@ -1733,7 +1733,7 @@ Size for the sctp socket send buffer
 
 ==== sctp_autoclose ====
 Number of seconds before autoclosing an idle association (default: 180 s). Can be changed at runtime, but it will affect only new associations. E.g.:
-  $ sercmd cfg.set_now_int sctp autoclose 120
+  $ kamcmd cfg.set_now_int sctp autoclose 120
 
   sctp_autoclose = seconds
 
