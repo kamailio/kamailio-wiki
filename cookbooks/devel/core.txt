@@ -1254,12 +1254,12 @@ Default: UDP (off). Recommended: TCP.
 
 **Alias name: uid**
 
-The user id to run sip-router (sip-router will suid to it).
+The user id to run Kamailio (Kamailio will suid to it).
 
 Example of usage:
 
 <code c>
-    user="siprouter"
+    user="kamailio"
 </code>
 
 ==== user_agent_header ====
