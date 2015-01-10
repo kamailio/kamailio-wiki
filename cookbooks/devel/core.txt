@@ -1274,13 +1274,13 @@ user_agent_header="User-Agent: My Super SIP Server"
 
 **Alias name: wdir**
 
-The working directory used by sip-router at runtime. You might find it usefull when come to generating core files :)
+The working directory used by Kamailio at runtime. You might find it useful when it comes to generating core files :)
 
 Example of usage:
 
-     wdir="/usr/local/siprouter"
+     wdir="/usr/local/kamailio"
      or
-     wdir=/usr/openser_wd
+     wdir=/usr/kam_wd
 
 ===== DNS Parameters =====
 
