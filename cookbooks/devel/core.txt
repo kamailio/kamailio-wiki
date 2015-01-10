@@ -1739,7 +1739,7 @@ Number of seconds before autoclosing an idle association (default: 180 s). Can b
 
 ==== sctp_send_ttl ====
 Number of milliseconds before an unsent message/chunk is dropped (default: 32000 ms or 32 s). Can be changed at runtime, e.g.:
-  $ sercmd cfg.set_now_int sctp send_ttl 180000
+  $ kamcmd cfg.set_now_int sctp send_ttl 180000
 
   sctp_send_ttl = milliseconds - n
 
