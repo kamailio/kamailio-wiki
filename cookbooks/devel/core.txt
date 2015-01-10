@@ -1751,9 +1751,9 @@ WARNING: use with care and low values (e.g. 1-3) to avoid "multiplying" traffic 
   sctp_send_retries = 1
 
 ==== sctp_assoc_tracking ====
-Controls whether or not sctp associations are tracked inside ser/sip-router. Turning it off would result in less memory being used and slightly better performance, but it will also disable some other features that depend on it (e.g. sctp_assoc_reuse). Default: yes.
+Controls whether or not sctp associations are tracked inside Kamailio. Turning it off would result in less memory being used and slightly better performance, but it will also disable some other features that depend on it (e.g. sctp_assoc_reuse). Default: yes.
 
-Can be changed at runtime (sercmd sctp assoc_tracking 0), but changes will be allowed only if all the other features that depend on it are turned off (for example it can be turned off only if first sctp_assoc_reuse was turned off).
+Can be changed at runtime ("kamcmd sctp assoc_tracking 0"), but changes will be allowed only if all the other features that depend on it are turned off (for example it can be turned off only if first sctp_assoc_reuse was turned off).
 
 Note: turning sctp_assoc_tracking on/off will delete all the tracking information for all the currently tracked associations and might introduce a small temporary delay in the sctp processing if lots of associations were tracked.
 
