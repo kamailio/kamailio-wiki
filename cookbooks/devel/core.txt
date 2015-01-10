@@ -1214,8 +1214,8 @@ kamctl fifo reset_statistics NOTIFY
 # get counter value and then set it to zero
 kamctl fifo clear_statistics NOTIFY
 
-# or use the sercmd tool
-sercmd mi get_statistics 1xx_replies
+# or use the kamcmd tool
+kamcmd mi get_statistics 1xx_replies
 </code>
 
 
