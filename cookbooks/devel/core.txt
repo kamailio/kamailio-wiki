@@ -2428,7 +2428,7 @@ if($rd=="10.10.10.10")
 
 ===== Routing blocks =====
 
-SIP-Router has support for named routes. Names can be used instead of numbers in all the route commads or route declarations. 
+Kamailio has support for named routes. Names can be used instead of numbers in all the route commands or route declarations. 
 
 Note: route(number) is equivalent to route("number")
 
