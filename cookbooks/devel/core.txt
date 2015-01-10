@@ -1557,7 +1557,7 @@ Maximum bytes queued for write allowed per connection. Attempting to queue more 
 ==== tcp_crlf_ping ====
 Enable SIP outbound TCP keep-alive using PING-PONG (CRLFCRLF -  CRLF).
 
-  tcp_crlf_ping = yes | no default: yes)
+  tcp_crlf_ping = yes | no default: yes
 
 
 ==== tcp_defer_accept ====
