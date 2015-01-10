@@ -2124,7 +2124,7 @@ Example of usage:
     };
 
 
-SIP-Router also supports named flags. They have to be declared at the beginning of the config file with:
+Kamailio also supports named flags. They have to be declared at the beginning of the config file with:
 
    flags  flag1_name[:position],  flag2_name ...
 
