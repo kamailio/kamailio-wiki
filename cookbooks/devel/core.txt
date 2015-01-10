@@ -1619,7 +1619,9 @@ Example of usage:
 
 ==== tcp_no_connect ====
 
-Stop outgoing TCP connects (also stops TLS) by setting tcp_no_connect to yes. You can do this any time, even even if sip-router is already started (in this case using sercmd cfg.set_now_int tcp no_connect 1).
+Stop outgoing TCP connects (also stops TLS) by setting tcp_no_connect to yes. 
+
+You can do this any time, even even if Kamailio is already started (in this case using the command "kamcmd cfg.set_now_int tcp no_connect 1").
 
 ==== tcp_poll_method ====
 
