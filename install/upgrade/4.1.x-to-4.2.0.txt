@@ -33,6 +33,10 @@ Following tokens are used to mark the changes:
 
   * parameter failure_reply_mode is set to 3 (CPM)
 
+==== auth_db ====
+
+  * load_credentials default value is now "" instead of "rpid". (CPM)
+
 ===== Core =====
 
 ==== Parameters ====
