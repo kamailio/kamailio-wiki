@@ -171,12 +171,27 @@ gdb --batch --command=/tmp/kamailio-dump-used-pkg.gdb /usr/sbin/kamailio 21907
 
 It may happen that various tools report memory usage increase on the server. That could be due to a leak issue or due to caching done by kernel. The memory for cache can be reclaimed and it is better to verify whether the increase is due to it or not, before going ahead to investigate other applications.
 
-Kamailio itself uses in very few components extra memory directly from the system. Most of the operations are done in the memory zone reserved at startup and when that is filled, it starts printing out of memory errors.
-
+Kamailio itself uses in very few components extra memory directly from the system (those are the only ones that can cause a system memory leak). Most of the operations are done in the memory zone reserved at startup and when that is filled, it starts printing out of memory errors. Kamailio will not get at runtime more system memory for those operations, even there is sufficient available in the system - the size reserved at startup is fixed.
 
 Here is the article that presents better the situation:
 
    * http://blog.logicmonitor.com/2014/10/09/more-linux-memory-free-memory-that-is-not-free-nor-cache/
+
+An relevant excerpt from the blog article:
+
+<code>
+Looking at the contents of /proc/meminfo showed these two lines:
+
+Slab: 4126212 kB 
+SReclaimable: 4096172 kB
+
+So – almost 4G of memory was in use by the kernel slab memory structures – but
+ almost all of that memory was reclaimable. (Or, in effect, free.)
+
+So reclaimable slab space is yet another way that Linux memory can be in
+ effect free, but not show up in the free memory statistics.
+
+</code>
 
 The respective memory can be reclaimed with command:
 
