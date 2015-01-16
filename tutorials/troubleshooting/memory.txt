@@ -147,8 +147,31 @@ set $a = mem_block->first_frag
 while($i<10000)
 if($i>2000)
 if($a->u.is_free==0)
+printf "=========== non-free fragment: %d\n", $i
+p $a
+p (void*)((char*)($a)+sizeof(struct qm_frag))
+printf "----------- content\n"
 p *$a
 end
+end
+set $a = ((struct qm_frag*)((char*)($a)+sizeof(struct qm_frag)+((struct qm_frag*)$a)->size+sizeof(struct qm_frag_end)))
+set $i = $i + 1
+end
+</code>
+
+An alternative is to print all used chunks, but be aware that it may take some time:
+
+
+<code c>
+set $i=0
+set $a = mem_block->first_frag
+while($a < mem_block->last_frag_end)
+if($a->u.is_free==0)
+printf "=========== non-free fragment: %d\n", $i
+p $a
+p (void*)((char*)($a)+sizeof(struct qm_frag))
+printf "----------- content\n"
+p *$a
 end
 set $a = ((struct qm_frag*)((char*)($a)+sizeof(struct qm_frag)+((struct qm_frag*)$a)->size+sizeof(struct qm_frag_end)))
 set $i = $i + 1
