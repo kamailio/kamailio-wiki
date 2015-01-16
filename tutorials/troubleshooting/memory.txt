@@ -166,3 +166,20 @@ Again, be sure the path to kamailio is appropriate for the installation and the 
 <code>
 gdb --batch --command=/tmp/kamailio-dump-used-pkg.gdb /usr/sbin/kamailio 21907
 </code>
+
+===== OS Memory Reports =====
+
+It may happen that various tools report memory usage increase on the server. That could be due to a leak issue or due to caching done by kernel. The memory for cache can be reclaimed and it is better to verify whether the increase is due to it or not, before going ahead to investigate other applications.
+
+Kamailio itself uses in very few components extra memory directly from the system. Most of the operations are done in the memory zone reserved at startup and when that is filled, it starts printing out of memory errors.
+
+
+Here is the article that presents better the situation:
+
+   * http://blog.logicmonitor.com/2014/10/09/more-linux-memory-free-memory-that-is-not-free-nor-cache/
+
+The respective memory can be reclaimed with command:
+
+<code>
+sync; echo 3 > /proc/sys/vm/drop_caches
+</code>
