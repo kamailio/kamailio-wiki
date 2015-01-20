@@ -114,6 +114,14 @@ $var(x) = "12,34,56";
 $(var(x){s.select,-2,,}) => "34"
 </code>
 
+==== {s.encode.7bit} ====
+
+Return encoding in 7Bit of PV value
+
+==== {s.decode.7bit} ====
+
+Return decoding of PV value in 7Bit
+
 ==== {s.encode.hexa} ====
 
 Return encoding in hexa of PV value
