@@ -15,8 +15,21 @@
 
   * distribute user location (usrloc) records between Kamailio servers using distributed message queue (dmq)
   * http://kamailio.org/docs/modules/devel/modules/dmq_usrloc.html
-==== Statsd ====
-A module that gathers data for the statsd framework.
+==== jansson ====
+
+  * JSON document management using Jansson library
+  * it has support for JSON-PATH
+  * http://kamailio.org/docs/modules/devel/modules/jansson.html
+
+==== janssonrpc-c ====
+
+  * JSON-RPC over netstrings client using Jansson library
+  * http://kamailio.org/docs/modules/devel/modules/janssonrpc-c.html
+
+==== statsd ====
+
+  * enables sending data to the statsd framework directly from kamailio.cfg
+  * http://kamailio.org/docs/modules/devel/modules/statsd.html
 ===== New in Old Modules =====
 
 ==== PV ====
