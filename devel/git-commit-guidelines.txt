@@ -124,15 +124,11 @@ Please start always with the prefix of the subsystem that is modified by the com
   * module_name: support for foo
   * lib_name: critical bug fix
 
-If the module_name is duplicated, one in modules_k and one in modules_s, add (k) or (s), depending where the changes was done, for example:
-  * auth_db(k): fixed typo in comment
-  * auth_db(s): fixed typo in comment
-
 Examples of commit messages:
 
-  * change to usrloc module from modules_k
+  * change to usrloc module from modules
 <code>
-usrloc(s): fixed name conflict
+usrloc: fixed name conflict
 
 - destroy_avps() renamed to reg_destroy_avps() to avoid conflicts
   with the usr_avp.h version.
@@ -155,6 +151,13 @@ See:
   * http://www.kernel.org/pub/software/scm/git/docs/user-manual.html#creating-good-commit-messages
   * http://www.tpope.net/node/106
 
+==== Content of the Commit Message ====
+
+    * the message must be addressed for humans, using common sense language. All commit messages are part of the ChangeLog file for each release and that file is read by sysadmins and other non-developer people 
+    * the message must be strictly related to the changes in the C code (e.g., don't give instructions what another developer must do with your patch)
+    * credits to persons or companies that helped in the context of the commit are allowed and it is fair to be added whenever is the case. The place is at the end of the commit message (or end of the part describing the related change)
+    * don't use slang and don't abuse using abbreviations, especially when it is not an official abbreviation
+    * don't use system or tools commands to express the changes of the commit. They can be given as an example in the detailed message to show how the changes were done, but text explanation must be first. E.g., if you renamed a function, don't use as commit message 's/oldfunc/newfunc/'.
 ===== Generic Guidelines =====
 
 The suggestions here target to make easier to track the changes and do the backporting to stable branches whenever is the case:
