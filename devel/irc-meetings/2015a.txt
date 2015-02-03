@@ -1,0 +1,20 @@
+====== IRC Devel Meeting - 2014-05-14 ======
+
+Date:
+  * **Proposed: 15:00 UTC, Wednesday, Feb 11, 2015** (dcm)
+  * Alternatives (add your id if you can attend)
+    * Feb 12 (dcm)
+    * Feb 17 (dcm)
+
+Time of the meeting across the world:
+  * 16:00 - Berlin, Germany
+  * 15:00 - London, UK
+  * 10:00 - New York, USA
+
+Utilities:
+  * [[http://www.timeanddate.com/worldclock/converter.html|Time Converter]]
+  * IRC webchat: http://webchat.freenode.net/
+  * IRC client apps: http://en.wikipedia.org/wiki/Internet_Relay_Chat#Clients
+
+Place:
+  * **#kamailio** IRC channel on **irc.freenode.net** server
