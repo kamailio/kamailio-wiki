@@ -18,3 +18,31 @@ Utilities:
 
 Place:
   * **#kamailio** IRC channel on **irc.freenode.net** server
+
+===== Participants =====
+
+Participation is open to anyone, just join the IRC channel if you want to participate.
+
+People adding notes in the agenda using abbreviations:
+
+  * dcm - Daniel-Constantin Mierla
+
+
+===== Agenda =====
+
+Kamailio Development:
+
+  * open issues (dcm)
+  * new additions (dcm)
+  * roadmap to next major release (dcm)
+
+Kamailio Logo:
+
+  * settle on a final decision and next steps (dcm)
+
+Kamailio Administration:
+
+  * RPM packaging and repositories (dcm)
+  * backups (dcm)
+  * unit tests (dcm)
+  * GitHub workflow - anything to tune or improve (dcm)
