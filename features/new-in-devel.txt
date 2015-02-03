@@ -15,6 +15,11 @@
 
   * distribute user location (usrloc) records between Kamailio servers using distributed message queue (dmq)
   * http://kamailio.org/docs/modules/devel/modules/dmq_usrloc.html
+
+==== geoip2 ====
+
+  * GeoIP API for configuration file using the new library with support for IPv6
+  * http://kamailio.org/docs/modules/devel/modules/geoip2.html
 ==== jansson ====
 
   * JSON document management using Jansson library
