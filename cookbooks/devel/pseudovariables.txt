@@ -1435,7 +1435,7 @@ xlog("local hostanme is $HN(n)\n");
 ===== $RANDOM - Random number =====
 Returns a random value from the [0 - 2^31) range.
 
-Example 1.36. RANDOM pseudo-variable usage
+(Part of the cfgutils module)
 
 <code c>
 if (rand_event()) {
