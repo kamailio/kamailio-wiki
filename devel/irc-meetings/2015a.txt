@@ -35,6 +35,7 @@ People adding notes in the agenda using abbreviations:
 Kamailio Development:
 
   * open issues (dcm)
+    * /tmp in defaults (vseva)
   * new additions (dcm)
   * roadmap to next major release (dcm)
 
