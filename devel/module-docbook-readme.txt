@@ -41,6 +41,7 @@ The [type] should be:
   * r - rpc commands
   * s - statistics
   * e - event routes
+  * v - pseudovariable
 
 Next is an example showing the id for the section corresponding to parameter **workers** from module **async**:
 
