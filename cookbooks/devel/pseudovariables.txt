@@ -1431,6 +1431,25 @@ The key can be:
 <code c>
 xlog("local hostanme is $HN(n)\n");
 </code>
+
+===== $RANDOM - Random number =====
+Returns a random value from the [0 - 2^31) range.
+
+Example 1.36. RANDOM pseudo-variable usage
+
+<code c>
+if (rand_event()) {
+  $avp(i:10) = ($RANDOM / 16777216); # 2^24
+  if ($avp(i:10) < 10) {
+     $avp(i:10) = 10;
+  }
+  append_to_reply("Retry-After: $avp(i:10)\n");
+  sl_send_reply("503", "Try later");
+  exit;
+};
+# normal message processing follows
+</code>
+
 ===== $C(xy) - Foreground and background colors =====
 
 
