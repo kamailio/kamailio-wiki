@@ -49,3 +49,4 @@ Kamailio Administration:
   * backups (dcm)
   * unit tests (dcm)
   * GitHub workflow - anything to tune or improve (dcm)
+  * GitHub admin repo - admin/release scripts (vseva)
