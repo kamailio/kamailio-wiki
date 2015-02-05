@@ -14,11 +14,11 @@ sending messages to the server process.
 If you believe there's a security vulnerability, please don't use the public forums.
 Send e-mail to security@kamailio.org and the issue will be handled properly. 
 
-1. Send an e-mail to security@kamailio.org and include the following information
+  - Send an e-mail to security@kamailio.org and include the following information
      * A summary
      * A detailed explanation of how this issue can be exploited and/or reproduced
-2. A member of the Kamailio Security Team will respond 
-3. The kamailio developer team will work to solve the issue. When there is a patch for the issue, it should NOT be committed directly. It should be coordinated with the release of a security release as well as the publication of a Kamailio project security vulnerability report.
+  - A member of the Kamailio Security Team will respond
+  - The kamailio developer team will work to solve the issue. When there is a patch for the issue, it should NOT be committed directly. It should be coordinated with the release of a security release as well as the publication of a Kamailio project security vulnerability report.
 
 == Publishing security vulnerabilities ==
 
