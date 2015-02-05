@@ -52,7 +52,7 @@ Kamailio Administration:
     * a rebased pull-request looses all their comments? (vseva)
   * GitHub admin repo - admin/release scripts (vseva)
   * Security vulnerability handling (proposal below) oej
-
+    * consider [[https://www.bestpractical.com/rtir/|RITR]]? (fisp) 
 
 ------
 
