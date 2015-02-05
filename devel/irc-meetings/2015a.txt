@@ -82,7 +82,8 @@ Send e-mail to security@kamailio.org and the issue will be handled properly.
 == Publishing security vulnerabilities ==
 
 Kamailio will publish security vulnerabilities, including an CVE ID, on the
-kamailio-announce mailing list, sr-users as well as related lists.
+kamailio-announce mailing list, sr-users as well as related lists. The advisories will
+also be published on the kamailio.org web site.
 
 == Kamailio Security Team ==
 
