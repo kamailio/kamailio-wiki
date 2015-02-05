@@ -51,3 +51,4 @@ Kamailio Administration:
   * GitHub workflow - anything to tune or improve (dcm)
     * a rebased pull-request looses all their comments? (vseva)
   * GitHub admin repo - admin/release scripts (vseva)
+  * [[devel:irc-meetings:securityprocedure|Security advisory procedure]] - proposal (OEJ)
