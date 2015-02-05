@@ -54,6 +54,8 @@ Kamailio Administration:
   * Security vulnerability handling (proposal below) oej
 
 
+------
+
 
 === Security Vulnerability Policy (PROPOSAL) ===
 
