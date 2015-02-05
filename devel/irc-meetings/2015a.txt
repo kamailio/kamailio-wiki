@@ -1,4 +1,4 @@
-====== IRC Devel Meeting - 2014-05-14 ======
+====== IRC Devel Meeting - 2015-02-11 ======
 
 Date:
   * **Proposed: 15:00 UTC, Wednesday, Feb 11, 2015** (dcm)
