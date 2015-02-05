@@ -49,4 +49,5 @@ Kamailio Administration:
   * backups (dcm)
   * unit tests (dcm)
   * GitHub workflow - anything to tune or improve (dcm)
+    * a rebased pull-request looses all their comments? (vseva)
   * GitHub admin repo - admin/release scripts (vseva)
