@@ -71,3 +71,12 @@ xlog: new log function xlogm(...) - logs with method filtering
 ===== Tools =====
 
 ==== Kamctl ====
+
+===== Build Process =====
+
+support [[reproducible builds https://wiki.debian.org/ReproducibleBuilds/]] adding 
+compile options to skip compile date or set a particular value
+
+  * default is current behaviour, date and time included in version string
+  * compile with no date and time:  <code>make CC_EXTRA_OPTS="-DVERSION_NODATE"</code>
+  * compile with a specific date and time:  <code>make CC_EXTRA_OPTS='"-DVERSION_DATE=\"19:30:40 Feb  8 2015\""'</code>
