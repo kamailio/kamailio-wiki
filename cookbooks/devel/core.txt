@@ -2575,39 +2575,60 @@ Example of usage:
     }
 </code>
 
+==== reply_route ====
+
+Main SIP response (reply) handling block - it contains a set of actions to be executed for SIP replies. It is executed for all replies received from the network.
+
+It does not have a name and it is executed by the core, before any other module handling the SIP reply. It is triggered only by SIP replies received on the network.
+
+There is no network route that can be enforced for a SIP reply - it is sent based on Via header, according to SIP RFC3261 - therefore no dedicated actions for forwarding the reply must be used in this block.
+
+This routing block is optional, if missing, the SIP reply is sent to the address in 2nd Via header.
+
+One can decide to drop a SIP reply by using **drop** action.
+
+Example:
+
+<code c>
+reply_route {
+  if(status=="128"") {
+    drop;
+  }
+}
+</code>
+
+<fc #4682b4>Note: for backward compatibility reasons, the main 'reply' routing block can be also identified by 'onreply_route {...}' or 'onreply_route[0] {...}'.</fc>
+
 ==== onreply_route ====
 
 
-Reply routing block. It contains a set of actions to be taken for SIP replies.
+SIP reply routing block executed by **tm** module. It contains a set of actions to be taken for SIP replies in the contect of an active transaction..
 
-The main 'onreply_route' identified by 'onreply_route {...}' or 'onreply_route[0] {...}' is executed for all replies received.
-
-Certain 'onreply_route' blocks can be executed by TM module for special replies. For this, the 'onreply_route' must be armed for the SIP requests whose replies should be processed within it, via t_on_reply("onreply_route_index").
+The 'onreply_route' must be armed for the SIP requests whose replies should be processed within it, via t_on_reply("onreply_route_index").
 
 Main 'onreply_route' block is executed before a possible tm 'onreply_route' block.
 
 <code c>
-  route {
+  request_route {
       lookup("location");
-      t_on_reply("1");
+      t_on_reply("LOGRPL");
       if(!t_relay()) {
           sl_send_reply("500", "relaying failed");
       }
   }
 
-  onreply_route {
+  reply_route {
       if(!t_check_trans()) {
           drop;
       }
   }
 
-  onreply_route[1] {
+  onreply_route[LOGRPL] {
       if(status=~"1[0-9][0-9]") {
            log("provisional response\n");
       }
   }
 </code>
-
 ==== onsend_route ====
 
 The route is executed in when a SIP request is sent out. Only a limited number of commands are allowed (drop, if + all the checks, msg flag manipulations, send(), log(), textops::search()).
