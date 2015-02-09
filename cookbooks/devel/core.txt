@@ -2617,12 +2617,15 @@ In this route the final destination of the message is available an can be checke
 This route is executed only when forwarding requests - it is not executed for replies, retransmissions, or locally generated messages (e.g. via fifo uac).
 
 Example:
-  onsend_route{
+
+<code c>
+  onsend_route {
     if(to_ip==1.2.3.4 && !isflagset(12)){
       log(1, "message blocked\n");
       drop;
     }
   }
+</code>
 
   * snd_ip, snd_port - behave like src_ip/src_port, but contain the ip/port ser will use to send the message
   * to_ip, to_port - like above, but contain the ip/port the message will be sent to (not to be confused with dst_ip/dst_port, which are the destination of the original received request: ser's ip and port on which the message was received)
