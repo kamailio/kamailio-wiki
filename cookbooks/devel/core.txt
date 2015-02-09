@@ -2535,14 +2535,14 @@ Request's branch routing block. It contains a set of actions to be taken for eac
 Example of usage:
 
 <code c>
-    route {
+    request_route {
         lookup("location");
-        t_on_branch("1");
+        t_on_branch("OUT");
         if(!t_relay()) {
             sl_send_reply("500", "relaying failed");
         }
     }
-    branch_route[1] {
+    branch_route[OUT] {
         if(uri=~"10\.10\.10].10") {
             # discard branches that go to 10.10.10.10
             drop();
