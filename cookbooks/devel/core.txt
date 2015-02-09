@@ -2650,7 +2650,7 @@ event_route[htable:mod-init] {
   $sht(a=>max-calls-to::10.10.10.10) = 100;
 }
 
-route {
+request_route {
   if(is_method("INVITE") && !has_totag())
   {
     switch($rd) {
