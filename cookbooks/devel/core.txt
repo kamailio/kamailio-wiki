@@ -2499,7 +2499,7 @@ Evaluation of the return of a subroute is done with following rules:
   * positive value is evaluated as true
 
 
-<code>
+<code c>
 request_route {
   if(route(POSITIVE)) {
     xlog("return number is positive\n");
