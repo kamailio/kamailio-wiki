@@ -74,7 +74,7 @@ xlog: new log function xlogm(...) - logs with method filtering
 
 ===== Build Process =====
 
-support [[reproducible builds https://wiki.debian.org/ReproducibleBuilds/]] adding 
+support [[https://wiki.debian.org/ReproducibleBuilds/|reproducible builds ]] adding 
 compile options to skip compile date or set a particular value
 
   * default is current behaviour, date and time included in version string
