@@ -2460,31 +2460,74 @@ Example:
   }
 </code>
 
-==== route ====
+==== request_route ====
 
-Request routing block. It contains a set of actions to be taken for SIP requests.
+Request routing block -  is executed for each SIP request.
 
-The main 'route' block identified by 'route{...}' or 'route[0]{...}' is executed for each SIP request.
+It contains a set of actions to be executed for SIP requests received from the network. It is the equivalent of *main()* function for handling the SIP requests.
 
-The implicit action after execution of the main route block is to drop the SIP request. To send a reply or forward the request, explicit actions must be called inside the route block.
+<fc #4682b4>For backward compatibility reasons, the main request 'route' block can be identified by 'route{...}' or 'route[0]{...}'.</fc>
+
+The implicit action after execution of the main route block is to drop the SIP request. To send a reply or forward the request, explicit actions (e.g., sl_send_reply(), forward(), t_relay()) must be called inside the route block.
 
 Example of usage:
 
 <code c>
-    route {
+    request_route {
          if(is_method("OPTIONS")) {
             # send reply for each options request
             sl_send_reply("200", "ok");
             exit();
          }
-         route(1);
+         route(FWD);
     }
-    route[1] {
+    route[FWD] {
          # forward according to uri
          forward();
     }
 </code>
 
+==== route ====
+
+This block is used to define 'sub-routes' - group of actions that can be executed from another routing block. Originally targeted as being executed from 'request_route', it can be executed now from all the other blocks. Be sure you put there the actions valid for the root routing block executing the sub-route.
+
+The definition of the sub-route block follows the general rules, with a name in between square brackets and actions between curly braces. A sub-route can return an integer value back to the routing block that executed it. The return code can be retrieved via $rc variables.
+
+Evaluation of the return of a subroute is done with following rules:
+  * negative value is evaluated as false
+  * 0 - is interpreted as **exit**
+  * positive value is evaluated as true
+
+
+<code>
+request_route {
+  if(route(POSITIVE)) {
+    xlog("return number is positive\n");
+  }
+  if( ! route(NEGATIVE)) {
+    xlog("return number is negative\n");
+  }
+  if( route(ZERO)) {
+    xlog("this log message does not appear\n");
+  }
+}
+
+route[POSITIVE] {
+  return 10;
+}
+
+route[NEGATIVE] {
+  return -8;
+}
+
+route[ZERO] {
+  return 0;
+}
+</code>
+
+A sub-route can execute another sub-route. There is a limit to the number of recursive levels, avoiding ending up in infinite loops -- see **max_recursive_level** global parameter.
+
+The sub-route blocks allow to make the configuration file modular, simplifying the logic and helping to avoid duplication of actions.
 ==== branch_route ====
 
 Request's branch routing block. It contains a set of actions to be taken for each branch of a SIP request. It is executed only by TM module after it was armed via t_on_branch("branch_route_index").
