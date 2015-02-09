@@ -2428,12 +2428,28 @@ if($rd=="10.10.10.10")
 
 ===== Routing blocks =====
 
-Kamailio has support for named routes. Names can be used instead of numbers in all the route commands or route declarations. 
+The routing blocks are the parts of the configuration file executed by kamailio at runtime. They can be seen as blocks of actions similar to functions (or procedures) from common programming languages.
 
-Note: route(number) is equivalent to route("number")
+A routing block is identified by a specific token, followed by a name in between square brackets and actions in between curly braces.
+
+<code>
+route_block_id[NAME] {
+  ACTIONS
+}
+</code>
+
+The name can be any alphanumeric string, with specific routing blocks enforcing a particular format. 
+
+<fc #4682b4>Note: route(number) is equivalent to route("number").</fc>
+
+Route blocks can be executed on network events (e.g., receiving a SIP message), timer events (e.g., retransmission timeout) or particular events specific to modules.
+
+There can be so called sub-route blocks, which can be invoked from another route blocks, like a function. Invocation is done with 'route' followed by the name of sub-route to execute, enclosed in between parentheses.
 
 Example:
-  route{
+
+<code>
+  request_route{
     ...
     route("test");
     ...
@@ -2442,6 +2458,7 @@ Example:
   route["test"]{
     ...
   }
+</code>
 
 ==== route ====
 
