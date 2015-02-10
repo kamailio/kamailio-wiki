@@ -40,6 +40,8 @@ Kamailio Development:
     * /tmp in defaults (vseva)
   * new additions (dcm)
   * roadmap to next major release (dcm)
+  * more consistency on name of main c file for a module (dcm)
+  * rename sercmd to kamcmd in the source code (dcm)
 
 Kamailio Logo:
 
@@ -57,7 +59,6 @@ Kamailio Administration:
     * consider [[https://www.bestpractical.com/rtir/|RITR]]? (fisp) 
 
 ------
-
 
 ==== Security Vulnerability Policy (PROPOSAL) ====
 
