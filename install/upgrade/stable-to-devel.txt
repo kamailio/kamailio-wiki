@@ -17,6 +17,9 @@ Following tokens are used to mark the changes:
   * RCM - the change is recommended to be done if you had an explicit different or lower value for this parameter in old config
 
 ===== Modules =====
+==== rtpengine ====
+
+  * rtpengine_tout parameter was replaced by rtpengine_tout_ms (CPM)
 
 ===== Core =====
 
