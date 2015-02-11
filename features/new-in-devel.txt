@@ -51,6 +51,11 @@ New variable type: $vn() that can hold a $NULL value. The existing $var() can no
 	$vn(x) = 0; $vn(x) = "abc"; $vn(x) = $null;
  - $vz(name) aliased to $var(name)
 
+==== rtpengine ====
+rtpengine: rtpengine_tout is now rtpengine_tout_ms
+
+ - rtpengine tout param is now expressed in milliseconds and renamed
+
 ==== xlog ====
 xlog: new log function xlogm(...) - logs with method filtering
 
