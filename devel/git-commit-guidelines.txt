@@ -2,7 +2,7 @@
 
 ===== GIT Repository Location =====
 
-Starting with December 15, 2014, the main GITH repository of Kamailio project is hosted on Github at:
+Starting with December 15, 2014, the main GIT repository of Kamailio project is hosted on Github at:
 
   * https://github.com/kamailio/kamailio
 
