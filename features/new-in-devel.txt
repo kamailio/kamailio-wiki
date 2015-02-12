@@ -67,6 +67,14 @@ xlog: new log function xlogm(...) - logs with method filtering
 ==== dispatcher ====
 
   * new function ds_list_exist() to check if a dispatcher set exists.
+
+==== ndb_redis ====
+
+Redis authentication is now supported:
+
+	modparam("ndb_redis", "server", "name=srvX;addr=127.0.0.2;port=6379;db=4;pass=mypassword")
+
+
 ===== New in Core =====
 
 ==== Code ====
