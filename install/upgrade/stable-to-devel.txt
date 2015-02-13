@@ -21,6 +21,11 @@ Following tokens are used to mark the changes:
 
   * rtpengine_tout parameter was replaced by rtpengine_tout_ms (CPM)
 
+==== siptrace ====
+
+  * added totag field to sip_trace table
+  * increased sip_trace table version to 4
+
 ===== Core =====
 
 ==== Parameters ====
