@@ -42,6 +42,11 @@
   * http://kamailio.org/docs/modules/devel/modules/tcpops.html
 ===== New in Old Modules =====
 
+==== Dialplan ====
+
+New RPC command: dialplan.dump
+  - Lists all entries in the dialplan
+  
 ==== PV ====
 
 New variable type: $vn() that can hold a $NULL value. The existing $var() can not have a $NULL value.
