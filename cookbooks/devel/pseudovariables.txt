@@ -438,6 +438,29 @@ Note that changing the From: header may break backwards compatibility with SIP 1
 
 **$stat(name)** - return the value of statistic item specified by 'name'
 
+==== $su - Source address as URI ====
+
+
+**$su** - returns the representation of source address (ip, port, proto) as SIP URI. If the proto is UDP, then it is not added (being the default transport protocol).
+
+Its value looks like:
+
+<code>
+"sip:ip:port" -- if proto is UDP
+"sip:ip:port;transport=proto"  -- if proto is not UDP
+</code>
+
+Note that WS and WSS are both represented by transport=ws, conforming with the IETF RFC for SIP over WebSocket.
+
+==== $sut - Source address as full URI ====
+
+**$su** - returns the representation of source address (ip, port, proto) as full SIP URI. The proto UDP is added also as transport parameter.
+
+Its value looks like:
+
+<code>
+"sip:ip:port;transport=proto"
+</code>
 ==== $td - To URI Domain ====
 
 **$td** - reference to domain in URI of 'To' header
