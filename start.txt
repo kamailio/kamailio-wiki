@@ -161,7 +161,7 @@ Few guidelines to edit the wiki:
   * [[devel:how-to:main|Mini How-To Guides for Development]]
   * [[devel:module-docbook-readme|Writing Docbook Files for Module Readme]]
   * [[devel:git-access|Developer Git Access]]
-  * [[devel:securityprocess|Process for handling Security Vulnerabilities (proposal)]
+  * [[devel:securityprocess|Process for handling Security Vulnerabilities (proposal)]]
 
 ==== Misc ====
 
