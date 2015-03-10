@@ -480,6 +480,13 @@ Its value looks like:
 
 **$tt** - reference to tag parameter of 'To' header
 
+==== $tti - Initial To tag ====
+
+**$tti** - reference to tag parameter of 'To' header as it was in the SIP response to the initial request (e.g., 200ok to the initial INVITE).
+
+The value To tag in the initial transaction can be in the From tag, if the request within the dialog is sent by the callee. This variable detect who sent the request within the dialog and returns the proper value that was in the To tag of the transaction initiating the dialog.
+
+It is exported by **rr** module and has to be used after loose_route(). The append_fromtag parameter is required to be set to 1 in order to have this variable returning the right value.
 ==== $tu - To URI ====
 
 **$tu** - reference to URI of 'To' header
