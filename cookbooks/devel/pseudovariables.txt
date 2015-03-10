@@ -249,6 +249,13 @@ To reset $du:
 
 **$ft** - reference to tag parameter of 'From' header
 
+==== $fti - Initial From tag ====
+
+**$fti** - reference to tag parameter of 'From' header as it was in the initial request (e.g., initial INVITE).
+
+The value From tag in the initial request can be in the To tag, if the request within the dialog is sent by the callee. This variable detect who sent the request within the dialog and returns the proper value that was in the From tag of the request initiating the dialog.
+
+It is exported by **rr** module and has to be used after loose_route(). The append_fromtag parameter is required to be set to 1 in order to have this variable returning the right value.
 ==== $fu - From URI ====
 
 **$fu** - reference to URI of 'From' header
