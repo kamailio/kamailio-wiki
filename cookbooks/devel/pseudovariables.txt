@@ -355,6 +355,32 @@ Note that changing the From: header may break backwards compatibility with SIP 1
 
 **$retcode** - same as **$rc**
 
+==== $rd - Domain in R-URI ====
+
+**$rd** - reference to domain in request's URI (without port) or to the Namespace Specific String of a URN (see RFC 2141)
+
+<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
+
+==== $rdir(key) - Request Direction ====
+
+**$rdir(key)** - get the direction of the request within dialog.
+
+The direction is 'downstream' if sent by the caller and 'upstream' if sent by callee.
+
+The key can be:
+
+  * id - the returned value is an integer: 1 - for direction downstream, 2 - for direction upstream
+  * name - the returned value is a string: 'downstream' or 'upstream'
+
+Example:
+
+<code c>
+if($rdir(name)=="upstream") {
+  xlog("request was sent by callee\n");
+}
+</code>
+
+The variable is exported by **rr** module and append_fromtag parameter must be enabled. The variable has to be used after loose_route() function.
 ==== $re - Remote-Party-ID header URI ====
 
 **$re** - reference to Remote-Party-ID header URI
