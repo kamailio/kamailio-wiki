@@ -343,11 +343,7 @@ Note that changing the From: header may break backwards compatibility with SIP 1
 
 **$pu** - reference to URI in request's P-Preferred-Identity header (see RFC 3325)
 
-==== $rd - Domain in R-URI ====
 
-**$rd** - reference to domain in request's URI (without port) or to the Namespace Specific String of a URN (see RFC 2141)
-
-<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
 
 ==== $rb - Body of request/reply ====
 
