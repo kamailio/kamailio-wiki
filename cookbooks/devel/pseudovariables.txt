@@ -1275,6 +1275,7 @@ Variables exported by GeoIP module, returning geo-location attributes. The attri
   * regc - region
   * regn - region name
   * metro - metro code
+  * contc - continent code
 
 You can call several time **geoip_match(ipaddr, pvc)** with different ip address and containers in your config, to compare, for example, attributes of source and destination of a call.
 
