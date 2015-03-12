@@ -1510,6 +1510,16 @@ if (rand_event()) {
 # normal message processing follows
 </code>
 
+===== JSONRPC-S Variables =====
+
+==== $jsonrpl(key) - JSONRPC Reply ====
+
+This variable gives access to JSONRPC reply after executing jsonrpc_exec(...) in kamailio.cfg.
+
+The key can be:
+  * code - code for the JSONRPC response
+  * text - text of the code for the JSONRPC response
+  * body - the body of the JSONRPC response
 ===== $C(xy) - Foreground and background colors =====
 
 
