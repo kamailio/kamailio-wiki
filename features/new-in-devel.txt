@@ -11,11 +11,15 @@
 
 ===== New Modules =====
 
+==== auth_xkeys ====
+
+  * API-like shared key peer-to-peer authentication using SHA hashing
+  * http://kamailio.org/docs/modules/devel/modules/auth_xkeys.html
+
 ==== dmq_usrloc ====
 
   * distribute user location (usrloc) records between Kamailio servers using distributed message queue (dmq)
   * http://kamailio.org/docs/modules/devel/modules/dmq_usrloc.html
-
 ==== geoip2 ====
 
   * GeoIP API for configuration file using the new library with support for IPv6
