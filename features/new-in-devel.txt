@@ -44,45 +44,60 @@
 
   * enables control of the TCP options (such as the keepalive mechanism), on demand, and on a per-socket basis
   * http://kamailio.org/docs/modules/devel/modules/tcpops.html
+
 ===== New in Old Modules =====
 
-==== Dialplan ====
+==== dialplan ====
 
-New RPC command: dialplan.dump
-  - Lists all entries in the dialplan
-  
-==== PV ====
+  * new RPC command: dialplan.dump
+    * list all entries in the dialplan
 
-New variable type: $vn() that can hold a $NULL value. The existing $var() can not have a $NULL value.
+==== jsonrpc-s ====
 
- - similar to $var(name) and able to hold $null
- - default value is $null
+  * support to receive RPC commands via FIFO file
+
+==== ndb_redis ====
+
+  * Redis authentication is now supported:
+
+	modparam("ndb_redis", "server", "name=srvX;addr=127.0.0.2;port=6379;db=4;pass=mypassword")
+ 
+==== pv ====
+
+  * new variable type: $vn() that can hold a $NULL value. The existing $var() can not have a $NULL value.
+    * similar to $var(name) and able to hold $null
+    * default value is $null
 	$vn(x) = 0; $vn(x) = "abc"; $vn(x) = $null;
- - $vz(name) aliased to $var(name)
+  * $vz(name) aliased to $var(name)
+  * $sut - new variable that returns full uri for source address
+
+==== rr ====
+
+  * new variable class $rdir(key)
+    * return the direction of the request within dialog
+    * $rdir(id) - returns integer 1 for downstream and 2 for upstream
+    * $rdir(name) - returns the strings 'downstream' or 'upstream'
+  * new config variables $fti and $tti
+    * $fti - from tag as in initial INVITE
+    * $tti - to tag as in the response to the initial INVITE
 
 ==== rtpengine ====
+
 rtpengine: rtpengine_tout is now rtpengine_tout_ms
 
- - rtpengine tout param is now expressed in milliseconds and renamed
-
-==== xlog ====
-xlog: new log function xlogm(...) - logs with method filtering
-
- - same as xlog(level, message), fitering on methods
- - new parameter methods_filter - a bitmask with internal sip method ids to be skipped from printing logs. Default -1 (skip all)
- - parameter can be set at runtime via cfg reload framework kamcmd cfg.set_now_int xlog methods_filter 15
- - alternative implementation of FS#81
+   * rtpengine tout param is now expressed in milliseconds and renamed
 
 ==== dispatcher ====
 
   * new function ds_list_exist() to check if a dispatcher set exists.
 
-==== ndb_redis ====
+==== xlog ====
 
-Redis authentication is now supported:
-
-	modparam("ndb_redis", "server", "name=srvX;addr=127.0.0.2;port=6379;db=4;pass=mypassword")
-
+  * xlog: new log function xlogm(...) - logs with method filtering
+    * same as xlog(level, message), fitering on methods
+  * new parameter methods_filter - a bitmask with internal sip method ids to be skipped from printing logs. Default -1 (skip all)
+  * parameter can be set at runtime via cfg reload framework kamcmd cfg.set_now_int xlog methods_filter 15
+  * alternative implementation of FS#81
 
 ===== New in Core =====
 
