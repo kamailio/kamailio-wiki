@@ -52,6 +52,9 @@
   * new RPC command: dialplan.dump
     * list all entries in the dialplan
 
+  * support $(avp("key")[+]) notation on dynamic match/subst rules:
+    * ^(00|\+)?$(avp(s:pbx_cli)[+])([0-9]{3})$ will check every value of $(avp(s:pbx_cli) in the match one by one.
+    * See https://github.com/kamailio/kamailio/issues/5 for more details
 ==== jsonrpc-s ====
 
   * support to receive RPC commands via FIFO file
