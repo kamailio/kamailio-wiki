@@ -32,4 +32,29 @@ Following tokens are used to mark the changes:
 
 ===== Database =====
 
+==== MySQL Database Structure ====
+
+There are several changes to the database structure, in short:
+
+  * location table has three new columns: server_id, connection_id, keepalive
+  * presentity table has a new column: priority
+  * sip_trace table has a new column: totag
+
 ==== Upgrade Old MySQL Database Structure ====
+
+Run following SQL statements in MySQL client to upgrade database structure from v4.2 to v4.3:
+
+<code sql>
+-- table: location
+ALTER TABLE location ADD COLUMN server_id INT(11) DEFAULT 0 NOT NULL;
+ALTER TABLE location ADD COLUMN connection_id INT(11) DEFAULT 0 NOT NULL;
+ALTER TABLE location ADD COLUMN keepalive INT(11) DEFAULT 0 NOT NULL;
+DELETE FROM version WHERE table_name='location';
+INSERT INTO version (`table_name`, `table_version`) values ('location','7');
+
+-- table: presentity
+ALTER TABLE presentity ADD COLUMN priority INT(11) DEFAULT 0 NOT NULL;
+DELETE FROM version WHERE table_name='presentity';
+INSERT INTO version (`table_name`, `table_version`) values ('presentity','4');
+
+</code>
