@@ -1520,6 +1520,15 @@ The key can be:
   * code - code for the JSONRPC response
   * text - text of the code for the JSONRPC response
   * body - the body of the JSONRPC response
+
+===== Presence Module Pseudo-Variables =====
+
+==== $subs(key) - Subscription Attributes ====
+
+This variable gives access to attributes of the current subscription. The variable has to be used after executing **handle_subscription()** in order to provide accurate values.
+
+The key can be:
+  * uri - subscription URI. Useful in particular for subscriptions within the dialog, when the request URI in SUBSCRIBE is the Contact address from the initial subscription.
 ===== $C(xy) - Foreground and background colors =====
 
 
