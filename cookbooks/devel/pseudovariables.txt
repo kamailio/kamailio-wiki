@@ -1449,6 +1449,7 @@ Example:
 <code c>
 send_reply("404", "Not found at line $cfg(line)");
 </code>
+
 ===== $dns(pvid=>key) - DNS Query Result =====
 
 This variable stores the DNS result details after a call of dns_query(hostname, pvid) function from ipops module.
@@ -1493,6 +1494,7 @@ xlog("local hostanme is $HN(n)\n");
 </code>
 
 ===== $RANDOM - Random number =====
+
 Returns a random value from the [0 - 2^31) range.
 
 (Part of the cfgutils module)
@@ -1525,7 +1527,7 @@ The key can be:
 
 ==== $subs(key) - Subscription Attributes ====
 
-This variable gives access to attributes of the current subscription. The variable has to be used after executing **handle_subscription()** in order to provide accurate values.
+This variable gives access to attributes of the current subscription. The variable has to be used after executing //handle_subscription()// in order to provide accurate values.
 
 The key can be:
   * uri - subscription URI. Useful in particular for subscriptions within the dialog, when the request URI in SUBSCRIBE is the Contact address from the initial subscription.
