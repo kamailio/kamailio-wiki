@@ -1178,7 +1178,7 @@ The **name** can be:
 
   * used to build the input for uac_send_req() function of UAC module
 
-key can be:
+The key can be:
   * method - SIP method
   * ruri - request URI
   * furi - From URI
@@ -1190,15 +1190,22 @@ key can be:
   * apasswd - authentication password
   * sock - local socket to be used for sending (proto:address:port)
   * callid - SIP-Call-ID of the generated request (by default, a call-id is generated)
-  * onreply - On-REPLY-Route for this request
   * all - alias useful to reset all fields - $uac_req(all) = $null;
+  * evroute - it has to be set to 1 in order to execute event_route[uac:reply] when reply is received
+  * evcode - reply code for the request sent with uac_req_send(), available inside event_route[uac:reply]
+  * evtype - is 1 if the reply was received via network, 2 if the reply was locally generated (e.g., retransmission timeout), available inside event_route[uac:reply]
 
 <code c>
 $uac_req(method)="OPTIONS";
 $uac_req(ruri)="sip:kamailio.org";
 $uac_req(furi)="sip:kamailio.org";
 $uac_req(turi)="sip:kamailio.org";
+$uac_req(evroute) = 1;
 uac_req_send();
+...
+event_route[uac:reply] {
+  xlog("request sent to $uac_req(ruri) completed with code: $uac_req(evcode)\n");
+}
 </code>
 ===== Nathelper module Pseudo-Variables =====
 
