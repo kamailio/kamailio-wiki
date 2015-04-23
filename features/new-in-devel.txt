@@ -116,6 +116,13 @@ rtpengine: rtpengine_tout is now rtpengine_tout_ms
 
 ==== Code ====
 
+=== TLSF Memory Manager ===
+
+  * two Level Segregated Fit memory allocator
+    * http://tlsf.baisoku.org
+  * high performance memory manager
+  * malloc and free operations done in O(1)
+  * 
 ==== Default Config ====
 
 ===== Tools =====
