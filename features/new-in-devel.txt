@@ -20,6 +20,11 @@
 
   * distribute user location (usrloc) records between Kamailio servers using distributed message queue (dmq)
   * http://kamailio.org/docs/modules/devel/modules/dmq_usrloc.html
+
+==== erlang ====
+
+  * connector to Erlang node
+  * http://kamailio.org/docs/modules/devel/modules/erlang.html
 ==== geoip2 ====
 
   * GeoIP API for configuration file using the new library with support for IPv6
