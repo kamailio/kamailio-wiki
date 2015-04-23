@@ -45,6 +45,11 @@
   * enables sending data to the statsd framework directly from kamailio.cfg
   * http://kamailio.org/docs/modules/devel/modules/statsd.html
 
+==== rtjson ====
+
+  * SIP routing based on JSON API
+  * http://kamailio.org/docs/modules/devel/modules/rtjson.html
+
 ==== tcpops ====
 
   * enables control of the TCP options (such as the keepalive mechanism), on demand, and on a per-socket basis
