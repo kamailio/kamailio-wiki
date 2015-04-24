@@ -100,6 +100,9 @@
        * rtpengine tout param is now expressed in milliseconds and renamed
    * new ''write_sdp_pv'' parameter, to return the new SDP in a $var() or $avp() instead of message body
 
+==== usrloc ====
+  * New parameter: ''close_expired_tcp''. When set to 1, usrloc will close the corresponding TCP connection for expired entries.
+
 
 ==== dispatcher ====
 
