@@ -96,9 +96,10 @@
 
 ==== rtpengine ====
 
-rtpengine: rtpengine_tout is now rtpengine_tout_ms
+   * rtpengine_tout is now rtpengine_tout_ms
+       * rtpengine tout param is now expressed in milliseconds and renamed
+   * new ''write_sdp_pv'' parameter, to return the new SDP in a $var() or $avp() instead of message body
 
-   * rtpengine tout param is now expressed in milliseconds and renamed
 
 ==== dispatcher ====
 
