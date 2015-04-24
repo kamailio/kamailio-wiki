@@ -121,8 +121,8 @@
 
   * Two Level Segregated Fit memory allocator
     * http://tlsf.baisoku.org
-  * high performance memory manager
-  * malloc and free operations done in O(1)
+  * bounded-time performance memory manager
+  * malloc and free operations always done in O(1)
   * build with ''MEMMNG=2'' option to activate TLSF
 ==== Default Config ====
 
