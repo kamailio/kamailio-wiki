@@ -66,14 +66,14 @@ UPDATE version SET table_version='4' WHERE table_name='sip_trace';
 -- For previous values
 -- STRING -> DATETIME ??
 -- STRING -> FLOAT ??
-ALTER TABLE acc_cdrs ALTER COLUMN start_time DATETIME DEFAULT '2000-01-01 00:00:00' NOT NULL;
-ALTER TABLE acc_cdrs ALTER COLUMN end_time DATETIME DEFAULT '2000-01-01 00:00:00' NOT NULL;
-ALTER TABLE acc_cdrs ALTER COLUMN duration FLOAT(10,3) DEFAULT 0 NOT NULL;
+ALTER TABLE acc_cdrs MODIFY COLUMN start_time DATETIME DEFAULT '2000-01-01 00:00:00' NOT NULL;
+ALTER TABLE acc_cdrs MODIFY COLUMN end_time DATETIME DEFAULT '2000-01-01 00:00:00' NOT NULL;
+ALTER TABLE acc_cdrs MODIFY COLUMN duration FLOAT(10,3) DEFAULT 0 NOT NULL;
 UPDATE version SET table_version='2' WHERE table_name='acc_cdrs';
 
 -- table: silo
-ALTER TABLE silo ALTER COLUMN body BLOB;
-ALTER TABLE silo ALTER COLUMN extra_hdrs TEXT;
+ALTER TABLE silo ALTER COLUMN body DROP DEFAULT;
+ALTER TABLE silo ALTER COLUMN extra_hdrs DROP DEFAULT;
 UPDATE version SET  table_version='8' WHERE table_name='silo';
 
 </code>
