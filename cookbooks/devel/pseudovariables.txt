@@ -447,6 +447,23 @@ The variable is exported by **rr** module and append_fromtag parameter must be e
 
 **$Rp** - reference to the port where the message was received
 
+==== $sbranch(attr) - Static Branch ====
+
+**$sbranch(attr)** - class of variables allowing to manage the values of attributes for static branch. The static branch is internal structure that is used by the functions sbranch_push_ruri() and sbranch_append() from **pv** module, enabling more flexibility in updating the R-URI (first) branch attributes as well as extra branches (e.g., for parallel forking).
+
+The **attr** can be any of the supported values for **$branch(attr)** class of variables -- see above for proper details.
+
+Example of usage:
+
+<code c>
+sbranch_reset();
+$sbranch(uri) = "sip:127.0.0.1:5080";
+$sbranch(dst_uri) =  "sip:127.0.0.1:5090";
+$sbranch(path) =  "sip:127.0.0.1:5090, sip:127.0.0.1:5094";
+$sbranch(send_socket) =  "udp:127.0.0.1:5060";
+sbranch_set_ruri();
+</code>
+
 ==== $sf - Script flags ====
 
 **$sf** - reference to script flags - decimal output
