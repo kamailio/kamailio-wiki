@@ -39,7 +39,8 @@ There are several changes to the database structure, in short:
   * location table has three new columns: server_id, connection_id, keepalive
   * presentity table has a new column: priority
   * sip_trace table has a new column: totag
-
+  * silo table changed defaults: body and extra_hdrs have no default. BLOB or TEXT have no default. ( See https://dev.mysql.com/doc/refman/5.5/en/blob.html )
+  * acc_cdrs table uses proper data types for: start_time, end_time, duration. acc_cdrs needs to be empty due to this change.
 ==== Upgrade Old MySQL Database Structure ====
 
 Run following SQL statements in MySQL client to upgrade database structure from v4.2 to v4.3:
