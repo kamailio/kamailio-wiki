@@ -75,18 +75,4 @@ ALTER TABLE silo ALTER COLUMN body BLOB;
 ALTER TABLE silo ALTER COLUMN extra_hdrs TEXT;
 UPDATE version SET  table_version='8' WHERE table_name='silo';
 
--- table: presentity
-ALTER TABLE sip_presentity ADD COLUMN priority INT(11) DEFAULT 0 NOT NULL;
-UPDATE version SET  table_version='4' WHERE table_name='presentity';
-
--- table: sip_trace
-ALTER TABLE sip_trace ADD COLUMN totag VARCHAR(64) DEFAULT '' NOT NULL;
-UPDATE version SET  table_version='4' WHERE table_name='sip_trace';
-
--- table: location
-ALTER TABLE location ADD COLUMN server_id INT(11) DEFAULT 0 NOT NULL;
-ALTER TABLE location ADD COLUMN connection_id INT(11) DEFAULT 0 NOT NULL;
-ALTER TABLE location ADD COLUMN keepalive INT(11) DEFAULT 0 NOT NULL;
-UPDATE version SET  table_version='7' WHERE table_name='location';
-
 </code>
