@@ -50,8 +50,9 @@ Run following SQL statements in MySQL client to upgrade database structure from 
 ALTER TABLE location ADD COLUMN server_id INT(11) DEFAULT 0 NOT NULL;
 ALTER TABLE location ADD COLUMN connection_id INT(11) DEFAULT 0 NOT NULL;
 ALTER TABLE location ADD COLUMN keepalive INT(11) DEFAULT 0 NOT NULL;
+ALTER TABLE location ADD COLUMN partition INT(11) DEFAULT 0 NOT NULL;
 DELETE FROM version WHERE table_name='location';
-INSERT INTO version (`table_name`, `table_version`) values ('location','7');
+INSERT INTO version (`table_name`, `table_version`) values ('location','8');
 
 -- table: presentity
 ALTER TABLE presentity ADD COLUMN priority INT(11) DEFAULT 0 NOT NULL;
