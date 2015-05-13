@@ -899,7 +899,7 @@ The 'key' can be any string.
 
 Access hash table entries.
 
-<fc #0000ff>It is R/W variable, you can assign values to it directly in configuration file.</fc>
+<fc #0000ff>It is R/W variable, you can assign values to it directly in configuration file.  Hash table entry can be deleted by assigning value $null to it.</fc>
 
 The “htname” must be a hash table name defined via “htable” parameter.
 
