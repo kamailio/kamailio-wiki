@@ -189,6 +189,30 @@ Again, be sure the path to kamailio is appropriate for the installation and the 
 gdb --batch --command=/tmp/kamailio-dump-used-pkg.gdb /usr/sbin/kamailio 21907
 </code>
 
+===== PKG With System Malloc =====
+
+Kamailio can be compiled to use system malloc and free for PKG needs. You have to remove the PKG_MALLOC define from Makefile.defs and can add DBG_SYS_MALLOC to get more verbosity with memory operations in debug mode.
+
+Next is a diff showing the changes in Makefile.defs, but note that lines may vary on your specific Kamailio version.
+
+<code c>
+diff --git a/Makefile.defs b/Makefile.defs
+index 3890668..12ca37a 100644
+--- a/Makefile.defs
++++ b/Makefile.defs
+@@ -621,7 +621,7 @@ C_DEFS= $(extra_defs) \
+         -DSER_VER=$(SER_VER) \
+         -DCFG_DIR='"$(cfg_target)"'\
+         -DRUN_DIR='"$(run_target)"'\
+-        -DPKG_MALLOC \
++        -DDBG_SYS_MALLOC \
+         -DSHM_MEM  -DSHM_MMAP \
+         -DDNS_IP_HACK \
+         -DUSE_MCAST \
+</code>
+
+After updating Makefile.defs recompile and reinstall.
+
 ===== OS Memory Reports =====
 
 It may happen that various tools report memory usage increase on the server. That could be due to a leak issue or due to caching done by kernel. The memory for cache can be reclaimed and it is better to verify whether the increase is due to it or not, before going ahead to investigate other applications.
