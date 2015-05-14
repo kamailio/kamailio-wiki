@@ -213,6 +213,8 @@ index 3890668..12ca37a 100644
 
 After updating Makefile.defs recompile and reinstall.
 
+Other tools available out there (e.g., valgrind) can be then used to track the PKG memory operations done by Kamailio.
+
 ===== OS Memory Reports =====
 
 It may happen that various tools report memory usage increase on the server. That could be due to a leak issue or due to caching done by kernel. The memory for cache can be reclaimed and it is better to verify whether the increase is due to it or not, before going ahead to investigate other applications.
