@@ -62,7 +62,6 @@ If the free memory size from printed statistics continues to decrease constantly
   * if you have growth on the service, like new subscribers, more calls, then it can be the reason for increase in memory usage and you may need to restart with higher values if free size is getting too small. If possible, stop sending traffic to that instance (in case there can be added some traffic redirection) and watch to see if the memory usage starts decreasing, getting back to a state like at the moment when Kamailio was started.
   * if the number of subscribers, traffic is constant, no larger data was reloaded (e.g., dispacher, lcr), then there is very likely a memory leak that has to be discovered and fixed
 
-===== Troubleshooting =====
 
 ===== Memory Manager Debugging =====
 
