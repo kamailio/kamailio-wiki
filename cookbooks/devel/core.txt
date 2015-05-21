@@ -1342,6 +1342,14 @@ Default is no.
     allow deletion of non-expired records from the cache when there is no more space
     left for new ones. The last-recently used entries are deleted first.
 
+==== dns_cache_rec_pref ====
+  dns_cache_rec_pref = number (default 0)
+    dns cache record preference, determines how new DNS records are stored internally in relation to existing entries.
+    Possible values:
+      0 - do not check duplicates
+      1 - prefer old records
+      2 - prefer new records
+      3 - prefer records with longer lifetime
 
 ==== dns_cache_flags ====
   dns_cache_flags = number (default 0) - 
