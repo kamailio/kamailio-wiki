@@ -42,8 +42,8 @@ The following packages are required before proceeding to the next steps.
 First of all, you have to create a directory on the file system where the sources will be stored. 
 
 <code>
-  mkdir -p /usr/local/src/kamailio-4.2
-  cd /usr/local/src/kamailio-4.2
+  mkdir -p /usr/local/src/kamailio-4.3
+  cd /usr/local/src/kamailio-4.3
 </code>
 
 Download the sources from GIT using the following commands.
