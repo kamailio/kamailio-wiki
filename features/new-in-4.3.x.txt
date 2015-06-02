@@ -25,10 +25,12 @@
 
   * connector to Erlang node
   * http://kamailio.org/docs/modules/devel/modules/erlang.html
+
 ==== geoip2 ====
 
   * GeoIP API for configuration file using the new library with support for IPv6
   * http://kamailio.org/docs/modules/devel/modules/geoip2.html
+
 ==== jansson ====
 
   * JSON document management using Jansson library
@@ -57,6 +59,30 @@
 
 ===== New in Old Modules =====
 
+==== app_lua ====
+
+  * exported additional tm functions
+    * sr.tm.t_load_contacts
+    * sr.tm.t_next_contatcs
+    * sr.tm.t_on_branch_failure
+
+==== cdp ====
+
+  * added support for incoming and outgoing trunk-group AVPs
+
+==== cdpavp ====
+
+  * added support for incoming and outgoing trunk-group AVPs
+
+==== cnxcc ====
+
+  * added Redis support for distributed cnxcc nodes
+
+==== db_mysql ====
+
+  * added parameter to change affected rows value for UPDATE queries
+    * when enabled will return the number of matched/foudn rows as opposed to the number of updated rows
+
 ==== dialplan ====
 
   * new RPC command: dialplan.dump
@@ -65,6 +91,41 @@
   * support $(avp("key")[+]) notation on dynamic match/subst rules:
     * ^(00|\+)?$(avp(s:pbx_cli)[+])([0-9]{3})$ will check every value of $(avp(s:pbx_cli) in the match one by one.
     * See https://github.com/kamailio/kamailio/issues/5 for more details
+  * option to allow variables in match and substitution expressions - new parameter: match_dynamic to enable this feature
+
+==== dispatcher ====
+
+  * new function ds_list_exist() to check if a dispatcher set exists
+  * added per gateway and global send socket configuration
+
+==== ims_charging ====
+
+  * added realtime DB support for Ro sessions
+  * added support for trunk ID in Ro CCR
+
+==== ims_icscf ====
+
+  * new module param use_preferred_scscf_uri - allows ICSCF to have a preferred S-CSCF is HSS returns a list
+
+==== ims_registrar_scscf ====
+
+  * use dedicated process to send notifies
+  * new parameter user_data_always - if set S-CSCF always requests user data from HSS
+  * new mod_param subscription_expires_range - if set this parameter randomises the subscription expiry
+
+==== ims_qos ====
+
+  * Rx_reg use received IP for framed_ip_address AVP
+
+==== ims_usrloc_pcscf ====
+
+  * added new parameter to contact match using only URI host and port
+
+==== ims_usrloc_scscf ====
+
+  * added database support for subscriptions
+  * callback when contact is deleted/removed
+
 ==== jsonrpc-s ====
 
   * support to receive RPC commands via FIFO file
@@ -74,7 +135,11 @@
   * Redis authentication is now supported:
 
 	modparam("ndb_redis", "server", "name=srvX;addr=127.0.0.2;port=6379;db=4;pass=mypassword")
- 
+
+==== pua ====
+
+  * added outbound_proxy for publishing info
+
 ==== pv ====
 
   * new variable type: $vn() that can hold a $NULL value. The existing $var() can not have a $NULL value.
@@ -83,6 +148,7 @@
 	$vn(x) = 0; $vn(x) = "abc"; $vn(x) = $null;
   * $vz(name) aliased to $var(name)
   * $sut - new variable that returns full uri for source address
+  * added 7Bit encoding/decoding transformations
 
 ==== rr ====
 
@@ -100,13 +166,26 @@
        * rtpengine tout param is now expressed in milliseconds and renamed
    * new ''write_sdp_pv'' parameter, to return the new SDP in a $var() or $avp() instead of message body
 
+==== sdpops ====
+
+  * new function sdp_with_active_media
+    * return true of the SDP has 'media=type ...' line and the media is active.
+    * active media means the port is non-zero and the direction is not "inactive"
+
+==== tm ====
+
+   * new function t_is_retr_async_reply to check if a reply being processed is part of a transaction currently suspended
+   * handle r-uri alias parameter for local generated requests within a dialog
+   * default value for failure_reply_mode set to 3 - discard previous replies if a new serial forking step is done
+
+==== tsilo ====
+
+  * new MI and RPC commands
+
 ==== usrloc ====
-  * New parameter: ''close_expired_tcp''. When set to 1, usrloc will close the corresponding TCP connection for expired entries.
 
+  * new parameter: ''close_expired_tcp''. When set to 1, usrloc will close the corresponding TCP connection for expired entries.
 
-==== dispatcher ====
-
-  * new function ds_list_exist() to check if a dispatcher set exists.
 
 ==== xlog ====
 
@@ -120,6 +199,16 @@
 
 ==== Code ====
 
+  * execute onsend_route for replies before sending out
+    * control execution of onsend_route block for replies via parameter onsend_route_reply
+  * default tcp read buffer size set to 16kB
+  * pv print default buffer size set to 8kB
+  * default size for shared memory is 64MB
+  * new parameter - max_branches
+    * the maximum number of uac branches can be set via config
+    * default value is 12 (old static value for MAX_BRNACHES)
+    * the upper limit is 31, it has to be at least 1
+
 === TLSF Memory Manager ===
 
   * Two Level Segregated Fit memory allocator
@@ -127,11 +216,16 @@
   * bounded-time performance memory manager
   * malloc and free operations always done in O(1)
   * build with ''MEMMNG=2'' option to activate TLSF
+
 ==== Default Config ====
 
 ===== Tools =====
 
 ==== Kamctl ====
+
+  * support of fnmatch operator for dialplan
+    * do not reload rules in memory after each change in database to allow batch updates. Reload command has to be done explicitely
+    * parameters of addrule after match expression are optional
 
 ===== Build Process =====
 
