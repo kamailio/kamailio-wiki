@@ -1,0 +1,142 @@
+====== Kamailio SIP Server (SER) - New Features in v4.3.x ======
+
+**Current stable version is numbered 4.3.x and it was released in June 2015**.
+
+<fc #0000FF>
+**Previous version was 4.2.x (released on October 16, 2014), see what was new in that release at:**
+</fc>
+  * <fc #0000FF>http://www.kamailio.org/wiki/features/new-in-4.2.x</fc>
+
+<fc #800000>//This is a draft of new features added in 4.3 version, manually updated, thus not always synchronized with what is new in source code repository.//</fc>
+
+===== New Modules =====
+
+==== auth_xkeys ====
+
+  * API-like shared key peer-to-peer authentication using SHA hashing
+  * http://kamailio.org/docs/modules/devel/modules/auth_xkeys.html
+
+==== dmq_usrloc ====
+
+  * distribute user location (usrloc) records between Kamailio servers using distributed message queue (dmq)
+  * http://kamailio.org/docs/modules/devel/modules/dmq_usrloc.html
+
+==== erlang ====
+
+  * connector to Erlang node
+  * http://kamailio.org/docs/modules/devel/modules/erlang.html
+==== geoip2 ====
+
+  * GeoIP API for configuration file using the new library with support for IPv6
+  * http://kamailio.org/docs/modules/devel/modules/geoip2.html
+==== jansson ====
+
+  * JSON document management using Jansson library
+  * it has support for JSON-PATH
+  * http://kamailio.org/docs/modules/devel/modules/jansson.html
+
+==== janssonrpc-c ====
+
+  * JSON-RPC over netstrings client using Jansson library
+  * http://kamailio.org/docs/modules/devel/modules/janssonrpc-c.html
+
+==== statsd ====
+
+  * enables sending data to the statsd framework directly from kamailio.cfg
+  * http://kamailio.org/docs/modules/devel/modules/statsd.html
+
+==== rtjson ====
+
+  * SIP routing based on JSON API
+  * http://kamailio.org/docs/modules/devel/modules/rtjson.html
+
+==== tcpops ====
+
+  * enables control of the TCP options (such as the keepalive mechanism), on demand, and on a per-socket basis
+  * http://kamailio.org/docs/modules/devel/modules/tcpops.html
+
+===== New in Old Modules =====
+
+==== dialplan ====
+
+  * new RPC command: dialplan.dump
+    * list all entries in the dialplan
+
+  * support $(avp("key")[+]) notation on dynamic match/subst rules:
+    * ^(00|\+)?$(avp(s:pbx_cli)[+])([0-9]{3})$ will check every value of $(avp(s:pbx_cli) in the match one by one.
+    * See https://github.com/kamailio/kamailio/issues/5 for more details
+==== jsonrpc-s ====
+
+  * support to receive RPC commands via FIFO file
+
+==== ndb_redis ====
+
+  * Redis authentication is now supported:
+
+	modparam("ndb_redis", "server", "name=srvX;addr=127.0.0.2;port=6379;db=4;pass=mypassword")
+ 
+==== pv ====
+
+  * new variable type: $vn() that can hold a $NULL value. The existing $var() can not have a $NULL value.
+    * similar to $var(name) and able to hold $null
+    * default value is $null
+	$vn(x) = 0; $vn(x) = "abc"; $vn(x) = $null;
+  * $vz(name) aliased to $var(name)
+  * $sut - new variable that returns full uri for source address
+
+==== rr ====
+
+  * new variable class $rdir(key)
+    * return the direction of the request within dialog
+    * $rdir(id) - returns integer 1 for downstream and 2 for upstream
+    * $rdir(name) - returns the strings 'downstream' or 'upstream'
+  * new config variables $fti and $tti
+    * $fti - from tag as in initial INVITE
+    * $tti - to tag as in the response to the initial INVITE
+
+==== rtpengine ====
+
+   * rtpengine_tout is now rtpengine_tout_ms
+       * rtpengine tout param is now expressed in milliseconds and renamed
+   * new ''write_sdp_pv'' parameter, to return the new SDP in a $var() or $avp() instead of message body
+
+==== usrloc ====
+  * New parameter: ''close_expired_tcp''. When set to 1, usrloc will close the corresponding TCP connection for expired entries.
+
+
+==== dispatcher ====
+
+  * new function ds_list_exist() to check if a dispatcher set exists.
+
+==== xlog ====
+
+  * xlog: new log function xlogm(...) - logs with method filtering
+    * same as xlog(level, message), fitering on methods
+  * new parameter methods_filter - a bitmask with internal sip method ids to be skipped from printing logs. Default -1 (skip all)
+  * parameter can be set at runtime via cfg reload framework kamcmd cfg.set_now_int xlog methods_filter 15
+  * alternative implementation of FS#81
+
+===== New in Core =====
+
+==== Code ====
+
+=== TLSF Memory Manager ===
+
+  * Two Level Segregated Fit memory allocator
+    * http://tlsf.baisoku.org
+  * bounded-time performance memory manager
+  * malloc and free operations always done in O(1)
+  * build with ''MEMMNG=2'' option to activate TLSF
+==== Default Config ====
+
+===== Tools =====
+
+==== Kamctl ====
+
+===== Build Process =====
+
+Support [[https://wiki.debian.org/ReproducibleBuilds/|reproducible builds]] adding compile options to skip compile date or set a particular value
+
+  * default is current behaviour, date and time included in version string
+  * compile with no date and time:  <code>make CC_EXTRA_OPTS="-DVERSION_NODATE"</code>
+  * compile with a specific date and time:  <code>make CC_EXTRA_OPTS='"-DVERSION_DATE=\"19:30:40 Feb  8 2015\""'</code>
