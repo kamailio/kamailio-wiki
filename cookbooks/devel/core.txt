@@ -1132,7 +1132,7 @@ If it is enabled (default=yes) a header is generated as in the following example
      Server: Kamailio (<version> (<arch>/<os>))
 
 ==== shm_force_alloc ====
-Tries to pre-fault all the shared memory, before starting. When "on", start time will increase, but combined with mlock_pages will guarantee ser will get all its memory from the beginning (no more kswapd slow downs)
+Tries to pre-fault all the shared memory, before starting. When "on", start time will increase, but combined with mlock_pages will guarantee Kamailio will get all its memory from the beginning (no more kswapd slow downs)
 
 shm_force_alloc = yes | no (default no)
 ==== sip_warning (noisy feedback) ====
