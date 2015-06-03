@@ -1943,7 +1943,7 @@ See also doc/dst_blacklist.txt.
 ===== Real-Time Parameters =====
 ==== real_time ====
 
-Sets real time priority for all the ser processes, or the timers (bitmask). 
+Sets real time priority for all the Kamailio processes, or the timers (bitmask). 
      Possible values:   0  - off
                         1  - the "fast" timer
                         2  - the "slow" timer
