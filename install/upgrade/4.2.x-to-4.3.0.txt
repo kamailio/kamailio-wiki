@@ -1,0 +1,82 @@
+====== Upgrade Kamailio from v4.2.x to v4.3.0 ======
+
+The page contains the details about the changes that were made to old components during the development of v4.3.0 compared with what existed in v4.2.x. It does not include the brand new modules, focusing on how to upgrade database and configuration file from v4.2.x to run with Kamailio devel.
+
+===== Previous Stable Release =====
+
+If you look for the guidelines to upgrade to previous stable release, see:
+
+  * [[install:upgrade:4.1.x-to-4.2.0|Upgrade Kamailio v4.1.x to v4.2.0]]
+
+===== Remarks =====
+
+Following tokens are used to mark the changes:
+
+  * INF - the change doesn't really have any direct impact - no action required in old config
+  * CPM - the change was used with the new value via explicit parameter in default config file from old releases
+  * RCM - the change is recommended to be done if you had an explicit different or lower value for this parameter in old config
+
+===== Modules =====
+
+==== rtpengine ====
+
+  * rtpengine_tout parameter was replaced by rtpengine_tout_ms (CPM)
+
+==== siptrace ====
+
+  * added totag field to sip_trace table
+  * increased sip_trace table version to 4
+
+===== Core =====
+
+==== Parameters ====
+
+===== Database =====
+
+==== MySQL Database Structure ====
+
+There are several changes to the database structure, in short:
+
+  * location table has three new columns: server_id, connection_id, keepalive
+  * presentity table has a new column: priority
+  * sip_trace table has a new column: totag
+  * silo table changed defaults: body and extra_hdrs have no default. BLOB or TEXT have no default. ( See https://dev.mysql.com/doc/refman/5.5/en/blob.html )
+  * acc_cdrs table uses proper data types for: start_time, end_time, duration. acc_cdrs needs to be empty due to this change.
+
+==== Upgrade Old MySQL Database Structure ====
+
+Run following SQL statements in MySQL client to upgrade database structure from v4.2 to v4.3:
+
+<code sql>
+-- table: location
+ALTER TABLE location ADD COLUMN server_id INT(11) DEFAULT 0 NOT NULL;
+ALTER TABLE location ADD COLUMN connection_id INT(11) DEFAULT 0 NOT NULL;
+ALTER TABLE location ADD COLUMN keepalive INT(11) DEFAULT 0 NOT NULL;
+ALTER TABLE location ADD COLUMN partition INT(11) DEFAULT 0 NOT NULL;
+DELETE FROM version WHERE table_name='location';
+INSERT INTO version (`table_name`, `table_version`) values ('location','8');
+
+-- table: presentity
+ALTER TABLE presentity ADD COLUMN priority INT(11) DEFAULT 0 NOT NULL;
+DELETE FROM version WHERE table_name='presentity';
+INSERT INTO version (`table_name`, `table_version`) values ('presentity','4');
+
+-- table: sip_trace
+ALTER TABLE sip_trace ADD COLUMN totag VARCHAR(64) DEFAULT '' NOT NULL;
+UPDATE version SET table_version='4' WHERE table_name='sip_trace';
+
+-- table: acc_cdrs
+-- For previous values
+-- STRING -> DATETIME ??
+-- STRING -> FLOAT ??
+ALTER TABLE acc_cdrs MODIFY COLUMN start_time DATETIME DEFAULT '2000-01-01 00:00:00' NOT NULL;
+ALTER TABLE acc_cdrs MODIFY COLUMN end_time DATETIME DEFAULT '2000-01-01 00:00:00' NOT NULL;
+ALTER TABLE acc_cdrs MODIFY COLUMN duration FLOAT(10,3) DEFAULT 0 NOT NULL;
+UPDATE version SET table_version='2' WHERE table_name='acc_cdrs';
+
+-- table: silo
+ALTER TABLE silo MODIFY COLUMN body BLOB;
+ALTER TABLE silo MODIFY COLUMN extra_hdrs TEXT;
+UPDATE version SET  table_version='8' WHERE table_name='silo';
+
+</code>
