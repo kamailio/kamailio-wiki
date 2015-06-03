@@ -1015,7 +1015,7 @@ Example of usage:
     mhomed=1
 
 ==== mlock_pages ====
-Locks all ser pages into memory making it unswappable (in general one doesn't want his sip proxy swapped out :-))
+Locks all Kamailio pages into memory making it unswappable (in general one doesn't want his SIP proxy swapped out :-))
 
   mlock_pages = yes |no (default no)
 
