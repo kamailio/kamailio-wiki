@@ -663,7 +663,7 @@ Reverse Meaning of the disable_tls parameter. See disable_tls parameter.
 
 **Alias name: ser_kill_timeout**
 
-How much time kamailio/ser will wait for all the shutdown procedures to complete. If this time is exceeded, all the remaining processes are immediately killed and ser exits immediately (it might also generate a core dump if the cleanup part takes too long).
+How much time Kamailio will wait for all the shutdown procedures to complete. If this time is exceeded, all the remaining processes are immediately killed and Kamailio exits immediately (it might also generate a core dump if the cleanup part takes too long).
 
 Default: 60 s. Use 0 to disable.
 
