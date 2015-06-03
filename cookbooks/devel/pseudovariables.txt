@@ -333,7 +333,7 @@ Note that changing the From: header may break backwards compatibility with SIP 1
 
 ==== $pr - Protocol of received message ====
 
-**$pr** or **$proto** - protocol of received message (UDP, TCP, TLS, SCTP, WS, WSS)
+**$pr** or **$proto** - protocol of received message (udp, tcp, tls, sctp, ws, wss)
 
 ==== $pU - User in P-Preferred-Identity header URI ====
 
