@@ -77,6 +77,7 @@
   * new module parameter: workerq_length_threshold_percentage
   * added custom AVP to transport Call-ID in diameter request
   * added new counter(stat) for worker queue lenght - this will give an indication that workers are not keeping up with load if it gets too big
+  * added stickiness to loadbalancing of diameter peers
 
 ==== cdpavp ====
 
@@ -101,7 +102,8 @@
 
 ==== db_text ====
 
-  *  added affected rows capability
+  * added affected rows capability
+  * support for OP_NEQ
 
 ==== dialog ====
 
@@ -126,10 +128,15 @@
   * new function ds_list_exist() to check if a dispatcher set exists
   * added per gateway and global send socket configuration
 
+==== geoip ====
+
+  * return continent id via contid attribute
+
 ==== ims_charging ====
 
   * added realtime DB support for Ro sessions
   * added support for trunk ID in Ro CCR
+  * added access-network-information data to CCR - allows OCS to know location of UE when charge was made
 
 ==== ims_icscf ====
 
@@ -153,6 +160,7 @@
   * Rx_reg - use received IP for framed_ip_address AVP
   * Rx_AAR - new parameters that let you set sub-id and sub-id-type
   * new parameter cdp_event_list_size_threshold
+  * added stats framework and basic stats
 
 ==== ims_usrloc_pcscf ====
 
@@ -166,10 +174,12 @@
 ==== jsonrpc-s ====
 
   * support to receive RPC commands via FIFO file
+    * JSON-RPC commands can be sent now via a FIFO file, as alternative to (or together with) HTTP/S
 
 ==== nathelper ====
 
   * add append_sdp_oldmediaip parameter
+  * use always contact to build ruri and received field if available to send the ping
 
 ==== ndb_redis ====
 
@@ -188,6 +198,17 @@
   * added min_expires_action parameter - action to take when min_expires > 0, possible values are:
     * 1 - RC compliant, return "423 Interval Too Brief"
     * 2 - force min_expires in the subscription
+  * option to set priority for presentity documents
+    * xavp_cfg - new parameter to specify the name of xavp use to store attributes for publish processing
+    * priority can be set inside xavp_cfg with $xavp(xavp_cfg=>priority)
+    * priority is stored in a new column inside database table presentity for each publish that has the xavp set
+    * retrieve_order - new parameter to specify the order to retrieve the records from database. Default value is 0 (retrieve by received_time like so far). If set to 1, retrieve by priority value
+    * if xavp_cfg parameter is set but priority field inside it is not, then inside the database is stored a value based on timestamp so the newest records will have a higher value, preserving the old behaviour even the retrieve_order=1
+  * added sip_uri_match module parameter
+    * 0 - case sensitive (default)
+    * 1 - case insensitive
+  * added $subs(uri) - retrieve subscription uri, useful when handling subscribe updates
+
 
 ==== pua ====
 
@@ -213,6 +234,13 @@
 
   * add optional check for local path during lookup()
     * when performing a lookup the Path (if present) is evaluated and if the first hop is local we skip it to avoid looping
+  * add optional params to registered function
+    * 3rd parameter as flag is used to optionally restrict contacts when searching values are:
+      * 1 - match_callid
+      * 2 - match_received
+      * 3 - match_contact
+    * 4th parameter as flag to optionally perform action on positive match values are:
+      * 1 - set xavp_rcd with value from matched contact
 
 ==== rr ====
 
@@ -231,6 +259,7 @@
    * new ''write_sdp_pv'' parameter, to return the new SDP in a $var() or $avp() instead of message body
    * new modparam force_send_interface
    * rtp_inst_pvar: pseudo variable to store the chosen RTP engine address
+   * added queried_nodes_limit parameter - configure the total number of nodes inside a set to be tried before giving up selecting a rtpengine
 
 ==== sdpops ====
 
@@ -248,6 +277,11 @@
 
   * options to set TLS versions lower limit
     * example: if method is set to TLSv1.1+, then the connection must be TLSv1.1 or newer
+  * reintroduced server side SNI support
+  * added server_name to module parameter
+  * set SNI for outbound connections via xavp
+  * new parameter: xavp_cfg to set the name of the xavp that holds attributes for tls connections
+    * server_name attribute can be used to specify SNI for outbound connections
 
 ==== tm ====
 
@@ -262,10 +296,19 @@
 
   * new MI and RPC commands
 
+==== uac ====
+
+  * counters for active, disabled and total number of registrations
+
+==== userblacklist ====
+
+  * adding new fifo commands
+    * dump_blacklist, check_blacklist, check_whitelist, check_userblacklist, check_userwhitelist commands
+
 ==== usrloc ====
 
-  * new parameter: ''close_expired_tcp''. When set to 1, usrloc will close the corresponding TCP connection for expired entries.
-
+  * new parameter: ''close_expired_tcp''. When set to 1, usrloc will close the corresponding TCP connection for expired entries
+  * store server_id, connection id and keepalive values for location records
 
 ==== xlog ====
 
@@ -288,6 +331,7 @@
     * default value is 12 (old static value for MAX_BRNACHES)
     * the upper limit is 31, it has to be at least 1
   * preprocessor subst rules are applied to pv names
+  * add support for per-TCP connection lifetime
 
 === TLSF Memory Manager ===
 
