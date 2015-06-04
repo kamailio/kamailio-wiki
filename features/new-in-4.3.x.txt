@@ -178,6 +178,9 @@
    * handle r-uri alias parameter for local generated requests within a dialog
    * default value for failure_reply_mode set to 3 - discard previous replies if a new serial forking step is done
 
+==== tmx ====
+
+  * $T_branch(uri) - return uri of the branch when processing a reply in tm onreply_route
 ==== tsilo ====
 
   * new MI and RPC commands
