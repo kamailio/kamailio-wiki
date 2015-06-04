@@ -66,13 +66,25 @@
     * sr.tm.t_next_contatcs
     * sr.tm.t_on_branch_failure
 
+==== auth_radius ====
+
+  * added modparam radius_avps_mode parameter (int, true if not null)
+  * reading all RADIUS AV-pairs to kamailio avp (not only SIP-AVP, if radius_avps_mode set to true)
+
 ==== cdp ====
 
   * added support for incoming and outgoing trunk-group AVPs
+  * new module parameter: workerq_length_threshold_percentage
+  * added custom AVP to transport Call-ID in diameter request
+  * added new counter(stat) for worker queue lenght - this will give an indication that workers are not keeping up with load if it gets too big
 
 ==== cdpavp ====
 
   * added support for incoming and outgoing trunk-group AVPs
+
+==== cfgutils ====
+
+  * rpc commands for gflags management
 
 ==== cnxcc ====
 
@@ -82,6 +94,22 @@
 
   * added parameter to change affected rows value for UPDATE queries
     * when enabled will return the number of matched/foudn rows as opposed to the number of updated rows
+
+==== db_postgres ====
+
+  * new module parameters "timeout" and "tcp_keepalive"
+
+==== db_text ====
+
+  *  added affected rows capability
+
+==== dialog ====
+
+  * option to add custom headers for local requests to callee
+
+==== dialog_ng ====
+
+  * added support for active and early dialog stats
 
 ==== dialplan ====
 
@@ -107,15 +135,24 @@
 
   * new module param use_preferred_scscf_uri - allows ICSCF to have a preferred S-CSCF is HSS returns a list
 
+==== ims_registrar-pcscf ====
+
+  * use separate process to manage reginfo subscribes and publishes
+  * new pseude-variable to get username of Contact that was used during registration
+
 ==== ims_registrar_scscf ====
 
   * use dedicated process to send notifies
   * new parameter user_data_always - if set S-CSCF always requests user data from HSS
   * new mod_param subscription_expires_range - if set this parameter randomises the subscription expiry
+  * new parameter notification_list_size_threshold
+  * new function term_impu_has_contact - use this function to check if an IMPU has a valid contact
 
 ==== ims_qos ====
 
-  * Rx_reg use received IP for framed_ip_address AVP
+  * Rx_reg - use received IP for framed_ip_address AVP
+  * Rx_AAR - new parameters that let you set sub-id and sub-id-type
+  * new parameter cdp_event_list_size_threshold
 
 ==== ims_usrloc_pcscf ====
 
@@ -130,15 +167,37 @@
 
   * support to receive RPC commands via FIFO file
 
+==== nathelper ====
+
+  * add append_sdp_oldmediaip parameter
+
 ==== ndb_redis ====
 
   * Redis authentication is now supported:
 
 	modparam("ndb_redis", "server", "name=srvX;addr=127.0.0.2;port=6379;db=4;pass=mypassword")
 
+==== pipelimit ====
+
+  * take in consideration number of cpus for load
+
+==== presence ====
+
+  * configurable matching criteria to remove subscriptions from memory
+  * added min_expires parameter
+  * added min_expires_action parameter - action to take when min_expires > 0, possible values are:
+    * 1 - RC compliant, return "423 Interval Too Brief"
+    * 2 - force min_expires in the subscription
+
 ==== pua ====
 
   * added outbound_proxy for publishing info
+  * new parameter db_table_lock_write: enable (=1) or disable (=0) the locks for table during an transaction
+
+==== pua_dialoginfo ====
+
+  * load dialogs for dialoginfo event upon restart
+  * store pubruri for caller and callee in dlg vars
 
 ==== pv ====
 
@@ -149,6 +208,11 @@
   * $vz(name) aliased to $var(name)
   * $sut - new variable that returns full uri for source address
   * added 7Bit encoding/decoding transformations
+
+==== registrar ====
+
+  * add optional check for local path during lookup()
+    * when performing a lookup the Path (if present) is evaluated and if the first hop is local we skip it to avoid looping
 
 ==== rr ====
 
@@ -165,12 +229,25 @@
    * rtpengine_tout is now rtpengine_tout_ms
        * rtpengine tout param is now expressed in milliseconds and renamed
    * new ''write_sdp_pv'' parameter, to return the new SDP in a $var() or $avp() instead of message body
+   * new modparam force_send_interface
+   * rtp_inst_pvar: pseudo variable to store the chosen RTP engine address
 
 ==== sdpops ====
 
   * new function sdp_with_active_media
     * return true of the SDP has 'media=type ...' line and the media is active.
     * active media means the port is non-zero and the direction is not "inactive"
+
+==== siputils ====
+
+  * new function is_tel_number(val)
+    * returns true if the parameter is a telephone number (optional leading + followed by digits)
+  * new function is_numeric(val)
+
+==== tls ====
+
+  * options to set TLS versions lower limit
+    * example: if method is set to TLSv1.1+, then the connection must be TLSv1.1 or newer
 
 ==== tm ====
 
@@ -196,7 +273,6 @@
     * same as xlog(level, message), fitering on methods
   * new parameter methods_filter - a bitmask with internal sip method ids to be skipped from printing logs. Default -1 (skip all)
   * parameter can be set at runtime via cfg reload framework kamcmd cfg.set_now_int xlog methods_filter 15
-  * alternative implementation of FS#81
 
 ===== New in Core =====
 
@@ -211,6 +287,7 @@
     * the maximum number of uac branches can be set via config
     * default value is 12 (old static value for MAX_BRNACHES)
     * the upper limit is 31, it has to be at least 1
+  * preprocessor subst rules are applied to pv names
 
 === TLSF Memory Manager ===
 
