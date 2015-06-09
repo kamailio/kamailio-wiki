@@ -893,6 +893,76 @@ Store and retrieve custom variable for current processed dialog.
 
 The 'key' can be any string.
 
+===== Erlang module Pseudo-Variables =====
+
+==== Erlang pseudo-variable attributes ===
+
+* type - get variable type. Possible types are: atom, integer, list, string, tuple, pid and ref.
+
+* length - get length of list or tuple.
+
+* format - prints a term, in clear text. It tries to resemble the term printing in the Erlang shell.
+
+==== $erl_atom(name) ====
+//$erl_atom(name)// pseudo variable allows create analog to Erlang atom data type.
+Erlang atom is a literal, a constant with name. Formatted output pseudo variable
+atom could be enclosed in single quotes (') if it does not begin with a 
+lower-case letter or if it contains other characters than alphanumeric characters,
+underscore (_), or @.
+
+Example:
+
+<code c>
+$erl_atom(A) = "node@host.tld";
+
+xlogl("L_DEBUG","$$erl_atom(A): $erl_atom(A=>format)\n");
+</code>
+
+==== $erl_list(name) ====
+Compound data type with a variable number of terms. Formally, a list is either
+the empty list [] or consists of one or more elements.
+
+Example:
+
+<code c>
+$erl_atom(E) = "example";
+$erl_list(L) = "list";
+$erl_list(L) = "of";
+$erl_list(L) = $erl_atom(E);
+
+xlogl("L_DEBUG","length(L): $erl_list(L=>length), format(L): $erl_list(L=>format)\n");
+
+# empty list
+$erl_tuple(E[*]) = $null;
+</code>
+
+==== $erl_tuple(name) ====
+From the Erlang point of view the tuple compound data type with a fixed number
+of terms. The module implementation of tuple has the same behavior as the list.
+
+Example:
+
+<code c>
+$erl_atom(e) = "error";
+
+$erl_tuple(T) = "badrpc";
+$erl_tuple(T) = $erl_atom(e);
+
+xlogl("L_DEBUG","length(T): $erl_tuple(T=>length), format(T): $erl_tuple(T=>format)\n");
+</code>
+
+==== $erl_pid(name) ====
+Holds Eralng process identifier. Provides access to Erlang PID value and could
+be used in send message.
+
+==== $erl_ref(name) ====
+Holds Erlang reference. Provides access to reference value and could be used in
+send message.
+
+==== $erl_xbuff(name) ====
+Generic pseudo variable to acts as other pseudo variables exported from Erlang
+module.
+
 ===== HTable module Pseudo-Variables =====
 
 ==== $sht(htable=>key) ====
