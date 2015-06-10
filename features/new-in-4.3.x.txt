@@ -420,6 +420,7 @@
 
 ==== Default Config ====
 
+  * parameters with the paths to fifo and unixsocket control file are pointing to /var/run/kamailio/
 ===== Tools =====
 
 ==== Kamctl ====
