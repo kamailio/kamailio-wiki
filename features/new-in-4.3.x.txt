@@ -59,12 +59,17 @@
 
 ===== New in Old Modules =====
 
+==== acc ====
+
+   * new parameter cdr_on_failed to control writing cds for failed dialogs
+
 ==== app_lua ====
 
   * exported additional tm functions
     * sr.tm.t_load_contacts
     * sr.tm.t_next_contatcs
     * sr.tm.t_on_branch_failure
+  * exported the APIs from uac and ndb_mongodb modules
 
 ==== auth_radius ====
 
@@ -91,10 +96,15 @@
 
   * added Redis support for distributed cnxcc nodes
 
+==== ctl ====
+
+  * default path for ctl socket file is: /var/run/kamailio/kamailio_ctl
+
 ==== db_mysql ====
 
   * added parameter to change affected rows value for UPDATE queries
     * when enabled will return the number of matched/foudn rows as opposed to the number of updated rows
+  * set back tick as quoting char for table and column names
 
 ==== db_postgres ====
 
@@ -104,10 +114,12 @@
 
   * added affected rows capability
   * support for OP_NEQ
+  * simple raw query support for select operation
 
 ==== dialog ====
 
   * option to add custom headers for local requests to callee
+  * don't send keepalive if dialog not in confirmed state
 
 ==== dialog_ng ====
 
@@ -128,6 +140,12 @@
   * new function ds_list_exist() to check if a dispatcher set exists
   * added per gateway and global send socket configuration
 
+==== dmq ====
+
+  * resolve multiple IPv4/IPv6 addresses for a single notification address    
+    * optionally enabled by new parameter "multi_notify"
+    * includes addresses from DNS SRV records, A and AAAA records
+
 ==== geoip ====
 
   * return continent id via contid attribute
@@ -137,6 +155,7 @@
   * added realtime DB support for Ro sessions
   * added support for trunk ID in Ro CCR
   * added access-network-information data to CCR - allows OCS to know location of UE when charge was made
+  * added extra statistic: replies received for CCRs
 
 ==== ims_icscf ====
 
@@ -146,6 +165,7 @@
 
   * use separate process to manage reginfo subscribes and publishes
   * new pseude-variable to get username of Contact that was used during registration
+  * added optinal extra parameter for lookup_transport - allows avp,pv,etc to be used as URI in search for lookup_transport
 
 ==== ims_registrar_scscf ====
 
@@ -154,6 +174,7 @@
   * new mod_param subscription_expires_range - if set this parameter randomises the subscription expiry
   * new parameter notification_list_size_threshold
   * new function term_impu_has_contact - use this function to check if an IMPU has a valid contact
+  * added support to receive RTR on Cx/Dx interface
 
 ==== ims_qos ====
 
@@ -161,6 +182,7 @@
   * Rx_AAR - new parameters that let you set sub-id and sub-id-type
   * new parameter cdp_event_list_size_threshold
   * added stats framework and basic stats
+  * added new statistic aar_replies_received
 
 ==== ims_usrloc_pcscf ====
 
@@ -171,21 +193,41 @@
   * added database support for subscriptions
   * callback when contact is deleted/removed
 
+==== ipops ====
+
+  * added function to perform dns srv query in config
+  * new config variable $srvquery(key) gives access to result
+
 ==== jsonrpc-s ====
 
   * support to receive RPC commands via FIFO file
     * JSON-RPC commands can be sent now via a FIFO file, as alternative to (or together with) HTTP/S
+
+==== mi_fifo ====
+
+  * default path to fifo file is /var/run/kamailio/kamailio_fifo
+
+==== msilo ====
+
+  * new parameter skip_notification_flag
+    * set to a flag value to be used to mark when the notification back to sender shouldn't be sent
 
 ==== nathelper ====
 
   * add append_sdp_oldmediaip parameter
   * use always contact to build ruri and received field if available to send the ping
 
+==== ndb_mongodb ====
+
+  * added mongodb_find_one()
+    * find first matching document and return it
+    * faster when knowing it is supposed to be only one, or needing only one
+
 ==== ndb_redis ====
 
   * Redis authentication is now supported:
-
-	modparam("ndb_redis", "server", "name=srvX;addr=127.0.0.2;port=6379;db=4;pass=mypassword")
+    * modparam("ndb_redis", "server", "name=srvX;addr=127.0.0.2;port=6379;db=4;pass=mypassword")
+  * optionally allow starting without a connection to Redis server
 
 ==== pipelimit ====
 
@@ -229,6 +271,23 @@
   * $vz(name) aliased to $var(name)
   * $sut - new variable that returns full uri for source address
   * added 7Bit encoding/decoding transformations
+  * new function xavp_params_explode(p, x)
+    * convert a string formatted as SIP params in xavp attribute
+    * e.g., xavp_params_explode("a=b;c=d;e=d", "x") results in:
+<code c>
+      $xavp(x=>a) = "b";
+      $xavp(x=>c) = "d";
+      $xavp(x=>e) = "f";
+</code>
+  * new config var - $sbranch(key)
+    * a static branch structure that can be used for config operations
+    * the key can be like for $branch(key)
+    * the static branch is not used for outbound routing, it is just a local container
+  * functions to manage ruri and branches using $sbranch(key)
+    * sbranch_set_ruri() -- use the $sbranch(key) attributes to update first branch fields (corresponding to r-uri)
+    * sbranch_append() -- use the $sbranch(key) attributes to append a branch (alternative to append_branch() which is not affecting r-uri branch)
+    * sbranch_reset() -- reset the attributes of $sbranch(key)
+
 
 ==== registrar ====
 
@@ -260,6 +319,7 @@
    * new modparam force_send_interface
    * rtp_inst_pvar: pseudo variable to store the chosen RTP engine address
    * added queried_nodes_limit parameter - configure the total number of nodes inside a set to be tried before giving up selecting a rtpengine
+   * support for IPv6 force_send_interface
 
 ==== sdpops ====
 
@@ -292,13 +352,28 @@
 ==== tmx ====
 
   * $T_branch(uri) - return uri of the branch when processing a reply in tm onreply_route
+
 ==== tsilo ====
 
   * new MI and RPC commands
+  * use use_domain inherited from usrloc
 
 ==== uac ====
 
   * counters for active, disabled and total number of registrations
+  * new fields in $uac_req() to allow execution of event route on reply
+    * attributes:
+      * evroute - set to 1 to enable execution of event route
+      * evparam - generic string value that will be available in event route
+      * evcode - sip reply code, available in event route
+      * evtype - type of the reply - received or local generated (e.g., timeout)
+  * option to execute event_route[uac:reply] for uac_req_send() replies
+    * $uac(evroute) has to be set to 1 and event_route[uac:reply] defined
+      * inside event_route[uac_reply] the $uac_req(...) variable is restored back as before uac_req_send(), having the values from that time, excepting:
+        * $uac_req(evcode) is set to the reply code
+        * $uac_req(evtype) is set to 1 if the reply was received or to 2 if the reply was self generated (e.g., case of transmission timeout)
+    * if $uac_req(evtype)==1, the message processed inside the event route is the received reply, otherwise is a faked request with no relation to the request sent out by uac_req_send()
+
 
 ==== userblacklist ====
 
@@ -309,6 +384,7 @@
 
   * new parameter: ''close_expired_tcp''. When set to 1, usrloc will close the corresponding TCP connection for expired entries
   * store server_id, connection id and keepalive values for location records
+  * fetching of records for nat keepalives in db only is done using new partition column
 
 ==== xlog ====
 
@@ -332,6 +408,7 @@
     * the upper limit is 31, it has to be at least 1
   * preprocessor subst rules are applied to pv names
   * add support for per-TCP connection lifetime
+  * libsrdb1: mechanism to be able to quote table and column names
 
 === TLSF Memory Manager ===
 
