@@ -14,48 +14,48 @@
 ==== auth_xkeys ====
 
   * API-like shared key peer-to-peer authentication using SHA hashing
-  * http://kamailio.org/docs/modules/devel/modules/auth_xkeys.html
+  * http://kamailio.org/docs/modules/4.3.x/modules/auth_xkeys.html
 
 ==== dmq_usrloc ====
 
   * distribute user location (usrloc) records between Kamailio servers using distributed message queue (dmq)
-  * http://kamailio.org/docs/modules/devel/modules/dmq_usrloc.html
+  * http://kamailio.org/docs/modules/4.3.x/modules/dmq_usrloc.html
 
 ==== erlang ====
 
   * connector to Erlang node
-  * http://kamailio.org/docs/modules/devel/modules/erlang.html
+  * http://kamailio.org/docs/modules/4.3.x/modules/erlang.html
 
 ==== geoip2 ====
 
   * GeoIP API for configuration file using the new library with support for IPv6
-  * http://kamailio.org/docs/modules/devel/modules/geoip2.html
+  * http://kamailio.org/docs/modules/4.3.x/modules/geoip2.html
 
 ==== jansson ====
 
   * JSON document management using Jansson library
   * it has support for JSON-PATH
-  * http://kamailio.org/docs/modules/devel/modules/jansson.html
+  * http://kamailio.org/docs/modules/4.3.x/modules/jansson.html
 
 ==== janssonrpc-c ====
 
   * JSON-RPC over netstrings client using Jansson library
-  * http://kamailio.org/docs/modules/devel/modules/janssonrpc-c.html
+  * http://kamailio.org/docs/modules/4.3.x/modules/janssonrpc-c.html
 
 ==== statsd ====
 
   * enables sending data to the statsd framework directly from kamailio.cfg
-  * http://kamailio.org/docs/modules/devel/modules/statsd.html
+  * http://kamailio.org/docs/modules/4.3.x/modules/statsd.html
 
 ==== rtjson ====
 
   * SIP routing based on JSON API
-  * http://kamailio.org/docs/modules/devel/modules/rtjson.html
+  * http://kamailio.org/docs/modules/4.3.x/modules/rtjson.html
 
 ==== tcpops ====
 
   * enables control of the TCP options (such as the keepalive mechanism), on demand, and on a per-socket basis
-  * http://kamailio.org/docs/modules/devel/modules/tcpops.html
+  * http://kamailio.org/docs/modules/4.3.x/modules/tcpops.html
 
 ===== New in Old Modules =====
 
