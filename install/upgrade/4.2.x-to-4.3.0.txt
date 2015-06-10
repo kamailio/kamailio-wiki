@@ -18,6 +18,14 @@ Following tokens are used to mark the changes:
 
 ===== Modules =====
 
+==== ctl ====
+
+  * default path to control unix socket file is now: /var/run/kamailio/kamailio_ctl
+
+==== mi_fifo ====
+
+  * default path to fifo file is now: /var/run/kamailio/kamailio_fifo
+
 ==== rtpengine ====
 
   * rtpengine_tout parameter was replaced by rtpengine_tout_ms (CPM)
