@@ -1,6 +1,6 @@
 ====== Download Sources of Kamailio v4.2.x from GIT Repository ======
 
-Instructions to download sources from GIT repository, specific for stable branch 4.2 (release series v4.1.x).
+Instructions to download sources from GIT repository, specific for stable branch 4.2 (release series v4.2.x).
 
 ===== Kamailio v4.2.x =====
 
