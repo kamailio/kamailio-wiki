@@ -5,7 +5,7 @@ Starting from March 3, 2014 [[http://www.sipwise.com|Sipwise Team]] provides a *
 Sporadically, Debian packages may be available via OpenSuse Build Service (OBS), see details in a dedicated sub-section.
 ===== Status =====
 
-  * Supported Kamailio branches: '' latest stable'' (points to 4.2 now), ''3.3'' , ''4.0'', ''4.1'', ''4.2'', ''devel''
+  * Supported Kamailio branches: '' latest stable'' (points to 4.3 now), ''3.3'' , ''4.0'', ''4.1'', ''4.2'', ''4.3'', ''devel''
   * Supported Distributions:''Debian 6.0 Squeeze'', ''Debian 7.0 Wheezy'', ''Debian 8.0 Jessie'', ''Ubuntu 12.04 Precise'', ''Ubuntu 14.04.1 LTS (Trusty Tahr)''
   * Deprecated Distributions: ''Debian 5.0 Lenny'' (Kamailio 3.3.x, 4.0.x), ''Ubuntu 10.04 Lucid'' (Kamailio 3.3.x, 4.0.x)
   * Archs supported: ''amd64'', ''i386''
@@ -20,6 +20,12 @@ apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xfb40d3e6508ea4c8
 </code>
 
 Then add the repository lines to your ''/etc/apt/sources.list'' file depending on the Kamailio version of your choice:
+
+The list of APT repositories and associated operating systems is also available at:
+
+  * http://deb.kamailio.org
+
+
 ==== Latest Kamailio stable release  ====
 
 
@@ -48,6 +54,38 @@ deb http://deb.kamailio.org/kamailio precise main
 deb-src http://deb.kamailio.org/kamailio precise main
 </code>
 
+==== Latest Kamailio 4.3 release ====
+
+
+* ''Debian Squeeze''
+<code>
+deb http://deb.kamailio.org/kamailio43 squeeze main
+deb-src http://deb.kamailio.org/kamailio43 squeeze main
+</code>
+
+* ''Debian Wheezy''
+<code>
+deb http://deb.kamailio.org/kamailio43 wheezy main
+deb-src http://deb.kamailio.org/kamailio43 wheezy main
+</code>
+
+* ''Debian Jessie''
+<code>
+deb http://deb.kamailio.org/kamailio43 jessie main
+deb-src http://deb.kamailio.org/kamailio43 jessie main
+</code>
+
+* ''Ubuntu Trusty''
+<code>
+deb http://deb.kamailio.org/kamailio43 trusty main
+deb-src http://deb.kamailio.org/kamailio43 trusty main
+</code>
+
+* ''Ubuntu Precise''
+<code>
+deb http://deb.kamailio.org/kamailio43 precise main
+deb-src http://deb.kamailio.org/kamailio43 precise main
+</code>
 
 
 ==== Latest Kamailio 4.2 release ====
@@ -173,8 +211,6 @@ deb-src http://deb.kamailio.org/kamailio33 precise main
 
 
 
-
-
 ====  Kamailio master development ====
 
 * ''Debian Squeeze''
@@ -195,6 +231,71 @@ deb http://deb.kamailio.org/kamailiodev-nightly jessie main
 * ''Ubuntu Precise''
 <code>
 deb http://deb.kamailio.org/kamailiodev-nightly precise main
+</code>
+
+====  Kamailio 4.3 Branch ====
+
+* ''Debian Squeeze''
+<code>
+deb http://deb.kamailio.org/kamailio43-nightly squeeze main
+deb-src http://deb.kamailio.org/kamailio43-nightly squeeze main
+</code>
+
+* ''Debian Wheezy''
+<code>
+deb http://deb.kamailio.org/kamailio43-nightly wheezy main
+deb-src http://deb.kamailio.org/kamailio43-nightly wheezy main
+</code>
+
+* ''Debian Jessie''
+<code>
+deb http://deb.kamailio.org/kamailio43-nightly jessie main
+deb-src http://deb.kamailio.org/kamailio43-nightly jessie main
+</code>
+
+* ''Ubuntu Trusty''
+<code>
+deb http://deb.kamailio.org/kamailio43-nightly trusty main
+deb-src http://deb.kamailio.org/kamailio43-nightly trusty main
+</code>
+
+* ''Ubuntu Precise''
+<code>
+deb http://deb.kamailio.org/kamailio43-nightly precise main
+deb-src http://deb.kamailio.org/kamailio43-nightly precise main
+</code>
+
+
+====  Kamailio 4.2 Branch ====
+
+* ''Debian Squeeze''
+<code>
+deb http://deb.kamailio.org/kamailio42-nightly squeeze main
+deb-src http://deb.kamailio.org/kamailio42-nightly squeeze main
+</code>
+
+* ''Debian Wheezy''
+<code>
+deb http://deb.kamailio.org/kamailio42-nightly wheezy main
+deb-src http://deb.kamailio.org/kamailio42-nightly wheezy main
+</code>
+
+* ''Debian Jessie''
+<code>
+deb http://deb.kamailio.org/kamailio42-nightly jessie main
+deb-src http://deb.kamailio.org/kamailio42-nightly jessie main
+</code>
+
+* ''Ubuntu Trusty''
+<code>
+deb http://deb.kamailio.org/kamailio42-nightly trusty main
+deb-src http://deb.kamailio.org/kamailio42-nightly trusty main
+</code>
+
+* ''Ubuntu Precise''
+<code>
+deb http://deb.kamailio.org/kamailio42-nightly precise main
+deb-src http://deb.kamailio.org/kamailio42-nightly precise main
 </code>
 
 
