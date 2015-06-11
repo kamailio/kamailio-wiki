@@ -301,7 +301,7 @@ If you are asked for SIP_DOMAIN environment variable do one of the following opt
 The maintenance process is very simple right now. You have to be user 'root' and execute following commands:
 
 <code>
-  cd /usr/local/src/kamailio-4.2/kamailio
+  cd /usr/local/src/kamailio-4.3/kamailio
   git pull origin
   make all
   make install
