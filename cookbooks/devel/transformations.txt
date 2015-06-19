@@ -170,6 +170,16 @@ Return escaped string of PV value, changing to '%hexa' the characters that are n
 
 Return unescaped string of PV value, changing '%hexa' to character code. Reverse of above transformation.
 
+==== {s.numeric} ====
+
+Removes all non-numeric parts of string.
+
+Example:
+<code>
+$var(x) = "(040)1234/567-89";
+$(var(x){s.numeric}) => "040123456789" ;
+</code>
+
 ==== {s.tolower} ====
 
 Return string with lower case ASCII letters.
