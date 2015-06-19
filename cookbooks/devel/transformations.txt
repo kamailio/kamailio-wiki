@@ -114,6 +114,16 @@ $var(x) = "12,34,56";
 $(var(x){s.select,-2,,}) => "34"
 </code>
 
+==== {s.numeric} ====
+
+Removes all non-numeric parts of string.
+
+Example:
+<code>
+$var(x) = "(040)1234/567-89";
+$(var(x){s.numeric}) => "040123456789" ;
+</code>
+
 ==== {s.encode.7bit} ====
 
 Return encoding in 7Bit of PV value
