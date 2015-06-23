@@ -613,6 +613,26 @@ $(avp(x)[1]) = $null;
 
 It is R/W variable (you can assign values to it directly in configuration file).
 
+===== $expires(key) - Expires Values =====
+
+Return the min and max of expires value for current SIP message. Contact headers are checked with higher priority, if no expires parameter there, then Expires header is used
+
+If none is found, $null is returned.
+
+Possible 'key' values:
+
+  * $expires(min) - the minimum value for expires
+  * $expires(max) - the maximum value for expires
+
+When there is only one expires value, then min and max return the same.
+
+Example of usage:
+
+<code c>
+if($expires(max)!=$null) {
+    xlog("max expires value is: $expires(max)\n");
+}
+</code>
 ===== $xavp(id) - XAVPs =====
 
 xavp - extended AVP's - are structures that can store multiple values. They work like a stack, much like AVPs, and are attached to SIP transactions. Each xavp has a name and can contain multiple named values, the structure name and the value name are separated by '=>' like $xavp(root=>branch) where "root" is the name of the structure and branch is a named value. To assign a value use
