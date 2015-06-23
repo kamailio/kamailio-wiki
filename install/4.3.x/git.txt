@@ -37,6 +37,7 @@ The following packages are required before proceeding to the next steps.
     * __libxml2__ - apt-get install libxml2-dev
     * __libpcre3__ - apt-get install libpcre3-dev
 
+**Important Note**: starting with version 4.3.0, Kamailio uses the directory **/var/run/kamailio/** for creating FIFO and UnixSocket control files. You have to complete the section related to installation of init.d script for creating /var/run/kamailio even if you plan to start Kamailio manually from command line. The alternative is to set different paths via parameters of **mi_fifo** and **ctl** modules.
 ===== 2. Getting sources from GIT =====
 
 First of all, you have to create a directory on the file system where the sources will be stored. 
