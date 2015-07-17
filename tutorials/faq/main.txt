@@ -129,6 +129,27 @@ make modules include_modules="db_mysql"
 
 make install include_modules="db_mysql" 
 </code>
+
+??? How to compile only one module?
+
+!!! First be sure that the core compiles fine with the command:
+
+<code>
+make 
+</code>
+
+To compile a single module, use:
+
+<code>
+make modules modules=modules/modname
+</code>
+
+Replace modname with the real name of the module you want to compile -- for example, compiling only tls module:
+
+<code>
+make modules modules=modules/tls
+</code>
+
 =?==== SIP Message Processing =====
 
 ??? Why changes made to headers or body are not visible immediately?
@@ -297,7 +318,7 @@ If the question is related to commercial aspects of Kamailio, then email to:
 ??? Where I can report an issue?
 
 !!! Use the bug tracker available at:
-  * http://sip-router.org/tracker
+  * https://github.com/kamailio/kamailio/issues
 
 ??? Where can I buy commercial support?
 
