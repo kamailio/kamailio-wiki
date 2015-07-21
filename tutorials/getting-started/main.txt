@@ -1,0 +1,33 @@
+====== Getting Started with Kamailio ======
+
+A collection of guidelines and useful links to smoothen the understanding and deploying of Kamailio for newbies.
+
+===== Prerequisites =====
+
+==== SIP ====
+
+==== Logical Programming ====
+
+==== Linux/Unix ====
+
+===== Initial Installation =====
+
+==== From Sources ====
+
+==== Debian ====
+
+==== CentoOS ====
+
+===== Default Configuration File =====
+
+===== Typical Use Cases =====
+
+==== VoIP Provider ====
+
+==== Load Balancing ====
+
+==== Least Cost Routing ====
+
+===== Useful Resources =====
+
+
