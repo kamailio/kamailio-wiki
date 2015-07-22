@@ -91,6 +91,13 @@ especially the ones for terminal if the server is remote, is quite obvious
 
 ==== From Sources ====
 
+Install current stable version:
+
+  * [[install:4.3.x:git|Install Kamailio v4.3.x From GIT]]
+
+Install development version (master branch):
+
+  * [[install:devel:git|Install Kamailio Devel Version From GIT]]
 ==== Debian ====
 
 ==== CentoOS ====
