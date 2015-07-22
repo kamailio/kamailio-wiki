@@ -45,7 +45,9 @@ doc/sip/. It is docbook xml format, the html version can be read online at:
 
 Other online SIP learning resources:
 
-  * http://www.siptutorial.net
+  * [[http://www.siptutorial.net|siptutorial.net]]
+  * [[http://www.tutorialspoint.com/session_initiation_protocol/index.htm|tutorialspoint.com]]
+  * [[http://www.voip-info.org/wiki/view/SIP|voip-info.org]]
 
 SIP Books:
 
