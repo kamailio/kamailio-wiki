@@ -1,14 +1,87 @@
 ====== Getting Started with Kamailio ======
 
-A collection of guidelines and useful links to smoothen the understanding and deploying of Kamailio for newbies.
+A collection of guidelines and useful links to smoothen the understanding and
+deploying of Kamailio for newbies.
+
+Feel free to add new content here.
+
+The first version of the tutorial was written for Kamailio v4.3.x.
 
 ===== Prerequisites =====
 
 ==== SIP ====
 
+The initial name of the project was SIP Express Router (aka SER) and that says
+it all: Kamailio is a SIP router at the core. It means that it works at the
+lower layer of SIP packets, routing each and every SIP message that it
+receives based on the policies specified in the configuration file.
+
+It is important to understand that it is not a telephony engine at its core, a
+VoIP call is seen as a sequence of SIP messages sharing the same attributes
+for caller, callee and signaling tokens such as Call-ID, From tag and To tag.
+
+Given the above, a good understanding of SIP is critical to get faster
+familiar with Kamailio, especially with its configuration file routing
+rules.
+
+Session Initiation Protocol (SIP) is specified by IETF (www.ietf.org), with
+the core specification in the RFC 3261:
+
+  * https://tools.ietf.org/html/rfc3261
+
+Many other RFCs add to the core specifications, look at what is published by
+the IETF Working Groups for SIP and SIMPLE.
+
+IETF RFC documents are a bit dry to read, with particular language suitable
+for technical specifications, therefore trying to learn SIP directly from RFCs
+could be not that easy. Fortunately there are plenty of free online resources,
+tutorials or blogs, as well as books, that can help understanding SIP faster.
+
+A SIP Introduction tutorial was written by SER/Kamailio developers quite some
+time ago. It is available inside source tree of Kamailio, in the folder
+doc/sip/. It is docbook xml format, the html version can be read online at:
+
+  * http://www.kamailio.org/docs/tutorials/sip-introduction/
+
+Other online SIP learning resources:
+
+  * http://www.siptutorial.net
+
+SIP Books:
+
+  * SIP Beyond VoIP
+
 ==== Logical Programming ====
 
+Kamailio configuration file is not just a set of 'parameter=value' line. It
+has active components for runtime, named routing blocks. A routing block is a
+group of actions that specify what should be done for each SIP message.
+
+The actions are exported by Kamailio core or modules and are like functions
+exported by a library. Those actions can be combined in conditional statements
+like IF and SWITCH or in loops like WHILE. Modularity is provided by the
+ability to execute a routing block from another routing block.
+
+Therefore, understanding logical programming is important as well. Be sure you
+are familiar with concepts such as functions, variables, conditions or loops.
+
+IF, SWITCH and WHILE are pretty similar to other imperative languages such as
+C, Perl, Python or Java. Even Shell/Bash programming is useful to get into
+Kamailio configuration structure.
+
 ==== Linux/Unix ====
+
+Being developed for Unix/Linux, managing a Kamailio instance, from
+installation to runtime and maintenance involves operations specific for Linux
+administration, like running command line applications from terminal,
+configure network and firewall to allow sending/receiving SIP and RTP packets,
+a.s.o.
+
+Troubleshooting Kamailio and SIP requires knowledge of various tools for
+reading and searching log files (e.g., grep, awk), sniffing the network (e.g.,
+ngrep, tcpdump, wireshark). Of course, knowing to work with text editor,
+especially the ones for terminal if the server is remote, is quite obvious
+(e.g., vim, joe, nano, pico, emacs, etc.).
 
 ===== Initial Installation =====
 
@@ -18,9 +91,25 @@ A collection of guidelines and useful links to smoothen the understanding and de
 
 ==== CentoOS ====
 
-===== Default Configuration File =====
+===== Configuration File =====
+
+==== Overview ====
+
+==== Default Configuration File ====
+
+===== Tools =====
+
+==== kamctl ====
+
+==== kamcmd ====
+
+==== siremis ====
+
+==== kamcli ====
 
 ===== Typical Use Cases =====
+
+==== NAT Traversal ====
 
 ==== VoIP Provider ====
 
@@ -28,6 +117,20 @@ A collection of guidelines and useful links to smoothen the understanding and de
 
 ==== Least Cost Routing ====
 
+==== IMS/VoLTE ====
+
+==== Instant Messaging and Presence ====
+
+==== WebRTC ====
+
 ===== Useful Resources =====
 
+==== Books ====
+
+  * SIP Routing with Kamailio
+
+==== Online ====
+
+  * Kamailio Devel Tutorial
+  * SER Getting Started
 
