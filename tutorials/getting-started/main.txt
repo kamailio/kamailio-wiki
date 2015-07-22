@@ -1,4 +1,4 @@
-====== Getting Started with Kamailio ======
+====== Kamailio - Getting Started Guide ======
 
 A collection of guidelines and useful links to smoothen the understanding and
 deploying of Kamailio for newbies.
@@ -136,12 +136,12 @@ Install development version (master branch):
 
 ===== Useful Resources =====
 
-==== Books ====
+==== Kamailio Books ====
 
-  * SIP Routing with Kamailio
+  * [[http://www.asipto.com/sw/kamailio-admin-book/|SIP Routing with Kamailio]]
 
-==== Online ====
+==== Kamailio Online Tutorials ====
 
-  * Kamailio Devel Tutorial
-  * SER Getting Started
+  * [[http://www.asipto.com/pub/kamailio-devel-guide/|Kamailio Devel Tutorial]]
+  * [[http://kamailio.org/docs/ser-getting-started/SER-GettingStarted.pdf|SER Getting Started]]
 
