@@ -49,8 +49,10 @@ Other online SIP learning resources:
 
 SIP Books:
 
-  * SIP Beyond VoIP
-
+  * [[http://www.amazon.com/SIP-Beyond-VoIP-Communications-Revolution/dp/0974813001|SIP Beyond VoIP]]
+  * [[http://www.amazon.com/Understanding-Session-Initiation-Protocol-Telecommunications-ebook/dp/B003E2UQ8M/|Understanding the Session Initiation Protocol]]
+  * [[http://www.amazon.com/SIP-Demystified-Gonzalo-Camarillo-ebook/dp/B000T8OAHC/|SIP Demystified]]
+  * [[http://www.amazon.com/Internet-Communications-Using-SIP-Delivering-ebook/dp/B008O5JR20/|Internet Communications Using SIP]]
 ==== Logical Programming ====
 
 Kamailio configuration file is not just a set of 'parameter=value' line. It
