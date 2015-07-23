@@ -178,11 +178,46 @@ See more at:
 
 ==== NAT Traversal ====
 
+The default **kamailio.cfg** comes with NAT traversal support, relying on RTPProxy for RTP relaying. The NAT traversal support has to be enabled by defining WITH_NAT:
+
+<code c>
+#!define WITH_NAT
+</code>
+
 ==== VoIP Provider ====
+
+The default **kamailio.cfg** is practically an implementation of simple SIP operator services:
+
+  * user authentication
+  * IP authorization
+  * accounting
+  * registrar and location services
+  * attacks detection and blocking (anti-flood protection)
+  * NAT travesal
+  * short dialing on server
+  * multiple identities (aliases) for subscribers
+  * multi-domain support
+  * routing to a PSTN gateway
+  * routing to a voicemail server
+  * TLS encryption
+  * instant messaging (pager mode with MESSAGE requests)
+  * presence services
+
+Not all the above features are enabled by default -- read the comments at the top of **kamailio.cfg** in order to find what tokens must be defined.
 
 ==== Load Balancing ====
 
+See dispatcher module:
+
+  * http://kamailio.org/docs/modules/stable/modules/dispatcher.html
+
 ==== Least Cost Routing ====
+
+See the modules:
+
+  * http://kamailio.org/docs/modules/stable/modules/lcr.html
+  * http://kamailio.org/docs/modules/stable/modules/carrierroute.html
+  * http://kamailio.org/docs/modules/stable/modules/drouting.html
 
 ==== IMS/VoLTE ====
 
@@ -200,4 +235,3 @@ See more at:
 
   * [[http://www.asipto.com/pub/kamailio-devel-guide/|Kamailio Devel Tutorial]]
   * [[http://kamailio.org/docs/ser-getting-started/SER-GettingStarted.pdf|SER Getting Started]]
-
