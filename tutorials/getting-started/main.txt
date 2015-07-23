@@ -136,11 +136,43 @@ apt-get install kamailio-mysql-modules kamailio-tls-modules
 
 ==== kamctl ====
 
+Kamctl is part of Kamailio project (in the same source tree) and installed by default.
+
+It has a configuration file named **kamctlrc**, located in the same folder with **kamailio.cfg**. You have to edit it to set your SIP domain, the database engine, username/password/... to connect to database, etc.
+
+This is the tool to manage kamailio from command line, providing lots of operations, such as adding/removing/updating SIP users, controlling the ACL for users, managing the records for LCR or load balancing, viewing registered users and internal statistics, etc.
+
+When needed to interact with Kamailio, it does it via FIFO file created by **mi_fifo** module. Operations to the database are done by connecting directly to the database server.
+
+==== kamdbctl ====
+
+Kamctl is part of Kamailio project (in the same source tree) and installed by default.
+
+It uses the same configuration file like **kamctl**, respectively the **kamctlrc**.
+
+The tool can be used to create and manage the database structure needed by Kamailio, therefore it should be immediately after Kamailio installation, in case you plan to run Kamailio with a database backend.
+
+It is not used for managing the records inside the database tables, just for database structure and access to the database (e.g., granting/revoking access to database server). For managing the records inside database table, **kamctl** is the tool.
+
 ==== kamcmd ====
+
+Kamctl is part of Kamailio project (in the same source tree) and installed by default.
+
+This is an application that can send RPC commands to Kamailio from command line. It requires that the **ctl** module is loaded by Kamailio.
 
 ==== siremis ====
 
+It is a web management interface for Kamailio, written in PHP -- more at:
+
+  * http://www.siremis.org
+
 ==== kamcli ====
+
+It is a command line application write in Python, more or less an alternative to **kamctl**. It has a modular architecture, allowing to extend it by writing new plugins.
+
+See more at:
+
+  * https://github.com/asipto/kamcli
 
 ===== Typical Use Cases =====
 
