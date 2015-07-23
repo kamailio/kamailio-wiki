@@ -100,6 +100,30 @@ Install development version (master branch):
   * [[install:devel:git|Install Kamailio Devel Version From GIT]]
 ==== Debian ====
 
+Kamailio is part of latest official stable Debian distribution (and its Ubuntu cousin), but might be an older version.
+
+To use most recent Kamailio release, you can use the APT repositories hosted by Kamailio project, see details at:
+
+  * [[packages:debs|KAMAILIO DEBS: Debian - Ubuntu]]
+
+Then, the typical way of installing packages can be used:
+
+<code>
+apt-get update
+apt-get install kamailio
+</code>
+
+Various modules are packaged separately, you can search the repository to see what is available:
+
+<code>
+apt-cache search kamailio
+</code>
+
+Install the other packages of the modules you may need, like mysql or tls modules -- they can be installed with:
+
+<code>
+apt-get install kamailio-mysql-modules kamailio-tls-modules
+</code>
 ==== CentoOS ====
 
 ===== Configuration File =====
