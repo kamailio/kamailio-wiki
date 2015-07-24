@@ -7,6 +7,10 @@ Feel free to add new content here.
 
 The first version of the tutorial was written for Kamailio v4.3.x.
 
+It is recommended that you read first all the content of this tutorial and
+then start installing Kamailio, because some more relevant information might be
+found later for specific use cases.
+
 ===== Prerequisites =====
 
 ==== SIP ====
@@ -100,11 +104,11 @@ Install development version (master branch):
   * [[install:devel:git|Install Kamailio Devel Version From GIT]]
 ==== Debian ====
 
-Kamailio is part of latest official stable Debian distribution (and its Ubuntu cousin), but might be an older version.
+Kamailio is part of latest official stable Debian distributions (and its Ubuntu cousin), but might be an older version.
 
 To use most recent Kamailio release, you can use the APT repositories hosted by Kamailio project, see details at:
 
-  * [[packages:debs|KAMAILIO DEBS: Debian - Ubuntu]]
+  * [[packages:debs|KAMAILIO DEBS Repositories]]
 
 Then, the typical way of installing packages can be used:
 
@@ -124,13 +128,103 @@ Install the other packages of the modules you may need, like mysql or tls module
 <code>
 apt-get install kamailio-mysql-modules kamailio-tls-modules
 </code>
+
 ==== CentoOS ====
+
+Kamailio RPMs are available for several distributions, such as RedHat
+Enterprise, CentOS, OpenSuse and Fedora. For more details, see:
+
+  * [[packages:rpms|KAMAILIO RPMS Repositories]]
+
+You can add them to YUM configuration and then install Kamailio with usual yum
+commands:
+
+<code>
+yum install kamailio
+...
+yum install kamailio-mysql-modules kamailio-tls-modules
+</code>
 
 ===== Configuration File =====
 
 ==== Overview ====
 
+If you installed from sources, then the configuration file is located at:
+
+  * /usr/local/etc/kamailio/kamailio.cfg
+
+If you installed from packages, then the configuration file is located at:
+
+  * /etc/kamailio/kamailio.cfg
+
 ==== Default Configuration File ====
+
+The default configuration file is trying to provide the features for a simple
+VoIP (telephony) provider.
+
+
+  * user authentication
+  * IP authorization
+  * accounting
+  * registrar and location services
+  * attacks detection and blocking (anti-flood protection)
+  * NAT traversal
+  * short dialing on server
+  * multiple identities (aliases) for subscribers
+  * multi-domain support
+  * routing to a PSTN gateway
+  * routing to a voicemail server
+  * TLS encryption
+  * instant messaging (pager mode with MESSAGE requests)
+  * presence services
+
+Not all the above features are enabled by default -- read the comments at the
+top of **kamailio.cfg** in order to find what tokens must be defined.
+
+=== Enabling User Authentication ===
+
+Initial installation doesn't ask users for authentication.
+Enabling that means defining WITH_MYSQL and WITH_AUTH --
+that means adding the next two lines after the first line (after the one with
+#!KAMAILIO).
+
+<code c>
+#!define WITH_MYSQL
+#!define WITH_AUTH
+</code>
+
+Obviously, for the above to really work, you need to install MySQL server and
+create the database required by Kamailio (see **kamdbctl** tool). You need
+also to add subscribers (username/password to subscriber database table). You
+can use **kamctl** tool for managing subscriber records.
+
+
+=== Enabling Persistent Location ===
+
+Initial installation doesn't have persistent location enabled, meaning that if
+you restart Kamailio, the registration records are lost. If you enable it,
+registration records are saved to database and reload at restart.
+
+To enable persistent location records, you have to define WITH_USRLOCDB -- add
+the next line in **kamailio.org** after those line you added in the previous
+section:
+
+<code c>
+#!define WITH_USRLOCDB
+</code>
+
+=== Enabling NAT Traversal ===
+
+The default **kamailio.cfg** comes with NAT traversal support, relying on
+RTPProxy for RTP relaying. The NAT traversal support has to be enabled by
+defining WITH_NAT:
+
+<code c>
+#!define WITH_NAT
+</code>
+
+You have to install RTPProxy applicationand configure it to use the same
+control socket as in **kamailio.cfg** parameter for **rtpproxy** module.
 
 ===== Tools =====
 
@@ -176,34 +270,11 @@ See more at:
 
 ===== Typical Use Cases =====
 
-==== NAT Traversal ====
-
-The default **kamailio.cfg** comes with NAT traversal support, relying on RTPProxy for RTP relaying. The NAT traversal support has to be enabled by defining WITH_NAT:
-
-<code c>
-#!define WITH_NAT
-</code>
-
 ==== VoIP Provider ====
 
-The default **kamailio.cfg** is practically an implementation of simple SIP operator services:
-
-  * user authentication
-  * IP authorization
-  * accounting
-  * registrar and location services
-  * attacks detection and blocking (anti-flood protection)
-  * NAT travesal
-  * short dialing on server
-  * multiple identities (aliases) for subscribers
-  * multi-domain support
-  * routing to a PSTN gateway
-  * routing to a voicemail server
-  * TLS encryption
-  * instant messaging (pager mode with MESSAGE requests)
-  * presence services
-
-Not all the above features are enabled by default -- read the comments at the top of **kamailio.cfg** in order to find what tokens must be defined.
+The default **kamailio.cfg** is practically an implementation of simple SIP
+operator services. See the section above dedicated to default configuration
+file for more details.
 
 ==== Load Balancing ====
 
@@ -221,9 +292,28 @@ See the modules:
 
 ==== IMS/VoLTE ====
 
+Look at the modules that have the name prefixed with **ims_** or starting with
+**cdp** (the later are for Diameter):
+
+  * http://kamailio.org/docs/modules/stable/
+
+Example of configuration files for different IMS roles (eg., ICSCF, PCSCF,
+SCSCF) are available in the source tree, look inside the sub-directory
+**examples/**.
+
 ==== Instant Messaging and Presence ====
 
+Look at the modules that have the name prefixed with **presence** (presence
+server) or **pua** (presence user agent):
+
+  * http://kamailio.org/docs/modules/stable/
+
+
 ==== WebRTC ====
+
+See the module:
+
+  * http://kamailio.org/docs/modules/stable/modules/websocket.html
 
 ===== Useful Resources =====
 
