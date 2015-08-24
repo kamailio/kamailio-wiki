@@ -75,3 +75,9 @@ See also:
   * http://www.tpope.net/node/106
 
 The above content about commit message format is taken from wiki page [[devel:git-commit-guidelines|GIT Commit Guidelines]] - it is recommended you read that one as well.
+
+===== Further Assistance =====
+
+For any question, do not hesitate to contact other developers via mailing list:
+
+  * **<sr-dev [at] lists.sip-router.org>**
