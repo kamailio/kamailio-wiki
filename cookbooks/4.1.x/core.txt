@@ -2315,7 +2315,7 @@ The message will be forwarded only if there is already an existing connection to
 
   * onreply_route[0] (stateless): equivalent to set_reply_*() (it's better to use set_reply_* though)
 
-  * onreply_route[!=0] (tm): ignored
+  * onreply_route[!=0] <nowiki>(tm)</nowiki>: ignored
 
   * branch_route: affects the current branch only (all messages sent on this branch, like possible retransmissions and CANCELs).
 
