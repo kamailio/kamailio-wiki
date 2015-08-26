@@ -13,6 +13,13 @@
 
 
 ===== New in Old Modules =====
+==== htable ====
+
+  * improved error message when loading from database
+
+==== sipcapture ====
+
+  * insert From URI domain, To URI domain and request URI domain to database
 
 
 ===== New in Core =====
