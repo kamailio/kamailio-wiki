@@ -17,6 +17,9 @@
 
   * improved error message when loading from database
 
+==== pv ====
+
+  * **pv_var_to_xavp** script function to copy $var values to $xavp
 ==== sipcapture ====
 
   * insert From URI domain, To URI domain and request URI domain to database
