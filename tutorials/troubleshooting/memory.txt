@@ -134,6 +134,30 @@ The log file will contain the messages detailing the chunks from memory manager.
 
 For PKG is similar format, just SHM replaced with PKG in messages.
 
+To generate summary report, do:
+
+<code>
+# first set memlog lower than debug
+kamcmd cfg.set_now_int core memlog 1
+
+kamcmd corex.shm_summary
+</code>
+
+The log for f_malloc with debug enabled should look like:
+
+<code>
+20(4082) NOTICE: fm_status: summarizing all alloc'ed. fragments:
+20(4082) NOTICE: fm_status:  count=     1 size=     16640 bytes from <core>: counters.c: counters_prefork_init(207)
+20(4082) NOTICE: fm_status:  count=     1 size=     14560 bytes from debugger: debugger_api.c: dbg_init_pid_list(572)
+20(4082) NOTICE: fm_status:  count=     1 size=      4992 bytes from sl: sl_stats.c: init_sl_stats_child(125)
+20(4082) NOTICE: fm_status:  count=     1 size=       256 bytes from tmx: tmx_pretran.c: tmx_init_pretran_table(90)
+20(4082) NOTICE: fm_status:  count=     1 size=      6656 bytes from tm: t_stats.c: init_tm_stats_child(60)
+20(4082) NOTICE: fm_status:  count=     1 size=      1248 bytes from kex: pkg_stats.c: pkg_proc_stats_init(79)
+20(4082) NOTICE: fm_status:  count=     2 size=        64 bytes from <core>: cfg/cfg_struct.c: cfg_clone_str(130)
+20(4082) NOTICE: fm_status:  count=     1 size=       704 bytes from <core>: cfg/cfg_struct.c: cfg_shmize(217)
+20(4082) NOTICE: fm_status:  count=     3 size=        64 bytes from usrloc: udomain.c: build_stat_name(51)
+
+</code>
 ===== Using GDB =====
 
 GDB, the GNU Debugger, can be used to attach to a Kamailio process and print the details of memory manager chunks from memory.
