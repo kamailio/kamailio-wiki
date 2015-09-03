@@ -112,7 +112,7 @@ kamcmd cfg.set_now_int core mem_dump_pkg _PID_
 
     * for SHM memory:
 <code>
-kamcmd cfg.set_now_int core mem_dump_shm
+kamcmd cfg.set_now_int core mem_dump_shm 1
 </code>
 
 The log file will contain the messages detailing the chunks from memory manager. The ones for SHM should look like:
