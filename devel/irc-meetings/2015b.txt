@@ -40,6 +40,7 @@ Kamailio Development:
 Kamailio Administration:
 
   * RPM packaging and repositories (dcm)
+  * DEB packaging (vseva)
   * backups (dcm)
   * unit tests (dcm)
 
