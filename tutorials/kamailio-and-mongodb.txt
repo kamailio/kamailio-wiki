@@ -65,7 +65,9 @@ Anyhow, if you want, you can create the collections in advance, using:
 <code>
 > db.createCollection("tablename")
 </code>
-===== DB URL in Kamailio Config =====
+===== Kamailio Config =====
+
+==== DB URL ====
 
 The corresponding database URL in kamailio.cfg:
 
@@ -79,4 +81,12 @@ The corresponding database URL in kamailio.cfg:
 
 <code>
 #!define DBURL "mongodb://username:password@localhost/kamailio"
+</code>
+
+==== Other Parameters ====
+
+If you store location records in MongoDB, set the following parameter for usrloc modules:
+
+<code>
+modparam("usrloc", "db_insert_null", 1)
 </code>
