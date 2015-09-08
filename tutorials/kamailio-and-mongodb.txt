@@ -1,6 +1,6 @@
 ====== Kamailio and MongoDB ======
 
-====== Kamailio Database ======
+===== Kamailio Database =====
 
 The **use** command in mongodb client **mongo** creates the database if it doesn't exit:
 
@@ -17,7 +17,7 @@ To display the databases, you can use:
 
 Note that a database is not shown by the above command if it is empty -- you need to add some records to it.
 
-===== Version Table =====
+==== Version Table ====
 
 Kamailio uses version table to check if the structure of a database table has the structure version the C code expects.
 
@@ -36,7 +36,7 @@ version
 > 
 </code>
 
-==== Version Table Records ====
+=== Version Table Records ===
 
 Add the records for the other Kamailio tables you are going to use. Some examples:
 
@@ -55,11 +55,12 @@ db.getCollection("version").insert({table_name: "active_watchers", table_version
 </code>
 
 To learn what is the version number for a specific table, look inside **lib/srdb1/schema/**, there is an xml file with the name of the table and inside it you should see the **version** attribute.
-===== Other Tables =====
+
+==== Other Tables ====
 
 MongoDB doesn't have a schema definition for documents stored in a collection.
 
-===== DB URL =====
+===== DB URL in Kamailio Config =====
 
 The corresponding database URL in kamailio.cfg:
 
