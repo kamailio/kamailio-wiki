@@ -54,6 +54,7 @@ db.getCollection("version").insert({table_name: "active_watchers", table_version
 
 </code>
 
+To learn what is the version number for a specific table, look inside **lib/srdb1/schema/**, there is an xml file with the name of the table and inside it you should see the **version** attribute.
 ===== Other Tables =====
 
 MongoDB doesn't have a schema definition for documents stored in a collection.
