@@ -1,5 +1,6 @@
 ====== Kamailio and MongoDB ======
 
+Details about how to use Kamailio with a MongoDB backend.
 ===== Kamailio Database =====
 
 The **use** command in mongodb client **mongo** creates the database if it doesn't exit:
