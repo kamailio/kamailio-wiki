@@ -51,7 +51,7 @@ Add the records for the other Kamailio tables you are going to use. Some example
 
 > db.getCollection("version").insert({table_name: "watchers", table_version: NumberInt(3) })
 
-db.getCollection("version").insert({table_name: "active_watchers", table_version: NumberInt(11) })
+> db.getCollection("version").insert({table_name: "active_watchers", table_version: NumberInt(11) })
 
 </code>
 
