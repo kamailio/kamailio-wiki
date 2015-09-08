@@ -58,8 +58,13 @@ To learn what is the version number for a specific table, look inside **lib/srdb
 
 ==== Other Tables ====
 
-MongoDB doesn't have a schema definition for documents stored in a collection.
+MongoDB doesn't have a schema definition for documents stored in a collection. It is not required to create a collection before inserting a record to it.
 
+Anyhow, if you want, you can create the collections in advance, using:
+
+<code>
+> db.createCollection("tablename")
+</code>
 ===== DB URL in Kamailio Config =====
 
 The corresponding database URL in kamailio.cfg:
