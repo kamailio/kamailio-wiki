@@ -5,6 +5,7 @@ Date:
     * can attend: dcm vseva
   * Alternatives (add your id if you can attend)
     * Sep 17 (dcm, vseva)
+    * Sep 21 (OEJ)
 
 Time of the meeting across the world:
   * 16:00 - Berlin, Germany
