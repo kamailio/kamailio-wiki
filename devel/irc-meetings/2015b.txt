@@ -28,6 +28,7 @@ People adding notes in the agenda using abbreviations:
   * dcm - Daniel-Constantin Mierla
   * vseva - Victor Seva
   * co - Camille Oudot (14:00 to 14:30 UTC only)
+  * hpw - Hugh Waite
 ===== Agenda =====
 
 Kamailio Development:
