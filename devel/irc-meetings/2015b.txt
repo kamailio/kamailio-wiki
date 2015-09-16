@@ -38,7 +38,7 @@ Kamailio Development:
     * what is expected from devs and broad community
   * roadmap to next major release (dcm)
     * when it should happen
-  * suggestion: $time() and $timef() return local time, add another that returns UTC?
+  * suggestion: $time() and $timef() return local time, add another that returns UTC? (hpw)
 
 
 Kamailio Administration:
