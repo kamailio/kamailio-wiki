@@ -810,6 +810,16 @@ Example:
 xlog("Today is $timef(%m/%d/%y)\n");
 </code>
 
+===== $utimef(format) - Strftime Formatted UTC Time =====
+
+**$utimef(format)** - return current time in UTC as formatted by strftime 'format'. See 'man strftime' to see the available time attribute specifiers.
+
+Example:
+
+<code c>
+xlog("The time is $utimef(%m/%d/%y %H:%M:%S)\n");
+</code>
+
 ===== $sel(name) - Selects =====
 
 **$sel(name)** - return the value of **select** specified by name. **select** refers a class of config variables introduced by SER 2.0, allowing to select and return parts of sip messages and not only.
