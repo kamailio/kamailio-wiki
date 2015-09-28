@@ -772,7 +772,7 @@ if ($shv(debug) == 1) {
 
 ===== $time(name) - Broken-down time =====
 
-**$time(name)** - the PV provides access to broken-down time attributes.
+**$time(name)** - the PV provides access to broken-down time attributes in the local timezone.
 
 The 'name' can be:
   * sec - return seconds (int 0-59)
@@ -795,7 +795,11 @@ if ($time(year) == 2008) {
 ...
 </code>
 
+===== $utime(name) - Broken-down time =====
 
+**$utime(name)** - the PV provides access to broken-down time attributes in UTC.
+
+See **$time(name)** above for the possible attributes
 ===== $timef(format) - Strftime Formatted Time =====
 
 **$timef(format)** - return current time as formatted by strftime 'format'. See 'man strftime' to see the available time attribute specifiers.
