@@ -1076,7 +1076,7 @@ Example of usage:
 
 ==== pv_buffer_size ====
 
-The size in bytes of internal buffer to print dynamic strings with pseudo-variables inside. The default value is 1024.
+The size in bytes of internal buffer to print dynamic strings with pseudo-variables inside. The default value is 8192 (8kB).
 
 Example of usage:
 
