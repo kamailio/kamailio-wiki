@@ -25,6 +25,11 @@
 ==== pv ====
 
   * **pv_var_to_xavp** script function to copy $var values to $xavp
+
+==== registrar ====
+
+  * add **contact** and **recieved** values to xavp_rcd
+  * set xavp_rcd on registered()
 ==== sipcapture ====
 
   * insert From URI domain, To URI domain and request URI domain to database
