@@ -88,3 +88,45 @@ ALTER TABLE silo MODIFY COLUMN extra_hdrs TEXT;
 UPDATE version SET  table_version='8' WHERE table_name='silo';
 
 </code>
+
+==== Upgrade Old Postgres Database Structure ====
+
+Run following SQL statements in psql client to upgrade database structure from v4.2 to v4.3:
+
+NOTE This drops and recreates the acc_cdrs table. Thus make sure to backup them first!!! You might also need to restore the privileges for the acc_cdrs table.
+
+<code sql>
+-- table: location
+ALTER TABLE location ADD COLUMN server_id INTEGER DEFAULT 0 NOT NULL;
+ALTER TABLE location ADD COLUMN connection_id INTEGER DEFAULT 0 NOT NULL;
+ALTER TABLE location ADD COLUMN keepalive INTEGER DEFAULT 0 NOT NULL;
+ALTER TABLE location ADD COLUMN partition INTEGER DEFAULT 0 NOT NULL;
+DELETE FROM version WHERE TABLE_NAME='location';
+INSERT INTO version (table_name, table_version) VALUES ('location','8');
+ 
+-- table: presentity
+ALTER TABLE presentity ADD COLUMN priority INTEGER DEFAULT 0 NOT NULL;
+DELETE FROM version WHERE TABLE_NAME='presentity';
+INSERT INTO version (table_name, table_version) VALUES ('presentity','4');
+ 
+-- table: sip_trace
+ALTER TABLE sip_trace ADD COLUMN totag VARCHAR(64) DEFAULT '' NOT NULL;
+UPDATE version SET table_version='4' WHERE table_name='sip_trace';
+ 
+-- table: acc_cdrs
+DROP TABLE acc_cdrs;
+CREATE TABLE acc_cdrs (
+    id SERIAL PRIMARY KEY NOT NULL,
+    start_time TIMESTAMP WITHOUT TIME ZONE DEFAULT '2000-01-01 00:00:00' NOT NULL,
+    end_time TIMESTAMP WITHOUT TIME ZONE DEFAULT '2000-01-01 00:00:00' NOT NULL,
+    duration REAL DEFAULT 0 NOT NULL
+);
+UPDATE version SET table_version='2' WHERE table_name='acc_cdrs';
+ 
+-- table: silo
+ALTER TABLE silo ALTER COLUMN body SET DEFAULT '';
+ALTER TABLE silo ALTER COLUMN body SET NOT NULL;
+ALTER TABLE silo ALTER COLUMN extra_hdrs SET DEFAULT '';
+ALTER TABLE silo ALTER COLUMN extra_hdrs SET NOT NULL;
+UPDATE version SET  table_version='8' WHERE table_name='silo';
+</code>
