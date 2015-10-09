@@ -45,7 +45,7 @@ Following tokens are used to mark the changes:
 
 There are several changes to the database structure, in short:
 
-  * location table has three new columns: server_id, connection_id, keepalive
+  * location (aliases) table has three new columns: server_id, connection_id, keepalive
   * presentity table has a new column: priority
   * sip_trace table has a new column: totag
   * silo table changed defaults: body and extra_hdrs have no default. BLOB or TEXT have no default. ( See https://dev.mysql.com/doc/refman/5.5/en/blob.html )
@@ -63,6 +63,14 @@ ALTER TABLE location ADD COLUMN `keepalive` INT(11) DEFAULT 0 NOT NULL;
 ALTER TABLE location ADD COLUMN `partition` INT(11) DEFAULT 0 NOT NULL;
 DELETE FROM version WHERE table_name='location';
 INSERT INTO version (`table_name`, `table_version`) values ('location','8');
+
+-- table: aliases
+ALTER TABLE aliases ADD COLUMN `server_id` INT(11) DEFAULT 0 NOT NULL;
+ALTER TABLE aliases ADD COLUMN `connection_id` INT(11) DEFAULT 0 NOT NULL;
+ALTER TABLE aliases ADD COLUMN `keepalive` INT(11) DEFAULT 0 NOT NULL;
+ALTER TABLE aliases ADD COLUMN `partition` INT(11) DEFAULT 0 NOT NULL;
+DELETE FROM version WHERE table_name='aliases';
+INSERT INTO version (`table_name`, `table_version`) values ('aliases','8');
 
 -- table: presentity
 ALTER TABLE presentity ADD COLUMN `priority` INT(11) DEFAULT 0 NOT NULL;
@@ -104,6 +112,14 @@ ALTER TABLE location ADD COLUMN partition INTEGER DEFAULT 0 NOT NULL;
 DELETE FROM version WHERE TABLE_NAME='location';
 INSERT INTO version (table_name, table_version) VALUES ('location','8');
  
+-- table: aliases
+ALTER TABLE aliases ADD COLUMN server_id INTEGER DEFAULT 0 NOT NULL;
+ALTER TABLE aliases ADD COLUMN connection_id INTEGER DEFAULT 0 NOT NULL;
+ALTER TABLE aliases ADD COLUMN keepalive INTEGER DEFAULT 0 NOT NULL;
+ALTER TABLE aliases ADD COLUMN partition INTEGER DEFAULT 0 NOT NULL;
+DELETE FROM version WHERE TABLE_NAME='aliases';
+INSERT INTO version (table_name, table_version) VALUES ('aliases','8');
+
 -- table: presentity
 ALTER TABLE presentity ADD COLUMN priority INTEGER DEFAULT 0 NOT NULL;
 DELETE FROM version WHERE TABLE_NAME='presentity';
