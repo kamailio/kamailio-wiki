@@ -79,3 +79,24 @@ DELETE FROM version WHERE table_name='missed_calls';
 INSERT INTO version (`table_name`, `table_version`) values ('missed_calls','4');
 
 </code>
+==== Upgrade Old Postgresql Database Structure ====
+
+Run following SQL statements in psql client to upgrade database structure from v4.1 to v4.2:
+
+<code>
+-- table: acc
+ALTER TABLE acc ALTER COLUMN sip_reason TYPE VARCHAR(128);
+DELETE FROM version WHERE TABLE_NAME='acc';
+INSERT INTO version (`table_name`, `table_version`) VALUES ('acc','5');
+ 
+-- table: dialplan
+ALTER TABLE dialplan ALTER COLUMN repl_exp TYPE VARCHAR(64); 
+ALTER TABLE dialplan ALTER COLUMN attrs TYPE VARCHAR(64);
+DELETE FROM version WHERE TABLE_NAME='dialplan';
+INSERT INTO version (table_name, table_version) VALUES ('dialplan','2');
+ 
+-- table: missed_calls
+ALTER TABLE missed_calls ALTER COLUMN sip_reason TYPE VARCHAR(128);
+DELETE FROM version WHERE TABLE_NAME='missed_calls';
+INSERT INTO version (table_name, table_version) VALUES ('missed_calls','4');
+</code>
