@@ -83,7 +83,7 @@ INSERT INTO version (`table_name`, `table_version`) values ('missed_calls','4');
 
 Run following SQL statements in psql client to upgrade database structure from v4.1 to v4.2:
 
-<code>
+<code sql>
 -- table: acc
 ALTER TABLE acc ALTER COLUMN sip_reason TYPE VARCHAR(128);
 DELETE FROM version WHERE TABLE_NAME='acc';
