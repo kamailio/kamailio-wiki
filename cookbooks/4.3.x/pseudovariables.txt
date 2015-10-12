@@ -1407,51 +1407,97 @@ if($gip(src=>cc)==$gip(dst=>cc))
 </code>
 
 ===== TLS module Pseudo-Variables =====
+===== TLS module Pseudo-Variables =====
 
 ==== $tls_version ====
+The TLS/SSL version which is used on the TLS connection from which the message was received. String type.
 ==== $tls_description ====
+The TLS/SSL description of the TLS connection from which the message was received. String type.
 ==== $tls_cipher_info ====
+The TLS/SSL cipher which is used on the TLS connection from which the message was received. String type.
 ==== $tls_cipher_bits ====
+The number of cipher bits which are used on the TLS connection from which the message was received. String and Integer type.
 ==== $tls_peer_version ====
+The version of the certificate. String type.
 ==== $tls_my_version ====
+The version of the certificate. String type.
 ==== $tls_peer_serial ====
+The serial number of the certificate. String and Integer type.
 ==== $tls_my_serial ====
+The serial number of the certificate. String and Integer type.
 ==== $tls_peer_subject ====
+ASCII dump of the fields in the subject section of the certificate. String type. Example:
+    /C=AT/ST=Vienna/L=Vienna/O=enum.at/CN=enum.at
 ==== $tls_peer_issuer ====
+ASCII dump of the fields in the issuer section of the certificate. String type.
 ==== $tls_my_subject ====
+ASCII dump of the fields in the subject section of the certificate. String type.
 ==== $tls_my_issuer ====
+ASCII dump of the fields in the issuer section of the certificate. String type.
 ==== $tls_peer_subject_cn ====
+commonName in the subject section of the certificate. String type.
 ==== $tls_peer_issuer_cn ====
+commonName in the issuer section of the certificate. String type.
 ==== $tls_my_subject_cn ====
+commonName in the subject section of the certificate. String type.
 ==== $tls_my_issuer_cn ====
+commonName in the issuer section of the certificate. String type.
 ==== $tls_peer_subject_locality ====
+localityName in the subject section of the certificate. String type.
 ==== $tls_peer_issuer_locality ====
+localityName in the issuer section of the certificate. String type.
 ==== $tls_my_subject_locality ====
+localityName in the subject section of the certificate. String type.
 ==== $tls_my_issuer_locality ====
+localityName in the issuer section of the certificate. String type.
 ==== $tls_peer_subject_country ====
+countryName in the subject section of the certificate. String type.
 ==== $tls_peer_issuer_country ====
+countryName in the issuer section of the certificate. String type.
 ==== $tls_my_subject_country ====
+countryName in the subject section of the certificate. String type.
 ==== $tls_my_issuer_country ====
+countryName in the issuer section of the certificate. String type.
 ==== $tls_peer_subject_state ====
+stateOrProvinceName in the subject section of the certificate. String type.
 ==== $tls_peer_issuer_state ====
+stateOrProvinceName in the issuer section of the certificate. String type.
 ==== $tls_my_subject_state ====
+stateOrProvinceName in the subject section of the certificate. String type.
 ==== $tls_my_issuer_state ====
+stateOrProvinceName in the issuer section of the certificate. String type.
 ==== $tls_peer_subject_organization ====
+organizationName in the subject section of the certificate. String type.
 ==== $tls_peer_issuer_organization ====
+organizationName in the issuer section of the certificate. String type.
 ==== $tls_my_subject_organization ====
+organizationName in the subject section of the certificate. String type.
 ==== $tls_my_issuer_organization ====
+organizationName in the issuer section of the certificate. String type.
 ==== $tls_peer_subject_unit ====
+organizationalUnitName in the subject section of the certificate. String type.
 ==== $tls_peer_issuer_unit ====
+organizationalUnitName in the issuer section of the certificate. String type.
 ==== $tls_my_subject_unit ====
+organizationalUnitName in the subject section of the certificate. String type.
 ==== $tls_my_issuer_unit ====
+organizationalUnitName in the issuer section of the certificate. String type.
 ==== $tls_peer_san_email ====
+email address in the "subject alternative name" extension. String type.
 ==== $tls_my_san_email ====
+email address in the "subject alternative name" extension. String type.
 ==== $tls_peer_san_hostname ====
+hostname (DNS) in the "subject alternative name" extension. String type.
 ==== $tls_my_san_hostname ====
+hostname (DNS) in the "subject alternative name" extension. String type.
 ==== $tls_peer_san_uri ====
+URI in the "subject alternative name" extension. String type.
 ==== $tls_my_san_uri ====
+URI in the "subject alternative name" extension. String type.
 ==== $tls_peer_san_ip ====
+ip address in the "subject alternative name" extension. String type.
 ==== $tls_my_san_ip ====
+ip address in the "subject alternative name" extension. String type.
 
 ===== XHTTP module Pseudo-Variables =====
 
