@@ -1424,6 +1424,7 @@ if($gip(src=>cc)==$gip(dst=>cc))
 ===== TLS module Pseudo-Variables =====
 
 ==== $tls_version ====
+The TLS/SSL version which is used on the TLS connection from which the message was received. String type.
 ==== $tls_description ====
 ==== $tls_cipher_info ====
 ==== $tls_cipher_bits ====
