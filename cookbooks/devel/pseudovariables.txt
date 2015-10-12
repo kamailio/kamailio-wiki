@@ -1513,6 +1513,26 @@ ip address in the "subject alternative name" extension. String type.
 ==== $tls_my_san_ip ====
 ip address in the "subject alternative name" extension. String type.
 
+==== $tls_peer_verified ====
+Returns 1 if the peer's certificate was successfully verified. Otherwise it returns 0. String and Integer type.
+
+==== $tls_peer_revoked ====
+Returns 1 if the peer's certificate was revoked. Otherwise it returns 0. String and Integer type.
+
+==== $tls_peer_expired ====
+Returns 1 if the peer's certificate is expired. Otherwise it returns 0. String and Integer type.
+
+==== $tls_peer_selfsigned ====
+Returns 1 if the peer's certificate is selfsigned. Otherwise it returns 0. String and Integer type.
+
+==== $tls_peer_notBefore ====
+Returns the notBefore validity date of the peer's certificate. String type.
+
+==== $tls_peer_notAfter ====
+Returns the notAfter validity date of the peer's certificate. String type.
+
+==== $tls_peer_server_name ====
+The SNI server name of the peer
 ===== XHTTP module Pseudo-Variables =====
 
 ==== $hu ====
