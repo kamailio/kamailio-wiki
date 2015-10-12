@@ -1430,6 +1430,7 @@ The TLS/SSL description of the TLS connection from which the message was receive
 ==== $tls_cipher_info ====
 The TLS/SSL cipher which is used on the TLS connection from which the message was received. String type.
 ==== $tls_cipher_bits ====
+The number of cipher bits which are used on the TLS connection from which the message was received. String and Integer type.
 ==== $tls_peer_version ====
 ==== $tls_my_version ====
 ==== $tls_peer_serial ====
