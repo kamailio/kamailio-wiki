@@ -1428,6 +1428,7 @@ The TLS/SSL version which is used on the TLS connection from which the message w
 ==== $tls_description ====
 The TLS/SSL description of the TLS connection from which the message was received. String type.
 ==== $tls_cipher_info ====
+The TLS/SSL cipher which is used on the TLS connection from which the message was received. String type.
 ==== $tls_cipher_bits ====
 ==== $tls_peer_version ====
 ==== $tls_my_version ====
