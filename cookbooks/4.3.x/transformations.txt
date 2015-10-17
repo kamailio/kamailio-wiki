@@ -1,5 +1,5 @@
-====== Kamailio SIP Server v4.3.x (stable): Transformations ======
 {{ :cookbooks:4.3.x:transformations.png?200|Transformations}}
+====== Kamailio SIP Server v4.3.x (stable): Transformations ======
 
 <code>
 Main author:
