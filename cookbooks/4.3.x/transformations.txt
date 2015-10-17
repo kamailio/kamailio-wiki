@@ -1,4 +1,5 @@
 ====== Kamailio SIP Server v4.3.x (stable): Transformations ======
+{{wiki:transformations.png}}
 
 <code>
 Main author:
