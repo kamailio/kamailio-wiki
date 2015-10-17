@@ -1,3 +1,4 @@
+{{ :cookbooks:4.3.x:pseudovariables.png?200|}}
 ====== Kamailio SIP Server v4.3.x (stable): Pseudo-Variables ======
 
 ===== Introduction =====
