@@ -11,7 +11,16 @@
 
 ===== New Modules =====
 
+==== curl ====
 
+  * http queries using curl library
+  * http://kamailio.org/docs/modules/devel/modules/curl.html
+
+
+==== smsops ====
+
+  * sms operations for sip messages
+  * http://kamailio.org/docs/modules/devel/modules/smsops.html
 ===== New in Old Modules =====
 
 ==== acc ====
