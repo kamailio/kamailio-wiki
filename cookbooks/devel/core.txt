@@ -1094,6 +1094,20 @@ Example of usage:
 pv_buffer_slots=12
 </code>
 
+==== rundir ====
+
+Alias: run_dir
+
+Set the folder for creating runtime files such as MI fifo or CTL unixsocket.
+
+Default: /var/run/kamailio
+
+Example of usage:
+
+<code>
+rundir="/tmp"
+</code>
+
 ==== reply_to_via ====
 
 If it is set to 1, any local reply is sent to the IP address advertised in top most Via of the request instead of the IP address from which the request was received. Default value is 0 (off).
