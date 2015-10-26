@@ -189,6 +189,49 @@ if(is_present_hf("X-Hdr")) {
 </code>
 
 
+??? How to set different header values for each destination of a SIP request?
+
+!!! Set the value of the header inside a **branch_route**.
+
+All the operations done over a SIP message inside the **request_route** (including from the sub-routes executed from request_route) will be common to all outgoing branches. If you want to do updates only for specific destinations, use branch routes.
+
+Example:
+
+  * add X-VBox header only when sending to voicemail server
+  * add X-Peer-ID header when sending somewhere else
+
+<code>
+request_route {
+  ...
+  if(is_method("INVITE")) {
+    t_on_branch("SETHEADERS");
+    t_on_failure("REROUTE");
+  }
+  t_relay();
+  exit;
+}
+
+branch_route[SETHEADERS] {
+   if($rd=="voicemail.server.com") {
+     append_hf("X-VBox: $fU\r\n");
+   } else {
+     append_hf("X-Peer-ID: abc\r\n");
+   }
+}
+
+failure_route[REROUTE] {
+  if (t_is_canceled()) {
+    exit;
+  }
+  if (t_check_status("486|408")) {
+    $du = $null;
+    $ru = "sip:voicemail.server.com";
+    t_on_failure("REROUTE");
+    exit;
+  }
+}
+</code>
+
 ??? How to remove a single header field when a header appears multiple times?
 
 !!! SIP allows that certain header fields may appear multiple times in a SIP message. This header fields (e.g. Via, Route, Record-Route, Contact) may be written either on a single line (with comma separated) or on multiple lines (see [[http://tools.ietf.org/html/rfc3261#section-7.3|RFC 3261 section 7.3]] for details).
@@ -256,8 +299,9 @@ where domainname has to be replaced with name of domain, which you wish to serve
 
 !!! Check if you have a firewall rule dropping traffic on SIP port (5060). Note that network sniffing tools have hooks in kernel before the firewall, so even if you see the SIP packets with ngrep or wireshark, they may be dropped by the firewall.
 
-You can increase the debug parameter value to 3 in the configuration file, restart kamailio and watch syslog messages to see if there is any text printed by kamailio. For each SIP packet received on the networks, Kamailio is printing at least few debug messages.
+If you have the pike module loaded, double check to see if you don't block valid trusted traffic with it.
 
+You can increase the debug parameter value to 3 in the configuration file, restart kamailio and watch syslog messages to see if there is any text printed by kamailio. For each SIP packet received on the networks, Kamailio is printing at least few debug messages.
 =?==== Media Streams =====
 
 ??? Does Kamailio relay media streams?
