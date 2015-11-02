@@ -45,12 +45,14 @@ The statistics for SHM memory can be seen with:
 
 <code>
 kamctl stats shmem
+kamcmd mod.stats all shm
 </code>
 
 The statistics for PKG memory can be seen with:
 
 <code>
 kamcmd pkg.stats
+kamcmd mod.stats all pkg
 </code>
 
 Notice that for SHM only one group of statistics is printed, being one zone of memory, while for PKG you get a list with many groups of statistics, each specific for a Kamailio process (child).
@@ -76,7 +78,7 @@ kamailio -I | grep DBG_QM_MALLOC
 If it is printed, then it is, if not, then Kamailio has to be recompiled with:
 
 <code>
-MEMMNG=1 MEMDBG=1 make cfg ...
+MEMDBG=1 make cfg ...
 </code>
 
 Instead of ... add your other make cfg parameters (e.g., include_modules="...").
@@ -97,6 +99,8 @@ memlog=0
 </code>
 
 Then restart and wait a bit for getting some traffic processed.
+
+MEMMNG=0/1/2 to select from different memory allocation algorithms (fm, qm, tlsf) is deprecated. Use "-x" parameter when running kamailio instead; see kamailio -h for more details.
 
 To get the list of chunks from memory manager, there are two ways:
 
