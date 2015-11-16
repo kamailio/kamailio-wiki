@@ -1281,6 +1281,7 @@ The **name** can be:
   * id_label - return the internal label of current transaction
   * reply_code - alias to $T_reply_code
   * branch_index - alias to $T_branch_idx
+  * ruid - return the internal location ruid field for current branch
   * reply_type - 1 if it is a local generated reply, 0 - if no reply for transaction or it is a received reply
 
 Note: the pair (id_index,id_label) uniquely identifies a transaction.
