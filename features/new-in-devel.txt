@@ -16,7 +16,16 @@
   * http queries using curl library
   * http://kamailio.org/docs/modules/devel/modules/curl.html
 
+==== log_custom ====
 
+  * send log messages to custom backend
+  * http://kamailio.org/docs/modules/devel/modules/log_custom.html
+
+
+==== log_systemd ====
+
+  * send log messages to systemd journal
+  * http://kamailio.org/docs/modules/devel/modules/log_systemd.html
 ==== smsops ====
 
   * sms operations for sip messages
