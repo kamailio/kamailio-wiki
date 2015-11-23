@@ -857,6 +857,7 @@ They are available in **onsend_route**. The name can be:
   * af - address family to be used to send (numeric)
   * port - port of destination address
   * proto - transport protocol to be used to send (numeric)
+  * sproto - transport protocol to be used to send (string)
   * buf - entire send buffer as string
   * len - length of outgoing packet (length of above buf)
 
