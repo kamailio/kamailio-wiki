@@ -315,3 +315,12 @@ As of Git v1.7.0, a remote branch can be deleted using:
 <code>
 git push origin --delete <branchName>
 </code>
+
+==== Revert already pushed commit ====
+
+This will produce a commit reverting the previous commit <hash>
+
+<code>
+git revert <hash>
+git push origin
+</code>
