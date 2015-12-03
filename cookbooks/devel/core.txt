@@ -2099,8 +2099,10 @@ Force to send the message from the specified socket (it _must_ be one of the soc
 
 Example of usage:
 
+<code>
     force_send_socket(10.10.10.10:5060);
-
+    force_send_socket(udp:10.10.10.10:5060);
+</code>
 ==== force_tcp_alias ====
 
 **Alias name: add_tcp_alias**
