@@ -44,7 +44,6 @@ firefox tables.html
 If you add a new table, you must add the new files related to it to GIT repository, before committing the changes. It is recommended to split the commit in two parts, because they affect different components:
   * one for the XML files (they are part of internal library srdb1)
   * one for DB creation scripts (they are part of kamctl tool)
-  * one for kamailio-db-devel html documentation change
 
 This brings the benefit of easy backporting, because the commit to xml file is unlikely to create conflicts, changing one file in a group of lines related to same column, so it can be cherry-picked alone. Commits to database creation scripts affects many files and can result in conflicts if new columns were added meanwhile to the development version to that table.
 
