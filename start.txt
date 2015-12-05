@@ -5,7 +5,7 @@
 
 **It is recommended you connect over HTTPS to log in and edit the wiki.**
 
-//Note: the TLS certificate used by this site is issued by CA Cert Signing Authority (www.cacert.org).//
+//Note: the TLS certificate used by this site is issued by Let's Encrypt (https://letsencrypt.org). Previous certificate was signed by CA Cert Signing Authority (www.cacert.org).//
 
 Few guidelines to edit the wiki:
   * everyone is welcome to add useful content to the wiki
