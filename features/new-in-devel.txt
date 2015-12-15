@@ -11,11 +11,15 @@
 
 ===== New Modules =====
 
+==== cfgt ====
+
+  * reports config execution for unit test evaluation
+  * http://kamailio.org/docs/modules/devel/modules/cfgt.html
+
 ==== curl ====
 
   * http queries using curl library
   * http://kamailio.org/docs/modules/devel/modules/curl.html
-
 ==== log_custom ====
 
   * send log messages to custom backend
