@@ -3100,7 +3100,7 @@ $(avp(i:3)[*]) = 123;
 $(avp(i:3)[*]) = $null;
 </code>
 
-==== String operations ====
+==== String Operations ====
 For strings, '+' is available to concatenate.
 
 <code>
