@@ -246,7 +246,7 @@ It uses the same configuration file like **kamctl**, respectively the **kamctlrc
 
 The tool can be used to create and manage the database structure needed by Kamailio, therefore it should be immediately after Kamailio installation, in case you plan to run Kamailio with a database backend.
 
-It is not used for managing the records inside the database tables, just for database structure and access to the database (e.g., granting/revoking access to database server). For managing the records inside database table, **kamctl** is the tool.
+It is not used for managing the records inside the database tables, just for database structure and access to the database (e.g., granting/revoking access to database server). For managing the records inside database table, **kamctl** is the tool that has to be used.
 
 ==== kamcmd ====
 
