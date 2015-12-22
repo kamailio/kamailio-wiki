@@ -325,3 +325,11 @@ See the module:
 
   * [[http://www.asipto.com/pub/kamailio-devel-guide/|Kamailio Devel Tutorial]]
   * [[http://kamailio.org/docs/ser-getting-started/SER-GettingStarted.pdf|SER Getting Started]]
+
+==== Related Open Source Projects ====
+
+Open source projects embedding Kamailio that can help rolling out specific use cases.
+
+  * [[https://www.sipwise.org/products/spce/|sip:provider CE]] - telephony operator platform
+  * [[https://github.com/2600hz/kazoo|kazoo]] - cloud PBX platform
+  * [[http://www.elastix.org/|Elastix MT]] - multi-tenant PBX system
