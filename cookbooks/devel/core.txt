@@ -2910,7 +2910,7 @@ event_route [tm:failure-branch] { # Handle failure response
 }
 </code>
 
-===== Script statements =====
+===== Script Statements =====
 
 ==== if ====
 IF-ELSE statement
