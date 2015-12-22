@@ -3107,7 +3107,7 @@ For strings, '+' is available to concatenate.
 $var(a) = "test";
 $var(b) = "sip:" + $var(a) + "@" + $fd;
 </code>
-==== Arithmetic operations ====
+==== Arithmetic Operations ====
 
 For numbers, one can use:
   * + : plus
@@ -3130,10 +3130,10 @@ $var(a) = 4 + ( 7 & ( ~2 ) );
 
 NOTE: to ensure the priority of operands in expression evaluations do use __parenthesis__.
 
-Arithmetic expressions can be used in condition expressions via test operator ' [ ... ] '.
+Arithmetic expressions can be used in condition expressions.
 
 <code>
-if( [ $var(a) & 4 ] )
+if( $var(a) & 4 )
     log("var a has third bit set\n");
 </code>
 
