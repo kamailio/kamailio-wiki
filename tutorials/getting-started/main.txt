@@ -102,6 +102,11 @@ Install current stable version:
 Install development version (master branch):
 
   * [[install:devel:git|Install Kamailio Devel Version From GIT]]
+
+When installing from sources:
+
+  * configuration files are deployed in: /usr/local/etc/kamailio
+  * binary files are deployed in: /usr/local/sbin/
 ==== Debian ====
 
 Kamailio is part of latest official stable Debian distributions (and its Ubuntu cousin), but might be an older version.
