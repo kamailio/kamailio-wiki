@@ -148,6 +148,43 @@ Example:
 return
 </code>
 
+==== Variables ====
+
+The variables start with **$** (dollar character).
+
+You can see the list with available variables in the Pseudo-Variables Cookbook.
+
+Example:
+
+<code c>
+$var(x) = $rU + "@" + $fd;
+</code>
+
+==== Actions ====
+
+An action is an element used inside routing blocks ended by **;** (semicolon). It can be an execution of a function from core or a module, a conditional or loop statement, an assignment expression.
+
+Example:
+
+<code c>
+  sl_send_reply("404", "Not found");
+  exit;
+</code>
+
+==== Expressions ====
+
+An expression is an association group of statements, variables, functions and operators.
+
+Example:
+
+<code c>
+if(!t_relay())
+
+if($var(x)>10)
+
+"sip:" + $var(prefix) + $rU + "@" + $rd
+</code>
+
 ===== Config Pre-Processor Directives =====
 
 ==== include_file ====
