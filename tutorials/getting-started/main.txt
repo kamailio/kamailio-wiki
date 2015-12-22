@@ -155,6 +155,10 @@ yum install kamailio
 yum install kamailio-mysql-modules kamailio-tls-modules
 </code>
 
+When installing from rpm packages:
+
+  * configuration files are deployed in: /etc/kamailio/
+  * binary files are deployed in: /usr/sbin/
 ===== Configuration File =====
 
 ==== Overview ====
