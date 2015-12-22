@@ -171,6 +171,11 @@ If you installed from packages, then the configuration file is located at:
 
   * /etc/kamailio/kamailio.cfg
 
+==== Configuration Scripting Language ====
+
+Kamailio uses its own configuration file language. Its structure is described in the Core Cookbook:
+
+  * [[cookbooks:devel:core|Devel Core Cookbook]]
 ==== Default Configuration File ====
 
 The default configuration file is trying to provide the features for a simple
