@@ -1,8 +1,152 @@
 ====== Kamailio SIP Server v4.4.x (devel): Core Cookbook ======
 
+===== Overview =====
+
 This tutorial collects the functions and parameters exported by Kamailio core to configuration file.
 
 **Note:** The parameters on this page are **NOT** in alphabetical order.
+
+===== Structure =====
+
+The structure of the kamailio.cfg can be seen as thee parts:
+
+  * global parameters
+  * modules settings
+  * routing blocks
+
+For clarity and making it easy to maintain, it is recommended to keep them in this order, although some of them can be mixed.
+
+==== Global Parameters Section ====
+
+This is the first part of the configuration file, containing the parameters for the core of kamailio and custom global parameters.
+
+Typically this is formed by directives of the form:
+
+<code>
+name=value
+</code>
+
+The name corresponds to a core parameter as listed in one of the next sections of this document. If a name is not matching a core parameter, then Kamailio will not start, rising an error during startup.
+
+The value is typically an integer, boolean or a string.
+
+Several parameters can get a complex value which is formed from a group of integer, strings or identifiers. For example, such parameter is **listen**, which can be assigned a value like **proto:ipaddress:port**.
+
+Example of content:
+
+<code c>
+log_facility=LOG_LOCAL0
+
+children=4
+
+disable_tcp=yes
+
+alias="sip.mydomain.com"
+
+listen=udp:10.0.0.10:5060
+</code>
+
+==== Modules Settings Section ====
+
+This is the second section of the configuration file, containing the directives to load modules and set their parameters.
+
+It contains the directives **loadmodule** and **modparam**. In the default configuration file starts with the line setting the path to modules (the assignment to **mpath** core parameter.
+
+Example of content:
+
+<code c>
+loadmodule "debugger.so"
+...
+modparam("debugger", "cfgtrace", 1)
+</code>
+
+==== Routing Blocks Section ====
+
+This is the last section of the configuration file, typically the biggest one, containing the routing blocks with the routing logic for SIP traffic handled by Kamailio.
+
+The only mandatory routing block is **request_route**, which contains the actions for deciding the routing for SIP requests.
+
+See the chapter **Routing Blocks** in this document for more details about what types of routing blocks can be used in the configuration file and their role in routing SIP traffic and Kamailio behaviour.
+
+Example of content:
+
+<code c>
+request_route {
+
+    # per request initial checks
+    route(REQINIT);
+
+    ...
+}
+
+branch_route[MANAGE_BRANCH] {
+    xdbg("new branch [$T_branch_idx] to $ru\n");
+    route(NATMANAGE);
+}
+</code>
+
+===== Generic Elements =====
+
+==== Comments ====
+
+Line comments start with **#** (hash/pound character - like in shell) or **/ /** (double forward slash - like in C++/Java).
+
+Block comments start with /* (forward slash and asterisk) and are ended by */ (sterisk and forward slash) (like in C, C++, Java).
+
+Example:
+
+<code>
+  # this is a line comment
+  
+  // this is another line comment
+  
+  /* this
+     is
+     a
+     block
+     comment */
+</code>
+
+Important: be aware of preprocessor directives that start with **#!** (hash/pound and exclamation) - those are no longer line comments.
+
+==== Values ====
+
+There are three types of values:
+
+  * integer - numbers of 32bit size
+  * boolean - aliases to 1 (true, on, yes) or 0 (false, off, no)
+  * string - tokens enclosed in between double or single quotes
+
+
+Example:
+
+<code c>
+// next two are strings
+
+  "this is a string value"
+  'this is another string value"
+
+// next is a boolean
+
+  yes
+
+// next is an integer
+
+  64
+
+</code>
+
+==== Identifiers ====
+
+Identifiers are tokens which are not enclosed in single or double quotes and to match the rules for integer or boolean values.
+
+For example, the identifiers are the core parameters and functions, module functions and core statements.
+
+Example:
+
+<code c>
+return
+</code>
 
 ===== Config Pre-Processor Directives =====
 
