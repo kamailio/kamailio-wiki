@@ -2595,13 +2595,42 @@ if($rd=="10.10.10.10")
 
 ==== userphone ====
 
-===== Routing blocks =====
+===== Custom Global Parameters =====
+
+These are parameters that can be defined by the writer of kamailio.cfg in order to be used inside routing blocks. One of the important properties for custom global parameters is that their value can be changed at runtime via RPC commands, without restarting Kamailio.
+
+The definition of a custom global parameter must follow the pattern:
+
+<code>
+group.variable = value desc "description"
+
+</code>
+
+Example:
+
+<code c>
+pstn.gw_ip = "1.2.3.4" desc "PSTN GW Address"
+</code>
+
+The custom global parameter can be accessed inside a routing block via:
+
+<code>
+$sel(cfg_get.group.variable)
+</code>
+
+Example:
+
+<code c>
+$ru = "sip:" + $rU + "@" + $sel(cfg_get.pstn.gw_ip);
+</code>
+
+===== Routing Blocks =====
 
 The routing blocks are the parts of the configuration file executed by kamailio at runtime. They can be seen as blocks of actions similar to functions (or procedures) from common programming languages.
 
 A routing block is identified by a specific token, followed by a name in between square brackets and actions in between curly braces.
 
-<code>
+<code c>
 route_block_id[NAME] {
   ACTIONS
 }
@@ -2617,7 +2646,7 @@ There can be so called sub-route blocks, which can be invoked from another route
 
 Example:
 
-<code>
+<code c>
   request_route{
     ...
     route("test");
