@@ -2151,7 +2151,7 @@ Like rt_policy but for the "slow" timer.
 Like rt_prio but for the "slow" timer.
 
   rt_timer2_prio=<int> (default 0)
-===== Core functions =====
+===== Core Functions =====
 
 Functions exported by core that can be used in route blocks.
 
