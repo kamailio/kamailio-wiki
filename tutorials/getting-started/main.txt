@@ -134,6 +134,11 @@ Install the other packages of the modules you may need, like mysql or tls module
 apt-get install kamailio-mysql-modules kamailio-tls-modules
 </code>
 
+When installing from deb packages:
+
+  * configuration files are deployed in: /etc/kamailio/
+  * binary files are deployed in: /usr/sbin/
+
 ==== CentoOS ====
 
 Kamailio RPMs are available for several distributions, such as RedHat
