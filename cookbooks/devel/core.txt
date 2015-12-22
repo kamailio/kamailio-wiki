@@ -3033,7 +3033,7 @@ Example of usage:
         $var(i) = $var(i) + 1;
     }
 
-===== Script operations =====
+===== Script Operations =====
 
 Assignments together with string and arithmetic operations can be done directly in configuration file.
 ==== Assignment ====
