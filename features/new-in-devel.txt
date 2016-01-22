@@ -16,6 +16,10 @@
   * reports config execution for unit test evaluation
   * http://kamailio.org/docs/modules/devel/modules/cfgt.html
 
+==== crypto ====
+
+  * cryptographic functions for use in config file
+  * http://kamailio.org/docs/modules/devel/modules/crypto.html
 ==== curl ====
 
   * http queries using curl library
