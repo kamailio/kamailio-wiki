@@ -38,6 +38,11 @@
 
   * sms operations for sip messages
   * http://kamailio.org/docs/modules/devel/modules/smsops.html
+
+==== statsc ====
+
+  * statistics collector providing reports
+  * http://kamailio.org/docs/modules/devel/modules/statsc.html
 ===== New in Old Modules =====
 
 ==== acc ====
