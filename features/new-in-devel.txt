@@ -65,7 +65,7 @@
 
   * insert From URI domain, To URI domain and request URI domain to database
 
-==== stt ====
+==== sst ====
 
   * add **refresher** parameter in order to follow RFC 4028
 ===== New in Core =====
