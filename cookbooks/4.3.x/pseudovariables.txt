@@ -152,7 +152,7 @@ $(branch(uri)[2]) = "sip:test@kamailio.org;transport=sctp";
 
 ==== $ci - Call-Id ====
 
-**$ci** - reference to body of call-id header
+**$ci** - reference to body of call-id header (R/O)
 
 ==== $cl - Content-Length ====
 
