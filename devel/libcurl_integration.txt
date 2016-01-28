@@ -31,6 +31,6 @@ The async_http module offers an asynchronous query function which can optionally
 
 The final solution will be a combination of these, however consensus should be reached on the architecture.
 Should these be combined into a single module, or should one depend on the other?
-It should of course be easy to understand and use.
+It should of course be easy to understand by the end user.
 
 Please add your own comments below (hpw)
