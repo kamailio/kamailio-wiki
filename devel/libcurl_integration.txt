@@ -13,14 +13,18 @@ libcurl and some libraries that it uses (openSSL) can conflict if initialised mu
 This is likely to be achieved by having a single module that wrappers libcurl and is responsible for global initialisation etc. The different ways it can be called can be exported by APIs to other modules.
 
 ==== Requirements ====
-  - Synchronous queries
-  - Asynchronous queries that suspend the transaction and resume on completion
-  - Asynchronous queries that call an event_route on completion
-  - Ability to configure 'named connections' with preset curl options (keys/certs, verify flags etc)
-  - query functions exported via a C API to other modules
+  * Synchronous queries
+  * Asynchronous queries that suspend the transaction and resume on completion
+  * Asynchronous queries that call an event_route on completion
+  * Ability to configure 'named connections' with preset curl options (keys/certs, verify flags etc)
+  * query functions exported via a C API to other modules
 Any more?
 See also [[https://github.com/kamailio/kamailio/blob/master/modules/curl/TODO.txt|TODO.txt]] in the curl module
 
+  * Ability to pass a list of HTTP header to add
+  * Ability to retrieve response headers (e.g. header callback function) - required for xcap_client module
+
+==== Discussion ====
 The curl module currently offers a synchronous query function which can use named connections set up in modparams. Client certificates and parameters can be configured globally or per connection and there is an exported API. This uses the curl 'easy' interface without worker processes.
 
 The async_http module offers an asynchronous query function which can optionally suspend the transaction. This uses the curl 'multi' interface and creates worker processes.
