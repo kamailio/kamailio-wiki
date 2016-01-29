@@ -33,4 +33,9 @@ The final solution will be a combination of these, however consensus should be r
 Should these be combined into a single module, or should one depend on the other?
 It should of course be easy to understand by the end user.
 
+Items to discuss:
+  * Name of modules(s)
+  * Definition of API functions and parameters
+  * Use of worker pools
+
 Please add your own comments below (hpw)
