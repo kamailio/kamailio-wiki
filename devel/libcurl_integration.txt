@@ -39,3 +39,5 @@ Items to discuss:
   * Use of worker pools
 
 Please add your own comments below (hpw)
+
+(gv) I think it was mentioned at the meeting in Brussels: it would be nice to have a separate configuration file with the "connections", which can be reloaded at run time (like http://kamailio.org/docs/modules/stable/modules/tls.html#tls.r.tls.reload).
