@@ -68,6 +68,10 @@
 ==== sst ====
 
   * add **refresher** parameter in order to follow RFC 4028
+
+==== tcpops ====
+
+  * keepalive functions enabled on BSD
 ===== New in Core =====
 
 
