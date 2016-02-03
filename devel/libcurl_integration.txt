@@ -38,6 +38,11 @@ Items to discuss:
   * Definition of API functions and parameters
   * Use of worker pools
 
+Names
+  * The curl module has been renamed to "Http_client"
+  * Need new name for the new module
+
 Please add your own comments below (hpw)
 
 (gv) I think it was mentioned at the meeting in Brussels: it would be nice to have a separate configuration file with the "connections", which can be reloaded at run time (like http://kamailio.org/docs/modules/stable/modules/tls.html#tls.r.tls.reload).
+(oej) The "curl" prefix needs to go away from the functions, parameters and api in the http_client module. New names discussed on sr-dev
