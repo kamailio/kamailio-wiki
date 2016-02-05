@@ -1305,9 +1305,9 @@ The key can be:
 
 <code c>
 $uac_req(method)="OPTIONS";
-$uac_req(ruri)="sip:kamailio.org";
-$uac_req(furi)="sip:kamailio.org";
-$uac_req(turi)="sip:kamailio.org";
+$uac_req(ruri)="sip:alice@kamailio.org";
+$uac_req(turi)="sip:alice@kamailio.org";
+$uac_req(furi)="sip:daniel@kamailio.org";
 $uac_req(evroute) = 1;
 uac_req_send();
 ...
