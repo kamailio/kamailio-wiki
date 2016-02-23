@@ -1616,11 +1616,57 @@ The internal integer id for TCP/TLS connection.
 ==== $sipt(calling_party_number.presentation) / $sipt_presentation ====
 Returns the value of the Address presentation restricted indicator contained in the Calling Party Number header of the IAM message if it exists. Returns -1 if there isn't a Calling Party Number header.
 
+The following values can be returned:
+  * 0 presentation allowed
+  * 1 resentation restricted
+  * 2 address not avail (national use)
+  * 3 spare
+
+Example:
+
+<code c>
+if($sipt(calling_party_number.presentation) == 1)
+{
+        append_hf("Privacy: id\r\n");
+        $fn = "Anonymous";
+}
+</code>
+
+
 ==== $sipt(calling_party_number.screening) / $sipt_screening ====
 Returns the value of the Screening Indicator contained in the Calling Party Number header of the IAM message if it exists. Returns -1 if there isn't a Calling Party Number header.
 
+Can return the following values:
+  * 0 Reserved (user provided, not verified)
+  * 1 User Provided, Verified and Passed
+  * 2 Reserved (user provided, verified and failed)
+  * 3 Network provided
+
+Example:
+<code c>
+# remove P-Asserted-Identity header if the screening isn't verified
+# or network provided
+$avp(s:screening) = $sipt(calling_party_number.screening);
+if($avp(s:screening) != 1 && $avp(s:screening) != 3)
+{
+        remove_hf("P-Asserted-Id");
+}
+</code>
+
+
 ====  $sipt(hop_counter) / $sipt_hop_counter ====
 Returns the value of the Hop Counter for the IAM message if it exists. Returns -1 if there isn't a hop counter.
+
+Example:
+<code c>
+# get the hop counter and update the Max-Forwards header if it exists
+$avp(s:hop) = $sipt(hop_counter);
+if($avp(s:hop) > 0)
+{
+        remove_hf("Max-Forwards");
+        append_hf("Max-Forwards: $avp(s:hop)\r\n");
+}
+</code>
 
 ==== $sipt(calling_party_category) / $sipt(cpc) / $sipt_cpc ====
 Returns the value of the Calling Party Category for the IAM message. Returns -1 if there is a parsing error.
@@ -1628,11 +1674,67 @@ Returns the value of the Calling Party Category for the IAM message. Returns -1 
 ==== $sipt(calling_party_number.nature_of_address) / $sipt.(calling_party_number.nai) / $sipt_calling_party_nai ====
 Returns the value of the Nature of Address Indicator of the Calling Party for the IAM message. Returns -1 if there is a parsing error or if the Calling Party Number is not present.
 
+Can return the following values:
+  * 0 Spare
+  * 1 Subscriber Number (national use)
+  * 2 Unknown (national use)
+  * 3 National (significant) number (national use)
+  * 4 International use
+
+Example:
+<code c>
+# get the Calling Nai and add country code if national
+if($sipt(calling_party_number.nai) == 3)
+{
+        $fU = "32" + "$fU";
+}
+</code>
+
 ====  $sipt(called_party_number.nature_of_address) / $sipt(called_party_number.nai) / $sipt_called_party_nai ====
 Returns the value of the Nature of Address Indicator of the Called Party for the IAM message. Returns -1 if there is a parsing error.
 
+Can return the following values:
+
+  * 0 Spare
+  * 1 Subscriber Number (national use)
+  * 2 Unknown (national use)
+  * 3 National (significant) number
+  * 4 International use
+  * 5 Network-specific number (national use)
+
+Example:
+<code c>
+# get the Called Nai and add country code if national
+if($sipt(called_party_number.nai) == 3)
+{
+        $rU = "32" + "$rU";
+}
+</code>
+
 ==== $sipt(event_info) ===
 Returns the value  of the Event Info header of the CPG message. Returns -1 if there is a parsing error.
+
+Can return the following values:
+  * 0 Spare
+  * 1 ALERTING
+  * 2 PROGRESS
+  * 3 In-band information or an appropriate pattern is now available
+  * 4 Call forward on busy
+  * 5 Call forward on no reply
+  * 6 Call forward unconditional
+
+
+==== $sipt(backward_call_indicator.charge_indicator) ===
+Returns the value of the charge indication of the backward call
+indicator header in the ACM or COT message. Returns -1 if there is a
+parsing error
+
+Can return the following values:
+  * 0 no indication
+  * 1 no charge
+  * 2 charge
+  * 3 spare
+
 
 ===== $cfg(key) - Config File Attributes =====
 
