@@ -79,3 +79,9 @@ Like:
 <code>
 kamctl add alice secret
 </code>
+
+===== Alternative APT Repositories =====
+
+You can check the list of APT repositories offered by Kamailio project for various Debian or Ubuntu versions:
+
+  * [[packages:debs|DEBS: Debian - Ubuntu]]
