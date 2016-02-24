@@ -1,0 +1,31 @@
+====== Kamailio v5.0 Design ======
+
+After 15 years of development, it is time for Kamailio v5.0.
+
+===== Configuration File =====
+
+==== Exporting Functions To Embedded Interpreters ====
+
+  * define and implement an export interface from modules to embedded interpreters to automatically add new functions to embedded interpreters, in a similar fashion as for adding functions to configuration file
+
+==== Routing Logic In Embedded Interpreters Scripting ====
+
+  * writing the routing logic only in a scripting language supported via embedded interpreters
+  * eventually setting core parameters, loading modules and setting modules' parameters are still done using the kamailio configuration file but all routing blocks should be possible to be written in an embedded language
+  * routing logic in an embedded language should allow reloading at runtime without kamailio restart
+
+===== Source Tree Structure =====
+
+It was discussed in the past:
+
+  * source code files should be relocated to have a better structure for include headers, core files, modules and internal libraries as well as utilities
+
+===== Build System =====
+
+Revising the build system based on Makefiles.
+
+Alternatives to analyze:
+
+  * configure
+  * cmake
+
