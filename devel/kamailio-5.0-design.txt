@@ -29,3 +29,26 @@ Alternatives to analyze:
   * configure
   * cmake
 
+===== Continuous Integration =====
+
+==== Unit Test Framework ====
+
+Reviving the exiting unit testing or selecting another framework.
+
+==== Minimal Unit Tests ====
+
+Defining a minimum set of automatic tests that needs to be provided by each module:
+
+  * a minimal config for loading the module, to be sure it doesn't have missing linking symbols
+  * can be done with a config as simple as:
+
+<code>
+
+loadmodule "foo.so"
+
+request_route {
+  ;
+}
+</code>
+
+  * or can require setting some module parameters or even loading other modules
