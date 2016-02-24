@@ -188,6 +188,7 @@ Few guidelines to edit the wiki:
   * [[devel:makefile-system|Makefile System]]
   * [[http://www.kamailio.org.cn|Kamailio Chinese Community-中国社区]]
   * [[scripts:toc|Various Scripts]]
+  * [[devel:kamailio-5.0-design|Kamailio v5.0 Design]]
 ===== Disclaimer =====
 
 <color grey>
