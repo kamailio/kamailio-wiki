@@ -38,9 +38,20 @@ To achieve the above, following sub-sections collects the proposals for configur
 
 ===== Source Tree Structure =====
 
+Goals:
+
+  * group files per components to be easier to spot their role, especially the core, include files and utilities
+
+==== Reorganizing Source Files Location ====
+
 It was discussed in the past:
 
   * source code files should be relocated to have a better structure for include headers, core files, modules and internal libraries as well as utilities
+
+Two models proposed:
+
+  * a) only move core files in a new 'core' folder in the root directory
+  * b) move all source code files for Kamailio in a new 'src' folder, with further re-organization with subfolders inside 'src'
 
 ===== Build System =====
 
