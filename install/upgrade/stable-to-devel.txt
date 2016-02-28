@@ -26,9 +26,6 @@ Following tokens are used to mark the changes:
 
 ==== MySQL Database Structure ====
 
-=== Upgrade Old MySQL Database Structure ===
-
-
 Run following SQL statements in MySQL client to upgrade database structure from v4.3 to v4.4:
 
 <code sql>
