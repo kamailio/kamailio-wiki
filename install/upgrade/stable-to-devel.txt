@@ -26,3 +26,33 @@ Following tokens are used to mark the changes:
 
 ==== MySQL Database Structure ====
 
+=== Upgrade Old MySQL Database Structure ===
+
+
+Run following SQL statements in MySQL client to upgrade database structure from v4.3 to v4.4:
+
+<code sql>
+-- table: active_watchers
+ALTER TABLE active_watchers
+  ADD COLUMN flags int(11) NOT NULL DEFAULT '0',
+  ADD COLUMN user_agent varchar(255) NOT NULL;
+DELETE FROM version WHERE TABLE_NAME='active_watchers';
+INSERT INTO version (`table_name`, `table_version`) VALUES ('active_watchers','12');
+
+-- table: trusted
+ALTER TABLE trusted
+  ADD COLUMN priority int(11) NOT NULL DEFAULT '0',
+  ADD COLUMN ruri_pattern varchar(64) NULL,
+  CHANGE COLUMN tag tag varchar(64) NULL;
+DELETE FROM version WHERE TABLE_NAME='trusted';
+INSERT INTO version (`table_name`, `table_version`) VALUES ('trusted','6');
+
+-- table: uacreg
+ALTER TABLE uacreg
+  ADD COLUMN reg_delay int(11) NOT NULL DEFAULT '0',
+  ADD COLUMN flags int(11) NOT NULL DEFAULT '0';
+DELETE FROM version WHERE TABLE_NAME='uacreg';
+INSERT INTO version (`table_name`, `table_version`) VALUES ('uacreg','2');
+
+
+</code>
