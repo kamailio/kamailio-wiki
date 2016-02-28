@@ -24,6 +24,11 @@ Following tokens are used to mark the changes:
 
 ===== Database =====
 
+There are quite minimal changes to the database structure, in short:
+
+  * presence active_watchers table has new columns
+  * permissions trusted table has new columns
+  * uac uacreg table has new columns
 ==== MySQL Database Structure ====
 
 Run following SQL statements in MySQL client to upgrade database structure from v4.3 to v4.4:
