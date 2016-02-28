@@ -21,15 +21,20 @@
   * cryptographic functions for use in config file
   * http://kamailio.org/docs/modules/devel/modules/crypto.html
 
-==== http_async ====
+==== http_async_client ====
 
   * async http queries using curl library
-  * http://kamailio.org/docs/modules/devel/modules/http_async.html
+  * http://kamailio.org/docs/modules/devel/modules/http_async_client.html
 
 ==== http_client ====
 
   * http queries using curl library
   * http://kamailio.org/docs/modules/devel/modules/http_client.html
+
+==== ims_dialog ====
+
+  * rename of dialog_ng
+  * http://kamailio.org/docs/modules/devel/modules/ims_dialog.html
 
 ==== log_custom ====
 
@@ -70,6 +75,10 @@
 
   * module timer processes based on workers parameter
 
+=== auth_radius ===
+
+  * append_realm_to_username parameter - allows the unmolested digest username to be passed to RADIUS in the User-Name attribute
+
 ==== carrierroute ====
 
   * addind db_load_description parameter
@@ -107,15 +116,21 @@
   * increased default buffers size for rpc responses
     * binrpc_max_body_size = 32
     * binrpc_struct_max_body_size = 8
+  * support for u specifier (unsigned int)
 
 ==== db_text ====
 
   * support 'order by' in raw query
+  * flexibility for column type comparison - compare DB1_STR, DB1_STRING, DB1_BLOB as equal
+  * add support for replace - implements replace with update/insert
+  * implemented raw query for UPDATE/DELETE/REPLACE
 
 ==== debugger ====
 
   * add support for static and dynamic, module specific, logging facility
   * new dbg_sip_msg() config function, which prints how the sip message would look like if it were to be sent out at that point in config
+  * added mi commands for module level/facility setters
+  * added rpc commands for module level/facility setters
 
 ==== dialog ====
 
@@ -123,17 +138,32 @@
   * run event_route[dialog:end] in case of dialog termination by interface commands
   * make dialog context available in event route tm:local-request
   * new parameter db_skip_load to skip loading dialogs on startup
+  * safety bump of cseq for bye if prack was involved in call setup
+
+==== dialog_ng ====
+
+  * renamed to ims_dialog
 
 ==== dispatcher ====
 
   * relative weight distribution added - it is possible to assign "rweight" (relative weight) param to each host in destination group. rweight is in the integer range from 1 to 100
   * added new probing_mode=3 to always probe flagged gateways
+  * ds_timer_mode - new param to specify the timer proc
+    * if set to 0 (default), main timer is used
+    * if set to 1, secondary timer is used
+  * rpc command dispatcher.ping_active
+    * manage global pinging state (send or not the keepalive to destinations)
+    * kamcmd dispatcher.ping_active 0 - don't send keepalive requests
+    * kamcmd dispatcher.ping_active 1 - send keepalive requests
+    * default value is 1
 
 ==== dmq_usrloc ====
 
   * implement deleted contact replication
   * new param sync - control sync'ing all contacts at startup
     * default 1 - require sync'ing of all contacts at startup, set to 0 to disable
+  * support for throttling sync of all usrloc records
+    * batch_size and batch_usleep parameters can control how many records can be sent out at once, after that sleep for batch_usleep microseconds before sending the next batch
 
 ==== domain ====
 
@@ -151,6 +181,16 @@
 
   * improved error message when loading from database
   * htable.dump - added the type of the value to the result
+  * allow specifying column names per hash table
+    * at least two columns must be specified, first is the one corresponding to key_name
+    * the values of following columns are concatenated with a comma delimiter
+    * columns can be specified with cols attribute in htable definition and they must be enclosed in quotes in order to be a valid sip parameter value and be separated by comma
+    * don't sync back to db when cols per htable is set
+
+<code>
+    modparam("htable", "htable",
+        "a=>size=4;dbtable=a;cols='key_name,val1,val2,val3'")
+</code>
 
 ==== ims_auth ====
 
@@ -161,6 +201,9 @@
 
   * added Multiple-Services Indicator
   * allow ro session id to be used from cfg file as avp
+  * added the possibility to omit the rating-group
+  * added ability to send vendor-specific charge information
+  * added ability to retrieve the Diameter-Status-Code for the Charging-Session
 
 ==== ims_qos ====
 
@@ -174,10 +217,15 @@
   * added functionality to unREGISTER a contact, eg. based on a failed network ping
   * set received host, proto and port when searching for pcontact
 
+==== ims_registrar_scscf ====
+
+  * new function to pass extra argument to lookup (ue_type) - useful if looking for a specific type of UE ie VoLTE vs SIP for example
+
 ==== ims_usrloc_scscf ====
 
   * added counters for reporting hashtable usage - collision slot count for contacts and subscriptions
   * implemented overwrite oldest contact behaviour
+  * added support for UE types required by registrar
 
 ==== janssonrpc-c ====
 
@@ -206,6 +254,15 @@
 ==== mtree ====
 
   * allow for larger (max 64) prefix values to be used (e.g., case of uuid, ipv6)
+  * allow specifying column names per tree
+    * at least two columns must be specified, first is the one corresponding to tprefix 
+    * if more than two, then the values of those columns are concatenated with a comma delimiter
+    * columns can be specified with cols attribute in mtree definition and they must be enclosed in quotes in order to be a valid sip parameter value and be separated by comma
+
+<code>
+    modparam("mtree", "mtree",
+      "name=mt;dbtable=mtree;cols='tprefix,tvalue1,tvalue2'")
+</code>
 
 ==== nathelper ====
 
@@ -223,11 +280,26 @@
 
   * match trusted rules considering priority and regexp over r-uri
     * two new columns to set priority of the rule as well as regular expression matching over r-uri
+  * max_subnets - new parameter
+    * specify the max size for address subnets array, default value: 512
+    * if there are more subnet records in address tables than the value of max_subnets, increase it
+
+==== presence ====
+
+  * added presence:notify-reply event
+  * implemented $notify_reply for handling in presence:notify-reply event
+  * added flags, user_agent columns to active_watchers
+  * extended $subs to other subscription properties
 
 ==== presence_xml ====
 
   * added optional param force_dummy_presence
     * module parameter to send empty presence notify body when there isn't any record in presentity
+
+==== pua_dialoginfo ====
+
+  * support for sending "Trying" state for callee
+    * implemented callee_trying parameter in pua_dialoginfo which causes a "Trying" state to be sent for both the caller and callee when a new dialog is created
 
 ==== pua_reginfo ====
 
@@ -246,6 +318,7 @@
   * added $utime and $utimef pv's to retrieve time in UTC
     * $utime is the UTC equivalent to $time for localtime
     * $utimef is the UTC equivalent to $timef for localtime
+  * $snd(sproto) returns sending protocol as string
 
 ==== registrar ====
 
@@ -253,6 +326,7 @@
   * set xavp_rcd on registered()
   * export lookup_to_dset with uri to config
   * allow registered() in any route
+  * send 400 response if the reg-id value is invalid
 
 ==== rr ====
 
@@ -266,6 +340,10 @@
   * new read_sdp_pv parameter - this parameter allows to specify a script var or AVP for rtpengine to get the SDP from, instead of the SIP message body
   * hash table to keep the selected nodes
   * added rtpengine_allow_op modparam - when the param is enabled, allow current sessions to finish and deny new sessions for manually deactivated rtpengine nodes via kamctl i.e. "disabled(permanent)" nodes
+  * added setid_default modparam - option to change the default set id.
+    * if setid_avp is configured, the active set used is the avp value.
+    * if setid_avp is not configured, the active set used is setid_default value
+  * added kamctl nh_reload_rtpp - mi command to allow reload from database node table
 
 ==== sipcapture ====
 
@@ -273,6 +351,23 @@
   * added homer5 functionality to sipcapture module
   * accept a list of headers for callid_aleg_header
   * added async support for storing in asynchronous mode if supported by database backend
+  * new parameter topoh_unmask - if set to 1, call-id will be unmasked using topoh module api
+
+==== siptrace ====
+
+  * new parameter trace_mode
+    * if set to 1, is using the SREV_NET_DATA_SEND event for sending HEP packets to sipcapture server for packets sent to the network
+
+==== sipt ====
+
+  * added ability to check charging indicator
+
+==== siputils ====
+
+  * exported $pcv(name) variable for P-Charging-Vectore header and sip_p_charing_vector() function
+    * $pcv(all) = whole field
+    * $pcv(value) = icid-value field (see RFC3455 section 5.6)
+    * $pcv(genaddr) = icid-generated-at field (see RFC3455 section 5.6)
 
 ==== sst ====
 
@@ -286,6 +381,15 @@
 
   * keepalive functions enabled on BSD
   * add tcp_conid_state function to check connection state
+  * framework to execute event_route[tcp:closed]
+  * per-connection control over execution of event route tcp:closed
+  * added "disabled mode" to closed_event param - this mode will bypass the event callback registration to improve performances when the "tcp:closed" route feature is not needed
+
+==== textops ====
+
+  * new functions to get part of a multipart body
+    * get_body_part() - return only the body part content
+    * get_body_part_raw() - get body part with headers and boundary
 
 ==== textopsx ====
 
@@ -303,10 +407,14 @@
   * execute the onsend_route for responses forwarded by tm module - not executed for local generated sip responses
   * enable drop in onsend_route for tm replies
   * support to add text in Reason header for local generated CANCEL
+  * use core sip routing api callid generator if available
+  * added t_is_request_route() config function
 
 ==== tmx ====
 
   * added $T(ruid) - return current branch ruid attribute
+  * new counter/statistics
+  * consistent naming of counters - simplify the names of the tmx counters to "rpl_*"
 
 ==== tsilo ====
 
@@ -319,6 +427,9 @@
 ==== uac ====
 
   * uac.reg_dump returns an array rpc result
+  * uacreg table has two new columns - flags, reg_delay
+    * store the flags for runtime behavior
+    * delay intial registration (allow to spread registrations over an interval of time, not to flood the registrar at the same time)
 
 ==== usrloc ====
 
@@ -326,6 +437,8 @@
   * new module option to support preload using server_id as filter
   * new matching mode: CALLID_ONLY
   * new param to skip non-local location record - yf set, kamailio will skip record if socket value doesn't in listening socket list when loading record from database
+  * option to clean up database on write back/through modes
+    * enabled by db_timer_clean parameter
 
 ==== utils ====
 
@@ -356,6 +469,7 @@
   * added framework to allow replacing logging to syslog
     * this enables a module to replace all logging to syslog with another logging mechanism
     * it is not enabled when log_stderror=yes or the system is detected as __SUNPRO_C
+  * trigger event_route execution for unexpectedly-closed and client-closed tcp connections
 
 ==== Parameters ====
 
@@ -372,6 +486,12 @@
   * display the 2 levels matrix in TLSF status
   * shared (shm) memory manager can be selected with -x command line parameter at startup
   * private (pkg) memory manager can be selected with -X command line parameter at startup. If this parameter is omitted, the value of -x is used
+
+==== Architecture ====
+
+  * wheel timer implementation
+    * shared by modules needing to execute timer tasks, don't want to interfere with main core timers, but don't do lots of operations to create own timer
+    * wheel timer is advertised as secondary timer
 
 ==== kamailio.cfg ====
 
