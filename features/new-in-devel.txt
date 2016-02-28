@@ -21,10 +21,15 @@
   * cryptographic functions for use in config file
   * http://kamailio.org/docs/modules/devel/modules/crypto.html
 
-==== curl ====
+==== http_async ====
+
+  * async http queries using curl library
+  * http://kamailio.org/docs/modules/devel/modules/http_async.html
+
+==== http_client ====
 
   * http queries using curl library
-  * http://kamailio.org/docs/modules/devel/modules/curl.html
+  * http://kamailio.org/docs/modules/devel/modules/http_client.html
 
 ==== log_custom ====
 
@@ -52,6 +57,10 @@
 
   * new **acc_prepare_always** parameter to allow preparation of the request no matter if the acc_prepare_flag is set at the moment of the transaction creation. See [[http://lists.sip-router.org/pipermail/sr-users/2015-July/089191.html|sr-user discussion]]
 
+==== acc_radius ====
+
+  * added radius time mode parameter: rad_time_mode - format can be set to seconds.microseconds
+
 ==== app_lua ====
 
   * export registrar.lookup_to_dset to app_lua interface
@@ -60,6 +69,11 @@
 ==== async ====
 
   * module timer processes based on workers parameter
+
+==== carrierroute ====
+
+  * addind db_load_description parameter
+    * toggle on/off loading in memory the description column in the carrierroute/carrierfailureroute database tables. This reduces the shared memory used by the module
 
 ==== cdp ====
 
@@ -72,11 +86,27 @@
 
   * sleep() and usleep() accept vars as parameter
 
+==== cnxcc ====
+
+  * locks re-entrant for simplifying the upper layer APIs
+
 ==== corex ====
 
   * added file_read() and file_write() functions
     * file_read(fpath, var) - read content of a text file into a variable
     * file_write(fpat, content) - write content of parameter to a text file
+  * added corex.pkg_summary command
+    * dump pkg usage summary to syslog for a specific pid or process index
+<code>
+    kamcmd corex.pkg_summary pid 12345
+    kamcmd corex.pkg_summary idx 1
+</code>
+
+==== ctl ====
+
+  * increased default buffers size for rpc responses
+    * binrpc_max_body_size = 32
+    * binrpc_struct_max_body_size = 8
 
 ==== db_text ====
 
@@ -102,6 +132,8 @@
 ==== dmq_usrloc ====
 
   * implement deleted contact replication
+  * new param sync - control sync'ing all contacts at startup
+    * default 1 - require sync'ing of all contacts at startup, set to 0 to disable
 
 ==== domain ====
 
@@ -123,6 +155,7 @@
 ==== ims_auth ====
 
   * added option to set destination host for MAR requests
+  * allow different qop setting for INVITE
 
 ==== ims_charging ====
 
@@ -134,6 +167,7 @@
   * make Release-Reason from QoS configurable
   * option to add Extra-Header, in case QoS fails during a session
   * added Rx-Specific-Action AVPs to work with some PCRFs
+  * new mod param terminate_dialog_on_rx_failure - terminate_dialog_on_rx_failure this parameter determines if a dialog is torn down if a media Rx session is terminated
 
 ==== ims_registrar_pcscf ====
 
@@ -162,6 +196,8 @@
 ==== kex ====
 
   * support VERSION_NODATE and VERSION_DATE for reproducible builds
+  * per module memory statistics when in debugging mode
+    * return details about memory used by each module via rpc commands
 
 ==== lcr ====
 
@@ -188,6 +224,11 @@
   * match trusted rules considering priority and regexp over r-uri
     * two new columns to set priority of the rule as well as regular expression matching over r-uri
 
+==== presence_xml ====
+
+  * added optional param force_dummy_presence
+    * module parameter to send empty presence notify body when there isn't any record in presentity
+
 ==== pua_reginfo ====
 
   * added support for custom params as contact parameters (e.g. <unknown-param name="+g.oma.sip-im"></unknown-param>)
@@ -202,6 +243,9 @@
     * $adr - auth response
     * $ado - auth opaque
   * pv_var_to_xavp() - copy script variables values to xavps
+  * added $utime and $utimef pv's to retrieve time in UTC
+    * $utime is the UTC equivalent to $time for localtime
+    * $utimef is the UTC equivalent to $timef for localtime
 
 ==== registrar ====
 
@@ -212,7 +256,7 @@
 
 ==== rr ====
 
-  *add enable_double_rr_always option
+  * add enable_double_rr_always option
 
 ==== rtppengine ====
 
@@ -220,11 +264,15 @@
   * try the next media relay available if the limit reached reply is received
   * unset "don't fragment" ip header flag
   * new read_sdp_pv parameter - this parameter allows to specify a script var or AVP for rtpengine to get the SDP from, instead of the SIP message body
+  * hash table to keep the selected nodes
+  * added rtpengine_allow_op modparam - when the param is enabled, allow current sessions to finish and deny new sessions for manually deactivated rtpengine nodes via kamctl i.e. "disabled(permanent)" nodes
 
 ==== sipcapture ====
 
   * insert From URI domain, To URI domain and request URI domain to database
   * added homer5 functionality to sipcapture module
+  * accept a list of headers for callid_aleg_header
+  * added async support for storing in asynchronous mode if supported by database backend
 
 ==== sst ====
 
@@ -237,12 +285,28 @@
 ==== tcpops ====
 
   * keepalive functions enabled on BSD
+  * add tcp_conid_state function to check connection state
+
+==== textopsx ====
+
+  * if no param is given to keep_hf(re), then keep only mandatory headers
+
+==== tls ====
+
+  * option to match TLS client config profile based on server_id
+    * server_id can be any string that uniquely identifies a client config profile, overriding the attempt to match on ip:port (+sni). This makes it easier to select the desired config profile, because the port is hard to guess for stream connections
+    * prameter xavp_cfg has to be enabled and inner xavp 'server_id' has to be set before relaying the sip message (before opening the client connection)
 
 ==== tm ====
 
   * use xavps for t_load_contacts/t_next_contacts/t_next_contact_flow
   * execute the onsend_route for responses forwarded by tm module - not executed for local generated sip responses
   * enable drop in onsend_route for tm replies
+  * support to add text in Reason header for local generated CANCEL
+
+==== tmx ====
+
+  * added $T(ruid) - return current branch ruid attribute
 
 ==== tsilo ====
 
@@ -250,6 +314,11 @@
   * t_store(...) accepts uri as parameter
   * ts_append_to() can take uri as parameter
   * removed usrloc dependency
+  * added use_domain parameter
+
+==== uac ====
+
+  * uac.reg_dump returns an array rpc result
 
 ==== usrloc ====
 
@@ -279,21 +348,35 @@
 
 ===== New in Core =====
 
+==== Interpreter ====
+
+  * new feature to execute event_route[core:worker-one-init] - the event_route[core:worker-one-init] is executed if defined in kamailio.cfg after the first udp sip worker process executed the child_init() for all modules, before starting to process sip traffic
+  * cast operator (int) converts hex strings as well - in addition to dec string
+  * name of the structure exported by a module can be prefixed with module name
+  * added framework to allow replacing logging to syslog
+    * this enables a module to replace all logging to syslog with another logging mechanism
+    * it is not enabled when log_stderror=yes or the system is detected as __SUNPRO_C
+
 ==== Parameters ====
 
   * new parameter async_usleep - add option to do usleep() before processing async tasks
     * could help saving cpu usage on vms with immediate interruptions triggered to recvfrom()
+  * added parameters log_engine_type and log_engine_data
+    * can be used to specify what logging engine to be used and its initialization data
+    * see readme of log_custom module for a same of usage
 
-==== Functions and Operators ====
-
-  * cast operator (int) converts hex strings as well - in addition to dec string
-  * name of the structure exported by a module can be prefixed with module name
+==== Functions ====
 
 ==== Memory Managers ====
 
   * display the 2 levels matrix in TLSF status
   * shared (shm) memory manager can be selected with -x command line parameter at startup
   * private (pkg) memory manager can be selected with -X command line parameter at startup. If this parameter is omitted, the value of -x is used
+
+==== kamailio.cfg ====
+
+  * use flag 'r' for rtpproxy if ip in sdp is not private
+    * skip learning mode, advertised media ip is routable
 
 ===== Tools =====
 
