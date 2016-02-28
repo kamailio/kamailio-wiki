@@ -1,8 +1,30 @@
 ====== Kamailio v5.0 Design ======
 
+===== Overview =====
+
 After 15 years of development, it is time for Kamailio v5.0.
 
+This page collects suggestions and ideas for major refactoring of various components to make the leap to v5.0.
+
+When adding a remark that needs to be tracked by author, use initials in front of the paragraph. The list of contributors to this document and initials:
+
+  * Daniel-Constantin Mierla (dcm)
+
+===== Initial Remarks =====
+
+Initial content for this document is listing also ideas popped up during discussions at Fosdem 2016 and Kamailio Development Workshop - among participants: Camille Oudout, Daniel-Constantin Mierla, Federico Cabiddu, Giacomo Vacca, Henning Westerholt, Olle E. Johansson, Torrey Searle, Victor Seva.
+
 ===== Configuration File =====
+
+Goals:
+
+  * have at least one option of an optimized configuration file interpreter targeting high performance SIP routing deployments
+  * have at least one option of a more flexible configuration language that allows:
+    * extended language syntax
+    * reloading routing rules at runtime
+
+To achieve the above, following sub-sections collects the proposals for configuration file language.
+
 
 ==== Exporting Functions To Embedded Interpreters ====
 
@@ -30,6 +52,11 @@ Alternatives to analyze:
   * cmake
 
 ===== Continuous Integration =====
+
+Goals:
+
+  * attempt to make a more consistent and "easy to contribute to" continuous integration eco-system 
+
 
 ==== Unit Test Framework ====
 
