@@ -20,20 +20,22 @@
 
   * cryptographic functions for use in config file
   * http://kamailio.org/docs/modules/devel/modules/crypto.html
+
 ==== curl ====
 
   * http queries using curl library
   * http://kamailio.org/docs/modules/devel/modules/curl.html
+
 ==== log_custom ====
 
   * send log messages to custom backend
   * http://kamailio.org/docs/modules/devel/modules/log_custom.html
 
-
 ==== log_systemd ====
 
   * send log messages to systemd journal
   * http://kamailio.org/docs/modules/devel/modules/log_systemd.html
+
 ==== smsops ====
 
   * sms operations for sip messages
@@ -43,27 +45,186 @@
 
   * statistics collector providing reports
   * http://kamailio.org/docs/modules/devel/modules/statsc.html
+
 ===== New in Old Modules =====
 
 ==== acc ====
 
   * new **acc_prepare_always** parameter to allow preparation of the request no matter if the acc_prepare_flag is set at the moment of the transaction creation. See [[http://lists.sip-router.org/pipermail/sr-users/2015-July/089191.html|sr-user discussion]]
 
+==== app_lua ====
+
+  * export registrar.lookup_to_dset to app_lua interface
+  * export many sdpops functions to LUA
+
+==== async ====
+
+  * module timer processes based on workers parameter
+
+==== cdp ====
+
+  * added class of auth session to know more info about auth session - for example: ims_qos can now report Rx session for Reg or for media
+  * CER/CEA retry if send/receive FD disappeared
+  * evaluate the supported_vendor_id-AVP during CER/CEA
+  * load balancing timer has millisecond resolution
+
+==== cfgutils ====
+
+  * sleep() and usleep() accept vars as parameter
+
+==== corex ====
+
+  * added file_read() and file_write() functions
+    * file_read(fpath, var) - read content of a text file into a variable
+    * file_write(fpat, content) - write content of parameter to a text file
+
+==== db_text ====
+
+  * support 'order by' in raw query
+
+==== debugger ====
+
+  * add support for static and dynamic, module specific, logging facility
+  * new dbg_sip_msg() config function, which prints how the sip message would look like if it were to be sent out at that point in config
+
+==== dialog ====
+
+  * re-entrant mutex for dialogs hash table slots
+  * run event_route[dialog:end] in case of dialog termination by interface commands
+  * make dialog context available in event route tm:local-request
+  * new parameter db_skip_load to skip loading dialogs on startup
+
+==== dispatcher ====
+
+  * relative weight distribution added - it is possible to assign "rweight" (relative weight) param to each host in destination group. rweight is in the integer range from 1 to 100
+  * added new probing_mode=3 to always probe flagged gateways
+
+==== dmq_usrloc ====
+
+  * implement deleted contact replication
+
+==== domain ====
+
+  * allow 'type' field in domain_attrs to be a DB1_BIGINT, makes it work with MySQL views on 64bit systems
+
+==== drouting ====
+
+  * support for symbols "#*+" in drouting trees
+
+==== evapi ====
+
+  * implemented receive buffering per connected client
+
 ==== htable ====
 
   * improved error message when loading from database
+  * htable.dump - added the type of the value to the result
+
+==== ims_auth ====
+
+  * added option to set destination host for MAR requests
+
+==== ims_charging ====
+
+  * added Multiple-Services Indicator
+  * allow ro session id to be used from cfg file as avp
+
+==== ims_qos ====
+
+  * make Release-Reason from QoS configurable
+  * option to add Extra-Header, in case QoS fails during a session
+  * added Rx-Specific-Action AVPs to work with some PCRFs
+
+==== ims_registrar_pcscf ====
+
+  * added functionality to unREGISTER a contact, eg. based on a failed network ping
+  * set received host, proto and port when searching for pcontact
+
+==== ims_usrloc_scscf ====
+
+  * added counters for reporting hashtable usage - collision slot count for contacts and subscriptions
+  * implemented overwrite oldest contact behaviour
+
+==== janssonrpc-c ====
+
+  * allow null json error property in rpc response
+
+==== jsonrpc-c ====
+
+  * add max_conn_attempt parameter to control max number of reconnections
+
+==== kazoo ====
+
+  * support alternative federated exchanges
+  * allow multiple simultaneous servers
+  * add async query feature - suspend the transaction on send and continue on return or timeout
+
+==== kex ====
+
+  * support VERSION_NODATE and VERSION_DATE for reproducible builds
+
+==== lcr ====
+
+  * added priority_ordering module parameter - allows ordering of matched gateways only by priority and weight
+
+==== mtree ====
+
+  * allow for larger (max 64) prefix values to be used (e.g., case of uuid, ipv6)
+
+==== nathelper ====
+
+  * support filter contacts by server_id
+
+==== p_usrloc ====
+
+  * added path and +instance support
+
+==== pdb ====
+
+  * new protocol between pdb_server and kama pdb module
+
+==== permissions ====
+
+  * match trusted rules considering priority and regexp over r-uri
+    * two new columns to set priority of the rule as well as regular expression matching over r-uri
+
+==== pua_reginfo ====
+
+  * added support for custom params as contact parameters (e.g. <unknown-param name="+g.oma.sip-im"></unknown-param>)
 
 ==== pv ====
 
   * **pv_var_to_xavp** script function to copy $var values to $xavp
+  * transformation to remove all non-numeric parts of a string
+  * add auth digest pseudo variables
+    * $adn -  auth nonce
+    * $adc - auth cnonce
+    * $adr - auth response
+    * $ado - auth opaque
+  * pv_var_to_xavp() - copy script variables values to xavps
 
 ==== registrar ====
 
   * add **contact** and **recieved** values to xavp_rcd
   * set xavp_rcd on registered()
+  * export lookup_to_dset with uri to config
+  * allow registered() in any route
+
+==== rr ====
+
+  *add enable_double_rr_always option
+
+==== rtppengine ====
+
+  * new fifo command, namely nh_ping_rtpp, which pings the given proxy or all proxies, and if a proxy does not respond, disable it temporarily
+  * try the next media relay available if the limit reached reply is received
+  * unset "don't fragment" ip header flag
+  * new read_sdp_pv parameter - this parameter allows to specify a script var or AVP for rtpengine to get the SDP from, instead of the SIP message body
+
 ==== sipcapture ====
 
   * insert From URI domain, To URI domain and request URI domain to database
+  * added homer5 functionality to sipcapture module
 
 ==== sst ====
 
@@ -80,8 +241,68 @@
 ==== tm ====
 
   * use xavps for t_load_contacts/t_next_contacts/t_next_contact_flow
+  * execute the onsend_route for responses forwarded by tm module - not executed for local generated sip responses
+  * enable drop in onsend_route for tm replies
+
+==== tsilo ====
+
+  * added module specific satistics
+  * t_store(...) accepts uri as parameter
+  * ts_append_to() can take uri as parameter
+  * removed usrloc dependency
+
+==== usrloc ====
+
+  * support filter by server_id at get_all_ucontacts
+  * new module option to support preload using server_id as filter
+  * new matching mode: CALLID_ONLY
+  * new param to skip non-local location record - yf set, kamailio will skip record if socket value doesn't in listening socket list when loading record from database
+
+==== utils ====
+
+  * added optional parameter for setting additional http headers
+  * option to trim leading and trailing white spaces in http response - new parameter http_response_trim to control it; default is 0 - don't trim (backward compatible); set to 1 for enabling trimming
+  * new parameter http_response_mode to control what response part is returned
+    * if http_response_mode=0, only the first line is returned
+    * if http_response_mode=1, all the response is returned
+
+==== websocket ====
+
+  * added support for SIP message fragmentation
+    * websocket connections are created with a BUF_SIZE (64K) buffer used for concatenating frames
+    * continuation frames (fragments) are supported for the SIP sub-protocol
+
+==== xlog ====
+
+  * convenience functions for various log levels
+    * xinfo(), xnotice(), xwarn(), xerr(), xbug(), xcrit(), xalert()
+
 ===== New in Core =====
 
+==== Parameters ====
+
+  * new parameter async_usleep - add option to do usleep() before processing async tasks
+    * could help saving cpu usage on vms with immediate interruptions triggered to recvfrom()
+
+==== Functions and Operators ====
+
+  * cast operator (int) converts hex strings as well - in addition to dec string
+  * name of the structure exported by a module can be prefixed with module name
+
+==== Memory Managers ====
+
+  * display the 2 levels matrix in TLSF status
+  * shared (shm) memory manager can be selected with -x command line parameter at startup
+  * private (pkg) memory manager can be selected with -X command line parameter at startup. If this parameter is omitted, the value of -x is used
 
 ===== Tools =====
 
+==== kamcmd ====
+
+  * support VERSION_NODATE and VERSION_DATE for reproducible builds
+
+==== kamctl ====
+
+  * added mongodb schema files
+    * custom json format specifying structure of collections/tables
+    * version-create.mongo - a script with mongo commands to fill the version collection/table
