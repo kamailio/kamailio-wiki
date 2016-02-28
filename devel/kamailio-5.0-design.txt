@@ -55,7 +55,11 @@ Two models proposed:
 
 ===== Build System =====
 
-Revising the build system based on Makefiles.
+Goals:
+
+  * revising the build system based on Makefiles.
+
+==== Reviewing Alternative Build Systems ====
 
 Alternatives to analyze:
 
