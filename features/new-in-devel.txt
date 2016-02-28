@@ -76,6 +76,10 @@
 ==== tcpops ====
 
   * keepalive functions enabled on BSD
+
+==== tm ====
+
+  * use xavps for t_load_contacts/t_next_contacts/t_next_contact_flow
 ===== New in Core =====
 
 
