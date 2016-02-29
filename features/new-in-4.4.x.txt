@@ -332,7 +332,7 @@
 
   * add enable_double_rr_always option
 
-==== rtppengine ====
+==== rtpengine ====
 
   * new fifo command, namely nh_ping_rtpp, which pings the given proxy or all proxies, and if a proxy does not respond, disable it temporarily
   * try the next media relay available if the limit reached reply is received
