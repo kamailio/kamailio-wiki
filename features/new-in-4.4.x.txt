@@ -364,7 +364,7 @@
 
 ==== siputils ====
 
-  * exported $pcv(name) variable for P-Charging-Vectore header and sip_p_charing_vector() function
+  * exported $pcv(name) variable for P-Charging-Vector header and sip_p_charging_vector() function
     * $pcv(all) = whole field
     * $pcv(value) = icid-value field (see RFC3455 section 5.6)
     * $pcv(genaddr) = icid-generated-at field (see RFC3455 section 5.6)
