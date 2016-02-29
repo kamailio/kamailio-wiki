@@ -322,7 +322,7 @@
 
 ==== registrar ====
 
-  * add **contact** and **recieved** values to xavp_rcd
+  * add **contact** and **received** values to xavp_rcd
   * set xavp_rcd on registered()
   * export lookup_to_dset with uri to config
   * allow registered() in any route
