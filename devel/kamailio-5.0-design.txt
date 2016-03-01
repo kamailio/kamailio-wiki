@@ -31,6 +31,13 @@ To achieve the above, following sub-sections collects the proposals for configur
   * define and implement an export interface from modules to embedded interpreters to automatically add new functions to embedded interpreters
   * it should be in a similar fashion as for adding functions to configuration file, but without fixup mechanism, so bare string/integer parameters can be provided by embedded interpreters
 
+Interface fields:
+
+  * submodule name in embedded interpreter
+  * function name in embedded interpreter
+  * parameter types
+  * pointer to c function
+
 
 ==== Routing Logic In Embedded Interpreters Scripting ====
 
