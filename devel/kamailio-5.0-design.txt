@@ -38,6 +38,16 @@ Interface fields:
   * parameter types
   * pointer to c function
 
+Example:
+
+<code c>
+// export t_reply(200, "OK")
+
+sr_exapi_t mod_exapi[] = {
+  { "sr.tm", "reply", {PARAM_INT, PARAM_STR, 0}, t_reply },
+  { 0, 0, {0}, 0}
+};
+</code>
 
 ==== Routing Logic In Embedded Interpreters Scripting ====
 
