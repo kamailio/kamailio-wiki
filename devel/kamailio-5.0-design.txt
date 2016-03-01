@@ -28,7 +28,9 @@ To achieve the above, following sub-sections collects the proposals for configur
 
 ==== Exporting Functions To Embedded Interpreters ====
 
-  * define and implement an export interface from modules to embedded interpreters to automatically add new functions to embedded interpreters, in a similar fashion as for adding functions to configuration file
+  * define and implement an export interface from modules to embedded interpreters to automatically add new functions to embedded interpreters
+  * it should be in a similar fashion as for adding functions to configuration file, but without fixup mechanism, so bare string/integer parameters can be provided by embedded interpreters
+
 
 ==== Routing Logic In Embedded Interpreters Scripting ====
 
