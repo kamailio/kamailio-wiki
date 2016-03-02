@@ -50,6 +50,7 @@ Please start always with the prefix of the component (subsystem) that is modifie
   * mem: added faster malloc
   * module_name: support for foo rfc extension
   * lib_name: critical bug fix for abc case
+  * kamctl: added support for management of module xyz
 
 Examples of commit messages:
 
