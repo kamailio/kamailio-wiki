@@ -1,4 +1,4 @@
-====== Upgrade Kamailio from v4.3.x to v4.4.0 (devel) ======
+====== Upgrade Kamailio from v4.3.x to v4.4.0 ======
 
 The page contains the details about the changes that were made to old components during the development of v4.4.0 compared with what existed in v4.3.x. It does not include the brand new modules, focusing on how to upgrade database and configuration file from v4.3.x to run with Kamailio devel.
 
