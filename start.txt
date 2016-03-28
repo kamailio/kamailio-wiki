@@ -42,6 +42,7 @@ Few guidelines to edit the wiki:
 ==== Upgrade ====
 
   * [[install:upgrade:stable-to-devel|Upgrade Kamailio stable to devel]]
+  * [[install:upgrade:4.3.x-to-4.4.0|Upgrade Kamailio v4.3.x to v4.4.0]]
   * [[install:upgrade:4.2.x-to-4.3.0|Upgrade Kamailio v4.2.x to v4.3.0]]
   * [[install:upgrade:4.1.x-to-4.2.0|Upgrade Kamailio v4.1.x to v4.2.0]]
   * [[install:upgrade:4.0.x-to-4.1.0|Upgrade Kamailio v4.0.x to v4.1.0]]
