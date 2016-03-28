@@ -1,0 +1,61 @@
+====== Upgrade Kamailio from v4.3.x to v4.4.0 (devel) ======
+
+The page contains the details about the changes that were made to old components during the development of v4.4.0 compared with what existed in v4.3.x. It does not include the brand new modules, focusing on how to upgrade database and configuration file from v4.3.x to run with Kamailio devel.
+
+===== Previous Stable Release =====
+
+If you look for the guidelines to upgrade to previous stable release, see:
+
+  * [[install:upgrade:4.2.x-to-4.3.0|Upgrade Kamailio v4.2.x to v4.3.0]]
+
+===== Remarks =====
+
+Following tokens are used to mark the changes:
+
+  * INF - the change doesn't really have any direct impact - no action required in old config
+  * CPM - the change was used with the new value via explicit parameter in default config file from old releases
+  * RCM - the change is recommended to be done if you had an explicit different or lower value for this parameter in old config
+
+===== Modules =====
+
+===== Core =====
+
+==== Parameters ====
+
+===== Database =====
+
+There are quite minimal changes to the database structure, in short:
+
+  * presence active_watchers table has new columns
+  * permissions trusted table has new columns
+  * uac uacreg table has new columns
+
+==== MySQL Database Structure ====
+
+Run following SQL statements in MySQL client to upgrade database structure from v4.3 to v4.4:
+
+<code sql>
+-- table: active_watchers
+ALTER TABLE active_watchers
+  ADD COLUMN flags int(11) NOT NULL DEFAULT '0',
+  ADD COLUMN user_agent varchar(255) NOT NULL;
+DELETE FROM version WHERE TABLE_NAME='active_watchers';
+INSERT INTO version (`table_name`, `table_version`) VALUES ('active_watchers','12');
+
+-- table: trusted
+ALTER TABLE trusted
+  ADD COLUMN priority int(11) NOT NULL DEFAULT '0',
+  ADD COLUMN ruri_pattern varchar(64) NULL,
+  CHANGE COLUMN tag tag varchar(64) NULL;
+DELETE FROM version WHERE TABLE_NAME='trusted';
+INSERT INTO version (`table_name`, `table_version`) VALUES ('trusted','6');
+
+-- table: uacreg
+ALTER TABLE uacreg
+  ADD COLUMN reg_delay int(11) NOT NULL DEFAULT '0',
+  ADD COLUMN flags int(11) NOT NULL DEFAULT '0';
+DELETE FROM version WHERE TABLE_NAME='uacreg';
+INSERT INTO version (`table_name`, `table_version`) VALUES ('uacreg','2');
+
+
+</code>
