@@ -18,6 +18,21 @@ Following tokens are used to mark the changes:
 
 ===== Modules =====
 
+==== ims_dialog ====
+
+The **dialog-ng** module was renamed to **ims_dialog**.
+
+The modparams statements in your configuration file must be updated to reflect the new name of the module.
+
+<code c>
+# old version
+modparam("dialog-ng", ...)
+
+# new version
+modparam("ims_dialog", ...)
+</code>
+
+The functions for routing blocks are the same, no changes are required there.
 ===== Core =====
 
 ==== Parameters ====
