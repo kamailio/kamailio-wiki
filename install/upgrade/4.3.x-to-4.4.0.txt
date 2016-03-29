@@ -39,7 +39,7 @@ The functions for routing blocks are the same, no changes are required there.
 
 === fork ===
 
-This is just heads up that the **fork** parameter is planned to be refactored in the next version, because fork=no disables many features without explicit visibility (e.g., no tcp/tls, only listening on first network interface).
+This is just heads up notification that the **fork** parameter is planned to be refactored in the next version, because fork=no disables many features without explicit visibility (e.g., no tcp/tls, only listening on first network interface).
 ===== Database =====
 
 There are quite minimal changes to the database structure, in short:
