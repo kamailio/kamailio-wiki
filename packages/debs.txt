@@ -5,7 +5,7 @@ Starting from March 3, 2014 [[http://www.sipwise.com|Sipwise Team]] provides a *
 Sporadically, Debian packages may be available via OpenSuse Build Service (OBS), see details in a dedicated sub-section.
 ===== Status =====
 
-  * Supported Kamailio branches: '' latest stable'' (points to 4.3 now), ''3.3'' , ''4.0'', ''4.1'', ''4.2'', ''4.3'', ''devel''
+  * Supported Kamailio branches: '' latest stable'' (points to 4.4 now), ''3.3'' , ''4.0'', ''4.1'', ''4.2'', ''4.3'', ''4.4'', ''devel''
   * Supported Distributions:''Debian 6.0 Squeeze'', ''Debian 7.0 Wheezy'', ''Debian 8.0 Jessie'', ''Ubuntu 12.04 Precise'', ''Ubuntu 14.04.1 LTS (Trusty Tahr)''
   * Deprecated Distributions: ''Debian 5.0 Lenny'' (Kamailio 3.3.x, 4.0.x), ''Ubuntu 10.04 Lucid'' (Kamailio 3.3.x, 4.0.x)
   * Archs supported: ''amd64'', ''i386''
