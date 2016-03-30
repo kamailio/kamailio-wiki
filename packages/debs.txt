@@ -54,6 +54,34 @@ deb http://deb.kamailio.org/kamailio precise main
 deb-src http://deb.kamailio.org/kamailio precise main
 </code>
 
+====  Kamailio 4.4 Release ====
+
+<code>
+deb     http://deb.kamailio.org/kamailio44 squeeze main
+deb-src http://deb.kamailio.org/kamailio44 squeeze main
+</code>
+
+<code>
+deb     http://deb.kamailio.org/kamailio44 wheezy  main
+deb-src http://deb.kamailio.org/kamailio44 wheezy  main
+</code>
+
+<code>
+deb     http://deb.kamailio.org/kamailio44 jessie  main
+deb-src http://deb.kamailio.org/kamailio44 jessie  main
+</code>
+
+<code>
+deb     http://deb.kamailio.org/kamailio44 precise main
+deb-src http://deb.kamailio.org/kamailio44 precise main
+</code>
+
+<code>
+deb     http://deb.kamailio.org/kamailio44 trusty main
+deb-src http://deb.kamailio.org/kamailio44 trusty main
+</code>
+
+
 ==== Latest Kamailio 4.3 release ====
 
 
