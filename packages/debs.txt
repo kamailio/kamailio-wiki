@@ -233,6 +233,33 @@ deb http://deb.kamailio.org/kamailiodev-nightly jessie main
 deb http://deb.kamailio.org/kamailiodev-nightly precise main
 </code>
 
+====  Kamailio 4.4 Branch ====
+
+<code>
+deb     http://deb.kamailio.org/kamailio44-nightly squeeze main
+deb-src http://deb.kamailio.org/kamailio44-nightly squeeze main
+</code>
+
+<code>
+deb     http://deb.kamailio.org/kamailio44-nightly wheezy  main
+deb-src http://deb.kamailio.org/kamailio44-nightly wheezy  main
+</code>
+
+<code>
+deb     http://deb.kamailio.org/kamailio44-nightly jessie  main
+deb-src http://deb.kamailio.org/kamailio44-nightly jessie  main
+</code>
+
+<code>
+deb     http://deb.kamailio.org/kamailio44-nightly precise main
+deb-src http://deb.kamailio.org/kamailio44-nightly precise main
+</code>
+
+<code>
+deb     http://deb.kamailio.org/kamailio44-nightly trusty main
+deb-src http://deb.kamailio.org/kamailio44-nightly trusty main
+</code>
+
 ====  Kamailio 4.3 Branch ====
 
 * ''Debian Squeeze''
