@@ -1030,7 +1030,7 @@ log_name="kamailio"
 
 ==== log_prefix ====
 
-Specify the text to be prefixed to the log messages printed by Kamailio while processing a SIP message. It can contain script variables that are evaluated at runtime.
+Specify the text to be prefixed to the log messages printed by Kamailio while processing a SIP message. It can contain script variables that are evaluated at runtime (see log_prefix_mode about when/how evaluation is done).
 
 Example - prefix with message type (1 - request, 2 - response), CSeq and Call-ID:
 
@@ -1038,6 +1038,17 @@ Example - prefix with message type (1 - request, 2 - response), CSeq and Call-ID
 log_prefix="{$mt $hdr(CSeq) $ci} "
 </code>
 
+==== log_prefix_mode ====
+
+If set to 0 (default), then log_prefix is evaluated when the sip message is received and then reused (recommended if the log_prefix has only variables that have same value for same message). This is the current behaviour of log_prefix evaluation.
+
+If set to 1, then the log prefix is evaluated before/after each config action (needs to be set when the log_prefix has variables that are different based on the context of config execution, e.g., $cfg(line)).
+
+Example:
+
+<code>
+log_prefix_mode=1
+</code>
 ==== log_stderror ====
 
 With this parameter you can make Kamailio to write log and debug messages to standard error. Possible values are:
