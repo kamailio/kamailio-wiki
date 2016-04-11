@@ -41,7 +41,8 @@ Kamailio 5.0
   * source code tree restructuring (dcm)
   * config file routing logic in embedded language (dcm)
   * unit tests (dcm)
-  * roadmap to next major release (dcm)
+  * build system review (dcm)
+  * roadmap/timelines to next major release (dcm)
 
 Meeting for Designing, Coding and Tuning Kamailio 5.0
 
