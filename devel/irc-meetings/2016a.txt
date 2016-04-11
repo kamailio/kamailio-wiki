@@ -32,6 +32,7 @@ People adding notes in the agenda using abbreviations:
 Kamailio Development Status:
 
   * open issues (dcm)
+  * rpc response without data (sr-users: http://lists.sip-router.org/pipermail/sr-users/2016-April/092510.html)
   * rpm packaging (dcm)
 
 Kamailio 5.0
