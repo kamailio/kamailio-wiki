@@ -172,6 +172,6 @@ end
 
 -- SIP response routing
 function ksr_reply_route()
-	KSR.info([[===== request - from kamailio lua script\n]]);
+	KSR.info([[===== response - from kamailio lua script\n]]);
 end
 </code>
