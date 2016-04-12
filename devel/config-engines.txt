@@ -1,0 +1,83 @@
+====== Configuration File Engines ======
+
+Kamailio implements from scratch the interpreter for its configuration file (kamailio.cfg).
+
+Starting with v5.0.0, the routing blocks can be written in some of its embedded languages interpreter. Known to work:
+
+  * Lua, implemented by app_lua module, as "lua" config engine
+
+Setting a configuration engine can be done with the global setting:
+
+<code c>
+cfgengine = "name"
+</code>
+
+If the name is "native" or "default", then is own language interpreter will be used (this is same behaviour as when cfgengine is not set at all).
+
+This setting must be after loading the module that implements the engine. For example:
+
+<code c>
+...
+loadmodule "app_lua.so"
+...
+cfgengine = "lua"
+...
+</code>
+
+Internally, the support for implementing routing logic in an embedded language is codenamed **kemi** - Kamailio EMbedded Interface.
+
+===== Exporting Functions To KEMI =====
+
+The current implementation relies on the ability of Lua to allow hash tables with custom index. This is like an object that can have methods defined on the fly. Kamailio registers an empty object with a custom index function implemented in Kamailio code, whenever a member of that object is accessed, the index function is executed and Kamailio will resolve it to one of its functions, corresponding by name.
+
+Each existing component of Kamailio (e.g., module), can export new functions to KEMI in the following way:
+
+  * declare an array of type sr_kemi_t
+  * register it to KEMI in mod_register() function (or at startup for core components) using sr_kemi_modules_add()
+
+The structure sr_kemi_t is declared in Kamailio core, the file kemi.h:
+
+<code c>
+#define SR_KEMI_PARAMS_MAX	6
+
+typedef struct sr_kemi {
+	str mname; /* sub-module name */
+	str fname; /* function name */
+	int rtype; /* return type (supported SR_KEMIP_INT/BOOL) */
+	void *func; /* pointer to the C function to be executed */
+	int ptypes[SR_KEMI_PARAMS_MAX]; /* array with the type of parameters */
+} sr_kemi_t;
+
+</code>
+
+Next C code snippet shows how **sl** module exports two functions:
+
+  * C function sl_send_reply_str(...) is exported as sl.sreply(...)
+  * C function send_reply(...) is exported as sl.freply(...)
+
+<code c>
+static sr_kemi_t sl_kemi_exports[] = {
+	{ str_init("sl"), str_init("sreply"),
+		SR_KEMIP_INT, sl_send_reply_str,
+		{ SR_KEMIP_INT, SR_KEMIP_STR, SR_KEMIP_NONE,
+			SR_KEMIP_NONE, SR_KEMIP_NONE, SR_KEMIP_NONE }
+	},
+	{ str_init("sl"), str_init("freply"),
+		SR_KEMIP_INT, send_reply,
+		{ SR_KEMIP_INT, SR_KEMIP_STR, SR_KEMIP_NONE,
+			SR_KEMIP_NONE, SR_KEMIP_NONE, SR_KEMIP_NONE }
+	},
+
+	{ {0, 0}, {0, 0}, 0, NULL, { 0, 0, 0, 0, 0, 0 } }
+};
+
+int mod_register(char *path, int *dlflags, void *p1, void *p2)
+{
+	sr_kemi_modules_add(sl_kemi_exports);
+	return 0;
+}
+</code>
+
+Note that the exported array is ended by a sentinel of 0/NULL values for all fields.
+
+Exported functions must take first parameter as 'sip_msg_t*' type (which is the structure with the SIP message being processed), then followed by up to 6 int or str* parameters. When SR_KEMIP_NONE is given in the array with the types of parameters, it means there is no parameter from there on (some compilers may rise warning, so it is recommended to fill all 6 items in array).
