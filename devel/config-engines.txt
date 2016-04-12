@@ -166,12 +166,18 @@ The **/etc/kamailio/kamailio.lua** with the routing logic for runtime:
 <code lua>
 -- SIP request routing
 function ksr_request_route()
-	KSR.info([[===== request - from kamailio lua script\n]]);
-	KSR.sl.sreply(200, [[OK Lua]]);
+	KSR.info("===== request - from kamailio lua script\n");
+
+	if sr.maxfwd.process_maxfwd(10) < 0 then
+		sr.sl.send_reply(483, "Too Many Hops");
+		return;
+	end
+
+	KSR.sl.sreply(200, "OK Lua");
 end
 
 -- SIP response routing
 function ksr_reply_route()
-	KSR.info([[===== response - from kamailio lua script\n]]);
+	KSR.info("===== response - from kamailio lua script\n");
 end
 </code>
