@@ -86,6 +86,16 @@ Exported functions must take first parameter as 'sip_msg_t*' type (which is the 
 
 The functions exported by Kamailio core are listed inside the array **_sr_kemi_core** from the file **kemi.c**.
 
+Not all combinations of extra (after sip_msg_t*) parameters types are supported right now - currently the are:
+
+  * 1 param - can be int of str*
+  * 2 params - any combination of int or str*
+  * 3 params - (to be added soon) any combination of int or str*
+  * 4 params - all have to be str* (other combinations to be added as needed)
+  * 5 params - all have to be str* (other combinations to be added as needed)
+  * 6 params - all have to be str* (other combinations to be added as needed)
+
+
 ===== Lua Config KEMI Engine =====
 
 The **app_lua** module must be loaded and the Lua script with routing logic must be set to its **load** parameter.
