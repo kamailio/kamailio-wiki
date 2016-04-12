@@ -181,3 +181,9 @@ function ksr_reply_route()
 	KSR.info("===== response - from kamailio lua script\n");
 end
 </code>
+
+===== To-Do =====
+
+  * see if same dynamic object mechanism can be implemented for Perl, Python, etc.
+  * analyze if worth using a declarative language for specifying the exported functions and then generate necessary C code from them (could be useful for generating docs as well)
+  * optimize the indexing of exported functions (now indexed by module name, then walk through the exported list of functions)
