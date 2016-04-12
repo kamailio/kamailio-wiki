@@ -2,9 +2,9 @@
 
 Date:
   * **Proposed: 14:00 UTC, Wednesday, Apr 20, 2016**
-    * can attend: dcm, tuxd00d, abalashov
+    * can attend: dcm, tuxd00d, abalashov, vseva
   * Alternatives (add your id if you can attend)
-    * Apr 21 dcm, oej, tuxd00d, abalashov
+    * Apr 21 dcm, oej, tuxd00d, abalashov, vseva
 
 Time of the meeting across the world:
   * 16:00 - Berlin, Germany
