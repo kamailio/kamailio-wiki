@@ -84,6 +84,8 @@ Note that the exported array is ended by a sentinel of 0/NULL values for all fie
 
 Exported functions must take first parameter as 'sip_msg_t*' type (which is the structure with the SIP message being processed), then followed by up to 6 int or str* parameters. When SR_KEMIP_NONE is given in the array with the types of parameters, it means there is no parameter from there on (some compilers may rise warning, so it is recommended to fill all 6 items in array).
 
+The functions exported by Kamailio core are listed inside the array **_sr_kemi_core** from the file **kemi.c**.
+
 ===== Lua Config KEMI Engine =====
 
 The **app_lua** module must be loaded and the Lua script with routing logic must be set to its **load** parameter.
