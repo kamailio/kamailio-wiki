@@ -3,6 +3,7 @@
 Date:
   * **Proposed: 14:00 UTC, Wednesday, Apr 20, 2016**
     * can attend: dcm, tuxd00d, abalashov, vseva, qxork
+    * can not attend: oej
   * Alternatives (add your id if you can attend)
     * Apr 21: dcm, oej, tuxd00d, abalashov, vseva, qxork
 
