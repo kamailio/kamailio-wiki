@@ -24,6 +24,8 @@ cfgengine = "lua"
 ...
 </code>
 
+The aim is that the runtime active part of kamailio.cfg (the routing blocks) to be implemented in an embedded scripting language.
+ 
 Internally, the support for implementing routing logic in an embedded language is codenamed **kemi** - Kamailio EMbedded Interface.
 
 ===== Exporting Functions To KEMI =====
@@ -81,3 +83,95 @@ int mod_register(char *path, int *dlflags, void *p1, void *p2)
 Note that the exported array is ended by a sentinel of 0/NULL values for all fields.
 
 Exported functions must take first parameter as 'sip_msg_t*' type (which is the structure with the SIP message being processed), then followed by up to 6 int or str* parameters. When SR_KEMIP_NONE is given in the array with the types of parameters, it means there is no parameter from there on (some compilers may rise warning, so it is recommended to fill all 6 items in array).
+
+===== Lua Config KEMI Engine =====
+
+The **app_lua** module must be loaded and the Lua script with routing logic must be set to its **load** parameter.
+
+Inside the Lua script, following functions are relevant:
+
+  * **ksr_request_route()** - is executed by Kamailio core every time a SIP request is received. If this function is not defined, then Kamailio will write error messages. This is equivalent of request_route {} from kamailio.cfg.
+  * **ksr_reply_route()** - is executed by Kamailio core every time a SIP Response (reply) is received. If this function is not defined, then Kamailio will not write error messages. This is equivalent of reply_route {} from kamailio.cfg.
+  * TBD: the options for branch_route, failure_route, onreply_route, onsend_route and event_route
+
+The following objects are available inside the Lua script:
+
+  * **sr** - provided by the old way of exporting functions to Lua (https://www.kamailio.org/wiki/embeddedapi/devel/lua)
+  * **KSR** - provided via KEMI interface (not many functions exported at this moment, but expected to take over all **sr** module). The functions exported to KEMI are accessible as KSR.submodule.function(...). If submodule name is empty (reserved for core functions), then they are available as KSR.function(...).
+
+==== Lua Embedded Config Example ====
+
+The kamailio.cfg with global/core and module settings:
+
+<code c>
+#!KAMAILIO
+
+
+debug=3
+log_stderror=yes
+fork=yes
+children=2
+
+memdbg=5
+memlog=5
+
+auto_aliases=no
+
+listen=udp:127.0.0.1:5060
+
+mpath="modules"
+
+loadmodule "mi_fifo.so"
+loadmodule "kex.so"
+loadmodule "tm.so"
+loadmodule "tmx.so"
+loadmodule "sl.so"
+loadmodule "pv.so"
+loadmodule "maxfwd.so"
+loadmodule "textops.so"
+loadmodule "xlog.so"
+loadmodule "ctl.so"
+loadmodule "mi_rpc.so"
+loadmodule "debugger.so"
+loadmodule "app_lua.so"
+
+# ----------------- setting module-specific parameters ---------------
+
+# ----- mi_fifo params -----
+modparam("mi_fifo", "fifo_name", "/tmp/kamailio_fifo")
+
+
+# ----- tm params -----
+# auto-discard branches from previous serial forking leg
+modparam("tm", "failure_reply_mode", 3)
+# default retransmission timeout: 30sec
+modparam("tm", "fr_timer", 30000)
+# default invite retransmission timeout after 1xx: 120sec
+modparam("tm", "fr_inv_timer", 120000)
+
+# ----- debugger params -----
+modparam("debugger", "cfgtrace", 1)
+
+####### Routing Logic ########
+
+modparam("app_lua", "load", "/etc/kamailio/kamailio.lua")
+modparam("app_lua", "register", "maxfwd")
+modparam("app_lua", "register", "sl")
+
+cfgengine "lua"
+</code>
+
+The **/etc/kamailio/kamailio.lua** with the routing logic for runtime:
+
+<code lua>
+-- SIP request routing
+function ksr_request_route()
+	KSR.info([[===== request - from kamailio lua script\n]]);
+	KSR.sl.sreply(200, [[OK Lua]]);
+end
+
+-- SIP response routing
+function ksr_reply_route()
+	KSR.info([[===== request - from kamailio lua script\n]]);
+end
+</code>
