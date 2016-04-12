@@ -187,6 +187,6 @@ end
 ===== To-Do =====
 
   * see if same dynamic object mechanism can be implemented for Perl, Python, etc.
-  * ways to generate documentation of available functions via KEMI
+  * discuss and decide the way to generate documentation of available functions via KEMI
   * analyze if worth using a declarative language for specifying the exported functions and then generate necessary C code from them (could be useful for generating docs as well)
   * optimize the indexing of exported functions (now indexed by module name, then walk through the exported list of functions)
