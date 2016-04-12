@@ -183,6 +183,7 @@ Few guidelines to edit the wiki:
   * [[devel:module-docbook-readme|Writing Docbook Files for Module Readme]]
   * [[devel:git-access|Developer Git Access]]
   * [[securitypolicy|Process for handling Security Vulnerabilities (proposal)]]
+  * [[devel:config-engines|Configuration File Engines]]
 
 ==== Misc ====
 
