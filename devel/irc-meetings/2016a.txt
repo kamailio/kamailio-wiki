@@ -2,9 +2,9 @@
 
 Date:
   * **Proposed: 14:00 UTC, Wednesday, Apr 20, 2016**
-    * can attend: dcm, tuxd00d
+    * can attend: dcm, tuxd00d, abalashov
   * Alternatives (add your id if you can attend)
-    * Apr 21 dcm, oej, tuxd00d
+    * Apr 21 dcm, oej, tuxd00d, abalashov
 
 Time of the meeting across the world:
   * 16:00 - Berlin, Germany
@@ -26,6 +26,7 @@ Participation is open to anyone, just join the IRC channel if you want to partic
 People adding notes in the agenda using abbreviations:
 
   * dcm - Daniel-Constantin Mierla
+  * abalashov - Alex Balashov
 
 ===== Agenda =====
 
