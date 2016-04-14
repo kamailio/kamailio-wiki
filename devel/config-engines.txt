@@ -90,7 +90,7 @@ Not all combinations of extra (after sip_msg_t*) parameters types are supported 
 
   * 1 param - can be int of str*
   * 2 params - any combination of int or str*
-  * 3 params - (to be added soon) any combination of int or str*
+  * 3 params - any combination of int or str*
   * 4 params - all have to be str* (other combinations to be added as needed)
   * 5 params - all have to be str* (other combinations to be added as needed)
   * 6 params - all have to be str* (other combinations to be added as needed)
