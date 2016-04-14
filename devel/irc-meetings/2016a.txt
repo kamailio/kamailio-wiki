@@ -37,6 +37,12 @@ Kamailio Development Status:
   * rpc response without data (sr-users: http://lists.sip-router.org/pipermail/sr-users/2016-April/092510.html)
   * rpm packaging (dcm)
 
+Administration:
+
+  * servers maintenance
+  * shared repository or tools to generate some of the static content (e.g., docs index)
+  * community interaction and communication channels
+
 Kamailio 5.0
 
   * https://www.kamailio.org/wiki/devel/kamailio-5.0-design
