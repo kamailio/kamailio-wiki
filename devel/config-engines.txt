@@ -104,11 +104,12 @@ Inside the Lua script, following functions are relevant:
 
   * **ksr_request_route()** - is executed by Kamailio core every time a SIP request is received. If this function is not defined, then Kamailio will write error messages. This is equivalent of request_route {} from kamailio.cfg.
   * **ksr_reply_route()** - is executed by Kamailio core every time a SIP Response (reply) is received. If this function is not defined, then Kamailio will not write error messages. This is equivalent of reply_route {} from kamailio.cfg.
+  * **ksr_onsend_route()** - is executed by Kamailio core every time a SIP request (and optionally for a response) is sent out. If this function is not defined, then Kamailio will not write error messages. This is equivalent of onsend_route {} from kamailio.cfg.
   * branch route callback - the name of the Lua function to be executed instead of a branch route has to be provided as parameter to KSR.tm.t_on_branch(...)
   * onreply route callback - the name of the Lua function to be executed instead of an onreply route has to be provided as parameter to KSR.tm.t_on_reply(...)
   * failure route callback - the name of the Lua function to be executed instead of a failure route has to be provided as parameter to KSR.tm.t_on_failure(...)
   * branch failure route callback - the name of the Lua function to be executed instead of an event route for branch failure has to be provided as parameter to KSR.tm.t_on_branch_failure(...)
-  * TBD: the options for onsend_route and event_route. Meanwhile, should work using hybrid configuration with request_route/reply_route in embedded interpreter and the other routing blocks in native kamailio.cfg.
+  * TBD: the options for specific event_route blocks. Meanwhile, should work using hybrid configuration with request_route/reply_route/... in embedded interpreter and the other routing blocks in native kamailio.cfg.
 
 The following objects are available inside the Lua script:
 
