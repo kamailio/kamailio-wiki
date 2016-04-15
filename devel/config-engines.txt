@@ -1,8 +1,8 @@
 ====== Configuration File Engines ======
 
-Kamailio implements from scratch the interpreter for its configuration file (kamailio.cfg).
+Kamailio implements from scratch the interpreter for its configuration file scripting language(used inside kamailio.cfg).
 
-Starting with v5.0.0, the routing blocks can be written in some of its embedded languages interpreter. Known to work:
+Starting with v5.0.0, the routing blocks can be written in some other (well known) scripting languages and run via their embedded interpreters inside Kamailio. Known to work:
 
   * Lua, implemented by app_lua module, as "lua" config engine
 
@@ -24,9 +24,17 @@ cfgengine = "lua"
 ...
 </code>
 
-The aim is that the runtime active part of kamailio.cfg (the routing blocks) to be implemented in an embedded scripting language.
- 
-Internally, the support for implementing routing logic in an embedded language is codenamed **kemi** - Kamailio EMbedded Interface.
+The aim is that the runtime active part of kamailio.cfg (the routing blocks) to be implemented in an embedded scripting language. Core parameters, loading modules and modules parameters will still be set via kamailio.cfg.
+
+Among benefits of using different scripting languages:
+
+  * ability to benefit from what a well established language already provides:
+    * more people are expected to be familiar with
+    * an extended set of data types, expressions and statements already available
+    * a large set of extensions and libraries already available
+  * reload the SIP routing logic without restarting Kamailio
+
+Internally, the support for implementing routing logic in an embedded language is codenamed **KEMI** - Kamailio EMbedded Interface.
 
 ===== Exporting Functions To KEMI =====
 
