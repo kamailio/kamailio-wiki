@@ -261,7 +261,7 @@ Inside the new class, the following methods are relevant:
 The following objects are available inside the Python script:
 
   * **Router** - provided by the old way of exporting functions to Python (https://www.kamailio.org/wiki/embeddedapi/devel/python)
-  * **KSR** - provided via KEMI interface (not many functions exported at this moment, but expected to take over all **Python** module). The functions exported to KEMI are accessible as KSR.submodule.function(...). If submodule name is empty (reserved for core functions), then they are available as KSR.function(...).
+  * **KSR** - provided via KEMI interface (not many functions exported at this moment, but expected to take over all **Router** module). The functions exported to KEMI are accessible as KSR.submodule.function(...). If submodule name is empty (reserved for core functions), then they are available as KSR.function(...).
 
 
 ==== Python Embedded Config Example ====
