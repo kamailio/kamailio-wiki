@@ -1118,6 +1118,41 @@ $sht(a=>$au) = 1;
 xlog("==== $shtdec(a=>$au)\n");
 ...
 </code>
+
+==== $shtitkey(iname) ====
+
+The key at the current position in the iterator.
+
+==== $shtitval(iname) ====
+
+The value at the current position in the iterator.
+
+Example:
+
+<code c>
+    sht_iterator_start("i1", "h1");
+    while(sht_iterator_next("i1")) {
+        xlog("h1[$shtitkey(i1)] is: $shtitval(i1)\n");
+    }
+    sht_iterator_end("i1");
+</code>
+
+==== $shtrecord(id) ====
+
+Get the key or the value of expired item inside the event_route[htable:expired:_table_name_].
+
+The id can be:
+
+  * key
+  * value
+
+Example:
+
+<code c>
+event_route[htable:expired:h1] {
+  xlog("expired item ($shtrecord(key),$shtrecord(value))\n");
+}
+</code>
 ===== Memcached module Pseudo-Variables =====
 
 ==== $mct(key) ====
