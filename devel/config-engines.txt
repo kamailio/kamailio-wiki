@@ -240,6 +240,146 @@ end
 
 </code>
 
+===== Python Config KEMI Engine =====
+
+The **app_python** module must be loaded and the Python script with routing logic must be set to its **script_name** parameter.
+
+The **kemi** engine is built reusing the exiting **app_python** way of executing C code from Kamailio. In the Python script you have to declare the **mod_init()* method where to instantiate an object of a class that implements the other callback methods to be executed by Kamailio.
+
+Inside the new class, the following methods are relevant:
+
+  * **ksr_request_route(self, msg)** - is executed by Kamailio core every time a SIP request is received. If this function is not defined, then Kamailio will write error messages. This is equivalent of request_route {} from kamailio.cfg.
+  * **ksr_reply_route(self, msg)** - is executed by Kamailio core every time a SIP Response (reply) is received. If this function is not defined, then Kamailio will not write error messages. This is equivalent of reply_route {} from kamailio.cfg.
+  * **ksr_onsend_route(self, msg)** - is executed by Kamailio core every time a SIP request (and optionally for a response) is sent out. If this function is not defined, then Kamailio will not write error messages. This is equivalent of onsend_route {} from kamailio.cfg.
+  * branch route callback - the name of the Python function to be executed instead of a branch route has to be provided as parameter to KSR.tm.t_on_branch(...)
+  * onreply route callback - the name of the Python function to be executed instead of an onreply route has to be provided as parameter to KSR.tm.t_on_reply(...)
+  * failure route callback - the name of the Python function to be executed instead of a failure route has to be provided as parameter to KSR.tm.t_on_failure(...)
+  * branch failure route callback - the name of the Python function to be executed instead of an event route for branch failure has to be provided as parameter to KSR.tm.t_on_branch_failure(...)
+  * TBD: the options for specific event_route blocks. Meanwhile, should work using hybrid configuration with request_route/reply_route/... in embedded interpreter and the other routing blocks in native kamailio.cfg.
+
+The following objects are available inside the Python script:
+
+  * **Router** - provided by the old way of exporting functions to Python (https://www.kamailio.org/wiki/embeddedapi/devel/python)
+  * **KSR** - provided via KEMI interface (not many functions exported at this moment, but expected to take over all **Python** module). The functions exported to KEMI are accessible as KSR.submodule.function(...). If submodule name is empty (reserved for core functions), then they are available as KSR.function(...).
+
+
+==== Python Embedded Config Example ====
+
+The kamailio.cfg with the global/core and modules settings:
+
+<code c>
+#!KAMAILIO
+#
+# Kamailio (OpenSER) SIP Server v5.0
+#     - web: http://www.kamailio.org
+#
+####### Global Parameters #########
+
+debug=4
+log_stderror=yes
+fork=yes
+children=2
+
+memdbg=5
+memlog=5
+
+auto_aliases=no
+
+listen=udp:127.0.0.1:5060
+
+mpath="modules"
+
+loadmodule "mi_fifo.so"
+loadmodule "kex.so"
+loadmodule "tm.so"
+loadmodule "tmx.so"
+loadmodule "sl.so"
+loadmodule "pv.so"
+loadmodule "maxfwd.so"
+loadmodule "textops.so"
+loadmodule "xlog.so"
+loadmodule "ctl.so"
+loadmodule "mi_rpc.so"
+loadmodule "debugger.so"
+loadmodule "app_python.so"
+
+# ----------------- setting module-specific parameters ---------------
+
+# ----- mi_fifo params -----
+modparam("mi_fifo", "fifo_name", "/tmp/kamailio_fifo")
+
+
+# ----- tm params -----
+# auto-discard branches from previous serial forking leg
+modparam("tm", "failure_reply_mode", 3)
+# default retransmission timeout: 30sec
+modparam("tm", "fr_timer", 30000)
+# default invite retransmission timeout after 1xx: 120sec
+modparam("tm", "fr_inv_timer", 120000)
+
+# ----- debugger params -----
+modparam("debugger", "cfgtrace", 1)
+
+####### Routing Logic ########
+
+modparam("app_python", "script_name", "/etc/kamailio/kamailio.py")
+
+cfgengine "python"
+</code>
+
+The **/etc/kamailio/kamailio.py** with the routing logic for runtime:
+
+<code python>
+import sys
+import Router.Logger as Logger
+import KSR as KSR
+
+def dumpObj(obj):
+    for attr in dir(obj):
+        # KSR.info("obj.%s = %s\n" % (attr, getattr(obj, attr)));
+        Logger.LM_INFO("obj.%s = %s\n" % (attr, getattr(obj, attr)));
+
+def mod_init():
+    KSR.info("===== from Python mod init\n");
+    # dumpObj(KSR);
+    return kamailio();
+
+class kamailio:
+    def __init__(self):
+        KSR.info('===== kamailio.__init__\n')
+
+    def child_init(self, rank):
+        KSR.info('===== kamailio.child_init(%d)\n' % rank)
+        return 0
+
+    def ksr_request_route(self, msg):
+        KSR.info("===== request - from kamailio python script\n");
+        msg.rewrite_ruri("sip:alice@127.0.0.1:5080");
+        KSR.tm.t_on_branch("ksr_branch_route_one");
+        KSR.tm.t_on_reply("ksr_onreply_route_one");
+        KSR.tm.t_on_failure("ksr_failure_route_one");
+        KSR.sl.send_reply(100, "Trying")
+        if KSR.tm.t_relay() < 0 :
+            KSR.sl.send_reply(500, "Server error")
+        return 1;
+
+    def ksr_reply_route(self, msg):
+        KSR.info("===== response - from kamailio python script\n");
+        return 1;
+
+    def ksr_branch_route_one(self, msg):
+        KSR.info("===== branch route - from kamailio python script\n");
+        return 1;
+
+    def ksr_onreply_route_one(self, msg):
+        KSR.info("===== onreply route - from kamailio python script\n");
+        return 1;
+
+    def ksr_failure_route_one(self, msg):
+        KSR.info("===== failure route - from kamailio python script\n");
+        return 1;
+</code>
+
 ===== To-Do =====
 
   * see if same dynamic object mechanism can be implemented for Perl, Python, etc.
