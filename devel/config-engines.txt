@@ -244,7 +244,7 @@ end
 
 The **app_python** module must be loaded and the Python script with routing logic must be set to its **script_name** parameter.
 
-The **kemi** engine is built reusing the exiting **app_python** way of executing C code from Kamailio. In the Python script you have to declare the **mod_init()* method where to instantiate an object of a class that implements the other callback methods to be executed by Kamailio.
+The **kemi** engine is built reusing the exiting **app_python** way of executing C code from Kamailio. In the Python script you have to declare the **mod_init()** method where to instantiate an object of a class that implements the other callback methods (functions) to be executed by Kamailio.
 
 Inside the new class, the following methods are relevant:
 
