@@ -4,7 +4,8 @@ Kamailio implements from scratch the interpreter for its configuration file scri
 
 Starting with v5.0.0, the routing blocks can be written in some other (well known) scripting languages and run via their embedded interpreters inside Kamailio. Known to work:
 
-  * Lua, implemented by app_lua module, as "lua" config engine
+  * Lua - implemented by app_lua module, as "lua" config engine
+  * Python - implemented by app_python module, as "python" config engine
 
 Setting a configuration engine can be done with the global setting:
 
