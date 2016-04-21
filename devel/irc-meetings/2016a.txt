@@ -60,3 +60,6 @@ Meeting for Designing, Coding and Tuning Kamailio 5.0
   * who?
   * where?
   * when?
+
+===== Minutes =====
+[[devel:irc-meetings:2016a:2016a-minutes|MINUTES]]
