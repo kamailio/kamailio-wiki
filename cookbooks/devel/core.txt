@@ -903,6 +903,18 @@ Example of usage:
 
   http_reply_parse=yes
 
+==== latency_cfg_log ====
+
+If set to a log level less or equal than debug parameter, a log message with the duration in microseconds of executing request route or reply route is printed to syslog.
+
+Default value is 3 (L_DBG).
+
+Example:
+
+<code c>
+latency_cfg_log=2
+</code>
+
 ==== latency_limit_action ====
 
 Limit of latency in ms for config actions. If a config action executed by cfg interpreter takes longer than its value, a message is printed in the logs, showing config path, line and action name when it is a module function, as well as internal action id.
