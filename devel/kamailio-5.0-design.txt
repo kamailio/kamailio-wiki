@@ -179,6 +179,10 @@ Goals:
 
 Reviving the exiting unit testing or selecting another framework.
 
+Available frameworks:
+
+  * http://robotframework.org/ (python)
+
 ==== Minimal Unit Tests ====
 
 Defining a minimum set of automatic tests that needs to be provided by each module:
