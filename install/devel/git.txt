@@ -2,7 +2,9 @@
 
 <code>
 Main author:
-   Daniel-Constantin Mierla <miconda (at) gmail.com>
+   Daniel-Constantin Mierla
+
+Support: <sr-users@lists.sip-router.org>
 </code>
 
 This is a step by step tutorial about how to install and maintain Kamailio SIP server development version using the sources downloaded from GIT repository - the choice for those willing to write code for Kamailio or to try the new features to be released in the future with the next major stable version.
