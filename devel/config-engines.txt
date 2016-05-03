@@ -381,7 +381,7 @@ class kamailio:
         return 1;
 </code>
 
-===== Examples =====
+===== Basic IP Telephony Config Example =====
 
 Some examples of configuration files using the native, Lua or Python interpreter are available in Kamailio source tree inside the **examples/kemi** folder - online at github:
 
