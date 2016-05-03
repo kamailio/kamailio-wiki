@@ -1,6 +1,6 @@
 ====== Configuration File Engines ======
 
-Kamailio implements from scratch the interpreter for its configuration file scripting language(used inside kamailio.cfg).
+Kamailio implements from scratch the interpreter for its configuration file native scripting language (used inside kamailio.cfg).
 
 Starting with v5.0.0, the routing blocks can be written in some other (well known) scripting languages and run via their embedded interpreters inside Kamailio. Known to work:
 
@@ -33,13 +33,18 @@ Among benefits of using different scripting languages:
     * more people are expected to be familiar with
     * an extended set of data types, expressions and statements already available
     * a large set of extensions and libraries already available
-  * reload the SIP routing logic without restarting Kamailio
+    * good documentation about language itself and its extensions
+  * reload the SIP routing logic without restarting Kamailio (implemented for Lua)
 
 Internally, the support for implementing routing logic in an embedded language is codenamed **KEMI** - Kamailio EMbedded Interface.
 
 ===== Exporting Functions To KEMI =====
 
-The current implementation relies on the ability of Lua to allow hash tables with custom index. This is like an object that can have methods defined on the fly. Kamailio registers an empty object with a custom index function implemented in Kamailio code, whenever a member of that object is accessed, the index function is executed and Kamailio will resolve it to one of its functions, corresponding by name.
+Because Kamailio needs to load modules in order to export useful functions to KEMI, statical wrappers to C functions implemented in other modules cannot be used, because they will introduce dependencies on each embedded interpreter for all modules.
+
+The implementation relies on defining a set of generic functions that are exported to each embedded interpreter, which are associated at startup with a Kamailio C functions. The lookup at runtime is by an integer index, therefore very fast.
+
+Currently the association table size is 1024 (it means that there can be maximum 1024 Kamailio C functions exported to the interpreter by a configuration file). The number can be increased, but it should be fairly enough as all kamailio.cfg functions are around 1000 and it is no real use case to load all the modules at the same time for use in production. Also, many functions may not be exported to an embedded language, as they have native alternative in the embedded language.
 
 Each existing component of Kamailio (e.g., module), can export new functions to KEMI in the following way:
 
