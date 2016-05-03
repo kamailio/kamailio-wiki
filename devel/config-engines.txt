@@ -381,9 +381,106 @@ class kamailio:
         return 1;
 </code>
 
+===== Examples =====
+
+Some examples of configuration files using the native, Lua or Python interpreter are available in Kamailio source tree inside the **examples/kemi** folder - online at github:
+
+  * https://github.com/kamailio/kamailio/tree/master/examples/kemi
+
+The configuration file to start with is **kamailio-basic-kemi.cfg**:
+
+{{url>https://github.com/kamailio/kamailio/blob/master/examples/kemi/kamailio-basic-kemi.cfg}}
+
+You can either rename it to kamailio.cfg or use **-f** command line option to point to it.
+
+If started without any change and no define in command line, then Kamailio will continue to load the routing blocks in the native language, stored in the file **kamailio-basic-kemi-native.cfg**:
+
+{{url>https://github.com/kamailio/kamailio/blob/master/examples/kemi/kamailio-basic-kemi-native.cfg}}
+
+If you define WITH_CFGLUA inside **kamailio-basic-kemi.cfg** or provide the command line parameter **-A WITH_CFGLUA**, then Kamailio will load the routing blocks in the Lua language, stored in the file **kamailio-basic-kemi-lua.lua**:
+
+{{url>https://github.com/kamailio/kamailio/blob/master/examples/kemi/kamailio-basic-kemi-lua.lua}}
+
+
+If you define WITH_CFGPYTHON inside **kamailio-basic-kemi.cfg** or provide the command line parameter **-A WITH_CFGPYTHON**, then Kamailio will load the routing blocks in the Python language, stored in the file **kamailio-basic-kemi-python.py**:
+
+{{url>https://github.com/kamailio/kamailio/blob/master/examples/kemi/kamailio-basic-kemi-python.py}}
+
+Combining **kamailio-basic-kemi.cfg** with **kamailio-basic-kemi-native.cfg** results more or less in the **kamailio-basic.cfg** from the **etc/** folder in Kamailio source tree. The Lua and Python scripts are offering the same features, but written in another language.
+
+Note that you need to copy these files at the location of the configuration file for your Kamailio configuration and eventually adjust the paths to them inside **kamailio-basic-kemi.cfg**.
+
+Let's say you installed from sources, the config files are located inside the **/usr/local/etc/kamailio/**. Copy all the files listed above to that folder.
+
+Then you can start Kamailio with native routing blocks:
+
+<code c>
+/usr/local/sbin/kamailio -f /usr/local/etc/kamailio/kamailio-basic-kemi.cfg -M 12 -M 128
+</code>
+
+To start it with Lua routing blocks:
+
+<code c>
+/usr/local/sbin/kamailio -f /usr/local/etc/kamailio/kamailio-basic-kemi.cfg -M 12 -M 128 - A WITH_CFGLUA
+</code>
+
+To start it with Python routing blocks:
+
+<code c>
+/usr/local/sbin/kamailio -f /usr/local/etc/kamailio/kamailio-basic-kemi.cfg -M 12 -M 128 - A WITH_CFGPYTHON
+</code>
+
+If you want to print the log messages to the terminal, add the extra parameters **-E -e -ddd** - this will print up to debug level which can be too verbose. Using up to info level can be better, use the extra parameters  **-E -e -dd** .
+
+When you have at least log level info, with kamailio-basic-kemi.cfg you will notice that a log message is printed showing the duration in microseconds of executing the main routing blocks, no matter they were in native language, Lua or Python. If the logs were printed to the terminal, they look like:
+
+<code>
+LUA {REGISTER}: 13(28737) INFO: <core> [receive.c:268]: receive_msg(): request-route executed in: 292 usec
+</code>
+
+Depending on the scripting language used for routing blocks, the log messages start with:
+
+  * NAT - for native interpreter
+  * LUA - for LUA
+  * PYT - for Python
+
+Again, these are specific to the config options in the kamailio-basic-kemi.cfg file -- look for log_prefix inside it for more details.
+
+==== Interpreters Performances ====
+
+Relaying on the log messages that print the execution time for main routing blocks handling the SIP requests and responses, some statistics were gathered to see how the execution time compares for each of the interpreters.
+
+The tests were not targeting to measure the capacity of Kamailio, but the impact of using different interpreters for same kind of features.
+
+The system used for testing was a VirtualBox with 2GB or RAM and 2 processors, having Linux Mint as guest OS. The host was a MAC OS X running on a Mid 2012 model of Macbook Pro.
+
+Testing was done for registrations with user authentication, using **sipp** tool with parameters **-m 1000 -r 50** on the same VirtualBox system with Kamailio. Each test for different interpreters was doing 1000 registrations with different caller ids. Each first REGISTER was challenged for authentication, so practically there were 2000 REGISTER requests: first REGISTER being challenged with 401, the follow up was receiving 200ok as the authentication succeeded.
+
+The values are in micro-seconds (1 / 1 000 000 of a second) and represents the average execution time, the minimum execution time and the maximum execution time.
+
+The results were:
+
+<code>
+INTERPRETER - AVERAGE - MIN - MAX 
+
+NATIVE      - 302.275 - 6  - 3824
+
+LUA         - 308.32  - 6  - 3596
+
+PYTHON      - 393.707 - 23 - 3266
+
+</code>
+
+Remarks:
+
+  * the avverage was between 300 and 400 micro-seconds, resulting in a capacity of 2500 to over 3000 REGISTERs/second. CPU usage per Kamailio SIP worker process was around 1%. Again, not targeting to measure the capacity, the config runs with 4 SIP workers, increasing that will increase the capacity as database operations were involved to fetch the username and password via **auth_db** module.
+  * the test was run many times, the Native and Lua execution were close to each other, many times Lua being faster, but again, at small difference
+  * no big surprise as Lua is calling directly the C bindings and its interpreter is written also in C. With the config used in the tests, the Lua script doesn't do much of specific Lua operations, it mainly executes the functions exported by Kamailio
+  * Python is slower comparing to Native and Lua, but not that much as one may expect. I can still deal with 2500 REGISTERs/second. Even more, some of its latency comes from the way **app_modules** is designed, to create a Python object from Kamailio's SIP message structure. That involves cloning (and freeing) of each SIP message to be represented in Python. Lua uses the Kamailio core SIP message structure, like the Native interpreter without any overhead. Same approach should be possible for **app_python**, current approach is more object-oriented at expense of using more resources.
+  * in some tests, the maximum execution time was between 5000 and 10000 micro-second, but for all interpreters, suspecting to be related to other tasks done by guest OS (which was running a web browser as well). The average didn't result in big differences, even in such cases. Also, sometimes the minimum was below 1 micro-second.
+
 ===== To-Do =====
 
-  * see if same dynamic object mechanism can be implemented for Perl, Python, etc.
+  * see if same dynamic object mechanism can be implemented for Perl, Mono, Java, etc.
   * discuss and decide the way to generate documentation of available functions via KEMI
   * analyze if worth using a declarative language for specifying the exported functions and then generate necessary C code from them (could be useful for generating docs as well)
-  * optimize the indexing of exported functions (now indexed by module name, then walk through the exported list of functions)
