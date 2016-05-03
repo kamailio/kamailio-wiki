@@ -456,7 +456,7 @@ The system used for testing was a VirtualBox with 2GB or RAM and 2 processors, h
 
 Testing was done for registrations with user authentication, using **sipp** tool with parameters **-m 1000 -r 50** on the same VirtualBox system with Kamailio. Each test for different interpreters was doing 1000 registrations with different caller ids. Each first REGISTER was challenged for authentication, so practically there were 2000 REGISTER requests: first REGISTER being challenged with 401, the follow up was receiving 200ok as the authentication succeeded.
 
-The values are in micro-seconds (1 / 1 000 000 of a second) and represents the average execution time, the minimum execution time and the maximum execution time.
+The values are in micro-seconds (1 / 1 000 000 of a second) and represents the average execution time, the minimum execution time and the maximum execution time for request_route{...} block (or the equivalent of).
 
 The results were:
 
@@ -473,10 +473,10 @@ PYTHON      - 393.707 - 23 - 3266
 
 Remarks:
 
-  * the avverage was between 300 and 400 micro-seconds, resulting in a capacity of 2500 to over 3000 REGISTERs/second. CPU usage per Kamailio SIP worker process was around 1%. Again, not targeting to measure the capacity, the config runs with 4 SIP workers, increasing that will increase the capacity as database operations were involved to fetch the username and password via **auth_db** module.
+  * the average was between 300 and 400 micro-seconds, resulting in a capacity of 2500 to over 3000 REGISTERs/second. CPU usage per Kamailio SIP worker process was around 1%. Again, not targeting to measure the capacity, the config runs with 4 SIP workers, increasing that will increase the capacity as database operations were involved to fetch the username and password via **auth_db** module.
   * the test was run many times, the Native and Lua execution were close to each other, many times Lua being faster, but again, at small difference
   * no big surprise as Lua is calling directly the C bindings and its interpreter is written also in C. With the config used in the tests, the Lua script doesn't do much of specific Lua operations, it mainly executes the functions exported by Kamailio
-  * Python is slower comparing to Native and Lua, but not that much as one may expect. I can still deal with 2500 REGISTERs/second. Even more, some of its latency comes from the way **app_modules** is designed, to create a Python object from Kamailio's SIP message structure. That involves cloning (and freeing) of each SIP message to be represented in Python. Lua uses the Kamailio core SIP message structure, like the Native interpreter without any overhead. Same approach should be possible for **app_python**, current approach is more object-oriented at expense of using more resources.
+  * Python is slower comparing to Native and Lua, but not that much as one may expect. It can still deal with 2500 REGISTERs/second. Even more, some of its latency comes from the way **app_modules** is designed, to create a Python object from Kamailio's SIP message structure. That involves cloning (and freeing) of each SIP message to be represented as an object in Python. Lua uses the Kamailio core SIP message structure, like the Native interpreter without any overhead. Same approach should be possible for **app_python**, current approach is more object-oriented at expense of using more resources.
   * in some tests, the maximum execution time was between 5000 and 10000 micro-second, but for all interpreters, suspecting to be related to other tasks done by guest OS (which was running a web browser as well). The average didn't result in big differences, even in such cases. Also, sometimes the minimum was below 1 micro-second.
 
 ===== To-Do =====
