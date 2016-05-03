@@ -389,22 +389,22 @@ Some examples of configuration files using the native, Lua or Python interpreter
 
 The configuration file to start with is **kamailio-basic-kemi.cfg**:
 
-{{url>https://github.com/kamailio/kamailio/blob/master/examples/kemi/kamailio-basic-kemi.cfg}}
+  * https://github.com/kamailio/kamailio/blob/master/examples/kemi/kamailio-basic-kemi.cfg
 
 You can either rename it to kamailio.cfg or use **-f** command line option to point to it.
 
 If started without any change and no define in command line, then Kamailio will continue to load the routing blocks in the native language, stored in the file **kamailio-basic-kemi-native.cfg**:
 
-{{url>https://github.com/kamailio/kamailio/blob/master/examples/kemi/kamailio-basic-kemi-native.cfg}}
+  * https://github.com/kamailio/kamailio/blob/master/examples/kemi/kamailio-basic-kemi-native.cfg
 
 If you define WITH_CFGLUA inside **kamailio-basic-kemi.cfg** or provide the command line parameter **-A WITH_CFGLUA**, then Kamailio will load the routing blocks in the Lua language, stored in the file **kamailio-basic-kemi-lua.lua**:
 
-{{url>https://github.com/kamailio/kamailio/blob/master/examples/kemi/kamailio-basic-kemi-lua.lua}}
+  * https://github.com/kamailio/kamailio/blob/master/examples/kemi/kamailio-basic-kemi-lua.lua
 
 
 If you define WITH_CFGPYTHON inside **kamailio-basic-kemi.cfg** or provide the command line parameter **-A WITH_CFGPYTHON**, then Kamailio will load the routing blocks in the Python language, stored in the file **kamailio-basic-kemi-python.py**:
 
-{{url>https://github.com/kamailio/kamailio/blob/master/examples/kemi/kamailio-basic-kemi-python.py}}
+  * https://github.com/kamailio/kamailio/blob/master/examples/kemi/kamailio-basic-kemi-python.py
 
 Combining **kamailio-basic-kemi.cfg** with **kamailio-basic-kemi-native.cfg** results more or less in the **kamailio-basic.cfg** from the **etc/** folder in Kamailio source tree. The Lua and Python scripts are offering the same features, but written in another language.
 
