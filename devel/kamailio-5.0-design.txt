@@ -14,7 +14,7 @@ When adding a remark that needs to be tracked by author, use initials in front o
 
 Initial content for this document is listing also ideas popped up during discussions at Fosdem 2016 and Kamailio Development Workshop - among participants: Camille Oudout, Daniel-Constantin Mierla, Federico Cabiddu, Giacomo Vacca, Henning Westerholt, Olle E. Johansson, Torrey Searle, Victor Seva.
 
-===== Configuration File =====
+===== Configuration File Interpreters =====
 
 Goals:
 
@@ -23,121 +23,11 @@ Goals:
     * extended language syntax
     * reloading routing rules at runtime
 
-To achieve the above, following sub-sections collects the proposals for configuration file language.
+Ongoing implementation that enables writing routing blocks in Lua and Python as alternative to native language is documented at:
+
+  * [[devel:config-engines|Configuration File Engines]]
 
 
-==== Exporting Functions To Embedded Interpreters ====
-
-  * define and implement an export interface from modules to embedded interpreters to automatically add new functions to embedded interpreters
-  * it should be in a similar fashion as for adding functions to configuration file, but without fixup mechanism, so bare string/integer parameters can be provided by embedded interpreters
-
-Interface fields:
-
-  * submodule name in embedded interpreter
-  * function name in embedded interpreter
-  * parameter types
-  * pointer to c function
-
-Example:
-
-<code c>
-// export t_reply(200, "OK")
-
-sr_exapi_t mod_exapi[] = {
-  { "sr.tm", "reply", {PARAM_INT, PARAM_STR, 0}, t_reply },
-  { 0, 0, {0}, 0}
-};
-</code>
-
-==== Routing Logic In Embedded Interpreters Scripting ====
-
-  * writing the routing logic only in a scripting language supported via embedded interpreters
-  * eventually setting core parameters, loading modules and setting modules' parameters are still done using the kamailio configuration file but all routing blocks should be possible to be written in an embedded language
-  * routing logic in an embedded language should allow reloading at runtime without kamailio restart
-
-=== Implementation Ideas ===
-
-
-Example kamailio.cfg for native interpreter:
-
-<code>
-# core parameters
-...
-
-# load modules
-...
-
-# modules parameters
-...
-
-routing="native" # default
-
-request_route {
-  ...
-}
-...
-reply_route {
-  ...
-}
-...
-</code>
-
-Example kamailio.cfg for lua interpreter:
-
-<code>
-# core parameters
-...
-
-# load modules
-...
-
-# modules parameters
-...
-
-routing="lua" with "/path/to/script.lua"
-
-</code>
-
-The script /path/to/script.lua:
-
-<code>
-function request_route()
-  ...
-  sr.t_on_branch("my_branch_route");
-end
-
-function reply_route()
-  ...
-end
-
-function my_branch_route()
-  ...
-end
-...
-</code>
-
-Expected changes:
-  * each module that offers an interpreter for config will advertise a special structure with functions to be executed on various events (e.g., request received, reply received, etc...)
-  * keep the name of routing blocks for failure/branch/branch-failure processing inside tm (along with existing index of the routing block for "native" config case)
-  * define the function names for routing blocks that are executed automatically
-    * such as:
-      * request_route
-      * reply_route
-      * onsend_route
-      * various event_route blocks (e.g., htable:init)
-    * eventually there can be a mapping of names used inside kamailio native config and functions inside the embedded interpreter that is inside each module, so each can have a naming pattern more suitable/friendly for its language (e.g., one may prefer request_route(), other requestRoute() and another RequestRoute())
-    * for event routes executed automatically (not the one armed for tm branch failure which sets the name at runtime), the pattern can be:
-      * modname_event_route(eventname) -- for example:
-
-<code>
-// event_route[htable:init] 
-function htable_event_route(evname)
-  if evname=="init" then
-     ...
-  else
-     ...
-  end
-</code>
 ===== Source Tree Structure =====
 
 Goals:
