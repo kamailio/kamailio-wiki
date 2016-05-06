@@ -1180,6 +1180,13 @@ Default is 0 (disabled).
 mem_join=1
 </code>
 
+To change its value at runtime, **kamcmd** needs to be used and the modules **ctl** and **cfg_rpc** loaded. Enabling it can be done with:
+
+<code>
+kamcmd cfg.set_now_int core mem_join 1
+</code>
+
+To disable, set its value to 0.
 ==== mem_safety ====
 
 If set to 1, memory free operation does not call abort() for double freeing a pointer or freeing an invalid address. The server still prints the alerting log messages.
