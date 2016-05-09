@@ -63,7 +63,7 @@ DELETE FROM version WHERE TABLE_NAME='active_watchers';
 INSERT INTO version (`table_name`, `table_version`) VALUES ('active_watchers','12');
 
 -- table: trusted
-ALTER TABLE trusted
+ALTER TABLE `trusted`
   ADD COLUMN priority int(11) NOT NULL DEFAULT '0',
   ADD COLUMN ruri_pattern varchar(64) NULL,
   CHANGE COLUMN tag tag varchar(64) NULL;
