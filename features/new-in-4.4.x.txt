@@ -63,6 +63,7 @@
 ==== acc_radius ====
 
   * added radius time mode parameter: rad_time_mode - format can be set to seconds.microseconds
+  * support radcli library
 
 ==== app_lua ====
 
@@ -252,6 +253,10 @@
 ==== lcr ====
 
   * added priority_ordering module parameter - allows ordering of matched gateways only by priority and weight
+
+==== misc_radius ====
+
+  * support radcli library
 
 ==== mtree ====
 
