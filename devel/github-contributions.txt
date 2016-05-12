@@ -9,6 +9,8 @@ In order to be easily able to track the changes and have a coherent changlog and
 ===== Basic Rules =====
 
   * github pull requests are the favourited mechanism to submit contributions (patches)
+  * make a pull request against master branch
+    * commit can be later backported to stable branch(es)
   * make a pull request for each new feature
     * e.g., if you add a feature to usrloc module and an unrelated feature to auth module, then make two pull requests
   * it is ok (and sometime recommended) to have more than one commit per pull request
