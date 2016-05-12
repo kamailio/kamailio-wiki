@@ -1,11 +1,12 @@
 ====== Kamailio SIP Server (SER) - New Features in v4.4.x ======
 
-**First release in this series is numbered 4.4.0, released on March 30, 2016.
+**First release in this series is numbered 4.4.0, released on March 30, 2016**.
 
 <fc #0000FF>
-Previous version was 4.3.x (released on June 10, 2015), see what was new in that release at:
+**Previous version was 4.3.x (released on June 10, 2015), see what was new in that release at:**
 </fc>
   * <fc #0000FF>http://www.kamailio.org/wiki/features/new-in-4.3.x</fc>
+
 ===== New Modules =====
 
 ==== cfgt ====
