@@ -24,8 +24,64 @@
 ==== app_python ====
 
   * ability to execute routing blocks written directly in Python
- 
+
+==== dialog ====
+
+  * new rpc function: dlg.terminate_dlg
+    * terminates a singe dialog, identified by a Call-ID.                          
+    * terminates an ongoing dialog by sending BYE in both directions
+
+==== enum ====
+
+  * single digit is now valid in function enum_query                          
+    * is_e164() returns true for a single digit (previously two digits)
+
+==== evapi ====
+  * support for tagging connections and select for sending based on tag
+    * evapi_set_tag(tname)
+    * evapi_multicast(data, tag)
+    * evapi_async_multicast(data, tag)
+    * evapi_unicast(data, tag)
+    * evapi_async_unicast(data, tag)
+
+==== ndb_redis ====
+
+  * added parameters to control connect and command timeouts             
+    * connect_timeout (int)
+    * cmd_timeout (int)
+
+==== presence ====
+
+  * new module parameter `force_delete`
+    *  disabled by default                                       
+    * enabling this parameter will delete expired presentity records without updating watchers (no NOTIFY)
+
+==== pv ====
+
+  * new function pv_evalx(dst, fmt)                                             
+    * The fmt string is evaluated twice for exiting variables, the result is stored in dst variable.
+
+==== registrar ====
+
+  * Add expiry value to the xavp.                                     
+    * handy if Kamailio for some reason changes the expiry value (min, max or variations caused by expiry_range)
+
+==== rtpengine ====
+
+  * new 'unidirectional' flag in Sipwise rtpengine
+    * allows kernelization of one-way streams
+
+==== sdpops ====
+
+   * new config variable $sdp(body)
+     * returns the sdp body as raw string                  
+
 ===== New in Core =====
+
+  * print tos value if socket option for it cannot be set
+  * skip unusable network interfaces
+    * no IP addr associated
+    * address family AF_PACKET
 
 ==== Interpreter ====
 
@@ -33,6 +89,14 @@ A new framework (named kemi - kamailio embedded interface) was added, allowing t
 
   * http://www.kamailio.org/wiki/devel/config-engines
 ==== Parameters ====
+  * log_prefix_mode                                      
+    * If set to 1, then the log prefix is evaluated before/after each config action 
+    * needs to be set when the log_prefix has variables that are different based on the context of config execution
+      * e.g., $cfg(line))
+
+  * latency_cfg_log                                        
+    * Log message with the duration of executing request route or reply route is printed to syslog
+
 
 ==== Functions ====
 
