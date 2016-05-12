@@ -462,6 +462,7 @@
     * xinfo(), xnotice(), xwarn(), xerr(), xbug(), xcrit(), xalert()
 
 ===== New in Core =====
+  * print tos value if socket option for it cannot be set
 
 ==== Interpreter ====
 
