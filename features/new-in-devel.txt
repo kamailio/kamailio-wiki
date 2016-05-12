@@ -25,6 +25,11 @@
 
   * ability to execute routing blocks written directly in Python
 
+==== db_unixodbc ====
+  * new config variable replace_query
+    * Tells if the ODBC replace query is supported by the DB odbc driver
+    * Just like insert, but update the row if it exists otherwise insert
+
 ==== dialog ====
 
   * new rpc function: dlg.terminate_dlg
