@@ -11,10 +11,10 @@
 
 ===== New Modules =====
 
-==== module_name ====
+==== nsq ====
 
-  * item
-
+  * nsq.io connector for kamailio.cfg
+  * http://kamailio.org/docs/modules/devel/modules/nsq.html
 ===== New in Old Modules =====
 
 ==== module_name ====
