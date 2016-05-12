@@ -17,9 +17,13 @@
   * http://kamailio.org/docs/modules/devel/modules/nsq.html
 ===== New in Old Modules =====
 
-==== module_name ====
+==== app_lua ====
 
-  * item
+  * ability to execute routing blocks written directly in Lua
+
+==== app_python ====
+
+  * ability to execute routing blocks written directly in Python
  
 ===== New in Core =====
 
