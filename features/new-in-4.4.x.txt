@@ -171,6 +171,10 @@
 
   * support for symbols "#*+" in drouting trees
 
+==== enum ====
+  * single digit is now valid in function enum_query
+    * is_e164() returns true for a single digit (previously two digits)
+
 ==== evapi ====
 
   * implemented receive buffering per connected client
