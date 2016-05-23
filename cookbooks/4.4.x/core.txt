@@ -2258,18 +2258,17 @@ Stop the execution of the configuration script -- it has the same behaviour as r
 
 ==== force_rport ====
 
-Force_rport() adds the rport parameter to the first Via header of the received message. Thus, Kamailio will add the received  port to the top most Via header in the SIP message, even if the client does not indicate support for rport. This enables subsequent SIP messages to return to the proper port later on in a SIP transaction.
+force_rport() adds the rport parameter to the first Via header of the received message. Thus, Kamailio will add the received port to the top most Via header in the SIP message, even if the client does not indicate support for rport. This enables subsequent SIP messages to return to the proper port later on in a SIP transaction.
 
-This is useful for NAT traversal, to enforce symmetric response signaling.
+This is useful for NAT traversal, to enforce symmetric response signalling.
 
-The rport parameter is defined in RFC 3581.
+The rport parameter is defined in [[https://tools.ietf.org/html/rfc3581|RFC 3581]].
 
-Note: there is also a force_rport parameter which changes the gobal behavior of the SIP proxy.
+Note: there is also a force_rport parameter which changes the global behaviour of the SIP proxy.
 
 Example of usage:
 
     force_rport();
-
 ==== add_rport ====
 Alias for force_rport();
 
