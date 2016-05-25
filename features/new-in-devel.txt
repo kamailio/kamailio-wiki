@@ -49,6 +49,37 @@
     * evapi_unicast(data, tag)
     * evapi_async_unicast(data, tag)
 
+==== kex ====
+  * new core stats   
+    * RPC request: stats.get_statistics all
+    * requests by method
+      * core:rcv_requests_invite
+      * core:rcv_requests_cancel
+      * core:rcv_requests_ack
+      * core:rcv_requests_bye
+      * core:rcv_requests_info
+      * core:rcv_requests_register
+      * core:rcv_requests_subscribe
+      * core:rcv_requests_notify
+      * core:rcv_requests_message
+      * core:rcv_requests_options
+      * core:rcv_requests_prack
+      * core:rcv_requests_update
+      * core:rcv_requests_refer
+      * core:rcv_requests_publish
+    * replies by status code                                                                                
+      * core:rcv_replies_1xx
+      * core:rcv_replies_18x
+      * core:rcv_replies_2xx
+      * core:rcv_replies_3xx
+      * core:rcv_replies_4xx
+      * core:rcv_replies_401
+      * core:rcv_replies_404
+      * core:rcv_replies_407
+      * core:rcv_replies_480
+      * core:rcv_replies_486
+      * core:rcv_replies_5xx
+      * core:rcv_replies_6xx
 ==== ndb_redis ====
 
   * added parameters to control connect and command timeouts             
