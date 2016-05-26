@@ -27,6 +27,7 @@
 
 ==== auth ====
   * added option to use SHA-256 encryption algorithm for digest authentication
+  * add an option to include an Authentication-Info header in the response to a successful authentication
 ==== db_unixodbc ====
   * new config variable replace_query
     * Tells if the ODBC replace query is supported by the DB odbc driver
