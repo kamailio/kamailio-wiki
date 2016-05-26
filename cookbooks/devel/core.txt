@@ -1723,6 +1723,8 @@ See force_tcp_alias for more details.
 
 Note: For NAT traversal of TCP clients it is better to not use tcp_accept_aliases but just use nathelper module and fix_nated_[contact|register] functions.
 
+Default is "no" (off)
+
    tcp_accept_aliases= yes|no
 
 
