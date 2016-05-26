@@ -25,6 +25,8 @@
 
   * ability to execute routing blocks written directly in Python
 
+==== auth ====
+  * added option to use SHA-256 encryption algorithm for digest authentication
 ==== db_unixodbc ====
   * new config variable replace_query
     * Tells if the ODBC replace query is supported by the DB odbc driver
