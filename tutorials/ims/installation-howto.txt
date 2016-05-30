@@ -45,7 +45,12 @@ First, install the Key for our repository:
 
 Then add the repository to your "/etc/apt/sources.list":
 
-  echo "deb http://repository.ng-voice.com wheezy ims rtpproxy" >> /etc/apt/sources.list
+  echo "deb http://repository.ng-voice.com jessie ims rtpproxy" >> /etc/apt/sources.list
+
+NOTE:
+  * The repository is 64 Bit only
+  * we do have packages for Debian 7, Debian 8 (jessie) and Ubuntu LTS (trusty)
+  * the packages are updated regularly from trunk
 
 And update the available packets:
 
