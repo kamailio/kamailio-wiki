@@ -132,6 +132,7 @@ Few guidelines to edit the wiki:
   * [[tutorials:troubleshooting:memory|Troubleshooting - Memory]]
   * [[tutorials:getting-started:main|Getting Started]]
   * [[tutorials:kamailio-and-mongodb|Kamailio and MongoDB]]
+  * [[tutorials:kamailio-startup-scripts|Kamailio Startup Scripts]]
 ==== Security related tutorials ====
 
   * [[tutorials:Security:Security-threats|Overview of Security issues for SIP routers]]
