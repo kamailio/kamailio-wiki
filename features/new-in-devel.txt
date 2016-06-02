@@ -92,9 +92,12 @@
 ==== presence ====
 
   * new module parameter `force_delete`
-    *  disabled by default                                       
+    * disabled by default
     * enabling this parameter will delete expired presentity records without updating watchers (no NOTIFY)
 
+  * new module parameter `retrieve_order_by`
+    * default value is "priority"
+    * Used to set the order-by of the db query for fetching the presence records
 ==== pv ====
 
   * new function pv_evalx(dst, fmt)                                             
