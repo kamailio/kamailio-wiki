@@ -1025,6 +1025,7 @@ For example, see the readme of **log_custom** module for more details.
 log_engine_type="udp"
 log_engine_data="127.0.0.1:9"
 </code>
+
 ==== log_facility ====
 
 If Kamailio logs to syslog, you can control the facility for logging. Very useful when you want to divert all Kamailio logs to a different log file. See the man page syslog(3) for more details.
