@@ -1006,8 +1006,25 @@ Example of usage:
 The proxy tries to find the modules in a smart way, e.g: loadmodule "uri" tries to find uri.so in the loadpath, but also uri/uri.so.
 
 
+==== log_engine_data ====
 
+Set specific data required by the log engine. See also the **log_engine_type**.
 
+<code c>
+log_engine_type="udp"
+log_engine_data="127.0.0.1:9"
+</code>
+
+==== log_engine_type ====
+
+Specify what logging engine to be used and its initialization data. A logging engine is implemented as a module. Supported values are a matter of the module.
+
+For example, see the readme of **log_custom** module for more details.
+
+<code c>
+log_engine_type="udp"
+log_engine_data="127.0.0.1:9"
+</code>
 ==== log_facility ====
 
 If Kamailio logs to syslog, you can control the facility for logging. Very useful when you want to divert all Kamailio logs to a different log file. See the man page syslog(3) for more details.
