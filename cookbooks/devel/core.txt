@@ -2829,7 +2829,7 @@ Example of usage:
         }
     }
     branch_route[OUT] {
-        if(uri=~"10\.10\.10].10") {
+        if(uri=~"10\.10\.10\.10") {
             # discard branches that go to 10.10.10.10
             drop();
         }
