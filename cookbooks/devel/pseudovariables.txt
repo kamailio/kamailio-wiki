@@ -1571,6 +1571,19 @@ Returns the notAfter validity date of the peer's certificate. String type.
 
 ==== $tls_peer_server_name ====
 The SNI server name of the peer
+===== SIP Message Attributes =====
+
+==== $msg(attr) ====
+
+Return attributes of SIP message:
+
+  * $msg(len) - sip message lenght
+  * $msg(buf) - sip message buffer
+  * $msg(body) - sip message body
+  * $msg(body_len) - sip message body lenght
+  * $msg(hdrs) - sip message headers
+  * $msg(fline) - sip message first line
+
 ===== XHTTP module Pseudo-Variables =====
 
 ==== $hu ====
