@@ -1218,6 +1218,16 @@ Default is 0 (disabled).
 mem_safety=1
 </code>
 
+==== mem_status_mode ====
+
+If set to 1, memory status dump for qm allocator will print details about used fragments. If set to 0, the dump contains only free fragments. It can be set at runtime via cfg param framework (e.g., via kamcmd).
+
+Default is 0.
+
+<code c>
+mem_status_mode=1
+</code>
+
 ==== mem_summary ====
 
 Parameter to control printing of mmemory debugging information displayed on exit or SIGUSR1. The value can be composed by following flags:
