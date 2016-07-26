@@ -58,7 +58,7 @@ Run following SQL statements in MySQL client to upgrade database structure from 
 -- table: active_watchers
 ALTER TABLE active_watchers
   ADD COLUMN flags int(11) NOT NULL DEFAULT '0',
-  ADD COLUMN user_agent varchar(255) NOT NULL;
+  ADD COLUMN user_agent varchar(255) DEFAULT '' NOT NULL;
 DELETE FROM version WHERE TABLE_NAME='active_watchers';
 INSERT INTO version (`table_name`, `table_version`) VALUES ('active_watchers','12');
 
