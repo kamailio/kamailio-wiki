@@ -1532,7 +1532,7 @@ Set the name of the table holding the table version. Usefull if the proxy is sha
 Example of usage:
 
 <code c>
-   table_version="version44"
+   version_table="version44"
 </code>
 ==== workdir ====
 
