@@ -170,6 +170,19 @@ Return escaped string of PV value, changing to '%hexa' the characters that are n
 
 Return unescaped string of PV value, changing '%hexa' to character code. Reverse of above transformation.
 
+
+==== {s.escape.csv} ====
+
+Escapes a string to use as a CSV field, as specified in RFC4180:
+   * enclose sting in double quotes
+   * escape double quotes with a second double quote
+
+Example:
+<code c>
+$var(x) = 'foo,bar"baz';
+$(var(x){s.escape.csv}); # contains '"foo,bar""baz"'
+</code>
+
 ==== {s.numeric} ====
 
 Removes all non-numeric parts of string.
