@@ -194,6 +194,8 @@ Few guidelines to edit the wiki:
   * [[http://www.kamailio.org.cn|Kamailio Chinese Community-中国社区]]
   * [[scripts:toc|Various Scripts]]
   * [[devel:kamailio-5.0-design|Kamailio v5.0 Design]]
+  * [[history:09-years-ser-kamailio|History - 9 Years of SER-Kamailio]]
+  * [[history:15-years-ser-kamailio|History - 15 Years of SER-Kamailio]]
 ===== Disclaimer =====
 
 <color grey>
