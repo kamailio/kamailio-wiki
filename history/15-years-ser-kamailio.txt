@@ -1,0 +1,6 @@
+====== History: 15 Years SER-Kamailio ======
+
+<code>
+Date: Sep 2, 2016
+Data compiled by: Daniel-Constantin Mierla
+</code>
