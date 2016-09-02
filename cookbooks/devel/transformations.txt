@@ -174,7 +174,7 @@ Return unescaped string of PV value, changing '%hexa' to character code. Reverse
 ==== {s.escape.csv} ====
 
 Escapes a string to use as a CSV field, as specified in RFC4180:
-   * enclose sting in double quotes
+   * enclose string in double quotes
    * escape double quotes with a second double quote
 
 Example:
