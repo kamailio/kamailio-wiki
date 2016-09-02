@@ -4,3 +4,30 @@
 Date: Sep 2, 2016
 Data compiled by: Daniel-Constantin Mierla
 </code>
+
+===== Overview =====
+
+**SIP Express Router** (aka **SER**) is the initial name of the project that emerged into Kamailio starting with 2008. It is a high-performance, configurable, free Session Initiation Protocol (SIP) server licensed under the open-source GNU license, offering a large set of features. Started in 2001, before the publishing of RFC3261 (SIP v2.0) in summer of 2002, Kamailio-SER pioneered the development of many SIP extensions and pushed further the real-time communications over IP.
+
+Initial project web site was:
+  * http://iptel.org/ser
+
+Used over the time:
+  * http://sip-router.org
+
+Now the web site is:
+  * http://www.kamailio.org
+
+It is the oldest and most robust open source SIP server, routing **billions of VoIP minutes every month world wide**, being used from Telcos and Carriers to ITSP and SOHO  environments. If you haven't heard of it so far, it is very likely because your VoIP provider routes the calls fast and reliable with SER-based SIP servers, so you don't need to build your own system.
+
+First source code commit of SER-Kamailio was done **15 years ago**: **Sep 3, 2001**. According to GIT log, first three commits were:
+
+<code>
+git log --pretty=format:"%h%x09%an%x09%ad%x09%s" --reverse | head -3
+
+512dcd9	Andrei Pelinescu-Onciul	Mon Sep 3 21:27:11 2001 +0000	Initial revision
+888ca09	Andrei Pelinescu-Onciul	Tue Sep 4 01:41:39 2001 +0000	parser seems to work
+e60a972	Andrei Pelinescu-Onciul	Tue Sep 4 20:55:41 2001 +0000	First working release
+</code>
+
+That is ** 5479 days** of continuous development, with hundreds of contributors, estimated cost of development: **over 18 000 000 USD** (averaged 70000USD/year/developer and 261 person-years).
