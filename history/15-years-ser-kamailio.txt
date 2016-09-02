@@ -31,3 +31,17 @@ e60a972	Andrei Pelinescu-Onciul	Tue Sep 4 20:55:41 2001 +0000	First working rele
 </code>
 
 That is ** 5479 days** of continuous development, with hundreds of contributors, estimated cost of development: **over 18 000 000 USD** (averaged 70000USD/year/developer and 261 person-years).
+
+===== Summary of Evolution =====
+
+  * **September 2001** - initial commit, SER was then developed for about one year internally at FhG FOKUS Institute, Berlin, Germany
+  * **Autumn 2002** - SER was released as GPL, code published on BerliOS: http://developer.berlios.de/projects/ser/
+  * **June 2005** - [[http://www.openser-project.org|OpenSER]] forked from SER, code hosted by Source Forge: http://sourceforge.net/projects/openser/
+  * **July 2008** - OpenSER was renamed to [[http://www.kamailio.org|Kamailio]]
+  * **November 2008** - SER and Kamailio teams decide to join development efforts and merge the source code trees of the two applications
+    * development portal for both changed to: http://sip-router.org
+  * **January 2010** - version 3.0.0 is released, from a source code tree containing both SER and Kamailio
+  * **Septeber 2011** - the project celebrates 10 years of development
+  * **March 2013** - version 4.4.0 is released, project switching to use only Kamailio name for public versions
+  * **Septeber 2016** - the project celebrates 15 years of development
+  * **2016** - the project is preparing the release of v5.0.0
