@@ -12,10 +12,9 @@ Data compiled by: Daniel-Constantin Mierla
 Initial project web site was:
   * http://iptel.org/ser
 
-Now the web site of development version is:
-  * http://sip-router.org
-
-{{ http://sip-router.org/wp-images/ser-logo.jpg }}
+Now the web sites are:
+  * http://sip-router.org (historical)
+  * http://www.kamailio.org
 
 It is the oldest and most robust open source SIP server, routing **billions of VoIP minutes every month world wide**, being used from Telcos and Carriers to ITSP and SOHO  environments. If you haven't heard of it so far, it is very likely because your VoIP provider routes the calls fast and reliable with SER-based SIP servers, so you don't need to build your own system.
 
