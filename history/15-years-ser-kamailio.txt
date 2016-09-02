@@ -44,4 +44,4 @@ That is ** 5479 days** of continuous development, with hundreds of contributors,
   * **Septeber 2011** - the project celebrates 10 years of development
   * **March 2013** - version 4.4.0 is released, project switching to use only Kamailio name for public versions
   * **Septeber 2016** - the project celebrates 15 years of development
-  * **2016** - the project is preparing the release of v5.0.0
+  * **Autumn 2016** - the project is preparing the release of v5.0.0
