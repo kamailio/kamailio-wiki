@@ -79,3 +79,30 @@ INSERT INTO version (`table_name`, `table_version`) VALUES ('uacreg','2');
 
 
 </code>
+
+
+
+==== Postgres Database Structure ====
+Run following SQL statements in psql client to upgrade database structure from v4.3 to v4.4:
+
+<code sql>
+-- table: active_watchers
+ALTER TABLE active_watchers ADD COLUMN flags INTEGER DEFAULT 0 NOT NULL;
+ALTER TABLE active_watchers ADD COLUMN user_agent VAR_CHAR(255) DEFAULT '' NOT NULL;
+DELETE FROM version WHERE TABLE_NAME='active_watchers';
+INSERT INTO version (TABLE_NAME, table_version) VALUES ('active_watchers','12');
+
+-- table: trusted
+ALTER TABLE trusted ADD COLUMN priority INTEGER DEFAULT 0 NOT NULL;
+ALTER TABLE trusted ADD COLUMN ruri_pattern VARCHAR(64) NULL;
+ALTER TABLE trusted ALTER COLUMN tag TYPE VARCHAR(64);
+DELETE FROM version WHERE TABLE_NAME='trusted';
+INSERT INTO version (TABLE_NAME, table_version) VALUES ('trusted','6');
+
+-- table: uacreg
+ALTER TABLE uacreg ADD COLUMN reg_delay INTEGER DEFAULT 0 NOT NULL;
+ALTER TABLE uacreg ADD COLUMN flags INTEGER DEFAULT 0 NOT NULL;
+DELETE FROM version WHERE TABLE_NAME='uacreg';
+INSERT INTO version (TABLE_NAME, table_version) VALUES ('uacreg','2');
+
+</code>
