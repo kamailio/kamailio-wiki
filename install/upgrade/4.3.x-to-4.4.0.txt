@@ -88,7 +88,7 @@ Run following SQL statements in psql client to upgrade database structure from v
 <code sql>
 -- table: active_watchers
 ALTER TABLE active_watchers ADD COLUMN flags INTEGER DEFAULT 0 NOT NULL;
-ALTER TABLE active_watchers ADD COLUMN user_agent VAR_CHAR(255) DEFAULT '' NOT NULL;
+ALTER TABLE active_watchers ADD COLUMN user_agent VARCHAR(255) DEFAULT '' NOT NULL;
 DELETE FROM version WHERE TABLE_NAME='active_watchers';
 INSERT INTO version (TABLE_NAME, table_version) VALUES ('active_watchers','12');
 
