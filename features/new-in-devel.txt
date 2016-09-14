@@ -113,6 +113,12 @@
   * new 'unidirectional' flag in Sipwise rtpengine
     * allows kernelization of one-way streams
 
+==== sca ====
+
+  * new onhold_bflag module parameter
+    * skip parsing sdp and controls on-hold detection by bflag
+  * sca_call_info_update(): new to/from parameters
+    * skips parsing message for To/From header values
 ==== sdpops ====
 
    * new config variable $sdp(body)
