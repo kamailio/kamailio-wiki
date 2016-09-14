@@ -1053,10 +1053,10 @@ Example of usage:
 
 ==== log_name ====
 
-Allows to configure a log_name prefix which will be used when printing to syslog. This is useful to filter log messages when running many instances of Kamailio on same server
+Allows to configure a log_name prefix which will be used when printing to syslog -- it is also known as syslog tag, and the default value is the application name or full path that printed the log message. This is useful to filter log messages when running many instances of Kamailio on same server.
 
 <code>
-log_name="kamailio"
+log_name="kamailio-proxy-5080"
 </code>
 
 ==== log_prefix ====
