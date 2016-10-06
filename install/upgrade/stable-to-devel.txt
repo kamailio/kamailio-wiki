@@ -30,5 +30,10 @@ Following tokens are used to mark the changes:
 Run following SQL statements in MySQL client to upgrade database structure from v4.4 to v5.0:
 
 <code sql>
-...
+--table: sca_subscriptions
+ALTER TABLE sca_subscriptions
+  ADD COLUMN server_id INTEGER DEFAULT 0 NOT NULL,
+  DROP INDEX sca_expires_idx,
+  ADD INDEX sca_expires_idx (server_id, expires);
+UPDATE version SET table_version=2 WHERE table_name="sca_subscriptions";
 </code>
