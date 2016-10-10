@@ -1135,6 +1135,17 @@ Example of usage:
 
     max_while_loops=200
 
+==== mcast ====
+
+This parameter can be used to set the interface that should join the multicast group. This is useful if you want to **listen** on a multicast address and don't want to depend on the kernel routing table for choosing an interface.
+
+The parameter is reset after each **listen** parameter, so you can join the right multicast group on each interface without having to modify kernel routing beforehand.
+
+Example of usage:
+
+    mcast="eth1"
+    listen=udp:224.0.1.75:5060
+
 ==== mcast_loopback ====
 
 It can be 'yes' or 'no'. If set to 'yes', multicast datagram are sent over loopback. Default value is 'no'.
