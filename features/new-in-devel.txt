@@ -147,7 +147,8 @@ A new framework (named kemi - kamailio embedded interface) was added, allowing t
   * latency_cfg_log                                        
     * Log message with the duration of executing request route or reply route is printed to syslog
 
-
+  * mcast
+    * Specify interface to join multicast group for multicast listen address
 ==== Functions ====
 
 ==== Memory Managers ====
