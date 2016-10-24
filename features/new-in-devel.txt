@@ -116,11 +116,11 @@
 ==== sca ====
 
   * new module parameters:
-    * **onhold_bflag**, skip parsing sdp and controls on-hold detection by bflag
-    * **server_address**, force Contact header address in NOTIFY replies
+    * **onhold_bflag**, if bflag is set skips parsing SDP and sets onhold
+    * **server_address**, force Contact header address in replies
 
-  * sca_call_info_update(): new to/from parameters
-    * skips parsing message for To/From header values
+  * sca_call_info_update(): new to/from URI parameters
+    * skips parsing message for To/From header values and uses URI values from parameters
 ==== sdpops ====
 
    * new config variable $sdp(body)
