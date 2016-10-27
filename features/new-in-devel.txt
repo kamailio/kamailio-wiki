@@ -36,7 +36,7 @@
 ==== dialog ====
 
   * new rpc function: dlg.terminate_dlg
-    * terminates a singe dialog, identified by a Call-ID.                          
+    * terminates a single dialog, identified by a Call-ID.                          
     * terminates an ongoing dialog by sending BYE in both directions
 
 ==== enum ====
