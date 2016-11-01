@@ -29,6 +29,7 @@ Participation is open to anyone, just join the IRC channel if you want to partic
 People adding notes in the agenda using abbreviations:
 
   * dcm - Daniel-Constantin Mierla
+  * qxork - Fred Posner
 
 
 ===== Agenda =====
