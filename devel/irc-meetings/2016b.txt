@@ -1,12 +1,12 @@
 ====== IRC Devel Meeting - 2016-11-09 ======
 
 Date:
-  * **Proposed: 15:00 UTC, Wednesday, Nov 09, 2016**
-    * can attend: dcm vseva
-      * cannot attend:qxork
+  * **Selected: 15:00 UTC, Tuesday, Nov 08, 2016**
+    * can attend: dcm qxork vseva
+      * cannot attend: 
   * Alternatives (add your id if you can attend, or if you want to addend, but you cannot)
-    * Nov 08: dcm qxork vseva
-      * cannot attend:
+    * Nov 09: dcm vseva
+      * cannot attend: qxork
     * Nov 10: dcm qxork vseva
       * cannot attend:
 
