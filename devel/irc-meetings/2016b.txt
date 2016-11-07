@@ -2,12 +2,12 @@
 
 Date:
   * **Proposed: 15:00 UTC, Wednesday, Nov 09, 2016**
-    * can attend: dcm
+    * can attend: dcm vseva
       * cannot attend:qxork
   * Alternatives (add your id if you can attend, or if you want to addend, but you cannot)
-    * Nov 08: dcm qxork
+    * Nov 08: dcm qxork vseva
       * cannot attend:
-    * Nov 10: dcm qxork
+    * Nov 10: dcm qxork vseva
       * cannot attend:
 
 Time of the meeting across the world:
