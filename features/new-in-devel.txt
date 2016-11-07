@@ -126,6 +126,10 @@
    * new config variable $sdp(body)
      * returns the sdp body as raw string                  
 
+==== siputils ====
+   * new pseudo variables
+     * $pcv(orig) - returns orig-ioi from P-Charging-Vector header
+     * $pcv(term) - returns term-ioi from P-Charging-Vector header
 ===== New in Core =====
 
   * print tos value if socket option for it cannot be set
