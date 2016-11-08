@@ -1,4 +1,4 @@
-====== IRC Devel Meeting - 2016-11-09 ======
+====== IRC Devel Meeting - 2016-11-08 ======
 
 Date:
   * **Selected: 15:00 UTC, Tuesday, Nov 08, 2016**
