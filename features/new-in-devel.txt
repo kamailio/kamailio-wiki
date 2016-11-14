@@ -163,8 +163,11 @@ A new framework (named kemi - kamailio embedded interface) was added, allowing t
 
 * rr module parameter enable_full_lr now defaults to 0
  * no more lr=on in Record-Route
+
 * use t_precheck_trans() to catch retransmissions faster
+
 * drop silently traffic from scanners
+
 * added option to block 401/407 from downstream
 ===== Tools =====
 
