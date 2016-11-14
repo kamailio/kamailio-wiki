@@ -324,3 +324,12 @@ This will produce a commit reverting the previous commit <hash>
 git revert <hash>
 git push origin
 </code>
+
+==== Rename and commit file ====
+
+Create minimal commit when renaming file
+
+<code>
+git mv module.c module_mod.c
+git commit -m '...: renamed module file to match recommended pattern' module.c module_mod.c
+</code>
