@@ -125,7 +125,9 @@
 
    * new config variable $sdp(body)
      * returns the sdp body as raw string                  
-
+   * new optional parameter to sdp_remove_line_by_prefix script function
+     * sdp_remove_line_by_prefix(string //[, mtype]//)
+     * mtype can be provided to apply the operations only to the streams matching m=mtype
 ==== siputils ====
    * new pseudo variables
      * $pcv(orig) - returns orig-ioi from P-Charging-Vector header
