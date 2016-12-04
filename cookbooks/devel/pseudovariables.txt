@@ -637,7 +637,7 @@ if($expires(max)!=$null) {
 
 ===== $xavp(id) - XAVPs =====
 
-xavp - extended AVP's - are structures that can store multiple values. They work like a stack, much like AVPs, and are attached to SIP transactions. Each xavp has a name and can contain multiple named values, the structure name and the value name are separated by '=>' like $xavp(root=>branch) where "root" is the name of the structure and branch is a named value. To assign a value use
+xavp - extended AVP's - are structures that can store multiple values. They work like a stack, much like AVPs, and are attached to SIP transactions. Each xavp has a name and can contain multiple named values, the structure name and the value name are separated by <nowiki>=></nowiki> like <nowiki>$xavp(root=>branch)</nowiki> where "root" is the name of the structure and branch is a named value. To assign a value use
 <code c>
 $xavp(root=>branch)="value";
 </code>
