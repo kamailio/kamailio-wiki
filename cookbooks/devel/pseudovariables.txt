@@ -1577,10 +1577,10 @@ The SNI server name of the peer
 
 Return attributes of SIP message:
 
-  * $msg(len) - sip message lenght
+  * $msg(len) - sip message length
   * $msg(buf) - sip message buffer
   * $msg(body) - sip message body
-  * $msg(body_len) - sip message body lenght
+  * $msg(body_len) - sip message body length
   * $msg(hdrs) - sip message headers
   * $msg(fline) - sip message first line
 
