@@ -18,6 +18,14 @@ Following tokens are used to mark the changes:
 
 ===== Modules =====
 
+==== Renamed Modules ====
+
+The module that had a '-' (dash/minus) in the name were renamed to remove it, respectively:
+
+  * cpl-c => cplc
+  * janssonrpc-c => jsonrpcc
+  * jsonrpc-c => jsonrpcc
+  * jsonrpc-s => jsonrpcs
 ===== Core =====
 
 ==== Parameters ====
