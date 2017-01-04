@@ -1,6 +1,6 @@
 ====== Kamailio SIP Server (SER) - New Features in Devel Version ======
 
-**Current devel version will be numbered 5.0.0 and it is planned to be released at the end of 2016**.
+**Current devel version will be numbered 5.0.0 and it is planned to be released in the beginning of 2017**.
 
 <fc #0000FF>
 **Previous devel, current stable, version was 4.4.x (released on March, 2016), see what was new in that release at:**
