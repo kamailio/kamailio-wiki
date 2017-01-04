@@ -176,3 +176,17 @@ A new framework (named kemi - kamailio embedded interface) was added, allowing t
 ==== kamcmd ====
 
 ==== kamctl ====
+
+  * now interacts with Kamailio via a fifo file using jsonrpcs module
+    * CTLENGINE is RPCFIFO by default
+    * RPCFIFOPATH has to be set to the fifo file created by jsonrpcs module
+
+  * kamctl rpc command is available for sending raw jsonrpc commands
+    * see [[http://www.kamailio.org/docs/docbooks/5.0.x/rpc_list/rpc_list.html|documentation]] for all RPC methods
+    * the prefix s: or i: can be used to enforce type string or int for parameters
+      * by default forwards number cli parameters as number type in jsonrpc commands
+
+    kamctl rpc jsonrpc.echo abc 123
+    kamctl rpc jsonrpc.echo s:abc i:123
+    kamctl rpc jsonrpc.echo s:888 i:123
+    kamctl rpc core.version
