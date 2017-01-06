@@ -197,5 +197,3 @@ A new framework (named kemi - kamailio embedded interface) was added, allowing t
   * kamcli is aiming at being a modern and extensible alternative to the shell script kamctl
   * communicates to Kamailio via jsonrpcs module
   * https://github.com/kamailio/kamcli
-
-  kamcli.py -
