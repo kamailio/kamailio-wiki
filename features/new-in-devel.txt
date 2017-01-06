@@ -190,3 +190,12 @@ A new framework (named kemi - kamailio embedded interface) was added, allowing t
     kamctl rpc jsonrpc.echo s:abc i:123
     kamctl rpc jsonrpc.echo s:888 i:123
     kamctl rpc core.version
+    
+==== kamcli ====
+
+  * new command line tool
+  * kamcli is aiming at being a modern and extensible alternative to the shell script kamctl
+  * communicates to Kamailio via jsonrpcs module
+  * https://github.com/kamailio/kamcli
+
+  kamcli.py -
