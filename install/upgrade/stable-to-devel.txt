@@ -18,6 +18,24 @@ Following tokens are used to mark the changes:
 
 ===== Modules =====
 
+==== Removed Modules ====
+
+=== mi_datagram ===
+
+The **jsonrpcs** module can be used instead to execute RPC commands over datagram sockets (unix socket file, IPv4 or IPv6).
+
+=== mi_fifo ===
+
+The **jsonrpcs** module can be used instead to execute RPC commands over a FIFO file.
+
+=== mi_xmlrpc ===
+
+The **xmlrpc** module can be used instead to execute RPC commands over HTTP/S XMLRPC.
+
+=== pua_mi ===
+
+The **pua_rpc** module can be used instead to trigger presence PUBLISH or SUBSCRIBE requests via RPC commands.
+
 ==== Renamed Modules ====
 
 The module that had a '-' (dash/minus) in the name were renamed to remove it, respectively:
