@@ -168,7 +168,7 @@
 
 ==== Interpreter ====
 
-A new framework (named kemi - kamailio embedded interface) was added, allowing to writing routing blocks in embedded languages such as Lua or Python:
+A new framework (named kemi - kamailio embedded interface) was added, allowing to writing routing blocks in embedded languages such as Lua, JavaScript or Python:
 
   * http://www.kamailio.org/wiki/devel/config-engines
 ==== Parameters ====
