@@ -4,6 +4,7 @@ Kamailio implements from scratch the interpreter for its configuration file nati
 
 Starting with v5.0.0, the routing blocks can be written in some other (well known) scripting languages and run via their embedded interpreters inside Kamailio. Known to work:
 
+  * JavaScript - implemented by app_jsdt module, as "jsdt" config engine
   * Lua - implemented by app_lua module, as "lua" config engine
   * Python - implemented by app_python module, as "python" config engine
 
@@ -128,7 +129,8 @@ Inside the Lua script, following functions are relevant:
 The following objects are available inside the Lua script:
 
   * **sr** - provided by the old way of exporting functions to Lua (https://www.kamailio.org/wiki/embeddedapi/devel/lua)
-  * **KSR** - provided via KEMI interface (not many functions exported at this moment, but expected to take over all **sr** module). The functions exported to KEMI are accessible as KSR.submodule.function(...). If submodule name is empty (reserved for core functions), then they are available as KSR.function(...).
+  * **KSR** - provided via KEMI interface. The functions exported to KEMI are accessible as KSR.submodule.function(...). If submodule name is empty (reserved for core functions), then they are available as KSR.function(...).
+
 ==== Lua Embedded Config Example ====
 
 The kamailio.cfg with global/core and module settings:
@@ -266,7 +268,7 @@ Inside the new class, the following methods are relevant:
 The following objects are available inside the Python script:
 
   * **Router** - provided by the old way of exporting functions to Python (https://www.kamailio.org/wiki/embeddedapi/devel/python)
-  * **KSR** - provided via KEMI interface (not many functions exported at this moment, but expected to take over all **Router** module). The functions exported to KEMI are accessible as KSR.submodule.function(...). If submodule name is empty (reserved for core functions), then they are available as KSR.function(...).
+  * **KSR** - provided via KEMI. The functions exported to KEMI are accessible as KSR.submodule.function(...). If submodule name is empty (reserved for core functions), then they are available as KSR.function(...).
 
 
 ==== Python Embedded Config Example ====
@@ -386,6 +388,25 @@ class kamailio:
         return 1;
 </code>
 
+===== JavaScript Config KEMI Engine =====
+
+The **app_jsdt** module must be loaded and the JavaScript script with routing logic must be set to its **load** parameter.
+
+Inside the JavaScript script, following functions are relevant:
+
+  * **ksr_request_route()** - is executed by Kamailio core every time a SIP request is received. If this function is not defined, then Kamailio will write error messages. This is equivalent of request_route {} from kamailio.cfg.
+  * **ksr_reply_route()** - is executed by Kamailio core every time a SIP Response (reply) is received. If this function is not defined, then Kamailio will not write error messages. This is equivalent of reply_route {} from kamailio.cfg.
+  * **ksr_onsend_route()** - is executed by Kamailio core every time a SIP request (and optionally for a response) is sent out. If this function is not defined, then Kamailio will not write error messages. This is equivalent of onsend_route {} from kamailio.cfg.
+  * branch route callback - the name of the Lua function to be executed instead of a branch route has to be provided as parameter to KSR.tm.t_on_branch(...)
+  * onreply route callback - the name of the Lua function to be executed instead of an onreply route has to be provided as parameter to KSR.tm.t_on_reply(...)
+  * failure route callback - the name of the Lua function to be executed instead of a failure route has to be provided as parameter to KSR.tm.t_on_failure(...)
+  * branch failure route callback - the name of the Lua function to be executed instead of an event route for branch failure has to be provided as parameter to KSR.tm.t_on_branch_failure(...)
+  * TBD: the options for specific event_route blocks. Meanwhile, should work using hybrid configuration with request_route/reply_route/... in embedded interpreter and the other routing blocks in native kamailio.cfg.
+
+The following objects are available inside the Lua script:
+
+  * **KSR** - provided via KEMI interface. The functions exported to KEMI are accessible as KSR.submodule.function(...). If submodule name is empty (reserved for core functions), then they are available as KSR.function(...).
+
 ===== Basic IP Telephony Config Example =====
 
 Some examples of configuration files using the native, Lua or Python interpreter are available in Kamailio source tree inside the **examples/kemi** folder - online at github:
@@ -406,12 +427,15 @@ If you define WITH_CFGLUA inside **kamailio-basic-kemi.cfg** or provide the comm
 
   * https://github.com/kamailio/kamailio/blob/master/examples/kemi/kamailio-basic-kemi-lua.lua
 
+If you define WITH_CFGJSDT inside **kamailio-basic-kemi.cfg** or provide the command line parameter **-A WITH_CFGJSDT**, then Kamailio will load the routing blocks in the JavaScript language, stored in the file **kamailio-basic-kemi-jsdt.js**:
+
+  * https://github.com/kamailio/kamailio/blob/master/examples/kemi/kamailio-basic-kemi-jsdt.js
 
 If you define WITH_CFGPYTHON inside **kamailio-basic-kemi.cfg** or provide the command line parameter **-A WITH_CFGPYTHON**, then Kamailio will load the routing blocks in the Python language, stored in the file **kamailio-basic-kemi-python.py**:
 
   * https://github.com/kamailio/kamailio/blob/master/examples/kemi/kamailio-basic-kemi-python.py
 
-Combining **kamailio-basic-kemi.cfg** with **kamailio-basic-kemi-native.cfg** results more or less in the **kamailio-basic.cfg** from the **etc/** folder in Kamailio source tree. The Lua and Python scripts are offering the same features, but written in another language.
+Combining **kamailio-basic-kemi.cfg** with **kamailio-basic-kemi-native.cfg** results more or less in the **kamailio-basic.cfg** from the **etc/** folder in Kamailio source tree. The Lua, JavaScript and Python scripts are offering the same features, but written in another language.
 
 Note that you need to copy these files at the location of the configuration file for your Kamailio configuration and eventually adjust the paths to them inside **kamailio-basic-kemi.cfg**.
 
@@ -435,9 +459,15 @@ To start it with Python routing blocks:
 /usr/local/sbin/kamailio -f /usr/local/etc/kamailio/kamailio-basic-kemi.cfg -M 12 -M 128 - A WITH_CFGPYTHON
 </code>
 
+To start it with JavaScript routing blocks:
+
+<code c>
+/usr/local/sbin/kamailio -f /usr/local/etc/kamailio/kamailio-basic-kemi.cfg -M 12 -M 128 - A WITH_CFGJSDT
+</code>
+
 If you want to print the log messages to the terminal, add the extra parameters **-E -e -ddd** - this will print up to debug level which can be too verbose. Using up to info level can be better, use the extra parameters  **-E -e -dd** .
 
-When you have at least log level info, with kamailio-basic-kemi.cfg you will notice that a log message is printed showing the duration in microseconds of executing the main routing blocks, no matter they were in native language, Lua or Python. If the logs were printed to the terminal, they look like:
+When you have at least log level info, with kamailio-basic-kemi.cfg you will notice that a log message is printed showing the duration in microseconds of executing the main routing blocks, no matter they were in native language, Lua, JavaScript or Python. If the logs were printed to the terminal, they look like:
 
 <code>
 LUA {REGISTER}: 13(28737) INFO: <core> [receive.c:268]: receive_msg(): request-route executed in: 292 usec
@@ -447,6 +477,7 @@ Depending on the scripting language used for routing blocks, the log messages st
 
   * NAT - for native interpreter
   * LUA - for LUA
+  * JSC - for JavaScript
   * PYT - for Python
 
 Again, these are specific to the config options in the kamailio-basic-kemi.cfg file -- look for log_prefix inside it for more details.
