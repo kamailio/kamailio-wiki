@@ -11,10 +11,37 @@
 
 ===== New Modules =====
 
+==== app_jsdt ====
+
+  * execute embedded JavaScript code inside kamailio.cfg
+  * relies on Duktape JS engine
+  * http://kamailio.org/docs/modules/devel/modules/app_jsdt.html
+
+==== ims_ocs ====
+
+  * IMS online charging module
+  * http://kamailio.org/docs/modules/devel/modules/ims_ocs.html
+
 ==== nsq ====
 
   * nsq.io connector for kamailio.cfg
   * http://kamailio.org/docs/modules/devel/modules/nsq.html
+
+==== pua_rpc ====
+
+  * RPC commands related to presence user agent functionality
+  * http://kamailio.org/docs/modules/devel/modules/pua_rpc.html
+
+==== rabbitmq ====
+
+  * rabbitmq client for configuration script
+  * http://kamailio.org/docs/modules/devel/modules/rabbitmq.html
+
+==== ss7ops ====
+
+  * JSON-based access to SS7 packets received over HEP
+  * http://kamailio.org/docs/modules/devel/modules/ss7ops.html
+
 ===== New in Old Modules =====
 
 ==== app_lua ====
