@@ -44,6 +44,20 @@ The module that had a '-' (dash/minus) in the name were renamed to remove it, re
   * janssonrpc-c => jsonrpcc
   * jsonrpc-c => jsonrpcc
   * jsonrpc-s => jsonrpcs
+===== Internal Libraries =====
+
+==== kcore ====
+
+The library has been removed.
+
+Parts of its code have been removed or merged into other components.
+
+==== kmi ====
+
+The library has been removed.
+
+The entire Management Interface (MI) code was removed. Instead of MI commands use RPC commands. The tool **kamctl** is using now RPC commands via **jsonrpcs** module.
+
 ===== Core =====
 
 ==== Parameters ====
