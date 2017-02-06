@@ -50,7 +50,7 @@ First of all, you have to create a directory on the file system where the source
 Download the sources from GIT using the following commands.
 
 <code>
-  git clone --depth 1 --no-single-branch git://git.kamailio.org/kamailio kamailio
+  git clone --depth 1 --no-single-branch https://github.com/kamailio/kamailio kamailio
   cd kamailio
 </code>
 
