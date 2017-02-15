@@ -914,13 +914,17 @@ The 'attr' can be:
 
 Return the attribute of the context for current processed dialog.
 
-<fc #0000ff>It is R/W variable.</fc>
+<fc #0000ff>Some of the attributes are R/W variables.</fc>
 
 The 'attr' can be:
-  * set
-  * flags
-  * timeout_route
-  * timeout_bye
+  * set - returns 1 if the dialog for current context is set, 0 otherwise
+  * flags - get/set dialog flags
+  * timeout_route - get/set route name to be executed on timeout
+  * timeout_route_id - get internal id for the route to be executed on timeout
+  * timeout_bye - set to 1 if BYE has to be sent when dialog lifetime elapses
+  * timeout - set the dialog lifetime (in seconds)
+  * on - get/set an integer value associated with the context (cfg usage)
+  * dir - get direction of the request for the dialog of the current context (0 - unknown, 1 - downstream, 2 - upstream)
 
 ==== $dlg_var(key) ====
 
