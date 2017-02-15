@@ -166,7 +166,17 @@ The log for f_malloc with debug enabled should look like:
 20(4082) NOTICE: fm_status:  count=     2 size=        64 bytes from <core>: cfg/cfg_struct.c: cfg_clone_str(130)
 20(4082) NOTICE: fm_status:  count=     1 size=       704 bytes from <core>: cfg/cfg_struct.c: cfg_shmize(217)
 20(4082) NOTICE: fm_status:  count=     3 size=        64 bytes from usrloc: udomain.c: build_stat_name(51)
+</code>
 
+If you dumped the status with qm_malloc, you can extract the logs from syslog and count the unique allocations with next commands:
+
+<code>
+grep qm_status /var/log/syslog >qm_status.txt
+
+# or:
+# grep qm_status /var/log/messages >qm_status.txt
+
+grep alloc qm_status.txt | awk '{ print substr( $0, 16, length($0) ) }' | sort | uniq -c | sort -k1n
 </code>
 ===== Using GDB =====
 
