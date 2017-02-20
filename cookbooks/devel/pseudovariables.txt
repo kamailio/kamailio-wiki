@@ -230,7 +230,7 @@ set $du to any SIP URI.
 <fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
 
 To reset $du:
-  $du = null;
+  $du = $null;
 
 ==== $fd - From URI domain ====
 
@@ -1358,6 +1358,7 @@ The key can be:
   * evroute - it has to be set to 1 in order to execute event_route[uac:reply] when reply is received
   * evcode - reply code for the request sent with uac_req_send(), available inside event_route[uac:reply]
   * evtype - is 1 if the reply was received via network, 2 if the reply was locally generated (e.g., retransmission timeout), available inside event_route[uac:reply]
+  * evparam - generic data buffer associated with the request that can be set before sending it and retrieved when executing the event route. It has a size of 128 characters.
 
 <code c>
 $uac_req(method)="OPTIONS";
