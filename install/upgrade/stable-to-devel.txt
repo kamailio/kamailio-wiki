@@ -86,11 +86,14 @@ ALTER TABLE subscriber CHANGE COLUMN email_address email_address varchar(128) DE
 ALTER TABLE subscriber CHANGE COLUMN password password varchar(64) NOT NULL DEFAULT ''; -- was varchar(25) NOT NULL DEFAULT ''
 ALTER TABLE subscriber CHANGE COLUMN ha1 ha1 varchar(128) NOT NULL DEFAULT ''; -- was varchar(64) NOT NULL DEFAULT ''
 ALTER TABLE subscriber CHANGE COLUMN ha1b ha1b varchar(128) NOT NULL DEFAULT ''; -- was varchar(64) NOT NULL DEFAULT ''
+UPDATE version SET table_version=7 WHERE table_name="subscriber";
+
 
 --table: uacreg
 ALTER TABLE uacreg CHANGE COLUMN auth_proxy auth_proxy varchar(128) NOT NULL DEFAULT ''; -- was varchar(64) NOT NULL DEFAULT ''
 ALTER TABLE uacreg CHANGE COLUMN l_domain l_domain varchar(64) NOT NULL DEFAULT ''; -- was varchar(128) NOT NULL DEFAULT ''
 ALTER TABLE uacreg CHANGE COLUMN r_domain r_domain varchar(64) NOT NULL DEFAULT ''; -- was varchar(128) NOT NULL DEFAULT ''
 ALTER TABLE uacreg ADD COLUMN auth_ha1 varchar(128) NOT NULL DEFAULT '';
+UPDATE version SET table_version=3 WHERE table_name="uacreg";
 
 </code>
