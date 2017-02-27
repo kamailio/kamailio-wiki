@@ -1,187 +1,24 @@
 ====== Kamailio SIP Server (SER) - New Features in Devel Version ======
 
-**Current devel version will be numbered 5.0.0 and it is planned to be released in the beginning of 2017**.
+**Current devel version will be numbered 5.1.0 and it is planned to be released in the second part of 2017**.
 
 <fc #0000FF>
-**Previous devel, current stable, version was 4.4.x (released on March, 2016), see what was new in that release at:**
+**Previous devel, current stable, version was 5.0.x (released on February, 2017), see what was new in that release at:**
 </fc>
-  * <fc #0000FF>http://www.kamailio.org/wiki/features/new-in-4.4.x</fc>
+  * <fc #0000FF>http://www.kamailio.org/wiki/features/new-in-5.0.x</fc>
 
 <fc #800000>//This is a draft of new features added in devel version, manually updated, thus not always synchronized with what is new in source code repository.//</fc>
 
 ===== New Modules =====
 
-==== app_jsdt ====
-
-  * execute embedded JavaScript code inside kamailio.cfg
-  * relies on Duktape JS engine
-  * http://kamailio.org/docs/modules/devel/modules/app_jsdt.html
-
-==== ims_ocs ====
-
-  * IMS online charging module
-  * http://kamailio.org/docs/modules/devel/modules/ims_ocs.html
-
-==== nsq ====
-
-  * nsq.io connector for kamailio.cfg
-  * http://kamailio.org/docs/modules/devel/modules/nsq.html
-
-==== pua_rpc ====
-
-  * RPC commands related to presence user agent functionality
-  * http://kamailio.org/docs/modules/devel/modules/pua_rpc.html
-
-==== rabbitmq ====
-
-  * rabbitmq client for configuration script
-  * http://kamailio.org/docs/modules/devel/modules/rabbitmq.html
-
-==== ss7ops ====
-
-  * JSON-based access to SS7 packets received over HEP
-  * http://kamailio.org/docs/modules/devel/modules/ss7ops.html
-
 ===== New in Old Modules =====
 
-==== app_lua ====
-
-  * ability to execute routing blocks written directly in Lua
-
-==== app_python ====
-
-  * ability to execute routing blocks written directly in Python
-
-==== auth ====
-  * added option to use SHA-256 encryption algorithm for digest authentication
-  * add an option to include an Authentication-Info header in the response to a successful authentication
-==== db_unixodbc ====
-  * new config variable replace_query
-    * Tells if the ODBC replace query is supported by the DB odbc driver
-    * Just like insert, but update the row if it exists otherwise insert
-
-==== dialog ====
-
-  * new rpc function: dlg.terminate_dlg
-    * terminates a single dialog, identified by a Call-ID.                          
-    * terminates an ongoing dialog by sending BYE in both directions
-
-==== enum ====
-
-  * single digit is now valid in function enum_query                          
-    * is_e164() returns true for a single digit (previously two digits)
-
-==== evapi ====
-  * support for tagging connections and select for sending based on tag
-    * evapi_set_tag(tname)
-    * evapi_multicast(data, tag)
-    * evapi_async_multicast(data, tag)
-    * evapi_unicast(data, tag)
-    * evapi_async_unicast(data, tag)
-
-==== kex ====
-  * new core stats   
-    * RPC request: stats.get_statistics all
-    * requests by method
-      * core:rcv_requests_invite
-      * core:rcv_requests_cancel
-      * core:rcv_requests_ack
-      * core:rcv_requests_bye
-      * core:rcv_requests_info
-      * core:rcv_requests_register
-      * core:rcv_requests_subscribe
-      * core:rcv_requests_notify
-      * core:rcv_requests_message
-      * core:rcv_requests_options
-      * core:rcv_requests_prack
-      * core:rcv_requests_update
-      * core:rcv_requests_refer
-      * core:rcv_requests_publish
-    * replies by status code                                                                                
-      * core:rcv_replies_1xx
-      * core:rcv_replies_18x
-      * core:rcv_replies_2xx
-      * core:rcv_replies_3xx
-      * core:rcv_replies_4xx
-      * core:rcv_replies_401
-      * core:rcv_replies_404
-      * core:rcv_replies_407
-      * core:rcv_replies_480
-      * core:rcv_replies_486
-      * core:rcv_replies_5xx
-      * core:rcv_replies_6xx
-==== ndb_redis ====
-
-  * added parameters to control connect and command timeouts             
-    * connect_timeout (int)
-    * cmd_timeout (int)
-
-==== presence ====
-
-  * new module parameter `force_delete`
-    * disabled by default
-    * enabling this parameter will delete expired presentity records without updating watchers (no NOTIFY)
-
-  * new module parameter `retrieve_order_by`
-    * default value is "priority"
-    * Used to set the order-by of the db query for fetching the presence records
-==== pv ====
-
-  * new function pv_evalx(dst, fmt)                                             
-    * The fmt string is evaluated twice for exiting variables, the result is stored in dst variable.
-
-==== registrar ====
-
-  * Add expiry value to the xavp.                                     
-    * handy if Kamailio for some reason changes the expiry value (min, max or variations caused by expiry_range)
-
-==== rtpengine ====
-
-  * new 'unidirectional' flag in Sipwise rtpengine
-    * allows kernelization of one-way streams
-
-==== sca ====
-
-  * new module parameters:
-    * **onhold_bflag**, if bflag is set skips parsing SDP and sets onhold
-    * **server_address**, force Contact header address in replies
-
-  * sca_call_info_update(): new to/from URI parameters
-    * skips parsing message for To/From header values and uses URI values from parameters
-==== sdpops ====
-
-   * new config variable $sdp(body)
-     * returns the sdp body as raw string                  
-   * new optional parameter to sdp_remove_line_by_prefix script function
-     * sdp_remove_line_by_prefix(string //[, mtype]//)
-     * mtype can be provided to apply the operations only to the streams matching m=mtype
-==== siputils ====
-   * new pseudo variables
-     * $pcv(orig) - returns orig-ioi from P-Charging-Vector header
-     * $pcv(term) - returns term-ioi from P-Charging-Vector header
 ===== New in Core =====
-
-  * print tos value if socket option for it cannot be set
-  * skip unusable network interfaces
-    * no IP addr associated
-    * address family AF_PACKET
 
 ==== Interpreter ====
 
-A new framework (named kemi - kamailio embedded interface) was added, allowing to writing routing blocks in embedded languages such as Lua, JavaScript or Python:
-
-  * http://www.kamailio.org/wiki/devel/config-engines
 ==== Parameters ====
-  * log_prefix_mode                                      
-    * If set to 1, then the log prefix is evaluated before/after each config action 
-    * needs to be set when the log_prefix has variables that are different based on the context of config execution
-      * e.g., $cfg(line))
 
-  * latency_cfg_log                                        
-    * Log message with the duration of executing request route or reply route is printed to syslog
-
-  * mcast
-    * Specify interface to join multicast group for multicast listen address
 ==== Functions ====
 
 ==== Memory Managers ====
@@ -190,37 +27,10 @@ A new framework (named kemi - kamailio embedded interface) was added, allowing t
 
 ==== kamailio.cfg ====
 
-  * rr module parameter enable_full_lr now defaults to 0
-  * no more lr=on in Record-Route
-
-  * use t_precheck_trans() to catch retransmissions faster
-
-  * drop silently traffic from scanners
-
-  * added option to block 401/407 from downstream
 ===== Tools =====
 
 ==== kamcmd ====
 
 ==== kamctl ====
-
-  * now interacts with Kamailio via a fifo file using jsonrpcs module
-    * CTLENGINE is RPCFIFO by default
-    * RPCFIFOPATH has to be set to the fifo file created by jsonrpcs module
-
-  * kamctl rpc command is available for sending raw jsonrpc commands
-    * see [[http://www.kamailio.org/docs/docbooks/5.0.x/rpc_list/rpc_list.html|documentation]] for all RPC methods
-    * the prefix s: or i: can be used to enforce type string or int for parameters
-      * by default forwards number cli parameters as number type in jsonrpc commands
-
-    kamctl rpc jsonrpc.echo abc 123
-    kamctl rpc jsonrpc.echo s:abc i:123
-    kamctl rpc jsonrpc.echo s:888 i:123
-    kamctl rpc core.version
     
 ==== kamcli ====
-
-  * new command line tool
-  * kamcli is aiming at being a modern and extensible alternative to the shell script kamctl
-  * communicates to Kamailio via jsonrpcs module
-  * https://github.com/kamailio/kamcli
