@@ -567,6 +567,10 @@ Note: the system time is computed for each call of $TS. Subsequent calls of $TS 
 
 **$ua** - reference to user agent header field
 
+===== $env(NAME) - environment variables =====
+
+**$env(NAME)** - value of the environment variable named NAME
+
 ===== $avp(id) - AVPs =====
 
 **$avp(id)** - the value of the AVP identified by 'id'.
