@@ -116,6 +116,7 @@ Few guidelines to edit the wiki:
 ===== Features =====
 
   * [[features:new-in-devel|New Features in Devel Version]]
+  * [[features:new-in-5.0.x|New Features in Release 5.0.x]]
   * [[features:new-in-4.4.x|New Features in Release 4.4.x]]
   * [[features:new-in-4.3.x|New Features in Release 4.3.x]]
   * [[features:new-in-4.2.x|New Features in Release 4.2.x]]
