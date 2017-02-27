@@ -54,6 +54,33 @@ deb http://deb.kamailio.org/kamailio precise main
 deb-src http://deb.kamailio.org/kamailio precise main
 </code>
 
+====  Kamailio 5.0 Release ====
+
+<code>
+deb     http://deb.kamailio.org/kamailio50 squeeze main
+deb-src http://deb.kamailio.org/kamailio50 squeeze main
+</code>
+
+<code>
+deb     http://deb.kamailio.org/kamailio50 wheezy  main
+deb-src http://deb.kamailio.org/kamailio50 wheezy  main
+</code>
+
+<code>
+deb     http://deb.kamailio.org/kamailio50 jessie  main
+deb-src http://deb.kamailio.org/kamailio50 jessie  main
+</code>
+
+<code>
+deb     http://deb.kamailio.org/kamailio50 precise main
+deb-src http://deb.kamailio.org/kamailio50 precise main
+</code>
+
+<code>
+deb     http://deb.kamailio.org/kamailio50 trusty main
+deb-src http://deb.kamailio.org/kamailio50 trusty main
+</code>
+
 ====  Kamailio 4.4 Release ====
 
 <code>
