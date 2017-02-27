@@ -103,3 +103,9 @@ ALTER TABLE uacreg ADD COLUMN auth_ha1 varchar(128) NOT NULL DEFAULT '';
 UPDATE version SET table_version=3 WHERE table_name="uacreg";
 
 </code>
+
+===== Tools =====
+
+==== kamctl ====
+
+By default, kamctl uses now JSONRPC protocol over FIFO file, instead of the old MI protocol. The commands are more or less the same, but the output is now in JSON format, incompatible with the old output.
