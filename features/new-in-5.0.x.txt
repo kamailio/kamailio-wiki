@@ -158,6 +158,11 @@
    * new pseudo variables
      * $pcv(orig) - returns orig-ioi from P-Charging-Vector header
      * $pcv(term) - returns term-ioi from P-Charging-Vector header
+
+==== websocket ====
+
+  * added $ws_conid pseudo variable
+    * gives id of closed connection in websocket:closed event route
 ===== New in Core =====
 
   * print tos value if socket option for it cannot be set
