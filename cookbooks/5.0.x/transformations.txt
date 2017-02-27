@@ -588,12 +588,12 @@ This transformation outputs valid SQL values for various PV values:
     $avp(nr) = 12345;
     $avp(strnr) = "12345";
     
-    xlog("$$rm = $rm = $(rm{s.sql})");
-    xlog("$$var(null) = $var(null) = $(var(null){s.sql})");
-    xlog("$$avp(null) = $avp(null) = $(avp(null){s.sql})");
-    xlog("$$avp(str) = $avp(str) = $(avp(str){s.sql})");
-    xlog("$$avp(nr) = $avp(nr) = $(avp(nr){s.sql})");
-    xlog("$$avp(strnr) = $avp(strnr) = $(avp(strnr){s.sql})");
+    xlog("$$rm = $rm = $(rm{sql.val})");
+    xlog("$$var(null) = $var(null) = $(var(null){sql.val})");
+    xlog("$$avp(null) = $avp(null) = $(avp(null){sql.val})");
+    xlog("$$avp(str) = $avp(str) = $(avp(str){sql.val})");
+    xlog("$$avp(nr) = $avp(nr) = $(avp(nr){sql.val})");
+    xlog("$$avp(strnr) = $avp(strnr) = $(avp(strnr){sql.val})");
 
   Output:
     $rm = ACK = 'ACK'
