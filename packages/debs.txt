@@ -109,7 +109,7 @@ deb-src http://deb.kamailio.org/kamailio44 trusty main
 </code>
 
 
-==== Latest Kamailio 4.3 release ====
+==== Kamailio 4.3 Release ====
 
 
 * ''Debian Squeeze''
@@ -143,7 +143,7 @@ deb-src http://deb.kamailio.org/kamailio43 precise main
 </code>
 
 
-==== Latest Kamailio 4.2 release ====
+==== Kamailio 4.2 Release ====
 
 
 * ''Debian Squeeze''
@@ -176,7 +176,7 @@ deb http://deb.kamailio.org/kamailio42 precise main
 deb-src http://deb.kamailio.org/kamailio42 precise main
 </code>
 
-==== Latest Kamailio 4.1 release ====
+==== Kamailio 4.1 Release ====
 
 
 * ''Debian Squeeze''
@@ -204,7 +204,7 @@ deb-src http://deb.kamailio.org/kamailio41 precise main
 </code>
 
 
-==== Latest Kamailio 4.0 release ====
+==== Kamailio 4.0 Release ====
 
 
 * ''Debian Squeeze''
@@ -232,7 +232,7 @@ deb-src http://deb.kamailio.org/kamailio40 precise main
 </code>
 
 
-==== Latest Kamailio 3.3 release ====
+==== Kamailio 3.3 Release ====
 
 
 * ''Debian Squeeze''
@@ -261,12 +261,7 @@ deb-src http://deb.kamailio.org/kamailio33 precise main
 
 
 
-
-
-
-
-
-====  Kamailio master development ====
+====  Kamailio Development (Master) Branch ====
 
 * ''Debian Squeeze''
 <code>
@@ -408,7 +403,7 @@ deb-src http://deb.kamailio.org/kamailio42-nightly precise main
 </code>
 
 
-====  Kamailio 4.0 development ====
+====  Kamailio 4.0 Branch ====
 
 * ''Debian Squeeze''
 <code>
@@ -431,7 +426,7 @@ deb http://deb.kamailio.org/kamailio40-nightly precise main
 </code>
 
 
-====  Kamailio 3.3 development ====
+====  Kamailio 3.3 Branch ====
 
 * ''Debian Squeeze''
 <code>
