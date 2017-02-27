@@ -26,7 +26,7 @@ The list of APT repositories and associated operating systems is also available 
   * http://deb.kamailio.org
 
 
-==== Latest Kamailio stable release  ====
+==== Latest Kamailio Stable Release  ====
 
 
 
