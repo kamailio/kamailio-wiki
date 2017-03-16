@@ -78,7 +78,7 @@ Predefined pseudo-variables are listed in alphabetical order.
 
 ==== $Au - Acc username ====
 
-**$Au** - username for accounting purposes. It's a selective pseudo variable (inherited from acc module). It returns $au if exits or From username otherwise.
+**$Au** - username for accounting purposes. It's a selective pseudo variable (inherited from acc module). It returns auth username ($au) if exists or From username ($fU) otherwise.
 
 
 ==== $branch(name) - Branch attributes ====
