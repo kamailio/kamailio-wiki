@@ -1957,6 +1957,12 @@ Default: 2100 (~ 2 INVITEs), can be changed at runtime.
 Maximum bytes queued for write allowed globally. It has no effect if tcp_write_buf is not enabled.
 
   tcp_wq_max = bytes (default 10 Mb)
+  
+==== tcp_reuse_port ====
+
+Allows reuse of TCP ports. This means,for example, that the same TCP ports on which Kamailio is listening on, can be used as source ports of new TCP connections when acting as an UAC. Kamailio must have been compiled in a system implementing SO_REUSEPORT (Linux > 3.9.0, FreeBSD, OpenBSD, NetBSD, MacOSX). This parameter takes effect only if also the system on which Kamailio is running on supports SO_REUSEPORT.
+
+  tcp_reuse_port = yes (default no)
 
 ===== TLS Parameters =====
 
