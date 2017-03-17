@@ -4,10 +4,6 @@
 
 The RPM packages are built on OpenSUSE Build Service for CentOS 6 and 7, Fedora 24 and 25, RedHat 6 and 7, OpenSUSE 42.1 and 42.2, on i586 and x86_64 architectures.
 
-A mirror (not in real time) of the packages is hosted by:
-
-  * http://rpm.kamailio.org
-
 The OpenSuse build service project is available at:
 
   * https://build.opensuse.org/project/show/home:kamailio:v5.0.x-rpms
