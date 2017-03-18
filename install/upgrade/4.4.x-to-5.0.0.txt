@@ -47,7 +47,12 @@ The module that had a '-' (dash/minus) in the name were renamed to remove it, re
 
 ==== Impacted Modules ====
 
-=== Utils ===
+=== jsonrpcs ===
+
+  * the default transports are set to FIFO file and unixsocket file, allowing to be used with kamctl and kamacmd via default kamailio.cfg
+  * if you use it together with **xhttp** module (json-rpc via http), then you have to set the **transport** parameter accordingly
+
+=== utils ===
 
   * http_query() function has been removed, use http_client module instead
 ===== Internal Libraries =====
