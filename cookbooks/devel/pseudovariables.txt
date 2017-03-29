@@ -708,6 +708,18 @@ if($hdr(From)=~"kamailio\.org") {
 
 <fc #0000ff>It is read-only variable. You can remove or add headers using functions from textops module.</fc>
 
+===== $hdrc(name) - Number of Headers =====
+
+**$hdrc(name)** - get the number of headers with the respective name
+
+Example of usage:
+
+<code c>
+if($hdrc(Via) == 2) {
+...
+}
+</code>
+
 ===== $var(name) - Private memory variables (zero) =====
 
 **$var(name)** - refers to variables that can be used in configuration script, having integer or string value. This kind of variables are faster than AVPs, being referenced directly to memory location.
