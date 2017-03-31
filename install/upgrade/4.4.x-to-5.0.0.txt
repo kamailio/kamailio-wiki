@@ -114,3 +114,37 @@ UPDATE version SET table_version=3 WHERE table_name="uacreg";
 ==== kamctl ====
 
 By default, kamctl uses now JSONRPC protocol over FIFO file, instead of the old MI protocol. The commands are more or less the same, but the output is now in JSON format, incompatible with the old output.
+
+===== Config Snippets =====
+
+This section collects configuration file snippets that can help migrating to v5.0.
+
+==== Replace MI With RPC ====
+
+The default configuration file for v4.4 has following snippets using MI components:
+
+<code c>
+...
+loadmodule "mi_fifo.so"
+...
+loadmodule "mi_rpc.so"
+...
+# ----- mi_fifo params -----
+#modparam("mi_fifo", "fifo_name", "/var/run/kamailio/kamailio_fifo")
+...
+</code>
+
+Replace them with:
+
+<code c>
+...
+loadmodule "jsonrpcs.so"
+...
+# ----- jsonrpcs params -----
+modparam("jsonrpcs", "pretty_format", 1)
+/* set the path to RPC fifo control file */
+# modparam("jsonrpcs", "fifo_name", "/var/run/kamailio/kamailio_rpc.fifo")
+/* set the path to RPC unix socket control file */
+# modparam("jsonrpcs", "dgram_socket", "/var/run/kamailio/kamailio_rpc.sock")
+...
+</code>
