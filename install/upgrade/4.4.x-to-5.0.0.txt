@@ -134,7 +134,7 @@ loadmodule "mi_rpc.so"
 ...
 </code>
 
-Replace them with:
+Replace them with next snippets to upgrade to v5.0:
 
 <code c>
 ...
