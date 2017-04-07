@@ -1,0 +1,51 @@
+====== IRC Devel Meeting - 2017-04-20 ======
+
+Date:
+  * **Proposed: 14:00 UTC, Thursday, Apr 20, 2016**
+    * can attend: dcm
+    * cannot attend:
+  * Alternatives (add your id if you can attend)
+    * Apr 24: dcm
+    * Apr 25: dcm
+
+Time of the meeting across the world:
+  * 16:00 - Berlin, Germany
+  * 15:00 - London, UK
+  * 10:00 - New York, USA
+
+Utilities:
+  * [[http://www.timeanddate.com/worldclock/converter.html|Time Converter]]
+  * IRC webchat: http://webchat.freenode.net/
+  * IRC client apps: http://en.wikipedia.org/wiki/Internet_Relay_Chat#Clients
+
+Place:
+  * **#kamailio** IRC channel on **irc.freenode.net** server
+
+===== Participants =====
+
+Participation is open to anyone, just join the IRC channel if you want to participate.
+
+People adding notes in the agenda using abbreviations:
+
+  * dcm - Daniel-Constantin Mierla
+
+===== Agenda =====
+
+Kamailio Development Status:
+
+  * open issues (dcm)
+  * minor releases for 4.3, 4.4 and 5.0 branches (dcm)
+
+Administration:
+
+  * servers maintenance
+  * community interaction and communication channels
+
+Kamailio 5.1
+
+  * roadmap
+  * missing features
+
+Documentation:
+
+  * tutorials/cookbooks -- wiki vs mkdocs (github markdown)
