@@ -44,7 +44,9 @@ Administration:
 Kamailio 5.1
 
   * roadmap
-  * missing features
+  * features
+    * anything relevant that is missing?
+    * priorities
 
 Documentation:
 
