@@ -1896,7 +1896,7 @@ Lifetime of orphaned sockets in FIN_WAIT2 state (overrides tcp_fin_timeout on, s
 
 ==== tcp_max_connections ====
 
-Maximum number of tcp connections (if the number is exceeded no new tcp connections will be accepted). Default is defined in tcp_conn.h: #define DEFAULT_TCP_MAX_CONNECTIONS 2048
+Maximum number of tcp connections (if the number is exceeded no new tcp connections will be accepted). Default is defined in tcp_init.h: #define DEFAULT_TCP_MAX_CONNECTIONS 2048
 
 Example of usage:
 
