@@ -41,6 +41,7 @@ Administration:
 
   * servers maintenance
   * community interaction and communication channels
+  * existing mailing lists review -- some old one were just revived, but do they worth keeping?
 
 Kamailio 5.1
 
@@ -52,3 +53,7 @@ Kamailio 5.1
 Documentation:
 
   * tutorials/cookbooks -- wiki vs mkdocs (github markdown)
+
+Collaborative Projects:
+
+  * unit testing, documentation, etc.
