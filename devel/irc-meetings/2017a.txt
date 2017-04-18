@@ -43,7 +43,7 @@ Administration:
   * community interaction and communication channels
   * existing mailing lists review -- some old one were just revived, but do they worth keeping?
 
-Kamailio 5.1
+Kamailio 5.1 (next major release):
 
   * roadmap
   * features
