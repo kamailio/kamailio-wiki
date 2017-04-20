@@ -2605,7 +2605,7 @@ Example of usage:
 
 The message will be forwarded only if there is already an existing connection to the destination. It applies only to connection oriented protocols like TCP and TLS (TODO: SCTP), for UDP it will be ignored. The behavior depends in which route block the function is called:
 
-  * normal request route: affects stateless forwards and tm. For tm it affects all the branches and the possible retransmissions (in fact there are no retransission for tcp/tls).
+  * normal request route: affects stateless forwards and tm. For tm it affects all the branches and the possible retransmissions (in fact there are no retransmission for TCP/TLS).
 
   * onreply_route[0] (stateless): equivalent to set_reply_*() (it's better to use set_reply_* though)
 
