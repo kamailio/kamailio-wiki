@@ -139,7 +139,7 @@ If you have problems decoding the TLS session you should enable debugging in Wir
 
 ===== Unencrypted TLS (NULL cipher)  =====
 
-TLS allows unencrypted useage when using the NULL cipher. This is very useful for debugging TLS connection, as you immediately see the SIP traffic.
+TLS allows unencrypted usage when using the NULL cipher. This is very useful for debugging TLS connection, as you immediately see the SIP traffic.
 
 The NULL cipher is usually disabled, thus it must be explicitly enabled. In Kamailio this can be done by configuring the TLS module:
 <code>
