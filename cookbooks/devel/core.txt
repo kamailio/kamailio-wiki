@@ -903,6 +903,19 @@ Example of usage:
 
   http_reply_parse=yes
 
+==== ip_free_bind ====
+
+Alias: ip_freebind, ipfreebind
+
+Control if Kamailio should attempt to bind to non local ip.This option is the per-socket equivalent of the system **ip_nonlocal_bind**.
+
+Default is 0 (do not bind to non local ip).
+
+Example of usage:
+
+<code c>
+  ip_free_bind = 1
+</code>
 ==== latency_cfg_log ====
 
 If set to a log level less or equal than debug parameter, a log message with the duration in microseconds of executing request route or reply route is printed to syslog.
