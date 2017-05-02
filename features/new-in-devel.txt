@@ -13,15 +13,28 @@
 
 ==== app_sqlang ====
 
+  * https://kamailio.org/docs/modules/devel/modules/app_sqlang.html
+
 ==== call_obj ====
+
+  * https://kamailio.org/docs/modules/devel/modules/call_obj.html
 
 ==== evrexec ====
 
+  * https://kamailio.org/docs/modules/devel/modules/evrexec.html
+
 ==== ims_diameter_server ====
+
+  * https://kamailio.org/docs/modules/devel/modules/ims_diameter_server.html
 
 ==== keepalive ====
 
+  * https://kamailio.org/docs/modules/devel/modules/keepalive.html
+
 ==== topos_redis ====
+
+  * https://kamailio.org/docs/modules/devel/modules/topos_redis.html
+
 ===== New in Old Modules =====
 
 ===== New in Core =====
