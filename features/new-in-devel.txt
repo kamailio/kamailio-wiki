@@ -11,6 +11,17 @@
 
 ===== New Modules =====
 
+==== app_sqlang ====
+
+==== call_obj ====
+
+==== evrexec ====
+
+==== ims_diameter_server ====
+
+==== keepalive ====
+
+==== topos_redis ====
 ===== New in Old Modules =====
 
 ===== New in Core =====
