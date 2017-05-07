@@ -2997,6 +2997,16 @@ Prototype: event_route[groupid:eventid]
   * eventid - some meaningful short text describing the event
 
 Implementations:
+
+  * **event_route[core:worker-one-init]** - executed by core after the first udp sip worker process executed the child_init() for all modules, before starting to process sip traffic
+    * note that due to forking, other sip workers can get faster to listening for sip traffic
+
+<code c>
+event_route[core:worker-one-init] {
+        xlog("L_INFO","Hello world\n");
+}
+</code>
+
   * **event_route[htable:mod-init]** - executed by **htable** module after all modules have been initialised. Good for initialising values in hash tables.
 <code c>
 modparam("htable", "htable", "a=>size=4;")
