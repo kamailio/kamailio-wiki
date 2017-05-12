@@ -502,7 +502,7 @@ Note that WS and WSS are both represented by transport=ws, conforming with the I
 
 ==== $sut - Source address as full URI ====
 
-**$su** - returns the representation of source address (ip, port, proto) as full SIP URI. The proto UDP is added also as transport parameter.
+**$sut** - returns the representation of source address (ip, port, proto) as full SIP URI. The proto UDP is added also as transport parameter.
 
 Its value looks like:
 
