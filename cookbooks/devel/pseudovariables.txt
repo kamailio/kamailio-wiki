@@ -1903,8 +1903,16 @@ This variable gives access to attributes of the current subscription. The variab
 
 The key can be:
   * uri - subscription URI. Useful in particular for subscriptions within the dialog, when the request URI in SUBSCRIBE is the Contact address from the initial subscription.
-===== $C(xy) - Foreground and background colors =====
 
+===== Registrar Module Pseudo-Variables =====
+
+==== $ulc(profile=>attr) - Registered Contact Attributes ====
+
+Access the attributes of contact addresses stored in 'profile'.
+
+It must be used after a call of “reg_fetch_contacts()”.
+
+===== $C(xy) - Foreground and background colors =====
 
 $C(xy) - reference to an escape sequence. “x” represents the foreground color and “y” represents the background color.
 
