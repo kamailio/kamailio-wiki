@@ -1884,7 +1884,7 @@ if (rand_event()) {
 # normal message processing follows
 </code>
 
-===== JSONRPC-S Variables =====
+===== JSONRPCS Variables =====
 
 ==== $jsonrpl(key) - JSONRPC Reply ====
 
