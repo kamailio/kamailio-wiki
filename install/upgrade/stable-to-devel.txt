@@ -39,5 +39,6 @@ Following tokens are used to mark the changes:
 Run following SQL statements in MySQL client to upgrade database structure from v5.0 to v5.1:
 
 <code sql>
--- TBA
+ALTER TABLE lcr_rule ADD COLUMN mt_tvalue VARCHAR(128) DEFAULT NULL AFTER request_uri;
+UPDATE version SET table_version='3' WHERE table_name='lcr_rule';
 </code>
