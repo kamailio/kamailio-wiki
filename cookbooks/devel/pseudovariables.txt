@@ -567,6 +567,11 @@ Note: the system time is computed for each call of $TS. Subsequent calls of $TS 
 
 **$ua** - reference to user agent header field
 
+**$version(num) - version: as number
+
+**$version(full) - version: name version architecture/platform
+
+**$version(hash) - TBA
 ===== $env(NAME) - environment variables =====
 
 **$env(NAME)** - value of the environment variable named NAME
