@@ -43,7 +43,7 @@
 
 ==== Parameters ====
 
-ip_free_bind - Control if Kamailio should attempt to bind to non local ip.
+  * ip_free_bind - Control if Kamailio should attempt to bind to non local ip.
 
 ==== Functions ====
 
