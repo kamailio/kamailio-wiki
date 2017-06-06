@@ -93,11 +93,13 @@ Few guidelines to edit the wiki:
 
  ===== Alphabetic Indexes =====
 
+Alphabetic indexes generated from documentation (modules' readme docs).
+
 \\
 
-| Version ^ Modules Parameters  ^ Modules Functions ^ RPC Commands ^ Statistics ^ RPC Commands List ^ Cfg Vars List ^ 
-^ devel   |  [[alphaindexes:devel:modparameters|link]]  |  [[alphaindexes:devel:modfunctions|link]]  |  [[alphaindexes:devel:rpccommands|link]]  |  [[alphaindexes:devel:modstatistics|link]]  |  [[http://www.kamailio.org/docs/docbooks/devel/rpc_list/rpc_list.html|link]]  |  [[http://www.kamailio.org/docs/docbooks/devel/cfg_var_list/cfg_var_list.html|link]]  |
-^ 5.0.x   |  [[alphaindexes:5.0.x:modparameters|link]]  |  [[alphaindexes:5.0.x:modfunctions|link]]  |  [[alphaindexes:5.0.x:rpccommands|link]]  |  [[alphaindexes:5.0.x:modstatistics|link]]  |  [[http://www.kamailio.org/docs/docbooks/5.0.x/rpc_list/rpc_list.html|link]]  |  ---  |
+| Version ^ Modules Parameters  ^ Modules Functions ^ RPC Commands ^ Statistics ^ 
+^ devel   |  [[alphaindexes:devel:modparameters|link]]  |  [[alphaindexes:devel:modfunctions|link]]  |  [[alphaindexes:devel:rpccommands|link]]  |  [[alphaindexes:devel:modstatistics|link]]  |
+^ 5.0.x   |  [[alphaindexes:5.0.x:modparameters|link]]  |  [[alphaindexes:5.0.x:modfunctions|link]]  |  [[alphaindexes:5.0.x:rpccommands|link]]  |  [[alphaindexes:5.0.x:modstatistics|link]]  |
 
 \\
 
@@ -113,6 +115,17 @@ Few guidelines to edit the wiki:
 
 \\ 
 
+ ===== C Code Export Lists =====
+
+Lists of exported symbols generated from C code.
+
+\\
+
+| Version ^ RPC Commands List ^ Cfg Vars List ^ Selects List ^ Counters List ^
+^ devel   |  [[http://www.kamailio.org/docs/docbooks/devel/rpc_list/rpc_list.html|link]]  |  [[http://www.kamailio.org/docs/docbooks/devel/cfg_var_list/cfg_var_list.html|link]]  |  [[http://www.kamailio.org/docs/docbooks/devel/select_list/select_list.html|link]]  |  [[http://www.kamailio.org/docs/docbooks/devel/counter_list/counter_list.html|link]]  |
+^ 5.0.x   |  [[http://www.kamailio.org/docs/docbooks/5.0.x/rpc_list/rpc_list.html|link]]  |  ---  |  ---  |  ---  |
+
+\\
 ===== Features =====
 
   * [[features:new-in-devel|New Features in Devel Version]]
