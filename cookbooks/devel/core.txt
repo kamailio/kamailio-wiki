@@ -2761,6 +2761,8 @@ Example:
 $ru = "sip:" + $rU + "@" + $sel(cfg_get.pstn.gw_ip);
 </code>
 
+Note: Some words cannot be used as names for custom variables or groups, and if they are used a syntax error is logged  by kamailio. These keywords are: "yes", "true", "on", "enable", "no", "false", "off", "disable", "udp", "UDP", "tcp", "TCP", "tls", "TLS", "sctp", "SCTP", "ws", "WS", "wss", "WSS", "inet", "INET", "inet6", "INET6", "sslv23", "SSLv23", "SSLV23", "sslv2", "SSLv2", "SSLV2", "sslv3", "SSLv3", "SSLV3", "tlsv1", "TLSv1", "TLSV1"
+
 ===== Routing Blocks =====
 
 The routing blocks are the parts of the configuration file executed by kamailio at runtime. They can be seen as blocks of actions similar to functions (or procedures) from common programming languages.
