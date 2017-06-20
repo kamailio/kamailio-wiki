@@ -440,10 +440,17 @@ The variable is exported by **rr** module and append_fromtag parameter must be e
 
 **$rz** - returns R-URI scheme, possible values: sip, sips, tel, tels and urn, R-URI scheme parsing error should be reflected by value: none
 
+==== $RAi - Received advertised IP address ====
+
+**$RAi** - reference to advertised IP address of the interface where the request has been received, or $Ri if no advertised address.
+
+==== $RAp - Received advertised port ====
+
+**$RAp** - reference to advertised port where the request has been received, or $Rp if no advertised port.
+
 ==== $Ri - Received IP address ====
 
 **$Ri** - reference to IP address of the interface where the request has been received
-
 ==== $Rp - Received port ====
 
 **$Rp** - reference to the port where the message was received
