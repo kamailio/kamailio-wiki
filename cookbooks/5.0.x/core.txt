@@ -1745,7 +1745,7 @@ Example of usage:
 
 ==== use_dns_cache ====
 
-Tells if DNS responses are cached - this means that the internal DNS resolver (instead of the system's stub resolver) will be used.  If set to "off", disables caching of DNS responses and, as side effect, DNS failover. Default is "on". Settings can be changed also during runtime (switch from niternal to system resolver and back).
+Tells if DNS responses are cached - this means that the internal DNS resolver (instead of the system's stub resolver) will be used.  If set to "off", disables caching of DNS responses and, as side effect, DNS failover. Default is "on". Settings can be changed also during runtime (switch from internal to system resolver and back).
 
 ==== use_dns_failover ====
 use_dns_failover = on | off (default off)
