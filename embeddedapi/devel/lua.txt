@@ -10,6 +10,8 @@ Initial author:
 Module **app_lua** allows execution of Lua scripts from SIP router configuration file, providing access to SIP message which is processed at that time.
 Exported functions by **app_lua** are available in the Lua script as package **sr**.
 
+This page is a documentation for the 5.0 branch of Kamailio as well, as there won't be any new features added to this way of executing lua code in Kamailio. If in doubt (and all needed modules are available), use the [[https://www.kamailio.org/wiki/devel/config-engines|KEMI way]] for your lua application.
+
 References:
 
   * **app_lua** module: [[http://kamailio.org/docs/modules/devel/modules/app_lua.html|README]]
