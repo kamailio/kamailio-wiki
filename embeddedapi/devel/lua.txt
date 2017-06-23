@@ -59,6 +59,7 @@ Parameter level can be"
 
   * dbg
   * info
+  * notice
   * warn
   * err
   * crit
