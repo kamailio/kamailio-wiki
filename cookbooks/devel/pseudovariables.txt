@@ -482,7 +482,11 @@ sbranch_set_ruri();
 
 ==== $si - Source IP address ====
 
-**$si** - reference to IP source address of the message
+**$si** - reference to IP source address of the message - see also $siz
+
+==== $siz - Source IP address ====
+
+**$siz** - reference to IP source address of the message, with enclosing square brackets for IPv6
 
 ==== $sp - Source port ====
 
