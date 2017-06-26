@@ -1832,8 +1832,10 @@ Attributes related to configuration file.
 
 The key can be:
 
-  * line - return current line in config
+  * line - return the current line in config
   * name - return the name of current config file
+  * file - return the name of current config file
+  * route - return the name of routing block
 
 Example:
 
