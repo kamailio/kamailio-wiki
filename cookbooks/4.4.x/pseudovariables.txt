@@ -1743,8 +1743,8 @@ Attributes related to configuration file.
 
 The key can be:
 
-* line - return current line in config
-* name - return the name of current config file
+  * line - return current line in config
+  * name - return the name of current config file
 
 Example:
 
