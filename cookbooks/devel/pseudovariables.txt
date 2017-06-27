@@ -455,6 +455,22 @@ The variable is exported by **rr** module and append_fromtag parameter must be e
 
 **$Rp** - reference to the port where the message was received
 
+==== $RAu - Advertised socket URI ====
+
+**$RAu** - local socket where the SIP messages was received in URI format, without transport parameter for UDP, using advertised address when available.
+
+==== $RAut - Adverised socket URI ====
+
+**$RAut** - local socket where the SIP messages was received in URI format, always with transport parameter, using advertised address when available.
+
+==== $Ru - Received socket URI ====
+
+**$Ru** - local socket where the SIP messages was received in URI format, without transport parameter for UDP.
+
+==== $Rut - Received socket URI ====
+
+**$Rut** - local socket where the SIP messages was received in URI format, always with transport parameter.
+
 ==== $sbranch(attr) - Static Branch ====
 
 **$sbranch(attr)** - class of variables allowing to manage the values of attributes for static branch. The static branch is internal structure that is used by the functions sbranch_push_ruri() and sbranch_append() from **pv** module, enabling more flexibility in updating the R-URI (first) branch attributes as well as extra branches (e.g., for parallel forking).
