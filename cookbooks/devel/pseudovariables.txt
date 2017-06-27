@@ -459,7 +459,7 @@ The variable is exported by **rr** module and append_fromtag parameter must be e
 
 **$RAu** - local socket where the SIP messages was received in URI format, without transport parameter for UDP, using advertised address when available.
 
-==== $RAut - Adverised socket URI ====
+==== $RAut - Advertised socket URI ====
 
 **$RAut** - local socket where the SIP messages was received in URI format, always with transport parameter, using advertised address when available.
 
