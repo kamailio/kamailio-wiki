@@ -680,12 +680,13 @@ Example of usage:
 Note: this option may be deprecated and removed in the near future, it is recommended to set **advertise** option for **listen** parameter.
 ==== advertised_port ====
 
-The port advertised in Via header and other destination lumps (e.g. RR). If empty or not set (default value) the port from where the message will be sent is used. Same warnings as for 'advertised_address'.
+The port advertised in Via header and other destination lumps. If empty or not set (default value) the port from where the message will be sent is used. Same warnings as for 'advertised_address'.
 
 Example of usage:
 
     advertised_port=5080
 
+Note: this option may be deprecated and removed in the near future, it is recommended to set **advertise** option for **listen** parameter.
 ==== alias ====
 
 Parameter to set alias hostnames for the server. It can be set many times, each value being added in a list to match the hostname when 'myself' is checked.
