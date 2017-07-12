@@ -5,7 +5,7 @@ Main author:
    Daniel-Constantin Mierla <miconda (at) gmail.com>
 </code>
 
-**Transformation** is basically a function that is applied to a pseudo-variable (PV) to get a special value from it. The value of PV is not affected at all.
+**Transformation** is basically a function that is applied to a pseudo-variable (PV) to get a property of it. The value of PV is not affected at all.
 
 Transformations are implemented by various modules, most of them being in **pv** module.
 
