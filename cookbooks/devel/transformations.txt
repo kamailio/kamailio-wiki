@@ -131,10 +131,23 @@ Return encoding in hexa of PV value
 
 Return decoding from hexa of PV value
 
+==== {s.encode.base58} ====
+
+Return base58 encoding of PV value.
+
+The set of base58 digits is:
+
+<code>
+123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz
+</code>
+
+==== {s.decode.base58} ====
+
+Return base58 decoding of PV value.
+
 ==== {s.encode.base64} ====
 
 Return base64 encoding of PV value
-
 ==== {s.decode.base64} ====
 
 Decode base64 encoded PV and return value
