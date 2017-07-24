@@ -997,7 +997,7 @@ Loads a module for later usage in the configuration script. The modules is searc
 
 Prototype: **loadmodule "modulepath"**
 
-If modulepath is only modulename or modulename.so, then Kamailio will try to search also for **modulename/modulename.so**, very useful when usining directly the version compiled in the source tree.
+If modulepath is only modulename or modulename.so, then Kamailio will try to search also for **modulename/modulename.so**, very useful when using directly the version compiled in the source tree.
 
 Example of usage:
 <code c>
