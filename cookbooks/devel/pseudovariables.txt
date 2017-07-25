@@ -1949,6 +1949,18 @@ Access the attributes of contact addresses stored in 'profile'.
 
 It must be used after a call of “reg_fetch_contacts()”.
 
+===== sipcapture Module Pseudo-Variables =====
+
+==== $hep(key) - HEP Packet Attributes ====
+
+The key refers to HEP packet header values:
+
+  * version - HEP version
+  * src_ip - source IP address
+  * dst_ip - destination IP address
+  * 0x000 - HEP attribute 0x000
+  * 0x999 - HEP attribute 0x999
+
 ===== $C(xy) - Foreground and background colors =====
 
 $C(xy) - reference to an escape sequence. “x” represents the foreground color and “y” represents the background color.
