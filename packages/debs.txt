@@ -6,8 +6,8 @@ Sporadically, Debian packages may be available via OpenSuse Build Service (OBS),
 ===== Status =====
 
   * Supported Kamailio branches: '' latest stable'' (points to 5.0 now), ''3.3'' , ''4.0'', ''4.1'', ''4.2'', ''4.3'', ''4.4'', ''5.0'', ''devel''
-  * Supported Distributions:''Debian 6.0 Squeeze'', ''Debian 7.0 Wheezy'', ''Debian 8.0 Jessie'', ''Ubuntu 12.04 Precise'', ''Ubuntu 14.04.1 LTS (Trusty Tahr)''
-  * Deprecated Distributions: ''Debian 5.0 Lenny'' (Kamailio 3.3.x, 4.0.x), ''Ubuntu 10.04 Lucid'' (Kamailio 3.3.x, 4.0.x)
+  * Supported Distributions:''Debian 8.0 Jessie'', ''Ubuntu 14.04.1 LTS (Trusty Tahr)'', ''Ubuntu 16.04 (Xenial Xerus)''
+  * Deprecated Distributions: ''Debian 5.0 Lenny (up to 4.0 only)'', ''Debian 6.0 Squeeze'', ''Debian 7.0 Wheezy'', ''Ubuntu 12.04 Precise''
   * Archs supported: ''amd64'', ''i386''
   * Sources provided for stable releases
   * Nightly builds of supported branches
@@ -54,6 +54,18 @@ deb http://deb.kamailio.org/kamailio precise main
 deb-src http://deb.kamailio.org/kamailio precise main
 </code>
 
+* ''Ubuntu Trusty''
+<code>
+deb http://deb.kamailio.org/kamailio trusty main
+deb-src http://deb.kamailio.org/kamailio trusty main
+</code>
+
+* ''Ubuntu Xenial''
+<code>
+deb http://deb.kamailio.org/kamailio xenial main
+deb-src http://deb.kamailio.org/kamailio xenial main
+</code>
+
 ====  Kamailio 5.0 Release ====
 
 <code>
@@ -80,6 +92,12 @@ deb-src http://deb.kamailio.org/kamailio50 precise main
 deb     http://deb.kamailio.org/kamailio50 trusty main
 deb-src http://deb.kamailio.org/kamailio50 trusty main
 </code>
+
+<code>
+deb     http://deb.kamailio.org/kamailio50 xenial main
+deb-src http://deb.kamailio.org/kamailio50 xenial main
+</code>
+
 
 ====  Kamailio 4.4 Release ====
 
@@ -108,35 +126,35 @@ deb     http://deb.kamailio.org/kamailio44 trusty main
 deb-src http://deb.kamailio.org/kamailio44 trusty main
 </code>
 
+<code>
+deb     http://deb.kamailio.org/kamailio44 xenial main
+deb-src http://deb.kamailio.org/kamailio44 xenial main
+</code>
+
 
 ==== Kamailio 4.3 Release ====
 
 
-* ''Debian Squeeze''
 <code>
 deb http://deb.kamailio.org/kamailio43 squeeze main
 deb-src http://deb.kamailio.org/kamailio43 squeeze main
 </code>
 
-* ''Debian Wheezy''
 <code>
 deb http://deb.kamailio.org/kamailio43 wheezy main
 deb-src http://deb.kamailio.org/kamailio43 wheezy main
 </code>
 
-* ''Debian Jessie''
 <code>
 deb http://deb.kamailio.org/kamailio43 jessie main
 deb-src http://deb.kamailio.org/kamailio43 jessie main
 </code>
 
-* ''Ubuntu Trusty''
 <code>
 deb http://deb.kamailio.org/kamailio43 trusty main
 deb-src http://deb.kamailio.org/kamailio43 trusty main
 </code>
 
-* ''Ubuntu Precise''
 <code>
 deb http://deb.kamailio.org/kamailio43 precise main
 deb-src http://deb.kamailio.org/kamailio43 precise main
@@ -146,31 +164,26 @@ deb-src http://deb.kamailio.org/kamailio43 precise main
 ==== Kamailio 4.2 Release ====
 
 
-* ''Debian Squeeze''
 <code>
 deb http://deb.kamailio.org/kamailio42 squeeze main
 deb-src http://deb.kamailio.org/kamailio42 squeeze main
 </code>
 
-* ''Debian Wheezy''
 <code>
 deb http://deb.kamailio.org/kamailio42 wheezy main
 deb-src http://deb.kamailio.org/kamailio42 wheezy main
 </code>
 
-* ''Debian Jessie''
 <code>
 deb http://deb.kamailio.org/kamailio42 jessie main
 deb-src http://deb.kamailio.org/kamailio42 jessie main
 </code>
 
-* ''Ubuntu Trusty''
 <code>
 deb http://deb.kamailio.org/kamailio42 trusty main
 deb-src http://deb.kamailio.org/kamailio42 trusty main
 </code>
 
-* ''Ubuntu Precise''
 <code>
 deb http://deb.kamailio.org/kamailio42 precise main
 deb-src http://deb.kamailio.org/kamailio42 precise main
@@ -179,53 +192,55 @@ deb-src http://deb.kamailio.org/kamailio42 precise main
 ==== Kamailio 4.1 Release ====
 
 
-* ''Debian Squeeze''
 <code>
 deb http://deb.kamailio.org/kamailio41 squeeze main
 deb-src http://deb.kamailio.org/kamailio41 squeeze main
 </code>
 
-* ''Debian Wheezy''
 <code>
 deb http://deb.kamailio.org/kamailio41 wheezy main
 deb-src http://deb.kamailio.org/kamailio41 wheezy main
 </code>
 
-* ''Debian Jessie''
 <code>
 deb http://deb.kamailio.org/kamailio41 jessie main
 deb-src http://deb.kamailio.org/kamailio41 jessie main
 </code>
 
-* ''Ubuntu Precise''
 <code>
 deb http://deb.kamailio.org/kamailio41 precise main
 deb-src http://deb.kamailio.org/kamailio41 precise main
+</code>
+
+<code>
+deb http://deb.kamailio.org/kamailio41 trusty main
+deb-src http://deb.kamailio.org/kamailio41 trusty main
 </code>
 
 
 ==== Kamailio 4.0 Release ====
 
 
-* ''Debian Squeeze''
+<code>
+deb http://deb.kamailio.org/kamailio40 lenny main
+deb-src http://deb.kamailio.org/kamailio40 lenny main
+</code>
+
 <code>
 deb http://deb.kamailio.org/kamailio40 squeeze main
 deb-src http://deb.kamailio.org/kamailio40 squeeze main
 </code>
 
-* ''Debian Wheezy''
 <code>
 deb http://deb.kamailio.org/kamailio40 wheezy main
 deb-src http://deb.kamailio.org/kamailio40 wheezy main
 </code>
 
-* ''Ubuntu Lucid''
 <code>
 deb http://deb.kamailio.org/kamailio40 lucid main
 deb-src http://deb.kamailio.org/kamailio40 lucid main
 </code>
 
-* ''Ubuntu Precise''
 <code>
 deb http://deb.kamailio.org/kamailio40 precise main
 deb-src http://deb.kamailio.org/kamailio40 precise main
@@ -235,25 +250,26 @@ deb-src http://deb.kamailio.org/kamailio40 precise main
 ==== Kamailio 3.3 Release ====
 
 
-* ''Debian Squeeze''
+<code>
+deb http://deb.kamailio.org/kamailio33 lenny main
+deb-src http://deb.kamailio.org/kamailio33 lenny main
+</code>
+
 <code>
 deb http://deb.kamailio.org/kamailio33 squeeze main
 deb-src http://deb.kamailio.org/kamailio33 squeeze main
 </code>
 
-* ''Debian Wheezy''
 <code>
 deb http://deb.kamailio.org/kamailio33 wheezy main
 deb-src http://deb.kamailio.org/kamailio33 wheezy main
 </code>
 
-* ''Ubuntu Lucid''
 <code>
 deb http://deb.kamailio.org/kamailio33 lucid main
 deb-src http://deb.kamailio.org/kamailio33 lucid main
 </code>
 
-* ''Ubuntu Precise''
 <code>
 deb http://deb.kamailio.org/kamailio33 precise main
 deb-src http://deb.kamailio.org/kamailio33 precise main
@@ -263,51 +279,66 @@ deb-src http://deb.kamailio.org/kamailio33 precise main
 
 ====  Kamailio Development (Master) Branch ====
 
-* ''Debian Squeeze''
-<code>
-deb http://deb.kamailio.org/kamailiodev-nightly squeeze main
-</code>
-
-* ''Debian Wheezy''
 <code>
 deb http://deb.kamailio.org/kamailiodev-nightly wheezy main
+deb-src http://deb.kamailio.org/kamailiodev-nightly wheezy main
 </code>
 
-* ''Debian Jessie''
 <code>
 deb http://deb.kamailio.org/kamailiodev-nightly jessie main
+deb-src http://deb.kamailio.org/kamailiodev-nightly jessie main
 </code>
 
-* ''Ubuntu Precise''
+<code>
+deb http://deb.kamailio.org/kamailiodev-nightly stretch main
+deb-src http://deb.kamailio.org/kamailiodev-nightly stretch main
+</code>
+
 <code>
 deb http://deb.kamailio.org/kamailiodev-nightly precise main
+deb-src http://deb.kamailio.org/kamailiodev-nightly precise main
+</code>
+
+<code>
+deb http://deb.kamailio.org/kamailiodev-nightly trusty main
+deb-src http://deb.kamailio.org/kamailiodev-nightly trusty main
+</code>
+
+<code>
+deb http://deb.kamailio.org/kamailiodev-nightly xenial main
+deb-src http://deb.kamailio.org/kamailiodev-nightly xenial main
 </code>
 
 ====  Kamailio 5.0 Branch ====
 
 <code>
-deb     http://deb.kamailio.org/kamailio50-nightly squeeze main
-deb-src http://deb.kamailio.org/kamailio50-nightly squeeze main
+deb http://deb.kamailio.org/kamailio50-nightly wheezy main
+deb-src http://deb.kamailio.org/kamailio50-nightly wheezy main
 </code>
 
 <code>
-deb     http://deb.kamailio.org/kamailio50-nightly wheezy  main
-deb-src http://deb.kamailio.org/kamailio50-nightly wheezy  main
+deb http://deb.kamailio.org/kamailio50-nightly jessie main
+deb-src http://deb.kamailio.org/kamailio50-nightly jessie main
 </code>
 
 <code>
-deb     http://deb.kamailio.org/kamailio50-nightly jessie  main
-deb-src http://deb.kamailio.org/kamailio50-nightly jessie  main
+deb http://deb.kamailio.org/kamailio50-nightly stretch main
+deb-src http://deb.kamailio.org/kamailio50-nightly stretch main
 </code>
 
 <code>
-deb     http://deb.kamailio.org/kamailio50-nightly precise main
+deb http://deb.kamailio.org/kamailio50-nightly precise main
 deb-src http://deb.kamailio.org/kamailio50-nightly precise main
 </code>
 
 <code>
-deb     http://deb.kamailio.org/kamailio50-nightly trusty main
+deb http://deb.kamailio.org/kamailio50-nightly trusty main
 deb-src http://deb.kamailio.org/kamailio50-nightly trusty main
+</code>
+
+<code>
+deb http://deb.kamailio.org/kamailio50-nightly xenial main
+deb-src http://deb.kamailio.org/kamailio50-nightly xenial main
 </code>
 
 ====  Kamailio 4.4 Branch ====
@@ -337,115 +368,36 @@ deb     http://deb.kamailio.org/kamailio44-nightly trusty main
 deb-src http://deb.kamailio.org/kamailio44-nightly trusty main
 </code>
 
+<code>
+deb     http://deb.kamailio.org/kamailio44-nightly xenial main
+deb-src http://deb.kamailio.org/kamailio44-nightly xenial main
+</code>
+
 ====  Kamailio 4.3 Branch ====
 
-* ''Debian Squeeze''
 <code>
 deb http://deb.kamailio.org/kamailio43-nightly squeeze main
 deb-src http://deb.kamailio.org/kamailio43-nightly squeeze main
 </code>
 
-* ''Debian Wheezy''
 <code>
 deb http://deb.kamailio.org/kamailio43-nightly wheezy main
 deb-src http://deb.kamailio.org/kamailio43-nightly wheezy main
 </code>
 
-* ''Debian Jessie''
 <code>
 deb http://deb.kamailio.org/kamailio43-nightly jessie main
 deb-src http://deb.kamailio.org/kamailio43-nightly jessie main
 </code>
 
-* ''Ubuntu Trusty''
 <code>
 deb http://deb.kamailio.org/kamailio43-nightly trusty main
 deb-src http://deb.kamailio.org/kamailio43-nightly trusty main
 </code>
 
-* ''Ubuntu Precise''
 <code>
 deb http://deb.kamailio.org/kamailio43-nightly precise main
 deb-src http://deb.kamailio.org/kamailio43-nightly precise main
-</code>
-
-
-====  Kamailio 4.2 Branch ====
-
-* ''Debian Squeeze''
-<code>
-deb http://deb.kamailio.org/kamailio42-nightly squeeze main
-deb-src http://deb.kamailio.org/kamailio42-nightly squeeze main
-</code>
-
-* ''Debian Wheezy''
-<code>
-deb http://deb.kamailio.org/kamailio42-nightly wheezy main
-deb-src http://deb.kamailio.org/kamailio42-nightly wheezy main
-</code>
-
-* ''Debian Jessie''
-<code>
-deb http://deb.kamailio.org/kamailio42-nightly jessie main
-deb-src http://deb.kamailio.org/kamailio42-nightly jessie main
-</code>
-
-* ''Ubuntu Trusty''
-<code>
-deb http://deb.kamailio.org/kamailio42-nightly trusty main
-deb-src http://deb.kamailio.org/kamailio42-nightly trusty main
-</code>
-
-* ''Ubuntu Precise''
-<code>
-deb http://deb.kamailio.org/kamailio42-nightly precise main
-deb-src http://deb.kamailio.org/kamailio42-nightly precise main
-</code>
-
-
-====  Kamailio 4.0 Branch ====
-
-* ''Debian Squeeze''
-<code>
-deb http://deb.kamailio.org/kamailio40-nightly squeeze main
-</code>
-
-* ''Debian Wheezy''
-<code>
-deb http://deb.kamailio.org/kamailio40-nightly wheezy main
-</code>
-
-* ''Ubuntu Lucid''
-<code>
-deb http://deb.kamailio.org/kamailio40-nightly lucid main
-</code>
-
-* ''Ubuntu Precise''
-<code>
-deb http://deb.kamailio.org/kamailio40-nightly precise main
-</code>
-
-
-====  Kamailio 3.3 Branch ====
-
-* ''Debian Squeeze''
-<code>
-deb http://deb.kamailio.org/kamailio33-nightly squeeze main
-</code>
-
-* ''Debian Wheezy''
-<code>
-deb http://deb.kamailio.org/kamailio33-nightly wheezy main
-</code>
-
-* ''Ubuntu Lucid''
-<code>
-deb http://deb.kamailio.org/kamailio33-nightly lucid main
-</code>
-
-* ''Ubuntu Precise''
-<code>
-deb http://deb.kamailio.org/kamailio33-nightly precise main
 </code>
 
 
