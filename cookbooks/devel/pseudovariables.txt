@@ -432,6 +432,9 @@ The variable is exported by **rr** module and append_fromtag parameter must be e
 
 <fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
 
+==== $rv - SIP message version ====
+
+**$rv** - reference to SIP message (reply or request) version
 ==== $ruid - Record internal Unique ID ====
 
 **$ruid** - the Record internal Unique ID for the location record selected by calling registrar:lookup()
