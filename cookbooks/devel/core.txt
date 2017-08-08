@@ -1234,14 +1234,14 @@ kamcmd cfg.set_now_int core mem_join 1
 To disable, set its value to 0.
 ==== mem_safety ====
 
-If set to 1, memory free operation does not call abort() for double freeing a pointer or freeing an invalid address. The server still prints the alerting log messages.
+If set to 1, memory free operation does not call abort() for double freeing a pointer or freeing an invalid address. The server still prints the alerting log messages. If set to 0, the SIP server stops by calling abort() to generate a core file.
 
 It can be set via config reload framework.
 
-Default is 0 (disabled).
+Default is 1 (enabled).
 
 <code c>
-mem_safety=1
+mem_safety=0
 </code>
 
 ==== mem_status_mode ====
