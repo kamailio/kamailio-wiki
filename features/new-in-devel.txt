@@ -11,6 +11,11 @@
 
 ===== New Modules =====
 
+==== acc_diameter ====
+
+  * split from acc module
+  * https://kamailio.org/docs/modules/devel/modules/acc_diameter.html
+
 ==== app_sqlang ====
 
   * https://kamailio.org/docs/modules/devel/modules/app_sqlang.html
