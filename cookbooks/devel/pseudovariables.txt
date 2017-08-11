@@ -1375,8 +1375,10 @@ The **name** can be:
   * id_label - return the internal label of current transaction or $null if not transaction is found
   * id_index_n - return the internal index of current transaction, if no transaction exists yet, create it
   * id_label_n - return the internal label of current transaction, if no transaction exists yet, create it
-  * reply_code - alias to $T_reply_code
-  * branch_index - alias to $T_branch_idx
+  * reply_code - reply code (alias to $T_reply_code)
+  * reply_reason - reply reason
+  * reply_last - last received reply code
+  * branch_index - branch index (alias to $T_branch_idx)
   * ruid - return the internal location ruid field for current branch
   * reply_type - 1 if it is a local generated reply, 0 - if no reply for transaction or it is a received reply
 
