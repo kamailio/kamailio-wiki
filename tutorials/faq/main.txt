@@ -604,3 +604,19 @@ modparam("mi_fifo", "fifo_name", "/tmp/kamailio_fifo")
 </code>
 
 Check also the access privileges of the FIFO file in order to be sure that the user running kamctl can read and write to the file.
+
+??? Kamcmd sometime fails to execute RPC commands with number parameters, why?
+
+!!! There are situations when a **kamcmd** RPC command fails because the parameters that are provided are auto-converted to integer numbers. This happens when the implementation of the RPC commands expects a string parameter (e.g., username). 
+
+To prevent **kamcmd** to do the auto-conversion, you can prefix its parameter with **s:**.
+
+Example:
+
+<code>
+# - next command fails
+kamcmd uac.reg_refresh 1001
+
+# use instead
+kamcmd uac.reg_refresh s:1001
+</code>
