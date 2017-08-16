@@ -370,6 +370,10 @@ Return the value of lr parameter
 
 Return the value of r2 parameter
 
+==== {uri.scheme} ====
+
+Return the string value of URI scheme.
+
 ===== Parameters List Transformations =====
 
 The name of the transformation starts with 'param.'. The PV value is considered to be a string like name1=value1;name2=value2;...". The transformations returns the value for a specific parameter, or the name of a parameter at a specific index.
