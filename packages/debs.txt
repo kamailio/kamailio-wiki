@@ -91,7 +91,6 @@ deb     http://deb.kamailio.org/kamailio50 jessie  main
 deb-src http://deb.kamailio.org/kamailio50 jessie  main
 </code>
 
-* ''Debian Stretch''
 <code>
 deb http://deb.kamailio.org/kamailio50 stretch main
 deb-src http://deb.kamailio.org/kamailio50 stretch main
