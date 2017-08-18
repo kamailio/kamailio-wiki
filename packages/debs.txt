@@ -56,6 +56,12 @@ deb http://deb.kamailio.org/kamailio jessie main
 deb-src http://deb.kamailio.org/kamailio jessie main
 </code>
 
+* ''Debian Stretch''
+<code>
+deb http://deb.kamailio.org/kamailio stretch main
+deb-src http://deb.kamailio.org/kamailio stretch main
+</code>
+
 * ''Ubuntu Precise''
 <code>
 deb http://deb.kamailio.org/kamailio precise main
