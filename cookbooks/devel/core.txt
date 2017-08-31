@@ -700,7 +700,7 @@ Example of usage:
     alias=another.domain.com:5060
 </code>
 
-Note: the hostname has to be enclosed in between quotes if it has reserved tokens such as **forward**, **drop** ...
+Note: the hostname has to be enclosed in between quotes if it has reserved tokens such as **forward**, **drop** ... or operators such as **-** (minus) ...
 ==== async_workers ====
 
 Specify how many child processes to create for asynchronous execution. These are processes that can receive tasks from various components and execute them locally, which is different process than the task sender.
