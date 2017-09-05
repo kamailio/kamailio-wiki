@@ -22,3 +22,9 @@ end
 set $i = $i + 1
 end
 </code>
+
+===== Memory =====
+
+See:
+
+  * https://www.kamailio.org/wiki/tutorials/troubleshooting/memory#using_gdb
