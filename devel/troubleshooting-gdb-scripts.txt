@@ -6,9 +6,11 @@ A collection of GDB scripts useful to print Kamailio's internals at runtime.
 
 ==== Transaction Structures ====
 
+Transactions are stored in hash table _tm_table that has 65536 slots (defined as TABLE_ENTRIES in the code).
+
 <code perl>
 set $i=0
-while($i<TABLE_ENTRIES)
+while($i<65536)
 
 set $ehead = &_tm_table->entries[$i]
 set $tcell = _tm_table->entries[$i].next_c
