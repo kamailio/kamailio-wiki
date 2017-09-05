@@ -208,6 +208,7 @@ Lists of exported symbols generated from C code.
   * [[devel:git-access|Developer Git Access]]
   * [[securitypolicy|Process for handling Security Vulnerabilities (proposal)]]
   * [[devel:config-engines|Configuration File Engines]]
+  * [[devel:troubleshooting-gdb-scripts|Troubleshooting - GDB Scripts]]
 
 ==== Misc ====
 
