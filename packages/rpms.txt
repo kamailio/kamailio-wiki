@@ -12,12 +12,12 @@ Download links specific per distribution are:
 
   * http://download.opensuse.org/repositories/home:/kamailio:/v5.0.x-rpms/CentOS_6/
   * http://download.opensuse.org/repositories/home:/kamailio:/v5.0.x-rpms/CentOS_7/
-  * http://download.opensuse.org/repositories/home:/kamailio:/v5.0.x-rpms/Fedora_24/
   * http://download.opensuse.org/repositories/home:/kamailio:/v5.0.x-rpms/Fedora_25/
+  * http://download.opensuse.org/repositories/home:/kamailio:/v5.0.x-rpms/Fedora_26/
   * http://download.opensuse.org/repositories/home:/kamailio:/v5.0.x-rpms/RHEL_6/
   * http://download.opensuse.org/repositories/home:/kamailio:/v5.0.x-rpms/RHEL_7/
-  * http://download.opensuse.org/repositories/home:/kamailio:/v5.0.x-rpms/openSUSE_Leap_42.1/
   * http://download.opensuse.org/repositories/home:/kamailio:/v5.0.x-rpms/openSUSE_Leap_42.2/
+  * http://download.opensuse.org/repositories/home:/kamailio:/v5.0.x-rpms/openSUSE_Leap_42.3/
 
 ===== Kamailio 4.4.x =====
 
