@@ -42,3 +42,8 @@ Run following SQL statements in MySQL client to upgrade database structure from 
 ALTER TABLE lcr_rule ADD COLUMN mt_tvalue VARCHAR(128) DEFAULT NULL AFTER request_uri;
 UPDATE version SET table_version='3' WHERE table_name='lcr_rule';
 </code>
+
+<code sql>
+ALTER TABLE location MODIFY contact VARCHAR(512) NOT NULL DEFAULT '';
+UPDATE version SET table_version='9' WHERE table_name='location';
+</code>
