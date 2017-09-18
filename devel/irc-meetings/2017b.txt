@@ -2,10 +2,10 @@
 
 Date:
   * **Proposed: 14:00 UTC, Wednesday, Sep 27, 2017**
-    * can attend: dcm
+    * can attend: dcm, vseva
     * cannot attend:
   * Alternatives (add your id if you can attend)
-    * Sep 28: dcm
+    * Sep 28: dcm, vseva
 
 Time of the meeting across the world:
   * 16:00 - Berlin, Germany
