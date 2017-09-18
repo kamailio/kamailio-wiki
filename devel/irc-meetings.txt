@@ -28,4 +28,5 @@ Access type:
   * [[devel:irc-meetings:2016a|2016 - First Meeting - Wednesday, Apr 20, 14:00UTC]]
   * [[devel:irc-meetings:2016b|2016 - Second Meeting - Wednesday, Nov 09, 15:00UTC]]
   * [[devel:irc-meetings:2017a|2017 - First Meeting - Thursday, Apr 20, 14:00UTC]]
+  * [[devel:irc-meetings:2017b|2017 - Second Meeting - Wednesday, Sep 27, 14:00UTC]]
 
