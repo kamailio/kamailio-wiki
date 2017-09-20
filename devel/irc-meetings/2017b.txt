@@ -51,7 +51,9 @@ Kamailio 5.1 (next major release):
 Documentation:
 
   * tutorials/cookbooks -- wiki vs mkdocs (github markdown)
+  * kemi documentation -- where to write it
 
 Collaborative Projects:
 
+  * code formating (clang format)
   * unit testing, documentation, etc.
