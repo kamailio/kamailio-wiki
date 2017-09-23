@@ -45,6 +45,9 @@ Administration:
 Kamailio 5.1 (next major release):
 
   * roadmap
+  * more cleanup
+    * ser packaging specs
+    * cleanup etc/ (basic, advanced cfgs to examples; radius dictionary to a module)
   * features
     * anything relevant that is missing?
     * priorities
