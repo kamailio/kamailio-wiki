@@ -57,7 +57,7 @@ kamcmd mod.stats all pkg
 
 Notice that for SHM only one group of statistics is printed, being one zone of memory, while for PKG you get a list with many groups of statistics, each specific for a Kamailio process (child).
 
-In order to merge the free memory fragments one should enable memory join. This is enable by default in latest kamailio:
+In order to merge the free memory fragments one should enable memory join. Default is disabled (mem_join=0).
 <code>
 mem_join=1
 </code>
