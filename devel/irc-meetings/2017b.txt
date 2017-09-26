@@ -58,6 +58,8 @@ Project Development
   * documentation
     * tutorials/cookbooks -- wiki vs mkdocs (github markdown)
     * kemi documentation -- where to write it
+  * packaging
+    * rpms via obs and varios distros
   * virtualization and containers (mailing list topic)
     * docker images
 
