@@ -40,24 +40,30 @@ Administration:
 
   * servers maintenance
   * community interaction and communication channels
-  * existing mailing lists review -- some old one were just revived, but do they worth keeping?
+  * existing/new mailing lists review (security, announce, ...)
+  * admin team
 
-Kamailio 5.1 (next major release):
 
-  * roadmap
+Project Development
   * more cleanup
     * ser packaging specs
     * cleanup etc/ (basic, advanced cfgs to examples; radius dictionary to a module)
   * features
     * anything relevant that is missing?
     * priorities
+  * coding style
+    * code formatting (clang format)
+    * naming for structures, types, functions, variables, ...
+  * unit testing
+  * documentation
+    * tutorials/cookbooks -- wiki vs mkdocs (github markdown)
+    * kemi documentation -- where to write it
 
-Documentation:
+Collaborative Projects & Events:
 
-  * tutorials/cookbooks -- wiki vs mkdocs (github markdown)
-  * kemi documentation -- where to write it
+  * online meetings (code/docs sprints)
+  * onsite meetings (devel meetings)
 
-Collaborative Projects:
+Kamailio 5.1 (next major release):
 
-  * code formating (clang format)
-  * unit testing, documentation, etc.
+  * roadmap
