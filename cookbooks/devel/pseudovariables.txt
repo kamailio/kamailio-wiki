@@ -169,10 +169,13 @@ xlog("$$avp(x) fount $cnt($avp(x)) times\n");
 
 **$conid** - The TCP connection ID of the connection the current message arrived on for TCP, TLS, WS, and WSS.  Set to $null for SCTP and UDP.
 
-==== $cs - CSeq ====
+==== $cs - CSeq Number ====
 
-**$cs** - reference to the sequence number in the cseq header. The method in the CSeq header is identical to the request method, thus use $rm to get the method (works also for responses).
+**$cs** - reference to the sequence number in the CSeq header. The method in the CSeq header is identical to the request method, thus use $rm to get the method (works also for responses).
 
+==== $csb - CSeq Header Body ====
+
+**$cs** - reference to the CSeq header body (number method).
 ==== $ct - Contact header ====
 
 **$ct** - reference to body of contact header
