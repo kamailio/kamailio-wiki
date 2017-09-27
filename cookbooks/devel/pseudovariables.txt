@@ -335,10 +335,22 @@ Note that changing the From: header may break backwards compatibility with SIP 1
 
 **$pp** - reference to process id (pid)
 
-==== $pr - Protocol of received message ====
+==== $pr or $proto - Protocol of received message ====
 
 **$pr** or **$proto** - protocol of received message (udp, tcp, tls, sctp, ws, wss)
 
+==== $prid ====
+
+**$prid** - internal protocol id
+
+  * 0 - NONE
+  * 1 - UDP
+  * 2 - TCP
+  * 3 - TLS
+  * 4 - SCTP
+  * 5 - WS
+  * 6 - WSS
+  * 7 - OTHER
 ==== $pU - User in P-Preferred-Identity header URI ====
 
 **$pU** - reference to user in request's P-Preferred-Identity header URI (see RFC 3325)
