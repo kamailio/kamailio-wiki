@@ -339,7 +339,7 @@ Note that changing the From: header may break backwards compatibility with SIP 1
 
 **$pr** or **$proto** - protocol of received message (udp, tcp, tls, sctp, ws, wss)
 
-==== $prid ====
+==== $prid - protocol id ====
 
 **$prid** - internal protocol id
 
