@@ -175,7 +175,7 @@ xlog("$$avp(x) fount $cnt($avp(x)) times\n");
 
 ==== $csb - CSeq Header Body ====
 
-**$cs** - reference to the CSeq header body (number method).
+**$csb** - reference to the CSeq header body (number method).
 ==== $ct - Contact header ====
 
 **$ct** - reference to body of contact header
