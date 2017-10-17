@@ -34,3 +34,11 @@ Content of **/etc/tmpfiles.d/kamailio.conf**:
 <code>
 d /run/kamailio 0750 kamailio kamailio
 </code>
+
+==== Reload Systemd Units ====
+
+<code>
+systemctl daemon-reload
+systemctl enable kamailio
+systemctl start kamailio 
+</code>
