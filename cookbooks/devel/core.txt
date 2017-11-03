@@ -1811,6 +1811,16 @@ Default is "no" (off)
    tcp_accept_aliases= yes|no
 
 
+==== tcp_accept_hep3 ====
+
+Enable internal TCP receiving stack to accept HEP3 packets. This option has to be set to **yes** on a Kamailio instance acting as Home SIPCapture server that is supposed to receive HEP3 packets over TCP/TLS.
+
+Default value is **no**.
+
+<code c>
+tcp_accept_hep3=yes
+</code>
+
 ==== tcp_accept_no_cl ====
 
 Control whether to throw or not error when there is no Content-Length header for requests received over TCP. It is required to be set to **yes** for XCAP traffic sent over HTTP/1.1 which does not use Content-Length header, but splits large bodies in many chunks. The module **sanity** can be used then to restrict this permission to HTTP traffic only, testing in route block in order to stay RFC3261 compliant about this mandatory header for SIP requests over TCP.
