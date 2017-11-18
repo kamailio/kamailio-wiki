@@ -1,4 +1,4 @@
-====== Kamailio SIP Server v5.1.x (devel): Core Cookbook ======
+====== Kamailio SIP Server v5.2.x (devel): Core Cookbook ======
 
 ===== Overview =====
 
