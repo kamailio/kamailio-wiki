@@ -1,0 +1,15 @@
+====== Download Sources of Kamailio v4.4.x from GIT Repository ======
+
+Instructions to download sources from GIT repository, specific for stable branch 4.4 (release series v4.4.x).
+
+===== Kamailio v4.4.x =====
+
+Direct download of sources from GIT for latest Kamailio v4.4.x.
+
+<code>
+  git clone --depth --no-single-branch 1 https://github.com/kamailio/kamailio kamailio
+  cd kamailio
+  git checkout -b 4.4 origin/4.4
+</code>
+
+//Note: if your git client version does not support –no-single-branch command line parameter, then just remove it.//
