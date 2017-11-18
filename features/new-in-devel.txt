@@ -1,44 +1,15 @@
 ====== Kamailio SIP Server (SER) - New Features in Devel Version ======
 
-**Current devel version will be numbered 5.1.0 and it is planned to be released in the second part of 2017**.
+**Current devel version will be numbered 5.2.0 and it is planned to be released during 2018**.
 
 <fc #0000FF>
-**Previous devel, current stable, version was 5.0.x (released on February, 2017), see what was new in that release at:**
+**Previous devel, current stable, version was 5.1.x (released on November, 2017), see what was new in that release at:**
 </fc>
-  * <fc #0000FF>http://www.kamailio.org/wiki/features/new-in-5.0.x</fc>
+  * <fc #0000FF>http://www.kamailio.org/wiki/features/new-in-5.1.x</fc>
 
 <fc #800000>//This is a draft of new features added in devel version, manually updated, thus not always synchronized with what is new in source code repository.//</fc>
 
 ===== New Modules =====
-
-==== acc_diameter ====
-
-  * split from acc module
-  * https://kamailio.org/docs/modules/devel/modules/acc_diameter.html
-
-==== app_sqlang ====
-
-  * https://kamailio.org/docs/modules/devel/modules/app_sqlang.html
-
-==== call_obj ====
-
-  * https://kamailio.org/docs/modules/devel/modules/call_obj.html
-
-==== evrexec ====
-
-  * https://kamailio.org/docs/modules/devel/modules/evrexec.html
-
-==== ims_diameter_server ====
-
-  * https://kamailio.org/docs/modules/devel/modules/ims_diameter_server.html
-
-==== keepalive ====
-
-  * https://kamailio.org/docs/modules/devel/modules/keepalive.html
-
-==== topos_redis ====
-
-  * https://kamailio.org/docs/modules/devel/modules/topos_redis.html
 
 ===== New in Old Modules =====
 
@@ -47,8 +18,6 @@
 ==== Interpreter ====
 
 ==== Parameters ====
-
-  * ip_free_bind - Control if Kamailio should attempt to bind to non local ip.
 
 ==== Functions ====
 
