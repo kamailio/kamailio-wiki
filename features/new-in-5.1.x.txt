@@ -34,6 +34,9 @@
 
   * https://kamailio.org/docs/modules/devel/modules/keepalive.html
 
+==== phonenum ====
+
+  * https://kamailio.org/docs/modules/devel/modules/phonenum.html
 ==== topos_redis ====
 
   * https://kamailio.org/docs/modules/devel/modules/topos_redis.html
