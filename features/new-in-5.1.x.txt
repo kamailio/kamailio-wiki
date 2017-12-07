@@ -52,9 +52,14 @@
 
   * support for variables in parameters of cfg functions
 
+==== auth_ephemeral ====
+
+  * added SHA384 as hashing option
+
 ==== db_text ====
 
   * added rpc command db_text.query to do db query
+  * added db_delim parameter - specify field delimiter
 
 ==== db_postgress ====
 
@@ -68,6 +73,15 @@
 
  * added option to use non-locking workers
 
+==== dmq_usrloc ====
+
+  * support to sync with multi contacts per message
+  * new parameter batch_max_msg_size
+
+==== drouting ====
+
+   * use keepalive module to monitor GW/destinations (for sort_order 0)
+
 ==== ims_charging ====
 
   * added a custom_user_avp parameter, to allow a custom From user via avp
@@ -79,10 +93,14 @@
 ==== lcr ====
 
   * added lcr.load_gws rpc function
+  * added possibility to match caller URI userpart to a mtree tvalue
 
 ==== ndb_redis ====
 
   * added REDIS-Cluster support
+  * added pipeline support for REDIS commands
+  * new feature to disable server on failure
+  * added flush_on_reconnect parameter
 
 ==== presence ====
 
@@ -128,6 +146,14 @@
   * added is_alphanumex(tval, eset) function
     * check if tval contains only alphanumeric characters or those from the eset parameter
 
+==== tls ====
+
+  * basic level of libressl compatibility (for openssl v1.0.x)
+
+==== tm ====
+
+  * use a stack of structures for faked_env()
+
 ==== tmx ====
 
   * new vars - $T(id_index_n) and $T(id_label_n)
@@ -145,6 +171,7 @@
 
   * new parameter db_load: enable/disable loading from the database on mod_init
   * new parameter db_insert_update: insert into table, update on duplicate key
+  * added more attributes to the result of ul.dump
 
 ===== New in Core =====
 
@@ -160,6 +187,7 @@
 ==== Misc ====
 
   * support for parsing the Call-Info header
+  * do not terminate on harmless SIGCHLD (e.g., when kemi python scripts create and terminate new processes)
 
 ==== kamailio.cfg ====
 
