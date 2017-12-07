@@ -33,7 +33,7 @@ Following tokens are used to mark the changes:
 
 ===== Database =====
 
-
+  * increased size of dialplan table repl_exp field to 256 chars
 ==== MySQL Database Structure ====
 
 Run following SQL statements in MySQL client to upgrade database structure from v5.0 to v5.1:
