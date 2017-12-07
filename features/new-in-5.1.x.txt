@@ -37,11 +37,88 @@
 ==== phonenum ====
 
   * https://kamailio.org/docs/modules/devel/modules/phonenum.html
+
 ==== topos_redis ====
 
   * https://kamailio.org/docs/modules/devel/modules/topos_redis.html
 
 ===== New in Old Modules =====
+
+==== app_lua ====
+
+  * rpc app_lua.api_list command
+
+==== app_python ====
+
+  * support for variables in parameters of cfg functions
+
+==== dbtext ====
+
+  * added rpc command db_text.query to do db query
+  * 
+==== dialog ====
+
+  * $dlg_ctx(timeout_route) returns route block name
+
+==== ims_charging ====
+
+  * added a custom_user_avp parameter, to allow a custom From user via avp
+
+==== ims_isc ====
+
+  * allow regex in RURI field
+
+==== lcr ====
+
+  * added lcr.load_gws rpc function
+
+==== presence ====
+
+  * added pres_has_subscribers() function
+  * added cseq_offset parameter
+
+==== pv ====
+
+  * $env(...) - new class of cfg variable to get values for environment variables
+  * print cfg line for string transformation errors
+  * new variable - $hdrc(HName) - return the number of headers matching the name with HName
+
+==== pua_dialoginfo ====
+
+  * added flags to disable caller and/or callee PUBLISH
+
+==== rabbitmq ====
+
+  * added direct_reply_to module parameter
+  * added url module parameter
+
+==== sipcapture ====
+
+  * added $hep(dst_ip) variable to get hep's message destination IP
+
+==== sipt ====
+
+  * the digit terminator is made optional on set_destination
+
+==== siptrace ====
+
+  * add support for HEPv3
+  * add hlog() to send logs to homer
+
+==== siputils ====
+
+  * added is_alphanum(v) function
+    * check if a string value contains only digits or alphabetic characters
+  * added is_alphanumex(tval, eset) function
+    * check if tval contains only alphanumeric characters or those from the eset parameter
+
+==== topos ====
+
+  * new parameter storage - specify the storage type to be used (default is database)
+
+==== uri_db ====
+
+  * new variant with subscriber and realm params for check_uri()
 
 ===== New in Core =====
 
@@ -49,13 +126,14 @@
 
 ==== Parameters ====
 
-  * ip_free_bind - Control if Kamailio should attempt to bind to non local ip.
+  * ip_free_bind - control if Kamailio should attempt to bind to non local ip
+  * tcp_reuse_port - reuse tcp sockets
 
 ==== Functions ====
 
-==== Memory Managers ====
+==== Misc ====
 
-==== Architecture ====
+  * support for parsing the Call-Info header
 
 ==== kamailio.cfg ====
 
