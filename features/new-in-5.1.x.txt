@@ -52,13 +52,21 @@
 
   * support for variables in parameters of cfg functions
 
-==== dbtext ====
+==== db_text ====
 
   * added rpc command db_text.query to do db query
-  * 
+
+==== db_postgress ====
+
+  * implemented insert_update() API function
+
 ==== dialog ====
 
   * $dlg_ctx(timeout_route) returns route block name
+
+==== dmq ====
+
+ * added option to use non-locking workers
 
 ==== ims_charging ====
 
@@ -71,6 +79,10 @@
 ==== lcr ====
 
   * added lcr.load_gws rpc function
+
+==== ndb_redis ====
+
+  * added REDIS-Cluster support
 
 ==== presence ====
 
@@ -92,6 +104,10 @@
   * added direct_reply_to module parameter
   * added url module parameter
 
+==== registrar ====
+
+  * apply method_filtering only on initial requests without to-tag
+
 ==== sipcapture ====
 
   * added $hep(dst_ip) variable to get hep's message destination IP
@@ -112,6 +128,11 @@
   * added is_alphanumex(tval, eset) function
     * check if tval contains only alphanumeric characters or those from the eset parameter
 
+==== tmx ====
+
+  * new vars - $T(id_index_n) and $T(id_label_n)
+    * similar to $T(id_index) and $T(id_label), but if transaction doesn't exist yet, it is created
+
 ==== topos ====
 
   * new parameter storage - specify the storage type to be used (default is database)
@@ -119,6 +140,11 @@
 ==== uri_db ====
 
   * new variant with subscriber and realm params for check_uri()
+
+==== usrloc ====
+
+  * new parameter db_load: enable/disable loading from the database on mod_init
+  * new parameter db_insert_update: insert into table, update on duplicate key
 
 ===== New in Core =====
 
@@ -142,5 +168,8 @@
 ==== kamcmd ====
 
 ==== kamctl ====
-    
+
+  * added srv command
+    * shortcuts to RPC commands to print sockets, aliases and available RPC commands
+
 ==== kamcli ====
