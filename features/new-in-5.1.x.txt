@@ -56,6 +56,10 @@
 
   * added SHA384 as hashing option
 
+==== corex ====
+
+  * added $cfg(route) - return name of routing block for crt action
+
 ==== db_text ====
 
   * added rpc command db_text.query to do db query
@@ -64,6 +68,11 @@
 ==== db_postgress ====
 
   * implemented insert_update() API function
+
+==== db_sqlite ====
+
+  * new parameter to open some database in read-only
+  * new parameter to set database journal mode
 
 ==== dialog ====
 
@@ -80,7 +89,12 @@
 
 ==== drouting ====
 
-   * use keepalive module to monitor GW/destinations (for sort_order 0)
+  * use keepalive module to monitor GW/destinations (for sort_order 0)
+
+==== htable ====
+
+  * added functions to remove items using variables
+  * implemented starts-with matching for remove functions
 
 ==== ims_charging ====
 
@@ -89,6 +103,15 @@
 ==== ims_isc ====
 
   * allow regex in RURI field
+
+==== ipops ====
+
+  * new naptr_query() cfg function
+
+==== kazoo ====
+
+  * added $kzRK to accdess routing key of the payload
+  * added json.count transformation
 
 ==== lcr ====
 
@@ -101,6 +124,18 @@
   * added pipeline support for REDIS commands
   * new feature to disable server on failure
   * added flush_on_reconnect parameter
+  * enhanceed access to REDIS replies - support to access array within arrays
+
+==== path ====
+
+  * option to add two path headers and use alias like received value
+    * enable_r2 - add two path headers, one for incoming socket and one for outgoing socket
+    * received_format - parameter to control if received value should be in sip uri (as so far) or in contact-alias param format
+
+==== permissions ====
+
+  * new parameter load_backends
+    * control what backends should be loaded (1 - address table; 2 - trusted table; 4 - allow file; 8 - deny file)
 
 ==== presence ====
 
@@ -112,10 +147,20 @@
   * $env(...) - new class of cfg variable to get values for environment variables
   * print cfg line for string transformation errors
   * new variable - $hdrc(HName) - return the number of headers matching the name with HName
+  * added received ip/port pvars for advertised ip/port - $RAi, $RAp
+  * $siz - return source ip, with enclosing square brackets for ipv6
+  * $Ru - URI format for local socket where the SIP message was received, without trasport parameter for UDP
+  * $Rut - URI format for local socket where the SIP message was received, always with transport parameter
+  * $RAu - URI format for local socket where the SIP message was received, without trasport parameter for UDP, using the advertised address if availabe
+  * $RAut - URI format for local socket where the SIP message was received, always with transport parameter, using the advertised address if available
 
 ==== pua_dialoginfo ====
 
   * added flags to disable caller and/or callee PUBLISH
+
+==== pua_reginfo ====
+
+  * added support to use outbound proxy for PUBLISH requests
 
 ==== rabbitmq ====
 
@@ -149,6 +194,12 @@
 ==== tls ====
 
   * basic level of libressl compatibility (for openssl v1.0.x)
+
+==== topoh ====
+
+  * execute event_route[topoh:msg-outgoing] - executed when a message is going to be sent out
+    * if drop is used, then the message is no longer processed with topoh
+  * option to disable uri prefix checks (uri_prefix_checks parameter)
 
 ==== tm ====
 
@@ -188,6 +239,9 @@
 
   * support for parsing the Call-Info header
   * do not terminate on harmless SIGCHLD (e.g., when kemi python scripts create and terminate new processes)
+  * added function to return route block name from crt action
+  * compile with system malloc for pkg if MEMPKG=sys
+  * if MEMDBGSYS=1, the use a debug variant for system malloc
 
 ==== kamailio.cfg ====
 
