@@ -46,7 +46,6 @@
 
 ==== acc ====
 
-
   * added acc_request(reason, table) - writing acc record to log and db backend (if db_url is set)
 
 ==== app_lua ====
@@ -56,10 +55,15 @@
 ==== app_python ====
 
   * support for variables in parameters of cfg functions
+  * implemented rpc command to list kemi functions - app_python.api_list
 
 ==== auth_ephemeral ====
 
   * added SHA384 as hashing option
+
+==== benchmark ====
+
+  * new parameter 'register' - register a timer id at startup
 
 ==== cfg_rpc ====
 
@@ -91,6 +95,10 @@
 
   * new parameter to open some database in read-only
   * new parameter to set database journal mode
+
+==== db_unixodbc ====
+
+  * added support for async queries
 
 ==== dialplan ====
 
@@ -168,6 +176,14 @@
   * added lcr.load_gws rpc function
   * added possibility to match caller URI userpart to a mtree tvalue
 
+==== nat_traversal ====
+
+  * handle local generated transactions
+
+==== nathelper ====
+
+  * allow variables for parameters of nat_uac_test(), fix_nated_sdp() and add_rcv_param()
+
 ==== ndb_redis ====
 
   * added REDIS-Cluster support
@@ -175,6 +191,7 @@
   * new feature to disable server on failure
   * added flush_on_reconnect parameter
   * enhanceed access to REDIS replies - support to access array within arrays
+  * detect argument specifiers for redis_cmd() with three params
 
 ==== p_usrloc ====
 
@@ -233,6 +250,7 @@
 ==== registrar ====
 
   * apply method_filtering only on initial requests without to-tag
+  * added server_id to pv attributes
 
 ==== rtpengine ====
 
@@ -285,6 +303,7 @@
   * use a stack of structures for faked_env()
   * new rpc command tm.list - list details of active transactions
   * rpc command tm.clean to clean long time expired transactions (for troubleshooting purposes)
+  * allow execution of t_continue with callback name
 
 ==== tmx ====
 
@@ -317,6 +336,8 @@
   * tcp_reuse_port - reuse tcp sockets
   * mem_safety - now enabled by default
   * verbose_startup - control if printing routing tree and udp probing buffer debug messages should be printed at startup
+  * pv_cache_limit - the limit how many pv declarations in the cache
+  * pv_cache_action - specify what action to be done when the size of pv cache is exceeded
 
 ==== Functions ====
 
@@ -337,12 +358,15 @@
     * can be set by drop() inside event_route[tls:connection-out]
   * added rpc command core.modules - list the names of loaded modules
   * handle hep3 over tcp/tls and print first characters if matching hep3 header fails
+  * udp - print up to first 100 chars from received packet in debug mode
+  * pv - new parameters to control the size of pv cache
 
 ==== kamailio.cfg ====
 
   * filter out sip scanner even when anti-flood is not enabled
   * handle retransmissions also for requests within dialogs
-  * basic and advanced configs relocated to misc/examples/pkg
+  * added log_prefix
+  * etc - basic and advanced configs relocated to misc/examples/pkg
 
 ===== Tools =====
 
