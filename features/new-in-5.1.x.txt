@@ -68,10 +68,15 @@
 ==== corex ====
 
   * added $cfg(route) - return name of routing block for crt action
+  * corex.debug - rpc command to control debug level
 
 ==== cplc ====
 
   * use route names to set proxy_route modparam
+
+==== db_flatstore ====
+
+  * added encode delimiter parameter
 
 ==== db_text ====
 
@@ -115,6 +120,13 @@
 
   * support to sync with multi contacts per message
   * new parameter batch_max_msg_size
+  * tcp keepalive on client connections
+  * include server_id in replicated contacts
+
+==== evapi ====
+
+  * added support for dispatcher worker to send cfg event data directly to connected clients
+  * allow setting max number of clients via parameter max_clients
 
 ==== drouting ====
 
@@ -149,6 +161,7 @@
 ==== kex ====
 
   * new rpc command - stats.fetch - get statistics in a json document
+  * setdsturi() supports vars params
 
 ==== lcr ====
 
@@ -292,6 +305,7 @@
   * new parameter db_insert_update: insert into table, update on duplicate key
   * added more attributes to the result of ul.dump
   * rpc ul.add can set also received and socket fields
+  * copy server_id when updating contact in memory
 
 ===== New in Core =====
 
@@ -322,11 +336,13 @@
     * if flag set, the data is not sent over the connection
     * can be set by drop() inside event_route[tls:connection-out]
   * added rpc command core.modules - list the names of loaded modules
+  * handle hep3 over tcp/tls and print first characters if matching hep3 header fails
 
 ==== kamailio.cfg ====
 
   * filter out sip scanner even when anti-flood is not enabled
   * handle retransmissions also for requests within dialogs
+  * basic and advanced configs relocated to misc/examples/pkg
 
 ===== Tools =====
 
