@@ -44,7 +44,7 @@
 
 ===== New in Old Modules =====
 
-===== acc =====
+==== acc ====
 
 
   * added acc_request(reason, table) - writing acc record to log and db backend (if db_url is set)
