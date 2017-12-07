@@ -321,7 +321,7 @@
   * tcp - new flag F_CONN_NOSEND (mark connection for no-send data)
     * if flag set, the data is not sent over the connection
     * can be set by drop() inside event_route[tls:connection-out]
-  * added rpc command core.module - list the names of loaded modules
+  * added rpc command core.modules - list the names of loaded modules
 
 ==== kamailio.cfg ====
 
