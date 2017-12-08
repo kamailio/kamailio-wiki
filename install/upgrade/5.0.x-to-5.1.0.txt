@@ -47,3 +47,14 @@ UPDATE version SET table_version='3' WHERE table_name='lcr_rule';
 ALTER TABLE location MODIFY contact VARCHAR(512) NOT NULL DEFAULT '';
 UPDATE version SET table_version='9' WHERE table_name='location';
 </code>
+
+<code sql>
+ALTER TABLE domain_attrs DROP INDEX domain_attrs_idx; # was UNIQUE (did,name,value)
+ALTER TABLE domain_attrs ADD INDEX domain_attrs_idx (did,name);
+-- ALTER TABLE lcr_rule ADD COLUMN mt_tvalue varchar(128) DEFAULT NULL;
+-- ALTER TABLE location CHANGE COLUMN contact contact varchar(512) NOT NULL DEFAULT ''; # was varchar(255) NOT NULL DEFAULT ''
+ALTER TABLE topos_d ADD INDEX b_uuid_idx (b_uuid);
+ALTER TABLE topos_d ADD INDEX a_uuid_idx (a_uuid);
+ALTER TABLE topos_t ADD INDEX a_uuid_idx (a_uuid);
+ALTER TABLE topos_t ADD INDEX x_vbranch_idx (x_vbranch);
+</code>
