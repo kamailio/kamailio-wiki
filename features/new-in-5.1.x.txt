@@ -372,6 +372,7 @@
 
 ==== kamcmd ====
 
+  * larger buffer for receiving the binrcp responses
 ==== kamctl ====
 
   * added srv command
