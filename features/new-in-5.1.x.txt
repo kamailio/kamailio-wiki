@@ -11,35 +11,47 @@
 
 ==== acc_diameter ====
 
-  * split from acc module
+  * accounting with a diameter server (split from acc module)
   * https://kamailio.org/docs/modules/devel/modules/acc_diameter.html
 
 ==== app_sqlang ====
 
+  * kemi interpreter for Squirrel scripting language
   * https://kamailio.org/docs/modules/devel/modules/app_sqlang.html
 
 ==== call_obj ====
 
+  * track active calls with integer ids
   * https://kamailio.org/docs/modules/devel/modules/call_obj.html
 
 ==== evrexec ====
 
+  * execute event routes at startup
   * https://kamailio.org/docs/modules/devel/modules/evrexec.html
 
 ==== ims_diameter_server ====
 
+  * diameter server implementation
   * https://kamailio.org/docs/modules/devel/modules/ims_diameter_server.html
 
 ==== keepalive ====
 
+  * perform keepalive checking against a set of sip addresses
   * https://kamailio.org/docs/modules/devel/modules/keepalive.html
 
 ==== phonenum ====
 
+  * phone number lookup module
   * https://kamailio.org/docs/modules/devel/modules/phonenum.html
+
+==== sipdump ====
+
+  * write sip traffic and runtime metadata to files
+  * https://kamailio.org/docs/modules/devel/modules/sipdump.html
 
 ==== topos_redis ====
 
+  * redis backend for topos module
   * https://kamailio.org/docs/modules/devel/modules/topos_redis.html
 
 ===== KEMI Framework =====
