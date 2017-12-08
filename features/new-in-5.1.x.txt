@@ -330,6 +330,7 @@
 
 ==== Interpreter ====
 
+  * hundreds of functions exported to kemi framework and are available to be executed from scripts running in embedded interpreters (Lua, Python, JavaScript and Squirrel)
 ==== Parameters ====
 
   * ip_free_bind - control if Kamailio should attempt to bind to non local ip
