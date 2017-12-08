@@ -42,6 +42,14 @@
 
   * https://kamailio.org/docs/modules/devel/modules/topos_redis.html
 
+===== KEMI Framework =====
+
+Most of the modules have the functions exported to KEMI framework. A tutorial is available at:
+
+  * http://kamailio.org/docs/tutorials/devel/kamailio-kemi-framework/
+
+This allows writing SIP routing logic in Lua, JavaScript, Python or Squirrel scripting.
+
 ===== New in Old Modules =====
 
 ==== acc ====
