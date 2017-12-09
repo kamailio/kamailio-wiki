@@ -40,21 +40,22 @@ Run following SQL statements in MySQL client to upgrade database structure from 
 
 <code sql>
 ALTER TABLE lcr_rule ADD COLUMN mt_tvalue VARCHAR(128) DEFAULT NULL AFTER request_uri;
-UPDATE version SET table_version='3' WHERE table_name='lcr_rule';
+UPDATE version SET table_version=3 WHERE table_name='lcr_rule';
 </code>
 
 <code sql>
 ALTER TABLE location MODIFY contact VARCHAR(512) NOT NULL DEFAULT '';
-UPDATE version SET table_version='9' WHERE table_name='location';
+UPDATE version SET table_version=9 WHERE table_name='location';
 </code>
 
 <code sql>
+ALTER TABLE active_watchers CHANGE COLUMN reason reason varchar(64) DEFAULT NULL; # was varchar(64) NOT NULL
 ALTER TABLE domain_attrs DROP INDEX domain_attrs_idx; # was UNIQUE (did,name,value)
 ALTER TABLE domain_attrs ADD INDEX domain_attrs_idx (did,name);
 -- ALTER TABLE lcr_rule ADD COLUMN mt_tvalue varchar(128) DEFAULT NULL;
 -- ALTER TABLE location CHANGE COLUMN contact contact varchar(512) NOT NULL DEFAULT ''; # was varchar(255) NOT NULL DEFAULT ''
-ALTER TABLE topos_d ADD INDEX b_uuid_idx (b_uuid);
 ALTER TABLE topos_d ADD INDEX a_uuid_idx (a_uuid);
-ALTER TABLE topos_t ADD INDEX a_uuid_idx (a_uuid);
+ALTER TABLE topos_d ADD INDEX b_uuid_idx (b_uuid);
 ALTER TABLE topos_t ADD INDEX x_vbranch_idx (x_vbranch);
+ALTER TABLE topos_t ADD INDEX a_uuid_idx (a_uuid);
 </code>
