@@ -20,7 +20,7 @@ Following tokens are used to mark the changes:
 
 ==== Removed Modules ====
 
-
+  * none
 ==== Renamed Modules ====
 
   * **acc_diameter** has been split for **acc** module
