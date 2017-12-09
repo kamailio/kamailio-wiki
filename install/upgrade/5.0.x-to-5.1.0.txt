@@ -31,6 +31,7 @@ Following tokens are used to mark the changes:
 
 ==== Parameters ====
 
+  * no major change that impacts the configuration file
 ===== Database =====
 
   * increased size of dialplan table repl_exp field to 256 chars
