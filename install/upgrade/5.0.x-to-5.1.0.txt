@@ -49,8 +49,8 @@ UPDATE version SET table_version=9 WHERE table_name='location';
 </code>
 
 <code sql>
-ALTER TABLE active_watchers CHANGE COLUMN reason reason varchar(64) DEFAULT NULL; # was varchar(64) NOT NULL
-ALTER TABLE domain_attrs DROP INDEX domain_attrs_idx; # was UNIQUE (did,name,value)
+ALTER TABLE active_watchers CHANGE COLUMN reason reason varchar(64) DEFAULT NULL; -- # was varchar(64) NOT NULL
+ALTER TABLE domain_attrs DROP INDEX domain_attrs_idx; -- # was UNIQUE (did,name,value)
 ALTER TABLE domain_attrs ADD INDEX domain_attrs_idx (did,name);
 -- ALTER TABLE lcr_rule ADD COLUMN mt_tvalue varchar(128) DEFAULT NULL;
 -- ALTER TABLE location CHANGE COLUMN contact contact varchar(512) NOT NULL DEFAULT ''; # was varchar(255) NOT NULL DEFAULT ''
