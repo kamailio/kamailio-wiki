@@ -23,7 +23,7 @@ Following tokens are used to mark the changes:
 
 ==== Renamed Modules ====
 
-
+  * **acc_diameter** has been split for **acc** module
 ===== Internal Libraries =====
 
 
