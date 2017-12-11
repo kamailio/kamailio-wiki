@@ -1,5 +1,25 @@
 ====== RPM Packages ======
 
+===== Kamailio 5.1.x =====
+
+The RPM packages are built on OpenSUSE Build Service for CentOS 6 and 7, Fedora 25, 26 and 27, RedHat 6 and 7, OpenSUSE 42.2 and 42.3, on i586 and x86_64 architectures.
+
+The OpenSuse build service project is available at:
+
+  * https://build.opensuse.org/project/show/home:kamailio:v5.1.x-rpms
+
+Download links specific per distribution are:
+
+  * http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/CentOS_6/
+  * http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/CentOS_7/
+  * http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/Fedora_25/
+  * http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/Fedora_26/
+  * http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/Fedora_27/
+  * http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/RHEL_6/
+  * http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/RHEL_7/
+  * http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/openSUSE_Leap_42.2/
+  * http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/openSUSE_Leap_42.3/
+
 ===== Kamailio 5.0.x =====
 
 The RPM packages are built on OpenSUSE Build Service for CentOS 6 and 7, Fedora 25 and 26, RedHat 6 and 7, OpenSUSE 42.2 and 42.3, on i586 and x86_64 architectures.
