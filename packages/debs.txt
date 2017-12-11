@@ -359,6 +359,38 @@ deb http://deb.kamailio.org/kamailiodev-nightly xenial main
 deb-src http://deb.kamailio.org/kamailiodev-nightly xenial main
 </code>
 
+====  Kamailio 5.1 Branch ====
+
+<code>
+deb http://deb.kamailio.org/kamailio51-nightly wheezy main
+deb-src http://deb.kamailio.org/kamailio51-nightly wheezy main
+</code>
+
+<code>
+deb http://deb.kamailio.org/kamailio51-nightly jessie main
+deb-src http://deb.kamailio.org/kamailio51-nightly jessie main
+</code>
+
+<code>
+deb http://deb.kamailio.org/kamailio51-nightly stretch main
+deb-src http://deb.kamailio.org/kamailio51-nightly stretch main
+</code>
+
+<code>
+deb http://deb.kamailio.org/kamailio51-nightly precise main
+deb-src http://deb.kamailio.org/kamailio51-nightly precise main
+</code>
+
+<code>
+deb http://deb.kamailio.org/kamailio51-nightly trusty main
+deb-src http://deb.kamailio.org/kamailio51-nightly trusty main
+</code>
+
+<code>
+deb http://deb.kamailio.org/kamailio51-nightly xenial main
+deb-src http://deb.kamailio.org/kamailio51-nightly xenial main
+</code>
+
 ====  Kamailio 5.0 Branch ====
 
 <code>
