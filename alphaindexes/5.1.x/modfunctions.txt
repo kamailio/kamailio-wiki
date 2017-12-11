@@ -139,11 +139,11 @@
 | **cnt_add([group.]name, number)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/counters.html#cnt_add | counters]] |
 | **cnt_inc([group.]name)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/counters.html#cnt_inc | counters]] |
 | **cnt_reset([group.]name)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/counters.html#cnt_reset | counters]] |
-| **cnxcc_set_max_channel()** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/cnxcc.html#cnxcc.f.set_max_channel | cnxcc]] |
-| **cnxcc_set_max_credit()** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/cnxcc.html#cnxcc.f.set_max_credit | cnxcc]] |
-| **cnxcc_set_max_time()** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/cnxcc.html#cnxcc.f.set_max_time | cnxcc]] |
-| **cnxcc_terminate_all()** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/cnxcc.html#cnxcc.f.terminate_all | cnxcc]] |
-| **cnxcc_update_max_time()** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/cnxcc.html#cnxcc.f.update_max_time | cnxcc]] |
+| **cnxcc_set_max_channel(customer, maxchan)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/cnxcc.html#cnxcc.f.set_max_channel | cnxcc]] |
+| **cnxcc_set_max_credit(customer, maxcredit, cps, ipulse, fpulse)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/cnxcc.html#cnxcc.f.set_max_credit | cnxcc]] |
+| **cnxcc_set_max_time(customer, maxtime)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/cnxcc.html#cnxcc.f.set_max_time | cnxcc]] |
+| **cnxcc_terminate_all(customer)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/cnxcc.html#cnxcc.f.terminate_all | cnxcc]] |
+| **cnxcc_update_max_time(customer, maxtime)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/cnxcc.html#cnxcc.f.update_max_time | cnxcc]] |
 | **Common requirements** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/app_java.html | app_java]] |
 | **compare_ips (ip1, ip2)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/ipops.html#ipops.f.compare_ips | ipops]] |
 | **compare_pure_ips (ip1, ip2)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/ipops.html#ipops.f.compare_pure_ips | ipops]] |
@@ -211,7 +211,7 @@
 | **dns_sys_match_ip(hostname, ipaddr)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/ipops.html#ipops.f.dns_sys_match_ip | ipops]] |
 | **does_uri_exist()** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/uid_uri_db.html#does_uri_exist | uid_uri_db]] |
 | **does_uri_exist()** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/uri_db.html#uri_db.f.does_uri_exist | uri_db]] |
-| **do_routing("[groupID]")** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/drouting.html | drouting]] |
+| **do_routing([groupID])** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/drouting.html | drouting]] |
 | **dp_apply_policy()** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/domainpolicy.html#dompolicy.f.dp_apply_policy | domainpolicy]] |
 | **dp_can_connect()** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/domainpolicy.html#dompolicy.f.dp_can_connect | domainpolicy]] |
 | **dp_match(dpid, inval)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/dialplan.html#dialplan.p.dp_match | dialplan]] |
@@ -344,8 +344,7 @@
 | **is_domain_local(domain)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/domain.html#domain.f.is_domain_local | domain]] |
 | **is_e164(pseudo-variable)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/siputils.html#siputils.f.is_e164 | siputils]] |
 | **is_first_hop()** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/siputils.html#siputils.f.is_first_hop | siputils]] |
-| **is_from_gw( type, [flag])** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/drouting.html | drouting]] |
-| **is_from_gw([type])** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/drouting.html | drouting]] |
+| **is_from_gw([ type, [flag] ])** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/drouting.html | drouting]] |
 | **is_from_local()** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/domain.html#domain.f.is_from_local | domain]] |
 | **is_from_user_enum()** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/enum.html#enum.f.is_from_user_enum | enum]] |
 | **is_gflag(flag)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/cfgutils.html#cfgutils.f.is_gflag | cfgutils]] |
@@ -503,6 +502,7 @@
 | **naptr_query(domain, pvid)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/ipops.html#ipops.f.naptr_query | ipops]] |
 | **nat_uac_test(flags)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/nathelper.html#nathelper.f.nat_uac_test | nathelper]] |
 | **next_gw()** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/lcr.html | lcr]] |
+| **next_routing()** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/drouting.html | drouting]] |
 | **not_empty(pvar)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/pv.html#pv.f.not_empty | pv]] |
 | **nsq_pua_publish(json_payload)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/nsq.html | nsq]] |
 
@@ -888,7 +888,7 @@
 | **uri_param(param)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/siputils.html | siputils]] |
 | **uri_param(param,value)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/siputils.html#siputils.f.uri_param_value | siputils]] |
 | **use_media_proxy()** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/mediaproxy.html#mediaproxy.p.use | mediaproxy]] |
-| **use_next_gw()/next_routing()** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/drouting.html | drouting]] |
+| **use_next_gw()** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/drouting.html | drouting]] |
 | **usleep(time)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/cfgutils.html#cfgutils.f.usleep | cfgutils]] |
 
 ===== [V] =====
@@ -919,9 +919,9 @@
 | **xalert(format)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/xlog.html#xlog.f.xalert | xlog]] |
 | **xavp_params_explode(sparams, xname)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/pv.html#pv.f.xavp_params_explode | pv]] |
 | **xbug(format)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/xlog.html#xlog.f.xbug | xlog]] |
-| **xcaps_del(uri, path)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/xcap_server.html | xcap_server]] |
-| **xcaps_get(uri, path)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/xcap_server.html | xcap_server]] |
-| **xcaps_put(uri, path, doc)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/xcap_server.html | xcap_server]] |
+| **xcaps_del(uri, path)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/xcap_server.html#xcap_server.f.xcaps_del | xcap_server]] |
+| **xcaps_get(uri, path)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/xcap_server.html#xcap_server.f.xcaps_get | xcap_server]] |
+| **xcaps_put(uri, path, doc)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/xcap_server.html#xcap_server.f.xcaps_put | xcap_server]] |
 | **xcap_auth_status(watcher_uri, presentity_uri)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/utils.html#utils.f.xcap_auth_status | utils]] |
 | **xcrit(format)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/xlog.html#xlog.f.xcrit | xlog]] |
 | **xdbg(format)** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/xlog.html#xlog.f.xdbg | xlog]] |
