@@ -12,6 +12,8 @@
 | **app_lua.reload** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/app_lua.html#app_lua.r.reload | app_lua]] |
 | **app_perl.get_reset_cycles** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/app_perl.html#app_perl.r.get_reset_cycles | app_perl]] |
 | **app_perl.set_reset_cycles** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/app_perl.html#app_perl.r.set_reset_cycles | app_perl]] |
+| **app_python.api_list** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/app_python.html#app_python.r.api_list | app_python]] |
+| **app_python.reload** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/app_python.html#app_python.r.reload | app_python]] |
 | **app_sqlang.api_list** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/app_sqlang.html#app_sqlang.r.api_list | app_sqlang]] |
 | **app_swlang.reload** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/app_sqlang.html#app_sqlang.r.reload | app_sqlang]] |
 | **autheph.add_secret** | //modules// | [[http://www.kamailio.org/docs/modules/5.1.x/modules/auth_ephemeral.html#auth_eph.rpc.autheph.add_secret | auth_ephemeral]] |
