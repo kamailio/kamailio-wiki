@@ -11,10 +11,10 @@ Sporadically, Debian packages may be available via OpenSuse Build Service (OBS),
 | Debian 7.0 Wheezy             |  yes   | yes | yes | yes | yes | yes | yes | yes |    yes     |    yes     |    yes     |    yes     |
 | Debian 6.0 Squeeze            |  yes   | yes | yes | yes | yes | yes | yes | yes |    no      |    no      |    yes     |    yes     |
 | Debian 5.0 Lenny              |  no    | no  | no  | no  | no  | no  | yes | yes |    no      |    no      |    no      |    no      |
-| Ubuntu 16.04 Xenial Xerus     |  yes   | yes | yes | no  | no  | no  | no  | no  |    yes     |    yes     |    yes     |    no      |
+| Ubuntu 16.04 LTS Xenial Xerus     |  yes   | yes | yes | no  | no  | no  | no  | no  |    yes     |    yes     |    yes     |    no      |
 | Ubuntu 14.04 LTS Trusty Tahr  |  yes   | yes | yes | yes | yes | no  | no  | no  |    yes     |    yes     |    yes     |    no      |
-| Ubuntu 12.04 Precise Pengolin |  yes   | yes | yes | yes | yes | yes | yes | yes |    yes     |    yes     |    yes     |    yes     |
-| Ubuntu 12.04 Lucid Lynx       |  no    | no  | no  | no  | no  | no  | yes | yes |    no      |    no      |    no      |    no      |
+| Ubuntu 12.04 LTS Precise Pengolin |  yes   | yes | yes | yes | yes | yes | yes | yes |    yes     |    yes     |    yes     |    yes     |
+| Ubuntu 10.04 LTS Lucid Lynx       |  no    | no  | no  | no  | no  | no  | yes | yes |    no      |    no      |    no      |    no      |
 
   * Archs supported: ''amd64'', ''i386''
   * Sources provided for stable releases
