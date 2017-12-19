@@ -10,6 +10,18 @@ For example, to add the repository for Kamailio v5.1.x on a CentOS 7, do:
 cd /etc/yum.repos.d/
 wget http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/CentOS_7/home:kamailio:v5.1.x-rpms.repo
 </code>
+
+The content of the **.repo** file (in this case **home:kamailio:v5.1.x-rpms.repo**), looks like:
+
+<code>
+[home_kamailio_v5.1.x-rpms]
+name=RPM Packages for Kamailio v5.1.x (CentOS_7)
+type=rpm-md
+baseurl=http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/CentOS_7/
+gpgcheck=1
+gpgkey=http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/CentOS_7/repodata/repomd.xml.key
+enabled=1
+</code>
 ===== Kamailio 5.1.x =====
 
 The RPM packages are built on OpenSUSE Build Service for CentOS 6 and 7, Fedora 25, 26 and 27, RedHat 6 and 7, OpenSUSE 42.2 and 42.3, on i586 and x86_64 architectures.
