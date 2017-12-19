@@ -2,7 +2,7 @@
 
 ===== Overview =====
 
-Most of the RPM packages are generated using OpenSuse Build Service. To install Kamailio using **yum**, go to the provided download link for your Operating System, get the **.repo** file and save it in **/etc/yum.repos.d/** directory.
+Most of the Kamailio RPM packages for various Linux distributions are generated using OpenSuse Build Service. To install Kamailio using **yum**, go to the provided download link for your operating system, get the **.repo** file and save it in **/etc/yum.repos.d/** directory.
 
 For example, to add the repository for Kamailio v5.1.x on a CentOS 7, do:
 
