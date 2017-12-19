@@ -1,5 +1,15 @@
 ====== RPM Packages ======
 
+===== Overview =====
+
+Most of the RPM packages are generated using OpenSuse Build Service. To install Kamailio using **yum**, go to the provided download link for your Operating System, get the **.repo** file and save it in **/etc/yum.repos.d/** directory.
+
+For example, to add the repository for Kamailio v5.1.x on a CentOS 7, do:
+
+<code>
+cd /etc/yum.repos.d/
+wget http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/CentOS_7/home:kamailio:v5.1.x-rpms.repo
+</code>
 ===== Kamailio 5.1.x =====
 
 The RPM packages are built on OpenSUSE Build Service for CentOS 6 and 7, Fedora 25, 26 and 27, RedHat 6 and 7, OpenSUSE 42.2 and 42.3, on i586 and x86_64 architectures.
