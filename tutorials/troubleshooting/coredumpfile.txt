@@ -18,11 +18,35 @@ Core files can be examined with **gdb**, the GNU debugger. It can read the crash
 gdb /path/to/kamailio /path/to/core/file
 </code>
 
-(Substitute the paths to match your installation.)
+Substitute the paths to match your installation, for example:
 
-After gdb finished to read its input type **backtrace**, gdb will then output the backtrace. This information should added to your bug report of the crash. Please don't delete the core files after the backtrace generation, as its really helpful for eventual further investigations.
+<code>
+gdb /usr/local/sbin/kamailio /home/corefiles/core.1234
+</code>
 
-In order to get a meaningful backtrace gdb needs some debugging informations in its binary. If you compiled from the source, no additional steps should be necessary from you. If you install a binary package, e.g. from debian, you need to install the **-dbg** package too.
+After gdb finished to read the input and shows its prompt, execute:
+
+<code>
+backtrace
+</code>
+
+or the short variant:
+
+<code>
+bt
+</code>
+
+GDB will then output the backtrace.
+
+More useful could be the full backtrace, that can be seen with:
+
+<code>
+bt full
+</code>
+
+This information should added to your bug report of the crash. Please don't delete the core files after the backtrace generation, as its really helpful for eventual further investigations.
+
+In order to get a meaningful backtrace gdb needs some debugging informations in its binary. If you compiled from the source, no additional steps should be necessary from you. If you install a binary package, e.g. from debian, you need to install the **-dbg** package too (e.g., kamailio-dbg...deb).
 
 If you don't understand the information that gdb prints, some developer on the mailling list should be able to help you.
 
