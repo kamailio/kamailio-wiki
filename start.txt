@@ -161,6 +161,7 @@ Lists of exported symbols generated from C code.
   * [[tutorials:IMS:installation-howto|Howto install and  configure IMS with Kamailio]]
   * [[tutorials:auth:auth_db|Howto setup auth_db and usrloc]]
   * [[tutorials:troubleshooting:memory|Troubleshooting - Memory]]
+  * [[tutorials:troubleshooting:coredumpfile|Troubleshooting - Core Dump File]]
   * [[tutorials:getting-started:main|Getting Started]]
   * [[tutorials:kamailio-and-mongodb|Kamailio and MongoDB]]
   * [[tutorials:kamailio-startup-scripts|Kamailio Startup Scripts]]
