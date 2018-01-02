@@ -1,7 +1,7 @@
 ====== Troubleshooting Core Dump File  With GDB ======
 
 
-[color=blue]Getting the backtrace from a core file dumped upon Kamailio crash[/color]
+**Getting the backtrace from a core file dumped upon Kamailio crash.**
 
 After a crash of the server it may generate a core file in its working directory, if the functionality is not disabled. This core file can be used to get the cause (or at least a hint) of the crash. The core file contains the memory of the process at the moment it crashes as well as the execution trace, so it could contain sensitive data.
 
