@@ -907,9 +907,9 @@ Example of usage:
 
 ==== ip_free_bind ====
 
-Alias: ip_freebind, ipfreebind
+Alias: ipfreebind, ip_nonlocal_bind
 
-Control if Kamailio should attempt to bind to non local ip.This option is the per-socket equivalent of the system **ip_nonlocal_bind**.
+Control if Kamailio should attempt to bind to non local ip. This option is the per-socket equivalent of the system **ip_nonlocal_bind**.
 
 Default is 0 (do not bind to non local ip).
 
