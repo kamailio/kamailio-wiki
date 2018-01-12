@@ -553,7 +553,7 @@ xlog("returned code by function() is $rc\n");
 
 However, if return code is 0, the next action after function() is not executed. It can be used only of positive or negative response code.
 
-??? How is the SIP retransmission filtered?
+??? How is the SIP request retransmission handled?
 
 !!! The next snippet is detecting retransmissions:
 
