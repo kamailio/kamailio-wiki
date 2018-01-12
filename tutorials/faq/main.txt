@@ -552,6 +552,27 @@ xlog("returned code by function() is $rc\n");
 </code>
 
 However, if return code is 0, the next action after function() is not executed. It can be used only of positive or negative response code.
+
+??? How is the SIP retransmission filtered?
+
+!!! The next snippet is detecting retransmissions:
+
+<code c>
+    # handle retransmissions
+      if (!is_method("ACK")) {
+          if(t_precheck_trans()) {
+              t_check_trans();
+              exit;
+          }
+          t_check_trans();
+      }
+</code>
+
+The **ACK** request is skipped because it doesn't have a SIP response, therefore it doesn't create a transaction, being forwarded in stateless mode.
+
+The function **t_precheck_trans()** returns true if the same SIP request is processed at that time by another Kamailio process, so in this case it is a retransmission. The inner **t_check_trans()** has the role of detecting if the SIP transaction was created by the other process, and if yes, send again the last SIP response of the transaction, when one was already sent out (a requirement from SIP specs). The **exit** is then used to finish the execution of the config file for that request.
+
+If the function **t_precheck_trans()** returns false, the SIP request is not under processing by another Kamailio process, but it can be the case that the request processing was finished, request being sent out in stateful mode, therefore **t_check_trans()** is used to see if a transaction is found in shared memory corresponding to the same request. If such transaction is found in shared memory, then **t_check_trans()** triggers internally the **exit** for configuration file execution.
 =?==== Troubleshooting =====
 
 ??? I get 'out of memory' errors, what can be done?
