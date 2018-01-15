@@ -2597,7 +2597,7 @@ Rewrite the request URI.
 
 Example of usage:
 
-    rewriteuri("sip:test@openser.org");
+    rewriteuri("sip:test@kamailio.org");
 
 ==== rewriteuserpass ====
 
