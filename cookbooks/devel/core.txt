@@ -2635,7 +2635,7 @@ Same as 'advertised_address' but it affects only the current message. It has pri
 
 Example of usage:
 
-    set_advertised_address("openser.org");
+    set_advertised_address("kamailio.org");
 
 ==== set_advertised_port ====
 
