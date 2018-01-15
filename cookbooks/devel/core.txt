@@ -268,10 +268,10 @@ Example: how to make config to be used in two environments, say testbed and prod
 
 #!ifdef TESTBED_MODE
 modparam("acc|auth_db|usrloc", "db_url",
-	"mysql://openser:openserrw@localhost/openser_testbed")
+	"mysql://kamailio:kamailiorw@localhost/kamailio_testbed")
 #!else
 modparam("acc|auth_db|usrloc", "db_url",
-	"mysql://openser:openserrw@10.0.0.2/openser_production")
+	"mysql://kamailio:kamailiorw@10.0.0.2/kamailio_production")
 #!endif
 
 ...
