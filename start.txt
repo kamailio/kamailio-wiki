@@ -165,6 +165,7 @@ Lists of exported symbols generated from C code.
   * [[tutorials:getting-started:main|Getting Started]]
   * [[tutorials:kamailio-and-mongodb|Kamailio and MongoDB]]
   * [[tutorials:kamailio-startup-scripts|Kamailio Startup Scripts]]
+  * [[tutorials:kamailio-flag-operations| Kamailio Flag Operations]]
 ==== Security related tutorials ====
 
   * [[tutorials:Security:Security-threats|Overview of Security issues for SIP routers]]
