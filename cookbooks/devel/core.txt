@@ -800,11 +800,11 @@ Value of 'debug' parameter can also be get and set dynamically using the 'debug'
   kamcmd cfg.set_now_int core debug 2
   kamcmd cfg.set_now_int core debug -- -1
 
-Note: There is a difference in log-levels between Kamailio 3.x and Kamailio<=1.5: Up to Kamailio 1.5 the log level started with 4, whereas in Kamailio>=3 the log level starts with 3. Thus, if you were using debug=3 in older Kamailio/Openser, now use debug=2.
+Note: There is a difference in log-levels between Kamailio 3.x and Kamailio<=1.5: Up to Kamailio 1.5 the log level started with 4, whereas in Kamailio>=3 the log level starts with 3. Thus, if you were using debug=3 in older Kamailio, now use debug=2.
 
 For configuration of logging of the memory manager see the parameters [[#memlog]] and [[#memdbg]].
 
-Further information can also be bound at: http://www.kamailio.org/dokuwiki/doku.php/tutorials:debug-syslog-messages
+Further information can also be found at: https://www.kamailio.org/wiki/tutorials/3.2.x/syslog
 
 ==== description ====
 
