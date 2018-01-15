@@ -2728,7 +2728,7 @@ Example of usage:
 
 Set a flag for current processed message. The value of the parameter can be in range of 0..31. The flags are used to mark the message for special processing (e.g., accounting) or to keep some state (e.g., message authenticated).
 
-For more see http://www.kamailio.org/dokuwiki/doku.php/tutorials:openser-flag-operations .
+For more see: https://www.kamailio.org/wiki/tutorials/kamailio-flag-operations .
 
 Example of usage:
 
