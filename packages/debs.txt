@@ -3,22 +3,7 @@
 Starting from March 3, 2014 [[http://www.sipwise.com|Sipwise Team]] provides a **Kamailio DEB repository** for Debian and Ubuntu distributions.
 
 Sporadically, Debian packages may be available via OpenSuse Build Service (OBS), see details in a dedicated sub-section.
-===== Status =====
 
-^ Distribution                  ^ [[packages/debs#Latest Kamailio Stable Release|stable]] ^ [[packages/debs#Kamailio 5.0 Release|5.0]] ^ [[packages/debs#Kamailio 4.4 Release|4.4]] ^ [[packages/debs#Kamailio 4.3 Release|4.3]] ^ [[packages/debs#Kamailio 4.2 Release|4.2]] ^ [[packages/debs#Kamailio 4.1 Release|4.1]] ^ [[packages/debs#Kamailio 4.0 Release|4.0]] ^ [[packages/debs#Kamailio 3.3 Release|3.3]] ^ [[packages/debs#Kamailio Development (Master) Branch|devnightly]] ^ [[packages/debs#Kamailio 5.0 Branch|5.0nightly]] ^ [[packages/debs#Kamailio 4.4 Branch|4.4nightly]] ^ [[packages/debs#Kamailio 4.3 Branch|4.3nightly]] ^
-| Debian 9.0 Stretch            |  no    | yes  | no  | no  | no  | no  | no  | no  |    yes     |    yes     |    no      |    no      |
-| Debian 8.0 Jessie             |  yes   | yes | yes | yes | yes | yes | no  | no  |    yes     |    yes     |    yes     |    yes     |
-| Debian 7.0 Wheezy             |  yes   | yes | yes | yes | yes | yes | yes | yes |    yes     |    yes     |    yes     |    yes     |
-| Debian 6.0 Squeeze            |  yes   | yes | yes | yes | yes | yes | yes | yes |    no      |    no      |    yes     |    yes     |
-| Debian 5.0 Lenny              |  no    | no  | no  | no  | no  | no  | yes | yes |    no      |    no      |    no      |    no      |
-| Ubuntu 16.04 LTS Xenial Xerus     |  yes   | yes | yes | no  | no  | no  | no  | no  |    yes     |    yes     |    yes     |    no      |
-| Ubuntu 14.04 LTS Trusty Tahr  |  yes   | yes | yes | yes | yes | no  | no  | no  |    yes     |    yes     |    yes     |    no      |
-| Ubuntu 12.04 LTS Precise Pengolin |  yes   | yes | yes | yes | yes | yes | yes | yes |    yes     |    yes     |    yes     |    yes     |
-| Ubuntu 10.04 LTS Lucid Lynx       |  no    | no  | no  | no  | no  | no  | yes | yes |    no      |    no      |    no      |    no      |
-
-  * Archs supported: ''amd64'', ''i386''
-  * Sources provided for stable releases
-  * Nightly builds of supported branches
 
 ===== Instructions =====
 
