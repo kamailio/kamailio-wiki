@@ -14,7 +14,7 @@ wget -O- http://deb.kamailio.org/kamailiodebkey.gpg | sudo apt-key add -
 
 Then add the repository lines to your ''/etc/apt/sources.list'' file depending on the Kamailio version of your choice:
 
-The list of APT repositories and associated operating systems is also available at:
+The list of APT repositories and associated operating systems is available at:
 
   * http://deb.kamailio.org
 
