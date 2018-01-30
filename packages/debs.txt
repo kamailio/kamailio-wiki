@@ -9,7 +9,7 @@ Sporadically, Debian packages may be available via OpenSuse Build Service (OBS),
 
 First download and add our GPG key to your apt key list:
 <code>
-apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xfb40d3e6508ea4c8
+wget -O- http://deb.kamailio.org/kamailiodebkey.gpg | sudo apt-key add -
 </code>
 
 Then add the repository lines to your ''/etc/apt/sources.list'' file depending on the Kamailio version of your choice:
