@@ -3,5 +3,5 @@
 Kamailio packages are now available for AlpineLinux
 
 Package Info:
-  * http://pkgs.alpinelinux.org/package/main/x86/kamailio
-  * http://pkgs.alpinelinux.org/package/main/x86_64/kamailio
+  * [[https://pkgs.alpinelinux.org/packages?name=kamailio*&branch=edge&repo=main&arch=x86|x86]]
+  * [[https://pkgs.alpinelinux.org/packages?name=kamailio*&branch=edge&repo=main&arch=x86_64|x86_64]]
