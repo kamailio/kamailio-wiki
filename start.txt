@@ -38,6 +38,11 @@ Few guidelines to edit the wiki:
   * [[install:4.0.x:debian|Install Kamailio v4.0.x By Building Debian Packages]]
   * [[install:3.2.x:debian|Install Kamailio v3.2.x By Building Debian Packages]]
 
+==== Installation using Docker ====
+
+  * [[https://store.docker.com/community/images/kamailio/kamailio-ci|Installation Alpine based images (html)]]
+  * [[https://store.docker.com/community/images/kamailio/kamailio|Installation Debian based images (html)]]
+
 ==== Installation From Packages ====
 
   * [[http://kamailio.org/docs/tutorials/devel/kamailio-install-guide-deb/|Install Kamailio On Debian Or Ubuntu (html)]]
