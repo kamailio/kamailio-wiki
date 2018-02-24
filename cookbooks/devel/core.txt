@@ -2763,6 +2763,7 @@ if($rd=="10.10.10.10")
 
 ==== userphone ====
 
+Add "user=phone" parameter to R-URI.
 ===== Custom Global Parameters =====
 
 These are parameters that can be defined by the writer of kamailio.cfg in order to be used inside routing blocks. One of the important properties for custom global parameters is that their value can be changed at runtime via RPC commands, without restarting Kamailio.
