@@ -41,8 +41,8 @@ The **pua_rpc** module can be used instead to trigger presence PUBLISH or SUBSCR
 The module that had a '-' (dash/minus) in the name were renamed to remove it, respectively:
 
   * cpl-c => cplc
-  * janssonrpc-c => jsonrpcc
   * janssonrpc-c => janssonrpcc
+  * jsonrpc-c => jsonrpcc
   * jsonrpc-s => jsonrpcs
 
 ==== Impacted Modules ====
