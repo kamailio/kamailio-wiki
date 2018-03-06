@@ -42,7 +42,7 @@ The module that had a '-' (dash/minus) in the name were renamed to remove it, re
 
   * cpl-c => cplc
   * janssonrpc-c => jsonrpcc
-  * jsonrpc-c => jsonrpcc
+  * janssonrpc-c => janssonrpcc
   * jsonrpc-s => jsonrpcs
 
 ==== Impacted Modules ====
