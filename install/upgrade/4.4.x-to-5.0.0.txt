@@ -36,13 +36,6 @@ The **xmlrpc** module can be used instead to execute RPC commands over HTTP/S XM
 
 The **pua_rpc** module can be used instead to trigger presence PUBLISH or SUBSCRIBE requests via RPC commands.
 
-=== purple ===
-
-It is no longer working, not being updated to use latest libs for a very long time
-
-=== iptrtpproxy ===
-
-It is no longer working, not being updated to use latest libs for a very long time
 ==== Renamed Modules ====
 
 The module that had a '-' (dash/minus) in the name were renamed to remove it, respectively:
