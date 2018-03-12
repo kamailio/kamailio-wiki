@@ -918,6 +918,34 @@ Example of usage:
 <code c>
   ip_free_bind = 1
 </code>
+
+==== kemi.onsend_route_callback ====
+
+Set the name of callback function in the KEMI script to be executed as the equivalent of `onsend_route` block (from the native configuration file).
+
+Default value: ksr_onsend_route
+
+Set it to empty string or "none" to skip execution of this callback function.
+
+Example:
+
+<code c>
+kemi.onsend_route_callback="ksr_my_onsend_route"
+</code>
+
+==== kemi.reply_route_callback ====
+
+Set the name of callback function in the KEMI script to be executed as the equivalent of `reply_route` block (from the native configuration file).
+
+Default value: ksr_reply_route
+
+Set it to empty string or "none" to skip execution of this callback function.
+
+Example:
+
+<code c>
+kemi.onsend_route_callback="ksr_my_reply_route"
+</code>
 ==== latency_cfg_log ====
 
 If set to a log level less or equal than debug parameter, a log message with the duration in microseconds of executing request route or reply route is printed to syslog.
