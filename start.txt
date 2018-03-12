@@ -240,6 +240,7 @@ Lists of exported symbols generated from C code.
   * [[devel:config-engines|KEMI Configuration File Engines]]
   * [[history:09-years-ser-kamailio|History - 9 Years of SER-Kamailio]]
   * [[history:15-years-ser-kamailio|History - 15 Years of SER-Kamailio]]
+  * [[http://www.kamailio.org/events/|Kamailio related event presentation archive]]
 ===== Disclaimer =====
 
 <color grey>
