@@ -1813,7 +1813,7 @@ Default is "no" (off)
 
 ==== tcp_accept_hep3 ====
 
-Enable internal TCP receiving stack to accept HEP3 packets. This option has to be set to **yes** on a Kamailio instance acting as Home SIPCapture server that is supposed to receive HEP3 packets over TCP/TLS.
+Enable internal TCP receiving stack to accept HEP3 packets. This option has to be set to **yes** on a Kamailio instance acting as Homer SIPCapture server that is supposed to receive HEP3 packets over TCP/TLS.
 
 Default value is **no**.
 
