@@ -1981,6 +1981,28 @@ The key refers to HEP packet header values:
   * 0x000 - HEP attribute 0x000
   * 0x999 - HEP attribute 0x999
 
+===== $phn(rid=>key) - Phonenum Variables =====
+
+$phn(rid=>key) - rid is an identifier for this query result; it is designated by the second parameter of phonenum_match(). The key can be one of the following:
+
+  * number - phone number that is matched
+  * valid - 1 if the matched number has a valid result; 0 otherwise
+  * normalized - normalized phone number
+  * cctel - country code for phone number
+  * ltype - local network type
+  * ndesc - phone number description
+  * error - error string if phone number matching fails.
+
+<code c>
+if(phonenum_match("1-484-555-8888", "src")) {
+    if($phn(src=>valid)==1) {
+        xlog("number normalized to: $phn(src=>normalized)\n");
+    } else {
+        xlog("number normalization error: $phn(src=>error)\n");
+    }
+}
+</code>
+
 ===== $C(xy) - Foreground and background colors =====
 
 $C(xy) - reference to an escape sequence. “x” represents the foreground color and “y” represents the background color.
