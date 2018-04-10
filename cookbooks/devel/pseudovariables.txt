@@ -489,6 +489,9 @@ The variable is exported by **rr** module and append_fromtag parameter must be e
 
 **$Rut** - local socket where the SIP messages was received in URI format, always with transport parameter.
 
+==== $sas - Source address in socket format ====
+
+**$sas** - get source address in socket format (proto:address:port).
 ==== $sbranch(attr) - Static Branch ====
 
 **$sbranch(attr)** - class of variables allowing to manage the values of attributes for static branch. The static branch is internal structure that is used by the functions sbranch_push_ruri() and sbranch_append() from **pv** module, enabling more flexibility in updating the R-URI (first) branch attributes as well as extra branches (e.g., for parallel forking).
