@@ -384,6 +384,15 @@ Return the value of r2 parameter
 
 Return the string value of URI scheme.
 
+==== {uri.tosocket} ====
+
+Return the string value corresponding to socket address matching proto, address and port from the URI. In other words, converts from a format like **sip:address:port;transport=proto** to **proto:address:port**.
+
+Example:
+
+<code>
+"sip:test@127.0.0.1:5060;transport=udp"{uri.tosocket} => "udp:127.0.0.1:5060"
+</code>
 ===== Parameters List Transformations =====
 
 The name of the transformation starts with 'param.'. The PV value is considered to be a string like name1=value1;name2=value2;...". The transformations returns the value for a specific parameter, or the name of a parameter at a specific index.
