@@ -46,9 +46,11 @@ If you have a question suitable for FAQ and you don't know the answer, add it an
 
 ??? Is it possible to reload Kamailio configuration file?
 
-!!! No, you must restart after you update the configuration file.
+!!! If you use native scripting language, you must restart after you update the configuration file.
 
 But note that many global parameters can be changed via RPC/MI commands without restart (e.g., TCP connecting timeout, debug level). Applying changes related to loaded modules or routing block require always a restart.
+
+If you use a KEMI scripting language (Lua, Python, JavaScript, Squirrel), then you can reload the routing logic script without restarting Kamailio by issuing an RPC command (see KEMI interpreter modules documentation for more details: app_lua, app_python, app_python3, app_jsdt, app_sqlang).
 
 ??? What is the license of Kamailio?
 
