@@ -234,6 +234,20 @@ failure_route[REROUTE] {
 }
 </code>
 
+Very important is also to be aware that doing same operation many times in request_route is not overwriting the previous value, but combines them. For example, if you do two times uac_replace_from(), the From header can become corrupt. Like:
+
+<code c>
+request_route {
+  ...
+  uac_replace_from("sip:test1@kamailio.org");
+  uac_replace_from("sip:test2@kamailio.org");
+  ...
+}
+</code>
+
+Results in From header having the URI: "sip:test1@kamailio.orgsip:test2@kamailio.org". Again, use branch_route to do the operations if you need different From header for outgoing branches.
+
+
 ??? How to remove a single header field when a header appears multiple times?
 
 !!! SIP allows that certain header fields may appear multiple times in a SIP message. This header fields (e.g. Via, Route, Record-Route, Contact) may be written either on a single line (with comma separated) or on multiple lines (see [[http://tools.ietf.org/html/rfc3261#section-7.3|RFC 3261 section 7.3]] for details).
