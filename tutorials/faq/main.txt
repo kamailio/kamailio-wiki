@@ -166,7 +166,7 @@ For example, considering that X-Hdr does not exist in incoming message, here are
 
   * without applying changes
 
-<code>
+<code c>
 append_hf("X-Hdr: xyz\r\n");
 
 if(is_present_hf("X-Hdr")) {
@@ -178,7 +178,7 @@ if(is_present_hf("X-Hdr")) {
 
   * with applying changes
 
-<code>
+<code c>
 append_hf("X-Hdr: xyz\r\n");
 
 msg_apply_changes();
@@ -202,7 +202,7 @@ Example:
   * add X-VBox header only when sending to voicemail server
   * add X-Peer-ID header when sending somewhere else
 
-<code>
+<code c>
 request_route {
   ...
   if(is_method("INVITE")) {
@@ -245,7 +245,7 @@ request_route {
 }
 </code>
 
-Results in From header having the URI: "sip:test1@kamailio.orgsip:test2@kamailio.org". Again, use branch_route to do the operations if you need different From header for outgoing branches.
+Results in From header having the URI: **sip:test1@kamailio.orgsip:test2@kamailio.org**. Again, use branch_route to do the operations if you need different From header for outgoing branches.
 
 
 ??? How to remove a single header field when a header appears multiple times?
