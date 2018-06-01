@@ -105,8 +105,8 @@ ALTER TABLE pua MODIFY call_id VARCHAR(255) NOT NULL;
 
 UPDATE version SET table_version=1 WHERE table_name="rls_presentity";
 ALTER TABLE rls_presentity MODIFY content_type VARCHAR(255) NOT NULL;
-ALTER TABLE rls_presentity MODIFY callid VARCHAR(255) NOT NULL;
-ALTER TABLE rls_presentity MODIFY contact VARCHAR(128) NOT NULL;
+ALTER TABLE rls_watchers MODIFY callid VARCHAR(255) NOT NULL;
+ALTER TABLE rls_watchers MODIFY contact VARCHAR(128) NOT NULL;
 
 UPDATE version SET table_version=3 WHERE table_name="sip_trace";
 ALTER TABLE sip_trace ADD COLUMN time_us INT UNSIGNED DEFAULT 0 NOT NULL;
