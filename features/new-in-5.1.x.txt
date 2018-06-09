@@ -107,7 +107,7 @@ This allows writing SIP routing logic in Lua, JavaScript, Python or Squirrel scr
   * added rpc command db_text.query to do db query
   * added db_delim parameter - specify field delimiter
 
-==== db_postgress ====
+==== db_postgres ====
 
   * implemented insert_update() API function
 
@@ -142,7 +142,7 @@ This allows writing SIP routing logic in Lua, JavaScript, Python or Squirrel scr
 
 ==== dmq ====
 
- * added option to use non-locking workers
+  * added option to use non-locking workers
 
 ==== dmq_usrloc ====
 
