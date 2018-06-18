@@ -30,6 +30,7 @@ People adding notes in the agenda using abbreviations:
   * dcm - Daniel-Constantin Mierla
   * vseva - Victor Seva
   * qxork - Fred Posner
+  * mwolff - Mathias WOLFF
 
 ===== Agenda =====
 
