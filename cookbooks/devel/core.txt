@@ -243,7 +243,7 @@ Available directives:
   * #!redefine - force redefinition even if already defined
 
 Among benefits:
-  * easy way to enable/disable features (e.g., see default cfg for 3.0.0 -- controlling support of nat traversal, presence, etc...)
+  * easy way to enable/disable features (e.g., see default cfg -- controlling support of nat traversal, presence, etc...)
   * switch control for parts where conditional statements were not possible (e.g., global parameters, module settings)
   * faster by not using conditional statements inside routing blocks when switching between running environments
 
