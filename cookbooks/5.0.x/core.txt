@@ -237,7 +237,7 @@ Available directives:
   * #!define NAME VALUE - define a keyword with value
   * #!ifdef NAME - check if a keyword is defined
   * #!ifndef - check if a keyword is not defined
-  * #!else - swtich to false branch of ifdef/ifndef region
+  * #!else - switch to false branch of ifdef/ifndef region
   * #!endif - end ifdef/ifndef region
   * #!trydef - add a define if not already defined
   * #!redefine - force redefinition even if already defined
