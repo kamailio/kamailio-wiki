@@ -11,6 +11,25 @@
 
 ===== New Modules =====
 
+==== acc_json ====
+
+
+  * https://www.kamailio.org/docs/modules/devel/modules/acc_json.html
+
+==== app_ruby ====
+
+
+  * https://www.kamailio.org/docs/modules/devel/modules/app_ruby.html
+
+==== db_redis ====
+
+
+  * https://www.kamailio.org/docs/modules/devel/modules/db_redis.html
+
+==== pua_json ====
+
+
+  * https://www.kamailio.org/docs/modules/devel/modules/pua_json.html
 ===== New in Old Modules =====
 
 ===== New in Core =====
