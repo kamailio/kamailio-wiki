@@ -474,7 +474,7 @@ User-Info part of a MSRP URI. This is the same as user part, when there are no u
 
 ==== {re.subst,expression} ====
 
-Perform Perl-like substitutions on string value pseudo-variables.
+Perform POSIX regex substitutions on string value pseudo-variables.
 
 <code c>
 # Assign Request-URI user to PV
