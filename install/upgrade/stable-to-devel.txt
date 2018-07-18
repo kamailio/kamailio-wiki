@@ -15,14 +15,41 @@ Following tokens are used to mark the changes:
   * INF - the change doesn't really have any direct impact - no action required in old config
   * CPM - the change was used with the new value via explicit parameter in default config file from old releases
   * RCM - the change is recommended to be done if you had an explicit different or lower value for this parameter in old config
+  * UPG - the change has to be done, older config does not work any longer
 
 ===== Modules =====
 
+==== Upgraded Modules ====
+
+=== dispatcher ===
+
+UPG: Several parameters that were used to specify AVP names were removed, you have to remove the appropriate config modparams:
+
+<code c>
+modparam("dispatcher", "dst_avp", "$avp(AVP_DST)")
+modparam("dispatcher", "grp_avp", "$avp(AVP_GRP)")
+modparam("dispatcher", "cnt_avp", "$avp(AVP_CNT)")
+modparam("dispatcher", "sock_avp", "$avp(AVP_SOCK)")
+modparam("dispatcher", "attrs_avp", "$avp(AVP_ATTRS)")
+</code>
+
+Starting with v5.2.0, the module is using XAVPs instead of those AVPs, the related parameters are:
+
+  * xavp_dst
+  * xavp_dst_mode
+  * xavp_ctx
+  * xavp_ctx_mode
+
+See: https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html
+
+
 ==== Removed Modules ====
 
+  * none
 
 ==== Renamed Modules ====
 
+  * none
 
 ===== Internal Libraries =====
 
