@@ -753,7 +753,9 @@ xavps are read and write variables. You can create multilevel xavps, as xavps ma
 
 **$(hdr(name)[N])** - represents the body of the N-th header identified by 'name'.
 
-If [N] is omitted then the body of the first header is printed. The first header is got when N=0, for the second N=1, a.s.o. In case of a comma-separated multi-body headers, it returns all the bodies, comma-separated. To print the last header of that type, use -1, or other negative values to count from the end. No white spaces are allowed inside the specifier (before }, before or after {, [, ] symbols). When N='*', all headers of that type are printed.
+If [N] is omitted then the body of the first header is printed. The body of first header is returned when N=0, for the second N=1, a.s.o. In case of a comma-separated multi-body headers, it returns all the bodies, comma-separated. To print the last header of that type, use -1, or other negative values to count from the end. No white spaces are allowed inside the specifier (before }, before or after {, [, ] symbols). When N='*', all headers of that type are printed.
+
+If name is *, then any header name is matched, e.g., $hdr(*) is body of first header, $(hdr(*)[-1]) is body of last header.
 
 The module should identify compact header names. It is recommended to use dedicated specifiers for headers (e.g., $ua for user agent header), if they are available -- they are faster.
 
