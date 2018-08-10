@@ -197,7 +197,7 @@ Include the content of the file in config before parsing. path_to_file must be a
 
 The path_to_file can be relative or absolute. If it is not absolute path, first attempt is to locate it relative to current directory, and if fails, relative to directory of the file that includes it. There is no restriction where include can be used or what can contain - any part of config file is ok. There is a limit of maximum 10 includes in depth, otherwise you can use as many includes as you want. Reporting of the cfg file syntax errors prints now the file name for easier troubleshooting. 
 
-If the included file is not found, the config file parser throws error.
+If the included file is not found, the config file parser throws error. You can find this error message at the logging destination, usually in the system logging (file).
 
 You can use also the syntax **#!include_file** or **!!include_file**.
 
@@ -791,7 +791,7 @@ Default value: L_WARN (debug=0)
 
 Examples of usage:
 
-  * debug=3: print all log messages. This is only usefull for debugging of problems. Note: this produces a lot of data and therefore should not be used on production servers (on a busy server this can easily fill up your hard disk with log messages)
+  * debug=3: print all log messages. This is only useful for debugging of problems. Note: this produces a lot of data and therefore should not be used on production servers (on a busy server this can easily fill up your hard disk with log messages)
   * debug=0: This will only log warning, errors and more critical messages.
   * debug=-6: This will disable all log messages.
 
@@ -1139,6 +1139,21 @@ Example of usage:
 
     log_stderror=yes
 
+==== cfgengine ====
+
+Set the config interpreter engine for execution of the routing logic inside the configuration file. Default is the native interpreter.
+
+Example of usage:
+
+    cfgengine="name"
+    cfgengine "name"
+    
+If name is "native" or "default", it expects to have in native config interpreter for routing logic.
+    
+The name can be the identifier of an embedded language interpreter, such as "lua" which is registered by the app_lua module:
+
+    cfgengine "lua"
+
 ==== maxbuffer ====
 
 The size in bytes not to be exceeded during the auto-probing procedure of descovering the maximum buffer size for receiving UDP messages. Default value is 262144.
@@ -1411,7 +1426,7 @@ Example of usage:
     reply_to_via=0
 ==== server_id ====
 
-A configurable unique server id that can be used to discriminate server instances within a cluster of servers when all other  information, such as IP addresses are the same.
+A configurable unique server id that can be used to discriminate server instances within a cluster of servers when all other information, such as IP addresses are the same.
 
 <code c>
   server_id = number
@@ -1600,7 +1615,7 @@ Example of usage:
 
 ==== version_table ====
 
-Set the name of the table holding the table version. Usefull if the proxy is sharing a database within a project and during upgrades. Default value is "version".
+Set the name of the table holding the table version. Useful if the proxy is sharing a database within a project and during upgrades. Default value is "version".
 
 Example of usage:
 
@@ -1641,7 +1656,7 @@ Note: The dns cache uses the DNS servers configured on your server (/etc/resolv.
 
 Kamailio also allows you to finetune the DNS resolver settings.
 
-The maximum time a dns request can take (before failing) is (if dns_try_ipv6 is yes, mutliply it again by 2; if SRV and NAPTR lookups are enabled, it can take even longer!):
+The maximum time a dns request can take (before failing) is (if dns_try_ipv6 is yes, multiply it again by 2; if SRV and NAPTR lookups are enabled, it can take even longer!):
 
   (dns_retr_time*(dns_retr_no+1)*dns_servers_no)*(search_list_domains)
 
@@ -2450,7 +2465,7 @@ Example of usage:
 force_tcp_alias(port)      
 
 adds a tcp port alias for the current connection (if tcp).
-Usefull if you want to send all the trafic to port_alias through
+Useful if you want to send all the trafic to port_alias through
 the same connection this request came from [it could help 
 for firewall or nat traversal].
 With no parameters adds the port from the message via as the alias.
