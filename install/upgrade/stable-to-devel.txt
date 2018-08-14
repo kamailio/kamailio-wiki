@@ -58,6 +58,21 @@ See: https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html
 
 ==== Parameters ====
 
+==== Misc ====
+
+=== Log Messages ===
+
+The order of the attributes printed in the log messages was changed to have the log level first -- it was:
+
+<code>
+$log-prefix $log-level $log-message
+</code>
+
+Now it is:
+
+<code>
+$log-level $log-prefix $log-message
+</code>
 ===== Database =====
 
 
