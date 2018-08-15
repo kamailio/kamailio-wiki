@@ -1998,7 +1998,7 @@ Default: 2100 (~ 2 INVITEs), can be changed at runtime.
 
 ==== tcp_wq_max ====
 
-Maximum bytes queued for write allowed globally. It has no effect if tcp_write_buf is not enabled.
+Maximum bytes queued for write allowed globally. It has no effect if tcp_buf_write is not enabled.
 
   tcp_wq_max = bytes (default 10 Mb)
   
