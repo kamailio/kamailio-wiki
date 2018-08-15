@@ -1879,7 +1879,7 @@ Example of usage:
 
 ==== tcp_conn_wq_max ====
 
-Maximum bytes queued for write allowed per connection. Attempting to queue more bytes would result in an error and in the connection being closed (too slow). If tcp_write_buf is not enabled, it has no effect.
+Maximum bytes queued for write allowed per connection. Attempting to queue more bytes would result in an error and in the connection being closed (too slow). If tcp_buf_write is not enabled, it has no effect.
 
   tcp_conn_wq_max = bytes (default 32 K)
   
