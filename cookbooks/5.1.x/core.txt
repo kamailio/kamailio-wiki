@@ -1352,7 +1352,7 @@ pv_buffer_size=2048
 
 ==== pv_buffer_slots ====
 
-The number of internal buffer slots to print dynamic strings with pseudo-variables inside. The default value is 10.
+The number of internal buffer slots to print dynamic strings with pseudo-variables inside. The default value is 40.
 
 Example of usage:
 
