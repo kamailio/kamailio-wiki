@@ -230,6 +230,7 @@ Lists of exported symbols generated from C code.
 
 ==== Misc ====
 
+  * [[devel:new-features-requests|New Features Requests]]
   * [[devel:active-contributors|Contributors - List of Active Developers]]
   * [[devel:irc-meetings|IRC Development Meetings]]
   * [[devel:makefile-system|Makefile System]]
