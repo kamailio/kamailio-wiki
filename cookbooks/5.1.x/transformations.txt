@@ -317,14 +317,7 @@ Note: the value is returned as string.
 $(var(x){s.corehash})
 </code>
 
-==== {s.unquote} ====
 
-Return the value without surrounding single (') or double quotes (").
-
-<code c>
-$var(x) = "\"alice\"";
-$var(alice) = $(var(x){s.unquote});
-</code>
 ===== URI Transformations =====
 
 The name of transformation starts with 'uri.'. The PV value is considered to be a SIP URI. This transformation returns parts of SIP URI (see struct sip_uri). If that part is missing, the returned value is an empty string.
