@@ -1634,6 +1634,17 @@ Example of usage:
      or
      wdir=/usr/kam_wd
 
+==== xavp_via_params ====
+
+Set the name of the XAVP of which subfields will be added as local //Via// -header parameters.
+
+If not set, XAVP to Via header parameter manipulation is not applied (default behaviour).
+
+If set, local Via header gets additional parameters from defined XAVP. Core flag FL_ADD_XAVP_VIA needs to be set¹.
+
+Example:
+     xavp_via_params="via"
+[1] See function //via_add_xavp_params()// from "corex" module.
 ===== DNS Parameters =====
 
 Note: See also file doc/dns.txt for details about Kamailio's DNS client.
