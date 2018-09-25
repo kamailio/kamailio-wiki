@@ -1545,11 +1545,11 @@ Return the corresponding value for various defines from hiredis library.
 The key can be:
 
   * rpl_str - return REDIS_REPLY_STRING
-  * rpl_str - return REDIS_REPLY_ARRAY
-  * rpl_str - return REDIS_REPLY_INTEGER
-  * rpl_str - return REDIS_REPLY_NIL
-  * rpl_str - return REDIS_REPLY_STATUS
-  * rpl_str - return REDIS_REPLY_ERROR
+  * rpl_arr - return REDIS_REPLY_ARRAY
+  * rpl_int - return REDIS_REPLY_INTEGER
+  * rpl_nil - return REDIS_REPLY_NIL
+  * rpl_sts - return REDIS_REPLY_STATUS
+  * rpl_err - return REDIS_REPLY_ERROR
 
 $redisd(rpl_XYZ) can be compared with $redis(r=>type).
 
