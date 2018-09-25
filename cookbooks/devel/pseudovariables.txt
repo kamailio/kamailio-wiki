@@ -1509,7 +1509,59 @@ Return attributes of next hop for the SIP request. Address is taken from dst_uri
   * $nh(p) - port (lower case p)
   * $nh(P) - transport protocol (upper case p)
 
-===== GeoIP module Pseudo-Variables =====
+===== NDB_REDIS Module =====
+
+==== $redis(res=>key) ====
+
+Access the attributes of the Redis response.
+
+The key can be:
+
+  * type - type of the reply (as in hiredis.h)
+  * value - the value returned by REDIS server;
+  * info - in case of error from REDIS, it will contain an info message.
+
+If reply type is an array (as in hiredis.h), there are other keys available:
+
+  * size - returns number of elements in the array.
+
+  * type[n] - returns the type of the nth element in the array. type - returns array type.
+
+  * value[n] - returns value of the nth element. value - returns null for an array. You need to get each element by index.
+
+In case one of the members of the array is also an array (for example calling SMEMBERS in a MULTI/EXEC transaction), the members of the array can be accessed by adding any of the above keys, after a value[n] key. The first value[n] references the element in the first array, while the next key references an element of the referenced array.
+
+Example:
+
+<code>
+redis_cmd("srvN", "GET foo", "r");
+xlog("===== result type: $redis(r=>type) * value: $redis(r=>value)\n");
+</code>
+
+==== $redisd(key) ====
+
+Return the corresponding value for various defines from hiredis library.
+
+The key can be:
+
+  * rpl_str - return REDIS_REPLY_STRING
+  * rpl_str - return REDIS_REPLY_ARRAY
+  * rpl_str - return REDIS_REPLY_INTEGER
+  * rpl_str - return REDIS_REPLY_NIL
+  * rpl_str - return REDIS_REPLY_STATUS
+  * rpl_str - return REDIS_REPLY_ERROR
+
+$redisd(rpl_XYZ) can be compared with $redis(r=>type).
+
+Example:
+
+<code>
+redis_cmd("srvN", "GET foo", "r");
+if ($redis(r=>type) == $redisd(rpl_int)) {
+}
+</code>
+
+===== GeoIP Module =====
 
 ==== $gip(pvc=>key) ====
 
