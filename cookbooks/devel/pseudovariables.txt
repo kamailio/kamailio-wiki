@@ -2063,6 +2063,13 @@ if(phonenum_match("1-484-555-8888", "src")) {
 }
 </code>
 
+
+==== sdpops module variables ====
+
+  *  $sdp(body) - full SDP body (read only)
+  * $sdp(sess_version) - sess-version -attribute from SDP o= -line. When set to special value -1, current value is incremented. (read + write)
+
+
 ===== $C(xy) - Foreground and background colors =====
 
 $C(xy) - reference to an escape sequence. “x” represents the foreground color and “y” represents the background color.
