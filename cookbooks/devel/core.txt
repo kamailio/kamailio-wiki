@@ -1640,7 +1640,7 @@ Set the name of the XAVP of which subfields will be added as local //Via// -head
 
 If not set, XAVP to Via header parameter manipulation is not applied (default behaviour).
 
-If set, local Via header gets additional parameters from defined XAVP. Core flag FL_ADD_XAVP_VIA needs to be set¹.
+If set, local Via header gets additional parameters from defined XAVP. Core flag FL_ADD_XAVP_VIA_PARAMS needs to be set¹.
 
 Example:
      xavp_via_params="via"
