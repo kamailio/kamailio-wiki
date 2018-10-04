@@ -2064,7 +2064,7 @@ if(phonenum_match("1-484-555-8888", "src")) {
 </code>
 
 
-==== sdpops module variables ====
+===== sdpops module variables =====
 
   *  $sdp(body) - full SDP body (read only)
   * $sdp(sess_version) - sess-version -attribute from SDP o= -line. When set to special value -1, current value is incremented. (read + write)
