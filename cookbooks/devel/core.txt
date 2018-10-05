@@ -1652,7 +1652,19 @@ Set the name of xavp from where to take Via header field: address and port.
 Use them to build local Via header.
 
 Example:
-     xavp_via_fields="customvia"
+
+<code c>
+xavp_via_fields="customvia"
+
+request_route {
+  ...
+  $xavp(customvia=>address) = "1.2.3.4";
+  $xavp(customvia=>port) = "5080";  # must be string
+  via_use_xavp_fields("1");
+  t_relay();
+}
+</code>
+     
 See function //via_use_xavp_fields()// from "corex" module.
 
 ===== DNS Parameters =====
