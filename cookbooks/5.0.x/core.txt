@@ -790,7 +790,7 @@ Default value: L_WARN (debug=0)
 
 Examples of usage:
 
-  * debug=3: print all log messages. This is only usefull for debugging of problems. Note: this produces a lot of data and therefore should not be used on production servers (on a busy server this can easily fill up your hard disk with log messages)
+  * debug=3: print all log messages. This is only useful for debugging of problems. Note: this produces a lot of data and therefore should not be used on production servers (on a busy server this can easily fill up your hard disk with log messages)
   * debug=0: This will only log warning, errors and more critical messages.
   * debug=-6: This will disable all log messages.
 
@@ -1539,7 +1539,7 @@ user_agent_header="User-Agent: My Super SIP Server"
 
 ==== version_table ====
 
-Set the name of the table holding the table version. Usefull if the proxy is sharing a database within a project and during upgrades. Default value is "version".
+Set the name of the table holding the table version. Useful if the proxy is sharing a database within a project and during upgrades. Default value is "version".
 
 Example of usage:
 
@@ -2373,7 +2373,7 @@ Example of usage:
 force_tcp_alias(port)      
 
 adds a tcp port alias for the current connection (if tcp).
-Usefull if you want to send all the trafic to port_alias through
+Useful if you want to send all the trafic to port_alias through
 the same connection this request came from [it could help 
 for firewall or nat traversal].
 With no parameters adds the port from the message via as the alias.
