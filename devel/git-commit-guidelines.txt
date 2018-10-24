@@ -42,7 +42,16 @@ You may be asked for your Github username and password.
 
 The clone is tracking automatically the remote **master** branch (the development version).
 
+===== Working with Github forks of a GIT Repository =====
+
+If you don't have developer write access, you can fork the Kamailio repository. Then you checkout the forked repository to your local disk and do the changes. Commit the changes to your repository and create a pull request to integrate your changes into the Kamailio repository back. Have a look e.g. to this documentation:
+
+[[hhttps://help.github.com/articles/fork-a-repo/|Github help - forking]]
+[[https://help.github.com/articles/about-pull-requests/|Github help - pull request]]
+
 ===== Read-Only Cloning of GIT Repository =====
+
+**Working with a fork of the Kamailio repository and then submitting a pull request is nowadays the preferred way to integrate your contributions, if you don't have write permissions to the Kamailio repository. Please see above.**
 
 If you don't have developer write access, you can clone read-only the repository with:
 
