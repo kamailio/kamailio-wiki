@@ -46,7 +46,8 @@ The clone is tracking automatically the remote **master** branch (the developmen
 
 If you don't have developer write access, you can fork the Kamailio repository. Then you checkout the forked repository to your local disk and do the changes. Commit the changes to your repository and create a pull request to integrate your changes into the Kamailio repository back. Have a look e.g. to this documentation:
 
-[[hhttps://help.github.com/articles/fork-a-repo/|Github help - forking]]
+[[https://help.github.com/articles/fork-a-repo/|Github help - forking]]
+
 [[https://help.github.com/articles/about-pull-requests/|Github help - pull request]]
 
 ===== Read-Only Cloning of GIT Repository =====
