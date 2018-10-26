@@ -1481,14 +1481,13 @@ while(mq_fetch("myq"))
 
 ==== $TV(name) ====
 
-Seconds and microseconds taken from struct timeval.
+Seconds and microseconds taken from struct timeval. The time at that moment is represented by **seconds.microseconds**.
 
   * $TV(s) - seconds (cached at first call per sip message)
   * $TV(u) - microseconds (cached at first call per sip message)
-  * $TV(sn) - seconds (not cached)
-  * $TV(un) - microseconds (not cached)
-  * $TV(Sn) - string representation seconds.microseconds (not cached)
-
+  * $TV(sn) - seconds (not cached, taken at that moment)
+  * $TV(un) - microseconds (corresponding to the moment $TV(sn) is retrieved)
+  * $TV(Sn) - string representation seconds.microseconds (not cached, taken at that moment)
 ===== Next hop address =====
 
 ==== $nh(key) ====
