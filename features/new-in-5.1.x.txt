@@ -1,7 +1,7 @@
 ====== Kamailio SIP Server (SER) - New Features in 5.1.0 ======
 
 <fc #0000FF>
-**Previous devel, current stable, version was 5.0.x (released on February 27, 2017), see what was new in that release at:**
+**Previous stable version was 5.0.x (released on February 27, 2017), see what was new in that release at:**
 </fc>
   * <fc #0000FF>http://www.kamailio.org/wiki/features/new-in-5.0.x</fc>
 
