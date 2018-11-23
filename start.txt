@@ -124,6 +124,7 @@ Lists of exported symbols generated from C code.
 ===== Features =====
 
   * [[features:new-in-devel|New Features in Devel Version]]
+  * [[features:new-in-5.2.x|New Features in Release 5.2.x]]
   * [[features:new-in-5.1.x|New Features in Release 5.1.x]]
   * [[features:new-in-5.0.x|New Features in Release 5.0.x]]
   * [[features:new-in-4.4.x|New Features in Release 4.4.x]]
