@@ -204,6 +204,12 @@ Lists of exported symbols generated from C code.
 
 ==== Embedded APIs ====
 
+KEMI Framework APIs:
+
+  * http://kamailio.org/docs/tutorials/devel/kamailio-kemi-framework/
+
+Old Exports APIs:
+
 \\
 
 | Version                    ^ - Java - ^ - Lua - ^ - Mono - ^ - Perl - ^ - Python - ^ 
