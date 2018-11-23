@@ -1,4 +1,4 @@
-====== Kamailio SIP Server (SER) - New Features in 5.1.0 ======
+====== Kamailio SIP Server (SER) - New Features in 5.2.0 ======
 
 <fc #0000FF>
 **Previous stable version was 5.1.x, see what was new in that release at:**
