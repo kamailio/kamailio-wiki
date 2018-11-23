@@ -1,6 +1,6 @@
 ====== KEMI Performances For v5.2.0 ======
 
-The tests were using Kamailio v5.2.0 just before release (Nov 2018). The focus was on comparing native execution time for **request_route** and its equivalent **ksr_request_route()** for REGISTER processing.
+The tests were using Kamailio v5.2.0 just before release (Nov 2018). The focus was on comparing native execution time for **request_route** versus its equivalent **ksr_request_route()** for REGISTER processing. Note that the tests were not focusing in getting the maximum capacity of processing for Kamailio, but to discover the difference in execution time between native configuration file and equivalent KEMI scripts.
 
 ===== Testing Ecosystem =====
 
@@ -115,4 +115,50 @@ Testing command:
 
 <code>
 sipp 192.168.178.98 -sf REGISTER_client.xml -inf REGISTER_client.csv -trace_msg -trace_err -l 10000 -r 4000 -m 20000
+</code>
+
+===== Results =====
+
+<code>
+$ awk -f kamailio-exec-report.awk /tmp/kamailio-register-native.txt
+cnt:  63157
+sum:  4748289
+min:  21
+max:  2028
+avg:  75.1823
+
+$ awk -f kamailio-exec-report.awk /tmp/kamailio-register-lua.txt
+cnt:  61080
+sum:  4203512
+min:  26
+max:  1316
+avg:  68.8198
+
+$ awk -f kamailio-exec-report.awk /tmp/kamailio-register-native.txt
+cnt:  63003
+sum:  4728507
+min:  21
+max:  1791
+avg:  75.0521
+
+$ awk -f kamailio-exec-report.awk /tmp/kamailio-register-lua.txt
+cnt:  61006
+sum:  4852005
+min:  25
+max:  2535
+avg:  79.5332
+
+$ awk -f kamailio-exec-report.awk /tmp/kamailio-register-native.txt
+cnt:  63564
+sum:  4918165
+min:  21
+max:  3226
+avg:  77.3734
+
+$ awk -f kamailio-exec-report.awk /tmp/kamailio-register-lua.txt
+cnt:  60567
+sum:  4099683
+min:  26
+max:  2159
+avg:  67.6884
 </code>
