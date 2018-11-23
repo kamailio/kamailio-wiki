@@ -14,9 +14,13 @@ Few guidelines to edit the wiki:
   * if you add many pages for the same subject, group them under same sub-namespace
   * if you are not sure that the content is entirely correct, send an email to mailing lists <sr-users [at] lists.sip-router.org> asking for review
 
-<color blue>//IMPORTANT: This wiki site is work in progress, targeting to collect updated documentation for [[http://www.kamailio.org|Kamailio SIP Server]] v3.2.0 or newer. If you don't find on this site the documentation you are looking for, search for it on **Old Wiki Site**://</color>
+<color blue>//IMPORTANT: For a cleaner presentation, the front page in this wiki site is linking the documents for latest stable versions, 4.3 or newer. For older releases, 3.2.x to 4.2.x, go to **Older Releases Index**://</color>
 
-  * [[http://www.kamailio.org/dokuwiki/|Link to Old Wiki Site]]
+  * [[content:old-releases|Link To Content For Older Releases]]
+
+<color blue>//IMPORTANT: Content for older releases than 3.2.0 is available at the **Old Wiki Site**://</color>
+
+  * [[http://www.kamailio.org/dokuwiki/|Link To Old Wiki Site]]
 
 ===== Installation =====
 
