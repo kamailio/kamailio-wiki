@@ -32,11 +32,7 @@ Few guidelines to edit the wiki:
   * [[http://kamailio.org/docs/tutorials/5.0.x/kamailio-install-guide-git/|Install Kamailio v5.0.x From GIT (html)]]
   * [[install:4.4.x:git|Install Kamailio v4.4.x From GIT]]
   * [[install:4.3.x:git|Install Kamailio v4.3.x From GIT]]
-  * [[install:4.2.x:git|Install Kamailio v4.2.x From GIT]]
-  * [[install:4.1.x:git|Install Kamailio v4.1.x From GIT]]
-  * [[install:4.0.x:git|Install Kamailio v4.0.x From GIT]]
-  * [[install:3.3.x:git|Install Kamailio v3.3.x From GIT]]
-  * [[install:3.2.x:git|Install Kamailio v3.2.x From GIT]]
+
 ==== Installation By Building Packages ====
 
   * [[install:4.0.x:debian|Install Kamailio v4.0.x By Building Debian Packages]]
@@ -59,13 +55,6 @@ Few guidelines to edit the wiki:
   * [[install:upgrade:5.0.x-to-5.1.0|Upgrade Kamailio v5.0.x to v5.1.0]]
   * [[install:upgrade:4.4.x-to-5.0.0|Upgrade Kamailio v4.4.x to v5.0.0]]
   * [[install:upgrade:4.3.x-to-4.4.0|Upgrade Kamailio v4.3.x to v4.4.0]]
-  * [[install:upgrade:4.2.x-to-4.3.0|Upgrade Kamailio v4.2.x to v4.3.0]]
-  * [[install:upgrade:4.1.x-to-4.2.0|Upgrade Kamailio v4.1.x to v4.2.0]]
-  * [[install:upgrade:4.0.x-to-4.1.0|Upgrade Kamailio v4.0.x to v4.1.0]]
-  * [[install:upgrade:3.3.x-to-4.0.0|Upgrade Kamailio v3.3.x to v4.0.0]]
-  * [[install:upgrade:3.2.x-to-3.3.0|Upgrade Kamailio v3.2.x to v3.3.0]]
-  * [[install:upgrade:3.1.x-to-3.2.0|Upgrade Kamailio v3.1.x to v3.2.0]]
-
 
 
 ===== Download =====
@@ -77,11 +66,7 @@ Few guidelines to edit the wiki:
   * [[download:v5.0.x-from-git|Download Sources of v5.0.x from GIT Repository]]
   * [[download:v4.4.x-from-git|Download Sources of v4.4.x from GIT Repository]]
   * [[download:v4.3.x-from-git|Download Sources of v4.3.x from GIT Repository]]
-  * [[download:v4.2.x-from-git|Download Sources of v4.2.x from GIT Repository]]
-  * [[download:v4.1.x-from-git|Download Sources of v4.1.x from GIT Repository]]
-  * [[download:v4.0.x-from-git|Download Sources of v4.0.x from GIT Repository]]
-  * [[download:v3.3.x-from-git|Download Sources of v3.3.x from GIT Repository]]
-  * [[download:v3.2.x-from-git|Download Sources of v3.2.x from GIT Repository]]
+
 
 ==== Linux - Unix Distributions ====
 
@@ -100,11 +85,6 @@ Few guidelines to edit the wiki:
 ^ 5.0.x     |  [[cookbooks:5.0.x:core|link]]  |  [[cookbooks:5.0.x:pseudovariables|link]]  |  [[cookbooks:5.0.x:transformations|link]]  |  [[cookbooks:5.0.x:selects|link]]  |  [[http://kamailio.org/docs/modules/5.0.x/|link]]  |
 ^ 4.4.x     |  [[cookbooks:4.4.x:core|link]]  |  [[cookbooks:4.4.x:pseudovariables|link]]  |  [[cookbooks:4.4.x:transformations|link]]  |  [[cookbooks:4.4.x:selects|link]]  |  [[http://kamailio.org/docs/modules/4.4.x/|link]]  |
 ^ 4.3.x     |  [[cookbooks:4.3.x:core|link]]  |  [[cookbooks:4.3.x:pseudovariables|link]]  |  [[cookbooks:4.3.x:transformations|link]]  |  [[cookbooks:4.3.x:selects|link]]  |  [[http://kamailio.org/docs/modules/4.3.x/|link]]  |
-^ 4.2.x     |  [[cookbooks:4.2.x:core|link]]  |  [[cookbooks:4.2.x:pseudovariables|link]]  |  [[cookbooks:4.2.x:transformations|link]]  |  [[cookbooks:4.2.x:selects|link]]  |  [[http://kamailio.org/docs/modules/4.2.x/|link]]  |
-^ 4.1.x     |  [[cookbooks:4.1.x:core|link]]  |  [[cookbooks:4.1.x:pseudovariables|link]]  |  [[cookbooks:4.1.x:transformations|link]]  |  [[cookbooks:4.1.x:selects|link]]  |  [[http://kamailio.org/docs/modules/4.1.x/|link]]  |
-^ 4.0.x     |  [[cookbooks:4.0.x:core|link]]  |  [[cookbooks:4.0.x:pseudovariables|link]]  |  [[cookbooks:4.0.x:transformations|link]]  |  [[cookbooks:4.0.x:selects|link]]  |  [[http://kamailio.org/docs/modules/4.0.x/|link]]  |
-^ 3.3.x     |  [[cookbooks:3.3.x:core|link]]  |  [[cookbooks:3.3.x:pseudovariables|link]]  |  [[cookbooks:3.3.x:transformations|link]]  |  [[cookbooks:3.3.x:selects|link]]  |  [[http://kamailio.org/docs/modules/3.3.x/|link]]  |
-^ 3.2.x     |  [[cookbooks:3.2.x:core|link]]  |  [[cookbooks:3.2.x:pseudovariables|link]]  |  [[cookbooks:3.2.x:transformations|link]]  |  [[cookbooks:3.2.x:selects|link]]  |  [[http://kamailio.org/docs/modules/3.2.x/|link]]  |
 
 \\ 
 
@@ -126,12 +106,6 @@ Alphabetic indexes generated from documentation (modules' readme docs).
 | Version ^ Modules Parameters  ^ Modules Functions ^ MI Commands ^ Statistics ^ RPC Commands (List) ^ 
 ^ 4.4.x   |  [[alphaindexes:4.4.x:modparameters|link]]  |  [[alphaindexes:4.4.x:modfunctions|link]]  |  [[alphaindexes:4.4.x:micommands|link]]  |  [[alphaindexes:4.4.x:modstatistics|link]]  |  [[http://www.kamailio.org/docs/docbooks/4.4.x/rpc_list/rpc_list.html|link]]  |
 ^ 4.3.x   |  [[alphaindexes:4.3.x:modparameters|link]]  |  [[alphaindexes:4.3.x:modfunctions|link]]  |  [[alphaindexes:4.3.x:micommands|link]]  |  [[alphaindexes:4.3.x:modstatistics|link]]  |  [[http://www.kamailio.org/docs/docbooks/4.3.x/rpc_list/rpc_list.html|link]]  |
-^ 4.2.x   |  [[alphaindexes:4.2.x:modparameters|link]]  |  [[alphaindexes:4.2.x:modfunctions|link]]  |  [[alphaindexes:4.2.x:micommands|link]]  |  [[alphaindexes:4.2.x:modstatistics|link]]  |  [[http://www.kamailio.org/docs/docbooks/4.2.x/rpc_list/rpc_list.html|link]]  |
-^ 4.1.x   |  [[alphaindexes:4.1.x:modparameters|link]]  |  [[alphaindexes:4.1.x:modfunctions|link]]  |  [[alphaindexes:4.1.x:micommands|link]]  |  [[alphaindexes:4.1.x:modstatistics|link]]  |  [[http://www.kamailio.org/docs/docbooks/4.1.x/rpc_list/rpc_list.html|link]]  |
-^ 4.0.x   |  [[alphaindexes:4.0.x:modparameters|link]]  |  [[alphaindexes:4.0.x:modfunctions|link]]  |  [[alphaindexes:4.0.x:micommands|link]]  |  [[alphaindexes:4.0.x:modstatistics|link]]  |  [[http://www.kamailio.org/docs/docbooks/4.0.x/rpc_list/rpc_list.html|link]]  |
-^ 3.4.x   |  [[alphaindexes:3.4.x:modparameters|link]]  |  [[alphaindexes:3.4.x:modfunctions|link]]  |  [[alphaindexes:3.4.x:micommands|link]]  |  [[alphaindexes:3.4.x:modstatistics|link]]  |  [[http://www.kamailio.org/docs/docbooks/3.4.x/rpc_list/rpc_list.html|link]]  |
-^ 3.3.x   |  [[alphaindexes:3.3.x:modparameters|link]]  |  [[alphaindexes:3.3.x:modfunctions|link]]  |  [[alphaindexes:3.3.x:micommands|link]]  |  [[alphaindexes:3.3.x:modstatistics|link]]  |  [[http://www.kamailio.org/docs/docbooks/3.3.x/rpc_list/rpc_list.html|link]]  |
-^ 3.2.x   |  [[alphaindexes:3.2.x:modparameters|link]]  |  [[alphaindexes:3.2.x:modfunctions|link]]  |  [[alphaindexes:3.2.x:micommands|link]]  |  [[alphaindexes:3.2.x:modstatistics|link]]  |  [[http://www.kamailio.org/docs/docbooks/3.2.x/rpc_list/rpc_list.html|link]]  |
 
 \\ 
 
@@ -146,6 +120,7 @@ Lists of exported symbols generated from C code.
 ^ 5.0.x   |  [[http://www.kamailio.org/docs/docbooks/5.0.x/rpc_list/rpc_list.html|link]]  |  ---  |  ---  |  ---  |
 
 \\
+
 ===== Features =====
 
   * [[features:new-in-devel|New Features in Devel Version]]
@@ -153,16 +128,7 @@ Lists of exported symbols generated from C code.
   * [[features:new-in-5.0.x|New Features in Release 5.0.x]]
   * [[features:new-in-4.4.x|New Features in Release 4.4.x]]
   * [[features:new-in-4.3.x|New Features in Release 4.3.x]]
-  * [[features:new-in-4.2.x|New Features in Release 4.2.x]]
-  * [[features:new-in-4.1.x|New Features in Release 4.1.x]]
-  * [[features:new-in-4.0.x|New Features in Release 4.0.x]]
-  * [[features:new-in-3.3.x|New Features in Release 3.3.x]]
-  * [[features:new-in-3.2.x|New Features in Release 3.2.x]]
-  * [[http://www.kamailio.org/dokuwiki/doku.php/features:new-in-3.1.x|New Features in Release 3.1.x]]
-  * [[http://www.kamailio.org/dokuwiki/doku.php/features:new-in-3.0.x|New Features in Release 3.0.x]]
-  * [[http://www.kamailio.org/dokuwiki/doku.php/features:new-in-1.5.x|New Features in Release 1.5.x]]
-  * [[http://www.kamailio.org/dokuwiki/doku.php/features:new-in-1.4.x|New Features in Release 1.4.x]]
-  * [[http://www.kamailio.org/dokuwiki/doku.php/features:new-in-1.3.x|New Features in Release 1.3.x]]
+
 
 ===== Tutorials =====
 
@@ -183,6 +149,7 @@ Lists of exported symbols generated from C code.
 
   * [[tutorials:Security:Security-threats|Overview of Security issues for SIP routers]]
   * [[tutorials:Security:Kamailio-Security|Overview of Security related config snippets]]
+
 ==== External Tutorials ====
 
   * [[http://kb.asipto.com/asterisk:index|Kamailio and Asterisk Integration]]
@@ -196,10 +163,8 @@ Lists of exported symbols generated from C code.
   * [[http://www.kamailio.org/docs/db-tables/kamailio-db-5.0.x.html|5.0.x Version]]
   * [[http://www.kamailio.org/docs/db-tables/kamailio-db-4.4.x.html|4.4.x Version]]
   * [[http://www.kamailio.org/docs/db-tables/kamailio-db-4.3.x.html|4.3.x Version]]
-  * [[http://www.kamailio.org/docs/db-tables/kamailio-db-4.2.x.html|4.2.x Version]]
-  * [[http://www.kamailio.org/docs/db-tables/kamailio-db-4.1.x.html|4.1.x Version]]
-  * [[http://www.kamailio.org/docs/db-tables/kamailio-db-3.3.x.html|3.3.x Version]]
-  * [[http://www.kamailio.org/docs/db-tables/kamailio-db-3.2.x.html|3.2.x Version]]
+
+
 ===== Development =====
 
 ==== Development APIs ====
@@ -220,11 +185,6 @@ Old Exports APIs:
 | Version                    ^ - Java - ^ - Lua - ^ - Mono - ^ - Perl - ^ - Python - ^ 
 ^ devel       |  [[embeddedapi:devel:java|link]]  |  [[embeddedapi:devel:lua|link]]  |  [[embeddedapi:devel:mono|link]]  |  [[embeddedapi:devel:perl|link]]  |  [[embeddedapi:devel:python|link]]  |
 ^ 4.3.x       |  [[embeddedapi:4.3.x:java|link]]  |  [[embeddedapi:4.3.x:lua|link]]  |  [[embeddedapi:4.3.x:mono|link]]  |  [[embeddedapi:4.3.x:perl|link]]  |  [[embeddedapi:4.3.x:python|link]]  |
-^ 4.2.x       |  [[embeddedapi:4.2.x:java|link]]  |  [[embeddedapi:4.2.x:lua|link]]  |  [[embeddedapi:4.2.x:mono|link]]  |  [[embeddedapi:4.2.x:perl|link]]  |  [[embeddedapi:4.2.x:python|link]]  |
-^ 4.1.x       |  [[embeddedapi:4.1.x:java|link]]  |  [[embeddedapi:4.1.x:lua|link]]  |  [[embeddedapi:4.1.x:mono|link]]  |  [[embeddedapi:4.1.x:perl|link]]  |  [[embeddedapi:4.1.x:python|link]]  |
-^ 4.0.x       |  -  |  [[embeddedapi:4.0.x:lua|link]]  |  [[embeddedapi:4.0.x:mono|link]]  |  [[embeddedapi:4.0.x:perl|link]]  |  [[embeddedapi:4.0.x:python|link]]  |
-^ 3.3.x       |  -  |  [[embeddedapi:3.3.x:lua|link]]  |  [[embeddedapi:3.3.x:mono|link]]  |  [[embeddedapi:3.3.x:perl|link]]  |  [[embeddedapi:3.3.x:python|link]]  |
-^ 3.2.x       |  -  |  [[embeddedapi:3.2.x:lua|link]]  |  -  |  [[embeddedapi:3.2.x:perl|link]]  |  [[embeddedapi:3.2.x:python|link]]  |
 
 \\ 
 
@@ -256,6 +216,7 @@ Old Exports APIs:
   * [[history:09-years-ser-kamailio|History - 9 Years of SER-Kamailio]]
   * [[history:15-years-ser-kamailio|History - 15 Years of SER-Kamailio]]
   * [[http://www.kamailio.org/events/|Kamailio related event presentation archive]]
+
 ===== Disclaimer =====
 
 <color grey>
