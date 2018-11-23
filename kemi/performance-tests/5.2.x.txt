@@ -117,6 +117,21 @@ Testing command:
 sipp 192.168.178.98 -sf REGISTER_client.xml -inf REGISTER_client.csv -trace_msg -trace_err -l 10000 -r 4000 -m 20000
 </code>
 
+===== Kamailio Details =====
+
+Kamailio was run from source tree, after compilation, with the configuration files places in the folder **../etc/**.
+
+Configuration files: TBA
+
+Commands:
+
+<code>
+./src/kamailio -f ../etc/kamailio-basic-kemi.cfg -L src/modules/ -w . -A WITH_CFGLUA -a no -E -e -dd 2>&1 | tee /tmp/kamailio-register-lua.txt
+
+./src/kamailio -f ../etc/kamailio-basic-kemi.cfg -L src/modules/ -w . -a no -E -e -dd 2>&1 | tee /tmp/kamailio-register-native.txt
+
+</code>
+
 ===== Results =====
 
 <code>
