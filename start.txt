@@ -218,6 +218,7 @@ Old Exports APIs:
   * [[history:09-years-ser-kamailio|History - 9 Years of SER-Kamailio]]
   * [[history:15-years-ser-kamailio|History - 15 Years of SER-Kamailio]]
   * [[http://www.kamailio.org/events/|Kamailio related event presentation archive]]
+  * [[kemi:performances|KEMI Performances]]
 
 ===== Disclaimer =====
 
