@@ -1,35 +1,22 @@
 ====== Kamailio SIP Server (SER) - New Features in Devel Version ======
 
-**Current devel version will be numbered 5.2.0 and it is planned to be released during 2018**.
+**Current devel version will be numbered 5.3.0 and it is planned to be released during 2019**.
 
 <fc #0000FF>
-**Previous devel, current stable, version was 5.1.x (released on November, 2017), see what was new in that release at:**
+**Previous devel, current stable, version was 5.2.x (released on November, 2018), see what was new in that release at:**
 </fc>
-  * <fc #0000FF>http://www.kamailio.org/wiki/features/new-in-5.1.x</fc>
+  * <fc #0000FF>http://www.kamailio.org/wiki/features/new-in-5.2.x</fc>
 
 <fc #800000>//This is a draft of new features added in devel version, manually updated, thus not always synchronized with what is new in source code repository.//</fc>
 
 ===== New Modules =====
 
-==== acc_json ====
+==== rtp_media_server ====
 
 
-  * https://www.kamailio.org/docs/modules/devel/modules/acc_json.html
-
-==== app_ruby ====
+  * https://www.kamailio.org/docs/modules/devel/modules/rtp_media_server.html
 
 
-  * https://www.kamailio.org/docs/modules/devel/modules/app_ruby.html
-
-==== db_redis ====
-
-
-  * https://www.kamailio.org/docs/modules/devel/modules/db_redis.html
-
-==== pua_json ====
-
-
-  * https://www.kamailio.org/docs/modules/devel/modules/pua_json.html
 ===== New in Old Modules =====
 
 ===== New in Core =====
