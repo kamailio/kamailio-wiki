@@ -1,12 +1,12 @@
-====== Upgrade Kamailio from v5.1.x to v5.2.0 (devel) ======
+====== Upgrade Kamailio from v5.2.x to v5.3.0 (devel) ======
 
-The page contains the details about the changes that were made to old components during the development of v5.2.0 compared with what existed in v5.1.x. It does not include the brand new modules, focusing on how to upgrade database and configuration file from v5.1.x to run with Kamailio devel.
+The page contains the details about the changes that were made to old components during the development of v5.3.0 compared with what existed in v5.2.x. It does not include the brand new modules, focusing on how to upgrade database and configuration file from v5.2.x to run with Kamailio devel.
 
 ===== Previous Stable Release =====
 
 If you look for the guidelines to upgrade to previous stable release, see:
 
-  * [[install:upgrade:5.0.x-to-5.1.0|Upgrade Kamailio v5.0.x to v5.1.0]]
+  * [[install:upgrade:5.1.x-to-5.2.0|Upgrade Kamailio v5.1.x to v5.2.0]]
 
 ===== Remarks =====
 
@@ -21,27 +21,7 @@ Following tokens are used to mark the changes:
 
 ==== Upgraded Modules ====
 
-=== dispatcher ===
-
-UPG: Several parameters that were used to specify AVP names were removed, you have to remove the appropriate config modparams:
-
-<code c>
-modparam("dispatcher", "dst_avp", "$avp(AVP_DST)")
-modparam("dispatcher", "grp_avp", "$avp(AVP_GRP)")
-modparam("dispatcher", "cnt_avp", "$avp(AVP_CNT)")
-modparam("dispatcher", "sock_avp", "$avp(AVP_SOCK)")
-modparam("dispatcher", "attrs_avp", "$avp(AVP_ATTRS)")
-</code>
-
-Starting with v5.2.0, the module is using XAVPs instead of those AVPs, the related parameters are:
-
-  * xavp_dst
-  * xavp_dst_mode
-  * xavp_ctx
-  * xavp_ctx_mode
-
-See: https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html
-
+  * none
 
 ==== Removed Modules ====
 
@@ -60,28 +40,13 @@ See: https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html
 
 ==== Misc ====
 
-=== Log Messages ===
-
-The order of the attributes printed in the log messages was changed to have the log level first -- it was:
-
-<code>
-$log-prefix $log-level $log-message
-</code>
-
-Now it is:
-
-<code>
-$log-level $log-prefix $log-message
-</code>
 ===== Database =====
 
 
 ==== MySQL Database Structure ====
 
-Run following SQL statements in MySQL client to upgrade database structure from v5.1 to v5.2:
+Run following SQL statements in MySQL client to upgrade database structure from v5.2 to v5.3:
 
 <code sql>
-ALTER TABLE presentity ADD COLUMN ruid VARCHAR(64);
-CREATE UNIQUE INDEX ruid_idx ON presentity (ruid);
-UPDATE version SET table_version=5 WHERE table_name='presentity';
+...
 </code>
