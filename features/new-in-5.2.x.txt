@@ -46,19 +46,39 @@
     * kamctl rpc app_python.api_list
   * rpc command to reload the routing script
 
+==== cfg_rpc ====
+
+  * rpc command cfg.get can accept only the group name to list all its vars
+
 ==== dispatcher ====
 
   * add methoded to reinit state for all destinations in group
   * allow 'all' to update all destinations in group via RPC
 
+==== json ====
+
+  * new transformation to access json fields
+
 ==== nathelper ====
 
   * allow variable for flags parameter of fix_nated_sdp(), add_rcv_param(), nat_uac_test()
+
+==== presence ====
+
+  * dmq integration - replication of presentity updates over DMQ
+    * adds ruid column for matching across cluster
+    * new parameter enable_dmq
+
 
 ==== pua_rpc ====
 
   * added pua.send_publish rpc command
     * send a PUBLISH request without waiting for response
+
+==== rr ====
+
+  * new parameter force_send_socket 
+    * if set to 1, the socket is also forced for single rr
 
 ==== rtpengine ====
 
@@ -73,14 +93,19 @@
 ==== textops ====
 
   * new function msg_set_buffer(...) to kemi framework
+  * is_audio_on_hold() returns hold type
+     * 1 - RFC2543 hold type (the connection IP is set to null IP)
+     * 2 - RFC3264 hold type (inactive or sendonly attr)
 
 ==== tm ====
 
   * make processing of event routes for local requests reentrant
+  * rpc tm.t_uac_start option to work with From and To headers only
 
 ==== usrloc ====
 
-  * partion column name can be set via modparam
+  * partition column name can be set via modparam
+  * new parameter rm_expired_delay - set how many seconds to delay the removal of an expired record (DB_ONLY mode)
 
 ===== New in Core =====
 
@@ -117,6 +142,9 @@
 ==== kamctl ====
     
 ==== kamcli ====
+
+  * support to generate tls.cfg from database table
+  * packaged for debian and ubuntu distributions
 
 ===== Testing Framework =====
 
