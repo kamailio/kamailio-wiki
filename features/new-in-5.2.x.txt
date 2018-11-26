@@ -29,13 +29,76 @@
 
 
   * https://www.kamailio.org/docs/modules/devel/modules/pua_json.html
+
 ===== New in Old Modules =====
+
+===== acc =====
+
+  * use acc.time_mode to save cdrs in gmt time
+
+===== app_lua =====
+
+  * LUAJIT variable to build agains LuaJIT compiler
+
+==== app_python ====
+
+  * implemented rpc command to list kemi functions
+    * kamctl rpc app_python.api_list
+  * rpc command to reload the routing script
+
+==== dispatcher ====
+
+  * add methoded to reinit state for all destinations in group
+  * allow 'all' to update all destinations in group via RPC
+
+==== nathelper ====
+
+  * allow variable for flags parameter of fix_nated_sdp(), add_rcv_param(), nat_uac_test()
+
+==== pua_rpc ====
+
+  * added pua.send_publish rpc command
+    * send a PUBLISH request without waiting for response
+
+==== rtpengine ====
+
+  * added aggressive_redetection param
+
+==== tcpops ====
+
+  * added function to get connection id based on target host:port 
+    * tcp_get_connid(hostport, pvname)
+    * connection id is set in pvar paraemter
+
+==== textops ====
+
+  * new function msg_set_buffer(...) to kemi framework
+
+==== tm ====
+
+  * make processing of event routes for local requests reentrant
+
+==== usrloc ====
+
+  * partion column name can be set via modparam
 
 ===== New in Core =====
 
+  * new module exports interface
+    * unified from Kamailio and SER module exports interfaces
+
+
 ==== Interpreter ====
 
+  * kemi - more core functions exported to kemi framework
+
 ==== Parameters ====
+
+  * new parameters to control the size of pv cache
+    * pv_cache_limit - the limit how many pv declarations in the cache after which an action is taken. Default value is 2048
+    * pv_cache_action - specify what action to be done when the size of pv cache is exceeded. If 0, print an warning log message when the limit is exceeded. If 1, warning log messages is printed and the cache systems tries to drop a $sht(...) declaration. Default is 0
+
+  * aliased global param ip_free_bind to ip_nonlocal_bind - match better with linux system control option
 
 ==== Functions ====
 
@@ -45,50 +108,7 @@
 
 ==== kamailio.cfg ====
 
-===== Tools =====
-
-==== kamcmd ====
-
-==== kamctl ====
-    
-==== kamcli ====
-
-===== New Modules =====
-
-==== acc_json ====
-
-
-  * https://www.kamailio.org/docs/modules/devel/modules/acc_json.html
-
-==== app_ruby ====
-
-
-  * https://www.kamailio.org/docs/modules/devel/modules/app_ruby.html
-
-==== db_redis ====
-
-
-  * https://www.kamailio.org/docs/modules/devel/modules/db_redis.html
-
-==== pua_json ====
-
-
-  * https://www.kamailio.org/docs/modules/devel/modules/pua_json.html
-===== New in Old Modules =====
-
-===== New in Core =====
-
-==== Interpreter ====
-
-==== Parameters ====
-
-==== Functions ====
-
-==== Memory Managers ====
-
-==== Architecture ====
-
-==== kamailio.cfg ====
+  * added log_prefix
 
 ===== Tools =====
 
@@ -97,3 +117,8 @@
 ==== kamctl ====
     
 ==== kamcli ====
+
+===== Testing Framework =====
+
+  * new tests: https://github.com/kamailio/kamailio-tests
+
