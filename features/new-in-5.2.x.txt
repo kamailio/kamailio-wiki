@@ -145,7 +145,7 @@ Presence User Agent implementation with JSON messages.
 
 ==== dmq ====
 
-  * improveD bus stability and reduce unnecessary state transfer
+  * improved bus stability and reduce unnecessary state transfer
   * added 'pending' state for new, locally added nodes, until confirmed
   * continue to probe nodes marked as inactive/disabled
   * allow startup even if initial nodelist is empty
