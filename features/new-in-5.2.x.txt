@@ -41,6 +41,9 @@
   * LUAJIT variable to build agains LuaJIT compiler
   * defaut value for reload parameter set to 1
     * reload feature enabbled by default, set to 0 to disable
+  * new module parameter - log_mode
+    * control what is printed in log messages by module
+    * if bit 1 is set, the it prints the KEMI exports
 
 ==== app_python ====
 
@@ -86,6 +89,9 @@
     * allow to control how internal dialog hash id is generated to avoid overlapping values across many instances of kamailio
   * added dlg_db_load_extra() function
     * load dialogs from database that are not yet in memory of current kamailio instance
+  * handle . for optional body parameter for rpc dlg.bridge_dlg
+    * consider as parameter not provided and use the default SDP string - "" or "_" behaves as provided body is empty string and the request has no body
+  * new rpc command dlg.stats_active  - return stats about active dialogs by scanning internal hash table
 
 ==== dispatcher ====
 
@@ -108,11 +114,26 @@
     * allow specifying database table columns to be loaded in the attrs field
   * new function ds_select_routing(rules, mode, [limit])
     * select target addresses from a combination of groups and algorithms, control where the first destination is pushed and optionally set a limit
+  * added ping_from attribute
+
+==== dmq ====
+
+  * improveD bus stability and reduce unnecessary state transfer
+  * added 'pending' state for new, locally added nodes, until confirmed
+  * continue to probe nodes marked as inactive/disabled
+  * allow startup even if initial nodelist is empty
+  * added optional target parameter to dmq_handle_message()
 
 ==== htable ====
 
   * added parameter event_callback_mode 
     * control when event_route[htable:init] is executed: 0 - after all modules were initialized; 1 - in first worker process; (default 0)
+  * new functions sht_has_name(...) and sht_has_str_value(...)
+    * sht_has_name(htable, op, mval) - return >0 if there is an item matching its name with mval based on operator op
+    * sht_has_str_valye(htable, op, mval) - return >0 if there is an item matching its string value with mval based on operator op
+  * added sht_rm(htname, iname) - api function to remove an item from hash table
+  * kemi functions to set values in hash table: sht_sets(), sht_seti(), sht_setxs(), sht_setxi() and sht_setex()
+
 
 ==== ims_diameter_server ====
 
@@ -135,13 +156,32 @@
 
   * set pretty_format param to 1 by default
 
+==== kex ====
+
+  * extend kamailio rcv_replies statistics
+    * ability to count reply groups for each SIP method added.
+    * statistics for 2xx and 4xx replies on invite added
+
+==== mtree ====
+
+  * rpc reload without table name reloads all tables
+
 ==== nathelper ====
 
   * allow variable for flags parameter of fix_nated_sdp(), add_rcv_param(), nat_uac_test()
+  * send SIP ping if ping_nated_only=0 and sipping_flag is set
+
+==== ndb_redis ====
+
+  * $redisd(...) - pv that exports defined values by redis lib
 
 ==== p_usrloc ====
 
   * new parameter "mdb_availability_control" - overwrites the "write_on_db" parameter based on the availability of master database.
+
+==== permissions ====
+
+  * allow_trusted() now can take optional parameter of value to match
 
 ==== phonenum ====
 
@@ -149,11 +189,17 @@
     * match a phone number within a specific country provided by country code two letter
   * added ccname attribute - get code for country name
 
+==== pipelimit ====
+
+  * added rpc command pl.list 
+    * get the details of one or all pipes in json format
+
 ==== presence ====
 
   * dmq integration - replication of presentity updates over DMQ
     * adds ruid column for matching across cluster
     * new parameter enable_dmq
+  * option to limit the number of subscriptions handled in timer_dbonly
 
 ==== pua_rpc ====
 
@@ -169,17 +215,30 @@
   * new function - xavp_params_implode(xname, pv)
     *  serialize the subbfields of $xavp(xname) in params format (name=value;) and set the output to variable pv
   * new variable $mbu - the message buffer after applying changes, but the original buffer stays unchanged
-  * pv: new class of variables - $ksr(attr)
+  * new class of variables - $ksr(attr)
     * get attributes of kamailio sip router instance
     * implemented attributes:
         * ver - return version string
         * verval - return version value
+  * using * for header name matches any header for $hdr(name)
+    * $hdr(*) is body of first header, $(hdr(*)[-1]) is body of last header
+  * $msg(hdrc) returns the number of headers in sip message
+  * $msg(fpart) - return first line and the headers
+  * $msg(hdrs_len) - return the length of all headers
+  * new transformation {s.unquote}
+    * return the value without surrounding double/single quotes (" or ')
+  * increased transformation buffer slots from 4 to 8
+  * added transformation {s.unbracket}
+    * return value without surrounding (), [], {} or <>
 
 
 ==== rr ====
 
   * new parameter force_send_socket 
     * if set to 1, the socket is also forced for single rr
+  * ignore_sips - new parameter to control use of sips schema
+    * if set to different than 0, then record-route headers will be added with sip schema even if r-uri comes with sips. Allow interoperability with some UAs messing up routing when sips is used
+    * default is 0 - use sips schema if in r-uri (existing behaviour)
 
 ==== rtpengine ====
 
@@ -188,6 +247,17 @@
   * added support for DTLS transports - added ability to explicitly request DTLS transports:
     * UDP/TLS/RTP/SAVP and UDP/TLS/RTP/SAVPF
   * explicitly handle new option flags (transcoding)
+  * added options block_dtmf and unblock_dtmf
+  * added block_media and unblock_media function calls
+
+==== sanity ====
+
+  * allow variables in params
+  * new tests for parsing Top Via header
+  * do not send reply if mandatory headers are missing
+  * option to skip sending the reply internally
+    * new mod param 'noreply' - if set to 1, no reply is sent internally; default is 0
+  * new function - sanity_reply() that can be used in config to send a reply with a code and reason set by the module when detecting a problem inside sip message
 
 ==== sipcapture ====
 
@@ -209,6 +279,10 @@
   * added functions to work with forwarding info
     * new variables as part of $sipt(...)
 
+==== smsops ====
+
+  * added support for concatenated SMS in decode_3gpp_sms()
+
 ==== stun ====
 
   * catch udp ping 0000 when trying to parse stun headers
@@ -219,12 +293,23 @@
     * tcp_get_connid(hostport, pvname)
     * connection id is set in pvar paraemter
 
-==== topos ====
+==== textops ====
 
-  * execute event_route[topos:sending] with current sip message to be sent 
-    * if drop is used, then the message processing with topos is skipped
-    * event route is executed after event_route[topos:outgoing]
-    * new parameter event_mode to control what event_route blocks are executed
+  * new function msg_set_buffer(...) to kemi framework
+  * is_audio_on_hold() returns hold type
+    * 1 - RFC2543 hold type (the connection IP is set to null IP)
+    * 2 - RFC3264 hold type (inactive or sendonly attr)
+  * added function append_body_part_hex(...)
+    * add a new part to the body, with its content provided in hexa (it is converted to decimal before appending)
+  * added replace_str(match, repl, mode)
+    * replace a string with another in the message buffer after the first line. The parameter mode coltrols if first ("f") match or all ("a") should be replaced
+    * alternative to replace() that avoids regexp overhead when bare string can be matched
+  * new function replace_body_str(mkey, rval, rmode)
+    * replace a string inside message body
+  * new function replace_hdrs_str()
+    * replace the matched string in the headers zone
+  * added replace_hdrs(re, sval)
+    * replace matching regexp with sval inside sip headers part
 
 ==== tls ====
 
@@ -237,16 +322,17 @@
       * engine_config: an OpenSSL config format file used to bootstrap engines
       * engine_algorithms: list of algorithms to delegate to the engine
     * tested with Gemalto SafeNet Luna (AWS CloudHSM) with RSA and EC private keys  TLSv1.2 and PFS cipher suites
-
-
-==== textops ====
-
-  * new function msg_set_buffer(...) to kemi framework
-  * is_audio_on_hold() returns hold type
-     * 1 - RFC2543 hold type (the connection IP is set to null IP)
-     * 2 - RFC3264 hold type (inactive or sendonly attr)
-   * added function append_body_part_hex(...)
-     * add a new part to the body, with its content provided in hexa (it is converted to decimal before appending)
+  * allow defining a tls profile (domain) for any address
+    * token 'any' or 'all' can be used instead of the address [server:any] or [client:any]
+    * useful when the IP address/port to listen on is not known upfront or many addresses are used to listen on
+    * such profiles can be defined many times and must have server_name attribute  (for SNI)
+  * added server_name_mode attribute for tls domain profiles
+    * define how to match server_name (SNI):
+      * 0 - match only the domain
+      * 1 - match the domain and subdomains
+      * 2 - match only the subdomains
+  * tls.cfg - more examplea for tls domain profiles
+  * renamed sip-router_cert.sh to tls_cert.sh - it is specific to the module, not the flavour of the application
 
 ==== tm ====
 
@@ -260,11 +346,24 @@
 
   * added t_flush_xflags() function
 
+==== topos ====
+
+  * execute event_route[topos:sending] with current sip message to be sent 
+    * if drop is used, then the message processing with topos is skipped
+    * event route is executed after event_route[topos:outgoing]
+    * new parameter event_mode to control what event_route blocks are executed
+  * added param contact_host - set the address in Contact header
+  * keep original contact in 3xx responses sent out
+
 ==== uac ====
 
   * remote registrations - added uac_reg_enable() and uac_reg_disable() 
     * alternatives to the RPC commands to enable/disable remote registrations from kamailio.cfg (e.g., when receiving a registration from upstream)
   * exported cfg function uac_reg_refresh(luuid)
+  * call event route for uac_req_send() for second response
+    * done in case the request is resent after a 401/407
+  * reg_active - new parameter to control if remote registrations are active - default 1 (active)
+    * can be changed at runtime via rpc command uac.reg_active 0|1
 
 ==== usrloc ====
 
@@ -292,6 +391,7 @@
     * useful to link data that doesn't need cloning or freeing
   * added config defines for application version
     * three tokens are defined for version X.Y.Z: KAMAILIO_X, KAMAILIO_X_Y, KAMAILIO_X_Y_Z
+  * print log_prefix after loglevel for more intuitive parsing
 
 ==== Interpreter ====
 
@@ -335,6 +435,9 @@
 
 ==== Memory Managers ====
 
+  * mem - added shm_address_in(p)
+    * return 1 if pointer p is inside shared memory zone, 0 otherwise
+
 ==== Architecture ====
 
 ==== kamailio.cfg ====
@@ -349,7 +452,9 @@
 ==== kamctl ====
 
   * default PID_FILE set to /var/run/kamailio/kamailio.pid
+  * added mtree management command
   * kamdbctl - remove not working db migrate command
+  * kamdbctl - schema - removed rpid and email_address columns from subscriber table
     
 ==== kamcli ====
 
