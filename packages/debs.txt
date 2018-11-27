@@ -24,6 +24,8 @@ The list of APT repositories and associated operating systems is available at:
 
 ==== Status ====
 
+**Not actively maintained**
+
 OBS Project:
 
   * https://build.opensuse.org/project/show/home:kamailio:telephony-debs
