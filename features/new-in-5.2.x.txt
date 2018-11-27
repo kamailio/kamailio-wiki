@@ -55,15 +55,33 @@
   * functions to manage extended flags
     * setxflag(idx), resetxflag(idx), isxflagset(idx)
     * idx can be between 0 and 63
+  * added set_send_socket() and set_recv_socket()
+    * options to set send and recv sockets with parameters containing variables
+  * added set_source_address() function
+
 
 ==== db_mongodb ====
 
   * create projection field to set the list of returned column
 
+=== dialog ===
+
+  * added function dlg_db_load_callid(val) 
+    * load dialog from database based on callid parameter
+  * added h_id_start and h_id_step parameters
+    * allow to control how internal dialog hash id is generated to avoid overlapping values across many instances of kamailio
+  * added dlg_db_load_extra() function
+    * load dialogs from database that are not yet in memory of current kamailio instance
+
 ==== dispatcher ====
 
   * add methoded to reinit state for all destinations in group
   * allow 'all' to update all destinations in group via RPC
+  * added ds_list_exists() as alias to ds_list_exist()
+
+==== ipops ====
+
+  * support for 192.0.0.0/29 as NATed source
 
 ==== json ====
 
@@ -74,12 +92,16 @@
 
   * allow variable for flags parameter of fix_nated_sdp(), add_rcv_param(), nat_uac_test()
 
+==== phonenum ====
+
+  * new function phonenum_match_cn(...)
+    * match a phone number within a specific country provided by country code two letter
+
 ==== presence ====
 
   * dmq integration - replication of presentity updates over DMQ
     * adds ruid column for matching across cluster
     * new parameter enable_dmq
-
 
 ==== pua_rpc ====
 
@@ -105,12 +127,27 @@
     * tcp_get_connid(hostport, pvname)
     * connection id is set in pvar paraemter
 
+==== tls ====
+
+  * added support for OpenSSL engine and private keys in HSM
+    * add support for OpenSSL engine and loading private keys from HSM
+    * for when kamailio is a TLS edge proxy and needs to use HSM
+    * currently we initialize the engine in worker processes as PKCS#11  libraries are not guaranteed to be fork() safe
+    * new config params
+      * engine: name the OpenSSL engine
+      * engine_config: an OpenSSL config format file used to bootstrap engines
+      * engine_algorithms: list of algorithms to delegate to the engine
+    * tested with Gemalto SafeNet Luna (AWS CloudHSM) with RSA and EC private keys  TLSv1.2 and PFS cipher suites
+
+
 ==== textops ====
 
   * new function msg_set_buffer(...) to kemi framework
   * is_audio_on_hold() returns hold type
      * 1 - RFC2543 hold type (the connection IP is set to null IP)
      * 2 - RFC3264 hold type (inactive or sendonly attr)
+   * added function append_body_part_hex(...)
+     * add a new part to the body, with its content provided in hexa (it is converted to decimal before appending)
 
 ==== tm ====
 
@@ -143,6 +180,7 @@
     * flags are: I (INVITE), A (ACK), B (BYE), C (CANCEL), R (REGISTER),
       P (PUBLISH), S (SUBSCRIBE), N (NOTIFY), O (OPTIONS)
     * KSR.is_method_in("IABC")
+  * kemi - renamed KSR.drop() to KSR.set_drop()
 
 
 ==== Parameters ====
@@ -161,6 +199,11 @@
     * set to empty or "none" to skip execution of this callback
   * new parameter route_locks_size
     * if set, kamailio creates a group of recursive locks used to sync on execution of request_route and reply_route based on hashing ID of Call-ID header. In other words, if a message has triggered the execution of request_route or reply_route, any other message with the same Call-ID     waits until the other one finishes the execution.
+  * new parameter kemi.event_route_callback
+    * set the name of kemi function to be executed for core event route equivalent
+    * default value is not set (no callback function name). If set to "none", it is also not executed.
+    * callback function receives a string parameter with the name of the event
+    * execute kemi event callback for "core:worker-one-init"
 
 
 ==== Functions ====
