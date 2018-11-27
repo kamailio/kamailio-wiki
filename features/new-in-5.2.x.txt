@@ -55,7 +55,6 @@
 
   * new RPC commands timer_list and timer_name_list
 
-
 ==== cfg_rpc ====
 
   * rpc command cfg.get can accept only the group name to list all its vars
@@ -75,11 +74,23 @@
     * send data to destination uri by using local socket
   * send() renamed to send_udp()
     * reflect better that it uses UDP always, similar to send_tcp()
-
+  * new function via_use_xavp_fields(mode)
+    * set/unset the flag for building local Via using fields from via_xavp_fields xavp
 
 ==== db_mongodb ====
 
   * create projection field to set the list of returned column
+
+==== db_mysql ====
+
+  * added support for unsigned integers in INT and BIGINT DB1 API
+  * added parameter unsigend_type
+    * if set to 1, then the module converts unsigned column value to DB1_UINT or DB1_UBIGINT
+
+==== db_postgres ====
+
+  * new parameter bytea_output_escape
+    * control escaping output for bytea fields - default 1 (do the escape)
 
 === dialog ===
 
@@ -175,6 +186,10 @@
 
   * $redisd(...) - pv that exports defined values by redis lib
 
+==== nsq ====
+
+  * deprecated json and pua funcs for json api and pua_json modules
+
 ==== p_usrloc ====
 
   * new parameter "mdb_availability_control" - overwrites the "write_on_db" parameter based on the availability of master database.
@@ -193,6 +208,8 @@
 
   * added rpc command pl.list 
     * get the details of one or all pipes in json format
+  * allow offloading timer routine from fast timer to secondary wheel timer
+  * allow to disable fetching cpu and network load
 
 ==== presence ====
 
@@ -258,6 +275,10 @@
   * option to skip sending the reply internally
     * new mod param 'noreply' - if set to 1, no reply is sent internally; default is 0
   * new function - sanity_reply() that can be used in config to send a reply with a code and reason set by the module when detecting a problem inside sip message
+
+==== sdpops ====
+
+  * fetch and manipulate origin line sess-version through pseudo-variable
 
 ==== sipcapture ====
 
@@ -372,6 +393,7 @@
   * execute cleanup by server_id
   * new parameter version_table
     * set it to 0 to disable checking the version for location table
+  * call contact expired callback for a domain with db_mode DB_ONLY
 
 
 ===== New in Core =====
@@ -427,6 +449,9 @@
     * execute kemi event callback for "core:worker-one-init"
   * new core parameter xavp_via_params
     * set the name of the xavp whose subfields will be added as via params
+  * new global parameter xavp_via_fields
+    * set the name of xavp from where to take Via header field: address and port
+    * use them to build local Via header
 
 
 ==== Functions ====
@@ -438,8 +463,6 @@
   * mem - added shm_address_in(p)
     * return 1 if pointer p is inside shared memory zone, 0 otherwise
 
-==== Architecture ====
-
 ==== kamailio.cfg ====
 
   * added log_prefix parameter to print call-id, cseq, message type during SIP message processing
@@ -447,12 +470,11 @@
 
 ===== Tools =====
 
-==== kamcmd ====
-
 ==== kamctl ====
 
   * default PID_FILE set to /var/run/kamailio/kamailio.pid
   * added mtree management command
+  * more portable jsonrpc filter
   * kamdbctl - remove not working db migrate command
   * kamdbctl - schema - removed rpid and email_address columns from subscriber table
     
