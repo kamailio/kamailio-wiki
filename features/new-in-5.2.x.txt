@@ -39,12 +39,19 @@
 ===== app_lua =====
 
   * LUAJIT variable to build agains LuaJIT compiler
+  * defaut value for reload parameter set to 1
+    * reload feature enabbled by default, set to 0 to disable
 
 ==== app_python ====
 
   * implemented rpc command to list kemi functions
     * kamctl rpc app_python.api_list
   * rpc command to reload the routing script
+
+==== benchmark ====
+
+  * new RPC commands timer_list and timer_name_list
+
 
 ==== cfg_rpc ====
 
@@ -58,6 +65,13 @@
   * added set_send_socket() and set_recv_socket()
     * options to set send and recv sockets with parameters containing variables
   * added set_source_address() function
+  * added via_add_srvid() function
+  * new function via_add_xavp_params(flags)
+    * control the flag for adding xavp fields to via params
+  * added sendx(uri, socket, data)
+    * send data to destination uri by using local socket
+  * send() renamed to send_udp()
+    * reflect better that it uses UDP always, similar to send_tcp()
 
 
 ==== db_mongodb ====
@@ -78,6 +92,35 @@
   * add methoded to reinit state for all destinations in group
   * allow 'all' to update all destinations in group via RPC
   * added ds_list_exists() as alias to ds_list_exist()
+  * congestion detection load balancing
+  * new param ds_attrs_none
+    * if set to 1, "none=yes" is set in the attrs for those records that have no attrs value, to ensure that corresponding avps for records don't get mixed up
+  * use xavps instead of avps
+    * removed avp names parameters
+    * new parameters:
+      * xavp_dst - name of the xavp to store destination records
+      * xavp_dst_mode - control the fields added to xavp_dst
+      * xavp_ctx - name of the xavp to store context attributes
+      * xavp_ctx_mode - control the fields added to xavp_ctx
+  * added ds_set_dst() and dst_set_domain()
+    * unlike the ds_next_...() variants, these functions just push to destination the current xavp_dst, without consuming it
+  * new paraemter ds_db_extra_attrs
+    * allow specifying database table columns to be loaded in the attrs field
+  * new function ds_select_routing(rules, mode, [limit])
+    * select target addresses from a combination of groups and algorithms, control where the first destination is pushed and optionally set a limit
+
+==== htable ====
+
+  * added parameter event_callback_mode 
+    * control when event_route[htable:init] is executed: 0 - after all modules were initialized; 1 - in first worker process; (default 0)
+
+==== ims_diameter_server ====
+
+  * handle binary data in json/Diameter messages
+
+==== ims_registrar_pcscf ====
+
+  * update security on sec-agree
 
 ==== ipops ====
 
@@ -88,14 +131,23 @@
   * new transformation to access json fields
   * new function json_get_string() to return string value without quotes
 
+==== jsonrpcs ====
+
+  * set pretty_format param to 1 by default
+
 ==== nathelper ====
 
   * allow variable for flags parameter of fix_nated_sdp(), add_rcv_param(), nat_uac_test()
+
+==== p_usrloc ====
+
+  * new parameter "mdb_availability_control" - overwrites the "write_on_db" parameter based on the availability of master database.
 
 ==== phonenum ====
 
   * new function phonenum_match_cn(...)
     * match a phone number within a specific country provided by country code two letter
+  * added ccname attribute - get code for country name
 
 ==== presence ====
 
@@ -107,6 +159,22 @@
 
   * added pua.send_publish rpc command
     * send a PUBLISH request without waiting for response
+
+==== pv ====
+
+  * new config variable $sas - return source address in socket format (proto:address:port)
+  * added new transformation {uri.tosocket}
+    * converts a sip uri to socket address format
+    * from sip:address:port;transport=proto to proto:address:port
+  * new function - xavp_params_implode(xname, pv)
+    *  serialize the subbfields of $xavp(xname) in params format (name=value;) and set the output to variable pv
+  * new variable $mbu - the message buffer after applying changes, but the original buffer stays unchanged
+  * pv: new class of variables - $ksr(attr)
+    * get attributes of kamailio sip router instance
+    * implemented attributes:
+        * ver - return version string
+        * verval - return version value
+
 
 ==== rr ====
 
@@ -121,11 +189,42 @@
     * UDP/TLS/RTP/SAVP and UDP/TLS/RTP/SAVPF
   * explicitly handle new option flags (transcoding)
 
+==== sipcapture ====
+
+  * added sip_capture_forward(uri) 
+    * forward the hep packet to another address
+    * the address has to bbe provided as parameter in sip uri format
+    * the function should be used inside event_route[sipcapture:request]
+<code c>
+    event_route[sipcapture:request] {
+        if(src_ip==1.2.3.4) {
+            sip_capture_forward("sip:2.3.4.5:5090");
+            return 0;
+        }
+    }
+</code>
+
+==== sipt ====
+
+  * added functions to work with forwarding info
+    * new variables as part of $sipt(...)
+
+==== stun ====
+
+  * catch udp ping 0000 when trying to parse stun headers
+
 ==== tcpops ====
 
   * added function to get connection id based on target host:port 
     * tcp_get_connid(hostport, pvname)
     * connection id is set in pvar paraemter
+
+==== topos ====
+
+  * execute event_route[topos:sending] with current sip message to be sent 
+    * if drop is used, then the message processing with topos is skipped
+    * event route is executed after event_route[topos:outgoing]
+    * new parameter event_mode to control what event_route blocks are executed
 
 ==== tls ====
 
@@ -153,24 +252,46 @@
 
   * make processing of event routes for local requests reentrant
   * rpc tm.t_uac_start option to work with From and To headers only
+  * added t_send_reply(code, reason)    
+    * create the transaction if it doesn't exist and send a stateful reply
+  * addes relay_100 config parameter to support stateless operations
 
 ==== tmx ====
 
   * added t_flush_xflags() function
+
+==== uac ====
+
+  * remote registrations - added uac_reg_enable() and uac_reg_disable() 
+    * alternatives to the RPC commands to enable/disable remote registrations from kamailio.cfg (e.g., when receiving a registration from upstream)
+  * exported cfg function uac_reg_refresh(luuid)
 
 ==== usrloc ====
 
   * partition column name can be set via modparam
   * new parameter rm_expired_delay - set how many seconds to delay the removal of an expired record (DB_ONLY mode)
   * execute cleanup by server_id
+  * new parameter version_table
+    * set it to 0 to disable checking the version for location table
+
 
 ===== New in Core =====
 
   * new module exports interface
     * unified from Kamailio and SER module exports interfaces
   * locking - added api functions for recursive lock sets
-  *  added xflags field to sip_msg_t - holds extended flags - 64 new flags in addition to the old 32 flags
-
+  * added xflags field to sip_msg_t - holds extended flags - 64 new flags in addition to the old 32 flags
+  * new internal msg flag to add srvid param to local via
+  * added internal flag for adding xavp fields to via params
+  * parser - assign ids for more methods
+    * KDMQ and HTTP method types GET, POST, PUT and DELETE
+  * pv - default number of buffer slots set to 40
+  * new rpc command - core.ppdefines_full
+    * print preprocess defines with their details
+  * xavp - extended to hold a bare void pointer value
+    * useful to link data that doesn't need cloning or freeing
+  * added config defines for application version
+    * three tokens are defined for version X.Y.Z: KAMAILIO_X, KAMAILIO_X_Y, KAMAILIO_X_Y_Z
 
 ==== Interpreter ====
 
@@ -204,6 +325,8 @@
     * default value is not set (no callback function name). If set to "none", it is also not executed.
     * callback function receives a string parameter with the name of the event
     * execute kemi event callback for "core:worker-one-init"
+  * new core parameter xavp_via_params
+    * set the name of the xavp whose subfields will be added as via params
 
 
 ==== Functions ====
