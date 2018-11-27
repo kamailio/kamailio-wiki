@@ -436,8 +436,7 @@ Presence User Agent implementation with JSON messages.
   * kemi - more core functions exported to kemi framework
   * kemi - added KSR.is_method_in("mflags")
     * check if current method matches one listed in the flags
-    * flags are: I (INVITE), A (ACK), B (BYE), C (CANCEL), R (REGISTER),
-      P (PUBLISH), S (SUBSCRIBE), N (NOTIFY), O (OPTIONS)
+    * flags are: I (INVITE), A (ACK), B (BYE), C (CANCEL), R (REGISTER), P (PUBLISH), S (SUBSCRIBE), N (NOTIFY), O (OPTIONS)
     * KSR.is_method_in("IABC")
   * kemi - renamed KSR.drop() to KSR.set_drop()
 
