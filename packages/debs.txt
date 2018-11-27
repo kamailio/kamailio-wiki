@@ -18,7 +18,7 @@ Then add the repository lines to your ''/etc/apt/sources.list'' file depending o
 
 The list of APT repositories and associated operating systems is available at:
 
-  * https://deb.kamailio.org
+  * **https://deb.kamailio.org**
 
 ===== Using OBS Repository =====
 
