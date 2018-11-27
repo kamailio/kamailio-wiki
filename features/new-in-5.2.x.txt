@@ -46,11 +46,6 @@ Presence User Agent implementation with JSON messages.
 
   * https://www.kamailio.org/docs/modules/devel/modules/pua_json.html
 
-==== rtp_media_server ====
-
-Embedded RTP and media processing functionalities for Kamailio
-
-  * https://www.kamailio.org/docs/modules/devel/modules/rtp_media_server.html
 
 ===== New in Old Modules =====
 
