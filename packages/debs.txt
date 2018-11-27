@@ -24,7 +24,7 @@ The list of APT repositories and associated operating systems is available at:
 
 ==== Status ====
 
-**Not actively maintained**
+**Important: not actively maintained, use it only if you need to install older versions of Kamailio!!!**
 
 OBS Project:
 
