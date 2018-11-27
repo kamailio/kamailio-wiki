@@ -12,21 +12,37 @@
 
 ==== acc_json ====
 
+Generate accounting records in JSON format.
 
   * https://www.kamailio.org/docs/modules/devel/modules/acc_json.html
 
+==== app_python3 ====
+
+KEMI interpreter implementation for Python3.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/app_python3.html
+
 ==== app_ruby ====
 
+KEMI interpreter implementation for Ruby.
 
   * https://www.kamailio.org/docs/modules/devel/modules/app_ruby.html
 
 ==== db_redis ====
 
+Database APIv1 implementation with a REDIS backend.
 
   * https://www.kamailio.org/docs/modules/devel/modules/db_redis.html
 
+==== ims_ipsec_pcscf ====
+
+IMS IPSec implementation for P-CSCF systems.
+
+  * https://kamailio.org/docs/modules/devel/modules/ims_ipsec_pcscf.html
+
 ==== pua_json ====
 
+Presence User Agent implementation with JSON messages.
 
   * https://www.kamailio.org/docs/modules/devel/modules/pua_json.html
 
