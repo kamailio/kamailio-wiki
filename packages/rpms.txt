@@ -4,24 +4,46 @@
 
 Most of the Kamailio RPM packages for various Linux distributions are generated using OpenSuse Build Service. To install Kamailio using **yum**, go to the provided download link for your operating system, get the **.repo** file and save it in **/etc/yum.repos.d/** directory.
 
-For example, to add the repository for Kamailio v5.1.x on a CentOS 7, do:
+For example, to add the repository for Kamailio v5.2.x on a CentOS 7, do:
 
 <code>
 cd /etc/yum.repos.d/
-wget http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/CentOS_7/home:kamailio:v5.1.x-rpms.repo
+wget http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/CentOS_7/home:kamailio:v5.2.x-rpms.repo
 </code>
 
-The content of the **.repo** file (in this case **home:kamailio:v5.1.x-rpms.repo**), looks like:
+The content of the **.repo** file (in this case **home:kamailio:v5.2.x-rpms.repo**), looks like:
 
 <code>
-[home_kamailio_v5.1.x-rpms]
-name=RPM Packages for Kamailio v5.1.x (CentOS_7)
+[home_kamailio_v5.2.x-rpms]
+name=RPM Packages for Kamailio v5.2.x (CentOS_7)
 type=rpm-md
-baseurl=http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/CentOS_7/
+baseurl=http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/CentOS_7/
 gpgcheck=1
-gpgkey=http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/CentOS_7/repodata/repomd.xml.key
+gpgkey=http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/CentOS_7/repodata/repomd.xml.key
 enabled=1
 </code>
+
+===== Kamailio 5.2.x =====
+
+The RPM packages are built on OpenSUSE Build Service for CentOS 6 and 7, Fedora 27, 28 and 29, RedHat 6 and 7, OpenSUSE 42.2 and 42.3, on i586 and x86_64 architectures.
+
+The OpenSuse build service project is available at:
+
+  * https://build.opensuse.org/project/show/home:kamailio:v5.2.x-rpms
+
+Download links specific per distribution are:
+
+  * http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/CentOS_6/
+  * http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/CentOS_7/
+  * http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/Fedora_27/
+  * http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/Fedora_28/
+  * http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/Fedora_29/
+  * http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/RHEL_6/
+  * http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/RHEL_7/
+  * http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/openSUSE_Leap_42.2/
+  * http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/openSUSE_Leap_42.3/
+
+
 ===== Kamailio 5.1.x =====
 
 The RPM packages are built on OpenSUSE Build Service for CentOS 6 and 7, Fedora 25, 26 and 27, RedHat 6 and 7, OpenSUSE 42.2 and 42.3, on i586 and x86_64 architectures.
