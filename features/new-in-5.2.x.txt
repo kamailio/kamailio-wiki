@@ -50,6 +50,16 @@
 
   * rpc command cfg.get can accept only the group name to list all its vars
 
+==== corex ====
+
+  * functions to manage extended flags
+    * setxflag(idx), resetxflag(idx), isxflagset(idx)
+    * idx can be between 0 and 63
+
+==== db_mongodb ====
+
+  * create projection field to set the list of returned column
+
 ==== dispatcher ====
 
   * add methoded to reinit state for all destinations in group
@@ -58,6 +68,7 @@
 ==== json ====
 
   * new transformation to access json fields
+  * new function json_get_string() to return string value without quotes
 
 ==== nathelper ====
 
@@ -83,6 +94,10 @@
 ==== rtpengine ====
 
   * added aggressive_redetection param
+  * setting tos value for the control commands - new parameter "control_cmd_tos"
+  * added support for DTLS transports - added ability to explicitly request DTLS transports:
+    * UDP/TLS/RTP/SAVP and UDP/TLS/RTP/SAVPF
+  * explicitly handle new option flags (transcoding)
 
 ==== tcpops ====
 
@@ -102,30 +117,55 @@
   * make processing of event routes for local requests reentrant
   * rpc tm.t_uac_start option to work with From and To headers only
 
+==== tmx ====
+
+  * added t_flush_xflags() function
+
 ==== usrloc ====
 
   * partition column name can be set via modparam
   * new parameter rm_expired_delay - set how many seconds to delay the removal of an expired record (DB_ONLY mode)
+  * execute cleanup by server_id
 
 ===== New in Core =====
 
   * new module exports interface
     * unified from Kamailio and SER module exports interfaces
+  * locking - added api functions for recursive lock sets
+  *  added xflags field to sip_msg_t - holds extended flags - 64 new flags in addition to the old 32 flags
 
 
 ==== Interpreter ====
 
   * kemi - more core functions exported to kemi framework
+  * kemi - added KSR.is_method_in("mflags")
+    * check if current method matches one listed in the flags
+    * flags are: I (INVITE), A (ACK), B (BYE), C (CANCEL), R (REGISTER),
+      P (PUBLISH), S (SUBSCRIBE), N (NOTIFY), O (OPTIONS)
+    * KSR.is_method_in("IABC")
+
 
 ==== Parameters ====
 
   * new parameters to control the size of pv cache
     * pv_cache_limit - the limit how many pv declarations in the cache after which an action is taken. Default value is 2048
     * pv_cache_action - specify what action to be done when the size of pv cache is exceeded. If 0, print an warning log message when the limit is exceeded. If 1, warning log messages is printed and the cache systems tries to drop a $sht(...) declaration. Default is 0
-
   * aliased global param ip_free_bind to ip_nonlocal_bind - match better with linux system control option
+  * new parameter kemi.onsend_route_callback
+    * allow setting the name of the function to be called by kemi framework as equivalent of onsend_route {}
+    * default value: ksr_onsend_route
+    * set to empty string or "none" to skip the execution of this kemi callback
+  * new parameter kemi.reply_route_callback
+    * set the name of kemi callback function to be executed on receiving a sip reply (equivalent of reply_route)
+    * default: ksr_reply_route
+    * set to empty or "none" to skip execution of this callback
+  * new parameter route_locks_size
+    * if set, kamailio creates a group of recursive locks used to sync on execution of request_route and reply_route based on hashing ID of Call-ID header. In other words, if a message has triggered the execution of request_route or reply_route, any other message with the same Call-ID     waits until the other one finishes the execution.
+
 
 ==== Functions ====
+
+  * core functions exported to kemi interface
 
 ==== Memory Managers ====
 
@@ -133,13 +173,17 @@
 
 ==== kamailio.cfg ====
 
-  * added log_prefix
+  * added log_prefix parameter to print call-id, cseq, message type during SIP message processing
+  * do not relay to foreign network if auth is not enabled
 
 ===== Tools =====
 
 ==== kamcmd ====
 
 ==== kamctl ====
+
+  * default PID_FILE set to /var/run/kamailio/kamailio.pid
+  * kamdbctl - remove not working db migrate command
     
 ==== kamcli ====
 
