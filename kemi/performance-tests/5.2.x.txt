@@ -1312,4 +1312,46 @@ sum:  4099683
 min:  26
 max:  2159
 avg:  67.6884
+
+$ awk -f kamailio-exec-report.awk /tmp/kamailio-register-native.txt
+cnt:  62752
+sum:  4184315
+min:  17
+max:  1948
+avg:  66.6802
+
+$ awk -f kamailio-exec-report.awk /tmp/kamailio-register-lua.txt
+cnt:  61850
+sum:  4466376
+min:  23
+max:  2110
+avg:  72.213
+
+$ awk -f kamailio-exec-report.awk /tmp/kamailio-register-native.txt
+cnt:  62420
+sum:  3697635
+min:  17
+max:  2144
+avg:  59.238
+
+$ awk -f kamailio-exec-report.awk /tmp/kamailio-register-lua.txt
+cnt:  61197
+sum:  3844555
+min:  22
+max:  1852
+avg:  62.8226
+
+$ awk -f kamailio-exec-report.awk /tmp/kamailio-register-native.txt
+cnt:  63595
+sum:  4426750
+min:  17
+max:  3456
+avg:  69.6085
+
+$ awk -f kamailio-exec-report.awk /tmp/kamailio-register-lua.txt
+cnt:  61103
+sum:  4248753
+min:  23
+max:  2442
+avg:  69.5343
 </code>
