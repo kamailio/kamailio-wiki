@@ -121,18 +121,1154 @@ sipp 192.168.178.98 -sf REGISTER_client.xml -inf REGISTER_client.csv -trace_msg 
 
 Kamailio was run from source tree, after compilation, with the configuration files places in the folder **../etc/**.
 
-Configuration files: TBA
+Configuration files are presented in the next sections.
 
-Commands:
+==== Common Config File ====
+
+<code c>
+#!KAMAILIO
+#
+# Kamailio (OpenSER) SIP Server v5.0 - default configuration script
+#     - web: http://www.kamailio.org
+#     - git: http://sip-router.org
+#
+# Direct your questions about this file to: <sr-users@lists.kamailio.org>
+#
+# Refer to the Core CookBook at http://www.kamailio.org/wiki/
+# for an explanation of possible statements, functions and parameters.
+#
+# Several features can be enabled using '#!define WITH_FEATURE' directives:
+#
+# *** To run in debug mode:
+#     - define WITH_DEBUG
+#
+# *** To enable mysql:
+#     - define WITH_MYSQL
+#
+# *** To enable authentication execute:
+#     - enable mysql
+#     - define WITH_AUTH
+#     - add users using 'kamctl'
+#
+# *** To enable IP authentication execute:
+#     - enable mysql
+#     - enable authentication
+#     - define WITH_IPAUTH
+#     - add IP addresses with group id '1' to 'address' table
+#
+# *** To enable persistent user location execute:
+#     - enable mysql
+#     - define WITH_USRLOCDB
+#
+# *** To enable nat traversal execute:
+#     - define WITH_NAT
+#     - install RTPProxy: http://www.rtpproxy.org
+#     - start RTPProxy:
+#        rtpproxy -l _your_public_ip_ -s udp:localhost:7722
+#     - option for NAT SIP OPTIONS keepalives: WITH_NATSIPPING
+#
+# *** To enable TLS support execute:
+#     - adjust CFGDIR/tls.cfg as needed
+#     - define WITH_TLS
+#
+# *** To enhance accounting execute:
+#     - enable mysql
+#     - define WITH_ACCDB
+#     - add following columns to database
+#!ifdef ACCDB_COMMENT
+  ALTER TABLE acc ADD COLUMN src_user VARCHAR(64) NOT NULL DEFAULT '';
+  ALTER TABLE acc ADD COLUMN src_domain VARCHAR(128) NOT NULL DEFAULT '';
+  ALTER TABLE acc ADD COLUMN src_ip varchar(64) NOT NULL default '';
+  ALTER TABLE acc ADD COLUMN dst_ouser VARCHAR(64) NOT NULL DEFAULT '';
+  ALTER TABLE acc ADD COLUMN dst_user VARCHAR(64) NOT NULL DEFAULT '';
+  ALTER TABLE acc ADD COLUMN dst_domain VARCHAR(128) NOT NULL DEFAULT '';
+  ALTER TABLE missed_calls ADD COLUMN src_user VARCHAR(64) NOT NULL DEFAULT '';
+  ALTER TABLE missed_calls ADD COLUMN src_domain VARCHAR(128) NOT NULL DEFAULT '';
+  ALTER TABLE missed_calls ADD COLUMN src_ip varchar(64) NOT NULL default '';
+  ALTER TABLE missed_calls ADD COLUMN dst_ouser VARCHAR(64) NOT NULL DEFAULT '';
+  ALTER TABLE missed_calls ADD COLUMN dst_user VARCHAR(64) NOT NULL DEFAULT '';
+  ALTER TABLE missed_calls ADD COLUMN dst_domain VARCHAR(128) NOT NULL DEFAULT '';
+#!endif
+
+#!define WITH_MYSQL
+#!define WITH_AUTH
+#!define WITH_IPAUTH
+#!define WITH_USRLOCDB
+#!define WITH_NAT
+#!define WITH_ANTIFLOOD
+#!define WITH_ACCDB
+
+####### Include Local Config If Exists #########
+import_file "kamailio-local.cfg"
+
+####### Defined Values #########
+
+# *** Value defines - IDs used later in config
+#!ifdef WITH_MYSQL
+# - database URL - used to connect to database server by modules such
+#       as: auth_db, acc, usrloc, a.s.o.
+#!ifndef DBURL
+#!define DBURL "mysql://kamailio:kamailiorw@localhost/kamailio"
+#!endif
+#!endif
+#!define MULTIDOMAIN 0
+
+# - flags
+#   FLT_ - per transaction (message) flags
+#	FLB_ - per branch flags
+#!define FLT_ACC 1
+#!define FLT_ACCMISSED 2
+#!define FLT_ACCFAILED 3
+#!define FLT_NATS 5
+
+#!define FLB_NATB 6
+#!define FLB_NATSIPPING 7
+
+####### Global Parameters #########
+
+### LOG Levels: 3=DBG, 2=INFO, 1=NOTICE, 0=WARN, -1=ERR
+#!ifdef WITH_DEBUG
+debug=4
+log_stderror=yes
+#!else
+debug=2
+log_stderror=no
+#!endif
+
+memdbg=5
+memlog=5
+
+#!ifdef WITH_CFGLUA
+log_prefix="LUA {$rm}: "
+#!else
+#!ifdef WITH_CFGPYTHON
+log_prefix="PYT {$rm}: "
+#!else
+log_prefix="NAT {$rm}: "
+#!endif
+#!endif
+
+latency_cfg_log=2
+
+log_facility=LOG_LOCAL0
+log_prefix="{$mt $hdr(CSeq) $ci} "
+
+fork=yes
+children=16
+
+/* uncomment the next line to disable TCP (default on) */
+#disable_tcp=yes
+
+/* uncomment the next line to disable the auto discovery of local aliases
+ * based on reverse DNS on IPs (default on) */
+#auto_aliases=no
+
+/* add local domain aliases */
+#alias="sip.mydomain.com"
+
+/* uncomment and configure the following line if you want Kamailio to
+ * bind on a specific interface/port/proto (default bind on all available) */
+#listen=udp:10.0.0.10:5060
+
+/* port to listen to
+ * - can be specified more than once if needed to listen on many ports */
+port=5060
+
+#!ifdef WITH_TLS
+enable_tls=yes
+#!endif
+
+# life time of TCP connection when there is no traffic
+# - a bit higher than registration expires to cope with UA behind NAT
+tcp_connection_lifetime=3605
+
+####### Modules Section ########
+
+/* set paths to location of modules (to sources or installation folders) */
+# mpath="/usr/local/lib/kamailio/modules/"
+
+#!ifdef WITH_MYSQL
+loadmodule "db_mysql.so"
+#!endif
+
+loadmodule "jsonrpcs.so"
+loadmodule "kex.so"
+loadmodule "corex.so"
+loadmodule "tm.so"
+loadmodule "tmx.so"
+loadmodule "sl.so"
+loadmodule "rr.so"
+loadmodule "pv.so"
+loadmodule "maxfwd.so"
+loadmodule "usrloc.so"
+loadmodule "registrar.so"
+loadmodule "textops.so"
+loadmodule "siputils.so"
+loadmodule "xlog.so"
+loadmodule "sanity.so"
+loadmodule "ctl.so"
+loadmodule "cfg_rpc.so"
+loadmodule "acc.so"
+
+#!ifdef WITH_AUTH
+loadmodule "auth.so"
+loadmodule "auth_db.so"
+#!ifdef WITH_IPAUTH
+loadmodule "permissions.so"
+#!endif
+#!endif
+
+#!ifdef WITH_NAT
+loadmodule "nathelper.so"
+loadmodule "rtpproxy.so"
+#!endif
+
+#!ifdef WITH_TLS
+loadmodule "tls.so"
+#!endif
+
+#!ifdef WITH_DEBUG
+loadmodule "debugger.so"
+#!endif
+
+#!ifdef WITH_ANTIFLOOD
+loadmodule "htable.so"
+loadmodule "pike.so"
+#!endif
+
+#!ifdef WITH_CFGLUA
+loadmodule "app_lua.so"
+#!endif
+
+#!ifdef WITH_CFGPYTHON
+loadmodule "app_python.so"
+#!endif
+
+#!ifdef WITH_CFGJSDT
+loadmodule "app_jsdt.so"
+#!endif
+
+#!ifdef WITH_CFGSQLANG
+loadmodule "app_sqlang.so"
+#!endif
+
+# ----------------- setting module-specific parameters ---------------
+
+# ----- jsonrpcs params -----
+modparam("jsonrpcs", "pretty_format", 1)
+/* set the path to RPC fifo control file */
+# modparam("jsonrpcs", "fifo_name", "/var/run/kamailio/kamailio_rpc.fifo")
+/* set the path to RPC unix socket control file */
+# modparam("jsonrpcs", "dgram_socket", "/var/run/kamailio/kamailio_rpc.sock")
+
+# ----- ctl params -----
+#modparam("ctl", "binrpc", "unix:/var/run/kamailio/kamailio_ctl")
+
+# ----- tm params -----
+# auto-discard branches from previous serial forking leg
+modparam("tm", "failure_reply_mode", 3)
+# default retransmission timeout: 30sec
+modparam("tm", "fr_timer", 30000)
+# default invite retransmission timeout after 1xx: 120sec
+modparam("tm", "fr_inv_timer", 120000)
+
+
+# ----- rr params -----
+# add value to ;lr param to cope with most of the UAs
+modparam("rr", "enable_full_lr", 1)
+# do not append from tag to the RR (no need for this script)
+modparam("rr", "append_fromtag", 0)
+
+
+# ----- registrar params -----
+modparam("registrar", "method_filtering", 1)
+/* uncomment the next line to disable parallel forking via location */
+# modparam("registrar", "append_branches", 0)
+/* uncomment the next line not to allow more than 10 contacts per AOR */
+#modparam("registrar", "max_contacts", 10)
+# max value for expires of registrations
+modparam("registrar", "max_expires", 3600)
+# set it to 1 to enable GRUU
+modparam("registrar", "gruu_enabled", 0)
+
+
+# ----- acc params -----
+/* what special events should be accounted ? */
+modparam("acc", "early_media", 0)
+modparam("acc", "report_ack", 0)
+modparam("acc", "report_cancels", 0)
+/* by default we do not adjust the direct of the sequential requests.
+ * if you enable this parameter, be sure the enable "append_fromtag"
+ * in "rr" module */
+modparam("acc", "detect_direction", 0)
+/* account triggers (flags) */
+modparam("acc", "log_flag", FLT_ACC)
+modparam("acc", "log_missed_flag", FLT_ACCMISSED)
+modparam("acc", "log_extra",
+	"src_user=$fU;src_domain=$fd;src_ip=$si;"
+	"dst_ouser=$tU;dst_user=$rU;dst_domain=$rd")
+modparam("acc", "failed_transaction_flag", FLT_ACCFAILED)
+/* enhanced DB accounting */
+#!ifdef WITH_ACCDB
+modparam("acc", "db_flag", FLT_ACC)
+modparam("acc", "db_missed_flag", FLT_ACCMISSED)
+modparam("acc", "db_url", DBURL)
+modparam("acc", "db_extra",
+	"src_user=$fU;src_domain=$fd;src_ip=$si;"
+	"dst_ouser=$tU;dst_user=$rU;dst_domain=$rd")
+#!endif
+
+
+# ----- usrloc params -----
+/* enable DB persistency for location entries */
+modparam("usrloc", "preload", "location")
+#!ifdef WITH_USRLOCDB
+modparam("usrloc", "db_url", DBURL)
+modparam("usrloc", "db_mode", 2)
+modparam("usrloc", "use_domain", MULTIDOMAIN)
+#!endif
+
+
+# ----- auth_db params -----
+#!ifdef WITH_AUTH
+modparam("auth_db", "db_url", DBURL)
+modparam("auth_db", "calculate_ha1", yes)
+modparam("auth_db", "password_column", "password")
+modparam("auth_db", "load_credentials", "")
+modparam("auth_db", "use_domain", MULTIDOMAIN)
+
+# ----- permissions params -----
+#!ifdef WITH_IPAUTH
+modparam("permissions", "db_url", DBURL)
+modparam("permissions", "db_mode", 1)
+#!endif
+
+#!endif
+
+
+#!ifdef WITH_NAT
+# ----- rtpproxy params -----
+modparam("rtpproxy", "rtpproxy_sock", "udp:127.0.0.1:7722")
+
+# ----- nathelper params -----
+modparam("nathelper", "natping_interval", 30)
+modparam("nathelper", "ping_nated_only", 1)
+modparam("nathelper", "sipping_bflag", FLB_NATSIPPING)
+modparam("nathelper", "sipping_from", "sip:pinger@kamailio.org")
+
+# params needed for NAT traversal in other modules
+modparam("nathelper|registrar", "received_avp", "$avp(RECEIVED)")
+modparam("usrloc", "nat_bflag", FLB_NATB)
+#!endif
+
+
+#!ifdef WITH_TLS
+# ----- tls params -----
+modparam("tls", "config", "/usr/local/etc/kamailio/tls.cfg")
+#!endif
+
+#!ifdef WITH_DEBUG
+# ----- debugger params -----
+modparam("debugger", "cfgtrace", 1)
+#!endif
+
+#!ifdef WITH_ANTIFLOOD
+# ----- pike params -----
+modparam("pike", "sampling_time_unit", 2)
+modparam("pike", "reqs_density_per_unit", 16)
+modparam("pike", "remove_latency", 4)
+
+# ----- htable params -----
+# ip ban htable with autoexpire after 5 minutes
+modparam("htable", "htable", "ipban=>size=8;autoexpire=300;")
+#!endif
+
+#!ifdef WITH_CFGPYTHON
+modparam("app_python", "script_name", "/usr/local/etc/kamailio/kamailio-basic-kemi-python.py")
+cfgengine "python"
+#!else
+
+#!ifdef WITH_CFGLUA
+modparam("app_lua", "reload", 1)
+modparam("app_lua", "load", "/home/dublin/work/sip/esr/etc/kamailio-basic-kemi-lua.lua")
+cfgengine "lua"
+#!else
+
+#!ifdef WITH_CFGJSDT
+modparam("app_jsdt", "load", "/usr/local/etc/kamailio/kamailio-basic-kemi-jsdt.js")
+cfgengine "jsdt"
+#!else
+#!ifdef WITH_CFGSQLANG
+modparam("app_sqlang", "load", "/usr/local/etc/kamailio/kamailio-basic-kemi-sqlang.sq")
+cfgengine "sqlang"
+#!else
+cfgengine "native"
+include_file "/home/dublin/work/sip/esr/etc/kamailio-basic-kemi-native.cfg"
+#!endif
+
+#!endif
+
+#!endif
+
+#!endif
+
+</code>
+
+==== Native Scripting Routing Blocks ====
+
+<code c>
+####### Routing Logic ########
+
+
+# Main SIP request routing logic
+# - processing of any incoming SIP request starts with this route
+# - note: this is the same as route { ... }
+request_route {
+
+	# per request initial checks
+	route(REQINIT);
+
+	sl_send_reply("100", "Trying");
+
+	# NAT detection
+	route(NATDETECT);
+
+	# CANCEL processing
+	if (is_method("CANCEL")) {
+		if (t_check_trans()) {
+			route(RELAY);
+		}
+		exit;
+	}
+
+	# handle requests within SIP dialogs
+	route(WITHINDLG);
+
+	### only initial requests (no To tag)
+
+	# handle retransmissions
+	if(t_precheck_trans()) {
+		t_check_trans();
+		exit;
+	}
+	t_check_trans();
+
+	# authentication
+	route(AUTH);
+
+	# record routing for dialog forming requests (in case they are routed)
+	# - remove preloaded route headers
+	remove_hf("Route");
+	if (is_method("INVITE|SUBSCRIBE"))
+		record_route();
+
+	# account only INVITEs
+	if (is_method("INVITE")) {
+		setflag(FLT_ACC); # do accounting
+	}
+
+	# dispatch requests to foreign domains
+	route(SIPOUT);
+
+	### requests for my local domains
+
+	# handle registrations
+	route(REGISTRAR);
+
+	if ($rU==$null) {
+		# request with no Username in RURI
+		sl_send_reply("484","Address Incomplete");
+		exit;
+	}
+
+	# user location service
+	route(LOCATION);
+}
+
+
+route[RELAY] {
+	# enable additional event routes for forwarded requests
+	# - serial forking, RTP relaying handling, a.s.o.
+	if (is_method("INVITE|BYE|SUBSCRIBE|UPDATE")) {
+		if(!t_is_set("branch_route")) t_on_branch("MANAGE_BRANCH");
+	}
+	if (is_method("INVITE|SUBSCRIBE|UPDATE")) {
+		if(!t_is_set("onreply_route")) t_on_reply("MANAGE_REPLY");
+	}
+	if (is_method("INVITE")) {
+		if(!t_is_set("failure_route")) t_on_failure("MANAGE_FAILURE");
+	}
+
+	if (!t_relay()) {
+		sl_reply_error();
+	}
+	exit;
+}
+
+# Per SIP request initial checks
+route[REQINIT] {
+#!ifdef WITH_ANTIFLOOD
+	# flood dection from same IP and traffic ban for a while
+	# be sure you exclude checking trusted peers, such as pstn gateways
+	# - local host excluded (e.g., loop to self)
+	if(src_ip!=myself) {
+		if($sht(ipban=>$si)!=$null) {
+			# ip is already blocked
+			xdbg("request from blocked IP - $rm from $fu (IP:$si:$sp)\n");
+			exit;
+		}
+		if (!pike_check_req()) {
+			xlog("L_ALERT","ALERT: pike blocking $rm from $fu (IP:$si:$sp)\n");
+			$sht(ipban=>$si) = 1;
+			exit;
+		}
+	}
+	if($ua =~ "friendly-scanner") {
+		sl_send_reply("200", "OK");
+		exit;
+	}
+#!endif
+
+	if (!mf_process_maxfwd_header("10")) {
+		sl_send_reply("483","Too Many Hops");
+		exit;
+	}
+
+	if(is_method("OPTIONS") && uri==myself && $rU==$null) {
+		sl_send_reply("200","Keepalive");
+		exit;
+	}
+
+	if(!sanity_check("1511", "7")) {
+		xlog("Malformed SIP message from $si:$sp\n");
+		exit;
+	}
+}
+
+# Handle requests within SIP dialogs
+route[WITHINDLG] {
+	if (!has_totag()) return;
+
+	# sequential request withing a dialog should
+	# take the path determined by record-routing
+	if (loose_route()) {
+		route(DLGURI);
+		if (is_method("BYE")) {
+			setflag(FLT_ACC); # do accounting ...
+			setflag(FLT_ACCFAILED); # ... even if the transaction fails
+		}
+		else if ( is_method("ACK") ) {
+			# ACK is forwarded statelessly
+			route(NATMANAGE);
+		}
+		else if ( is_method("NOTIFY") ) {
+			# Add Record-Route for in-dialog NOTIFY as per RFC 6665.
+			record_route();
+		}
+		route(RELAY);
+		exit;
+	}
+	if ( is_method("ACK") ) {
+		if ( t_check_trans() ) {
+			# no loose-route, but stateful ACK;
+			# must be an ACK after a 487
+			# or e.g. 404 from upstream server
+			route(RELAY);
+			exit;
+		} else {
+			# ACK without matching transaction ... ignore and discard
+			exit;
+		}
+	}
+	sl_send_reply("404", "Not here");
+	exit;
+}
+
+# Handle SIP registrations
+route[REGISTRAR] {
+	if (!is_method("REGISTER")) return;
+	if(isflagset(FLT_NATS)) {
+		setbflag(FLB_NATB);
+#!ifdef WITH_NATSIPPING
+		# do SIP NAT pinging
+		setbflag(FLB_NATSIPPING);
+#!endif
+	}
+	if (!save("location"))
+		sl_reply_error();
+
+	exit;
+}
+
+# User location service
+route[LOCATION] {
+	if (!lookup("location")) {
+		$var(rc) = $rc;
+		t_newtran();
+		switch ($var(rc)) {
+			case -1:
+			case -3:
+				send_reply("404", "Not Found");
+				exit;
+			case -2:
+				send_reply("405", "Method Not Allowed");
+				exit;
+		}
+	}
+
+	# when routing via usrloc, log the missed calls also
+	if (is_method("INVITE")) {
+		setflag(FLT_ACCMISSED);
+	}
+
+	route(RELAY);
+	exit;
+}
+
+
+# IP authorization and user uthentication
+route[AUTH] {
+#!ifdef WITH_AUTH
+
+#!ifdef WITH_IPAUTH
+	if((!is_method("REGISTER")) && allow_source_address()) {
+		# source IP allowed
+		return;
+	}
+#!endif
+
+	if (is_method("REGISTER") || from_uri==myself) {
+		# authenticate requests
+		if (!auth_check("$fd", "subscriber", "1")) {
+			auth_challenge("$fd", "0");
+			exit;
+		}
+		# user authenticated - remove auth header
+		if(!is_method("REGISTER|PUBLISH"))
+			consume_credentials();
+	}
+	# if caller is not local subscriber, then check if it calls
+	# a local destination, otherwise deny, not an open relay here
+	if (from_uri!=myself && uri!=myself) {
+		sl_send_reply("403","Not relaying");
+		exit;
+	}
+
+#!endif
+	return;
+}
+
+# Caller NAT detection
+route[NATDETECT] {
+#!ifdef WITH_NAT
+	force_rport();
+	if (nat_uac_test("19")) {
+		if (is_method("REGISTER")) {
+			fix_nated_register();
+		} else {
+			if(is_first_hop())
+				set_contact_alias();
+		}
+		setflag(FLT_NATS);
+	}
+#!endif
+	return;
+}
+
+# RTPProxy control
+route[NATMANAGE] {
+#!ifdef WITH_NAT
+	if (is_request()) {
+		if(has_totag()) {
+			if(check_route_param("nat=yes")) {
+				setbflag(FLB_NATB);
+			}
+		}
+	}
+	if (!(isflagset(FLT_NATS) || isbflagset(FLB_NATB)))
+		return;
+
+	rtpproxy_manage("co");
+
+	if (is_request()) {
+		if (!has_totag()) {
+			if(t_is_branch_route()) {
+				add_rr_param(";nat=yes");
+			}
+		}
+	}
+	if (is_reply()) {
+		if(isbflagset(FLB_NATB)) {
+			set_contact_alias();
+		}
+	}
+#!endif
+	return;
+}
+
+# URI update for dialog requests
+route[DLGURI] {
+#!ifdef WITH_NAT
+	if(!isdsturiset()) {
+		handle_ruri_alias();
+	}
+#!endif
+	return;
+}
+
+# Routing to foreign domains
+route[SIPOUT] {
+	if (uri==myself) return;
+
+	append_hf("P-hint: outbound\r\n");
+	route(RELAY);
+	exit;
+}
+
+# Manage outgoing branches
+branch_route[MANAGE_BRANCH] {
+	xdbg("new branch [$T_branch_idx] to $ru\n");
+	route(NATMANAGE);
+}
+
+# Manage incoming replies
+onreply_route[MANAGE_REPLY] {
+	xdbg("incoming reply\n");
+	if(status=~"[12][0-9][0-9]")
+		route(NATMANAGE);
+}
+
+# Manage failure routing cases
+failure_route[MANAGE_FAILURE] {
+	route(NATMANAGE);
+
+	if (t_is_canceled()) {
+		exit;
+	}
+}
+
+</code>
+
+==== Lua Scripting Routing Functions ====
+
+<code lua>
+-- Kamailio - equivalent of routing blocks in Lua
+--
+-- KSR - the new dynamic object exporting Kamailio functions (kemi)
+-- sr - the old static object exporting Kamailio functions
+--
+
+-- Relevant remarks:
+--  * do not execute Lua 'exit' - that will kill Lua interpreter which is
+--  embedded in Kamailio, resulting in killing Kamailio
+--  * use KSR.x.exit() to trigger the stop of executing the script
+--  * KSR.drop() is only marking the SIP message for drop, but doesn't stop
+--  the execution of the script. Use KSR.x.exit() after it or KSR.x.drop()
+--
+
+
+-- global variables corresponding to defined values (e.g., flags) in kamailio.cfg
+FLT_ACC=1
+FLT_ACCMISSED=2
+FLT_ACCFAILED=3
+FLT_NATS=5
+
+FLB_NATB=6
+FLB_NATSIPPING=7
+
+-- global variables with common SIP attributes exposed by Kamailio
+K_si = ""; -- source ip
+K_su = ""; -- source address
+K_fu = ""; -- from uri
+K_fd = ""; -- from domain
+K_rm = ""; -- request method
+K_ua = ""; -- user agent
+
+-- SIP request routing
+-- equivalent of request_route{}
+function ksr_request_route()
+
+	ksr_set_sipvars();
+	-- per request initial checks
+	ksr_route_reqinit();
+
+	KSR.sl.send_reply("100", "Trying");
+
+	-- NAT detection
+	ksr_route_natdetect();
+
+	-- CANCEL processing
+	if KSR.is_CANCEL() then
+		if KSR.tm.t_check_trans()>0 then
+			ksr_route_relay();
+		end
+		return 1;
+	end
+
+	-- handle requests within SIP dialogs
+	ksr_route_withindlg();
+
+	-- -- only initial requests (no To tag)
+
+	-- handle retransmissions
+	if KSR.tmx.t_precheck_trans()>0 then
+		KSR.tm.t_check_trans();
+		return 1;
+	end
+	if KSR.tm.t_check_trans()==0 then return 1 end
+
+	-- authentication
+	ksr_route_auth();
+
+	-- record routing for dialog forming requests (in case they are routed)
+	-- - remove preloaded route headers
+	KSR.hdr.remove("Route");
+	-- if INVITE or SUBSCRIBE
+	if KSR.is_method_in("IS") then
+		KSR.rr.record_route();
+	end
+
+	-- account only INVITEs
+	if KSR.is_INVITE() then
+		KSR.setflag(FLT_ACC); -- do accounting
+	end
+
+	-- dispatch requests to foreign domains
+	ksr_route_sipout();
+
+	-- -- requests for my local domains
+
+	-- handle registrations
+	ksr_route_registrar();
+
+	if KSR.corex.has_ruri_user() < 0 then
+		-- request with no Username in RURI
+		KSR.sl.sl_send_reply(484,"Address Incomplete");
+		return 1;
+	end
+
+	-- user location service
+	ksr_route_location();
+
+	return 1;
+end
+
+-- wrapper around tm relay function
+function ksr_route_relay()
+	-- enable additional event routes for forwarded requests
+	-- - serial forking, RTP relaying handling, a.s.o.
+	if KSR.is_method_in("IBSU") then
+		if KSR.tm.t_is_set("branch_route")<0 then
+			KSR.tm.t_on_branch("ksr_branch_manage");
+		end
+	end
+	if KSR.is_method_in("ISU") then
+		if KSR.tm.t_is_set("onreply_route")<0 then
+			KSR.tm.t_on_reply("ksr_onreply_manage");
+		end
+	end
+
+	if KSR.is_INVITE() then
+		if KSR.tm.t_is_set("failure_route")<0 then
+			KSR.tm.t_on_failure("ksr_failure_manage");
+		end
+	end
+
+	if KSR.tm.t_relay()<0 then
+		KSR.sl.sl_reply_error();
+	end
+	KSR.x.exit();
+end
+
+
+-- Per SIP request initial checks
+function ksr_route_reqinit()
+	if not KSR.is_myself_srcip() then
+		if not KSR.htable.sht_has_name("ipban", "eq", K_si) then
+			-- ip is already blocked
+			KSR.dbg("request from blocked IP - " .. K_rm
+					.. " from " .. K_fu .. " (SRC:" .. K_su .. "\n");
+			KSR.x.exit();
+		end
+		if KSR.pike.pike_check_req()<0 then
+			KSR.err("ALERT: pike blocking " .. K_rm
+					.. " from " .. K_fu .. " (SRC:" .. K_su .. "\n");
+			KSR.htable.sht_seti("ipban", K_si, 1);
+			KSR.x.exit();
+		end
+	end
+	if KSR.corex.has_user_agent() then
+		if string.find(K_ua, "friendly-scanner")
+				or string.find(K_ua, "sipcli") then
+			KSR.sl.sl_send_reply(200, "OK");
+			KSR.x.exit();
+		end
+	end
+
+	if KSR.maxfwd.process_maxfwd(10) < 0 then
+		KSR.sl.sl_send_reply(483,"Too Many Hops");
+		KSR.x.exit();
+	end
+
+	if KSR.is_OPTIONS()
+			and KSR.is_myself_ruri()
+			and KSR.corex.has_ruri_user() < 0 then
+		KSR.sl.sl_send_reply(200,"Keepalive");
+		KSR.x.exit();
+	end
+
+	if KSR.sanity.sanity_check(1511, 7)<0 then
+		KSR.err("Malformed SIP message from src addr: "
+				.. K_su .."\n");
+		KSR.x.exit();
+	end
+
+end
+
+
+-- Handle requests within SIP dialogs
+function ksr_route_withindlg()
+	if KSR.siputils.has_totag()<0 then return 1; end
+
+	-- sequential request withing a dialog should
+	-- take the path determined by record-routing
+	if KSR.rr.loose_route()>0 then
+		ksr_route_dlguri();
+		if KSR.is_BYE() then
+			KSR.setflag(FLT_ACC); -- do accounting ...
+			KSR.setflag(FLT_ACCFAILED); -- ... even if the transaction fails
+		elseif KSR.is_ACK() then
+			-- ACK is forwarded statelessly
+			ksr_route_natmanage();
+		elseif  KSR.is_NOTIFY() then
+			-- Add Record-Route for in-dialog NOTIFY as per RFC 6665.
+			KSR.rr.record_route();
+		end
+		ksr_route_relay();
+		KSR.x.exit();
+	end
+	if KSR.is_ACK() then
+		if KSR.tm.t_check_trans() >0 then
+			-- no loose-route, but stateful ACK;
+			-- must be an ACK after a 487
+			-- or e.g. 404 from upstream server
+			ksr_route_relay();
+			KSR.x.exit();
+		else
+			-- ACK without matching transaction ... ignore and discard
+			KSR.x.exit();
+		end
+	end
+	KSR.sl.sl_send_reply(404, "Not here");
+	KSR.x.exit();
+end
+
+-- Handle SIP registrations
+function ksr_route_registrar()
+	if not KSR.is_REGISTER() then return 1; end
+	if KSR.isflagset(FLT_NATS) then
+		KSR.setbflag(FLB_NATB);
+		-- do SIP NAT pinging
+		KSR.setbflag(FLB_NATSIPPING);
+	end
+	if KSR.registrar.save("location", 0)<0 then
+		KSR.sl.sl_reply_error();
+	end
+	KSR.x.exit();
+end
+
+-- User location service
+function ksr_route_location()
+	local rc = KSR.registrar.lookup("location");
+	if rc<0 then
+		KSR.tm.t_newtran();
+		if rc==-1 or rc==-3 then
+			KSR.sl.send_reply("404", "Not Found");
+			KSR.x.exit();
+		elseif rc==-2 then
+			KSR.sl.send_reply("405", "Method Not Allowed");
+			KSR.x.exit();
+		end
+	end
+
+	-- when routing via usrloc, log the missed calls also
+	if KSR.is_INVITE() then
+		KSR.setflag(FLT_ACCMISSED);
+	end
+
+	ksr_route_relay();
+	KSR.x.exit();
+end
+
+
+-- IP authorization and user uthentication
+function ksr_route_auth()
+
+	if not KSR.is_REGISTER() then
+		if KSR.permissions.allow_source_address(1)>0 then
+			-- source IP allowed
+			return 1;
+		end
+	end
+
+	if KSR.is_REGISTER() or KSR.is_myself_furi() then
+		-- authenticate requests
+		if KSR.auth_db.auth_check(K_fd, "subscriber", 1)<0 then
+			KSR.auth.auth_challenge(K_fd, 0);
+			KSR.x.exit();
+		end
+		-- user authenticated - remove auth header
+		if not KSR.is_method_in("RP") then
+			KSR.auth.consume_credentials();
+		end
+	end
+
+	-- if caller is not local subscriber, then check if it calls
+	-- a local destination, otherwise deny, not an open relay here
+	if (not KSR.is_myself_furi())
+			and (not KSR.is_myself_ruri()) then
+		KSR.sl.sl_send_reply(403,"Not relaying");
+		KSR.x.exit();
+	end
+
+	return 1;
+end
+
+-- Caller NAT detection
+function ksr_route_natdetect()
+	KSR.force_rport();
+	if KSR.nathelper.nat_uac_test(19)>0 then
+		if KSR.is_REGISTER() then
+			KSR.nathelper.fix_nated_register();
+		elseif KSR.siputils.is_first_hop()>0 then
+			KSR.nathelper.set_contact_alias();
+		end
+		KSR.setflag(FLT_NATS);
+	end
+	return 1;
+end
+
+-- RTPProxy control
+function ksr_route_natmanage()
+	if KSR.siputils.is_request()>0 then
+		if KSR.siputils.has_totag()>0 then
+			if KSR.rr.check_route_param("nat=yes")>0 then
+				KSR.setbflag(FLB_NATB);
+			end
+		end
+	end
+	if (not (KSR.isflagset(FLT_NATS) or KSR.isbflagset(FLB_NATB))) then
+		return 1;
+	end
+
+	KSR.rtpproxy.rtpproxy_manage("co");
+
+	if KSR.siputils.is_request()>0 then
+		if KSR.siputils.has_totag()<0 then
+			if KSR.tmx.t_is_branch_route()>0 then
+				KSR.rr.add_rr_param(";nat=yes");
+			end
+		end
+	end
+	if KSR.siputils.is_reply()>0 then
+		if KSR.isbflagset(FLB_NATB) then
+			KSR.nathelper.set_contact_alias();
+		end
+	end
+	return 1;
+end
+
+-- URI update for dialog requests
+function ksr_route_dlguri()
+	if not KSR.isdsturiset() then
+		KSR.nathelper.handle_ruri_alias();
+	end
+	return 1;
+end
+
+-- Routing to foreign domains
+function ksr_route_sipout()
+	if KSR.is_myself_ruri() then return 1; end
+
+	KSR.hdr.append("P-Hint: outbound\r\n");
+	ksr_route_relay();
+	KSR.x.exit();
+end
+
+-- Manage outgoing branches
+-- equivalent of branch_route[...]{}
+function ksr_branch_manage()
+	KSR.dbg("new branch [".. KSR.pv.get("$T_branch_idx")
+				.. "] to ".. KSR.pv.get("$ru") .. "\n");
+	ksr_route_natmanage();
+	return 1;
+end
+
+-- Manage incoming replies
+-- equivalent of onreply_route[...]{}
+function ksr_onreply_manage()
+	KSR.dbg("incoming reply\n");
+	local scode = KSR.pv.get("$rs");
+	if scode>100 and scode<299 then
+		ksr_route_natmanage();
+	end
+	return 1;
+end
+
+-- Manage failure routing cases
+-- equivalent of failure_route[...]{}
+function ksr_failure_manage()
+	ksr_route_natmanage();
+
+	if KSR.tm.t_is_canceled()>0 then
+		return 1;
+	end
+	return 1;
+end
+
+-- SIP response handling
+-- equivalent of reply_route{}
+function ksr_reply_route()
+	KSR.info("===== response - from kamailio lua script\n");
+	return 1;
+end
+
+-- set common SIP attributes in global vars
+function ksr_set_sipvars()
+	K_si = KSR.pv.gete("$si");
+	K_su = KSR.pv.gete("$su");
+	K_fu = KSR.pv.gete("$fu");
+	K_fd = KSR.pv.gete("$fd");
+	K_rm = KSR.pv.gete("$rm");
+	K_ua = KSR.pv.gete("$ua");
+end
+
+</code>
+
+==== Kamailio Start Commands ====
+
+Executed when running with native scripting language:
 
 <code>
 ./src/kamailio -f ../etc/kamailio-basic-kemi.cfg -L src/modules/ -w . -A WITH_CFGLUA -a no -E -e -dd 2>&1 | tee /tmp/kamailio-register-lua.txt
+</code>
 
+Executed when running with Lua scripting language:
+
+<code>
 ./src/kamailio -f ../etc/kamailio-basic-kemi.cfg -L src/modules/ -w . -a no -E -e -dd 2>&1 | tee /tmp/kamailio-register-native.txt
 
 </code>
 
 ===== Results =====
+
+The following metrics are collected for each test:
+
+  * cnt - number of SIP messages processed (counter)
+  * sum - the sum of execution times for request_route or ksr_request_route() (microseconds)
+  * min - the minimum execution time for request_route or ksr_request_route() (microseconds)
+  * max - the maximum execution time for request_route or ksr_request_route() (microseconds)
+  * avg - the average execution time for request_route or ksr_request_route() (microseconds)
 
 <code>
 $ awk -f kamailio-exec-report.awk /tmp/kamailio-register-native.txt
