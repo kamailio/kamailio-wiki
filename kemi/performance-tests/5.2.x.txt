@@ -125,6 +125,8 @@ Configuration files are presented in the next sections.
 
 ==== Common Config File ====
 
+File: ../etc/kamailio-basic-kemi.cfg
+
 <code c>
 #!KAMAILIO
 #
@@ -490,7 +492,7 @@ cfgengine "python"
 
 #!ifdef WITH_CFGLUA
 modparam("app_lua", "reload", 1)
-modparam("app_lua", "load", "/home/dublin/work/sip/esr/etc/kamailio-basic-kemi-lua.lua")
+modparam("app_lua", "load", "../etc/kamailio-basic-kemi-lua.lua")
 cfgengine "lua"
 #!else
 
@@ -503,7 +505,7 @@ modparam("app_sqlang", "load", "/usr/local/etc/kamailio/kamailio-basic-kemi-sqla
 cfgengine "sqlang"
 #!else
 cfgengine "native"
-include_file "/home/dublin/work/sip/esr/etc/kamailio-basic-kemi-native.cfg"
+include_file "../etc/kamailio-basic-kemi-native.cfg"
 #!endif
 
 #!endif
@@ -515,6 +517,8 @@ include_file "/home/dublin/work/sip/esr/etc/kamailio-basic-kemi-native.cfg"
 </code>
 
 ==== Native Scripting Routing Blocks ====
+
+File: ../etc/kamailio-basic-kemi-native.cfg
 
 <code c>
 ####### Routing Logic ########
@@ -850,6 +854,8 @@ failure_route[MANAGE_FAILURE] {
 </code>
 
 ==== Lua Scripting Routing Functions ====
+
+File: ../etc/kamailio-basic-kemi-lua.lua
 
 <code lua>
 -- Kamailio - equivalent of routing blocks in Lua
@@ -1355,3 +1361,5 @@ min:  23
 max:  2442
 avg:  69.5343
 </code>
+
+===== Remarks =====
