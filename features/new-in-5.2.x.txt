@@ -49,11 +49,11 @@ Presence User Agent implementation with JSON messages.
 
 ===== New in Old Modules =====
 
-===== acc =====
+==== acc ====
 
   * use acc.time_mode to save cdrs in gmt time
 
-===== app_lua =====
+==== app_lua ====
 
   * LUAJIT variable to build agains LuaJIT compiler
   * defaut value for reload parameter set to 1
