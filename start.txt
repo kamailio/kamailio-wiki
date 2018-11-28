@@ -28,6 +28,7 @@ Few guidelines to edit the wiki:
 
   * [[http://kamailio.org/docs/tutorials/devel/kamailio-install-guide-git/|Install Kamailio Devel Version From GIT (html)]]
   * [[install:devel:git|Install Kamailio Devel Version From GIT (wiki)]]
+  * [[http://kamailio.org/docs/tutorials/5.2.x/kamailio-install-guide-git/|Install Kamailio v5.2.x From GIT (html)]]
   * [[http://kamailio.org/docs/tutorials/5.1.x/kamailio-install-guide-git/|Install Kamailio v5.1.x From GIT (html)]]
   * [[http://kamailio.org/docs/tutorials/5.0.x/kamailio-install-guide-git/|Install Kamailio v5.0.x From GIT (html)]]
   * [[install:4.4.x:git|Install Kamailio v4.4.x From GIT]]
