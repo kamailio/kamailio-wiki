@@ -81,7 +81,22 @@ $log-level $log-prefix $log-message
 Run following SQL statements in MySQL client to upgrade database structure from v5.1 to v5.2:
 
 <code sql>
+-- location table - optional update
+ALTER TABLE location_attrs CHANGE COLUMN avalue avalue varchar(512) NOT NULL DEFAULT '';
+
+-- presentity table
+ALTER TABLE presentity CHANGE COLUMN etag etag varchar(128) NOT NULL;
 ALTER TABLE presentity ADD COLUMN ruid VARCHAR(64);
 CREATE UNIQUE INDEX ruid_idx ON presentity (ruid);
 UPDATE version SET table_version=5 WHERE table_name='presentity';
+
+-- pua table - optional update
+ALTER TABLE pua CHANGE COLUMN etag etag varchar(128) NOT NULL;
+
+-- subscriber table - optional update
+ALTER TABLE subscriber DROP COLUMN rpid;
+ALTER TABLE subscriber DROP COLUMN email_address;
+
+-- xcap table - optional update
+ALTER TABLE xcap CHANGE COLUMN etag etag varchar(128) NOT NULL;
 </code>
