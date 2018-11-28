@@ -42,6 +42,18 @@ Starting with v5.2.0, the module is using XAVPs instead of those AVPs, the relat
 
 See: https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html
 
+=== presence ===
+
+A new column 'ruid' has been added to the **presentity** table. This table holds the records corresponding to the PUBLISH requests sent by UAs.
+
+The cleanest way to upgrade is:
+
+  * stop kamailio 5.1
+  * delete records from presentity table
+  * update the structure of presentity table
+  * start kamailio 5.2
+
+The UAs will send new PUBLISH periodically, so the table will get populated again. If you want to shorten the interval for PUBLISH requests, set max_expire parameter for presence module, then restart and wait some time until all UAs send another PUBLISH. Do the upgrade as described above, and then set back the max_expire to the older value.
 
 ==== Removed Modules ====
 
