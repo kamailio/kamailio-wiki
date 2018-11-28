@@ -301,7 +301,7 @@ Presence User Agent implementation with JSON messages.
 
   * added sip_capture_forward(uri) 
     * forward the hep packet to another address
-    * the address has to bbe provided as parameter in sip uri format
+    * the address has to be provided as parameter in sip uri format
     * the function should be used inside event_route[sipcapture:request]
 <code c>
     event_route[sipcapture:request] {
