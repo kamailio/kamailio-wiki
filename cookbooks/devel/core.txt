@@ -3339,8 +3339,9 @@ For numbers, one can use:
   * & : bitwise AND
   * ^ : bitwise XOR
   * ~ : bitwise NOT
-  * << : bitwise left shift
-  * >> : bitwise right shift
+  * <nowiki><<</nowiki> : bitwise left shift
+  * <nowiki>>></nowiki> : bitwise right shift
+
 
 Example:
 
