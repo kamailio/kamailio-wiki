@@ -44,7 +44,7 @@ See: https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html
 
 === presence ===
 
-A new column 'ruid' has been added to the **presentity** table. This table holds the records corresponding to the PUBLISH requests sent by UAs.
+A new column 'ruid' has been added to the **presentity** table (used for distributing presence documents via dmq). This table holds the records corresponding to the PUBLISH requests sent by UAs.
 
 The cleanest way to upgrade is:
 
