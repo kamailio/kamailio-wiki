@@ -1419,9 +1419,9 @@ Mentioning it again, the target of the tests was not to measure the capacity of 
 
 Testing was done on the same system, running first the test with native configuration file and immediately after, the one for Lua scripting.
 
-It was observed that the execution of native scripting routing blocks and Lua scripting functions takes more or less same time. Sometimes is native scripting slightly faster, other times is Lua scripting slightly faster.
+It was observed that the execution of native scripting routing blocks and Lua scripting functions takes more or less same time. Sometimes is native scripting slightly faster, other times is Lua scripting slightly faster. The average (for both native and Lua scripts) is in the range of 60 to 80 microseconds ( 1 / 1 000 000 of a second) for processing the registration request. The minimum reflects more what it takes for the first REGISTER request without authorization header, which is quickly challenged with 401 response. The maximum reflect the processing of the REGISTER request with valid authorization header, which does a query to database to fetch the password as well as store/update the record in the location hash table (writing to database on timer - usrloc db_mode 2).
 
-There are variable number of retranmissions, being the reason for having cnt higher than 60000, a matter of sipp being able to match the response with the request at this high pace of stress testing (4 000 registrations per second, with a limit of 10 000 transactions at the same time, stopping after 20 000 sent messages). Note that each registration is challenged for authentication, so it is resent with authorization header.
+There are variable number of retransmissions, being the reason for having cnt higher than 60000, a matter of sipp being able to match the response with the request at this high pace of stress testing (4 000 registrations per second, with a limit of 10 000 transactions at the same time, stopping after 20 000 sent messages). Note that each registration is challenged for authentication, so it is resent with authorization header.
 
 Comparing with the state of KEMI exports for version 5.1.x, in the v5.2.x were introduced some functions to be the equivalent of some conditions done with core keywords.
 
@@ -1438,3 +1438,5 @@ if KSR.is_myself_ruri() then
 </code>
 
 The plan is to run the tests for Python as well as re-run Lua tests using LuaJIT interpreter instead of the standard Lua (support for LuaJIT was also added for v5.2.x).
+
+
