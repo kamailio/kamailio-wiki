@@ -1276,6 +1276,43 @@ The following metrics are collected for each test:
   * max - the maximum execution time for request_route or ksr_request_route() (microseconds)
   * avg - the average execution time for request_route or ksr_request_route() (microseconds)
 
+The metrics are extracted from the log messages using the next awk script:
+
+<code awk>
+BEGIN {
+        sum = 0
+        avg = 0
+        min = 1000000
+        max = 0
+        cnt = 0
+}
+
+/request-route executed/ {
+        sum += $(NF-1)
+        cnt += 1
+        if(min > $(NF-1)) {
+                min = $(NF-1)
+        }
+        if(max < $(NF-1)) {
+                max = $(NF-1)
+        }
+}
+
+END {
+        print "cnt: ", cnt
+        print "sum: ", sum
+        print "min: ", min
+        print "max: ", max
+        if(cnt>0) {
+                avg = sum/cnt
+        }
+        print "avg: ", avg
+}
+
+</code>
+
+The results of several iterations running the tests:
+
 <code>
 $ awk -f kamailio-exec-report.awk /tmp/kamailio-register-native.txt
 cnt:  63157
@@ -1348,6 +1385,20 @@ max:  1852
 avg:  62.8226
 
 $ awk -f kamailio-exec-report.awk /tmp/kamailio-register-native.txt
+cnt:  63616
+sum:  4255858
+min:  17
+max:  1619
+avg:  66.8992
+
+$ awk -f kamailio-exec-report.awk /tmp/kamailio-register-lua.txt
+cnt:  61445
+sum:  4202427
+min:  23
+max:  1750
+avg:  68.3933
+
+$ awk -f kamailio-exec-report.awk /tmp/kamailio-register-native.txt
 cnt:  63595
 sum:  4426750
 min:  17
@@ -1363,3 +1414,27 @@ avg:  69.5343
 </code>
 
 ===== Remarks =====
+
+Mentioning it again, the target of the tests was not to measure the capacity of Kamailio processing, but how the execution time differs in more or less same conditions between native scripting configuration file and KEMI alternatives, so far being done for Lua scripting.
+
+Testing was done on the same system, running first the test with native configuration file and immediately after, the one for Lua scripting.
+
+It was observed that the execution of native scripting routing blocks and Lua scripting functions takes more or less same time. Sometimes is native scripting slightly faster, other times is Lua scripting slightly faster.
+
+There are variable number of retranmissions, being the reason for having cnt higher than 60000, a matter of sipp being able to match the response with the request at this high pace of stress testing (4 000 registrations per second, with a limit of 10 000 transactions at the same time, stopping after 20 000 sent messages). Note that each registration is challenged for authentication, so it is resent with authorization header.
+
+Comparing with the state of KEMI exports for version 5.1.x, in the v5.2.x were introduced some functions to be the equivalent of some conditions done with core keywords.
+
+For example, in the native scripting:
+
+<code c>
+if(uri == myself)
+</code>
+
+can be done in a KEMI scripting language with:
+
+<code lua>
+if KSR.is_myself_ruri() then
+</code>
+
+The plan is to run the tests for Python as well as re-run Lua tests using LuaJIT interpreter instead of the standard Lua (support for LuaJIT was also added for v5.2.x).
