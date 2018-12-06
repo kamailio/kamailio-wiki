@@ -1411,6 +1411,42 @@ sum:  4248753
 min:  23
 max:  2442
 avg:  69.5343
+
+$ awk -f kamailio-exec-report.awk /tmp/kamailio-register-python.txt 
+cnt:  60846
+sum:  4432028
+min:  22
+max:  2628
+avg:  72.8401
+
+$ awk -f kamailio-exec-report.awk /tmp/kamailio-register-python.txt 
+cnt:  61031
+sum:  4353501
+min:  23
+max:  3005
+avg:  71.3326
+
+$ awk -f kamailio-exec-report.awk /tmp/kamailio-register-python.txt 
+cnt:  60785
+sum:  4400362
+min:  20
+max:  2093
+avg:  72.3922
+
+$ awk -f kamailio-exec-report.awk /tmp/kamailio-register-python.txt 
+cnt:  60836
+sum:  4427855
+min:  23
+max:  3441
+avg:  72.7835
+
+$ awk -f kamailio-exec-report.awk /tmp/kamailio-register-python.txt 
+cnt:  60813
+sum:  4591943
+min:  20
+max:  1751
+avg:  75.5092
+
 </code>
 
 ===== Remarks =====
