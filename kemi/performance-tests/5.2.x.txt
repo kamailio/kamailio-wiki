@@ -1251,7 +1251,7 @@ end
 
 </code>
 
-==== Lua Scripting Routing Functions ====
+==== Python Scripting Routing Functions ====
 
 File: ../etc/kamailio-basic-kemi-python.py
 
