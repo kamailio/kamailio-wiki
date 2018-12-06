@@ -111,6 +111,24 @@ test8;192.168.178.98;[authentication username=test password=test8];
 test9;192.168.178.98;[authentication username=test password=test9];
 </code>
 
+These users have to be added to Kamailio subscriber table. To add them from the source code tree of Kamailio:
+
+<code>
+cd utils/kamctl/
+DBENGINE=MYSQL ./kamdbctl create
+DBENGINE=MYSQL ./kamctl add test0@127.0.0.1 test0
+DBENGINE=MYSQL ./kamctl add test1@127.0.0.1 test1
+DBENGINE=MYSQL ./kamctl add test2@127.0.0.1 test2
+DBENGINE=MYSQL ./kamctl add test3@127.0.0.1 test3
+DBENGINE=MYSQL ./kamctl add test4@127.0.0.1 test4
+DBENGINE=MYSQL ./kamctl add test5@127.0.0.1 test5
+DBENGINE=MYSQL ./kamctl add test6@127.0.0.1 test6
+DBENGINE=MYSQL ./kamctl add test7@127.0.0.1 test7
+DBENGINE=MYSQL ./kamctl add test8@127.0.0.1 test8
+DBENGINE=MYSQL ./kamctl add test9@127.0.0.1 test9
+DBENGINE=MYSQL ./kamctl db show subscriber
+</code>
+
 ===== SIPP Testing Command =====
 
 <code>
