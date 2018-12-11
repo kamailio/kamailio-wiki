@@ -1679,7 +1679,7 @@ Executed when running with Lua scripting language:
 ./src/kamailio -f ../etc/kamailio-basic-kemi.cfg -L src/modules/ -w . -A WITH_CFGLUA -a no -E -e -dd 2>&1 | tee /tmp/kamailio-register-lua.txt
 </code>
 
-Executed when running with Lua scripting language:
+Executed when running with Python scripting language:
 
 <code>
 ./src/kamailio -f ../etc/kamailio-basic-kemi.cfg -L src/modules/ -w . -A WITH_CFGPYTHON -a no -E -e -dd 2>&1 | tee /tmp/kamailio-register-python.txt
