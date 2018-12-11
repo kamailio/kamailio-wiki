@@ -504,7 +504,7 @@ modparam("htable", "htable", "ipban=>size=8;autoexpire=300;")
 #!endif
 
 #!ifdef WITH_CFGPYTHON
-modparam("app_python", "script_name", "/usr/local/etc/kamailio/kamailio-basic-kemi-python.py")
+modparam("app_python", "script_name", "../etc/kamailio-basic-kemi-python.py")
 cfgengine "python"
 #!else
 
@@ -515,11 +515,11 @@ cfgengine "lua"
 #!else
 
 #!ifdef WITH_CFGJSDT
-modparam("app_jsdt", "load", "/usr/local/etc/kamailio/kamailio-basic-kemi-jsdt.js")
+modparam("app_jsdt", "load", "../etc/kamailio-basic-kemi-jsdt.js")
 cfgengine "jsdt"
 #!else
 #!ifdef WITH_CFGSQLANG
-modparam("app_sqlang", "load", "/usr/local/etc/kamailio/kamailio-basic-kemi-sqlang.sq")
+modparam("app_sqlang", "load", "../etc/kamailio-basic-kemi-sqlang.sq")
 cfgengine "sqlang"
 #!else
 cfgengine "native"
