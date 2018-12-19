@@ -17,7 +17,11 @@ Embedded RTP and media processing functionalities for Kamailio
 
   * https://www.kamailio.org/docs/modules/devel/modules/rtp_media_server.html
 
+==== secfilter ====
 
+Filters to allow/block using whitelists/blacklist based on user agents, IP addresses, countries, domains and users. SQL injection attacks prevention. Blacklist of destinations where the called number is not allowed.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/secfilter.html
 ===== New in Old Modules =====
 
 ===== New in Core =====
