@@ -2868,6 +2868,8 @@ group.variable = value desc "description"
 
 </code>
 
+The value can be a quoted string or integer number.
+
 Example:
 
 <code c>
