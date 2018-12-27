@@ -46,6 +46,8 @@ alias="sip.mydomain.com"
 listen=udp:10.0.0.10:5060
 </code>
 
+Usually setting a parameter is ended by end of line, but it can be also ended with **;** (semicolon). This should be used when the grammar of a parameter allows values on multiple lines (like **listen** or **alias**) and the next line creates a conflict by being swallowed as part of value for previous parameter.
+
 ==== Modules Settings Section ====
 
 This is the second section of the configuration file, containing the directives to load modules and set their parameters.
@@ -1885,7 +1887,18 @@ Note: For NAT traversal of TCP clients it is better to not use tcp_accept_aliase
 Default is "no" (off)
 
    tcp_accept_aliases= yes|no
+   
+==== tcp_accept_haproxy ====
 
+Enable the internal TCP stack to expect a PROXY-protocol-formatted header as the first message of the connection. Both the human-readable (v1) and binary-encoded (v2) variants of the protocol are supported. This option is typically useful if you are behind a TCP load-balancer, such as HAProxy or an AWS' ELB, and allows the load-balancer to provide connection information regarding the upstream client. This enables the use of IP-based ACLs, even behind a load-balancer.
+
+Please note that enabling this option will reject any inbound TCP connection that does not conform to the PROXY-protocol spec.
+
+Default value is **no**.
+
+<code c>
+tcp_accept_haproxy=yes
+</code>
 
 ==== tcp_accept_hep3 ====
 
