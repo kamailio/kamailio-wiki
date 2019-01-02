@@ -3066,7 +3066,7 @@ reply_route {
 ==== onreply_route ====
 
 
-SIP reply routing block executed by **tm** module. It contains a set of actions to be taken for SIP replies in the contect of an active transaction..
+SIP reply routing block executed by **tm** module. It contains a set of actions to be taken for SIP replies in the contect of an active transaction.
 
 The 'onreply_route' must be armed for the SIP requests whose replies should be processed within it, via t_on_reply("onreply_route_index").
 
