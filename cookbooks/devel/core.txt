@@ -3070,7 +3070,7 @@ SIP reply routing block executed by **tm** module. It contains a set of actions 
 
 The 'onreply_route' must be armed for the SIP requests whose replies should be processed within it, via t_on_reply("onreply_route_index").
 
-Main 'onreply_route' block is executed before a possible tm 'onreply_route' block.
+Core 'reply_route' block is executed before a possible **tm** 'onreply_route' block.
 
 <code c>
   request_route {
