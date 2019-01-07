@@ -1872,9 +1872,9 @@ avg:  75.5092
 
 ===== Remarks =====
 
-Mentioning it again, the target of the tests was not to measure the capacity of Kamailio processing, but how the execution time differs in more or less same conditions between native scripting configuration file and KEMI alternatives, so far being done for Lua scripting.
+Mentioning it again, the target of the tests was not to measure the capacity of Kamailio processing, but how the execution time differs in more or less same conditions between native scripting configuration file and KEMI alternatives, so far being done for Lua and Python scripting.
 
-Testing was done on the same system, running first the test with native configuration file and immediately after, the one for Lua scripting.
+Testing was done on the same system, running first the test with native configuration file and immediately after, the one for Lua or Python scripting.
 
 It was observed that the execution of native scripting routing blocks and Lua scripting functions takes more or less same time. Sometimes is native scripting slightly faster, other times is Lua scripting slightly faster. The average (for both native and Lua scripts) is in the range of 60 to 80 microseconds ( 1 / 1 000 000 of a second) for processing the registration request. The minimum reflects more what it takes for the first REGISTER request without authorization header, which is quickly challenged with 401 response. The maximum reflect the processing of the REGISTER request with valid authorization header, which does a query to database to fetch the password as well as store/update the record in the location hash table (writing to database on timer - usrloc db_mode 2).
 
