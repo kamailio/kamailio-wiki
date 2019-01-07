@@ -24,6 +24,12 @@ Filters to allow/block using whitelists/blacklist based on user agents, IP addre
   * https://www.kamailio.org/docs/modules/devel/modules/secfilter.html
 ===== New in Old Modules =====
 
+==== cnxcc ====
+
+Added a new param in the cnxcc_set_max_credit() function to set the connect cost of a call.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/cnxcc.html#cnxcc.f.set_max_credit
+
 ===== New in Core =====
 
 ==== Interpreter ====
