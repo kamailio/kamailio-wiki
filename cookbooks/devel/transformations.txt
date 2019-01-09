@@ -711,3 +711,18 @@ For example,
 
 $(hu{url.querystring}) => "this=is&the=querystring"
 </code>
+
+===== JSON Transformations =====
+
+<fc #0000ff>This transformation class is exported by **json** module.</fc>
+
+
+==== {json.parse} ====
+
+You can use the transformation to extract values from the json structured pseudo-variables
+
+<code>
+
+$var(Custom-Data) = $(rb{json.parse,Custom-Data});
+
+</code>
