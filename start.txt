@@ -45,6 +45,9 @@ Few guidelines to edit the wiki:
   * [[http://kamailio.org/docs/tutorials/devel/kamailio-install-guide-deb/|Install Kamailio On Debian Or Ubuntu (html)]]
   * [[install:stable:debian|Install Kamailio On Debian]]
 
+==== Installation On Containers ====
+
+  * [[install:container:docker|Install Kamailio On Docker]]
 ==== Upgrade ====
 
   * [[install:upgrade:stable-to-devel|Upgrade Kamailio stable to devel]]
