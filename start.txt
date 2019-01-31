@@ -39,21 +39,6 @@ Few guidelines to edit the wiki:
   * [[install:4.0.x:debian|Install Kamailio v4.0.x By Building Debian Packages]]
   * [[install:3.2.x:debian|Install Kamailio v3.2.x By Building Debian Packages]]
 
-==== Installation using Docker ====
-kamailio/kamailio docker image is Debian based. If you know Debian then for you may be more easy extend this image.
-This primary dist that is supported by kamailio team.
-
-kamailio/kamailio-ci docker image is Alpine dist based. Alpine dist allow create more thin and secure docker images.
-Please check kamailio images sizes
-  - https://cloud.docker.com/u/kamailio/repository/docker/kamailio/kamailio/tags
-  - https://cloud.docker.com/u/kamailio/repository/docker/kamailio/kamailio-ci/tags
-
-and vulnerabilities
-  - https://hub.docker.com/_/debian/scans/library/debian/9.6
-  - https://hub.docker.com/_/alpine/scans/library/alpine/3.8
-
-  * [[https://store.docker.com/community/images/kamailio/kamailio-ci|Installation Alpine based images (html)]]
-  * [[https://store.docker.com/community/images/kamailio/kamailio|Installation Debian based images (html)]]
 
 ==== Installation From Packages ====
 
