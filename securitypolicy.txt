@@ -12,7 +12,7 @@ A security vulnerability is (for example) when a user of Kamailio can cause Kama
 
 If you believe there's a security vulnerability, please don't use the public forums. Send an e-mail to security@kamailio.org and the issue will be handled properly. 
 
-  - Send an e-mail to security@kamailio.org and include the following information
+  - Send an e-mail to security at kamailio dot org and include the following information
      * A summary
      * A detailed explanation of how this issue can be exploited and/or reproduced
   - A member of the Kamailio Security Team will respond
