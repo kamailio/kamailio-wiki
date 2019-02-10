@@ -198,7 +198,7 @@ Old Exports APIs:
   * [[devel:how-to:main|Mini How-To Guides for Development]]
   * [[devel:module-docbook-readme|Writing Docbook Files for Module Readme]]
   * [[devel:git-access|Developer Git Access]]
-  * [[securitypolicy|Process for handling Security Vulnerabilities (proposal)]]
+  * [[security:policy|Process for handling Security Vulnerabilities]]
   * [[devel:config-engines|Configuration File Engines]]
   * [[devel:troubleshooting-gdb-scripts|Troubleshooting - GDB Scripts]]
 
