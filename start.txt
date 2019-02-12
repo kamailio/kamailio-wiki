@@ -46,6 +46,7 @@ Few guidelines to edit the wiki:
 ==== Installation On Containers ====
 
   * [[install:container:docker|Install Kamailio On Docker]]
+  * [[https://github.com/ghrst/Kamailio-HA|Install Kamailio using Ansible and Docker]]
 ==== Upgrade ====
 
   * [[install:upgrade:stable-to-devel|Upgrade Kamailio stable to devel]]
