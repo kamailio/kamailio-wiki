@@ -46,6 +46,17 @@ alias="sip.mydomain.com"
 listen=udp:10.0.0.10:5060
 </code>
 
+Usually setting a parameter is ended by end of line, but it can be also ended with **;** (semicolon). This should be used when the grammar of a parameter allows values on multiple lines (like **listen** or **alias**) and the next line creates a conflict by being swallowed as part of value for previous parameter.
+
+<code c>
+alias="sip.mydomain.com";
+</code>
+
+If you want to use a reserved config keyword as part of a parameter, you need to enclose it in quotes. See the example below for the keyword "dns".
+
+<code c>
+listen=tcp:127.0.0.1:5060 advertise "sip.dns.example.com":5060
+</code>
 ==== Modules Settings Section ====
 
 This is the second section of the configuration file, containing the directives to load modules and set their parameters.
