@@ -52,6 +52,11 @@ Usually setting a parameter is ended by end of line, but it can be also ended wi
 alias="sip.mydomain.com";
 </code>
 
+If you want to use a reserved config keyword as part of a parameter, you need to enclose it in quotes. See the example below for the keyword "dns".
+
+<code c>
+listen=tcp:127.0.0.1:5060 advertise "sip.dns.example.com":5060
+</code>
 ==== Modules Settings Section ====
 
 This is the second section of the configuration file, containing the directives to load modules and set their parameters.
