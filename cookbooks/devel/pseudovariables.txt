@@ -2071,6 +2071,14 @@ if(phonenum_match("1-484-555-8888", "src")) {
 ===== $sruid - Unique ID =====
 
   * $sruid - return unique ID generated internally Kamailio
+
+===== $ltt(key) - Local To-Tag =====
+
+$ltt(key) - return local generated To-tag when Kamailio sends a reply
+
+    * $ltt(s) - the to-tag used in stateless replies
+    * $ltt(t) - the to-tag used in transaction stateful replies (transaction has to be created at that time, eg., by t_newtran() or in a branch/failure route, otherwise it returns $null)
+    * $ltt(x) - $ltt(t) if the transaction was created already, otherwise $ltt(s)
 ===== $C(xy) - Foreground and background colors =====
 
 $C(xy) - reference to an escape sequence. “x” represents the foreground color and “y” represents the background color.
