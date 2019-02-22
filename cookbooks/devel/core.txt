@@ -1439,7 +1439,7 @@ Example of usage:
 
 ==== route_locks_size ====
 
-Set the number of mutex locks to be used for synchonizing the execution of messages sharing the same Call-Id. In other words, enables Kamailio to execute sequentially the requests and replies received within the same dialog -- a new message received within the same dialog waits until the previous one is routed out.
+Set the number of mutex locks to be used for synchronizing the execution of messages sharing the same Call-Id. In other words, enables Kamailio to execute sequentially the requests and replies received within the same dialog -- a new message received within the same dialog waits until the previous one is routed out.
 
 For smaller impact on parallel processing, its value it should be at least twice the number of kamailio processes (children
 
