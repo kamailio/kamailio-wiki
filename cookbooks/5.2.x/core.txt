@@ -1435,6 +1435,18 @@ If it is set to 1, any local reply is sent to the IP address advertised in top m
 Example of usage:
 
     reply_to_via=0
+    
+==== route_locks_size ====
+
+Set the number of mutex locks to be used for synchronizing the execution of messages sharing the same Call-Id. In other words, enables Kamailio to execute sequentially the requests and replies received within the same dialog -- a new message received within the same dialog waits until the previous one is routed out.
+
+For smaller impact on parallel processing, its value it should be at least twice the number of kamailio processes (children
+
+Example:
+
+<code c>
+route_locks_size = 256
+</code>
 ==== server_id ====
 
 A configurable unique server id that can be used to discriminate server instances within a cluster of servers when all other information, such as IP addresses are the same.
