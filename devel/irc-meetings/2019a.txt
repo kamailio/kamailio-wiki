@@ -3,9 +3,11 @@
 Date:
   * **Proposed: 15:00 UTC, Thursday, Mar 07, 2019**
     * can attend: dcm
-    * cannot attend:
+    * cannot attend: vseva
   * Alternatives (add your id if you can attend)
-    * Mar 11, Monday: dcm
+    * Mar  4, Monday: vseva
+    * Mar  6, Wednesday: vseva 
+    * Mar 11, Monday: dcm, vseva
 
 Time of the meeting across the world:
   * 16:00 - Berlin, Germany
@@ -28,6 +30,7 @@ Participation is open to anyone, just join the IRC channel if you want to partic
 People adding notes in the agenda using abbreviations:
 
   * dcm - Daniel-Constantin Mierla
+  * vseva - Victor Seva (linuxmaniac)
 
 
 ===== Agenda =====
