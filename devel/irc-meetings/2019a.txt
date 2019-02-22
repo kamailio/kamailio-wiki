@@ -1,0 +1,60 @@
+====== IRC Devel Meeting - 2019-02-28 ======
+
+Date:
+  * **Proposed: 15:00 UTC, Tuesday, Feb 28, 2019**
+    * can attend: dcm
+    * cannot attend:
+  * Alternatives (add your id if you can attend)
+    * Mar 07: dcm
+
+Time of the meeting across the world:
+  * 16:00 - Berlin, Germany
+  * 15:00 - London, UK
+  * 10:00 - New York, USA
+  * 07:00 - Seattle, USA
+
+Utilities:
+  * [[http://www.timeanddate.com/worldclock/converter.html|Time Converter]]
+  * IRC webchat: http://webchat.freenode.net/
+  * IRC client apps: http://en.wikipedia.org/wiki/Internet_Relay_Chat#Clients
+
+Place:
+  * **#kamailio** IRC channel on **irc.freenode.net** server
+
+===== Participants =====
+
+Participation is open to anyone, just join the IRC channel if you want to participate.
+
+People adding notes in the agenda using abbreviations:
+
+  * dcm - Daniel-Constantin Mierla
+
+
+===== Agenda =====
+
+Kamailio Development Status:
+
+  * open issues (dcm)
+  * minor releases for 5.1 and 5.2 branches (dcm)
+  * end of maintenance for 5.0 branch
+
+Administration:
+
+  * servers maintenance
+  * community interaction and communication channels
+  * existing mailing lists review
+
+Kamailio 5.3 (next major release):
+
+  * roadmap
+  * features
+    * anything relevant that is missing?
+    * priorities
+
+Documentation:
+
+  * tutorials/cookbooks -- wiki vs mkdocs (github markdown)
+
+Collaborative Projects:
+
+  * development, unit testing, documentation, etc.
