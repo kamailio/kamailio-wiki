@@ -1,7 +1,7 @@
 ====== IRC Devel Meeting - 2019-02-28 ======
 
 Date:
-  * **Proposed: 15:00 UTC, Tuesday, Feb 28, 2019**
+  * **Proposed: 15:00 UTC, Thursday, Feb 28, 2019**
     * can attend: dcm
     * cannot attend:
   * Alternatives (add your id if you can attend)
