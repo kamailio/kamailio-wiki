@@ -1396,7 +1396,7 @@ Example of usage:
 
 ==== pv_buffer_size ====
 
-The size in bytes of internal buffer to print dynamic strings with pseudo-variables inside. The default value is 8192 (8kB).
+The size in bytes of internal buffer to print dynamic strings with pseudo-variables inside. The default value is 8192 (8kB). Please keep in mind that for xlog messages, there is a dedicated module parameter to set the internal buffer size.
 
 Example of usage:
 
