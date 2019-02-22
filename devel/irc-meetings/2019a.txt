@@ -1,11 +1,11 @@
-====== IRC Devel Meeting - 2019-02-28 ======
+====== IRC Devel Meeting - 2019-03-07 ======
 
 Date:
-  * **Proposed: 15:00 UTC, Thursday, Feb 28, 2019**
+  * **Proposed: 15:00 UTC, Thursday, Mar 07, 2019**
     * can attend: dcm
     * cannot attend:
   * Alternatives (add your id if you can attend)
-    * Mar 07: dcm
+    * Mar 11, Monday: dcm
 
 Time of the meeting across the world:
   * 16:00 - Berlin, Germany
