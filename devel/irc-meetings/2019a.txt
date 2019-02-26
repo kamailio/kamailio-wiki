@@ -1,13 +1,16 @@
-====== IRC Devel Meeting - 2019-03-07 ======
+====== IRC Devel Meeting - 2019-03-11 ======
 
 Date:
-  * **Proposed: 15:00 UTC, Thursday, Mar 07, 2019**
-    * can attend: dcm
-    * cannot attend: vseva
+  * **Proposed: 15:00 UTC, Monday, Mar 11, 2019**
+    * can attend: dcm, vseva
+    * cannot attend:
   * Alternatives (add your id if you can attend)
-    * Mar  4, Monday: vseva
-    * Mar  6, Wednesday: vseva 
-    * Mar 11, Monday: dcm, vseva
+    * Mar 04, Monday: vseva
+      * cannot attend: dcm
+    * Mar 06, Wednesday: vseva
+      * cannot attend: dcm
+    * Mar 07, Thursday: dcm
+      * cannot attend: vseva
 
 Time of the meeting across the world:
   * 16:00 - Berlin, Germany
@@ -53,6 +56,8 @@ Kamailio 5.3 (next major release):
   * features
     * anything relevant that is missing?
     * priorities
+  * default config with rtpengine
+  * packaging rtpengine on deb.kamailio.org and rpms ..
 
 Documentation:
 
