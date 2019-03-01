@@ -944,6 +944,20 @@ Example:
 kemi.onsend_route_callback="ksr_my_onsend_route"
 </code>
 
+==== kemi.received_route_callback ====
+
+Set the name of callback function in the KEMI script to be executed as the equivalent of `event_route[core:msg-received]` block (from the native configuration file). For execution, it also require to have the receiced_route_mode global parameter set to 1.
+
+Default value: none
+
+Set it to empty string or "none" to skip execution of this callback function.
+
+Example:
+
+<code c>
+kemi.received_route_callback="ksr_my_receieved_route"
+</code>
+
 ==== kemi.reply_route_callback ====
 
 Set the name of callback function in the KEMI script to be executed as the equivalent of `reply_route` block (from the native configuration file).
