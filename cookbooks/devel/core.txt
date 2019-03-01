@@ -3143,6 +3143,8 @@ Prototype: event_route[groupid:eventid]
   * groupid - should be the name of the module that triggers the event
   * eventid - some meaningful short text describing the event
 
+=== Core Event Routes ===
+
 Implementations:
 
   * **event_route[core:worker-one-init]** - executed by core after the first udp sip worker process executed the child_init() for all modules, before starting to process sip traffic
@@ -3153,6 +3155,23 @@ event_route[core:worker-one-init] {
         xlog("L_INFO","Hello world\n");
 }
 </code>
+
+  * **event_route[core:msg-received]** - executed when a message is received from the network. It runs with a faked request and makes available the $rcv(key) variables to access what was received and related attribtues.
+    * it has to be enabled with received_route_mode global parameter. For usage via Kemi, set kemi.received_route_callback global parameter.
+    * if drop is executed, the received message is no longer processed
+
+<code c>
+event_route[core:msg-received] {
+  xlog("rcv on $rcv(af)/$rcv(proto): ($rcv(len)) [$rcv(buf)] from [$rcv(srcip):$rcv(srcport)] to [$rcv(rcvip):$rcv(rcvport)]\n");
+  if($rcv(srcip) == "1.2.3.4") {
+    drop;
+  }
+}
+</code>
+=== Module Event Routes ===
+
+Here are only a few examples, to see if a module exports event_route blocks and when they are executed, check the readme of the module.
+
 
   * **event_route[htable:mod-init]** - executed by **htable** module after all modules have been initialised. Good for initialising values in hash tables.
 <code c>
@@ -3193,7 +3212,13 @@ event_route [tm:local-request] { # Handle locally generated requests
 
   * **event_route [tm:branch-failure]** - executed on all failure responses.
 <code c>
-event_route [tm:failure-branch] { # Handle failure response
+request_route {
+    ...
+    t_on_branch_failure("myroute");
+    t_relay();
+}
+
+event_route[tm:branch-failure:myroute] {
   xlog("L_INFO", "Handling $T_reply_code response to $rm to <$ru>\n");
   if (t_check_status("430")) { # Outbound flow failed
     unregister("location", "$tu", "$T_reply_ruid");
@@ -3202,6 +3227,7 @@ event_route [tm:failure-branch] { # Handle failure response
     }
   }
 }
+
 </code>
 
 ===== Script Statements =====
