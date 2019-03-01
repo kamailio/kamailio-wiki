@@ -914,7 +914,33 @@ if($sel(via[1].host)=="10.10.10.10")
   ...
 }
 </code>
-===== Send Address Attributes =====
+===== Received Data Attributes =====
+
+==== $rcv(key) ====
+
+Attributes of received data. The variables must be used inside **event_route[core:msg-received]** routing block.
+
+The key can be:
+
+  * buf - received message
+  * len - lenght of received message
+  * srcip - source ip
+  * rcvip - local ip where it was received
+  * scrport - source port
+  * rcvport - local port where it was received
+  * proto - protocol as int id
+  * sproto - protocol as string
+  * af - address family
+
+Example of usage:
+
+<code c>
+event_route[core:msg-received] {
+  xlog("rcv on $rcv(af)/$rcv(proto): ($rcv(len)) [$rcv(buf)] from [$rcv(srcip):$rcv(srcport)] to [$rcv(rcvip):$rcv(rcvport)]\n");
+}
+</code>
+
+===== Send Data Attributes =====
 
 ==== $sndfrom(name) ====
 
