@@ -1442,6 +1442,18 @@ Example of usage:
 rundir="/tmp"
 </code>
 
+==== received_route_mode ====
+
+Enable or disable the execution of event_route[core:msg-received] routing block or its corresponding Kemi callback.
+
+Default value: 0 (disabled)
+
+Example of usage:
+
+<code c>
+received_route_mode=1
+</code>
+
 ==== reply_to_via ====
 
 If it is set to 1, any local reply is sent to the IP address advertised in top most Via of the request instead of the IP address from which the request was received. Default value is 0 (off).
