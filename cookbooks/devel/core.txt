@@ -1143,9 +1143,11 @@ log_prefix="{$mt $hdr(CSeq) $ci} "
 
 ==== log_prefix_mode ====
 
-If set to 0 (default), then log_prefix is evaluated when the sip message is received and then reused (recommended if the log_prefix has only variables that have same value for same message). This is the current behaviour of log_prefix evaluation.
+Control if [[#log_prefix|log prefix]] is re-evaluated.
 
-If set to 1, then the log prefix is evaluated before/after each config action (needs to be set when the log_prefix has variables that are different based on the context of config execution, e.g., $cfg(line)).
+If set to 0 (default), then log prefix is evaluated when the sip message is received and then reused (recommended if the **log_prefix** has only variables that have same value for same message). This is the current behaviour of **log_prefix** evaluation.
+
+If set to 1, then the log prefix is evaluated before/after each config action (needs to be set when the **log_prefix** has variables that are different based on the context of config execution, e.g., $cfg(line)).
 
 Example:
 
