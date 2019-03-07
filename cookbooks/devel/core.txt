@@ -1129,7 +1129,11 @@ log_name="kamailio-proxy-5080"
 
 ==== log_prefix ====
 
-Specify the text to be prefixed to the log messages printed by Kamailio while processing a SIP message. It can contain script variables that are evaluated at runtime (see log_prefix_mode about when/how evaluation is done).
+Specify the text to be prefixed to the log messages printed by Kamailio while processing a SIP message (that is, when executing route blocks). It can contain script variables that are evaluated at runtime.
+See [[#log_prefix_mode]] about when/how evaluation is done.
+
+
+If a log message is printed from a part of the code executed out of routing blocks actions (e.g., can be timer, evapi worker process, ...), there is no log prefix set, because this one requires a valid SIP message structure to work with.
 
 Example - prefix with message type (1 - request, 2 - response), CSeq and Call-ID:
 
