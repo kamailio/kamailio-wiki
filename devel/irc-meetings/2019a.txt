@@ -2,7 +2,7 @@
 
 Date:
   * **Proposed: 15:00 UTC, Monday, Mar 11, 2019**
-    * can attend: dcm, vseva
+    * can attend: dcm, vseva, fisp
     * cannot attend:
   * Alternatives (add your id if you can attend)
     * Mar 04, Monday: vseva
@@ -34,6 +34,7 @@ People adding notes in the agenda using abbreviations:
 
   * dcm - Daniel-Constantin Mierla
   * vseva - Victor Seva (linuxmaniac)
+  * fisp - Fred Posner (qxork)
 
 
 ===== Agenda =====
