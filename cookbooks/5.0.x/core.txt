@@ -371,7 +371,7 @@ Similar to **subst**, but in addition it adds a **#!define ID subst**.
 
 ===== Core Keywords =====
 
-Keywords specific to SIP messages which can be used mainly in '''if''' expressions.
+Keywords specific to SIP messages which can be used mainly in ''if'' expressions.
 
 ==== af ====
 
