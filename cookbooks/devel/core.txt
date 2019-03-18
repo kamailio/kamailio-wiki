@@ -3105,7 +3105,7 @@ Example:
 
 <code c>
 reply_route {
-  if(status=="128"") {
+  if(status=="128") {
     drop;
   }
 }
