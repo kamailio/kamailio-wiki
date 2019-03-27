@@ -866,7 +866,7 @@ Default: 60 s. Use 0 to disable.
 ==== flags ====
 
 SIP message (transaction) flags can have string names. 
- * *name* for flags cannot be used for **branch** or **script flags**
+The //name// for flags cannot be used for **branch** or **script flags**(*)
 
 
 <code c>
@@ -877,12 +877,11 @@ flags
 ...
 </code>
 
-**NOTE:** 
-The named flags feature was propagated from the source code merge back in 2008 and is not extensively tested. The recommended way of defining flags is using [[cookbooks:5.2.x:core#define|#!define]]:
-
+(*) The named flags feature was propagated from the source code merge back in 2008 and is not extensively tested. The recommended way of defining flags is using [[cookbooks:5.2.x:core#define|#!define]] which is valid for branch/script flags:
 <code c>
 #!define FLAG_NAME FLAG_BIT
 </code>
+
 
 ==== force_rport ====
 
