@@ -865,7 +865,24 @@ Default: 60 s. Use 0 to disable.
 
 ==== flags ====
 
-**Alias name: bool**
+SIP message (transaction) flags can have string names. 
+ * *name* for flags cannot be used for **branch** or **script flags**
+
+
+<code c>
+...
+flags
+  FLAG_ONE   : 1,
+  FLAG_TWO   : 2;
+...
+</code>
+
+**NOTE:** 
+The named flags feature was propagated from the source code merge back in 2008 and is not extensively tested. The recommended way of defining flags is using [[cookbooks:5.2.x:core#define|#!define]]:
+
+<code c>
+#!define FLAG_NAME FLAG_BIT
+</code>
 
 ==== force_rport ====
 
