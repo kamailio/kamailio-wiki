@@ -4,6 +4,10 @@
 Author of initial tutorial:
 Davy Van De Moere
   <davy.van.de.moere@gmail.com>
+
+Added info of the secfilter module:
+Jose Luis Verdeguer
+  <pepeluxx@gmail.com>
 </code>
 
 Being responsible for VoIP infrastructure means you will have to co-exist with Hackers. This page is an attempt to list (all) config snippets you can use in Kamailio to have more fun and success in your eternal battle!
@@ -301,6 +305,187 @@ route[HOMER_SECURITY_CHECKS] {
 #!endif
 }
 </code>
+
+==== Secfilter module ====
+
+Secfilter is a module that has been designed to offer an additional layer of security over our communications. To achieve this, the following features are available:
+
+  * Blacklist to block user agents, IP addresses, countries, domains and users.
+  * Whitelist to allow user agents, IP addresses, countries, domains and users.
+  * Blacklist of destinations where the called number is not allowed.
+  * SQL injection attacks prevention.
+
+For example, to block IP addresses we have to use a database because it is very common to update the blacklist, since every day we receive many attacks from different places. The goal of this module is to avoid unnecessary queries to the database, so all the data will be in the memory.
+
+We can use RPC commands to update blacklists and whitelists. And also to see some statistics of blocked messages.
+
+Example of use:
+
+<code>
+loadmodule    "geoip.so"
+loadmodule    "secfilter.so"
+
+...
+
+modparam("secfilter", "db_url", DBURL)
+modparam("secfilter", "dst_exact_match", 0)
+
+...
+
+route[SECURITY_CHECKS] {
+        if (geoip_match("$si", "src")) {
+                # return values ...
+                #  2 = whitelisted
+                #  1 = not found
+                # -1 = error
+                # -2 = blacklisted
+                secf_check_country($gip(src=>cc));
+                if ($? == -2) {
+                        xalert("$rm from $si blocked because Country '$gip(src=>cc)' is blacklisted");
+                        exit;
+                }
+        }
+
+        secf_check_ip();
+        if ($? == -2) {
+                xalert("$rm from $si blocked because IP address is blacklisted");
+                exit;
+        }
+
+        secf_check_sqli_all();
+
+        secf_check_ua();
+        if ($? == -2) {
+                xalert("$rm from $si blocked because UserAgent '$ua' is blacklisted");
+                exit;
+        }
+ 
+        # return values ...
+        #  4 = name whitelisted
+        #  3 = domain whitelisted
+        #  2 = user whitelisted
+        #  1 = not found
+        # -1 = error
+        # -2 = user blacklisted
+        # -3 = domain blacklisted
+        # -4 = name blacklisted
+        secf_check_from_hdr();
+        switch ($?) {
+                case -2:
+                        xalert("$rm to $si blocked because From user '$fU' is blacklisted");
+                        exit;
+                case -3:
+                        xalert("$rm to $si blocked because From domain '$fd' is blacklisted");
+
+                case -4:
+                        xalert("$rm to $si blocked because From name '$fn' is blacklisted");
+                        exit;
+        };
+
+        secf_check_to_hdr();
+        switch ($?) {
+                case -2:
+                        xalert("$rm to $si blocked because To user '$tU' is blacklisted");
+                        exit;
+                case -3:
+                        xalert("$rm to $si blocked because To domain '$td' is blacklisted");
+                        exit;
+                case -4:
+                        xalert("$rm to $si blocked because To name '$tn' is blacklisted");
+                        exit;
+        };
+
+        secf_check_contact_hdr();
+        switch ($?) {
+                case -2:
+                        xalert("$rm to $si blocked because Contact user '$ct' is blacklisted");
+                        exit;
+                case -3:
+                        xalert("$rm to $si blocked because Contact domain '$ct' is blacklisted");
+                        exit;
+        };
+
+        if (is_method("INVITE")) {
+                secf_check_dst($rU);
+                if ($? == -2) {
+                        xalert("$rm from $si blocked because destination $rU is blacklisted");
+                        exit;
+                }
+        }
+}
+</code>
+
+Some RPC commands:
+
+<code>
+$ kamcmd secfilter.print ua
+
+User-agent
+==========
+[+] Blacklisted
+    -----------
+    0001 -> friendly-scanner
+    0002 -> pplsip
+    0003 -> sipcli
+    0004 -> sundayddr
+    0005 -> iWar
+    0006 -> sipsak
+    0007 -> VaxSIPUserAgent
+    0008 -> SimpleSIP
+    0009 -> SIP Call
+    0010 -> Ozeki
+    0011 -> VoIPSec
+    0012 -> SIPScan
+    0013 -> Conaito
+    0014 -> UsaAirport
+    0015 -> PortSIP VoIP SDK
+    0016 -> zxcvfdf11
+    0017 -> fdgddfg546df4g8d5f
+
+[+] Whitelisted
+    -----------
+    0001 -> my custom ua
+</code>
+
+<code>
+$ kamcmd secfilter.stats
+
+Blocked messages (blacklist)
+============================
+[+] By user-agent    : 1256
+[+] By country       : 45
+[+] By from domain   : 0
+[+] By to domain     : 0
+[+] By contact domain: 1
+[+] By IP address    : 2552
+[+] By from name     : 0
+[+] By to name       : 0
+[+] By contact name  : 0
+[+] By from user     : 316
+[+] By to user       : 134
+[+] By contact user  : 0
+
+Allowed messages (whitelist)
+============================
+[+] By user-agent    : 0
+[+] By country       : 478
+[+] By from domain   : 0
+[+] By to domain     : 0
+[+] By contact domain: 0
+[+] By IP address    : 0
+[+] By from name     : 0
+[+] By to name       : 0
+[+] By contact name  : 0
+[+] By from user     : 0
+[+] By to user       : 0
+[+] By contact user  : 0
+
+Other blocked messages
+======================
+[+] Destinations   : 0
+[+] SQL injection  : 213
+</code>
+
 
 ===== Digest authentication =====
 
