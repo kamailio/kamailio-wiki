@@ -95,7 +95,7 @@ Portscans are inevitable, but we can fight back by making sure the portscan take
 COMMIT
 </code>
 
-==== Change the server header ====
+==== Change the server and user agent header ====
 
 When Kamailio sends you a packet back, it will be friendly enough to tell you which version of Kamailio is running. This informs the attacker which types of attacks might make sense.
 
@@ -116,6 +116,13 @@ In the same category you have the sip_warning parameter, which is by default ena
 <code>
 sip_warning=0
 </code>
+
+To change the user agent header (e.g. used from the dispatcher module to send out OPTIONS requests) use this parameter:
+
+<code>
+user_agent_header="User-Agent: My SIP Server"
+</code>
+
 ===== Anti-Flood =====
 
 The moment you put a machine on the Internet, it will be scanned. And it won't take long until a <i>Friendly-Scanner</i> floods your machine.
