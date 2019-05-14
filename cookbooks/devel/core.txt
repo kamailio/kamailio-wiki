@@ -380,6 +380,13 @@ modparam("acc", "db_url", "mysql://user:DBPASSWD@localhost/db")
 
 Similar to **subst**, but in addition it adds a **#!define ID subst**.
 
+==== substdefs ====
+
+<code c>
+#!substdefs "/ID/subst/"
+</code>
+
+Similar to **subst**, but in addition it adds a **#!define ID "subst"** (note the difference from #!substdef that the value for define is enclosed in double quotes, useful when the define is used in a place for a string value).
 ===== Core Keywords =====
 
 Keywords specific to SIP messages which can be used mainly in ''if'' expressions.
