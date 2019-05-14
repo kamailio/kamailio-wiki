@@ -244,14 +244,14 @@ Similar to **include_file**, but does not throw error if the included file is no
 Control in C-style what parts of the config file are executed. The parts in non-defined zones are not loaded, ensuring lower memory usage and faster execution.
 
 Available directives:
-  * #!define NAME - define a keyword
-  * #!define NAME VALUE - define a keyword with value
-  * #!ifdef NAME - check if a keyword is defined
-  * #!ifndef - check if a keyword is not defined
-  * #!else - switch to false branch of ifdef/ifndef region
-  * #!endif - end ifdef/ifndef region
-  * #!trydef - add a define if not already defined
-  * #!redefine - force redefinition even if already defined
+  * **#!define NAME** - define a keyword
+  * **#!define NAME VALUE** - define a keyword with value
+  * **#!ifdef NAME** - check if a keyword is defined
+  * **#!ifndef** - check if a keyword is not defined
+  * **#!else** - switch to false branch of ifdef/ifndef region
+  * **#!endif** - end ifdef/ifndef region
+  * **#!trydef** - add a define if not already defined
+  * **#!redefine** - force redefinition even if already defined
 
 Among benefits:
   * easy way to enable/disable features (e.g., see default cfg -- controlling support of nat traversal, presence, etc...)
