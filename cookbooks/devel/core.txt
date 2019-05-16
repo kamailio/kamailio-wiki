@@ -742,12 +742,22 @@ Example:
 </code>
 ==== auto_bind_ipv6 ====
 
-When turned on, Kamailio will automatically bind to all IPv6 addresses (much like the default behaviour for IPv4).
+When turned on, Kamailio will automatically bind to all IPv6 addresses (much like the default behaviour for IPv4). Default is 0.
 
 Example:
 
 <code>
     auto_bind_ipv6=1
+</code>
+
+==== bind_ipv6_link_local ====
+
+Try to bind link local IPv6 addresses. Default is 0.
+
+Example:
+
+<code>
+    bind_ipv6_link_local=1
 </code>
 ==== check_via ====
 
