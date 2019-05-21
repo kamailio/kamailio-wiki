@@ -959,7 +959,7 @@ They are available in **onsend_route**. The name can be:
   * ip - IP address of destination
   * af - address family to be used to send (numeric)
   * port - port of destination address
-  * proto - transport protocol to be used to send (numeric)
+  * proto - transport protocol to be used to send (numeric - UDP=1, TCP=2, TLS=3, SCTP=4, WS=5, WSS=6)
   * sproto - transport protocol to be used to send (string)
   * buf - entire send buffer as string
   * len - length of outgoing packet (length of above buf)
