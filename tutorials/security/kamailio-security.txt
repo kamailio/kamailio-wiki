@@ -341,12 +341,12 @@ modparam("secfilter", "dst_exact_match", 0)
 
 route[SECURITY_CHECKS] {
         if (geoip2_match("$si", "src")) {
+                secf_check_country($gip2(src=>cc));
                 # return values ...
                 #  2 = whitelisted
                 #  1 = not found
                 # -1 = error
                 # -2 = blacklisted
-                secf_check_country($gip2(src=>cc));
                 if ($? == -2) {
                         xalert("$rm from $si blocked because Country '$gip2(src=>cc)' is blacklisted");
                         exit;
@@ -367,6 +367,7 @@ route[SECURITY_CHECKS] {
                 exit;
         }
  
+        secf_check_from_hdr();
         # return values ...
         #  4 = name whitelisted
         #  3 = domain whitelisted
@@ -376,7 +377,6 @@ route[SECURITY_CHECKS] {
         # -2 = user blacklisted
         # -3 = domain blacklisted
         # -4 = name blacklisted
-        secf_check_from_hdr();
         switch ($?) {
                 case -2:
                         xalert("$rm to $si blocked because From user '$fU' is blacklisted");
