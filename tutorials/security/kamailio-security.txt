@@ -346,9 +346,9 @@ route[SECURITY_CHECKS] {
                 #  1 = not found
                 # -1 = error
                 # -2 = blacklisted
-                secf_check_country($gip(src=>cc));
+                secf_check_country($gip2(src=>cc));
                 if ($? == -2) {
-                        xalert("$rm from $si blocked because Country '$gip(src=>cc)' is blacklisted");
+                        xalert("$rm from $si blocked because Country '$gip2(src=>cc)' is blacklisted");
                         exit;
                 }
         }
