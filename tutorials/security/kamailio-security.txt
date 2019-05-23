@@ -329,7 +329,7 @@ We can use RPC commands to update blacklists and whitelists. And also to see som
 Example of use:
 
 <code>
-loadmodule    "geoip.so"
+loadmodule    "geoip2.so"
 loadmodule    "secfilter.so"
 
 ...
@@ -340,7 +340,7 @@ modparam("secfilter", "dst_exact_match", 0)
 ...
 
 route[SECURITY_CHECKS] {
-        if (geoip_match("$si", "src")) {
+        if (geoip2_match("$si", "src")) {
                 # return values ...
                 #  2 = whitelisted
                 #  1 = not found
