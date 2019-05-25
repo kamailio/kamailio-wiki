@@ -34,6 +34,14 @@ Copy the open-ims-DNS file to the bind folder and add these lines to /etc/bind/n
 Check that this all works. Try a ping and see if you get a response:
 
   ping pcscf.kamailio-ims.org
+  
+If you can not ping by DNS address, try:
+
+  host pcscf.kamailio-ims.org
+
+If the DNS address resolved to IP address currectly. You may need to update your "/etc/nsswitch.conf" file according to 
+[[https://askubuntu.com/questions/81797/nslookup-finds-ip-but-ping-doesnt|this question on SO.]]. After that modification you should be able to ping by DNS address.
+
 
 ====== Installation of the Kamailio-IMS-Packages ======
 
