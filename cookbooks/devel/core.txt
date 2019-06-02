@@ -135,7 +135,7 @@ Example:
 // next two are strings
 
   "this is a string value"
-  'this is another string value"
+  'this is another string value'
 
 // next is a boolean
 
