@@ -21,8 +21,18 @@ Following tokens are used to mark the changes:
 
 ==== Upgraded Modules ====
 
-  * none
+  * **app_lua** - the functions exported to the old **sr** Lua module were moved to **app_lua_sr** module.
 
+<code c>
+# old config
+loadmodule "app_lua.so"
+modparam("app_lua", "register", "sl")
+
+# new config
+loadmodule "app_lua.so"
+loadmodule "app_lua_sr.so"
+modparam("app_lua_sr", "register", "sl")
+</code>
 ==== Removed Modules ====
 
   * none
