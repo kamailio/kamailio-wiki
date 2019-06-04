@@ -11,6 +11,18 @@
 
 ===== New Modules =====
 
+==== app_lua_sr ====
+
+Old **sr** module exported to Lua scripting.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/app_lua_sr.html
+
+==== kemix ====
+
+KEMI specific extensions.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/kemix.html
+
 ==== rtp_media_server ====
 
 Embedded RTP and media processing functionalities for Kamailio
