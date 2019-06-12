@@ -267,7 +267,7 @@ Kamailio itself uses in very few components extra memory directly from the syste
 
 Here is the article that presents better the situation:
 
-   * http://blog.logicmonitor.com/2014/10/09/more-linux-memory-free-memory-that-is-not-free-nor-cache/
+   * https://www.logicmonitor.com/blog/more-linux-memory-free-memory-that-is-not-free-nor-cache/
 
 An relevant excerpt from the blog article:
 
