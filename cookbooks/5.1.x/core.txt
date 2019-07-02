@@ -953,7 +953,7 @@ latency_limit_action=500
  
 ==== latency_limit_db ====
 
-Limit of latency in ms for db operations. If a db operation executed via DB API v1 takes longer that its value, a message is printed in the logs, showing the first 50 characters of the db query.
+Limit of latency in us (micro seconds) for db operations. If a db operation executed via DB API v1 takes longer that its value, a message is printed in the logs, showing the first 50 characters of the db query.
 
 
 Default value is 0 (disabled).
