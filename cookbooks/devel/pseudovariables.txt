@@ -278,6 +278,10 @@ Note that changing the From: header may break backwards compatibility with SIP 1
 
 **$mb** - reference to SIP message buffer
 
+==== $mbu - updated SIP message buffer ====
+
+**$mbu** - reference to updated SIP message buffer, after applying changes
+
 ==== $mf - Flags ====
 
 **$mf** - reference to message/transaction flags set for current SIP request
