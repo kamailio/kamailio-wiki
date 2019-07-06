@@ -48,6 +48,13 @@ Added a new param in the cnxcc_set_max_credit() function to set the connect cost
 
   * https://www.kamailio.org/docs/modules/devel/modules/cnxcc.html#cnxcc.f.set_max_credit
 
+
+==== uac ====
+
+New modparam reg_gc_interval, to define a value for garbage collection interval
+
+  * https://www.kamailio.org/docs/modules/devel/modules/uac.html#uac.p.reg_gc_interval
+
 ==== ims_ipsec_pcscf ====
 
 Add IPv6 support to the ims_ipsec_pcscf module. Additional support for multiple TCP connections was added.
