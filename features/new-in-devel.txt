@@ -81,7 +81,6 @@ A new rpc command updateWatchers were added to the presence module.
 Add transaction and dialog level tracing to the siptrace module function sip_trace.
 
   * https://www.kamailio.org/docs/modules/devel/modules/siptrace.html#siptrace.f.sip_trace
-    
 
 ==== kex ====
 
@@ -91,7 +90,9 @@ New rpc command mod.mem_statsx for the kex module, to print also the count of al
 
 ==== ims_ipsec_pcscf ====
 
-Add IPv6 support to the ims_ipsec_pcscf module. Additional support for multiple TCP connections was added.
+Add IPv6 support to the ims_ipsec_pcscf module. Set authentication algorithm for SA depending of parsed security-client info from REGISTER request message. For now, the supported algorithms are md5 and sha1, the default algorithm is sha1.
+
+Additional support for multiple TCP connections was added.
 
   * https://www.kamailio.org/docs/modules/devel/modules/ims_ipsec_pcscf.html
 
