@@ -1696,10 +1696,14 @@ organizationName in the subject section of the certificate. String type.
 organizationName in the issuer section of the certificate. String type.
 ==== $tls_peer_subject_unit ====
 organizationalUnitName in the subject section of the certificate. String type.
+==== $tls_peer_subject_uid ====
+uid in the subject section of the certificate. String type.
 ==== $tls_peer_issuer_unit ====
 organizationalUnitName in the issuer section of the certificate. String type.
 ==== $tls_my_subject_unit ====
 organizationalUnitName in the subject section of the certificate. String type.
+==== $tls_my_subject_uid ====
+uid in the subject section of the certificate. String type.
 ==== $tls_my_issuer_unit ====
 organizationalUnitName in the issuer section of the certificate. String type.
 ==== $tls_peer_san_email ====
