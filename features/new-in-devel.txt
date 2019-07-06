@@ -284,12 +284,13 @@ Many extensions to the KEMI scripting language support in core and modules were 
 
 ==== Memory Managers ====
 
-Refactoring and unification of memory allocation error logging infrastructure. Completed in the core, major modules were migrated as well.
+Refactoring and unification of memory allocation error logging infrastructure. Completed in the core, major modules were migrated as well. The #define are called PKG_MEM_ERROR, PKG_MEM_CRITICAL, SHM_MEM_ERROR, SHM_MEM_CRITICAL, SYS_MEM_ERROR and SYS_MEM_CRITICAL error. Additional #define for variable log messages for special cases were added as well.
 
 ==== Architecture ====
 
   * Extend internal IPv4 and IPv6 parsing functions in the core.
   * Create Contacts header with path vector as Route header. When Kamailio is functioning as a registrar sends a 302 redirect, the registered contacts are sent inside the Contact header. If a contact as a path vector, that path should become a Route header in the INVITE (rfc 3327). This patch adds the path vector as a Route header parameter to the Contacts in the redirect so the receiving entity of the 302 can add the proper Route headers. This is a standard way to specify headers to be added to a request, see rfc3261 section 19.1.1.
+  * Add DB_TABLE_VERSION_ERROR(table) error helper #define to DB1 API and migrate (almost) all modules that use version tables to it. This unify the logging and error behavior of the relevant modules that uses a database.
 
 ==== kamailio.cfg ====
 
