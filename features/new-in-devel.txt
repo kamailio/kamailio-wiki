@@ -65,18 +65,13 @@ Add new rpc commands dlg.list_match and dlg.list_match_ctx to the dialog module.
 
 ==== dispatcher ====
 
-Add new rpc functions, to add and remove destinations to the in-memory dispatcher list.
-
-  * https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#dispatcher.r.add
-  * https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#dispatcher.r.remove
-
-Add a new flag 16 (1<<4) to the cfg syntax for destinations with host not having A/AAAA record.
-
-  * https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#idm1021190300
-
-Add a new parameter reload_delta to limit the frequency of rpc reload commands to try to avoid races of parallel reload operations.
-
-  * https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#dispatcher.p.reload_delta
+  * Add new rpc functions, to add and remove destinations to the in-memory dispatcher list.
+    * https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#dispatcher.r.add
+    * https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#dispatcher.r.remove
+  * Add a new flag 16 (1<<4) to the cfg syntax for destinations with host not having A/AAAA record.
+    * https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#idm1021190300
+  * Add a new parameter reload_delta to limit the frequency of rpc reload commands to try to avoid races of parallel reload operations.
+    * https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#dispatcher.p.reload_delta
 
 ==== dialplan ====
 
@@ -96,11 +91,9 @@ Extend module functionality significantly, several new commands (e.g. #rooms, #a
 
 ==== ims_ipsec_pcscf ====
 
-Add IPv6 support to the ims_ipsec_pcscf module. Set authentication algorithm for SA depending of parsed security-client info from REGISTER request message. For now, the supported algorithms are md5 and sha1, the default algorithm is sha1.
-
-Additional initial TCP support and support for multiple TCP connections were added.
-
-  * https://www.kamailio.org/docs/modules/devel/modules/ims_ipsec_pcscf.html
+  * Add IPv6 support to the ims_ipsec_pcscf module. Set authentication algorithm for SA depending of parsed security-client info from REGISTER request message. For now, the supported algorithms are md5 and sha1, the default algorithm is sha1.
+  * Additional initial TCP support and support for multiple TCP connections were added.
+    * https://www.kamailio.org/docs/modules/devel/modules/ims_ipsec_pcscf.html
 
 ==== ims_registrar_pcscf ====
 
@@ -140,13 +133,10 @@ Add a new rpc command mqueue.fetch
 
 ==== pv ====
 
-New pseudo-variable $rcv(key), available inside event_route[core:msg-received] to get details of the received message.
-
-  * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#received_data_attributes
-
-New pseudo-variable $TV(Fn) - formatted time with microseconds YYYY-MM-DD HH:MM:SS.UUUUUU. Current time in human readable format with microseconds precission.
-
-  * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#tv_name
+  * New pseudo-variable $rcv(key), available inside event_route[core:msg-received] to get details of the received message.
+    * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#received_data_attributes
+  * New pseudo-variable $TV(Fn) - formatted time with microseconds YYYY-MM-DD HH:MM:SS.UUUUUU. Current time in human readable format with microseconds precission.
+    * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#tv_name
 
 ==== janssonrpcc ====
 
@@ -186,22 +176,16 @@ Add a new rpc command rls.update_subs.
 
 ==== rtpengine ====
 
-Introduce additional hashing algorithm SHA1 over callid for better distribution among nodes. 
-
-  * https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.p.hash_algo
-
-Add play_media() and stop_media() functions, also includes addition of the $media_duration pseudo-variable, as well as several code cleanups and simplifications.
-
-  * https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.f.play_media
-  * https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.f.stop_media
-  * https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.p.media_duration
-
-Add start_forwarding() and stop_forwarding() functions.
-
-  * https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.f.start_forwarding
-  * https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.f.stop_forwarding
-
-Add support for trickle ICE SDP fragments, add support for explicit load balancing options and add support for via-branch=extra option.
+  * Introduce additional hashing algorithm SHA1 over callid for better distribution among nodes. 
+    * https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.p.hash_algo
+  * Add play_media() and stop_media() functions, also includes addition of the $media_duration pseudo-variable, as well as several code cleanups and simplifications.
+    * https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.f.play_media
+    * https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.f.stop_media
+    * https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.p.media_duration
+  * Add start_forwarding() and stop_forwarding() functions.
+    * https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.f.start_forwarding
+    * https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.f.stop_forwarding
+  * Add support for trickle ICE SDP fragments, add support for explicit load balancing options and add support for via-branch=extra option.
 
 ==== sdpops ====
 
@@ -217,13 +201,10 @@ Add transaction and dialog level tracing to the module function sip_trace
 
 ==== sl ====
 
-Add new pseudo-variables: $ltt(key) - return local generated to tag when Kamailio sends a reply.
-
-  * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#ltt_key_-_local_to-tag   
-
- Add configuration parameter to add path and flags to redirected contacts.
-
-  * https://www.kamailio.org/docs/modules/devel/modules/sl.html#rich_redirect
+  * Add new pseudo-variables: $ltt(key) - return local generated to tag when Kamailio sends a reply.
+    * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#ltt_key_-_local_to-tag   
+  *  Add configuration parameter to add path and flags to redirected contacts.
+    * https://www.kamailio.org/docs/modules/devel/modules/sl.html#rich_redirect
 
 ==== sqlops ====
 
@@ -239,22 +220,17 @@ Add a new function regex_substring(itext, regex, index, mcount, dpv). Return a s
 
 ==== tls ====
 
-Add support for unique identifier PVs and select: $tls_peer_subject_uid and $tls_my_subject_uid, new selects: uid, uniqueIdentifier and unique_identifier.
-
-  * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#tls_peer_subject_uid
-  * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#tls_my_subject_uid
-
-Add workaround for new OpenSSL 1.1, preloaded library. This is a workaround for OpenSSL >= 1.1 which uses internal locking and doesn't support locks in memory shared across multiple processes.
+  * Add support for unique identifier PVs and select: $tls_peer_subject_uid and $tls_my_subject_uid, new selects: uid, uniqueIdentifier and unique_identifier.
+    * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#tls_peer_subject_uid
+    * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#tls_my_subject_uid
+  * Add workaround for new OpenSSL 1.1, preloaded library. This is a workaround for OpenSSL >= 1.1 which uses internal locking and doesn't support locks in memory shared across multiple processes.
 
 ==== tm ====
 
-Added t_get_status_code() function to return the status code of the transaction - the sip response code.
-
-  * https://www.kamailio.org/docs/modules/devel/modules/tm.html#tm.f.t_get_status_code
-
-Add configuration parameter to add path and flags to redirected contacts.
-
-  * https://www.kamailio.org/docs/modules/devel/modules/tm.html#tm.p.rich_redirect
+  * Added t_get_status_code() function to return the status code of the transaction - the sip response code.
+    * https://www.kamailio.org/docs/modules/devel/modules/tm.html#tm.f.t_get_status_code
+  * Add configuration parameter to add path and flags to redirected contacts.
+    * https://www.kamailio.org/docs/modules/devel/modules/tm.html#tm.p.rich_redirect
 
 ==== tmx ====
 
@@ -264,13 +240,10 @@ Add a new function t_drop([rcode])
 
 ==== uac ====
 
-New modparam reg_gc_interval, to define a value for garbage collection interval
-
-  * https://www.kamailio.org/docs/modules/devel/modules/uac.html#uac.p.reg_gc_interval
-
-The uac_replace_from/uac_replace_to function (with dialog storage option) will now also work properly after a restart from Kamailio, if dialog data is stored in a database.
-
-The uac_replace_from/uac_replace_to function will now also properly store and restore the Display Name with the dialog storage option.
+  * New modparam reg_gc_interval, to define a value for garbage collection interval
+    * https://www.kamailio.org/docs/modules/devel/modules/uac.html#uac.p.reg_gc_interval
+  * The uac_replace_from/uac_replace_to function (with dialog storage option) will now also work properly after a restart from Kamailio, if dialog data is stored in a database.
+  * The uac_replace_from/uac_replace_to function will now also properly store and restore the Display Name with the dialog storage option.
 
 ==== websocket ====
 
@@ -297,16 +270,13 @@ Many extensions to the KEMI support in core and modules were added.
 
 ==== Parameters ====
 
-New global parameter bind_ipv6_link_local. If set to 1, try to bind also IPv6 link local addresses by discovering the scope of the interface. This apply for UDP socket for now, to be added for the other protocols.
-  * https://www.kamailio.org/wiki/cookbooks/devel/core#bind_ipv6_link_local
-
-Introduce new configuration parameter tcp_accept_haproxy parameter. When active, inbound TCP connections are expected to behave according to the HA PROXY protocol. Both the v1 (human-readable) and v2 (binary) versions of the protocol are supported.
-  * https://www.kamailio.org/wiki/cookbooks/devel/core#tcp_accept_haproxy
-
-Added latency_limit_cfg global parameter to print execution time for configuration script only if it exceeds this value. It is printed to latency_cfg_log level, another added parameter.
-
-  * https://www.kamailio.org/wiki/cookbooks/devel/core#latency_limit_action
-  * https://www.kamailio.org/wiki/cookbooks/devel/core#latency_cfg_log
+  * New global parameter bind_ipv6_link_local. If set to 1, try to bind also IPv6 link local addresses by discovering the scope of the interface. This apply for UDP socket for now, to be added for the other protocols.
+    * https://www.kamailio.org/wiki/cookbooks/devel/core#bind_ipv6_link_local
+  * Introduce new configuration parameter tcp_accept_haproxy parameter. When active, inbound TCP connections are expected to behave according to the HA PROXY protocol. Both the v1 (human-readable) and v2 (binary) versions of the protocol are supported.
+    * https://www.kamailio.org/wiki/cookbooks/devel/core#tcp_accept_haproxy
+  * Added latency_limit_cfg global parameter to print execution time for configuration script only if it exceeds this value. It is printed to latency_cfg_log level, another added parameter.
+    * https://www.kamailio.org/wiki/cookbooks/devel/core#latency_limit_action
+    * https://www.kamailio.org/wiki/cookbooks/devel/core#latency_cfg_log
 
 ==== Functions ====
 
@@ -318,9 +288,8 @@ Refactoring and unification of memory allocation error logging infrastructure. C
 
 ==== Architecture ====
 
-Extend internal IPv4 and IPv6 parsing functions in the core.
-
-Create Contacts header with path vector as Route header. When Kamailio is functioning as a registrar sends a 302 redirect, the registered contacts are sent inside the Contact header. If a contact as a path vector, that path should become a Route header in the INVITE (rfc 3327). This patch adds the path vector as a Route header parameter to the Contacts in the redirect so the receiving entity of the 302 can add the proper Route headers. This is a standard way to specify headers to be added to a request, see rfc3261 section 19.1.1.
+  * Extend internal IPv4 and IPv6 parsing functions in the core.
+  * Create Contacts header with path vector as Route header. When Kamailio is functioning as a registrar sends a 302 redirect, the registered contacts are sent inside the Contact header. If a contact as a path vector, that path should become a Route header in the INVITE (rfc 3327). This patch adds the path vector as a Route header parameter to the Contacts in the redirect so the receiving entity of the 302 can add the proper Route headers. This is a standard way to specify headers to be added to a request, see rfc3261 section 19.1.1.
 
 ==== kamailio.cfg ====
 
@@ -332,11 +301,9 @@ Added tool to generate code for KEMI modules to misc/tools/kemi/kemi-code-gen.py
 
 ==== kamctl ====
 
-Added subcommand to print the server version using rpc command: kamctl srv version 
-
-Added subcommand to delete older expired records from database table: kamctl ul dbclean [<secs>]
-
-Added acc initdb command to add additional columns needed with default kamailio.cfg and defined WITH_ACCDB for acc and missed_calls table.
+  * Added subcommand to print the server version using rpc command: kamctl srv version 
+  * Added subcommand to delete older expired records from database table: kamctl ul dbclean [<secs>]
+  * Added acc initdb command to add additional columns needed with default kamailio.cfg and defined WITH_ACCDB for acc and missed_calls table.
 
 ==== kamdbctl ====
 
