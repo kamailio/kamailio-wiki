@@ -1,6 +1,6 @@
 ====== Kamailio SIP Server (SER) - New Features in Devel Version ======
 
-**Current devel version will be numbered 5.3.0 and it is planned to be released during 2019**.
+**Current devel version will be numbered 5.3.0 and it is planned to be released in the autum 2019**.
 
 <fc #0000FF>
 **Previous devel, current stable, version was 5.2.x (released on November, 2018), see what was new in that release at:**
@@ -40,7 +40,15 @@ Embedded RTP and media processing functionalities for Kamailio
 Filters to allow/block using whitelists/blacklist based on user agents, IP addresses, countries, domains and users. SQL injection attacks prevention. Blacklist of destinations where the called number is not allowed.
 
   * https://www.kamailio.org/docs/modules/devel/modules/secfilter.html
+
+
 ===== New in existing Modules =====
+
+==== acc_json ====
+
+Add support for leg_info fields to the acc_json module
+
+  * https://www.kamailio.org/docs/modules/devel/modules/acc_json.html
 
 ==== cnxcc ====
 
@@ -48,15 +56,31 @@ Added a new param in the cnxcc_set_max_credit() function to set the connect cost
 
   * https://www.kamailio.org/docs/modules/devel/modules/cnxcc.html#cnxcc.f.set_max_credit
 
+==== dialog ====
+
+Add new rpc commands dlg.list_match and dlg.list_match_ctx to the dialog module. They will list dialogs matching the expression given via parameters
+
+  * https://www.kamailio.org/docs/modules/devel/modules/dialog.html#dlg.r.list_match
+  * https://www.kamailio.org/docs/modules/devel/modules/dialog.html#dlg.r.list_match_ctx
+
 ==== dispatcher ====
 
-Add a new rpc function to dispatcher module, add a new destination to in-memory dispatcher list.
+Add a new rpc function, it will add a new destination to in-memory dispatcher list.
 
   * https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#dispatcher.r.add
 
+Add a new flag 16 (1<<4) to the cfg syntax for destinations with host not having A/AAAA record.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#idm1021190300
+
+Add a new parameter reload_delta to limit the frequency of rpc reload commands to try to avoid races of parallel reload operations.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#dispatcher.p.reload_delta
+
+
 ==== dialplan ====
 
-Add reload_delta parameter to the dialplan module. Make the rate limit of maximum allowed dialplan reload configurable.
+Add reload_delta parameter to make the rate limit of maximum allowed dialplan reload configurable.
 
   * https://www.kamailio.org/docs/modules/devel/modules/dialplan.html#dialplan.p.reload_delta
 
@@ -72,50 +96,86 @@ The uac_replace_from/uac_replace_to function will now also properly store and re
 
 ==== registrar ====
 
-New parameter lookup_filter_mode for the registrar module to control what filters should be applied for lookup(...) operations. Filter values are specified via filed of xavp_cfg.
+New parameter lookup_filter_mode to control what filters should be applied for lookup(...) operations. Filter values are specified via filed of xavp_cfg.
 
   * https://www.kamailio.org/docs/modules/devel/modules/registrar.html#registrar.p.lookup_filter_mode
 
 ==== presence ====
 
-A new rpc command updateWatchers were added to the presence module.
+A new rpc command presence.updateWatchers
 
   * https://www.kamailio.org/docs/modules/devel/modules/presence.html#presence.rpc.updateWatchers
 
 ==== siptrace ====
 
-Add transaction and dialog level tracing to the siptrace module function sip_trace.
+Add transaction and dialog level tracing to the module function sip_trace
 
   * https://www.kamailio.org/docs/modules/devel/modules/siptrace.html#siptrace.f.sip_trace
 
 ==== sdpops ====
 
-Added new sdp_get_ddress_family() function to the sdpops module to extract the IP address family from the SDP body
+Added new sdp_get_ddress_family() function to extract the IP address family from the SDP body
 
   * https://www.kamailio.org/docs/modules/devel/modules/sdpops.html#sdpops.f.sdp_get_address_family
 
+==== sl ====
+
+Add new pseudo-variables: $ltt(key) - return local generated to tag when Kamailio sends a reply.
+
+  * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#ltt_key_-_local_to-tag    
+
+==== sqlops ====
+
+Add a new parameter connect_mode, option to start even when connecting to db fails.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/sqlops.html#sqlops.p.connect_mode    
+
 ==== rr ====
 
-Add new return value for preloaded route set to loose_route() in rr module. Now it is possible to detect from the script if a preloaded Route header was removed that pointed at the local proxy.
+Add new return value for preloaded route set to loose_route(). Now it is possible to detect from the script if a preloaded Route header was removed that pointed at the local proxy.
 
   * https://www.kamailio.org/docs/modules/devel/modules/rr.html#rr.f.loose_route
 
+==== rls ====
+
+Add a new rpc command rls.update_subs.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/rls.html#rls.rpc.update_subs
+
+==== rtpengine ====
+
+Introduce additional hashing algorithm SHA1 over callid for better distribution among nodes. 
+
+  * https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.p.hash_algo
+
 ==== janssonrpcc ====
 
-Add new parameter "keep_alive" to jansonrpcc module, send periodic tcp keepalive packets to server in order to prevent connection from closing.
+Add new parameter "keep_alive", send periodic tcp keepalive packets to server in order to prevent connection from closing.
 
   * https://www.kamailio.org/docs/modules/devel/modules/janssonrpcc.html#idm1023243564
 
+==== textops ====
+
+Add a new function regex_substring(itext, regex, index, mcount, dpv). Return a substring extracted by matching with a regular expression and the index of matched token.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/textops.html#textops.f.regex_substring
+
 ==== tls ====
 
-Add support for unique identifier PVs and select to the TLS module: $tls_peer_subject_uid and $tls_my_subject_uid, new selects: uid, uniqueIdentifier and unique_identifier.
+Add support for unique identifier PVs and select: $tls_peer_subject_uid and $tls_my_subject_uid, new selects: uid, uniqueIdentifier and unique_identifier.
 
   * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#tls_peer_subject_uid
   * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#tls_my_subject_uid
 
+==== tmx ====
+
+Add a new function t_drop([rcode])
+
+  * https://www.kamailio.org/docs/modules/devel/modules/tmx.html#tmx.f.t_drop
+
 ==== kex ====
 
-New rpc command mod.mem_statsx for the kex module, to print also the count of allocated chunks in summary.
+New rpc command mod.mem_statsx, to print also the count of allocated chunks in summary.
 
   * https://www.kamailio.org/docs/modules/devel/modules/kex.html#kex.r.mod.mem_statsx
 
@@ -124,6 +184,12 @@ New rpc command mod.mem_statsx for the kex module, to print also the count of al
 New pseudo-variable $rcv(key), available inside event_route[core:msg-received] to get details of the received message.
 
   * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#received_data_attributes
+
+==== mqueue ====
+
+Add a new rpc command mqueue.fetch
+
+  * https://www.kamailio.org/docs/modules/devel/modules/mqueue.html#mqueue.f.mq_fetch
 
 ==== ims_ipsec_pcscf ====
 
@@ -205,5 +271,9 @@ Refactoring and unification of memory allocation error logging infrastructure. C
 ==== kamcmd ====
 
 ==== kamctl ====
-    
+
+Added subcommand to print the server version using rpc command: kamctl srv version 
+
+Added subcommand to delete older expired records from database table: kamctl ul dbclean [<secs>]
+
 ==== kamcli ====
