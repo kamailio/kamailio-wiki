@@ -307,6 +307,7 @@ Added tool to generate code for KEMI modules to misc/tools/kemi/kemi-code-gen.py
 
 ==== kamdbctl ====
 
-Added verification before database reinit, warn that drop command will indeed drop the database.
+  * Added verification before database reinit
+  * Warn that drop command will indeed drop the database.
     
 ==== kamcli ====
