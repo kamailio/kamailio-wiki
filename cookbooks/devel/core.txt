@@ -1982,6 +1982,8 @@ Enable the internal TCP stack to expect a PROXY-protocol-formatted header as the
 
 Please note that enabling this option will reject any inbound TCP connection that does not conform to the PROXY-protocol spec.
 
+For reference: A PROXY protocol - https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt
+
 Default value is **no**.
 
 <code c>
