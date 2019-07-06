@@ -55,6 +55,12 @@ New modparam reg_gc_interval, to define a value for garbage collection interval
 
   * https://www.kamailio.org/docs/modules/devel/modules/uac.html#uac.p.reg_gc_interval
 
+==== presence ====
+
+A new rpc command presence.updateWatchers were added to the presence module
+    
+  * https://www.kamailio.org/docs/modules/devel/modules/presence.html#presence.rpc.updateWatchers
+
 ==== ims_ipsec_pcscf ====
 
 Add IPv6 support to the ims_ipsec_pcscf module. Additional support for multiple TCP connections was added.
