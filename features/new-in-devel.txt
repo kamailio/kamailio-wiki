@@ -82,11 +82,24 @@ Add transaction and dialog level tracing to the siptrace module function sip_tra
 
   * https://www.kamailio.org/docs/modules/devel/modules/siptrace.html#siptrace.f.sip_trace
 
+==== tls ====
+
+Add support for unique identifier PVs and select to the TLS module: $tls_peer_subject_uid and $tls_my_subject_uid, new selects: uid, uniqueIdentifier and unique_identifier.
+
+  * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#tls_peer_subject_uid
+  * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#tls_my_subject_uid
+
 ==== kex ====
 
 New rpc command mod.mem_statsx for the kex module, to print also the count of allocated chunks in summary.
 
   * https://www.kamailio.org/docs/modules/devel/modules/kex.html#kex.r.mod.mem_statsx
+
+==== pv ====
+
+New pseudo-variable $rcv(key), available inside event_route[core:msg-received] to get details of the received message.
+
+  * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#received_data_attributes
 
 ==== ims_ipsec_pcscf ====
 
