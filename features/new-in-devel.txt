@@ -17,12 +17,6 @@ Old **sr** module exported to Lua scripting.
 
   * https://www.kamailio.org/docs/modules/devel/modules/app_lua_sr.html
 
-==== xhttp_prom ====
-
-Generates suitable metrics for a Prometheus monitoring platform, answering to Prometheus pull requests (HTTP requests to /metrics URL).
-
-  * https://www.kamailio.org/docs/modules/devel/modules/xhttp_prom.html
-
 ==== kemix ====
 
 KEMI specific extensions.
@@ -40,6 +34,12 @@ Embedded RTP and media processing functionalities for Kamailio
 Filters to allow/block using whitelists/blacklist based on user agents, IP addresses, countries, domains and users. SQL injection attacks prevention. Blacklist of destinations where the called number is not allowed.
 
   * https://www.kamailio.org/docs/modules/devel/modules/secfilter.html
+
+==== xhttp_prom ====
+
+Generates suitable metrics for a Prometheus monitoring platform, answering to Prometheus pull requests (HTTP requests to /metrics URL).
+
+  * https://www.kamailio.org/docs/modules/devel/modules/xhttp_prom.html
 
 
 ===== New in existing Modules =====
@@ -77,119 +77,11 @@ Add a new parameter reload_delta to limit the frequency of rpc reload commands t
 
   * https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#dispatcher.p.reload_delta
 
-
 ==== dialplan ====
 
 Add reload_delta parameter to make the rate limit of maximum allowed dialplan reload configurable.
 
   * https://www.kamailio.org/docs/modules/devel/modules/dialplan.html#dialplan.p.reload_delta
-
-==== uac ====
-
-New modparam reg_gc_interval, to define a value for garbage collection interval
-
-  * https://www.kamailio.org/docs/modules/devel/modules/uac.html#uac.p.reg_gc_interval
-
-The uac_replace_from/uac_replace_to function (with dialog storage option) will now also work properly after a restart from Kamailio, if dialog data is stored in a database.
-
-The uac_replace_from/uac_replace_to function will now also properly store and restore the Display Name with the dialog storage option.
-
-==== registrar ====
-
-New parameter lookup_filter_mode to control what filters should be applied for lookup(...) operations. Filter values are specified via filed of xavp_cfg.
-
-  * https://www.kamailio.org/docs/modules/devel/modules/registrar.html#registrar.p.lookup_filter_mode
-
-==== presence ====
-
-A new rpc command presence.updateWatchers
-
-  * https://www.kamailio.org/docs/modules/devel/modules/presence.html#presence.rpc.updateWatchers
-
-==== siptrace ====
-
-Add transaction and dialog level tracing to the module function sip_trace
-
-  * https://www.kamailio.org/docs/modules/devel/modules/siptrace.html#siptrace.f.sip_trace
-
-==== sdpops ====
-
-Added new sdp_get_ddress_family() function to extract the IP address family from the SDP body
-
-  * https://www.kamailio.org/docs/modules/devel/modules/sdpops.html#sdpops.f.sdp_get_address_family
-
-==== sl ====
-
-Add new pseudo-variables: $ltt(key) - return local generated to tag when Kamailio sends a reply.
-
-  * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#ltt_key_-_local_to-tag    
-
-==== sqlops ====
-
-Add a new parameter connect_mode, option to start even when connecting to db fails.
-
-  * https://www.kamailio.org/docs/modules/devel/modules/sqlops.html#sqlops.p.connect_mode    
-
-==== rr ====
-
-Add new return value for preloaded route set to loose_route(). Now it is possible to detect from the script if a preloaded Route header was removed that pointed at the local proxy.
-
-  * https://www.kamailio.org/docs/modules/devel/modules/rr.html#rr.f.loose_route
-
-==== rls ====
-
-Add a new rpc command rls.update_subs.
-
-  * https://www.kamailio.org/docs/modules/devel/modules/rls.html#rls.rpc.update_subs
-
-==== rtpengine ====
-
-Introduce additional hashing algorithm SHA1 over callid for better distribution among nodes. 
-
-  * https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.p.hash_algo
-
-==== janssonrpcc ====
-
-Add new parameter "keep_alive", send periodic tcp keepalive packets to server in order to prevent connection from closing.
-
-  * https://www.kamailio.org/docs/modules/devel/modules/janssonrpcc.html#idm1023243564
-
-==== textops ====
-
-Add a new function regex_substring(itext, regex, index, mcount, dpv). Return a substring extracted by matching with a regular expression and the index of matched token.
-
-  * https://www.kamailio.org/docs/modules/devel/modules/textops.html#textops.f.regex_substring
-
-==== tls ====
-
-Add support for unique identifier PVs and select: $tls_peer_subject_uid and $tls_my_subject_uid, new selects: uid, uniqueIdentifier and unique_identifier.
-
-  * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#tls_peer_subject_uid
-  * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#tls_my_subject_uid
-
-==== tmx ====
-
-Add a new function t_drop([rcode])
-
-  * https://www.kamailio.org/docs/modules/devel/modules/tmx.html#tmx.f.t_drop
-
-==== kex ====
-
-New rpc command mod.mem_statsx, to print also the count of allocated chunks in summary.
-
-  * https://www.kamailio.org/docs/modules/devel/modules/kex.html#kex.r.mod.mem_statsx
-
-==== pv ====
-
-New pseudo-variable $rcv(key), available inside event_route[core:msg-received] to get details of the received message.
-
-  * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#received_data_attributes
-
-==== mqueue ====
-
-Add a new rpc command mqueue.fetch
-
-  * https://www.kamailio.org/docs/modules/devel/modules/mqueue.html#mqueue.f.mq_fetch
 
 ==== ims_ipsec_pcscf ====
 
@@ -228,6 +120,113 @@ Add-on to third party registration in S-CSCF to the ims_usrloc_scscf module.
 Add-on to third party registration in S-CSCF to the ims_registrar_scscf module.
 
   * https://www.kamailio.org/docs/modules/devel/modules/ims_registrar_scscf.html
+
+==== mqueue ====
+
+Add a new rpc command mqueue.fetch
+
+  * https://www.kamailio.org/docs/modules/devel/modules/mqueue.html#mqueue.f.mq_fetch
+
+==== pv ====
+
+New pseudo-variable $rcv(key), available inside event_route[core:msg-received] to get details of the received message.
+
+  * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#received_data_attributes
+
+==== janssonrpcc ====
+
+Add new parameter "keep_alive", send periodic tcp keepalive packets to server in order to prevent connection from closing.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/janssonrpcc.html#idm1023243564
+
+==== kex ====
+
+New rpc command mod.mem_statsx, to print also the count of allocated chunks in summary.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/kex.html#kex.r.mod.mem_statsx
+
+==== presence ====
+
+A new rpc command presence.updateWatchers
+
+  * https://www.kamailio.org/docs/modules/devel/modules/presence.html#presence.rpc.updateWatchers
+
+==== registrar ====
+
+New parameter lookup_filter_mode to control what filters should be applied for lookup(...) operations. Filter values are specified via filed of xavp_cfg.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/registrar.html#registrar.p.lookup_filter_mode
+
+==== rr ====
+
+Add new return value for preloaded route set to loose_route(). Now it is possible to detect from the script if a preloaded Route header was removed that pointed at the local proxy.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/rr.html#rr.f.loose_route
+
+==== rls ====
+
+Add a new rpc command rls.update_subs.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/rls.html#rls.rpc.update_subs
+
+==== rtpengine ====
+
+Introduce additional hashing algorithm SHA1 over callid for better distribution among nodes. 
+
+  * https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.p.hash_algo
+
+==== sdpops ====
+
+Added new sdp_get_ddress_family() function to extract the IP address family from the SDP body
+
+  * https://www.kamailio.org/docs/modules/devel/modules/sdpops.html#sdpops.f.sdp_get_address_family
+
+==== siptrace ====
+
+Add transaction and dialog level tracing to the module function sip_trace
+
+  * https://www.kamailio.org/docs/modules/devel/modules/siptrace.html#siptrace.f.sip_trace
+
+==== sl ====
+
+Add new pseudo-variables: $ltt(key) - return local generated to tag when Kamailio sends a reply.
+
+  * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#ltt_key_-_local_to-tag    
+
+==== sqlops ====
+
+Add a new parameter connect_mode, option to start even when connecting to db fails.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/sqlops.html#sqlops.p.connect_mode    
+
+==== textops ====
+
+Add a new function regex_substring(itext, regex, index, mcount, dpv). Return a substring extracted by matching with a regular expression and the index of matched token.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/textops.html#textops.f.regex_substring
+
+==== tls ====
+
+Add support for unique identifier PVs and select: $tls_peer_subject_uid and $tls_my_subject_uid, new selects: uid, uniqueIdentifier and unique_identifier.
+
+  * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#tls_peer_subject_uid
+  * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#tls_my_subject_uid
+
+==== tmx ====
+
+Add a new function t_drop([rcode])
+
+  * https://www.kamailio.org/docs/modules/devel/modules/tmx.html#tmx.f.t_drop
+
+==== uac ====
+
+New modparam reg_gc_interval, to define a value for garbage collection interval
+
+  * https://www.kamailio.org/docs/modules/devel/modules/uac.html#uac.p.reg_gc_interval
+
+The uac_replace_from/uac_replace_to function (with dialog storage option) will now also work properly after a restart from Kamailio, if dialog data is stored in a database.
+
+The uac_replace_from/uac_replace_to function will now also properly store and restore the Display Name with the dialog storage option.
 
 
 ===== New in Core =====
