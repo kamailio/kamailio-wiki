@@ -48,6 +48,12 @@ Added a new param in the cnxcc_set_max_credit() function to set the connect cost
 
   * https://www.kamailio.org/docs/modules/devel/modules/cnxcc.html#cnxcc.f.set_max_credit
 
+==== dialplan ====
+
+Add reload_delta parameter to the dialplan module. Make the rate limit of maximum allowed dialplan reload configurable.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/dialplan.html#dialplan.p.reload_delta
+
 ==== uac ====
 
 New modparam reg_gc_interval, to define a value for garbage collection interval
