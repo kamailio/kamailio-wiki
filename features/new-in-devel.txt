@@ -25,7 +25,7 @@ KEMI specific extensions.
 
 ==== rtp_media_server ====
 
-Embedded RTP and media processing functionalities for Kamailio
+Embedded RTP and media processing functionalities for Kamailio, like playing media or bridging in a B2BUA manner. Includes support for different codecs (including Opus).
 
   * https://www.kamailio.org/docs/modules/devel/modules/rtp_media_server.html
 
