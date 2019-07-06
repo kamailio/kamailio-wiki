@@ -293,6 +293,14 @@ Refactoring and unification of memory allocation error logging infrastructure. C
 
 ==== kamailio.cfg ====
 
+Changes to the default kamailio.cfg
+
+  * detect sipvicious as scanner
+  * do sanity check for sip responses
+  * no connect for forwarding requests withing dialog
+  * set no connect flags for replies and natted messages
+  * explicitely set the tcp/tls connections upper limits
+
 ===== Tools =====
 
 Added tool to generate code for KEMI modules to misc/tools/kemi/kemi-code-gen.py - can generate typedefs for functions and the large if-else blocks for variants of parameters.
