@@ -48,7 +48,6 @@ Added a new param in the cnxcc_set_max_credit() function to set the connect cost
 
   * https://www.kamailio.org/docs/modules/devel/modules/cnxcc.html#cnxcc.f.set_max_credit
 
-
 ==== uac ====
 
 New modparam reg_gc_interval, to define a value for garbage collection interval
@@ -57,8 +56,8 @@ New modparam reg_gc_interval, to define a value for garbage collection interval
 
 ==== presence ====
 
-A new rpc command presence.updateWatchers were added to the presence module.
-    
+A new rpc command updateWatchers were added to the presence module.
+
   * https://www.kamailio.org/docs/modules/devel/modules/presence.html#presence.rpc.updateWatchers
 
 ==== ims_ipsec_pcscf ====
