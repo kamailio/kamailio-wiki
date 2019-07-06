@@ -2366,6 +2366,17 @@ Exported by: tls
 
 Exported by: tls
 
+==== @tls.my.subject.uid ====
+
+Exported by: tls
+
+==== @tls.my.subject.uniqueIdentifier ====
+
+Exported by: tls
+
+==== @tls.my.subject.unique_identifier ====
+
+Exported by: tls
 
 ==== @tls.my.uri ====
 
@@ -3363,6 +3374,18 @@ Exported by: tls
 
 
 ==== @tls.peer.subject.unit ====
+
+Exported by: tls
+
+==== @tls.peer.subject.uid ====
+
+Exported by: tls
+
+==== @tls.peer.subject.uniqueIdentifier ====
+
+Exported by: tls
+
+==== @tls.peer.subject.unique_identifier ====
 
 Exported by: tls
 
