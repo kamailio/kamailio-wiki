@@ -48,6 +48,23 @@ Added a new param in the cnxcc_set_max_credit() function to set the connect cost
 
   * https://www.kamailio.org/docs/modules/devel/modules/cnxcc.html#cnxcc.f.set_max_credit
 
+==== ims_ipsec_pcscf ====
+
+Add IPv6 support to the ims_ipsec_pcscf module. Additional support for multiple TCP connections was added.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/ims_ipsec_pcscf.html
+
+==== ims_registrar_pcscf ====
+
+Add support for multiple TCP connections to the ims_registrar_pcscf module.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/ims_registrar_pcscf.html
+
+==== ims_usrloc_pcscf ====
+
+Add support for multiple TCP connections to the ims_usrloc_pcscf module.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/ims_usrloc_pcscf.html
 ===== New in Core =====
 
 ==== Interpreter ====
