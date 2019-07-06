@@ -272,7 +272,7 @@ Many extensions to the KEMI scripting language support in core and modules were 
 
   * New global parameter bind_ipv6_link_local. If set to 1, try to bind also IPv6 link local addresses by discovering the scope of the interface. This apply for UDP socket for now, to be added for the other protocols.
     * https://www.kamailio.org/wiki/cookbooks/devel/core#bind_ipv6_link_local
-  * Introduce new configuration parameter tcp_accept_haproxy parameter. When active, inbound TCP connections are expected to behave according to the HA PROXY protocol. Both the v1 (human-readable) and v2 (binary) versions of the protocol are supported.
+  * Introduce new configuration parameter tcp_accept_haproxy parameter. When active, inbound TCP connections are expected to behave according to the HAProxy protocol. Both the v1 (human-readable) and v2 (binary) versions of the protocol are supported.
     * https://www.kamailio.org/wiki/cookbooks/devel/core#tcp_accept_haproxy
   * Added latency_limit_cfg global parameter to print execution time for configuration script only if it exceeds this value. It is printed to latency_cfg_log level, another added parameter.
     * https://www.kamailio.org/wiki/cookbooks/devel/core#latency_limit_action
