@@ -100,6 +100,8 @@ More information: https://www.kamailio.org/w/2019/05/kamailio-command-line-argum
 
 ==== Parameters ====
 
+  * New global parameter bind_ipv6_link_local. If set to 1, try to bind also IPv6 link local addresses by discovering the scope of the interface. This apply for UDP socket for now, to be added for the other protocols.
+
 ==== Functions ====
 
 ==== Memory Managers ====
