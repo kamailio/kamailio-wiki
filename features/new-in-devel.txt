@@ -86,7 +86,7 @@ More information: https://www.kamailio.org/w/2019/05/kamailio-command-line-argum
 
 ==== Memory Managers ====
 
-Refactoring and unification of memory allocation error logging infrastructure. Completed in the core, major modules migrated as well.
+Refactoring and unification of memory allocation error logging infrastructure. Completed in the core, major modules were migrated as well.
 ==== Architecture ====
 
 ==== kamailio.cfg ====
