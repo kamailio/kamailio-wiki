@@ -219,7 +219,11 @@ Add transaction and dialog level tracing to the module function sip_trace
 
 Add new pseudo-variables: $ltt(key) - return local generated to tag when Kamailio sends a reply.
 
-  * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#ltt_key_-_local_to-tag    
+  * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#ltt_key_-_local_to-tag   
+
+ Add configuration parameter to add path and flags to redirected contacts.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/sl.html#rich_redirect
 
 ==== sqlops ====
 
@@ -247,6 +251,10 @@ Add workaround for new OpenSSL 1.1, preloaded library. This is a workaround for 
 Added t_get_status_code() function to return the status code of the transaction - the sip response code.
 
   * https://www.kamailio.org/docs/modules/devel/modules/tm.html#tm.f.t_get_status_code
+
+Add configuration parameter to add path and flags to redirected contacts.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/tm.html#tm.p.rich_redirect
 
 ==== tmx ====
 
@@ -285,6 +293,8 @@ More information: https://www.kamailio.org/w/2019/05/kamailio-command-line-argum
 
 ==== Interpreter ====
 
+Many extensions to the KEMI support in core and modules were added.
+
 ==== Parameters ====
 
 New global parameter bind_ipv6_link_local. If set to 1, try to bind also IPv6 link local addresses by discovering the scope of the interface. This apply for UDP socket for now, to be added for the other protocols.
@@ -305,9 +315,12 @@ Added latency_limit_cfg global parameter to print execution time for configurati
 ==== Memory Managers ====
 
 Refactoring and unification of memory allocation error logging infrastructure. Completed in the core, major modules were migrated as well.
+
 ==== Architecture ====
 
 Extend internal IPv4 and IPv6 parsing functions in the core.
+
+Create Contacts header with path vector as Route header. When Kamailio is functioning as a registrar sends a 302 redirect, the registered contacts are sent inside the Contact header. If a contact as a path vector, that path should become a Route header in the INVITE (rfc 3327). This patch adds the path vector as a Route header parameter to the Contacts in the redirect so the receiving entity of the 302 can add the proper Route headers. This is a standard way to specify headers to be added to a request, see rfc3261 section 19.1.1.
 
 ==== kamailio.cfg ====
 
@@ -325,4 +338,8 @@ Added subcommand to delete older expired records from database table: kamctl ul 
 
 Added acc initdb command to add additional columns needed with default kamailio.cfg and defined WITH_ACCDB for acc and missed_calls table.
 
+==== kamdbctl ====
+
+Added verification before database reinit, warn that drop command will indeed drop the database.
+    
 ==== kamcli ====
