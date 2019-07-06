@@ -60,11 +60,26 @@ New modparam reg_gc_interval, to define a value for garbage collection interval
 
   * https://www.kamailio.org/docs/modules/devel/modules/uac.html#uac.p.reg_gc_interval
 
+The uac_replace_from/uac_replace_to function (with dialog storage option) will now also work properly after a restart from Kamailio, if dialog data is stored in a database.
+
+==== registrar ====
+
+New parameter lookup_filter_mode for the registrar module to control what filters should be applied for lookup(...) operations. Filter values are specified via filed of xavp_cfg.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/registrar.html#registrar.p.lookup_filter_mode
+
+
 ==== presence ====
 
 A new rpc command updateWatchers were added to the presence module.
 
   * https://www.kamailio.org/docs/modules/devel/modules/presence.html#presence.rpc.updateWatchers
+
+==== kex ====
+
+New rpc command mod.mem_statsx for the kex module, to print also the count of allocated chunks in summary.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/kex.html#kex.r.mod.mem_statsx
 
 ==== ims_ipsec_pcscf ====
 
@@ -83,6 +98,26 @@ Add support for multiple TCP connections to the ims_registrar_pcscf module.
 Add support for multiple TCP connections to the ims_usrloc_pcscf module.
 
   * https://www.kamailio.org/docs/modules/devel/modules/ims_usrloc_pcscf.html
+
+==== ims_isc ====
+
+Add functionality to a add-on to third party registration in S-CSCF. The feature assumes two new flags in HSS database, where additional to the "Service Info XML" an "insertRegisterRequest" flag or an "insertRegisterResponse" flag can be set. These flags are sent with the SAR/SAA exchange to the S-CSCF. More information can be found in the commit message (99b2cfaf4151968a62) and the module documentation.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/ims_isc.html
+
+==== ims_usrloc_scscf ====
+
+Add-on to third party registration in S-CSCF to the ims_usrloc_scscf module.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/ims_usrloc_scscf.html
+
+==== ims_registrar_scscf ====
+
+Add-on to third party registration in S-CSCF to the ims_registrar_scscf module.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/ims_registrar_scscf.html
+
+
 ===== New in Core =====
 
 ==== Command line arguments ====
