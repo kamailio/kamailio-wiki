@@ -48,6 +48,12 @@ Added a new param in the cnxcc_set_max_credit() function to set the connect cost
 
   * https://www.kamailio.org/docs/modules/devel/modules/cnxcc.html#cnxcc.f.set_max_credit
 
+==== dispatcher ====
+
+Add a new rpc function to dispatcher module, add a new destination to in-memory dispatcher list.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#dispatcher.r.add
+
 ==== dialplan ====
 
 Add reload_delta parameter to the dialplan module. Make the rate limit of maximum allowed dialplan reload configurable.
@@ -81,6 +87,24 @@ A new rpc command updateWatchers were added to the presence module.
 Add transaction and dialog level tracing to the siptrace module function sip_trace.
 
   * https://www.kamailio.org/docs/modules/devel/modules/siptrace.html#siptrace.f.sip_trace
+
+==== sdpops ====
+
+Added new sdp_get_ddress_family() function to the sdpops module to extract the IP address family from the SDP body
+
+  * https://www.kamailio.org/docs/modules/devel/modules/sdpops.html#sdpops.f.sdp_get_address_family
+
+==== rr ====
+
+Add new return value for preloaded route set to loose_route() in rr module. Now it is possible to detect from the script if a preloaded Route header was removed that pointed at the local proxy.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/rr.html#rr.f.loose_route
+
+==== janssonrpcc ====
+
+Add new parameter "keep_alive" to jansonrpcc module, send periodic tcp keepalive packets to server in order to prevent connection from closing.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/janssonrpcc.html#idm1023243564
 
 ==== tls ====
 
@@ -158,8 +182,14 @@ More information: https://www.kamailio.org/w/2019/05/kamailio-command-line-argum
 ==== Parameters ====
 
   * New global parameter bind_ipv6_link_local. If set to 1, try to bind also IPv6 link local addresses by discovering the scope of the interface. This apply for UDP socket for now, to be added for the other protocols.
+  * https://www.kamailio.org/wiki/cookbooks/devel/core#bind_ipv6_link_local
+
+  * Introduce new configuration parameter tcp_accept_haproxy parameter. When active, inbound TCP connections are expected to behave according to the HA PROXY protocol. Both the v1 (human-readable) and v2 (binary) versions of the protocol are supported.
+  * https://www.kamailio.org/wiki/cookbooks/devel/core#tcp_accept_haproxy
 
 ==== Functions ====
+
+  * New rpc command core.psa - to print attributes stored in process table, similar to core.psx, but also prints the rank and status fields 
 
 ==== Memory Managers ====
 
