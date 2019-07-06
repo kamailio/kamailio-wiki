@@ -65,9 +65,10 @@ Add new rpc commands dlg.list_match and dlg.list_match_ctx to the dialog module.
 
 ==== dispatcher ====
 
-Add a new rpc function, it will add a new destination to in-memory dispatcher list.
+Add new rpc functions, to add and remove destinations to the in-memory dispatcher list.
 
   * https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#dispatcher.r.add
+  * https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#dispatcher.r.remove
 
 Add a new flag 16 (1<<4) to the cfg syntax for destinations with host not having A/AAAA record.
 
@@ -133,6 +134,10 @@ New pseudo-variable $rcv(key), available inside event_route[core:msg-received] t
 
   * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#received_data_attributes
 
+New pseudo-variable $TV(Fn) - formatted time with microseconds YYYY-MM-DD HH:MM:SS.UUUUUU. Current time in human readable format with microseconds precission.
+
+  * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#tv_name
+
 ==== janssonrpcc ====
 
 Add new parameter "keep_alive", send periodic tcp keepalive packets to server in order to prevent connection from closing.
@@ -175,6 +180,14 @@ Introduce additional hashing algorithm SHA1 over callid for better distribution 
 
   * https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.p.hash_algo
 
+Add play_media() and stop_media() functions, also includes addition of the $media_duration pseudo-variable, as well as several code cleanups and simplifications.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.f.play_media
+  * https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.f.stop_media
+  * https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.p.media_duration
+
+Add support for trickle ICE SDP fragments, add support for explicit load balancing options and add support for via-branch=extra option.
+
 ==== sdpops ====
 
 Added new sdp_get_ddress_family() function to extract the IP address family from the SDP body
@@ -212,6 +225,14 @@ Add support for unique identifier PVs and select: $tls_peer_subject_uid and $tls
   * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#tls_peer_subject_uid
   * https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#tls_my_subject_uid
 
+Add workaround for new OpenSSL 1.1, preloaded library. This is a workaround for OpenSSL >= 1.1 which uses internal locking and doesn't support locks in memory shared across multiple processes.
+
+==== tm ====
+
+Added t_get_status_code() function to return the status code of the transaction - the sip response code.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/tm.html#tm.f.t_get_status_code
+
 ==== tmx ====
 
 Add a new function t_drop([rcode])
@@ -228,6 +249,11 @@ The uac_replace_from/uac_replace_to function (with dialog storage option) will n
 
 The uac_replace_from/uac_replace_to function will now also properly store and restore the Display Name with the dialog storage option.
 
+==== websocket ====
+
+Added check mechanism based on tcp connection - type 3 (KEEPALIVE_MECHANISM_CONCHECK)
+
+  * https://www.kamailio.org/docs/modules/devel/modules/websocket.html
 
 ===== New in Core =====
 
@@ -267,6 +293,8 @@ Refactoring and unification of memory allocation error logging infrastructure. C
 
 ===== Tools =====
 
+Added tool to generate code for KEMI modules to misc/tools/kemi/kemi-code-gen.py - can generate typedefs for functions and the large if-else blocks for variants of parameters.
+
 ==== kamcmd ====
 
 ==== kamctl ====
@@ -274,5 +302,7 @@ Refactoring and unification of memory allocation error logging infrastructure. C
 Added subcommand to print the server version using rpc command: kamctl srv version 
 
 Added subcommand to delete older expired records from database table: kamctl ul dbclean [<secs>]
+
+Added acc initdb command to add additional columns needed with default kamailio.cfg and defined WITH_ACCDB for acc and missed_calls table.
 
 ==== kamcli ====
