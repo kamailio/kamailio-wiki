@@ -17,6 +17,12 @@ Old **sr** module exported to Lua scripting.
 
   * https://www.kamailio.org/docs/modules/devel/modules/app_lua_sr.html
 
+==== xhttp_prom ====
+
+Generates suitable metrics for a Prometheus monitoring platform, answering to Prometheus pull requests (HTTP requests to /metrics URL).
+
+  * https://www.kamailio.org/docs/modules/devel/modules/xhttp_prom.html
+
 ==== kemix ====
 
 KEMI specific extensions.
