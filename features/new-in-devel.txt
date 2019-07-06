@@ -67,6 +67,16 @@ Add support for multiple TCP connections to the ims_usrloc_pcscf module.
   * https://www.kamailio.org/docs/modules/devel/modules/ims_usrloc_pcscf.html
 ===== New in Core =====
 
+==== Command line arguments ====
+
+Adding support for long option names, to kamailio. This makes it easier to deploy Kamailio in dynamic environments like containers. Examples:
+
+  * add domain aliases with --alias
+  * set advertised address to listen sockets speficied with -l socket/advertise
+  * set server id with --server-id
+  * set a subst, substdef or substdefs preprocessor expression with --subst, --substdef or --substdefs
+  * More information: https://www.kamailio.org/w/2019/05/kamailio-command-line-arguments/
+
 ==== Interpreter ====
 
 ==== Parameters ====
