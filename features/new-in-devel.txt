@@ -84,11 +84,21 @@ Add reload_delta parameter to make the rate limit of maximum allowed dialplan re
 
   * https://www.kamailio.org/docs/modules/devel/modules/dialplan.html#dialplan.p.reload_delta
 
+==== evrexec ====
+
+Added rpc command evrexec.run to run an event_route: kamctl rpc evrexec.run evname [evdata]. First parameter is the event route name (or KEMI function), second parameter (optional, string) is an arbitrary data that becomes available inside the event route via $evr(data).
+
+  * https://www.kamailio.org/docs/modules/devel/modules/evrexec.html#evrexec.r.run
+
+==== ims ====
+
+Extend module functionality significantly, several new commands (e.g. #rooms, #add) were added. Internal refactoring and protocol extensions were done as well. For details have a look to the commit messages for this module.
+
 ==== ims_ipsec_pcscf ====
 
 Add IPv6 support to the ims_ipsec_pcscf module. Set authentication algorithm for SA depending of parsed security-client info from REGISTER request message. For now, the supported algorithms are md5 and sha1, the default algorithm is sha1.
 
-Additional support for multiple TCP connections was added.
+Additional initial TCP support and support for multiple TCP connections were added.
 
   * https://www.kamailio.org/docs/modules/devel/modules/ims_ipsec_pcscf.html
 
@@ -186,6 +196,11 @@ Add play_media() and stop_media() functions, also includes addition of the $medi
   * https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.f.stop_media
   * https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.p.media_duration
 
+Add start_forwarding() and stop_forwarding() functions.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.f.start_forwarding
+  * https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.f.stop_forwarding
+
 Add support for trickle ICE SDP fragments, add support for explicit load balancing options and add support for via-branch=extra option.
 
 ==== sdpops ====
@@ -277,6 +292,11 @@ New global parameter bind_ipv6_link_local. If set to 1, try to bind also IPv6 li
 
 Introduce new configuration parameter tcp_accept_haproxy parameter. When active, inbound TCP connections are expected to behave according to the HA PROXY protocol. Both the v1 (human-readable) and v2 (binary) versions of the protocol are supported.
   * https://www.kamailio.org/wiki/cookbooks/devel/core#tcp_accept_haproxy
+
+Added latency_limit_cfg global parameter to print execution time for configuration script only if it exceeds this value. It is printed to latency_cfg_log level, another added parameter.
+
+  * https://www.kamailio.org/wiki/cookbooks/devel/core#latency_limit_action
+  * https://www.kamailio.org/wiki/cookbooks/devel/core#latency_cfg_log
 
 ==== Functions ====
 
