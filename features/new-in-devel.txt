@@ -75,6 +75,7 @@ Add support for multiple TCP connections to the ims_usrloc_pcscf module.
 
 ==== Memory Managers ====
 
+Refactoring and unification of memory allocation error logging infrastructure. Completed in the core, major modules migrated as well.
 ==== Architecture ====
 
 ==== kamailio.cfg ====
