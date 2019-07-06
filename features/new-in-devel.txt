@@ -85,7 +85,7 @@ Added rpc command evrexec.run to run an event_route: kamctl rpc evrexec.run evna
 
   * https://www.kamailio.org/docs/modules/devel/modules/evrexec.html#evrexec.r.run
 
-==== ims ====
+==== imc ====
 
 Extend module functionality significantly, several new commands (e.g. #rooms, #add) were added. Internal refactoring and protocol extensions were done as well. For details have a look to the commit messages for this module.
 
