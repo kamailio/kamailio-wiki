@@ -266,7 +266,7 @@ More information: https://www.kamailio.org/w/2019/05/kamailio-command-line-argum
 
 ==== Interpreter ====
 
-Many extensions to the KEMI support in core and modules were added.
+Many extensions to the KEMI scripting language support in core and modules were added.
 
 ==== Parameters ====
 
