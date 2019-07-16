@@ -63,7 +63,7 @@ Add new rpc commands dlg.list_match and dlg.list_match_ctx to the dialog module.
   * https://www.kamailio.org/docs/modules/devel/modules/dialog.html#dlg.r.list_match
   * https://www.kamailio.org/docs/modules/devel/modules/dialog.html#dlg.r.list_match_ctx
 
-Add new parameter to loop BYE through proxy. When in use, sending locally generated in-dialog requests will loop back to the proxy with a proper Record-Route header, including any parameters.
+Add new parameter keep_proxy_rr to loop BYE through proxy. When in use, sending locally generated in-dialog requests will loop back to the proxy with a proper Record-Route header, including any parameters.
 
 ==== dispatcher ====
 
