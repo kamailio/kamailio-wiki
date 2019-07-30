@@ -50,6 +50,13 @@ Add support for leg_info fields to the acc_json module
 
   * https://www.kamailio.org/docs/modules/devel/modules/acc_json.html
 
+==== async ====
+
+New functionality to sleep for milli-seconds and also schedule a asynchronous route execution with milli-seconds delay
+
+  * https://kamailio.org/docs/modules/devel/modules/async.html#async.f.async_ms_sleep
+  * https://kamailio.org/docs/modules/devel/modules/async.html#async.f.async_ms_route
+
 ==== cnxcc ====
 
 Added a new param in the cnxcc_set_max_credit() function to set the connect cost of a call.
@@ -234,6 +241,7 @@ Add a new function regex_substring(itext, regex, index, mcount, dpv). Return a s
     * https://www.kamailio.org/docs/modules/devel/modules/tm.html#tm.f.t_get_status_code
   * Add configuration parameter to add path and flags to redirected contacts.
     * https://www.kamailio.org/docs/modules/devel/modules/tm.html#tm.p.rich_redirect
+  * Removal of obselete delete_timer parameter - it was not used since a long time
 
 ==== tmx ====
 
