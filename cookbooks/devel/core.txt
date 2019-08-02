@@ -1473,7 +1473,7 @@ pv_buffer_slots=12
 The limit how many pv declarations in the cache after which an action is taken. Default value is 2048.
 
 <code>
-pv_cache_limi=1024
+pv_cache_limit=1024
 </code>
 
 ==== pv_cache_action ====
