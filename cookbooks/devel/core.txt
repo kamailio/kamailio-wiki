@@ -1468,6 +1468,22 @@ Example of usage:
 pv_buffer_slots=12
 </code>
 
+==== pv_cache_limit ====
+
+The limit how many pv declarations in the cache after which an action is taken. Default value is 2048.
+
+<code>
+pv_cache_limi=1024
+</code>
+
+==== pv_cache_action ====
+
+Specify what action to be done when the size of pv cache is exceeded. If 0, print an warning log message when the limit is exceeded. If 1, warning log messages is printed and the cache systems tries to drop a $sht(...) declaration. Default is 0.
+
+<code>
+pv_cache_action=1
+</code>
+
 ==== rundir ====
 
 Alias: run_dir
