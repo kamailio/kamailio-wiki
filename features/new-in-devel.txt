@@ -17,6 +17,12 @@ Old **sr** module exported to Lua scripting.
 
   * https://www.kamailio.org/docs/modules/devel/modules/app_lua_sr.html
 
+==== lost ====
+
+HELD (RFC6155) and LOST (RFC5222) location-based routing.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/lost.html
+
 ==== kemix ====
 
 KEMI specific extensions.
