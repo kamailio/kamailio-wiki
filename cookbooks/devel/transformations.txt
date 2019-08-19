@@ -417,7 +417,7 @@ The name of the transformation starts with 'param.'. The PV value is considered 
 
 Available transformations in this class are presented in the next sections.
 
-**Important Note:** the delimiter cannot be comma (,), because this trasformation is using SIP header/URI parameter parser and the comma is a delimiter between serialized SIP header/URI bodies. The workaround is to use the subst transformation to replace the comma with another character that is used then as separator.
+**Important Note:** the delimiter cannot be comma (,), because this trasformation is using SIP header/URI parameters parser and the comma is a delimiter between serialized SIP header/URI bodies. The workaround is to use the subst transformation to replace the comma with another character that is used then as separator.
 
 
 ==== {param.value,name[, delimiter]} ====
