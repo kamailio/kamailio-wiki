@@ -2073,6 +2073,15 @@ Example of usage:
 
     tcp_connection_lifetime=3605
 
+==== tcp_connection_match ====
+
+If set to 1, try to be more strict in matching outbound TCP connections, attempting to lookup first the connection using also local port, not only the local IP and remote IP+port.
+
+Default is 0.
+
+<code c>
+tcp_connection_match=1
+</code>
 ==== tcp_connect_timeout ====
 
 Time in seconds before an ongoing attempt to establish a new TCP connection will be aborted. Lower this value for faster detection of TCP connection problems. The default value is 10s.
