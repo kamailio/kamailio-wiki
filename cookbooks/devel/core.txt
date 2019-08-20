@@ -2026,6 +2026,15 @@ Default value is **no**.
 tcp_accept_no_cl=yes
 </code>
 
+==== tcp_accept_unique ====
+
+If set to 1, reject duplicate connections coming from same source IP and port.
+
+Default set to 0.
+
+<code c>
+tcp_accept_unique = 1
+</code>
 ==== tcp_async ====
 
 **Alias name: tcp_buf_write**
