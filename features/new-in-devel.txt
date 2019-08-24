@@ -262,7 +262,7 @@ Add a new function t_drop([rcode])
   * New modparam default_socket, to define a default socket for sending registrations and requests out
     * https://www.kamailio.org/docs/modules/devel/modules/uac.html#uac.p.default_socket
   * Extension in uacreg table, to specify a socket per table entry
-    * https://www.kamailio.org/docs/modules/5.2.x/modules/uac.html#idm551
+    * https://www.kamailio.org/docs/modules/devel/modules/uac.html#idm574
   * The uac_replace_from/uac_replace_to function (with dialog storage option) will now also work properly after a restart from Kamailio, if dialog data is stored in a database.
   * The uac_replace_from/uac_replace_to function will now also properly store and restore the Display Name with the dialog storage option.
 
