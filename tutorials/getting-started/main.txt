@@ -86,7 +86,7 @@ configure network and firewall to allow sending/receiving SIP and RTP packets,
 a.s.o.
 
 Troubleshooting Kamailio and SIP requires knowledge of various tools for
-reading and searching log files (e.g., grep, awk), sniffing the network (e.g.,
+reading and searching log files (e.g., grep, awk), sniffing the network (e.g., sngrep,
 ngrep, tcpdump, wireshark). Of course, knowing to work with text editor,
 especially the ones for terminal if the server is remote, is quite obvious
 (e.g., vim, joe, nano, pico, emacs, etc.).
