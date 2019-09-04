@@ -2,7 +2,7 @@
 
 **Current devel version will be numbered 5.3.0 and it is planned to be released in the autum 2019**.
 
-** Its features are documented here: https://www.kamailio.org/wiki/features/new-in-5.3.x
+**Its features are documented here: https://www.kamailio.org/wiki/features/new-in-5.3.x**
 
 <fc #0000FF>
 **Previous devel, current stable, version was 5.3.x (released on October, 2019), see what was new in that release at:**
