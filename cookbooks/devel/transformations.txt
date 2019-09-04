@@ -334,6 +334,17 @@ Return the value without surrounding (), [], {} or <>.
 $var(x) = "<sip:alice@test.sip>";
 $var(uri) = $(var(x){s.unbracket});
 </code>
+
+==== {s.count,c} ====
+
+Count how many times c appears in the pv value.
+
+<code c>
+abababa"{s.count,a}
+# will return 4
+</code>
+
+
 ===== URI Transformations =====
 
 The name of transformation starts with 'uri.'. The PV value is considered to be a SIP URI. This transformation returns parts of SIP URI (see struct sip_uri). If that part is missing, the returned value is an empty string.
