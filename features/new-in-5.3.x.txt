@@ -1,4 +1,4 @@
-====== Kamailio SIP Server - New Features in 5.3.0 Version ======
+====== Kamailio SIP Server - New Features in 5.3.0 ======
 
 <fc #0000FF>
 **Previous devel, current stable, version was 5.2.x (released on November, 2018), see what was new in that release at:**
