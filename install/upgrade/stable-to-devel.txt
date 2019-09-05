@@ -1,12 +1,12 @@
-====== Upgrade Kamailio from v5.2.x to v5.3.0 (devel) ======
+====== Upgrade Kamailio from v5.3.x to v5.4.0 (devel) ======
 
-The page contains the details about the changes that were made to old components during the development of v5.3.0 compared with what existed in v5.2.x. It does not include the brand new modules, focusing on how to upgrade database and configuration file from v5.2.x to run with Kamailio devel.
+The page contains the details about the changes that were made to old components during the development of v5.4.0 compared with what existed in v5.3.x. It does not include the brand new modules, focusing on how to upgrade database and configuration file from v5.3.x to run with Kamailio devel.
 
 ===== Previous Stable Release =====
 
 If you look for the guidelines to upgrade to previous stable release, see:
 
-  * [[install:upgrade:5.1.x-to-5.2.0|Upgrade Kamailio v5.1.x to v5.2.0]]
+  * [[install:upgrade:5.2.x-to-5.3.0|Upgrade Kamailio v5.2.x to v5.3.0]]
 
 ===== Remarks =====
 
@@ -21,18 +21,7 @@ Following tokens are used to mark the changes:
 
 ==== Upgraded Modules ====
 
-  * **app_lua** - the functions exported to the old **sr** Lua module were moved to **app_lua_sr** module.
-
-<code c>
-# old config
-loadmodule "app_lua.so"
-modparam("app_lua", "register", "sl")
-
-# new config
-loadmodule "app_lua.so"
-loadmodule "app_lua_sr.so"
-modparam("app_lua_sr", "register", "sl")
-</code>
+ 
 ==== Removed Modules ====
 
   * none
@@ -55,7 +44,7 @@ modparam("app_lua_sr", "register", "sl")
 
 ==== MySQL Database Structure ====
 
-Run following SQL statements in MySQL client to upgrade database structure from v5.2 to v5.3:
+Run following SQL statements in MySQL client to upgrade database structure from v5.3 to v5.4:
 
 <code sql>
 ...
