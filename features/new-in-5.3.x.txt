@@ -169,7 +169,7 @@ Add a new rpc command mqueue.fetch
 
 Extend nat_uac_test() to test for mismatch between connection and source IP.
 
-  * https://kamailio.org/docs/modules/devel/modules/phonenum.html#phonenum.p.resid
+  * https://kamailio.org/docs/modules/devel/modules/nathelper.html#nathelper.f.nat_uac_test
 
 ==== pv ====
 
