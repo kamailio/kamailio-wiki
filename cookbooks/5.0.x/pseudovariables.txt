@@ -76,9 +76,10 @@ Predefined pseudo-variables are listed in alphabetical order.
 
 **$aU** - whole username from Authorization or Proxy-Authorization header
 
-==== $Au - Acc username ====
+==== $Au - Accounting username and realm/domain ====
 
-**$Au** - username for accounting purposes. It's a selective pseudo variable (inherited from acc module). It returns auth username ($au) if exists or From username ($fU) otherwise.
+**$Au** - username for accounting purposes. It's a selective pseudo variable (inherited from acc module). It returns the auth username and realm ($au@$ar) if exists or From URI ($fu) otherwise.
+
 
 
 ==== $branch(name) - Branch attributes ====
