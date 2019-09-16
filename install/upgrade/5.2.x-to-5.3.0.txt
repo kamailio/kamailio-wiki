@@ -137,10 +137,16 @@ ALTER TABLE topos_t CHANGE COLUMN b_srcaddr b_srcaddr varchar(255) NOT NULL DEFA
 ALTER TABLE topos_t CHANGE COLUMN as_contact as_contact varchar(512) NOT NULL DEFAULT ''; -- # was varchar(128) NOT NULL DEFAULT ''
 ALTER TABLE topos_t CHANGE COLUMN a_srcaddr a_srcaddr varchar(255) NOT NULL DEFAULT ''; -- # was varchar(128) NOT NULL DEFAULT ''
 
+-- uacreg table
 ALTER TABLE uacreg CHANGE COLUMN auth_proxy auth_proxy varchar(255) NOT NULL DEFAULT ''; -- # was varchar(128) NOT NULL DEFAULT ''
 ALTER TABLE uacreg ADD COLUMN socket varchar(128) NOT NULL DEFAULT '';
+UPDATE version SET table_version=4 WHERE TABLE_NAME='uacreg';
 
+
+-- usr_preferences table
 ALTER TABLE usr_preferences CHANGE COLUMN username username varchar(255) NOT NULL DEFAULT '0'; -- # was varchar(128) NOT NULL DEFAULT '0'
 
+
+-- watchers table
 ALTER TABLE watchers CHANGE COLUMN presentity_uri presentity_uri varchar(255) NOT NULL; -- # was varchar(128) NOT NULL
 </code>
