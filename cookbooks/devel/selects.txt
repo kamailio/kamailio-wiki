@@ -43,6 +43,10 @@ Select handling TLS environment.
 
 Select handling To header.
 
+==== sys ====
+
+Select handling system values
+
 ==== via ====
 
 Select handling Via header.
@@ -3484,6 +3488,29 @@ Exported by: core
 
 Exported by: core
 
+==== sys.now ====
+
+Exported by: core
+
+==== sys.pid ====
+
+Exported by: core
+
+==== sys.unique ====
+
+Exported by: core
+
+==== sys.now.utc ====
+
+Exported by: core
+
+==== sys.now.gmt ====
+
+Exported by: core
+
+==== sys.now.local ====
+
+Exported by: core
 
 ==== @v ====
 
