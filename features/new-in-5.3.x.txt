@@ -353,6 +353,8 @@ Many extensions to the KEMI scripting language support in core and modules were 
 
 Refactoring and unification of memory allocation error logging infrastructure. Completed in the core, major modules were migrated as well. The #define are called PKG_MEM_ERROR, PKG_MEM_CRITICAL, SHM_MEM_ERROR, SHM_MEM_CRITICAL, SYS_MEM_ERROR and SYS_MEM_CRITICAL error. Additional #define for variable log messages for special cases were added as well.
 
+Enable memory mem_join functionality in the memory manager as default. This this should help with server stability in low memory situations. Some downstream projects (e.g. Kazoo) enables this already since years.
+
 ==== Architecture ====
 
   * Extend internal IPv4 and IPv6 parsing functions in the core.
