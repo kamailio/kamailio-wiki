@@ -324,6 +324,7 @@ Adding support for long option names, to kamailio. This makes it easier to deplo
   * set advertised address to listen sockets speficied with -l socket/advertise
   * set server id with --server-id
   * set a subst, substdef or substdefs preprocessor expression with --subst, --substdef or --substdefs
+  * Print the architecture for that Kamailio was compiled for with existing parameter -I
 
 More information: https://www.kamailio.org/w/2019/05/kamailio-command-line-arguments/
 
@@ -361,6 +362,7 @@ Enable memory mem_join functionality in the memory manager as default. This this
   * Create Contacts header with path vector as Route header. When Kamailio is functioning as a registrar sends a 302 redirect, the registered contacts are sent inside the Contact header. If a contact as a path vector, that path should become a Route header in the INVITE (rfc 3327). This patch adds the path vector as a Route header parameter to the Contacts in the redirect so the receiving entity of the 302 can add the proper Route headers. This is a standard way to specify headers to be added to a request, see rfc3261 section 19.1.1.
   * Add DB_TABLE_VERSION_ERROR(table) error helper #define to DB1 API and migrate (almost) all modules that use version tables to it. This unify the logging and error behavior of the relevant modules that uses a database.
   * Improve to-tags to include more randomness and use the recommended size from RFC 3261.
+  * Improve core support for ARM v6 and ARM v7 platform
   * Different cleanups related to obselete code.
 
 ==== kamailio.cfg ====
