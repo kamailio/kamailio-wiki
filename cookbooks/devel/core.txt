@@ -1687,6 +1687,15 @@ See also udp_mtu_try_proto(proto) function.
 Default: UDP (off). Recommended: TCP.
 
   udp_mtu_try_proto = TCP|TLS|SCTP|UDP
+
+
+==== uri_host_extra_chars ====
+
+Specify additional chars that should be allowed in the host part of URI.
+
+<code c>
+uri_host_extra_chars = "_"
+</code>
 ==== user ====
 
 **Alias name: uid**
