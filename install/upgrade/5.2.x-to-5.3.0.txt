@@ -150,3 +150,144 @@ ALTER TABLE usr_preferences CHANGE COLUMN username username varchar(255) NOT NUL
 -- watchers table
 ALTER TABLE watchers CHANGE COLUMN presentity_uri presentity_uri varchar(255) NOT NULL; -- # was varchar(128) NOT NULL
 </code>
+
+
+==== PostgreSQL Database Structure ====
+
+Run the following SQL statements in PostgreSQL client to upgrade database structure from v5.2 to v5.3:
+
+<code sql>
+BEGIN;
+
+-- acc table
+ALTER TABLE IF EXISTS acc
+ALTER COLUMN to_tag TYPE varchar(128), ALTER COLUMN to_tag SET DEFAULT '', ALTER COLUMN to_tag SET NOT NULL,
+ALTER COLUMN from_tag TYPE varchar(128), ALTER COLUMN from_tag SET DEFAULT '', ALTER COLUMN from_tag SET NOT NULL;
+ 
+-- active_watchers table
+ALTER TABLE IF EXISTS active_watchers
+ALTER COLUMN contact TYPE varchar(255), ALTER COLUMN contact SET NOT NULL,
+ALTER COLUMN from_tag TYPE varchar(128), ALTER COLUMN from_tag SET NOT NULL,
+ALTER COLUMN to_tag TYPE varchar(128), ALTER COLUMN to_tag SET NOT NULL,
+ALTER COLUMN presentity_uri TYPE varchar(255), ALTER COLUMN presentity_uri SET NOT NULL,
+ALTER COLUMN local_contact TYPE varchar(255), ALTER COLUMN local_contact SET NOT NULL;
+
+-- aliases table
+ALTER TABLE IF EXISTS aliases
+ALTER COLUMN received TYPE varchar(255), ALTER COLUMN received SET DEFAULT NULL;
+
+-- carrierfailureroute table
+ALTER TABLE IF EXISTS carrierfailureroute
+ALTER COLUMN host_name TYPE varchar(255), ALTER COLUMN host_name SET DEFAULT '', ALTER COLUMN host_name SET NOT NULL;
+
+-- carrierroute table
+ALTER TABLE IF EXISTS carrierroute
+ALTER COLUMN rewrite_host TYPE varchar(255), ALTER COLUMN rewrite_host SET DEFAULT '', ALTER COLUMN rewrite_host SET NOT NULL;
+
+-- dialog table
+ALTER TABLE IF EXISTS dialog
+ALTER COLUMN req_uri TYPE varchar(255), ALTER COLUMN req_uri SET NOT NULL,
+ALTER COLUMN caller_contact TYPE varchar(255), ALTER COLUMN caller_contact SET NOT NULL,
+ALTER COLUMN callee_contact TYPE varchar(255), ALTER COLUMN callee_contact SET NOT NULL,
+ALTER COLUMN to_tag TYPE varchar(128), ALTER COLUMN to_tag SET NOT NULL,
+ALTER COLUMN from_tag TYPE varchar(128), ALTER COLUMN from_tag SET NOT NULL,
+ALTER COLUMN from_uri TYPE varchar(255), ALTER COLUMN from_uri SET NOT NULL,
+ALTER COLUMN to_uri TYPE varchar(255), ALTER COLUMN to_uri SET NOT NULL;
+
+-- missed_calls table
+ALTER TABLE IF EXISTS missed_calls
+ALTER COLUMN to_tag TYPE varchar(128), ALTER COLUMN to_tag SET DEFAULT '', ALTER COLUMN to_tag SET NOT NULL,
+ALTER COLUMN from_tag TYPE varchar(128), ALTER COLUMN from_tag SET DEFAULT '', ALTER COLUMN from_tag SET NOT NULL;
+
+-- pdt table
+ALTER TABLE IF EXISTS pdt
+ALTER COLUMN domain TYPE varchar(255), ALTER COLUMN domain SET DEFAULT '', ALTER COLUMN domain SET NOT NULL,
+ALTER COLUMN sdomain TYPE varchar(255), ALTER COLUMN sdomain SET NOT NULL;
+
+-- presentity table
+ALTER TABLE IF EXISTS presentity
+ALTER COLUMN sender TYPE varchar(255), ALTER COLUMN sender SET NOT NULL;
+
+-- pua table
+ALTER TABLE IF EXISTS pua
+ALTER COLUMN remote_contact TYPE varchar(255), ALTER COLUMN remote_contact SET NOT NULL,
+ALTER COLUMN watcher_uri TYPE varchar(255), ALTER COLUMN watcher_uri SET NOT NULL,
+ALTER COLUMN contact TYPE varchar(255), ALTER COLUMN contact SET NOT NULL,
+ALTER COLUMN to_tag TYPE varchar(128), ALTER COLUMN to_tag SET NOT NULL,
+ALTER COLUMN from_tag TYPE varchar(128), ALTER COLUMN from_tag SET NOT NULL,
+ALTER COLUMN pres_uri TYPE varchar(255), ALTER COLUMN pres_uri SET NOT NULL;
+
+-- purplemap table
+ALTER TABLE IF EXISTS purplemap
+ALTER COLUMN sip_user TYPE varchar(255), ALTER COLUMN sip_user SET NOT NULL,
+ALTER COLUMN ext_user TYPE varchar(255), ALTER COLUMN ext_user SET NOT NULL;
+
+-- rls_presentity table
+ALTER TABLE IF EXISTS rls_presentity
+ALTER COLUMN resource_uri TYPE varchar(255), ALTER COLUMN resource_uri SET NOT NULL;
+
+-- rls_watchers table
+ALTER TABLE IF EXISTS rls_watchers
+ALTER COLUMN to_tag TYPE varchar(128), ALTER COLUMN to_tag SET NOT NULL,
+ALTER COLUMN from_tag TYPE varchar(128), ALTER COLUMN from_tag SET NOT NULL,
+ALTER COLUMN presentity_uri TYPE varchar(255), ALTER COLUMN presentity_uri SET NOT NULL,
+ALTER COLUMN local_contact TYPE varchar(255), ALTER COLUMN local_contact SET NOT NULL,
+ALTER COLUMN contact TYPE varchar(255), ALTER COLUMN contact SET NOT NULL;
+
+-- sca_subscriptions table
+ALTER TABLE IF EXISTS sca_subscriptions
+ALTER COLUMN to_tag TYPE varchar(128), ALTER COLUMN to_tag SET NOT NULL,
+ALTER COLUMN from_tag TYPE varchar(128), ALTER COLUMN from_tag SET NOT NULL;
+
+-- silo table
+ALTER TABLE IF EXISTS silo
+ALTER COLUMN dst_addr TYPE varchar(255), ALTER COLUMN dst_addr SET DEFAULT '', ALTER COLUMN dst_addr SET NOT NULL,
+ALTER COLUMN src_addr TYPE varchar(255), ALTER COLUMN src_addr SET DEFAULT '', ALTER COLUMN src_addr SET NOT NULL;
+
+-- sip_trace table
+ALTER TABLE IF EXISTS sip_trace
+ALTER COLUMN fromtag TYPE varchar(128), ALTER COLUMN fromtag SET DEFAULT '', ALTER COLUMN fromtag SET NOT NULL,
+ALTER COLUMN status TYPE varchar(255), ALTER COLUMN status SET DEFAULT '', ALTER COLUMN status SET NOT NULL,
+ALTER COLUMN traced_user TYPE varchar(255), ALTER COLUMN traced_user SET DEFAULT '', ALTER COLUMN traced_user SET NOT NULL,
+ALTER COLUMN totag TYPE varchar(128), ALTER COLUMN totag SET DEFAULT '', ALTER COLUMN totag SET NOT NULL;
+
+-- speed_dial table
+ALTER TABLE IF EXISTS speed_dial
+ALTER COLUMN new_uri TYPE varchar(255), ALTER COLUMN new_uri SET DEFAULT '', ALTER COLUMN new_uri SET NOT NULL;
+
+-- topos_d table
+ALTER TABLE IF EXISTS topos_d
+ALTER COLUMN a_contact TYPE varchar(512), ALTER COLUMN a_contact SET DEFAULT '', ALTER COLUMN a_contact SET NOT NULL,
+ALTER COLUMN b_contact TYPE varchar(512), ALTER COLUMN b_contact SET DEFAULT '', ALTER COLUMN b_contact SET NOT NULL,
+ALTER COLUMN b_uri TYPE varchar(255), ALTER COLUMN b_uri SET DEFAULT '', ALTER COLUMN b_uri SET NOT NULL,
+ALTER COLUMN a_uri TYPE varchar(255), ALTER COLUMN a_uri SET DEFAULT '', ALTER COLUMN a_uri SET NOT NULL,
+ALTER COLUMN bs_contact TYPE varchar(512), ALTER COLUMN bs_contact SET DEFAULT '', ALTER COLUMN bs_contact SET NOT NULL,
+ALTER COLUMN as_contact TYPE varchar(512), ALTER COLUMN as_contact SET DEFAULT '', ALTER COLUMN as_contact SET NOT NULL,
+ALTER COLUMN r_uri TYPE varchar(255), ALTER COLUMN r_uri SET DEFAULT '', ALTER COLUMN r_uri SET NOT NULL;
+
+-- topos_t table
+ALTER TABLE IF EXISTS topos_t
+ALTER COLUMN x_uri TYPE varchar(255), ALTER COLUMN x_uri SET DEFAULT '', ALTER COLUMN x_uri SET NOT NULL,
+ALTER COLUMN a_contact TYPE varchar(512), ALTER COLUMN a_contact SET DEFAULT '', ALTER COLUMN a_contact SET NOT NULL,
+ALTER COLUMN b_contact TYPE varchar(512), ALTER COLUMN b_contact SET DEFAULT '', ALTER COLUMN b_contact SET NOT NULL,
+ALTER COLUMN bs_contact TYPE varchar(512), ALTER COLUMN bs_contact SET DEFAULT '', ALTER COLUMN bs_contact SET NOT NULL,
+ALTER COLUMN b_srcaddr TYPE varchar(255), ALTER COLUMN b_srcaddr SET DEFAULT '', ALTER COLUMN b_srcaddr SET NOT NULL,
+ALTER COLUMN as_contact TYPE varchar(512), ALTER COLUMN as_contact SET DEFAULT '', ALTER COLUMN as_contact SET NOT NULL,
+ALTER COLUMN a_srcaddr TYPE varchar(255), ALTER COLUMN a_srcaddr SET DEFAULT '', ALTER COLUMN a_srcaddr SET NOT NULL;
+ 
+-- uacreg table
+ALTER TABLE IF EXISTS uacreg
+ALTER COLUMN auth_proxy TYPE varchar(255), ALTER COLUMN auth_proxy SET DEFAULT '', ALTER COLUMN auth_proxy SET NOT NULL,
+ADD COLUMN IF NOT EXISTS socket varchar(128) NOT NULL DEFAULT '';
+UPDATE version SET table_version=4 WHERE table_name='uacreg';
+
+-- usr_preferences table
+ALTER TABLE IF EXISTS usr_preferences
+ALTER COLUMN username TYPE varchar(255), ALTER COLUMN username SET DEFAULT '0', ALTER COLUMN username SET NOT NULL;
+
+-- watchers table
+ALTER TABLE IF EXISTS watchers
+ALTER COLUMN presentity_uri TYPE varchar(255), ALTER COLUMN presentity_uri SET NOT NULL;
+
+COMMIT;
+</code>
