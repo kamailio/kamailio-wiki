@@ -253,6 +253,11 @@ Available directives:
   * **#!trydef** - add a define if not already defined
   * **#!redefine** - force redefinition even if already defined
 
+Predefined keywords:
+  * **KAMAILIO_X[_Y[_Z]]** - Kamailio versions
+  * **MOD_X** - when module X has been loaded
+See 'kamctl core.ppdefines_full' for full list.
+
 Among benefits:
   * easy way to enable/disable features (e.g., see default cfg -- controlling support of nat traversal, presence, etc...)
   * switch control for parts where conditional statements were not possible (e.g., global parameters, module settings)
