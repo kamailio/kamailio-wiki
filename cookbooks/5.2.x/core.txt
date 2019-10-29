@@ -3113,7 +3113,6 @@ Core 'reply_route' block is executed before a possible **tm** 'onreply_route' bl
       }
   }
 </code>
-
 ==== onsend_route ====
 
 The route is executed in when a SIP request is sent out. Only a limited number of commands are allowed (drop, if + all the checks, msg flag manipulations, send(), log(), textops::search()).
