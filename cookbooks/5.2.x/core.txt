@@ -3034,3 +3034,83 @@ Example of usage:
         }
     }
 </code>
+
+==== failure_route ====
+
+Failed transaction routing block. It contains a set of actions to be taken each transaction that received only negative replies (>=300) for all branches. The 'failure_route' is executed only by TM module after it was armed via t_on_failure("failure_route_index").
+
+Note that in 'failure_route' is processed the request that initiated the transaction, not the reply .
+
+
+Example of usage:
+
+<code c>
+    request_route {
+        lookup("location");
+        t_on_failure("TOVOICEMAIL");
+        if(!t_relay()) {
+            sl_send_reply("500", "relaying failed");
+        }
+    }
+    failure_route[TOVOICEMAIL] {
+        if(is_method("INVITE")) {
+             # call failed - relay to voice mail
+             t_relay_to_udp("voicemail.server.com","5060");
+        }
+    }
+</code>
+
+==== reply_route ====
+
+Main SIP response (reply) handling block - it contains a set of actions to be executed for SIP replies. It is executed for all replies received from the network.
+
+It does not have a name and it is executed by the core, before any other module handling the SIP reply. It is triggered only by SIP replies received on the network.
+
+There is no network route that can be enforced for a SIP reply - it is sent based on Via header, according to SIP RFC3261 - therefore no dedicated actions for forwarding the reply must be used in this block.
+
+This routing block is optional, if missing, the SIP reply is sent to the address in 2nd Via header.
+
+One can decide to drop a SIP reply by using **drop** action.
+
+Example:
+
+<code c>
+reply_route {
+  if(status=="128"") {
+    drop;
+  }
+}
+</code>
+
+<fc #4682b4>Note: for backward compatibility reasons, the main 'reply' routing block can be also identified by 'onreply_route {...}' or 'onreply_route[0] {...}'.</fc>
+
+==== onreply_route ====
+
+
+SIP reply routing block executed by **tm** module. It contains a set of actions to be taken for SIP replies in the contect of an active transaction.
+
+The 'onreply_route' must be armed for the SIP requests whose replies should be processed within it, via t_on_reply("onreply_route_index").
+
+Core 'reply_route' block is executed before a possible **tm** 'onreply_route' block.
+
+<code c>
+  request_route {
+      lookup("location");
+      t_on_reply("LOGRPL");
+      if(!t_relay()) {
+          sl_send_reply("500", "relaying failed");
+      }
+  }
+
+  reply_route {
+      if(!t_check_trans()) {
+          drop;
+      }
+  }
+
+  onreply_route[LOGRPL] {
+      if(status=~"1[0-9][0-9]") {
+           log("provisional response\n");
+      }
+  }
+</code>
