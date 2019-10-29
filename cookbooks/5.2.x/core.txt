@@ -3012,7 +3012,6 @@ route[ZERO] {
 A sub-route can execute another sub-route. There is a limit to the number of recursive levels, avoiding ending up in infinite loops -- see **max_recursive_level** global parameter.
 
 The sub-route blocks allow to make the configuration file modular, simplifying the logic and helping to avoid duplication of actions.
-
 ==== branch_route ====
 
 Request's branch routing block. It contains a set of actions to be taken for each branch of a SIP request. It is executed only by TM module after it was armed via t_on_branch("branch_route_index").
