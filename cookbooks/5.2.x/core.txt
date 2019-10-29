@@ -3136,3 +3136,11 @@ Example:
   * to_ip, to_port - like above, but contain the ip/port the message will be sent to (not to be confused with dst_ip/dst_port, which are the destination of the original received request: Kamailio's ip and port on which the message was received)
   * snd_proto, snd_af - behave like proto/af but contain the protocol/address family that Kamailio will use to send the message
   * msg:len - when used in an onsend_route, msg:len will contain the length of the message on the wire (after all the changes in the script are applied, Vias are added a.s.o) and not the lentgh of the original message.
+
+==== event_route ====
+
+Generic type of route executed when specific events happen.
+
+Prototype: event_route[groupid:eventid]
+  * groupid - should be the name of the module that triggers the event
+  * eventid - some meaningful short text describing the event
