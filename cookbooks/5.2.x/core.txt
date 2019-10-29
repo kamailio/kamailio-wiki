@@ -2973,4 +2973,42 @@ Example of usage:
 
 ==== route ====
 
-This block is used to define 'sub-routes' - group of actions that can be executed from another rou
+This block is used to define 'sub-routes' - group of actions that can be executed from another routing block. Originally targeted as being executed from 'request_route', it can be executed now from all the other blocks. Be sure you put there the actions valid for the root routing block executing the sub-route.
+
+The definition of the sub-route block follows the general rules, with a name in between square brackets and actions between curly braces. A sub-route can return an integer value back to the routing block that executed it. The return code can be retrieved via $rc variables.
+
+Evaluation of the return of a subroute is done with following rules:
+  * negative value is evaluated as false
+  * 0 - is interpreted as **exit**
+  * positive value is evaluated as true
+
+
+<code c>
+request_route {
+  if(route(POSITIVE)) {
+    xlog("return number is positive\n");
+  }
+  if( ! route(NEGATIVE)) {
+    xlog("return number is negative\n");
+  }
+  if( route(ZERO)) {
+    xlog("this log message does not appear\n");
+  }
+}
+
+route[POSITIVE] {
+  return 10;
+}
+
+route[NEGATIVE] {
+  return -8;
+}
+
+route[ZERO] {
+  return 0;
+}
+</code>
+
+A sub-route can execute another sub-route. There is a limit to the number of recursive levels, avoiding ending up in infinite loops -- see **max_recursive_level** global parameter.
+
+The sub-route blocks allow to make the configuration file modular, simplifying the logic and helping to avoid duplication of actions.
