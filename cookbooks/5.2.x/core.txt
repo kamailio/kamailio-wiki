@@ -3144,3 +3144,8 @@ Generic type of route executed when specific events happen.
 Prototype: event_route[groupid:eventid]
   * groupid - should be the name of the module that triggers the event
   * eventid - some meaningful short text describing the event
+
+
+Implementations:
+
+  * **event_route[core:worker-one-init]** - executed by core after the first udp sip worker process executed the child_init() for all modules, before starting to process sip traffic
