@@ -2102,7 +2102,7 @@ if(phonenum_match("1-484-555-8888", "src")) {
 
 ===== sdpops module variables =====
 
-  *  $sdp(body) - full SDP body (read only)
+  * $sdp(body) - full SDP body (read only)
   * $sdp(sess_version) - sess-version -attribute from SDP o= -line. When set to special value -1, current value is incremented. (read + write)
 
 ===== $sruid - Unique ID =====
@@ -2113,18 +2113,19 @@ if(phonenum_match("1-484-555-8888", "src")) {
 
 $ltt(key) - return local generated To-tag when Kamailio sends a reply
 
-    * $ltt(s) - the to-tag used in stateless replies
-    * $ltt(t) - the to-tag used in transaction stateful replies (transaction has to be created at that time, eg., by t_newtran() or in a branch/failure route, otherwise it returns $null)
-    * $ltt(x) - $ltt(t) if the transaction was created already, otherwise $ltt(s)
+  * $ltt(s) - the to-tag used in stateless replies
+  * $ltt(t) - the to-tag used in transaction stateful replies (transaction has to be created at that time, eg., by t_newtran() or in a branch/failure route, otherwise it returns $null)
+  * $ltt(x) - $ltt(t) if the transaction was created already, otherwise $ltt(s)
 
-===== $tcp(key) =====
+===== tcpops module variable =====
 
 $tcp(key) - return TCP connection attributes.
 
 The key can be:
-  * **c_si** - connection source ip (useful with HAProxy connections)
-  * **c_sp** - connection source port (useful with HAProxy connections)
-  * **conid** - connection id
+  * c_si - connection source ip (useful with HAProxy connections)
+  * c_sp - connection source port (useful with HAProxy connections)
+  * conid - connection id
+
 ===== $C(xy) - Foreground and background colors =====
 
 $C(xy) - reference to an escape sequence. “x” represents the foreground color and “y” represents the background color.
