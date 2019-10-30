@@ -2977,6 +2977,585 @@ if($rd=="10.10.10.10")
 ==== userphone ====
 
 Add "user=phone" parameter to R-URI.
+
 ===== Custom Global Parameters =====
 
-These are parameters that can be defined by the writer of kamailio.cfg in order to be used inside routing blocks. One of th
+These are parameters that can be defined by the writer of kamailio.cfg in order to be used inside routing blocks. One of the important properties for custom global parameters is that their value can be changed at runtime via RPC commands, without restarting Kamailio.
+
+The definition of a custom global parameter must follow the pattern:
+
+<code>
+group.variable = value desc "description"
+
+</code>
+
+The value can be a quoted string or integer number.
+
+Example:
+
+<code c>
+pstn.gw_ip = "1.2.3.4" desc "PSTN GW Address"
+</code>
+
+The custom global parameter can be accessed inside a routing block via:
+
+<code>
+$sel(cfg_get.group.variable)
+</code>
+
+Example:
+
+<code c>
+$ru = "sip:" + $rU + "@" + $sel(cfg_get.pstn.gw_ip);
+</code>
+
+**Note:** Some words cannot be used as (part of) names for custom variables or groups, and if they are used a syntax error is logged  by kamailio. These keywords are: "yes", "true", "on", "enable", "no", "false", "off", "disable", "udp", "UDP", "tcp", "TCP", "tls", "TLS", "sctp", "SCTP", "ws", "WS", "wss", "WSS", "inet", "INET", "inet6", "INET6", "sslv23", "SSLv23", "SSLV23", "sslv2", "SSLv2", "SSLV2", "sslv3", "SSLv3", "SSLV3", "tlsv1", "TLSv1", "TLSV1"
+
+===== Routing Blocks =====
+
+The routing blocks are the parts of the configuration file executed by kamailio at runtime. They can be seen as blocks of actions similar to functions (or procedures) from common programming languages.
+
+A routing block is identified by a specific token, followed by a name in between square brackets and actions in between curly braces.
+
+<code c>
+route_block_id[NAME] {
+  ACTIONS
+}
+</code>
+
+The name can be any alphanumeric string, with specific routing blocks enforcing a particular format. 
+
+<fc #4682b4>Note: route(number) is equivalent to route("number").</fc>
+
+Route blocks can be executed on network events (e.g., receiving a SIP message), timer events (e.g., retransmission timeout) or particular events specific to modules.
+
+There can be so called sub-route blocks, which can be invoked from another route blocks, like a function. Invocation is done with 'route' followed by the name of sub-route to execute, enclosed in between parentheses.
+
+Example:
+
+<code c>
+  request_route{
+    ...
+    route("test");
+    ...
+  }
+
+  route["test"]{
+    ...
+  }
+</code>
+
+==== request_route ====
+
+Request routing block -  is executed for each SIP request.
+
+It contains a set of actions to be executed for SIP requests received from the network. It is the equivalent of *main()* function for handling the SIP requests.
+
+<fc #4682b4>For backward compatibility reasons, the main request 'route' block can be identified by 'route{...}' or 'route[0]{...}'.</fc>
+
+The implicit action after execution of the main route block is to drop the SIP request. To send a reply or forward the request, explicit actions (e.g., sl_send_reply(), forward(), t_relay()) must be called inside the route block.
+
+Example of usage:
+
+<code c>
+    request_route {
+         if(is_method("OPTIONS")) {
+            # send reply for each options request
+            sl_send_reply("200", "ok");
+            exit();
+         }
+         route(FWD);
+    }
+    route[FWD] {
+         # forward according to uri
+         forward();
+    }
+</code>
+
+==== route ====
+
+This block is used to define 'sub-routes' - group of actions that can be executed from another routing block. Originally targeted as being executed from 'request_route', it can be executed now from all the other blocks. Be sure you put there the actions valid for the root routing block executing the sub-route.
+
+The definition of the sub-route block follows the general rules, with a name in between square brackets and actions between curly braces. A sub-route can return an integer value back to the routing block that executed it. The return code can be retrieved via $rc variables.
+
+Evaluation of the return of a subroute is done with following rules:
+  * negative value is evaluated as false
+  * 0 - is interpreted as **exit**
+  * positive value is evaluated as true
+
+
+<code c>
+request_route {
+  if(route(POSITIVE)) {
+    xlog("return number is positive\n");
+  }
+  if( ! route(NEGATIVE)) {
+    xlog("return number is negative\n");
+  }
+  if( route(ZERO)) {
+    xlog("this log message does not appear\n");
+  }
+}
+
+route[POSITIVE] {
+  return 10;
+}
+
+route[NEGATIVE] {
+  return -8;
+}
+
+route[ZERO] {
+  return 0;
+}
+</code>
+
+A sub-route can execute another sub-route. There is a limit to the number of recursive levels, avoiding ending up in infinite loops -- see **max_recursive_level** global parameter.
+
+The sub-route blocks allow to make the configuration file modular, simplifying the logic and helping to avoid duplication of actions.
+==== branch_route ====
+
+Request's branch routing block. It contains a set of actions to be taken for each branch of a SIP request. It is executed only by TM module after it was armed via t_on_branch("branch_route_index").
+
+Example of usage:
+
+<code c>
+    request_route {
+        lookup("location");
+        t_on_branch("OUT");
+        if(!t_relay()) {
+            sl_send_reply("500", "relaying failed");
+        }
+    }
+    branch_route[OUT] {
+        if(uri=~"10\.10\.10\.10") {
+            # discard branches that go to 10.10.10.10
+            drop();
+        }
+    }
+</code>
+
+==== failure_route ====
+
+Failed transaction routing block. It contains a set of actions to be taken each transaction that received only negative replies (>=300) for all branches. The 'failure_route' is executed only by TM module after it was armed via t_on_failure("failure_route_index").
+
+Note that in 'failure_route' is processed the request that initiated the transaction, not the reply .
+
+
+Example of usage:
+
+<code c>
+    request_route {
+        lookup("location");
+        t_on_failure("TOVOICEMAIL");
+        if(!t_relay()) {
+            sl_send_reply("500", "relaying failed");
+        }
+    }
+    failure_route[TOVOICEMAIL] {
+        if(is_method("INVITE")) {
+             # call failed - relay to voice mail
+             t_relay_to_udp("voicemail.server.com","5060");
+        }
+    }
+</code>
+
+==== reply_route ====
+
+Main SIP response (reply) handling block - it contains a set of actions to be executed for SIP replies. It is executed for all replies received from the network.
+
+It does not have a name and it is executed by the core, before any other module handling the SIP reply. It is triggered only by SIP replies received on the network.
+
+There is no network route that can be enforced for a SIP reply - it is sent based on Via header, according to SIP RFC3261 - therefore no dedicated actions for forwarding the reply must be used in this block.
+
+This routing block is optional, if missing, the SIP reply is sent to the address in 2nd Via header.
+
+One can decide to drop a SIP reply by using **drop** action.
+
+Example:
+
+<code c>
+reply_route {
+  if(status=="128") {
+    drop;
+  }
+}
+</code>
+
+<fc #4682b4>Note: for backward compatibility reasons, the main 'reply' routing block can be also identified by 'onreply_route {...}' or 'onreply_route[0] {...}'.</fc>
+
+==== onreply_route ====
+
+
+SIP reply routing block executed by **tm** module. It contains a set of actions to be taken for SIP replies in the contect of an active transaction.
+
+The 'onreply_route' must be armed for the SIP requests whose replies should be processed within it, via t_on_reply("onreply_route_index").
+
+Core 'reply_route' block is executed before a possible **tm** 'onreply_route' block.
+
+<code c>
+  request_route {
+      lookup("location");
+      t_on_reply("LOGRPL");
+      if(!t_relay()) {
+          sl_send_reply("500", "relaying failed");
+      }
+  }
+
+  reply_route {
+      if(!t_check_trans()) {
+          drop;
+      }
+  }
+
+  onreply_route[LOGRPL] {
+      if(status=~"1[0-9][0-9]") {
+           log("provisional response\n");
+      }
+  }
+</code>
+==== onsend_route ====
+
+The route is executed in when a SIP request is sent out. Only a limited number of commands are allowed (drop, if + all the checks, msg flag manipulations, send(), log(), textops::search()).
+
+In this route the final destination of the message is available and can be checked (with snd_ip, snd_port, to_ip, to_port, snd_proto, snd_af).
+
+This route is executed only when forwarding requests - it is not executed for replies, retransmissions, or locally generated messages (e.g. via fifo uac).
+
+Example:
+
+<code c>
+  onsend_route {
+    if(to_ip==1.2.3.4 && !isflagset(12)){
+      log(1, "message blocked\n");
+      drop;
+    }
+  }
+</code>
+
+  * snd_ip, snd_port - behave like src_ip/src_port, but contain the ip/port Kamailio will use to send the message
+  * to_ip, to_port - like above, but contain the ip/port the message will be sent to (not to be confused with dst_ip/dst_port, which are the destination of the original received request: Kamailio's ip and port on which the message was received)
+  * snd_proto, snd_af - behave like proto/af but contain the protocol/address family that Kamailio will use to send the message
+  * msg:len - when used in an onsend_route, msg:len will contain the length of the message on the wire (after all the changes in the script are applied, Vias are added a.s.o) and not the lentgh of the original message.
+
+==== event_route ====
+
+Generic type of route executed when specific events happen.
+
+Prototype: event_route[groupid:eventid]
+  * groupid - should be the name of the module that triggers the event
+  * eventid - some meaningful short text describing the event
+
+=== Core Event Routes ===
+
+Implementations:
+
+  * **event_route[core:worker-one-init]** - executed by core after the first udp sip worker process executed the child_init() for all modules, before starting to process sip traffic
+    * note that due to forking, other sip workers can get faster to listening for sip traffic
+
+<code c>
+event_route[core:worker-one-init] {
+        xlog("L_INFO","Hello world\n");
+}
+</code>
+
+  * **event_route[core:msg-received]** - executed when a message is received from the network. It runs with a faked request and makes available the $rcv(key) variables to access what was received and related attribtues.
+    * it has to be enabled with received_route_mode global parameter. For usage via Kemi, set kemi.received_route_callback global parameter.
+    * if drop is executed, the received message is no longer processed
+
+<code c>
+event_route[core:msg-received] {
+  xlog("rcv on $rcv(af)/$rcv(proto): ($rcv(len)) [$rcv(buf)] from [$rcv(srcip):$rcv(srcport)] to [$rcv(rcvip):$rcv(rcvport)]\n");
+  if($rcv(srcip) == "1.2.3.4") {
+    drop;
+  }
+}
+</code>
+=== Module Event Routes ===
+
+Here are only a few examples, to see if a module exports event_route blocks and when they are executed, check the readme of the module.
+
+
+  * **event_route[htable:mod-init]** - executed by **htable** module after all modules have been initialised. Good for initialising values in hash tables.
+<code c>
+modparam("htable", "htable", "a=>size=4;")
+
+event_route[htable:mod-init] {
+  $sht(a=>calls-to::10.10.10.10) = 0;
+  $sht(a=>max-calls-to::10.10.10.10) = 100;
+}
+
+request_route {
+  if(is_method("INVITE") && !has_totag())
+  {
+    switch($rd) {
+      case "10.10.10.10":
+        lock("calls-to::10.10.10.10");
+        $sht(a=>calls-to::10.10.10.10) =
+            $sht(a=>calls-to::10.10.10.10) + 1;
+        unlock("calls-to::10.10.10.10");
+        if($sht(a=>calls-to::10.10.10.10)>$sht(a=>max-calls-to::10.10.10.10))
+        {
+           sl_send_reply("500", "To many calls to .10");
+           exit;
+        }
+      break;
+      ...
+    }
+  }
+}
+</code>
+  * **event_route [tm:local-request]** - executed on locally generated requests.
+<code c>
+event_route [tm:local-request] { # Handle locally generated requests
+  xlog("L_INFO", "Routing locally generated $rm to <$ru>\n");
+  t_set_fr(10000, 10000);
+}
+</code>
+
+  * **event_route [tm:branch-failure]** - executed on all failure responses.
+<code c>
+request_route {
+    ...
+    t_on_branch_failure("myroute");
+    t_relay();
+}
+
+event_route[tm:branch-failure:myroute] {
+  xlog("L_INFO", "Handling $T_reply_code response to $rm to <$ru>\n");
+  if (t_check_status("430")) { # Outbound flow failed
+    unregister("location", "$tu", "$T_reply_ruid");
+    if (t_next_contact_flow()) {
+      t_relay();
+    }
+  }
+}
+
+</code>
+
+===== Script Statements =====
+
+==== if ====
+IF-ELSE statement
+
+Prototype:
+
+<code>
+    if(expr) {
+       actions;
+    } else {
+       actions;
+    }
+</code>
+
+The 'expr' should be a valid logical expression.
+
+The logical operators that can be used in 'expr':
+
+<code>
+  ==      equal
+  !=      not equal
+  =~      regular expression matching: Note: Posix regular expressions will be used, e.g. use [[:digit:]]{3} instead of \d\d\d
+  !~      regular expression not-matching (NOT PORTED from Kamailio 1.x, use '!(x =~ y)')
+  >       greater
+  >=      greater or equal
+  <       less
+  <=      less or equal
+  &&      logical AND
+  ||      logical OR
+  !       logical NOT
+  [ ... ] test operator - inside can be any arithmetic expression
+</code>
+
+Example of usage:
+
+    if(is_method("INVITE"))
+    {
+        log("this sip message is an invite\n");
+    } else {
+        log("this sip message is not an invite\n");
+    }
+
+
+==== switch ====
+
+SWITCH statement - it can be used to test the value of a pseudo-variable. 
+
+IMPORTANT NOTE: 'break' can be used only to mark the end of a 'case' branch (as it is in shell scripts). If you are trying to use 'break' outside a 'case' block the script will return error -- you must use 'return' there.
+
+
+Example of usage:
+<code>
+    route {
+        route(1);
+        switch($retcode)
+        {
+            case -1:
+                log("process INVITE requests here\n");
+            break;
+            case 1:
+                log("process REGISTER requests here\n");
+            break;
+            case 2:
+            case 3:
+                log("process SUBSCRIBE and NOTIFY requests here\n");
+            break;
+            default:
+                log("process other requests here\n");
+       }
+
+        # switch of R-URI username
+        switch($rU)
+        {
+            case "101":
+                log("destination number is 101\n");
+            break;
+            case "102":
+                log("destination number is 102\n");
+            break;
+            case "103":
+            case "104":
+                log("destination number is 103 or 104\n");
+            break;
+            default:
+                log("unknown destination number\n");
+       }
+    }
+
+    route[1]{
+        if(is_method("INVITE"))
+        {
+            return(-1);
+        };
+        if(is_method("REGISTER"))
+            return(1);
+        }
+        if(is_method("SUBSCRIBE"))
+            return(2);
+        }
+        if(is_method("NOTIFY"))
+            return(3);
+        }
+        return(-2);
+    }
+</code>
+
+NOTE: take care while using 'return' - 'return(0)' stops the execution of the script.
+
+
+==== while ====
+
+while statement
+
+Example of usage:
+    
+    $var(i) = 0;
+    while($var(i) < 10)
+    {
+        xlog("counter: $var(i)\n");
+        $var(i) = $var(i) + 1;
+    }
+
+===== Script Operations =====
+
+Assignments together with string and arithmetic operations can be done directly in configuration file.
+==== Assignment ====
+
+Assignments can be done like in C, via '=' (equal). The following pseudo-variables can be used in left side of an assignment:
+  * Unordered List Item AVPs - to set the value of an AVP
+  * script variables ($var(...)) -  to set the value of a script variable
+  * shared variables ($shv(...))
+  * $ru - to set R-URI
+  * $rd - to set domain part of R-URI
+  * $rU - to set user part of R-URI
+  * $rp - to set the port of R-URI
+  * $du - to set dst URI
+  * $fs - to set send socket
+  * $br - to set branch
+  * $mf - to set message flags value
+  * $sf - to set script flags value
+  * $bf - to set branch flags value
+
+<code>
+$var(a) = 123;
+</code>
+
+For avp's there a way to remove all values and assign a single value in one statement (in other words, delete existing AVPs with same name, add a new one with the right side value). This replaces the := assignment operator from kamailio < 3.0.
+<code>
+$(avp(i:3)[*]) = 123;
+$(avp(i:3)[*]) = $null;
+</code>
+
+==== String Operations ====
+For strings, '+' is available to concatenate.
+
+<code>
+$var(a) = "test";
+$var(b) = "sip:" + $var(a) + "@" + $fd;
+</code>
+==== Arithmetic Operations ====
+
+For numbers, one can use:
+  * + : plus
+  * - : minus
+  * / : divide
+  * * : multiply
+  * % : modulo (Kamailio uses 'mod' instead of '%')
+  * | : bitwise OR
+  * & : bitwise AND
+  * ^ : bitwise XOR
+  * ~ : bitwise NOT
+  * <nowiki><<</nowiki> : bitwise left shift
+  * <nowiki>>></nowiki> : bitwise right shift
+
+
+Example:
+
+<code>
+$var(a) = 4 + ( 7 & ( ~2 ) );
+</code>
+
+NOTE: to ensure the priority of operands in expression evaluations do use __parenthesis__.
+
+Arithmetic expressions can be used in condition expressions.
+
+<code>
+if( $var(a) & 4 )
+    log("var a has third bit set\n");
+</code>
+
+===== Operators =====
+
+  - type casts operators: (int), (str).
+  - string comparison: eq, ne
+  - integer comparison: ieq, ine 
+
+Note: The names are not yet final (use them at your own risk). Future version might use ==/!= only for ints (ieq/ine) and eq/ne for strings (under debate). They are almost equivalent to == or !=, but they force the conversion of their operands (eq to string and ieq to int), allowing among other things better type checking on startup and more optimizations.
+
+Non equiv. examples:
+
+0 == "" (true) is not equivalent to 0 eq "" (false: it evaluates to "0" eq "").
+
+"a" ieq "b" (true: (int)"a" is 0 and (int)"b" is 0) is not equivalent to "a" == "b" (false).
+
+Note: internally == and != are converted on startup to eq/ne/ieq/ine  whenever possible (both operand types can be safely determined at start time and they are the same). 
+
+  - Kamailio tries to guess what the user wanted when operators that support multiple types are used on different typed operands. In general convert the right operand to the type of the left operand and then perform the operation. Exception: the left operand is undef. This applies to the following operators: +, == and !=.
+     Special case: undef as left operand:
+     For +: undef + expr -> undef is converted to string => "" + expr.
+     For == and !=:   undef == expr -> undef is converted to type_of expr.
+     If expr is undef, then undef == undef is true (internally is converted
+     to string).
+
+  - expression evaluation changes: Kamailio will auto-convert to integer or string in function of the operators: 
+       int(undef)==0,  int("")==0, int("123")==123, int("abc")==0
+       str(undef)=="", str(123)=="123".
+
+  - script operators for dealing with empty/undefined variables
+      defined expr - returns true if expr is defined, and false if not.
+                     Note: only a standalone avp or pvar can be
+                     undefined, everything else is defined.
+      strlen(expr) - returns the lenght of expr evaluated as string.
+      strempty(expr) - returns true if expr evaluates to the empty
+                       string (equivalent to expr=="").
+      Example: if (defined $v && !strempty($v)) $len=strlen($v);
