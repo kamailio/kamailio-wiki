@@ -8,7 +8,7 @@ This tutorial collects the functions and parameters exported by Kamailio core to
 
 ===== Structure =====
 
-The structure of the kamailio.cfg can be seen as thee parts:
+The structure of the kamailio.cfg can be seen as three parts:
 
   * global parameters
   * modules settings
