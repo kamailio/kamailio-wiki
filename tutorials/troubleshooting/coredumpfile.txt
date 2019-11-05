@@ -72,6 +72,13 @@ To get per-process core file then you can use on Linux:
 echo "1" > /proc/sys/kernel/core_uses_pid
 </code>
 
+A similar command for FreeBSD:
+
+<code>
+sysctl kern.corefile='%N.%P.core'
+</code>
+
+
 ===== Useful Links =====
 
 Debugging with GDB:
