@@ -8,7 +8,7 @@ For example, to add the repository for Kamailio v5.3.x on a CentOS 7, do:
 
 <code>
 cd /etc/yum.repos.d/
-wget http://download.opensuse.org/repositories/home:/kamailio:/v5.3.x-rpms/CentOS_7/home:kamailio:v5.2.x-rpms.repo
+wget http://download.opensuse.org/repositories/home:/kamailio:/v5.3.x-rpms/CentOS_7/home:kamailio:v5.3.x-rpms.repo
 </code>
 
 The content of the **.repo** file (in this case **home:kamailio:v5.3.x-rpms.repo**), looks like:
