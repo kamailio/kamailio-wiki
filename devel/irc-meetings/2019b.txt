@@ -30,7 +30,7 @@ Participation is open to anyone, just join the Video bridge/IRC channel if you w
 People adding notes in the agenda using abbreviations:
 
   * dcm - Daniel-Constantin Mierla
-
+  * vseva - Victor Seva
 
 ===== Agenda =====
 
