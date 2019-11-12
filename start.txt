@@ -211,7 +211,7 @@ Old Exports APIs:
 
   * [[devel:new-features-requests|New Features Requests]]
   * [[devel:active-contributors|Contributors - List of Active Developers]]
-  * [[devel:irc-meetings|IRC Development Meetings]]
+  * [[devel:irc-meetings|Online IRC Development Meetings]]
   * [[devel:makefile-system|Makefile System]]
   * [[http://www.kamailio.org.cn|Kamailio Chinese Community-中国社区]]
   * [[scripts:toc|Various Scripts]]
