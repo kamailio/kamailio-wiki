@@ -64,7 +64,8 @@ Collaborative Projects:
 
 ===== Transcript of Meeting =====
 
-== 1. Summary of development meeting so far ==
+==== 1. Summary of development meeting so far ====
+
 
 === 1.1 Kamailio release process ===
 
@@ -96,7 +97,7 @@ Collaborative Projects:
   * duplication of modules fine in Kamailio
   * no clear policy decided, but main problem regarding support status open
 
-== 2.0 Kamailio 5.4.0 and 6.0 ==
+==== 2.0 Kamailio 5.4.0 and 6.0 ====
 
 === 2.1 General topics ===
 
@@ -118,7 +119,7 @@ Collaborative Projects:
   * unification necessary
   * deprecation warning to be added
 
-== 3.0 infrastructure topics ==
+==== 3.0 infrastructure topics ====
 
 === 3.1 server maintenance ===
 
