@@ -132,7 +132,7 @@ Collaborative Projects:
   * IRC channel has less activity now after requirement of login
   * Slack channel has some activitity now, but is proprietary
   * Matrix channel discussion for kamailio
-  * at the moment almost 600 people on sr-dev, over 2000 people on sr-users
+  * at the moment more than 500 people on sr-dev, over 2000 people on sr-users
   * discussion synchron vs. async communication modes
   * good quality of mailing lists, professional communication
 
