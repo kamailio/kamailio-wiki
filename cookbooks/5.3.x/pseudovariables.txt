@@ -19,6 +19,7 @@ Pseudo-variables can be used with many modules, among them:
   * acc
   * avpops
   * htable
+  * http_async_client
   * textops
   * uac
   * xlog 
