@@ -66,6 +66,7 @@ systemctl stop kamailio
 
 First you may also need to edit **/etc/default/kamailio** and adjust the setting for kamailio startup script, in particular the one that enables kamailio to start.
 
+If you edit the systemd unit file in order to add your own functions, you need to make sure that you make a copy of the unit file in **/etc/systemd/system** in order to avoid any updates in packages to overwrite your modified file with the standard one.
 ===== Adding Subscribers =====
 
 To add subscribers (users), you can use the **kamctl** command:
