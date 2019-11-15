@@ -105,8 +105,8 @@ Alphabetic indexes generated from documentation (modules' readme docs).
 \\
 
 | Version ^ Modules Parameters  ^ Modules Functions ^ MI Commands ^ Statistics ^ RPC Commands (List) ^ 
-^ 4.4.x   |  [[alphaindexes:4.4.x:modparameters|link]]  |  [[alphaindexes:4.4.x:modfunctions|link]]  |  [[alphaindexes:4.4.x:micommands|link]]  |  [[alphaindexes:4.4.x:modstatistics|link]]  |  [[http://www.kamailio.org/docs/docbooks/4.4.x/rpc_list/rpc_list.html|link]]  |
-^ 4.3.x   |  [[alphaindexes:4.3.x:modparameters|link]]  |  [[alphaindexes:4.3.x:modfunctions|link]]  |  [[alphaindexes:4.3.x:micommands|link]]  |  [[alphaindexes:4.3.x:modstatistics|link]]  |  [[http://www.kamailio.org/docs/docbooks/4.3.x/rpc_list/rpc_list.html|link]]  |
+^ 4.4.x   |  [[alphaindexes:4.4.x:modparameters|link]]  |  [[alphaindexes:4.4.x:modfunctions|link]]  |  [[alphaindexes:4.4.x:micommands|link]]  |  [[alphaindexes:4.4.x:modstatistics|link]]  |  [[https://www.kamailio.org/docs/docbooks/4.4.x/rpc_list/rpc_list.html|link]]  |
+^ 4.3.x   |  [[alphaindexes:4.3.x:modparameters|link]]  |  [[alphaindexes:4.3.x:modfunctions|link]]  |  [[alphaindexes:4.3.x:micommands|link]]  |  [[alphaindexes:4.3.x:modstatistics|link]]  |  [[https://www.kamailio.org/docs/docbooks/4.3.x/rpc_list/rpc_list.html|link]]  |
 
 \\ 
 
