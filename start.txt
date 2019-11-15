@@ -195,7 +195,7 @@ Old Exports APIs:
 
 ==== Guidelines ====
 
-  * [[http://asipto.com/u/kdg|Kamailio SIP Server v3.2.x Devel Guide]]
+  * [[https://asipto.com/u/kdg|Kamailio SIP Server v3.2.x Devel Guide]]
   * [[devel:backporting-to-3.2.x|Backporting Patches from Devel Branch to 3.2.x]]
   * [[devel:git-commit-guidelines|GIT Commit Guidelines]]
   * [[devel:github-contributions|Contributions via Github]]
