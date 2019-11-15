@@ -174,8 +174,8 @@ Lists of exported symbols generated from C code.
 
 ==== Development APIs ====
 
-  * [[http://www.kamailio.org/docs/docbooks/3.2.x/rpc_api/rpc_api.html|RPC Control Interface - API]]
-  * [[http://www.asipto.com/pub/kamailio-devel-guide/|Kamailio Development Guide]]
+  * [[https://www.kamailio.org/docs/docbooks/3.2.x/rpc_api/rpc_api.html|RPC Control Interface - API]]
+  * [[https://www.asipto.com/pub/kamailio-devel-guide/|Kamailio Development Guide]]
 
 ==== Embedded APIs ====
 
