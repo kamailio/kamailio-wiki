@@ -181,7 +181,7 @@ Lists of exported symbols generated from C code.
 
 KEMI Framework APIs:
 
-  * http://kamailio.org/docs/tutorials/devel/kamailio-kemi-framework/
+  * https://kamailio.org/docs/tutorials/devel/kamailio-kemi-framework/
 
 Old Exports APIs:
 
