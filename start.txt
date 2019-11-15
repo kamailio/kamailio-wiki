@@ -162,12 +162,12 @@ Lists of exported symbols generated from C code.
 
 ==== Database Structure ====
 
-  * [[http://www.kamailio.org/docs/db-tables/kamailio-db-devel.html|Devel Version]]
-  * [[http://www.kamailio.org/docs/db-tables/kamailio-db-5.2.x.html|5.2.x Version]]
-  * [[http://www.kamailio.org/docs/db-tables/kamailio-db-5.1.x.html|5.1.x Version]]
-  * [[http://www.kamailio.org/docs/db-tables/kamailio-db-5.0.x.html|5.0.x Version]]
-  * [[http://www.kamailio.org/docs/db-tables/kamailio-db-4.4.x.html|4.4.x Version]]
-  * [[http://www.kamailio.org/docs/db-tables/kamailio-db-4.3.x.html|4.3.x Version]]
+  * [[https://www.kamailio.org/docs/db-tables/kamailio-db-devel.html|Devel Version]]
+  * [[https://www.kamailio.org/docs/db-tables/kamailio-db-5.2.x.html|5.2.x Version]]
+  * [[https://www.kamailio.org/docs/db-tables/kamailio-db-5.1.x.html|5.1.x Version]]
+  * [[https://www.kamailio.org/docs/db-tables/kamailio-db-5.0.x.html|5.0.x Version]]
+  * [[https://www.kamailio.org/docs/db-tables/kamailio-db-4.4.x.html|4.4.x Version]]
+  * [[https://www.kamailio.org/docs/db-tables/kamailio-db-4.3.x.html|4.3.x Version]]
 
 
 ===== Development =====
