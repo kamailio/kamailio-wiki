@@ -18,7 +18,7 @@ Few guidelines to edit the wiki:
 
 <color blue>//IMPORTANT: Content for older releases than 3.2.0 is available at the **Old Wiki Site**://</color>
 
-  * [[http://www.kamailio.org/dokuwiki/|Link To Old Wiki Site]]
+  * [[https://www.kamailio.org/dokuwiki/|Link To Old Wiki Site]]
 
 ===== Installation =====
 
