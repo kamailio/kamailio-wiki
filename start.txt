@@ -40,7 +40,7 @@ Few guidelines to edit the wiki:
 
 ==== Installation From Packages ====
 
-  * [[http://kamailio.org/docs/tutorials/devel/kamailio-install-guide-deb/|Install Kamailio On Debian Or Ubuntu (html)]]
+  * [[https://kamailio.org/docs/tutorials/devel/kamailio-install-guide-deb/|Install Kamailio On Debian Or Ubuntu (html)]]
   * [[install:stable:debian|Install Kamailio On Debian]]
 
 ==== Installation On Containers ====
