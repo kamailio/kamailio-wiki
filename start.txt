@@ -213,14 +213,14 @@ Old Exports APIs:
   * [[devel:active-contributors|Contributors - List of Active Developers]]
   * [[devel:irc-meetings|Online IRC Development Meetings]]
   * [[devel:makefile-system|Makefile System]]
-  * [[http://www.kamailio.org.cn|Kamailio Chinese Community-中国社区]]
+  * [[https://www.kamailio.org.cn|Kamailio Chinese Community-中国社区]]
   * [[scripts:toc|Various Scripts]]
   * [[devel:kamailio-5.0-design|Kamailio v5.0 Design]]
-  * [[http://kamailio.org/docs/tutorials/devel/kamailio-kemi-framework/|Kamailio KEMI Framework Tutorial]]
+  * [[https://kamailio.org/docs/tutorials/devel/kamailio-kemi-framework/|Kamailio KEMI Framework Tutorial]]
   * [[devel:config-engines|KEMI Configuration File Engines]]
   * [[history:09-years-ser-kamailio|History - 9 Years of SER-Kamailio]]
   * [[history:15-years-ser-kamailio|History - 15 Years of SER-Kamailio]]
-  * [[http://www.kamailio.org/events/|Kamailio related event presentation archive]]
+  * [[https://www.kamailio.org/events/|Kamailio related event presentation archive]]
   * [[kemi:performances|KEMI Performances]]
 
 ===== Disclaimer =====
