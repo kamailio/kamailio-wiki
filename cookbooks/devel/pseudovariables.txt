@@ -19,6 +19,7 @@ Pseudo-variables can be used with many modules, among them:
   * acc
   * avpops
   * htable
+  * http_async_client
   * textops
   * uac
   * xlog 
@@ -1343,6 +1344,64 @@ $mcdec(cnt) = 2; # decrement by 2
 xlog("counter is now $mct(cnt)");
 ...
 </code>
+
+===== http_async_client module Pseudo-Variables =====
+
+==== $http_req_id ====
+
+The $http_req_id read-only variable can be used in REQUEST_ROUTE to retrive the unique identifier for a query after sending it or in the HTTP callback route to retrive the id of the query the reply belongs to. Useful mainly in non-transactional context.
+
+==== $http_req(key) ====
+
+The $http_req(key) write-only variable can be used to set custom parameters before sending a HTTP query.
+
+**key** can be one of:
+  * all: if set to $null, resets all the parameters to their default value (the ones defined in modparam)
+  * hdr: sets/modifies/removes a HTTP header. N.B.: setting this variable multiple times will add several headers to the query.
+  * body: sets/modifies/removes the request body
+  * method: sets the HTTP method: either "GET", "POST", "PUT" or "DELETE" (these are the supported methods). (Note: if the method is not set, curl will use GET, or POST if a body is specified)
+  * timeout: sets the HTTP timeout. (Note, this timeout should be normally less than tm.fr_timer timeout, because transaction timeout has a higher priority over HTTP timeout)
+  * tls_client_cert: sets the client certificate to use
+  * tls_client_key: sets the client certificate key to use
+  * tls_ca_path: sets the CA certificate path to use
+  * authmethod: Sets the preferred authentication mode for HTTP/HTTPS requests. The value is a bitmap and multiple methods can be used. Note that in this case, the CURL library will make an extra request to discover server-supported authentication methods. You may want to use a specific value. Valid values are:
+      * 1 - BASIC authentication
+      * 2 - HTTP Digest authentication
+      * 4 - GSS-Negotiate authentication
+      * 8 - NTLM authentication
+      * 16 - HTTP Digest with IE flavour.
+      * (Default value is 3 - BASIC and Digest authentication.)
+  * username: sets the username to use for authenticated requests
+  * password: sets the password to use for authenticated requests
+  * suspend: if set to 0 it doesn't suspend the current transaction before performing the query
+  * tcp_keepalive: enable TCP keepalive
+  * tcp_ka_idle: set TCP keepalive idle time wait
+  * tcp_ka_interval: set TCP keepalive interval
+
+==== Other read-only variables ====
+
+The following read-only pseudo variables can only be used in the callback routes executed by http_async_query()
+
+=== $http_ok ===
+1 if cURL executed the request successfully, 0 otherwise (check $http_err for details).
+
+=== $http_err ===
+cURL error string if an error occurred, $null otherwise.
+
+=== $http_rs ===
+HTTP status.
+
+=== $http_rr ===
+HTTP reason phrase.
+
+=== $http_hdr(Name) ===
+Value of the Name header (the $(http_hdr(Name)[N]) syntax can also be used, check the SIP $hdr() PV documentation for details).
+
+=== $http_mb and $http_ml ===
+HTTP response buffer (including headers) and length.
+
+=== $http_rb and $http_bs ===
+HTTP response body and body length,
 
 ===== XMLOPS Pseudo-Variables =====
 
