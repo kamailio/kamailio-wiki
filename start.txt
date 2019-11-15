@@ -117,8 +117,8 @@ Lists of exported symbols generated from C code.
 \\
 
 | Version ^ RPC Commands List ^ Cfg Vars List ^ Selects List ^ Counters List ^
-^ devel   |  [[http://www.kamailio.org/docs/docbooks/devel/rpc_list/rpc_list.html|link]]  |  [[http://www.kamailio.org/docs/docbooks/devel/cfg_var_list/cfg_var_list.html|link]]  |  [[http://www.kamailio.org/docs/docbooks/devel/select_list/select_list.html|link]]  |  [[http://www.kamailio.org/docs/docbooks/devel/counter_list/counter_list.html|link]]  |
-^ 5.0.x   |  [[http://www.kamailio.org/docs/docbooks/5.0.x/rpc_list/rpc_list.html|link]]  |  ---  |  ---  |  ---  |
+^ devel   |  [[https://www.kamailio.org/docs/docbooks/devel/rpc_list/rpc_list.html|link]]  |  [[https://www.kamailio.org/docs/docbooks/devel/cfg_var_list/cfg_var_list.html|link]]  |  [[https://www.kamailio.org/docs/docbooks/devel/select_list/select_list.html|link]]  |  [[https://www.kamailio.org/docs/docbooks/devel/counter_list/counter_list.html|link]]  |
+^ 5.0.x   |  [[https://www.kamailio.org/docs/docbooks/5.0.x/rpc_list/rpc_list.html|link]]  |  ---  |  ---  |  ---  |
 
 \\
 
