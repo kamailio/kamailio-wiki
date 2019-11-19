@@ -522,8 +522,9 @@ Here is an example:
 <code c>
 $var(x) = "a,b,c,d";
 $var(i) = 0;
+$var(n) = $(var(x){s.count,,});
 
-while( $(var(x){s.select,$var(i),,})!=$null ) {
+while( $var(i) <= $var(n) ) {
    xlog("token at position $var(i) is: $(var(x){s.select,$var(i),,})\n");
    $var(i) = $var(i) + 1;
 }
