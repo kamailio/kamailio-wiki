@@ -856,6 +856,15 @@ if ($shv(debug) == 1) {
 
 <fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
 
+===== $dsv(key) - Dispatcher variables =====
+
+Return attributes related to dispatcher module.
+
+The key can be:
+
+  * code - the SIP response code that caused the execution of event_route 'dispatcher:dst-up' or 'dispatcher:dst-down', if available
+  * reason - the SIP response reason that caused the execution of event_route 'dispatcher:dst-up' or 'dispatcher:dst-down', if available
+  * flags - flags set internally when executing event_route 'dispatcher:dst-up' or 'dispatcher:dst-down'
 ===== $time(name) - Broken-down time =====
 
 **$time(name)** - the PV provides access to broken-down time attributes in the local timezone.
