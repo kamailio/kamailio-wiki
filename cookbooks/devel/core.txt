@@ -2636,6 +2636,8 @@ Alias for force_rport();
 
 Force to send the message from the specified socket (it _must_ be one of the sockets specified with the "listen" directive). If the protocol doesn't match (e.g. UDP message "forced" to a TCP socket) the closest socket of the same protocol is used.
 
+This function does not support pseudo-variables, use the set_send_socket function from the corex module instead.
+
 Example of usage:
 
 <code>
