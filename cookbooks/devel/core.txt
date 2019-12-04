@@ -1057,7 +1057,7 @@ latency_log=3
 
 ==== listen ====
 
-Set the network addresses the SIP server should listen to. It can be an IP address, hostname or network iterface id or combination of protocol:address:port (e.g., udp:10.10.10.10:5060). This parameter can be set multiple times in same configuration file, the server listening on all addresses specified.
+Set the network addresses the SIP server should listen to. It can be an IP address, hostname or network interface id or combination of protocol:address:port (e.g., udp:10.10.10.10:5060). This parameter can be set multiple times in same configuration file, the server listening on all addresses specified.
 
 Example of usage:
 
