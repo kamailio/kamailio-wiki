@@ -18,11 +18,20 @@ Manage headers using $xavp to keep the desired final value.
   * https://www.kamailio.org/docs/modules/devel/modules/pv_headers.html
 ===== New in existing Modules =====
 
+==== cfgt ====
+
+Added new **cfgt.list** and **cfgt.clean** RPC commands
+
+  * https://www.kamailio.org/docs/modules/devel/modules/cfgt.html#cfgt.r.list
+  * https://www.kamailio.org/docs/modules/devel/modules/cfgt.html#cfgt.r.clean
+
+
 ==== registrar ====
 
-Add **path** value to xavp_rcd location record
+Added **path** value to xavp_rcd location record
 
   * https://www.kamailio.org/docs/modules/devel/modules/registrar.html#registrar.p.xavp_rcd
+
 ===== New in Core =====
 
 ==== Command line arguments ====
