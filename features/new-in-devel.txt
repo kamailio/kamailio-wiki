@@ -11,7 +11,11 @@
 
 ===== New Modules =====
 
+==== pv_headers ====
 
+Manage headers using $xavp to keep the desired final value.
+
+  * https://www.kamailio.org/docs/modules/devel/modules/pv_headers.html
 ===== New in existing Modules =====
 
 ===== New in Core =====
