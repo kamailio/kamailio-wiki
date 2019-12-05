@@ -18,6 +18,11 @@ Manage headers using $xavp to keep the desired final value.
   * https://www.kamailio.org/docs/modules/devel/modules/pv_headers.html
 ===== New in existing Modules =====
 
+==== registrar ====
+
+Add **path** value to xavp_rcd location record
+
+  * https://www.kamailio.org/docs/modules/devel/modules/registrar.html#registrar.p.xavp_rcd
 ===== New in Core =====
 
 ==== Command line arguments ====
