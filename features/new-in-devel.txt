@@ -32,6 +32,9 @@ Added **path** value to xavp_rcd location record
 
   * https://www.kamailio.org/docs/modules/devel/modules/registrar.html#registrar.p.xavp_rcd
 
+Added **xavp_rcd_mask** parameter to control what values to skip
+
+  * https://www.kamailio.org/docs/modules/devel/modules/registrar.html#registrar.p.xavp_rcd_mask
 ===== New in Core =====
 
 ==== Command line arguments ====
