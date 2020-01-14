@@ -152,8 +152,14 @@ Return base64 encoding of PV value
 
 Decode base64 encoded PV and return value
 
+==== {s.encode.base64t} ====
+
+Return base64 encoding of PV value without trailing padding characters('=').
 
 
+==== {s.decode.base64t} ====
+
+Decode base64 encoded PV, handling missing trailing padding characters, and return value.
 ==== {s.escape.common} ====
 
 Return escaped string of PV value. Characters escaped are ', ", \ and 0. Useful when doing DB queries (care should be taken for non Latin character set).
