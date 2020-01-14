@@ -2197,19 +2197,19 @@ The key can be:
 
 ===== pv_headers module variables =====
 
-  * $x_hdr
-  * $x_fu
-  * $x_fU
-  * $x_fd
-  * $x_fn
-  * $x_ft
-  * $x_tu
-  * $x_tU
-  * $x_td
-  * $x_tn
-  * $x_tt
-  * $x_rs
-  * $x_rr
+  * $x_hdr(//header_name//): //header_name// header value
+  * $x_fu: Full From header
+  * $x_fU: From header user part
+  * $x_fd: From header domain part
+  * $x_fn: From header Display Name part
+  * $x_ft: From header Tag
+  * $x_tu: Full To header
+  * $x_tU: To header user part
+  * $x_td: To header domain part
+  * $x_tn: To header Display Name part
+  * $x_tt: To header Tag
+  * $x_rs: 
+  * $x_rr:
 
 ===== $C(xy) - Foreground and background colors =====
 
