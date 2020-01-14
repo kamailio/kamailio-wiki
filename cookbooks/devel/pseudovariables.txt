@@ -2194,6 +2194,23 @@ The key can be:
   * c_sp - connection source port (useful with HAProxy connections)
   * conid - connection id
 
+
+===== pv_headers module variables =====
+
+  * $x_hdr
+  * $x_fu
+  * $x_fU
+  * $x_fd
+  * $x_fn
+  * $x_ft
+  * $x_tu
+  * $x_tU
+  * $x_td
+  * $x_tn
+  * $x_tt
+  * $x_rs
+  * $x_rr
+
 ===== $C(xy) - Foreground and background colors =====
 
 $C(xy) - reference to an escape sequence. “x” represents the foreground color and “y” represents the background color.
