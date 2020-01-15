@@ -11,8 +11,9 @@ There is a set of predefined pseudo-variables, which have the name composed from
 
 Pseudo-Variables are implemented by various modules, most of them are provided by **pv** (if there is no special reference to a module, expect that the pseudo-variable is provided by **pv** module).
 
-===== Pseudo-variables usage =====
 
+
+===== Pseudo-variables usage =====
 
 Pseudo-variables can be used with many modules, among them:
 
@@ -447,13 +448,19 @@ The variable is exported by **rr** module and append_fromtag parameter must be e
 
 **$ru** - reference to request's URI (address in the first line of a SIP request)
 
+INVITE <fc #ff0000>**sip:+49423156789@example.de;user=phone**</fc> SIP/2.0
+
 <fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
+
 
 ==== $rU - Username in R-URI ====
 
 **$rU** - reference to username in request's URI or to the Namespace Identifier of a URN (see RFC 2141)
 
+INVITE sip:<fc #ff0000>**+49423156789**</fc>@example.de;user=phone SIP/2.0
+
 <fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
+
 
 ==== $rv - SIP message version ====
 
@@ -575,6 +582,8 @@ Its value looks like:
 
 **$tn** - reference to display name of 'To' header
 
+To: "<fc #ff0000>**Bob**</fc>" <sip:+4942315678@example.de;user=phone>
+
 ==== $tt - To tag ====
 
 **$tt** - reference to tag parameter of 'To' header
@@ -590,9 +599,13 @@ It is exported by **rr** module and has to be used after loose_route(). The appe
 
 **$tu** - reference to URI of 'To' header
 
+To: "Bob" <sip:<fc #ff0000>**+4942315678@example.de;user=phone**</fc>>
+
 ==== $tU - To URI Username ====
 
 **$tU** - reference to username in URI of 'To' header
+
+To: "Bob" <sip:<fc #ff0000>**+4942315678**</fc>@example.de;user=phone>
 
 ==== $Tb - Startup timestamp ====
 
