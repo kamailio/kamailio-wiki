@@ -1765,7 +1765,7 @@ xavp_via_fields="customvia"
 request_route {
   ...
   $xavp(customvia=>address) = "1.2.3.4";
-  $xavp(customvia=>port) = "5080";  # must be string
+  $xavp(customvia[0]=>port) = "5080";  # must be string
   via_use_xavp_fields("1");
   t_relay();
 }
