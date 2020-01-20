@@ -13,7 +13,7 @@
 
 ==== pv_headers ====
 
-Manage headers using $xavp to keep the desired final value.
+Flexible headers management via $xavp and $x_hdr exported variables.
 
   * https://www.kamailio.org/docs/modules/devel/modules/pv_headers.html
 ===== New in existing Modules =====
