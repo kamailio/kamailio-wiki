@@ -993,6 +993,36 @@ onsend_route {
 }
 </code>
 
+===== SIPDUMP Module =====
+
+==== $sipdump(name) ====
+
+**$sipdump(name)** - return attributes of the message handled in the event_route[sipdump:msg].
+
+The name can be:
+
+  * tag - the tag of processing (rcv or snd)
+  * buf - entire message buffer as string
+  * len - length of the message (length of above buf)
+  * af - address family
+  * src_ip - source IP address
+  * dst_ip - destination IP address
+  * src_port - port of source address
+  * dst_port - port of source address
+  * proto - transport protocol
+
+Example:
+
+<code c>
+
+event_route[sipdump:msg] {
+  if($sipdump(len) > 1024) {
+    ...
+  }
+}
+</code>
+
+
 ===== Benchmark module Pseudo-Variables =====
 
 ==== $BM_time_diff ====
