@@ -1023,12 +1023,12 @@ event_route[sipdump:msg] {
 </code>
 
 
-===== Benchmark module Pseudo-Variables =====
+===== Benchmark Module =====
 
 ==== $BM_time_diff ====
 $BM_time_diff - the time difference elapsed between calls of bm_start_timer(name) and bm_log_timer(name). The value is 0 if no bm_log_timer() was called. 
 
-===== Dialog module Pseudo-Variables =====
+===== Dialog Module =====
 
 ==== $dlg(attr) ====
 
@@ -1084,9 +1084,9 @@ Store and retrieve custom variable for current processed dialog.
 
 The 'key' can be any string.
 
-===== Erlang module Pseudo-Variables =====
+===== Erlang Module =====
 
-==== Erlang pseudo-variable attributes ===
+==== Attributes ===
 
 * type - get variable type. Possible types are: atom, integer, list, string, tuple, pid and ref.
 
@@ -1095,6 +1095,7 @@ The 'key' can be any string.
 * format - prints a term, in clear text. It tries to resemble the term printing in the Erlang shell.
 
 ==== $erl_atom(name) ====
+
 //$erl_atom(name)// pseudo variable allows create analog to Erlang atom data type.
 Erlang atom is a literal, a constant with name. Formatted output pseudo variable
 atom could be enclosed in single quotes (') if it does not begin with a 
@@ -1154,7 +1155,7 @@ send message.
 Generic pseudo variable to acts as other pseudo variables exported from Erlang
 module.
 
-===== HTable module Pseudo-Variables =====
+===== HTable Module =====
 
 ==== $sht(htable=>key) ====
 
@@ -1307,7 +1308,7 @@ event_route[htable:expired:h1] {
   xlog("expired item ($shtrecord(key),$shtrecord(value))\n");
 }
 </code>
-===== Memcached module Pseudo-Variables =====
+===== Memcached Module =====
 
 ==== $mct(key) ====
 
@@ -1384,7 +1385,7 @@ xlog("counter is now $mct(cnt)");
 ...
 </code>
 
-===== http_async_client module Pseudo-Variables =====
+===== http_async_client Module =====
 
 ==== $http_req_id ====
 
@@ -1459,7 +1460,7 @@ xlog("content of node b: $xml(x=>xpath:/a/b/text())\n");
 $xml(x=>xpath:/a/b) = "1234";
 </code>
 
-===== TMX module Pseudo-Variables =====
+===== TMX Module =====
 
 ==== $T_branch_idx ====
 
@@ -1548,7 +1549,7 @@ The **name** can be:
   * uri - the R-URI of the branch. Can be used in onreply_route[id] - reply route blocks executed by tm module. For other routing blocks handling requests, the R-URI is returned by $ru
 
 
-===== UAC module Pseudo-Variables =====
+===== UAC Module =====
 
 ==== $uac_req(key) ====
 
@@ -1584,7 +1585,7 @@ event_route[uac:reply] {
   xlog("request sent to $uac_req(ruri) completed with code: $uac_req(evcode)\n");
 }
 </code>
-===== Nathelper module Pseudo-Variables =====
+===== Nathelper Module =====
 
 ==== $rr_count ====
 
@@ -1594,7 +1595,7 @@ event_route[uac:reply] {
 
   * If topmost Record Route in received SIP request or reply is a double Record Route, value of $rr_top_count is 2. If it a single Record Route, value of $rr_top_count is 1. If there is no Record Route(s), value of $rr_top_count is 0.
 
-===== MQueue module Pseudo-Variables =====
+===== MQueue Module =====
 
 ==== $mqk(q) ====
 
@@ -1727,7 +1728,7 @@ if($gip(src=>cc)==$gip(dst=>cc))
 
 </code>
 
-===== TLS module Pseudo-Variables =====
+===== TLS Module =====
 
 ==== $tls_version ====
 The TLS/SSL version which is used on the TLS connection from which the message was received. String type.
@@ -1856,13 +1857,13 @@ Return attributes of SIP message:
   * $msg(hdrs) - sip message headers
   * $msg(fline) - sip message first line
 
-===== XHTTP module Pseudo-Variables =====
+===== XHTTP Module =====
 
 ==== $hu ====
 
   * URL of http request.
 
-===== MSRP Module Pseudo Variables =====
+===== MSRP Module =====
 
 This class of pseudo-variables is exported by MSRP module and give access to attributes of MSRP frames.
 ==== $msrp(buf) ====
@@ -1931,7 +1932,7 @@ The number of next hops - it is the number of addresses in To-Path header minus 
 
 The internal integer id for TCP/TLS connection.
 
-===== SIPT module Pseudo-Variables =====
+===== SIPT Module =====
 
 ==== $sipt(calling_party_number.presentation) / $sipt_presentation ====
 Returns the value of the Address presentation restricted indicator contained in the Calling Party Number header of the IAM message if it exists. Returns -1 if there isn't a Calling Party Number header.
@@ -2146,7 +2147,7 @@ The key can be:
   * text - text of the code for the JSONRPC response
   * body - the body of the JSONRPC response
 
-===== Presence Module Pseudo-Variables =====
+===== Presence Module =====
 
 ==== $subs(key) - Subscription Attributes ====
 
@@ -2155,7 +2156,7 @@ This variable gives access to attributes of the current subscription. The variab
 The key can be:
   * uri - subscription URI. Useful in particular for subscriptions within the dialog, when the request URI in SUBSCRIBE is the Contact address from the initial subscription.
 
-===== Registrar Module Pseudo-Variables =====
+===== Registrar Module =====
 
 ==== $ulc(profile=>attr) - Registered Contact Attributes ====
 
@@ -2163,7 +2164,7 @@ Access the attributes of contact addresses stored in 'profile'.
 
 It must be used after a call of “reg_fetch_contacts()”.
 
-===== sipcapture Module Pseudo-Variables =====
+===== Sipcapture Module =====
 
 ==== $hep(key) - HEP Packet Attributes ====
 
