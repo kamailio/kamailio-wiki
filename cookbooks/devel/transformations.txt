@@ -313,6 +313,13 @@ Remove occurrences of 'match' from PV. 'match' can be static string or variable.
 $(var(x){s.rm,test})
 </code>
 
+==== {s.rmws} ====
+
+Remove occurrences of whitespace characters (' ', '\t, '\r', '\n').
+
+<code c>
+$(var(x){s.rmws})
+</code>
 ==== {s.corehash,n} ====
 
 Return the hash id computed with Kamailio's core hashing function. The parameter n is optional, it has to be a number of a pv holding a number. If n is provided, the value returned is **(hashid)&(n-1)**. If n is power of two, the result is the modulo operation between hashid and n (hash id % n).
