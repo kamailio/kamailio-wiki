@@ -2036,8 +2036,6 @@ It must be used after a call of “reg_fetch_contacts()”.
 The key refers to HEP packet header values:
 
   * version - HEP version
-  * src_ip - source IP address
-  * dst_ip - destination IP address
   * 0x000 - HEP attribute 0x000
   * 0x999 - HEP attribute 0x999
 
