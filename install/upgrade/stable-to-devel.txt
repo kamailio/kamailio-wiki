@@ -23,7 +23,7 @@ Following tokens are used to mark the changes:
 
  === sipcapture ===
 
- * promiscious_on parameter was replaced by promiscuous_on (CPM)
+   * promiscious_on parameter was replaced by promiscuous_on (CPM)
 
 
 ==== Removed Modules ====
