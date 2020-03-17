@@ -638,6 +638,11 @@ Note: the system time is computed for each call of $TS. Subsequent calls of $TS 
 
 **$env(NAME)** - value of the environment variable named NAME
 
+Example:
+
+<code c>
+xdbg("PATH environment variable:  $env(PATH)\n");
+</code>
 ===== $avp(id) - AVPs =====
 
 **$avp(id)** - the value of the AVP identified by 'id'.
