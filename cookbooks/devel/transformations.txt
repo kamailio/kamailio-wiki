@@ -377,6 +377,14 @@ abababa"{s.count,a}
 </code>
 
 
+==== {s.urlencode.param} ====
+
+Encode the value for URL param format.
+
+==== {s.urldecode.param} ====
+
+Decode the value from URL param format.
+
 ===== URI Transformations =====
 
 The name of transformation starts with 'uri.'. The PV value is considered to be a SIP URI. This transformation returns parts of SIP URI (see struct sip_uri). If that part is missing, the returned value is an empty string.
