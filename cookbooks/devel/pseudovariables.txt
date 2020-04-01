@@ -759,6 +759,19 @@ $xavp(sf[0]=>headers)="X-CustomerID: pw45\r\n";
 
 xavps are read and write variables. You can create multilevel xavps, as xavps may contain xavps.
 
+===== $xavu(id) - XAVUs =====
+
+Similar to XAVPs, but with single value items, therefore there are no indexes in the naming format. XAVUs are also stored in transaction context and destroyed when the transaction is terminated.
+
+Examples:
+
+<code c>
+$xavu(x) = 123; # <- set the value
+$xavu(x) = 234; # <- update to the value, not adding to a list like for xavps
+$xavu(x) = $null; # <- delete the xavu
+$xavu(a=>b) = "xyz"; # <- two level naming supported
+</code>
+
 ===== $hdr(name) - Headers =====
 
 
