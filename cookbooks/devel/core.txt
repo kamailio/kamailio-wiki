@@ -1092,8 +1092,10 @@ The name has to be provided as a string enclosed in between quotes after the **n
 <code c>
     listen=udp:10.0.0.10:5060 name "s1"
     listen=udp:10.10.10.10:5060 advertise 11.11.11.11:5060 name "s2"
+    listen=udp:10.10.10.20:5060 advertise "mysipdomain.com" name "s3"
+    listen=udp:10.10.10.30:5060 advertise "mysipdomain.com" name "s4"
     ...
-    $fsn = "s2";
+    $fsn = "s4";
     t_relay();
 </code>
 
