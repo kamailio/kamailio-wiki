@@ -750,19 +750,19 @@ $xavp(root[0]=>field)=12;
 If you assign a value without an index, a new xavp is allocated and the old one is pushed up the stack, becoming index [1]. Old index [1] becomes [2] etc.
 
 <code c>
-# new item (example => [(name = "one")])
-$xavp(example=>name)="one";
+# new item (example => [(lastname = "Smith")])
+$xavp(example=>lastname)="Smith";
 
-# add new item (example => [(name = "two")])
-$xavp(example=>name)="two";
+# add new item (example => [(lastname = "Doe")])
+$xavp(example=>name)="Doe";
 
 # add another named value to the last example item
-#   (example => [(value="John"), (name = "one")])
-$xavp(example[0]=>value)="John";
+#   (example => [(firstname="John"), (lastname = "Doe")])
+$xavp(example[0]=>firstname)="John";
 
 # add another named value to first example item
-#   (example => [(value="Ana"), (name = "one")])
-xavp(example[1]=>value)="Anna";
+#   (example => [(firstname="Alice"), (lastname = "Smith")])
+xavp(example[1]=>firstname)="Alice";
 </code>
 
 
