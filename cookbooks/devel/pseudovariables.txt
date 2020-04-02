@@ -767,7 +767,7 @@ If you assign a value without an index, a new xavp is allocated and the old one 
 $xavp(person=>lastname)="Smith";
 
 # add new item (person => [(lastname = "Doe")])
-$xavp(person=>name)="Doe";
+$xavp(person=>lastname)="Doe";
 
 # add another named value to the last example item
 #   (person => [(firstname="John"), (lastname = "Doe")])
