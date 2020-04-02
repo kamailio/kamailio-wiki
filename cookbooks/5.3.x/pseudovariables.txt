@@ -723,7 +723,18 @@ if($expires(max)!=$null) {
 
 **xavp** - eXtended AVPs - are variables that can store multiple values, which can also be grouped in a structure-like fashion. Their value can be a string, an integer number or a list of named values.
 
-They work like a stack, similar to AVPs, and are attached to SIP transactions. Each xavp has a name and can contain multiple named values, the structure name (or root list name) and the value name (or field name) are separated by <nowiki>=></nowiki> like <nowiki>$xavp(root=>field)</nowiki> where "root" is the name of the structure and "field" is the name of the value. To assign a value use:
+They work like a stack, similar to AVPs, and are attached to SIP transactions and automatically destroyed when the transaction is finished.
+
+Each xavp has a string name and can contain a string, and integer or a list of named value. The structure name (or root list name) and the value name (or field name) are separated by <nowiki>=></nowiki> like <nowiki>$xavp(root=>field)</nowiki> where "root" is the name of the structure and "field" is the name of the value.
+
+To assign a single value use:
+
+<code c>
+$xavp(root)="string value";
+$xavp(root)=intnumber;
+</code>
+
+To assign a named value use:
 
 <code c>
 $xavp(root=>field)="string value";
@@ -731,6 +742,7 @@ $xavp(root=>field)=intnumber;
 </code>
 
 Like avps, xavp act like a stack. To refer to an existing value, use an index. The newest xavp has index zero [0].
+
 <code c>
 $xavp(root[0]=>field)=12;
 </code>
