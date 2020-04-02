@@ -734,51 +734,76 @@ if($expires(max)!=$null) {
 
 ===== $xavp(id) - XAVPs =====
 
-xavp - extended AVP's - are structures that can store multiple values. They work like a stack, much like AVPs, and are attached to SIP transactions. Each xavp has a name and can contain multiple named values, the structure name and the value name are separated by <nowiki>=></nowiki> like <nowiki>$xavp(root=>branch)</nowiki> where "root" is the name of the structure and branch is a named value. To assign a value use
+**xavp** - eXtended AVPs - are variables that can store multiple values, which can also be grouped in a structure-like fashion. Their value can be a string, an integer number or a list of named values (child values).
+
+They work like a stack, similar to AVPs, and are attached to SIP transactions and automatically destroyed when the transaction is finished.
+
+Each xavp has a string name and can contain a string, and integer or a list of named values. The structure name (or root list name) and the value name (or field name, or child value name) are separated by <nowiki>=></nowiki> like <nowiki>$xavp(root=>field)</nowiki> where "root" is the name of the structure and "field" is the name of the (child) value.
+
+To assign a single value use:
+
 <code c>
-$xavp(root=>branch)="value";
+$xavp(root)="string value";
+$xavp(root)=intnumber;
+</code>
+
+To assign a named value use:
+
+<code c>
+$xavp(root=>field)="string value";
+$xavp(root=>field)=intnumber;
 </code>
 
 Like avps, xavp act like a stack. To refer to an existing value, use an index. The newest xavp has index zero [0].
+
 <code c>
-$xavp(root[0]=>newbranch)=12;
+$xavp(root[0]=>field)=12;
 </code>
 
 If you assign a value without an index, a new xavp is allocated and the old one is pushed up the stack, becoming index [1]. Old index [1] becomes [2] etc.
+
 <code c>
-$xavp(example=>name)="one";
-#create new
-$xavp(example=>name)="two";
-#add extra value to "two"
-$xavp(example[0]=>value)="John";
-#add value to first variable - "one"
-$xavp(example[1]=>value)="Anna";
+# new item (person => [(lastname = "Smith")])
+$xavp(person=>lastname)="Smith";
+
+# add new item (person => [(lastname = "Doe")])
+$xavp(person=>name)="Doe";
+
+# add another named value to the last example item
+#   (person => [(firstname="John"), (lastname = "Doe")])
+$xavp(person[0]=>firstname)="John";
+
+# add another named value to first example item
+#   (person => [(firstname="Alice"), (lastname = "Smith")])
+xavp(person[1]=>firstname)="Alice";
 </code>
 
 
 Another example:
 <code c>
-# Create new xavp
+# create new (the first) root xavp with a named value of string type
 $xavp(sf=>uri)="sip:10.10.10.10";
 
-#assign values
+# add named values (child values)
 $xavp(sf[0]=>fr_timer)=10;
 $xavp(sf[0]=>fr_inv_timer)=15;
 $xavp(sf[0]=>headers)="X-CustomerID: 1234\r\n";
 
-#create new xavp, moving previous one to sf[1]
+# create new (the second) root xavp with a named value of string type, moving previous one to sf[1]
 $xavp(sf=>uri)="sip:10.10.10.11";
+# add named values (child values)
 $xavp(sf[0]=>fr_timer)=20;
 $xavp(sf[0]=>fr_inv_timer)=35;
 
-#Create a third xavp
+# create new (the third) xavp with a named value of string type, moving previous one to sf[1] and the other one to sf[2]
 $xavp(sf=>uri)="sip:10.10.10.12";
+# add named values (child values)
 $xavp(sf[0]=>fr_timer)=10;
 $xavp(sf[0]=>fr_inv_timer)=15;
 $xavp(sf[0]=>headers)="X-CustomerID: pw45\r\n";
 </code>
 
-xavps are read and write variables. You can create multilevel xavps, as xavps may contain xavps.
+xavps are read and write variables.
 
 ===== $xavu(id) - XAVUs =====
 
