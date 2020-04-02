@@ -1072,18 +1072,32 @@ If you omit this directive then the SIP server will listen on all interfaces. On
 If you specify IPv6 addresses, you should put them into square brackets, e.g.:
 
 <code c>
-    listen=udp:[2a02:1850:1:1::13]:5060
+    listen=udp:[2a02:1850:1:1::18]:5060
 </code>
 
 You can specify an advertise address (like ip:port) per listening socket - it will be used to build headers such as Via and Record-Route:
 
 <code c>
-    listen=udp:10.10.10.10:5060 advertise  11.11.11.11:5060
+    listen=udp:10.10.10.10:5060 advertise 11.11.11.11:5060
 </code>
 
 The advertise address must be the format 'address:port', the protocol is taken from the bind socket. The advertise address is a convenient alternative to advertised_address / advertised_port cfg parameters or set_advertised_address() / set_advertised_port() cfg functions.
 
 A typical use case for advertise address is when running SIP server behind a NAT/Firewall, when the local IP address (to be used for bind) is different than the public IP address (to be used for advertising).
+
+A unique name can be set for sockets to simplify the selection of the socket for sending out. For example, the rr and path modules can use the socket name to advertise it in header URI parameter and use it as a shortcut to select the corresponding socket for routing subsequent requests.
+
+The name has to be provided as a string enclosed in between quotes after the **name** identifier.
+
+<code c>
+    listen=udp:10.0.0.10:5060 name "s1"
+    listen=udp:10.10.10.10:5060 advertise 11.11.11.11:5060 name "s2"
+    ...
+    $fsn = "s2";
+    t_relay();
+</code>
+
+Note that there is no internal check for uniqueness of the socket names, the admin has to ensure it in order to be sure the desired socket is selected, otherwise the first socket with a matching name is used.
 ==== loadmodule ====
 
 Loads a module for later usage in the configuration script. The modules is searched in the path specified by **loadpath**.
