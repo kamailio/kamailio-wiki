@@ -247,11 +247,32 @@ To reset $du:
 
 **$fn** - reference to display name of 'From' header
 
-==== $fs - Forced socket ====
+==== $fs - Forced Send Socket ====
 
-**$fs** - reference to the forced socket for message sending (if any) in the form proto:ip:port
+**$fs** - reference to the forced send socket for the SIP message (if any) in the form "proto:ip:port". It is the socket from where Kamailio is going to send out the message.
 
 <fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file). Transport proto can be omitted when assigning value, in which case it is taken from destination URI of the message.</fc>
+
+Example:
+
+<code c>
+listen=udp:1.2.3.4:5060
+...
+$fs = "udp:1.2.3.4:5060";
+</code>
+
+==== $fsn - Forced Send Socket Name ====
+
+**$fsn** - reference to the name of the forced send socket for the SIP message. The name can be assigned to this variable to select a send socket via its name.
+
+<code c>
+listen=udp:1.2.3.4:5060 name "s1"
+...
+$fsn = "s1";
+...
+$fs = "udp:1.2.3.4:5060";
+xdbg("name for forced send socket: $fsn\n");
+</code>
 
 ==== $ft - From tag ====
 
