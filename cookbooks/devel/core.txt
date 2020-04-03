@@ -1348,7 +1348,7 @@ If set to 1, memory manger (e.g., q_malloc) does join of free fragments. It is e
 
 It can be set via config reload framework.
 
-Default is 0 (disabled).
+Default is 1 (enabled).
 
 <code c>
 mem_join=1
