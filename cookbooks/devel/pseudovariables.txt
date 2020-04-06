@@ -1908,6 +1908,18 @@ Returns the notAfter validity date of the peer's certificate. String type.
 
 ==== $tls_peer_server_name ====
 The SNI server name of the peer
+
+==== $tls_peer_raw_cert ====
+The raw PEM-encoded client certificate. String type.
+
+==== $tls_my_raw_cert ====
+The raw PEM-encoded client certificate. String type.
+
+==== $tls_peer_urlencoded_cert ====
+The PEM-encoded client certificate, urlencoded. String type.
+
+==== $tls_my_urlencoded_cert ====
+The PEM-encoded client certificate, urlencoded. String type.
 ===== SIP Message Attributes =====
 
 ==== $msg(attr) ====
