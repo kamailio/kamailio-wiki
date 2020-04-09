@@ -3679,7 +3679,7 @@ Options:
                   epoll_lt, epoll_et, sigio_rt, select, kqueue, /dev/poll)
 </code>
 
-==== Log Engine ====
+==== Log Engine CLI Parameter ====
 
 The **--log-engine** parameter allows to specify what logging engine to be used, which is practically about the format of the log messages. If not set at all, then Kamailio does the classic style of line-based plain text log messages.
 
