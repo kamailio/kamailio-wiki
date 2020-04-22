@@ -1,0 +1,64 @@
+====== IRC Devel Meeting - 2020-04-29 ======
+
+**Note: //because freenode.net IRC service is now requiring user registration, this time the online meeting might be hosted on a Matrix room where we can grant guest access and people can join via web browser. More details to follow soon.//**
+
+Date:
+  * **Proposed: 14:00 UTC, Wednesday, Apr 29, 2020**
+    * can attend: dcm
+    * cannot attend:
+  * Alternatives (add your id if you can attend)
+    * Apr 28: dcm 
+    * Apr 30: dcm 
+
+Time of the meeting across the world:
+  * 16:00 - Berlin, Germany
+  * 15:00 - London, UK
+  * 10:00 - New York, USA
+  * 07:00 - Seattle, USA
+
+Utilities:
+  * [[http://www.timeanddate.com/worldclock/converter.html|Time Converter]]
+  * IRC webchat: http://webchat.freenode.net/
+  * IRC client apps: http://en.wikipedia.org/wiki/Internet_Relay_Chat#Clients
+
+Place:
+  * **#kamailio** IRC channel on **irc.freenode.net** server
+
+===== Participants =====
+
+Participation is open to anyone, just join the IRC channel if you want to participate.
+
+People adding notes in the agenda using abbreviations:
+
+  * dcm - Daniel-Constantin Mierla
+
+===== Agenda =====
+
+Kamailio Development Status:
+
+  * open issues (dcm)
+  * minor releases for 5.2 and 5.3 branches (dcm)
+
+Administration:
+
+  * servers maintenance
+  * community interaction and communication channels
+  * existing mailing lists review
+
+Kamailio 5.4 (next major release):
+
+  * roadmap
+  * features
+    * anything relevant that is missing?
+    * priorities
+
+Documentation:
+
+  * tutorials/cookbooks -- wiki vs mkdocs (github markdown)
+
+Collaborative Projects:
+
+  * unit testing, documentation, etc.
+
+===== Transcript of Meeting =====
+
