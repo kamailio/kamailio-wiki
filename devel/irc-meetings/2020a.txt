@@ -1,6 +1,6 @@
 ====== IRC Devel Meeting - 2020-04-29 ======
 
-**Note: //because freenode.net IRC service is now requiring user registration, this time the online meeting might be hosted on a Matrix room where we can grant guest access and people can join via web browser. More details to follow soon.//**
+**Note: //because freenode.net IRC service is now requiring user registration, this time the online meeting is planned to be hosted on a Matrix room where we can grant guest access and people can join via web browser. See more details below.//**
 
 Date:
   * **Proposed: 14:00 UTC, Wednesday, Apr 29, 2020**
@@ -10,19 +10,28 @@ Date:
     * Apr 28: dcm, vseva, qxork 
     * Apr 30: dcm, vseva, qxork
 
-Time of the meeting across the world:
+**Time** of the meeting across the world:
   * 16:00 - Berlin, Germany
   * 15:00 - London, UK
   * 10:00 - New York, USA
   * 07:00 - Seattle, USA
 
+**Place:**
+  * Matrix chat room: **#kamailio:matrix.kamailio.dev**
+    * https://riot.kamailio.dev/#/room/#kamailio:matrix.kamailio.dev
+
+//Backup place://
+  * IRC channel: **#kamailio** on **irc.freenode.net** server
+
 Utilities:
   * [[http://www.timeanddate.com/worldclock/converter.html|Time Converter]]
-  * IRC webchat: http://webchat.freenode.net/
-  * IRC client apps: http://en.wikipedia.org/wiki/Internet_Relay_Chat#Clients
-
-Place:
-  * **#kamailio** IRC channel on **irc.freenode.net** server
+  * Matrix resources
+    * website: https://matrix.org/
+    * client applications: https://matrix.org/clients
+    * unofficial list of public matrix servers: https://www.anchel.nl/matrix-publiclist/
+  * IRC resources
+    * IRC webchat: http://webchat.freenode.net/
+    * IRC client apps: http://en.wikipedia.org/wiki/Internet_Relay_Chat#Clients
 
 ===== Participants =====
 
