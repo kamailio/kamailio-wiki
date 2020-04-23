@@ -27,8 +27,9 @@ Utilities:
   * [[http://www.timeanddate.com/worldclock/converter.html|Time Converter]]
   * Matrix resources
     * website: https://matrix.org/
+      * it allows public registrations for getting a Matrix user account
     * client applications: https://matrix.org/clients
-    * unofficial list of public matrix servers: https://www.anchel.nl/matrix-publiclist/
+    * unofficial list of other public matrix servers: https://www.anchel.nl/matrix-publiclist/
   * IRC resources
     * IRC webchat: http://webchat.freenode.net/
     * IRC client apps: http://en.wikipedia.org/wiki/Internet_Relay_Chat#Clients
