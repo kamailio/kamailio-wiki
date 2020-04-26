@@ -4,11 +4,11 @@
 
 Date:
   * **Proposed: 14:00 UTC, Wednesday, Apr 29, 2020**
-    * can attend: dcm, vseva, qxork
+    * can attend: dcm, vseva, qxork, grumvalski
     * cannot attend:
   * Alternatives (add your id if you can attend)
-    * Apr 28: dcm, vseva, qxork 
-    * Apr 30: dcm, vseva, qxork
+    * Apr 28: dcm, vseva, qxork, grumvalski 
+    * Apr 30: dcm, vseva, qxork, grumvalski
 
 **Time** of the meeting across the world:
   * 16:00 - Berlin, Germany
@@ -43,6 +43,7 @@ People adding notes in the agenda using abbreviations:
   * dcm - Daniel-Constantin Mierla
   * vseva - Victor Seva
   * qxork - Fred Posner
+  * grumvalski - Federico Cabiddu
 
 ===== Agenda =====
 
