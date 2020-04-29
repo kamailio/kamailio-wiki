@@ -19,6 +19,10 @@ Date:
 **Place:**
   * Matrix chat room: **#kamailio:matrix.kamailio.dev**
     * https://riot.kamailio.dev/#/room/#kamailio:matrix.kamailio.dev
+  * To join as a guest:
+    * go to: https://riot.kamailio.dev/#/welcome
+    * click on **Room Directory**
+    * then click on **kamailio** room to join it 
 
 //Backup place://
   * IRC channel: **#kamailio** on **irc.freenode.net** server
