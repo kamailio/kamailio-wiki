@@ -76,6 +76,7 @@ Documentation:
 Collaborative Projects:
 
   * unit testing, documentation, etc.
+  * community announcements
 
 ===== Transcript of Meeting =====
 
