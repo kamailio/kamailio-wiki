@@ -21,7 +21,14 @@ Following tokens are used to mark the changes:
 
 ==== Upgraded Modules ====
 
- === sipcapture ===
+=== corex ===
+
+  * non-sip network message processing parameters renamed:
+    * network_io_intercept => nio_intercept
+    * min_msg_len => nio_min_msg_len
+    * msg_avp => nio_msg_avp
+
+=== sipcapture ===
 
    * promiscious_on parameter was replaced by promiscuous_on (UPG)
 
