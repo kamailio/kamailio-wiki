@@ -2,10 +2,10 @@
 
 You have to install xsltprox and XSL files for docbook.
 
-After you update the XML files from 'modules[_k|s]/modname/doc/file.xml', run the command:
+After you update the XML files from 'src/modules/modname/doc/file.xml', run the command:
 
 <code>
-make modules-readme modules=modules[_k|s]/modname
+make modules-readme modules=src/modules/modname
 </code>
 
 Examples:
@@ -13,11 +13,5 @@ Examples:
   * regenerate the readme for modules/tm module
 
 <code>
-make modules-readme modules=modules/tm
-</code>
-
-  * regenerate the readme for modules_k/dispatcher module
-
-<code>
-make modules-readme modules=modules_k/dispatcher
+make modules-readme modules=src/modules/tm
 </code>
