@@ -818,6 +818,17 @@ $xavu(x) = $null; # <- delete the xavu
 $xavu(a=>b) = "xyz"; # <- two level naming supported
 </code>
 
+===== $xavi(id) - XAVIs =====
+
+Similar to XAVPs, but with key names are case insensitive. XAVIs are also stored in transaction context and destroyed when the transaction is terminated.
+
+
+Examples:
+
+<code c>
+$xavi(WhatEver=>FoO) = 123; # <- set the value
+# $xavi(whatever[0]=>foo) == 123
+</code>
 ===== $hdr(name) - Headers =====
 
 
