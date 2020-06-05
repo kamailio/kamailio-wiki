@@ -292,6 +292,7 @@ It is exported by **rr** module and has to be used after loose_route(). The appe
 <fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
 
 Note that changing the From: header may break backwards compatibility with SIP 1.0 devices.
+
 ==== $fU - From URI username ====
 
 **$fU** - reference to username in URI of 'From' header
@@ -299,6 +300,11 @@ Note that changing the From: header may break backwards compatibility with SIP 1
 <fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
 
 Note that changing the From: header may break backwards compatibility with SIP 1.0 devices.
+
+==== $fUl - From URI Username Length ====
+
+**$fUl** - length of the username in the From URI
+
 ==== $mb - SIP message buffer ====
 
 **$mb** - reference to SIP message buffer
@@ -351,6 +357,10 @@ Note that changing the From: header may break backwards compatibility with SIP 1
 ==== $oU - Username in original R-URI ====
 
 **$oU** - reference to username in request's original URI
+
+==== $oUl - Original R-URI Username Length ====
+
+**$oUl** - the length of the username in the original R-URI
 
 ==== $pd - Domain in P-Preferred-Identity header URI ====
 
@@ -475,6 +485,10 @@ The variable is exported by **rr** module and append_fromtag parameter must be e
 **$rU** - reference to username in request's URI or to the Namespace Identifier of a URN (see RFC 2141)
 
 <fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
+
+==== $rUl - R-URI Username Length ====
+
+**$rU** - the length of the username in R-URI
 
 ==== $rv - SIP message version ====
 
@@ -614,6 +628,10 @@ It is exported by **rr** module and has to be used after loose_route(). The appe
 ==== $tU - To URI Username ====
 
 **$tU** - reference to username in URI of 'To' header
+
+==== $tUl - To URI Username Length ====
+
+**$tU** - the length of the username in To URI
 
 ==== $Tb - Startup timestamp ====
 
