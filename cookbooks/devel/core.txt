@@ -1679,8 +1679,14 @@ kamcmd mi get_statistics 1xx_replies
 </code>
 
 
+==== stats_name_separator ====
 
+Specify the character used as a separator for the internal statistics' names. 
+Default value is "_".
 
+Example of usage:
+
+    stats_name_separator = "-"
 
 ==== tos ====
 
