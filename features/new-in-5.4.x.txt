@@ -1,18 +1,38 @@
 ====== Kamailio SIP Server - New Features in v5.4.x ======
 
-**Current devel version will be numbered 5.5.0 and it is planned to be released in the 2021**.
-
 <fc #0000FF>
-**Previous devel, current stable, version was 5.4.x (released during the summer of 2020), see what was new in that release at:**
+**Previous version was 5.3.x (released on October, 2019), see what was new in that release at**:
 </fc>
-  * <fc #0000FF>http://www.kamailio.org/wiki/features/new-in-5.4.x</fc>
+  * <fc #0000FF>http://www.kamailio.org/wiki/features/new-in-5.3.x</fc>
 
-<fc #800000>//This is a draft of new features added in devel version, manually updated, thus not always synchronized with what is new in source code repository.//</fc>
+<fc #800000>//This is a draft of new features added in this version, manually updated, thus not always synchronized with what is new in source code repository.//</fc>
 
 ===== New Modules =====
 
+==== pv_headers ====
 
+Flexible headers management via $xavp and $x_hdr exported variables.
+
+  * https://www.kamailio.org/docs/modules/5.4.x/modules/pv_headers.html
 ===== New in existing Modules =====
+
+==== cfgt ====
+
+Added new **cfgt.list** and **cfgt.clean** RPC commands
+
+  * https://www.kamailio.org/docs/modules/5.4.x/modules/cfgt.html#cfgt.r.list
+  * https://www.kamailio.org/docs/modules/5.4.x/modules/cfgt.html#cfgt.r.clean
+
+
+==== registrar ====
+
+Added **path** value to xavp_rcd location record
+
+  * https://www.kamailio.org/docs/modules/5.4.x/modules/registrar.html#registrar.p.xavp_rcd
+
+Added **xavp_rcd_mask** parameter to control what values to skip
+
+  * https://www.kamailio.org/docs/modules/5.4.x/modules/registrar.html#registrar.p.xavp_rcd_mask
 
 ===== New in Core =====
 
@@ -37,5 +57,5 @@
 ==== kamctl ====
 
 ==== kamdbctl ====
-  
+
 ==== kamcli ====
