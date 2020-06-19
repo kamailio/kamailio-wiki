@@ -11,7 +11,7 @@
 
 ==== pv_headers ====
 
-Flexible headers management via $xavp and $x_hdr exported variables.
+Flexible headers management $x_hdr exported variables.
 
   * https://www.kamailio.org/docs/modules/5.4.x/modules/pv_headers.html
 ===== New in existing Modules =====
