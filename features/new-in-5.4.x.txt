@@ -23,6 +23,12 @@ Added new **cfgt.list** and **cfgt.clean** RPC commands
   * https://www.kamailio.org/docs/modules/5.4.x/modules/cfgt.html#cfgt.r.list
   * https://www.kamailio.org/docs/modules/5.4.x/modules/cfgt.html#cfgt.r.clean
 
+==== pv ====
+
+Added new pseudo-variables:
+
+  * **[[https://www.kamailio.org/wiki/cookbooks/5.4.x/core#xavi_id_-_xavis|$xavi]]**: Similar to XAVPs, but with key names are case insensitive. XAVIs are also stored in transaction context and destroyed when the transaction is terminated.
+  * **[[https://www.kamailio.org/wiki/cookbooks/5.4.x/core#xavu_id_-_xavus|$xavu]]**: Similar to XAVPs, but with single value items, therefore there are no indexes in the naming format. XAVUs are also stored in transaction context and destroyed when the transaction is terminated.
 
 ==== registrar ====
 
