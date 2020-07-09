@@ -9,7 +9,7 @@
 
 ===== Documentation =====
 
-Many fixes were done to the modules, missing parameter were added, wrong parameter or function names fixed and explanation or clarifications added. Furthermore many debug messages in the core and modules were extended, to help during analysing problems or bugs. The full details can be found in the Changelog or with the "git log" command.
+Many fixes were done to the modules, missing parameter were added, wrong parameter or function names fixed and explanation or clarifications added. Furthermore many debug messages in the core and modules were extended, to help analyzing problems or bugs. The full details can be found in the Changelog or with the "git log" command.
 
 ===== Bugfixes =====
 
