@@ -7,6 +7,14 @@
 
 <fc #800000>//This is a draft of new features added in this version, manually updated, thus not always synchronized with what is new in source code repository.//</fc>
 
+===== Documentation =====
+
+Many fixes were done to the modules, missing parameter were added, wrong parameter or function names fixed and explanation or clarifications added. Furthermore many debug messages in the core and modules were extended, to help during analysing problems or bugs. The full details can be found in the Changelog or with the "git log" command.
+
+===== Bugfixes =====
+
+Countless bugfixes were implemented for this release in core, tools and modules. Furthermore the code base was scanned with several static analyzers, to detect otherwise hard to find bugs. The full details can be found in the Changelog or with the "git log" command.
+
 ===== New Modules =====
 
 ==== pv_headers ====
@@ -535,11 +543,3 @@ Add **xavp_rcd_mask** parameter to control what values to skip
   * removed kamailio-extensions.xml file from DB schema sources
 
 ==== kamcli ====
-
-===== Documentation =====
-
-Many fixes were done to the modules, missing parameter were added, wrong parameter or function names fixed and explanation or clarifications added. Furthermore many debug messages in the core and modules were extended, to help during analysing problems or bugs. The full details can be found in the Changelog or with the "git log" command.
-
-===== Bugfixes =====
-
-Countless bugfixes were implemented for this release in core, tools and modules. Furthermore the code base was scanned with several static analyzers, to detect otherwise hard to find bugs. The full details can be found in the Changelog or with the "git log" command.
