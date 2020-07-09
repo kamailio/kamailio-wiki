@@ -23,7 +23,7 @@ New module to produce and send messages to a Kafka server:
 
 ==== secsipid ====
 
-  * new module implementing STIR and SKAKEN IETF extensions, see RFC 8224 and RFC 8588 for details
+  * new module implementing STIR and SHAKEN IETF extensions, see RFC 8224 and RFC 8588 for details
 
 ==== systemdops ====
 
@@ -31,11 +31,18 @@ New module to facilitate integration with systemd:
 
   * https://kamailio.org/docs/modules/devel/modules/systemdops.html
 
+==== dlgs ====
+
+New module to enable lightwight, stateless dialog tracking and statistics
+
+  * https://kamailio.org/docs/modules/devel/modules/dlgs.html
+
 ===== New in existing Modules =====
 
 ==== acc ====
 
   * adding CDR engine functionality, to allows the extension of the acc module for other formats or backends
+  * new skip_cdr modparam to prevent cdr generation for certain calls
 
 ==== auth_db ====
 
@@ -43,7 +50,8 @@ New module to facilitate integration with systemd:
 
 ==== avpops ====
 
-  * add avp_subst_pv(), same functionality as avp_subst() but second parameter will be evaluated before calling subst.
+  * add avp_subst_pv(), same functionality as avp_subst() but second parameter will be evaluated before calling subst
+  * export avp_check and avp_copy functions to KEMI
 
 ==== app_python ====
 
@@ -56,6 +64,10 @@ New module to facilitate integration with systemd:
 ==== app_ruby ====
 
   * option to use internal KSR::PV module and skip returning xval str, controlled with the xval_mode parameter
+
+==== app_jsdt ====
+
+  * internal duktape interpreter upgraded to v2.5.0
 
 ==== acc_json ====
 
@@ -71,6 +83,10 @@ New module to facilitate integration with systemd:
   * organize and add new RPC commands, cr.add_host, cr.delete_host, cr.activate_host, cr.deactivate_host and cr.replace_host
   * remove obselete FIFO commands implementation
 
+==== cdt ====
+
+  * better compatiblity with certain Diameter servers that lacks Supported-Vendor-Id in their reply
+
 ==== cfgt ====
 
 Added new **cfgt.list** and **cfgt.clean** RPC commands
@@ -83,10 +99,16 @@ Added new **cfgt.list** and **cfgt.clean** RPC commands
 
   * add functions to set socket by name
   * new function is_faked_msg()
+  * new param dns_cache to add values to the internal dns cache
+  * export file read/write functions to kemi
 
 ==== ctl ====
 
   * switch from deprecated /var/run to /run
+
+==== crypto ====
+
+  * add event route to allow encrypting/decrypting net I/O traffic
 
 ==== drouting ====
 
@@ -99,6 +121,8 @@ Added new **cfgt.list** and **cfgt.clean** RPC commands
 ==== db_mysql ====
 
   * switch from deprecated /var/run to /run
+  * new parameter opt_ssl_mode - allow controling ssl mode, can disable or enforce use of SSL
+
 
 ==== db_redis ====
 
@@ -113,7 +137,9 @@ Added new **cfgt.list** and **cfgt.clean** RPC commands
   * new variable $dsv(...) to access attributes related to response code when executing event routes
   * add new parameter ds_default_sockname, to set the send socket by name
   * add new gateway attribute "obproxy"
-  * add rpc command dispatcher.hash
+  * add RPC command dispatcher.hash, compute the hash id of the value and do modulo operation if first parameter is not 0
+  * new RPC command dispatcher.set_duid_state, to set the state of a destination by matching on duid attribute
+  * add attrs param to RPC 'add' call
 
 ==== dialog ====
 
@@ -125,17 +151,19 @@ Added new **cfgt.list** and **cfgt.clean** RPC commands
   * add RCP command dlg.dump, an alternative command to output dialogs data to file, far much faster than dlg.list
 
 ==== dmq ====
+
   * set 202 response for empty_peer_callback() handling
 
 ==== dmq_usrloc ====
 
   * replicate_socket_info using dmq, useful for anycast scenarios
+  * add new parameter `usrloc_delete` to disable synchronizing delete actions
 
 ==== htable ====
 
   * export sht_is_null() function to KEMI
-  * exported functions to inc and dec hash table values to KEMI
-  * exported function to get timestamp to KEMI
+  * export functions to inc and dec hash table values to KEMI
+  * export function to get timestamp to KEMI
   * new RPC command htable.store, to save the content of a hash table to DB
 
 ==== http_client ====
@@ -154,6 +182,10 @@ Added new **cfgt.list** and **cfgt.clean** RPC commands
 
   * add civic address parsing via xpath, with fallback to point or circle attributes
   * new module parameters to set HeLD request attributes, parameters are exact_type, response_time, and location_type
+
+==== mqueue ====
+
+  * add support for db persistency
 
 ==== mqtt ====
 
@@ -200,6 +232,9 @@ Add new pseudo-variables:
   * add config and kemi functions to print xavu vars
   * new config variable $fsn - forced send socket name
   * add KEMI functions pvx.xavp_get_keys and pvx.xavp_getd
+  * add $xavi(...) config variables implementation, same as $xavp but case insensitive for keys
+  * new var $mts, return msg type as string
+  * add vars to get the length for o-uri/r-uri/f-uri/t-uri username, $oUl, $rUl, $fUl, $tUl
 
 ==== p_usrloc ====
 
@@ -226,7 +261,7 @@ Add **xavp_rcd_mask** parameter to control what values to skip
 
 ==== rr ====
 
-  * exported record_route_preset_one() to KEMI
+  * export record_route_preset_one() to KEMI
   * new function rr_next_hop_route(), return true if there is a route header for next hop address
   * new param sockname_mode, socket name is add to Path URI in 'sn' param
   * new convenience function loose_route_preloaded()
@@ -239,14 +274,19 @@ Add **xavp_rcd_mask** parameter to control what values to skip
   * adds via-branch=auto-next and via-branch=auto-extra for easier processing in scripts
   * add support for new T.38 options
   * enable handling of PRACK requests
+  * add kemi support for block/unblock media/dtmf, and play/stop media functions
 
 ==== sdpops ====
 
-  * exported sdp with transport variants to KEMI
+  * export sdp with transport variants to KEMI
 
 ==== siputils ====
 
-  * contact encoding functions exported to KEMI
+  * contact encoding functions export to KEMI
+  * new function contact_param_rm("param-name"), remove parameter by name from Contact header URI
+  * new function uri_param_rm(pname), remove parameter from request URI
+  * new function uri_param_any(param), check if r-uri has the param, with or without value
+
 
 ==== sipcapture ====
 
@@ -273,6 +313,10 @@ Add **xavp_rcd_mask** parameter to control what values to skip
   * export sql_result_get() to KEMI
   * add functions to get null result value as empty or zer
 
+==== textops ====
+
+  * addfunctions to remove or test headers with var parameters
+
 ==== tcpops ====
 
   * new variabale $tcp(key), return attributes related to tcp connection
@@ -297,6 +341,12 @@ Add **xavp_rcd_mask** parameter to control what values to skip
     - new PVs: $tls_peer_raw_cert, $tls_peer_urlencoded_cert, $tls_my_raw_cert, $tls_my_urlencoded_cert
     - new selects: @tls.peer.raw_cert, @tls.peer.urlencoded_cert, @tls.my.raw_cert, @tls.my.urlencoded_cert
   *  add select for tls verified cert chain (requires OpenSSL 1.1+)
+  * add support to link against static libraries in Makefile
+
+==== ims_charging ====
+
+  * add support for Application-Provided-Called-Party-Address AVP
+  * add support for destination_host parameter, implementation was incomplete
 
 ==== ims_usrloc_pcscf ====
 
@@ -332,6 +382,10 @@ Add **xavp_rcd_mask** parameter to control what values to skip
 
   * KEMI function to get the RPCcommand response, shortcut to skip the pv get layer, can be useful for large values
 
+==== kazoo ====
+
+  * add basic kemi support
+
 ==== keepalive ====
 
   * add new function del_destination and add cfg functions
@@ -345,15 +399,16 @@ Add **xavp_rcd_mask** parameter to control what values to skip
 
 ==== kemix ====
 
-  * exported functions to get dst-uri variants to KEMI
-  * exported function to get next hop URI to KEMI
+  * export functions to get dst-uri variants to KEMI
+  * export function to get next hop URI to KEMI
   * convenience function KS.is_proto() to test many transport protocols with KEMI
-  * exported get_conid() function to retrieve tcp connection id to KEMI
+  * export get_conid() function to retrieve tcp connection id to KEMI
 
 ==== nathelper ====
 
   * add new function set_alias_to_avp
   * add new parameter nat_addr_mode, to include/exlude reserved addresses in nat_uac_test()
+  * add optional set_contact_alias([trim]) parameter
 
 ==== nat_traversal ====
 
@@ -407,9 +462,11 @@ Add **xavp_rcd_mask** parameter to control what values to skip
 
 ==== Command line arguments ====
 
-  * new command line parameter --loadmodule=name, enable the option to load a module from command line
-  * new command line parameter --modparam, to allow setting a module parameter via command line
-  * new command line parameter --log-engine, to allow setting the log engine from command line
+  * add --loadmodule=name, enable the option to load a module from command line
+  * add --modparam, to allow setting a module parameter via command line
+  * add --log-engine, to allow setting the log engine from command line
+  * add --debug=val command line parameter to control the value for debug global parameter as alternative to -d switch
+
 
 ==== Interpreter ====
 
@@ -441,6 +498,7 @@ Add **xavp_rcd_mask** parameter to control what values to skip
   * add core support for xavi and xavu PVs
   * add core support to assign names to listen sockets
   * KEMI suport for ARRAY and DICT types
+  * implementation for executing route blocks on send out events moved to onsend.c
 
 ==== kamailio.cfg ====
 
@@ -448,7 +506,8 @@ Add **xavp_rcd_mask** parameter to control what values to skip
   * option to use rtpengine for nat traversal
     - define WITH_NAT
     - define WITH_RTPENGINE
-  * update IMS kamailio.cfg examples
+  * set disable_sctp to yes
+  * update IMS kamailio.cfg examples (in other folder)
 
 ===== Tools =====
 
@@ -456,6 +515,8 @@ Add **xavp_rcd_mask** parameter to control what values to skip
   * pdbt: add pdb server message check
   * Makefile: add better support for EMACS
   * Makefile: use pgk-config if xml2-config can not be found for certain modules
+  * kemi: add script to generate mock api for kemi python testing
+  * kemi: add support for invoking function pointers in tool
 
 ==== kamcmd ====
 
@@ -465,6 +526,7 @@ Add **xavp_rcd_mask** parameter to control what values to skip
   * kamctl: switch from deprecated /var/run to /run
   * adjustment to RPC fifo file to match default naming
   * try to locate RPC fifo file in /var/run/ or /run/ folders, to cope better with old or non-linux systems
+  * added pstrap command, use ps to get list of PIDs for Kamailio instance, instead of RPC core.psx
 
 ==== kamdbctl ====
 
