@@ -11,10 +11,52 @@
 
 ==== pv_headers ====
 
-Flexible headers management $x_hdr exported variables.
+Flexible headers management $x_hdr exported variables, to offload header processing and to simplify SIP header modifications
 
   * https://www.kamailio.org/docs/modules/5.4.x/modules/pv_headers.html
+
+==== kafka ====
+
+New module to produce and send messages to a Kafka server:
+
+  * https://kamailio.org/docs/modules/devel/modules/kafka.html
+
+==== secsipid ====
+
+  * new module implementing STIR and SKAKEN IETF extensions, see RFC 8224 and RFC 8588 for details
+
+==== systemdops ====
+
+New module to facilitate integration with systemd:
+
+  * https://kamailio.org/docs/modules/devel/modules/systemdops.html
+
 ===== New in existing Modules =====
+
+==== acc ====
+
+  * adding CDR engine functionality, to allows the extension of the acc module for other formats or backends
+
+==== avpops ====
+
+  * add avp_subst_pv(), same functionality as avp_subst() but second parameter will be evaluated before calling subst.
+
+==== app_ruby ====
+
+  * option to use internal KSR::PV module and skip returning xval str, controlled with the xval_mode parameter
+
+==== acc_json ====
+
+ * adding CDR as JSON functionality
+
+==== call_control ====
+
+  * switch from deprecated /var/run to /run
+  * remove redundant str trim implementation and use the one from core
+
+==== carrierroute ====
+
+  * organize and add new rpc commands, cr.add_host, cr.delete_host, cr.activate_host, cr.deactivate_host and cr.replace_host
 
 ==== cfgt ====
 
@@ -22,6 +64,56 @@ Added new **cfgt.list** and **cfgt.clean** RPC commands
 
   * https://www.kamailio.org/docs/modules/5.4.x/modules/cfgt.html#cfgt.r.list
   * https://www.kamailio.org/docs/modules/5.4.x/modules/cfgt.html#cfgt.r.clean
+  * switch from deprecated /var/run to /run
+
+==== ctl ====
+
+  * switch from deprecated /var/run to /run
+
+==== db_mysql ====
+
+  * switch from deprecated /var/run to /run
+
+==== db_redis ====
+
+  * several performance improvements and fixes
+  * allow deletion of all rows from DB API
+
+==== dispatcher ====
+
+  * switch from deprecated /var/run to /run
+  * add state to mode in ds_list_exists, adds Bit 3 to allow the check of active/inactive entries in ds_list
+  * option to set add socket as string in the dst xavp
+  * new variable $dsv(...) to access attributes related to response code when executing event routes
+
+==== dialog ====
+
+  * adding dlg.set_state command, which can be used e.g. to force the killing of active dialogs
+  * dialog: added dlg.briefing rpc command, list fewer details for the dialog records in memory
+  * new dlg_reset_property() function is added to disable the previously enabled dialog module behaviour, e.g. stop sending keep-alive OPTIONS messages
+  * export dlg_reset_property() to KEMI
+
+==== dmq_usrloc ====
+
+  * replicate_socket_info using dmq, useful for anycast scenarios
+
+==== htable ====
+
+  * export sht_is_null() function to KEMI
+  * exported functions to inc and dec hash table values to KEMI
+  * exported function to get timestamp to KEMI
+
+==== http_client ====
+
+  * new param netinterface to set curl network interface
+
+==== http_async_client ====
+
+  * remove redundant str trim implementation and use the one from core
+
+==== log_custom ====
+
+  * send processed logs via UDP
 
 ==== pv ====
 
@@ -29,6 +121,14 @@ Added new pseudo-variables:
 
   * **[[https://www.kamailio.org/wiki/cookbooks/5.4.x/core#xavi_id_-_xavis|$xavi]]**: Similar to XAVPs, but with key names are case insensitive. XAVIs are also stored in transaction context and destroyed when the transaction is terminated.
   * **[[https://www.kamailio.org/wiki/cookbooks/5.4.x/core#xavu_id_-_xavus|$xavu]]**: Similar to XAVPs, but with single value items, therefore there are no indexes in the naming format. XAVUs are also stored in transaction context and destroyed when the transaction is terminated.
+  * add new function xavp_copy
+  * new transformations s.encode.base64t and s.decode.base64t, base64 encode/decode with optional trailing padding
+  * new transformation {s.rmsw} - remove whitespaces from value, removes all occurences of ' ', '\t', '\r', '\n'
+
+==== mqtt ====
+
+  * add TLS support
+  * expose received message QOS level over PV
 
 ==== registrar ====
 
@@ -39,29 +139,194 @@ Added **path** value to xavp_rcd location record
 Added **xavp_rcd_mask** parameter to control what values to skip
 
   * https://www.kamailio.org/docs/modules/5.4.x/modules/registrar.html#registrar.p.xavp_rcd_mask
+  * control what values to add to xavp_rcd via xavp_rcd_mask parameter
+  * option to send 423 when expires less than min_expires with the  min_expires_mode parameter
+
+==== rr ====
+
+  * exported record_route_preset_one() to KEMI
+  * new function rr_next_hop_route(), return true if there is a route header for next hop address
+
+==== rtpengine ====
+
+  * add play_dtmf() command
+  * update/fix via-branch=next ID generation, via-branch=next should not use a hard-coded branch index of zero, but instead use the actual branch index from the tm module
+  * adds via-branch=auto-next and via-branch=auto-extra for easier processing in scripts
+
+==== sdpops ====
+
+  * exported sdp with transport variants to KEMI
+
+==== sipdump ====
+
+  * switch from deprecated /var/run to /run
+  * option to run event_route[sipdump:msg] on received/send messages
+  * KEMI functions to return buf and tag values
+  * KEMI exports to get src/dst ip of the message
+
+==== sqlops ====
+
+  * exported sql_result_get() to KEMI
+
+==== tcpops ====
+
+  * new variabale $tcp(key), return attributes related to tcp connection
+
+==== tm ====
+
+  * add support for dropping messages in local-request event route
+  * new weight-based call-termination distribution, extended t_load_contacts function. It can be used to define the algorithm to use for ordering the contacts.
+
+==== tls ====
+
+  * use internal cryptographic algorithm for pseudo-random number generation, prevent crashes on newer libssl versions
+  * add fall-back fastrand and kamailio mutex protection pseudo-random number generation as well
+  * use TLSv1.2 in default configuration
+  * set default tls method (version) to 1+
+  * add verify_client support parameter
+
+==== ims_ipsec_pcscf ====
+
+  * new parameter in ipsec_forward() to set or not 'send force socket' for request messages, useful for IPSEC or TCP connections
+  * new config param - ipsec_reuse_server_port, to specify the re-use of the PCSCF server port for UA Re-registration
+
+==== ims_diameter_server ====
+
+  * switch from deprecated /var/run to /run
+
+==== ims_ocs ====
+
+  * switch from deprecated /var/run to /run
+
+==== ims_qos ====
+
+  * Rx AAR for Terminating direction get identity from request message if dialog is missing
+
+==== janssonrpcc ====
+
+  * remove redundant str trim implementation and use the one from core
+  * replaced str dup wrapers with the functions from core
+
+==== jsonrpcc ====
+
+  * remove redundant str trim implementation and use the one from core
+
+==== jsonrpcs ====
+
+  * KEMI function to get the rpc command response, shortcut to skip the pv get layer, can be useful for large values
+
+==== keepalive ====
+
+  * add new function del_destination and added cfg functions
+  * added keepalive.add, keepalive.del, keepalive.get and keepalive.flush RPC commands
+
+==== kex ====
+
+  *new rpc command stats.fetchn, get internal statistics with the values represented as numbers
+
+==== kemix ====
+
+  * exported functions to get dst-uri variants to KEMI
+  * exported function to get next hop URI to KEMI
+
+==== presence ====
+
+ * new parameter pres_subs_mode, allow disabling cloning subscription structure for pv use to save run-time memory
+
+==== presence_xml ====
+
+  * adds option to aggregate xml body with priorities
+
+==== nathelper ====
+
+  * add new function set_alias_to_avp
+
+==== nat_traversal ====
+
+  * switch from deprecated /var/run to /run
+  * remove redundant str trim implementation and use the one from core
+
+==== mediaproxy ====
+
+  * switch from deprecated /var/run to /run
+  * remove redundant str trim implementation and use the one from core
+
+==== uac ====
+
+  * extended use of mode param for uac_reg_request_to(), to control the matching and authentication mode
+  * optional param for uac_auth() to specify auth mode, to support password in HA1 format
+
+==== userblacklist ====
+
+  * add KEMI functions
+
+==== xmpp ====
+
+  * remove redundant str trim implementation and use the one from core
 
 ===== New in Core =====
 
+  * detect if IPv6 address is between square brackets in internal DB API, to support MySQL cfg group names
+  * fixup helpers to get dynamic string parameter in own buffer
+  * function to get the size of the value for strings with vars for PVs
+  * better evaluation of error return for pv_printf_s()
+  * add support for parsing http/2 replies parsing
+  * add two new string handling functions to copy chars and str
+  * internal flag to mark sip request if there is a route for next hop
+
 ==== Command line arguments ====
+
+  * new command line parameter --loadmodule=name, enable the option to load a module from command line
+  * new command line parameter --modparam, to allow setting a module parameter via command line
+  * new command line parameter --log-engine, to allow setting the log engine from command line
 
 ==== Interpreter ====
 
 ==== Parameters ====
 
+  * new global parameter uri_host_extra_chars, to allow specifying additional chars to be allowed in host part
+
 ==== Functions ====
 
 ==== Memory Managers ====
 
+  * qmalloc - print details of prev fragment when its tail is overwritten
+
 ==== Architecture ====
+
+  * added internal cryptographic algorithm implementation (MD5, SHA, AES, Fortuna PRNG)
+  * moved lib/srutils functions to core/utils
+  * further migration of many modules to use core SHM_MEM_ERROR and PKG_MEM_ERROR defines
+  * events - support for basic void core callbacks, can be used to allow modules execute their code from core for specific needs
+  * removal of several old core functions which were deactivated since many years
+  * simplified core log macros (dprint), remove old and unused code
+  * add support for structured logging, to provide JSON logging format
+  * add option to print callid as attribute in structure json logging
+  * log macro to print message without function name (dprint) with LOG_FN(...)
 
 ==== kamailio.cfg ====
 
+  * switch from deprecated /var/run to /run
+  * option to use rtpengine for nat traversal
+    - define WITH_NAT
+    - define WITH_RTPENGINE
+  * update IMS kamailio.cfg examples
+
 ===== Tools =====
+
+  * pdbt: switch from deprecated /var/run to /run
+  * Makefile: add better support for EMACS
+  * Makefile: use pgk-config if xml2-config can not be found for certain modules
 
 ==== kamcmd ====
 
 ==== kamctl ====
 
+  * kamctl: switch from deprecated /var/run to /run
+
 ==== kamdbctl ====
+
+  * add support for DB creation on MySQL 8
+  * new option DBINITASK to control the steps for db init
 
 ==== kamcli ====
