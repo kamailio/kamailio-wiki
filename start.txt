@@ -102,6 +102,7 @@ Alphabetic indexes generated from documentation (modules' readme docs).
 | Version ^ Modules Parameters  ^ Modules Functions ^ RPC Commands ^ Statistics ^ 
 ^ devel   |  [[alphaindexes:devel:modparameters|link]]  |  [[alphaindexes:devel:modfunctions|link]]  |  [[alphaindexes:devel:rpccommands|link]]  |  [[alphaindexes:devel:modstatistics|link]]  |
 ^ 5.3.x   |  [[alphaindexes:5.3.x:modparameters|link]]  |  [[alphaindexes:5.3.x:modfunctions|link]]  |  [[alphaindexes:5.3.x:rpccommands|link]]  |  [[alphaindexes:5.3.x:modstatistics|link]]  |
+^ 5.4.x   |  [[alphaindexes:5.4.x:modparameters|link]]  |  [[alphaindexes:5.4.x:modfunctions|link]]  |  [[alphaindexes:5.4.x:rpccommands|link]]  |  [[alphaindexes:5.4.x:modstatistics|link]]  |
 ^ 5.2.x   |  [[alphaindexes:5.2.x:modparameters|link]]  |  [[alphaindexes:5.2.x:modfunctions|link]]  |  [[alphaindexes:5.2.x:rpccommands|link]]  |  [[alphaindexes:5.2.x:modstatistics|link]]  |
 ^ 5.1.x   |  [[alphaindexes:5.1.x:modparameters|link]]  |  [[alphaindexes:5.1.x:modfunctions|link]]  |  [[alphaindexes:5.1.x:rpccommands|link]]  |  [[alphaindexes:5.1.x:modstatistics|link]]  |
 ^ 5.0.x   |  [[alphaindexes:5.0.x:modparameters|link]]  |  [[alphaindexes:5.0.x:modfunctions|link]]  |  [[alphaindexes:5.0.x:rpccommands|link]]  |  [[alphaindexes:5.0.x:modstatistics|link]]  |
