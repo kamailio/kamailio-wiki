@@ -82,6 +82,7 @@ Few guidelines to edit the wiki:
 
 |  Version  ^ Core Cookbook                  ^ Pseudo Variables                ^ Transformations  ^ Selects ^ Modules ^
 ^ devel     |  [[cookbooks:devel:core|link]]  |  [[cookbooks:devel:pseudovariables|link]]  |  [[cookbooks:devel:transformations|link]]  |  [[cookbooks:devel:selects|link]]  |  [[https://kamailio.org/docs/modules/devel/|link]]  |
+^ 5.4.x     |  [[cookbooks:5.4.x:core|link]]  |  [[cookbooks:5.4.x:pseudovariables|link]]  |  [[cookbooks:5.4.x:transformations|link]]  |  [[cookbooks:5.4.x:selects|link]]  |  [[https://kamailio.org/docs/modules/5.4.x/|link]]  |
 ^ 5.3.x     |  [[cookbooks:5.3.x:core|link]]  |  [[cookbooks:5.3.x:pseudovariables|link]]  |  [[cookbooks:5.3.x:transformations|link]]  |  [[cookbooks:5.3.x:selects|link]]  |  [[https://kamailio.org/docs/modules/5.3.x/|link]]  |
 ^ 5.2.x     |  [[cookbooks:5.2.x:core|link]]  |  [[cookbooks:5.2.x:pseudovariables|link]]  |  [[cookbooks:5.2.x:transformations|link]]  |  [[cookbooks:5.2.x:selects|link]]  |  [[https://kamailio.org/docs/modules/5.2.x/|link]]  |
 ^ 5.1.x     |  [[cookbooks:5.1.x:core|link]]  |  [[cookbooks:5.1.x:pseudovariables|link]]  |  [[cookbooks:5.1.x:transformations|link]]  |  [[cookbooks:5.1.x:selects|link]]  |  [[https://kamailio.org/docs/modules/5.1.x/|link]]  |
