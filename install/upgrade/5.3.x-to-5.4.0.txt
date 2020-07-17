@@ -58,5 +58,9 @@ Following tokens are used to mark the changes:
 Run following SQL statements in MySQL client to upgrade database structure from v5.3 to v5.4:
 
 <code sql>
-...
+-- version table - added id column to facilitate records management with external tools
+-- * the column is not used by Kamailio, thus is optional to be create
+ALTER TABLE version ADD COLUMN `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+ALTER TABLE version ADD PRIMARY KEY (`id`);
+
 </code>
