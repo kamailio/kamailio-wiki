@@ -1,5 +1,6 @@
-====== Kamailio SIP Server v5.4.x (stable): Pseudo-Variables ======
+====== Pseudo-Variables ======
 
+Version: Kamailio SIP Server v5.4.x (stable)
 ===== Introduction =====
 
 The term “pseudo-variable” is used for special tokens that can be given as parameters to different script functions and they will be replaced with a value before the execution of the function.
