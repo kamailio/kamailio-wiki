@@ -130,7 +130,7 @@ Lists of exported symbols generated from C code.
 
 \\
 
-===== KEMI Framework Exports =====
+===== KEMI Framework =====
 
 Documentation and functions exported to KEMI framework, that can be used in embedded Lua/Python/JavaScript/Ruby/... SIP routing scripts:
 
