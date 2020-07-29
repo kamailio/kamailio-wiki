@@ -64,6 +64,8 @@ Few guidelines to edit the wiki:
 
   * [[https://www.kamailio.org/w/download/|Main Download Page]]
   * [[https://www.kamailio.org/pub/kamailio/latest/src/|Download Tarball with Sources of Latest Stable Release]]
+  * [[download:v5.4.x-from-git|Download Sources of v5.4.x from GIT Repository]]
+  * [[download:v5.3.x-from-git|Download Sources of v5.3.x from GIT Repository]]
   * [[download:v5.2.x-from-git|Download Sources of v5.2.x from GIT Repository]]
   * [[download:v5.1.x-from-git|Download Sources of v5.1.x from GIT Repository]]
   * [[download:v5.0.x-from-git|Download Sources of v5.0.x from GIT Repository]]
