@@ -60,7 +60,7 @@ Run following SQL statements in MySQL client to upgrade database structure from 
 <code sql>
 -- version table - added id column to facilitate records management with external tools
 -- * the column is not used by Kamailio, thus is optional to be create
-ALTER TABLE version ADD COLUMN `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
-ALTER TABLE version ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `version` ADD COLUMN `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT, ADD PRIMARY KEY (`id`);
 
 </code>
