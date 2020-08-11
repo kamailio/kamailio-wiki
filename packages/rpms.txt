@@ -23,6 +23,44 @@ gpgkey=http://download.opensuse.org/repositories/home:/kamailio:/v5.3.x-rpms/Cen
 enabled=1
 </code>
 
+===== Kamailio 5.4.x =====
+The RPm packages build using docker images for
+  - RHEL 6, 7, 8;
+  - CentOS 6, 7, 8;
+  - officially support Fedora releases;
+  - OpenSUSE 15, 42.2 and 42.3.
+
+All RPM packages prepared for x86_64 architecture.
+
+Compiled RPM packages located in subdirectories at:
+
+  * http://rpm.kamailio.org
+
+To install kamailio you can use commands on
+
+For RHEL 8, CentOS 7 and Fedora
+
+<code>
+dnf -y install dnf-plugins-core
+dnf config-manager --add-repo http://rpm.kamailio.org/centos/kamailio.repo
+dnf install kamailio
+</code>
+
+For RHEL 6 and 7, CentOS 6 and 7 you can use
+
+<code>
+yum -y install yum-utils
+yum-config-manager --add-repo http://rpm.kamailio.org/centos/kamailio.repo
+yum install kamailio
+</code>
+
+If you want to install specific Kamailio version need use command like
+
+<code>
+dnf install --disablerepo=kamailio --enablerepo=kamailio-5.4.0 kamailio
+yum install --disablerepo=kamailio --enablerepo=kamailio-5.4.0 kamailio
+</code>
+
 ===== Kamailio 5.3.x =====
 
 The RPM packages are built on OpenSUSE Build Service for CentOS 6 and 7, Fedora 27, 28 and 29, RedHat 6 and 7, OpenSUSE 42.2 and 42.3, on i586 and x86_64 architectures.
