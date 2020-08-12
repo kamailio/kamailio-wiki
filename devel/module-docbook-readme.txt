@@ -20,8 +20,8 @@ git checkout src/modules/modname/README
 
 The docbook file are:
 
-  * modname.xml - the main docbook file, including other files that have content
-  * modname_admin.xml - the docbook file that includes content targeting administrators (e.g., short description, dependencies, parameters and functions for the config file, a.s.o.)
+  * modname.xml (e.g., acc.xml) - the main docbook file, including other files that have content
+  * modname_admin.xml (e.g., acc_admin.xml) - the docbook file that includes content targeting administrators (e.g., short description, dependencies, parameters and functions for the config file, a.s.o.)
   * modname_devel.xml - the docbook file that includes content targeting developers (e.g., inter module APIs)
 
 ==== SER Style ====
