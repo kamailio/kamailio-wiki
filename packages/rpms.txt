@@ -2,6 +2,12 @@
 
 ===== Overview =====
 
+Kamailio is maintaining it own server hosting RPM repositories for several Linux distributions, courtesy of the time allocated by Sergey Safarov and infrastructure provided by LOD.com.
+
+Note: the OpenSUSE Build Service (OBS) project is still available, mainly kept for testing purposes (should not be used anymore):
+
+  * [[packages:rpms-obs|OBS Packages Details]]
+
 Most of the Kamailio RPM packages for various Linux distributions are generated using OpenSuse Build Service. To install Kamailio using **yum**, go to the provided download link for your operating system, get the **.repo** file and save it in **/etc/yum.repos.d/** directory.
 
 For example, to add the repository for Kamailio v5.3.x on a CentOS 7, do:
