@@ -12,7 +12,7 @@ Note: the OpenSUSE Build Service (OBS) project is still available, mainly kept f
 
 ===== Kamailio 5.4.x (Latest Stable) =====
 
-The RPm packages build using docker images for
+The RPM packages build using docker images for
   - RHEL 6, 7, 8;
   - CentOS 6, 7, 8;
   - officially supported Fedora releases;
@@ -51,7 +51,7 @@ yum install --disablerepo=kamailio --enablerepo=kamailio-5.4.0 kamailio
 
 ===== Kamailio 5.3.x (Old Stable) =====
 
-The RPm packages build using docker images for
+The RPM packages build using docker images for
   - RHEL 6, 7, 8;
   - CentOS 6, 7, 8;
   - officially support Fedora releases;
@@ -91,7 +91,7 @@ yum install --disablerepo=kamailio-5.3 --enablerepo=kamailio-5.3.0 kamailio
 
 ===== Kamailio 5.2.x (Old Stable) =====
 
-The RPm packages build using docker images for
+The RPM packages build using docker images for
   - RHEL 6, 7, 8;
   - CentOS 6, 7, 8;
   - officially support Fedora releases;
