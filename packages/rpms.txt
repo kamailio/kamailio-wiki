@@ -70,7 +70,7 @@ For RHEL 8, CentOS 7 and Fedora
 <code>
 dnf -y install dnf-plugins-core
 dnf config-manager --add-repo https://rpm.kamailio.org/centos/kamailio.repo
-dnf install kamailio-5.3
+dnf install --disablerepo=kamailio --enablerepo=kamailio-5.3 kamailio
 </code>
 
 For RHEL 6 and 7, CentOS 6 and 7 you can use
@@ -110,7 +110,7 @@ For RHEL 8, CentOS 7 and Fedora
 <code>
 dnf -y install dnf-plugins-core
 dnf config-manager --add-repo https://rpm.kamailio.org/centos/kamailio.repo
-dnf install kamailio-5.2
+dnf install --disablerepo=kamailio --enablerepo=kamailio-5.3 kamailio
 </code>
 
 For RHEL 6 and 7, CentOS 6 and 7 you can use
