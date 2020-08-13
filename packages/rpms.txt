@@ -26,7 +26,7 @@ Compiled RPM packages are located in subdirectories at:
 
 To install Kamailio RPM repository, you can use the next commands:
 
-  * for RHEL 8, CentOS 7 and Fedora:
+  * for RHEL 8, CentOS 8 and Fedora:
 
 <code>
 dnf -y install dnf-plugins-core
@@ -65,7 +65,7 @@ Compiled RPM packages located in subdirectories at:
 
 To install kamailio you can use commands on
 
-For RHEL 8, CentOS 7 and Fedora
+For RHEL 8, CentOS 8 and Fedora
 
 <code>
 dnf -y install dnf-plugins-core
@@ -105,7 +105,7 @@ Compiled RPM packages located in subdirectories at:
 
 To install kamailio you can use commands on
 
-For RHEL 8, CentOS 7 and Fedora
+For RHEL 8, CentOS 8 and Fedora
 
 <code>
 dnf -y install dnf-plugins-core
