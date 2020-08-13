@@ -22,7 +22,7 @@ All RPM packages are built for x86_64 architecture.
 
 Compiled RPM packages are located in subdirectories at:
 
-  * http://rpm.kamailio.org
+  * https://rpm.kamailio.org
 
 To install Kamailio RPM repository, you can use the next commands:
 
@@ -30,7 +30,7 @@ To install Kamailio RPM repository, you can use the next commands:
 
 <code>
 dnf -y install dnf-plugins-core
-dnf config-manager --add-repo http://rpm.kamailio.org/centos/kamailio.repo
+dnf config-manager --add-repo https://rpm.kamailio.org/centos/kamailio.repo
 dnf install kamailio
 </code>
 
@@ -38,7 +38,7 @@ dnf install kamailio
 
 <code>
 yum -y install yum-utils
-yum-config-manager --add-repo http://rpm.kamailio.org/centos/kamailio.repo
+yum-config-manager --add-repo https://rpm.kamailio.org/centos/kamailio.repo
 yum install kamailio
 </code>
 
@@ -61,7 +61,7 @@ All RPM packages prepared for x86_64 architecture.
 
 Compiled RPM packages located in subdirectories at:
 
-  * http://rpm.kamailio.org
+  * https://rpm.kamailio.org
 
 To install kamailio you can use commands on
 
@@ -69,7 +69,7 @@ For RHEL 8, CentOS 7 and Fedora
 
 <code>
 dnf -y install dnf-plugins-core
-dnf config-manager --add-repo http://rpm.kamailio.org/centos/kamailio.repo
+dnf config-manager --add-repo https://rpm.kamailio.org/centos/kamailio.repo
 dnf install kamailio-5.3
 </code>
 
@@ -77,7 +77,7 @@ For RHEL 6 and 7, CentOS 6 and 7 you can use
 
 <code>
 yum -y install yum-utils
-yum-config-manager --add-repo http://rpm.kamailio.org/centos/kamailio.repo
+yum-config-manager --add-repo https://rpm.kamailio.org/centos/kamailio.repo
 yum install kamailio-5.3
 </code>
 
@@ -101,7 +101,7 @@ All RPM packages prepared for x86_64 architecture.
 
 Compiled RPM packages located in subdirectories at:
 
-  * http://rpm.kamailio.org
+  * https://rpm.kamailio.org
 
 To install kamailio you can use commands on
 
@@ -109,7 +109,7 @@ For RHEL 8, CentOS 7 and Fedora
 
 <code>
 dnf -y install dnf-plugins-core
-dnf config-manager --add-repo http://rpm.kamailio.org/centos/kamailio.repo
+dnf config-manager --add-repo https://rpm.kamailio.org/centos/kamailio.repo
 dnf install kamailio-5.2
 </code>
 
@@ -117,7 +117,7 @@ For RHEL 6 and 7, CentOS 6 and 7 you can use
 
 <code>
 yum -y install yum-utils
-yum-config-manager --add-repo http://rpm.kamailio.org/centos/kamailio.repo
+yum-config-manager --add-repo https://rpm.kamailio.org/centos/kamailio.repo
 yum install kamailio-5.2
 </code>
 
