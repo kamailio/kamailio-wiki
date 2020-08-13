@@ -84,8 +84,8 @@ yum install kamailio-5.3
 If you want to install a specific Kamailio version, you have to use:
 
 <code>
-dnf install --disablerepo=kamailio-5.3 --enablerepo=kamailio-5.3.5 kamailio
-yum install --disablerepo=kamailio-5.3 --enablerepo=kamailio-5.3.5 kamailio
+dnf install --disablerepo=kamailio --enablerepo=kamailio-5.3.5 kamailio
+yum install --disablerepo=kamailio --enablerepo=kamailio-5.3.5 kamailio
 </code>
 
 
@@ -124,7 +124,7 @@ yum install kamailio-5.2
 If you want to install a specific Kamailio version, you have to use:
 
 <code>
-dnf install --disablerepo=kamailio-5.2 --enablerepo=kamailio-5.2.7 kamailio
-yum install --disablerepo=kamailio-5.2 --enablerepo=kamailio-5.2.7 kamailio
+dnf install --disablerepo=kamailio --enablerepo=kamailio-5.2.7 kamailio
+yum install --disablerepo=kamailio --enablerepo=kamailio-5.2.7 kamailio
 </code>
 
