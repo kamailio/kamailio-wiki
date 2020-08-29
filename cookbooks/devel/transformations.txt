@@ -465,6 +465,17 @@ Example:
 "sip:test@127.0.0.1:5060;transport=udp"{uri.tosocket} => "udp:127.0.0.1:5060"
 </code>
 
+==== {uri.duri} ====
+
+Return the destination URI for routing, keeping only schema, host, port and transport parameter. If port and transport are not in the original value, they are also not in the returned value.
+
+Example:
+
+<code c>
+$var(ouri) = "sip:alice@server.com:5060;nat=yes;transport=tcp;line=xyz";
+$var(duri) = $(var(ouri){uri.duri}); # => "sip:server.com:5060;transport=tcp"
+</code>
+
 ==== {uri.suri} ====
 
 Return the simple URI for routing, keeping only schema, user, host, port and transport parameter. If user, port and transport are not in the original value, they are also not in the returned value.
