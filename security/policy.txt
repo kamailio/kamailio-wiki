@@ -21,9 +21,9 @@ If you believe there's a security vulnerability, please don't use the public for
 
 === Publishing security vulnerabilities ===
 
-Kamailio will publish security vulnerabilities, including an CVE ID, on the kamailio-business mailing list, sr-dev, sr-users as well as related lists. The advisories will also be published on the kamailio.org web site.
+Kamailio will publish security vulnerabilities, including an CVE ID, on the kamailio-business mailing list, sr-dev, sr-users as well as related lists. The advisories will also be published on the kamailio.org web site. This will be done for vulnerabilities that have a higher severity, that means having a higher impact as decided from the Kamailio Security Team.
 
-CVE entries should be created for vulnerabilities in the core and major modules, for rarely used modules this is not necessary. If there are several security issues together in one release, they should be announced together.
+CVE entries should be created for critical vulnerabilities in the core and major modules, for rarely used modules this is not necessary. If there are several security issues together in one release, they should be announced together. 
 
 The Kamailio project release security fixed in the normal time based maintenance schedule, no immediate security releases are done. If possible a non-code workaround should be provided for the found security vulnerability.
 
