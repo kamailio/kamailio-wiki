@@ -10,7 +10,7 @@ After a crash of the server it may generate a core file in its working directory
   * Invalid input data, e.g. some messages or from the database
   * Errors in the program code, e.g. null pointer access
 
-===== What do do with a core file =====
+===== What to do with a core file =====
 
 Core files can be examined with **gdb**, the GNU debugger. It can read the crash informations, and display (among other things) the backtrace that leads to the crash. Just run:
 
