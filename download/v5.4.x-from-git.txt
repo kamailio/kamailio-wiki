@@ -4,12 +4,14 @@ Instructions to download sources from GIT repository, specific for stable branch
 
 ===== Kamailio v5.4.x =====
 
-Direct download of sources from GIT for latest Kamailio v5.4.x.
+Direct download of sources from GIT for latest Kamailio v5.3.x.
 
 <code>
-  git clone --depth --no-single-branch 1 https://github.com/kamailio/kamailio kamailio
+  git clone --depth 1 --no-single-branch https://github.com/kamailio/kamailio kamailio
   cd kamailio
   git checkout -b 5.4 origin/5.4
 </code>
 
-//Note: if your git client version does not support –no-single-branch command line parameter, then just remove it.//
+//Note: if your git client version does not support **–no-single-branch** command line parameter, then just remove it.//
+
+//Note: if you want to have the full commit history, then remove **--depth 1** command line parameter.//
