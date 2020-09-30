@@ -970,6 +970,16 @@ Example of usage:
   ip_free_bind = 1
 </code>
 
+
+==== ipv6_hex_style ====
+
+Can be set to "a" or "A" to specify if locally computed IPv6 addresses should use lowercase or uppercase hexa digits. Default is "A" (uppercase hexa digits, preseriving the behaviour before this global parameter was introduced). Enables the ability to follow the recommendations of RFC 5952, section 4.3.
+
+Example of usage:
+
+<code c>
+  ipv6_hex_style = "a"
+</code>
 ==== kemi.onsend_route_callback ====
 
 Set the name of callback function in the KEMI script to be executed as the equivalent of `onsend_route` block (from the native configuration file).
