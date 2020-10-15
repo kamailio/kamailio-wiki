@@ -216,11 +216,11 @@ $fU = "carol";
 Another solution is to keep the value in a variable (e.g., avp or xavp) and do the operation only once, like:
 
 <code c>
-$xavp(fU) = "bob";
+$xavp(fuser) = "bob";
 ...
-$xavp(fU[0]) = "carol";
+$xavp(fuser[0]) = "carol";
 ...
-$fU = $xavp(fU);
+$fU = $xavp(fuser);
 </code>
 
 Updating From/To headers is recommended to be done in **branch_route**, specially if it is needed to have different value for outgoing branches.
