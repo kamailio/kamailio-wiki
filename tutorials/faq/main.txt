@@ -190,6 +190,42 @@ if(is_present_hf("X-Hdr")) {
 }
 </code>
 
+??? Why parts of From/To header appear many times?
+
+!!! After doing header management operations, it can result that parts of From/To header are duplicated or the result is the concatenation of many values. That is related to previous question, because the changes are not applied immediately and updates to parts of headers are not a simple set operation.
+
+For example, if From username is "alice" and the operations in the config file are:
+
+<code c>
+$fU = "bob";
+...
+$fU = "carol";
+</code>
+
+The result can be that From username is "bobcarol".
+
+One solution is to use **msg_apply_changes()** in between:
+
+<code c>
+$fU = "bob";
+msg_apply_changes();
+...
+$fU = "carol";
+</code>
+
+Another solution is to keep the value in a variable (e.g., avp or xavp) and do the operation only once, like:
+
+<code c>
+$xavp(fU) = "bob";
+...
+$xavp(fU[0]) = "carol";
+...
+$fU = $xavp(fU);
+</code>
+
+Updating From/To headers is recommended to be done in **branch_route**, specially if it is needed to have different value for outgoing branches.
+
+The examples above were with assignments to $fU (can be other vars as well, such as $fu, $tU, $tu, ..), but it is the same behaviour when using functions such as uac_replace_from() or uac_replace_to().
 
 ??? How to set different header values for each destination of a SIP request?
 
