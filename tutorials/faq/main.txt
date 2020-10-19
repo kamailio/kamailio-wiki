@@ -606,6 +606,24 @@ xlog("returned code by function() is $rc\n");
 
 However, if return code is 0, the next action after function() is not executed. It can be used only of positive or negative response code.
 
+On the other hand, the pseudo-variables (including $rc) have to be compared as an integer, the rules for evaluating return code of the functions do not apply, for example:
+
+<code c>
+$var(x) = 0;
+if($var(x) == 0) {
+  # do something
+}
+</code>
+
+For pseudo-variables, the non-zero value is evaluated to true and zero to false, for example:
+
+<code c>
+$var(x) = 1;
+if($var(x)) {
+  # do something
+}
+</code>
+
 ??? How is the SIP request retransmission handled?
 
 !!! The next snippet is detecting retransmissions:
