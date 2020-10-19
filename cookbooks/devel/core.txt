@@ -973,7 +973,11 @@ Example of usage:
 
 ==== ipv6_hex_style ====
 
-Can be set to "a" or "A" to specify if locally computed IPv6 addresses should use lowercase or uppercase hexa digits. Default is "A" (uppercase hexa digits, preseriving the behaviour before this global parameter was introduced). Enables the ability to follow the recommendations of RFC 5952, section 4.3.
+Can be set to "a", "A" or "c" to specify if locally computed string representation of IPv6 addresses should be expanded lowercase, expanded uppercase or compacted lowercase hexa digits.
+
+Default is "c" (compacted lower hexa digits, conforming better with RFC 5952).
+
+"A" is preserving the behaviour before this global parameter was introduced, while "a" enables the ability to follow some of the recommendations of RFC 5952, section 4.3.
 
 Example of usage:
 
