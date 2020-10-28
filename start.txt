@@ -1,7 +1,9 @@
 ====== Kamailio SIP Server Documentation Wiki ======
 
-**<fc #2244FF>NOTE: The wiki has the anonymous editing disabled for the moment due to spam bots passing through the CAPTCHA system. You have to login to be able to edit - you can create an account via registration form:</fc>**
+**<fc #2244FF>NOTE: The wiki requires user registration and login to edit the content. You can create an account via registration form:</fc>**
   * **https://www.kamailio.org/wiki/start?do=register**
+
+**<fc #2244FF>Once the user account has been created, an exiting admin user will have to grant write permissions to the new account. If it takes too long, then write an email to sr-dev@lists.kamailio.org asking for wiki editing permissions.</fc>**
 
 **It is recommended you connect over HTTPS to log in and edit the wiki.**
 
