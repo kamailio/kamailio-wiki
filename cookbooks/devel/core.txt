@@ -2524,37 +2524,37 @@ The parameter can be set at runtime (core.udp4_raw_ttl).
 
 ===== Blocklist Parameters =====
 
-==== dst_blacklist_expire ====
+==== dst_blocklist_expire ====
 
-**Alias name: dst_blacklist_ttl**
+**Alias name: dst_blocklist_ttl**
 
-How much time a blacklisted destination will be kept in the blacklist (w/o any update).
+How much time a blocklisted destination will be kept in the blocklist (w/o any update).
 
-  dst_blacklist_expire = time in s (default 60 s)
+  dst_blocklist_expire = time in s (default 60 s)
 
-==== dst_blacklist_gc_interval ====
+==== dst_blocklist_gc_interval ====
 How often the garbage collection will run (eliminating old, expired entries).
 
-  dst_blacklist_gc_interval = time in s (default 60 s)
+  dst_blocklist_gc_interval = time in s (default 60 s)
 
-==== dst_blacklist_init ====
-If off, the blacklist is not initialized at startup and cannot be enabled runtime, that saves some memory.
+==== dst_blocklist_init ====
+If off, the blocklist is not initialized at startup and cannot be enabled runtime, that saves some memory.
 
-  dst_blacklist_init = on | off (default on)
+  dst_blocklist_init = on | off (default on)
 
-==== dst_blacklist_mem ====
-Maximum shared memory amount used for keeping the blacklisted destinations.
+==== dst_blocklist_mem ====
+Maximum shared memory amount used for keeping the blocklisted destinations.
 
-  dst_blacklist_mem = size in Kb (default 250 Kb)
+  dst_blocklist_mem = size in Kb (default 250 Kb)
 
-==== use_dst_blacklist ====
-Enable the destination blacklist: Each failed send attempt will cause the destination to be added to the blacklist. Before any send, this blacklist will be checked and if a match is found, the send is no longer attempted (an error is returned immediately). 
+==== use_dst_blocklist ====
+Enable the destination blocklist: Each failed send attempt will cause the destination to be added to the blocklist. Before any send, this blocklist will be checked and if a match is found, the send is no longer attempted (an error is returned immediately). 
 
-Note: using the blacklist incurs a small performance penalty.
+Note: using the blocklist incurs a small performance penalty.
 
-See also doc/dst_blacklist.txt.
+See also doc/dst_blocklist.txt.
 
-  use_dst_blacklist = on | off (default off)
+  use_dst_blocklist = on | off (default off)
 
 ===== Real-Time Parameters =====
 ==== real_time ====
