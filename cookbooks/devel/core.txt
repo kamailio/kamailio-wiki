@@ -2522,7 +2522,7 @@ TTL value used for UDP IPv4 packets when udp4_raw is enabled. By default it is s
 The parameter can be set at runtime (core.udp4_raw_ttl).
 
 
-===== Blacklist Parameters =====
+===== Blocklist Parameters =====
 
 ==== dst_blacklist_expire ====
 
