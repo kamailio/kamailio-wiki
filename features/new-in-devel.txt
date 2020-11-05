@@ -13,6 +13,9 @@
 
 ===== New in existing Modules =====
 
+==== permissions ====
+
+* RPC reload limit controlled via **reload_delta** module parameter
 ==== registrar ====
 
 ===== New in Core =====
