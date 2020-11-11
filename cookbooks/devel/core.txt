@@ -1155,6 +1155,17 @@ Example of usage:
 
 The proxy tries to find the modules in a smart way, e.g: loadmodule "uri" tries to find uri.so in the loadpath, but also uri/uri.so.
 
+==== local_rport ====
+
+Similar to **add_local_rport()** function, but done in a global scope, so the function does not have to be executed for each request.
+
+Default: off
+
+Example:
+
+<code c>
+local_rport = on
+</code>
 
 ==== log_engine_data ====
 
