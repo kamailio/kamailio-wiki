@@ -33,4 +33,6 @@ Access type:
   * [[devel:irc-meetings:2019a|2019 - First Meeting - Thursday, Feb 28, 15:00UTC]]
   * [[devel:irc-meetings:2019b|2019 - Second Meeting - Thursday, Nov 14, 15:00UTC]]
   * [[devel:irc-meetings:2020a|2020 - First Meeting - Wednesday, Apr 29, 14:00UTC]]
+  * [[devel:irc-meetings:2020b|2020 - Second Meeting - Wednesday, Nov 25, 15:00UTC]]
+
 
