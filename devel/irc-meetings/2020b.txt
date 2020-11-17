@@ -61,6 +61,7 @@ Administration:
 
 Kamailio 5.5 (next major release):
 
+  * LREPRoxy module (Mojtaba)
   * roadmap
   * features
     * anything relevant that is missing?
