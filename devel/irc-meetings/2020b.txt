@@ -52,6 +52,8 @@ Kamailio Development Status:
 
   * open issues (dcm)
   * minor releases for 5.3 and 5.4 branches (dcm)
+  * tracker issues review, e.g.,:
+    * https://github.com/kamailio/kamailio/issues/969
 
 Administration:
 
