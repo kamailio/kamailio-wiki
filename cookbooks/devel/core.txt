@@ -358,6 +358,42 @@ route {
     * column counter goes inside the define value, but you have to omit the '\' and CR for the accurate inside-define position
     * text on the same line as the directive will cause problems. Keep the directive lines clean and only comment on a line before or after. 
 
+==== defenv ====
+
+Preprocessor directive to define an ID to the value of an environment variable with the name ENVVAR.
+
+<code c>
+#!defenv ID=ENVVAR
+</code>
+
+It can also be just **$!defenv ENVVAR** and the defined ID is the ENVVAR name.
+
+Example:
+
+<code c>
+#!defenv SHELL
+</code>
+
+If environment variable $SHELL is '/bin/bash', then it is like:
+
+<code c>
+#!define SHELL /bin/bash
+</code>
+
+Full expression variant:
+
+<code c>
+#!defenv ENVSHELL=SHELL
+</code>
+
+Then it is like:
+
+<code c>
+#!define ENVSHELL /bin/bash
+</code>
+
+It is a simplified alternative of using **#!substdef** with **$env(NAME)** in the replacement part.
+    
 ==== subst ====
 
   * perform substitutions inside the strings of config (note that define is replacing only IDs - alphanumeric tokens not enclosed in quotes)
