@@ -55,6 +55,7 @@ Kamailio Development Status:
   * tracker issues review, e.g.,:
     * https://github.com/kamailio/kamailio/issues/969
   * packaging: secsipid, kamcli
+  * debs repo with many versions
 
 Administration:
 
