@@ -79,3 +79,352 @@ Collaborative Projects:
 
   * unit testing, documentation, etc.
   * community announcements
+
+===== Transcript =====
+
+^ time ^ user ^ message ^
+| 2020-11-25 10:01:12 -0500 EST | @miconda:matrix.kamailio.dev | Hello! Starting in 5min, so more can join if they are a bit late.  |
+| 2020-11-25 10:07:03 -0500 EST | @miconda:matrix.kamailio.dev | ok, we should start |
+| 2020-11-25 10:07:14 -0500 EST | @joelsdc1:matrix.org | :wave: |
+| 2020-11-25 10:07:44 -0500 EST | @miconda:matrix.kamailio.dev | link to wiki with agenda: https://www.kamailio.org/wiki/devel/irc-meetings/2020b |
+| 2020-11-25 10:08:25 -0500 EST | @miconda:matrix.kamailio.dev | first, as usual, major or minor issues with Kamailio |
+| 2020-11-25 10:08:43 -0500 EST | @miconda:matrix.kamailio.dev | anything not reported yet on bug tracker that should be announced here? |
+| 2020-11-25 10:08:52 -0500 EST | @khorsmann:matrix.org | hi all |
+| 2020-11-25 10:09:22 -0500 EST | @miconda:matrix.kamailio.dev |  * Hello! Starting in 5min, so more can join if they are a bit late.  |
+| 2020-11-25 10:09:41 -0500 EST | @vseva:matrix.kamailio.dev | https://github.com/kamailio/kamailio/issues/2560 ? |
+| 2020-11-25 10:10:23 -0500 EST | @vseva:matrix.kamailio.dev | I'm lost with this TLS  |
+| 2020-11-25 10:11:17 -0500 EST | @miconda:matrix.kamailio.dev | hmm, strange! |
+| 2020-11-25 10:11:21 -0500 EST | @jchavanton:matrix.kamailio.dev | I think we should log the version of TLS used  |
+| 2020-11-25 10:11:54 -0500 EST | @miconda:matrix.kamailio.dev | I somehow missed it today, but it doesn't provide all logs |
+| 2020-11-25 10:11:55 -0500 EST | @jchavanton:matrix.kamailio.dev | in the module init |
+| 2020-11-25 10:12:40 -0500 EST | @miconda:matrix.kamailio.dev | last week I installed 2 webrtc-sip gateways with kamailio 5.4 on buster, with tls using let's encrypt certs and all was fine |
+| 2020-11-25 10:12:52 -0500 EST | @miconda:matrix.kamailio.dev | tested with tryit jssip |
+| 2020-11-25 10:13:20 -0500 EST | @miconda:matrix.kamailio.dev | Julien Chavanton: we can add more logs, sure, feel free to make PRs with what you want to add |
+| 2020-11-25 10:14:18 -0500 EST | @henning:matrix.kamailio.dev | we are using kamailio 5.4 with TLS in many cases, no crashes and such |
+| 2020-11-25 10:14:22 -0500 EST | @henning:matrix.kamailio.dev | on buster |
+| 2020-11-25 10:16:08 -0500 EST | @fred:matrix.lod.com | I'm not sure if that bug is related to an AWS build |
+| 2020-11-25 10:16:47 -0500 EST | @miconda:matrix.kamailio.dev | we have to ask for more details, at least all logs printed from start up |
+| 2020-11-25 10:17:02 -0500 EST | @miconda:matrix.kamailio.dev | and eventually a minimal config to reproduce |
+| 2020-11-25 10:17:23 -0500 EST | @miconda:matrix.kamailio.dev | can just be an error with some modparam or even other module, because the tls logs are from shut down callback |
+| 2020-11-25 10:17:32 -0500 EST | @miconda:matrix.kamailio.dev | is not showing any error related to tls itself |
+| 2020-11-25 10:18:02 -0500 EST | @miconda:matrix.kamailio.dev | could be the well-known conflict with other libs already initializing the libssl |
+| 2020-11-25 10:19:45 -0500 EST | @miconda:matrix.kamailio.dev | ok ... anything else? |
+| 2020-11-25 10:20:43 -0500 EST | @miconda:matrix.kamailio.dev | if not, we can continue to the open issues, maybe we can review some of the old ones and decide what to do, before planning next minor releases |
+| 2020-11-25 10:21:10 -0500 EST | @miconda:matrix.kamailio.dev | I linked the issues opened by oej (iirc) a while ago, related to packaging |
+| 2020-11-25 10:21:53 -0500 EST | @miconda:matrix.kamailio.dev | but I understood from @vseva is not easy to change from version to version, at least for debian, because it requires the whole process to add new packages |
+| 2020-11-25 10:22:14 -0500 EST | @miconda:matrix.kamailio.dev | I refer to https://github.com/kamailio/kamailio/issues/969 |
+| 2020-11-25 10:22:26 -0500 EST | @oej:matrix.kamailio.dev | That's an old issue... |
+| 2020-11-25 10:23:08 -0500 EST | @vseva:matrix.kamailio.dev | it's fine for me just that we will have to wait in the NEW queue for a while, but that can be achieved on next version  |
+| 2020-11-25 10:23:21 -0500 EST | @miconda:matrix.kamailio.dev | indeed, iirc, we started the discussion about it at a FOSDEM |
+| 2020-11-25 10:23:26 -0500 EST | @vseva:matrix.kamailio.dev | stable is almost on freeze already |
+| 2020-11-25 10:23:51 -0500 EST | @vseva:matrix.kamailio.dev |  * stable is almost on freeze already |
+| 2020-11-25 10:23:53 -0500 EST | @miconda:matrix.kamailio.dev | I am fine with the current state |
+| 2020-11-25 10:24:07 -0500 EST | @miconda:matrix.kamailio.dev | just discussing here to see what should be done |
+| 2020-11-25 10:24:29 -0500 EST | @miconda:matrix.kamailio.dev | to get rid of very old issues there |
+| 2020-11-25 10:26:32 -0500 EST | @miconda:matrix.kamailio.dev | so maybe we can just close this one and when one wants to refactor the packaging, then just make a pr, or start a new discussion with a proposal |
+| 2020-11-25 10:27:18 -0500 EST | @oej:matrix.kamailio.dev | right |
+| 2020-11-25 10:28:04 -0500 EST | @miconda:matrix.kamailio.dev | then I hope to get some time to see what can be done for dnssec |
+| 2020-11-25 10:29:00 -0500 EST | @miconda:matrix.kamailio.dev | using the libdnsval was straightforwards, having drop in functions for the usual ones -- I mean about: https://github.com/kamailio/kamailio/issues/851 |
+| 2020-11-25 10:29:34 -0500 EST | @miconda:matrix.kamailio.dev | I looked a bit at other dnssec libs, but didn't find drop in functions, so likely needs writing some wrappers |
+| 2020-11-25 10:29:48 -0500 EST | @miconda:matrix.kamailio.dev | so far I didn't get any request for dnssec |
+| 2020-11-25 10:30:01 -0500 EST | @miconda:matrix.kamailio.dev | thus I was never pressured to do something |
+| 2020-11-25 10:30:43 -0500 EST | @miconda:matrix.kamailio.dev | on the other hand, besides being removed from debian, libdnsval still got some updates lately, so doesn't seem to be completely abandoned |
+| 2020-11-25 10:31:23 -0500 EST | @miconda:matrix.kamailio.dev | saying just in case one needs it now, should be able compile the module from sources |
+| 2020-11-25 10:33:00 -0500 EST | @miconda:matrix.kamailio.dev | then looking at the last page of issues, Víctor Seva is going to be a bit busy checking what is still good to keep there :-) : https://github.com/kamailio/kamailio/issues?page=3 |
+| 2020-11-25 10:33:28 -0500 EST | @henning:matrix.kamailio.dev | hehe |
+| 2020-11-25 10:34:34 -0500 EST | @miconda:matrix.kamailio.dev | nothing really critical, just soft reminder to review very old issues to see what is still actual |
+| 2020-11-25 10:34:34 -0500 EST | @vseva:matrix.kamailio.dev | well, this one https://github.com/kamailio/kamailio/issues/668 is to be decided here |
+| 2020-11-25 10:35:00 -0500 EST | @miconda:matrix.kamailio.dev | I think we do really good with number of open issues, most of them are requests for new features/enhancements anyhow |
+| 2020-11-25 10:35:28 -0500 EST | @henning:matrix.kamailio.dev | we are really good with the number, think the same |
+| 2020-11-25 10:36:50 -0500 EST | @miconda:matrix.kamailio.dev | Víctor Seva: yeah, with the wiki we should also decide what to do |
+| 2020-11-25 10:37:06 -0500 EST | @miconda:matrix.kamailio.dev | we disabled write access after registration, due to spammers |
+| 2020-11-25 10:37:31 -0500 EST | @miconda:matrix.kamailio.dev | so issue 668 can stay open till then |
+| 2020-11-25 10:38:24 -0500 EST | @miconda:matrix.kamailio.dev | I was referring to the issues that you opened targeting more or less yourself -- eg., related to cfgt, sca, dialplan, ... |
+| 2020-11-25 10:38:42 -0500 EST | @miconda:matrix.kamailio.dev |  * I was referring to the issues that you opened targeting more or less yourself -- eg.g, related to cfgt, sca, dialplan, ... |
+| 2020-11-25 10:38:48 -0500 EST | @miconda:matrix.kamailio.dev |  * I was referring to the issues that you opened targeting more or less yourself -- eg., related to cfgt, sca, dialplan, ... |
+| 2020-11-25 10:39:14 -0500 EST | @miconda:matrix.kamailio.dev | but again, nothing critical at all, just a soft reminder ... |
+| 2020-11-25 10:39:50 -0500 EST | @miconda:matrix.kamailio.dev | they can just stay there ... until we reach the capacity of the tracker ;-) |
+| 2020-11-25 10:40:22 -0500 EST | @miconda:matrix.kamailio.dev | next topic then ... |
+| 2020-11-25 10:40:34 -0500 EST | @miconda:matrix.kamailio.dev | minor releases -- |
+| 2020-11-25 10:41:32 -0500 EST | @miconda:matrix.kamailio.dev | for 5.4, probably sometime next week (2nd part) or the week afterwards would be a good target |
+| 2020-11-25 10:42:10 -0500 EST | @miconda:matrix.kamailio.dev | for 5.3, Henning Westerholt plans to take over this series |
+| 2020-11-25 10:42:33 -0500 EST | @miconda:matrix.kamailio.dev | if Henning is busy, I can do it after the next in 5.4.x |
+| 2020-11-25 10:43:05 -0500 EST | @henning:matrix.kamailio.dev | miconda: i will do it |
+| 2020-11-25 10:43:06 -0500 EST | @miconda:matrix.kamailio.dev | 5.3.x needs to be checked and see if there are relevant fixes there |
+| 2020-11-25 10:43:12 -0500 EST | @henning:matrix.kamailio.dev | as we discussed |
+| 2020-11-25 10:43:21 -0500 EST | @miconda:matrix.kamailio.dev | the last 5.3.x was not that long ago |
+| 2020-11-25 10:43:50 -0500 EST | @henning:matrix.kamailio.dev | i was thinking maybe doing either before or after christmas, 5.3 release |
+| 2020-11-25 10:44:20 -0500 EST | @miconda:matrix.kamailio.dev | Henning Westerholt: sure, appreciated! just saying because it can happen that you become busy, so others can take over temporarily  |
+| 2020-11-25 10:44:48 -0500 EST | @miconda:matrix.kamailio.dev | fine with me the plan for 5.3.x |
+| 2020-11-25 10:45:24 -0500 EST | @miconda:matrix.kamailio.dev | for Debian we have nightly builds, so that's always good to get fixes quickly |
+| 2020-11-25 10:45:37 -0500 EST | @miconda:matrix.kamailio.dev | I do not remember if the new rpm repo does nightly for stable branches |
+| 2020-11-25 10:45:55 -0500 EST | @miconda:matrix.kamailio.dev | not sure if sergey is here now to confirm ... |
+| 2020-11-25 10:46:07 -0500 EST | @miconda:matrix.kamailio.dev | or maybe someone that uses the rpm repo |
+| 2020-11-25 10:46:53 -0500 EST | @miconda:matrix.kamailio.dev | even when I plan to go with repos, I end up quickly switching to sources, usually needing to cherry pick some feature from master ... |
+| 2020-11-25 10:47:05 -0500 EST | @miconda:matrix.kamailio.dev | so I haven't paid much attention to packaging |
+| 2020-11-25 10:47:51 -0500 EST | @miconda:matrix.kamailio.dev | anything else on minor releases?!? |
+| 2020-11-25 10:48:16 -0500 EST | @miconda:matrix.kamailio.dev | if not, then next topic: packaging |
+| 2020-11-25 10:48:41 -0500 EST | @miconda:matrix.kamailio.dev | I think Víctor Seva is packaging already `kamcli` |
+| 2020-11-25 10:48:54 -0500 EST | @miconda:matrix.kamailio.dev | am I right, Victor? |
+| 2020-11-25 10:49:03 -0500 EST | @vseva:matrix.kamailio.dev | kamcli is already in Debian |
+| 2020-11-25 10:49:16 -0500 EST | @vseva:matrix.kamailio.dev | https://packages.debian.org/search?keywords=kamcli |
+| 2020-11-25 10:49:22 -0500 EST | @miconda:matrix.kamailio.dev | in Debian distro, or Debian repo on kamailio.org? |
+| 2020-11-25 10:49:30 -0500 EST | @miconda:matrix.kamailio.dev | ohh, nice, thanks! |
+| 2020-11-25 10:49:40 -0500 EST | @henning:matrix.kamailio.dev | is kamcli this a "suggest" for the packages as well? its no dependency |
+| 2020-11-25 10:50:10 -0500 EST | @vseva:matrix.kamailio.dev | > <@miconda:matrix.kamailio.dev> in Debian distro, or Debian repo on kamailio.org? |
+| 2020-11-25 10:50:15 -0500 EST | @miconda:matrix.kamailio.dev | Víctor Seva: is kamcli also on deb.kamailio.org repo? like nightly build? |
+| 2020-11-25 10:50:22 -0500 EST | @miconda:matrix.kamailio.dev | :-) |
+| 2020-11-25 10:50:33 -0500 EST | @miconda:matrix.kamailio.dev | you read my questions ahead :-) |
+| 2020-11-25 10:50:42 -0500 EST | @vseva:matrix.kamailio.dev | :-) |
+| 2020-11-25 10:51:01 -0500 EST | @oej:matrix.kamailio.dev | While discussing packaging |
+| 2020-11-25 10:51:04 -0500 EST | @oej:matrix.kamailio.dev | can we discuss https://github.com/sipwise/kamailio-deb-jenkins/issues/9 |
+| 2020-11-25 10:51:08 -0500 EST | @vseva:matrix.kamailio.dev | We discuss to add ubuntu latest version I think |
+| 2020-11-25 10:51:32 -0500 EST | @oej:matrix.kamailio.dev | I am a bit worried over old versions being deleted  |
+| 2020-11-25 10:51:51 -0500 EST | @vseva:matrix.kamailio.dev | well, yes I would like to have aptly instead of reprepro |
+| 2020-11-25 10:52:08 -0500 EST | @miconda:matrix.kamailio.dev | the other one I would like to get packaged somehow is libsecsipid ... I have to buy a cerveza for Victor |
+| 2020-11-25 10:52:14 -0500 EST | @vseva:matrix.kamailio.dev | but old versions are not removed... they are not in the repo |
+| 2020-11-25 10:52:26 -0500 EST | @oej:matrix.kamailio.dev | just on cerveza?  |
+| 2020-11-25 10:52:28 -0500 EST | @oej:matrix.kamailio.dev | one |
+| 2020-11-25 10:52:32 -0500 EST | @jsmith:matrix.org | miconda: I've already been working on an RPM for libsecsipid |
+| 2020-11-25 10:52:39 -0500 EST | @miconda:matrix.kamailio.dev | libsecsipid is for the STIR/SHAKEN module, in USA things move forward with it and some carriers deploy it |
+| 2020-11-25 10:52:52 -0500 EST | @vseva:matrix.kamailio.dev | now I'm on diet, no alcohol for me :-(  |
+| 2020-11-25 10:53:04 -0500 EST | @apogrebennyk:matrix.org | Víctor Seva: you? what happened? =) |
+| 2020-11-25 10:53:13 -0500 EST | @apogrebennyk:matrix.org | sorry for OT. |
+| 2020-11-25 10:53:17 -0500 EST | @miconda:matrix.kamailio.dev | Jared Smith: nice, thanks! you can make a PR with the specs and then @sergey can add it to our rpm building process |
+| 2020-11-25 10:53:18 -0500 EST | @vseva:matrix.kamailio.dev | :-) |
+| 2020-11-25 10:53:33 -0500 EST | @vseva:matrix.kamailio.dev | apogrebennyk: nice to see you! |
+| 2020-11-25 10:53:40 -0500 EST | @apogrebennyk:matrix.org | Víctor Seva: same :) |
+| 2020-11-25 10:53:42 -0500 EST | @jsmith:matrix.org | miconda: Will do, once it's done and tested :-) |
+| 2020-11-25 10:54:30 -0500 EST | @vseva:matrix.kamailio.dev | > <@miconda:matrix.kamailio.dev> the other one I would like to get packaged somehow is libsecsipid ... I have to buy a cerveza for Victor |
+| 2020-11-25 10:54:37 -0500 EST | @miconda:matrix.kamailio.dev | libsecsipid requires golang to build, but then no other fancy dependencies |
+| 2020-11-25 10:54:59 -0500 EST | @vseva:matrix.kamailio.dev | packaging golang is not fun at all |
+| 2020-11-25 10:55:12 -0500 EST | @vseva:matrix.kamailio.dev |  * packaging golang is not fun at all |
+| 2020-11-25 10:55:16 -0500 EST | @miconda:matrix.kamailio.dev | no need to package golang |
+| 2020-11-25 10:55:36 -0500 EST | @vseva:matrix.kamailio.dev | I mean golang programs |
+| 2020-11-25 10:55:38 -0500 EST | @miconda:matrix.kamailio.dev | just install golang from debian repo, to build libsecsipid.a and libsecsipid.so, and that's it |
+| 2020-11-25 10:56:02 -0500 EST | @miconda:matrix.kamailio.dev | it doesn't create package dependency |
+| 2020-11-25 10:56:17 -0500 EST | @miconda:matrix.kamailio.dev | so installing libsecsipid from deb won't require to install golang |
+| 2020-11-25 10:56:18 -0500 EST | @vseva:matrix.kamailio.dev | no external dependences? |
+| 2020-11-25 10:56:29 -0500 EST | @miconda:matrix.kamailio.dev | golang is only build dependency |
+| 2020-11-25 10:56:39 -0500 EST | @vseva:matrix.kamailio.dev | then it's easier |
+| 2020-11-25 10:56:43 -0500 EST | @miconda:matrix.kamailio.dev | no, everything is bundled in a file |
+| 2020-11-25 10:56:51 -0500 EST | @miconda:matrix.kamailio.dev | it is golang, not Node.js :-) |
+| 2020-11-25 10:57:10 -0500 EST | @miconda:matrix.kamailio.dev |  * it is golang, not Node.js :-) |
+| 2020-11-25 10:57:10 -0500 EST | @vseva:matrix.kamailio.dev | well is about dependences to build |
+| 2020-11-25 10:57:45 -0500 EST | @vseva:matrix.kamailio.dev | but if we don't have any... I will try to take a look |
+| 2020-11-25 10:58:28 -0500 EST | @miconda:matrix.kamailio.dev | you only need golang package (the compiler), afaik |
+| 2020-11-25 10:58:48 -0500 EST | @miconda:matrix.kamailio.dev | haven't done it recently, because I installed it long time ago and now just doing usual updates |
+| 2020-11-25 10:58:59 -0500 EST | @miconda:matrix.kamailio.dev | but it was easy |
+| 2020-11-25 10:59:08 -0500 EST | @miconda:matrix.kamailio.dev | some environment variables need to be set |
+| 2020-11-25 10:59:26 -0500 EST | @miconda:matrix.kamailio.dev | we can discuss between us when you have some time and I can give hints |
+| 2020-11-25 11:00:01 -0500 EST | @matt44w:matrix.org and now with go.mod it is easier |
+| 2020-11-25 11:00:34 -0500 EST | @miconda:matrix.kamailio.dev | didn't get to use complex stuff like go.mod :-) |
+| 2020-11-25 11:00:48 -0500 EST | @vseva:matrix.kamailio.dev | I have some experience with golang due to cgrates |
+| 2020-11-25 11:01:04 -0500 EST | @miconda:matrix.kamailio.dev | libsecsipid uses only an external package to generate UUID, which go gets it automatically |
+| 2020-11-25 11:01:42 -0500 EST | @vseva:matrix.kamailio.dev | then you have an external dependence!! 🤣 |
+| 2020-11-25 11:01:58 -0500 EST | @henning:matrix.kamailio.dev | lol |
+| 2020-11-25 11:02:04 -0500 EST | @vseva:matrix.kamailio.dev | build on debian is done without network |
+| 2020-11-25 11:02:26 -0500 EST | @vseva:matrix.kamailio.dev | all dependencies had to be packaged  |
+| 2020-11-25 11:03:08 -0500 EST | @miconda:matrix.kamailio.dev | ok, then we need to look into it |
+| 2020-11-25 11:03:21 -0500 EST | @miconda:matrix.kamailio.dev | we will do it when we have some time |
+| 2020-11-25 11:04:01 -0500 EST | @miconda:matrix.kamailio.dev | next topic related to packaging was @oej already pointed above |
+| 2020-11-25 11:04:12 -0500 EST | @miconda:matrix.kamailio.dev | keeping old versions |
+| 2020-11-25 11:04:18 -0500 EST | @miconda:matrix.kamailio.dev | and Víctor Seva replied |
+| 2020-11-25 11:04:33 -0500 EST | @miconda:matrix.kamailio.dev | not sure if anything else needs to be added |
+| 2020-11-25 11:05:04 -0500 EST | @miconda:matrix.kamailio.dev | iirc, from last devel meeting in Dusseldorf, the rpm repo should keep many versions |
+| 2020-11-25 11:05:36 -0500 EST | @miconda:matrix.kamailio.dev | sergey seems to be offline, so cannot confirm |
+| 2020-11-25 11:05:48 -0500 EST | @henning:matrix.kamailio.dev | the rpm one has old versions |
+| 2020-11-25 11:05:55 -0500 EST | @henning:matrix.kamailio.dev |  * the rpm has old versions |
+| 2020-11-25 11:06:02 -0500 EST | @henning:matrix.kamailio.dev |  * the rpm one has old versions |
+| 2020-11-25 11:07:02 -0500 EST | @vseva:matrix.kamailio.dev | any problems with travis-ci do we need to move to github actions?  |
+| 2020-11-25 11:08:40 -0500 EST | @miconda:matrix.kamailio.dev | I have no experience with github actions |
+| 2020-11-25 11:09:02 -0500 EST | @miconda:matrix.kamailio.dev | if they are considered better and if someone wants to switch to, I am fine |
+| 2020-11-25 11:09:49 -0500 EST | @miconda:matrix.kamailio.dev | I think with travis-ci sometimes the notifications on failed builds are not coming to mailing list |
+| 2020-11-25 11:09:57 -0500 EST | @oej:matrix.kamailio.dev | Is there a reason to leave Travis-ci? |
+| 2020-11-25 11:10:08 -0500 EST | @miconda:matrix.kamailio.dev | haven't really watched closely, but somehow I got that feeling over the time |
+| 2020-11-25 11:10:27 -0500 EST | @miconda:matrix.kamailio.dev | but no other complain from my side |
+| 2020-11-25 11:10:34 -0500 EST | @henning:matrix.kamailio.dev | we might want to not move anything to github |
+| 2020-11-25 11:10:42 -0500 EST | @miconda:matrix.kamailio.dev | and again, it may not be even true |
+| 2020-11-25 11:10:59 -0500 EST | @vseva:matrix.kamailio.dev | https://www.jeffgeerling.com/blog/2020/travis-cis-new-pricing-plan-threw-wrench-my-open-source-works |
+| 2020-11-25 11:11:45 -0500 EST | @vseva:matrix.kamailio.dev | everything related to travis-ci is related to tests so not essential |
+| 2020-11-25 11:12:11 -0500 EST | @vseva:matrix.kamailio.dev | > <@henning:matrix.kamailio.dev> we might want to not move anything to github |
+| 2020-11-25 11:13:18 -0500 EST | @mojtaba.esfandiari:matrix.org | 8;] |
+| 2020-11-25 11:13:20 -0500 EST | @miconda:matrix.kamailio.dev | Víctor Seva: so they (travis-ci) are going to discontinue the free service for open source by end of year? or I didn't get right that blog post on a quick read? |
+| 2020-11-25 11:13:37 -0500 EST | @henning:matrix.kamailio.dev | had not heard from it as well before |
+| 2020-11-25 11:14:09 -0500 EST | @miconda:matrix.kamailio.dev | in the blog post: December 31, 2020: Travis-ci.org will be put into read-only mode. |
+| 2020-11-25 11:14:26 -0500 EST | @miconda:matrix.kamailio.dev | so maybe existing repos still go on, but if so, likely not for long time |
+| 2020-11-25 11:15:31 -0500 EST | @vseva:matrix.kamailio.dev | https://blog.travis-ci.com/2020-11-02-travis-ci-new-billing |
+| 2020-11-25 11:16:27 -0500 EST | @vseva:matrix.kamailio.dev | > We will be offering an allotment of OSS minutes that will be reviewed and allocated on a case by case basis. Should you want to apply for these credits please open a request with Travis CI support stating that you’d like to be considered for the OSS allotment. |
+| 2020-11-25 11:16:51 -0500 EST | @henning:matrix.kamailio.dev | <ironic>great |
+| 2020-11-25 11:17:16 -0500 EST | @miconda:matrix.kamailio.dev | ok, so we may have to look at github actions ... |
+| 2020-11-25 11:17:18 -0500 EST | @miconda:matrix.kamailio.dev | soon |
+| 2020-11-25 11:17:38 -0500 EST | @oej:matrix.kamailio.dev | Maybe ask for "OSS minutes" while preparing the move |
+| 2020-11-25 11:18:59 -0500 EST | @miconda:matrix.kamailio.dev | travis-ci made me a bit lazier over the time, pushing small changes without compiling, then waiting for notification of failed to build, ... :-) |
+| 2020-11-25 11:19:16 -0500 EST | @miconda:matrix.kamailio.dev | now have to work more again ... |
+| 2020-11-25 11:19:28 -0500 EST | @miconda:matrix.kamailio.dev | :-) |
+| 2020-11-25 11:20:35 -0500 EST | @jchavanton:matrix.kamailio.dev | 1000 minutes, the CI seems great in terms of coverage but is taking a long time to run |
+| 2020-11-25 11:21:03 -0500 EST | @jchavanton:matrix.kamailio.dev | Does it mean we need to use the WIP tag (to skip CI) until we are sure  |
+| 2020-11-25 11:21:05 -0500 EST | @miconda:matrix.kamailio.dev | so 1000min means compiling the first 10 modules :-) |
+| 2020-11-25 11:21:50 -0500 EST | @miconda:matrix.kamailio.dev | ok, we will see what happens and what we can do ... |
+| 2020-11-25 11:22:18 -0500 EST | @miconda:matrix.kamailio.dev | ultimately we can use some docker to do builds on out server for a few distros |
+| 2020-11-25 11:22:48 -0500 EST | @miconda:matrix.kamailio.dev | if nothing to be added, we can move to next topic |
+| 2020-11-25 11:23:13 -0500 EST | @miconda:matrix.kamailio.dev | - administration - |
+| 2020-11-25 11:23:30 -0500 EST | @miconda:matrix.kamailio.dev | this is just rolling over in every agenda |
+| 2020-11-25 11:23:55 -0500 EST | @miconda:matrix.kamailio.dev | kamailio.org runs last debian stable, so nothing important to be done soon for it |
+| 2020-11-25 11:24:24 -0500 EST | @miconda:matrix.kamailio.dev | the usual kernel updates from time to time, with very short downtime |
+| 2020-11-25 11:25:07 -0500 EST | @miconda:matrix.kamailio.dev | then I think we are doing fine with mailing lists, this matrix group and the old irc ... |
+| 2020-11-25 11:25:29 -0500 EST | @miconda:matrix.kamailio.dev | but you can always propose new (online/offline) tools to use |
+| 2020-11-25 11:25:46 -0500 EST | @henning:matrix.kamailio.dev | the day to day maintenance of www.kamailio.org is going fine, i usually do it once a week for some minutes |
+| 2020-11-25 11:26:08 -0500 EST | @henning:matrix.kamailio.dev | we have some time left until the next debian upgrade is necessary ;) |
+| 2020-11-25 11:26:50 -0500 EST | @miconda:matrix.kamailio.dev | ok -- seems all good on this one |
+| 2020-11-25 11:27:07 -0500 EST | @miconda:matrix.kamailio.dev | next topic |
+| 2020-11-25 11:27:14 -0500 EST | @miconda:matrix.kamailio.dev | next major release |
+| 2020-11-25 11:28:00 -0500 EST | @miconda:matrix.kamailio.dev | in terms of timing, likely end of spring, as I can see it now |
+| 2020-11-25 11:28:10 -0500 EST | @miconda:matrix.kamailio.dev | or at least 2nd part spring 2021 |
+| 2020-11-25 11:28:26 -0500 EST | @miconda:matrix.kamailio.dev | quite a bunch of new features in existing components |
+| 2020-11-25 11:28:41 -0500 EST | @henning:matrix.kamailio.dev | you pushed some modules today |
+| 2020-11-25 11:28:45 -0500 EST | @henning:matrix.kamailio.dev | great work |
+| 2020-11-25 11:28:54 -0500 EST | @henning:matrix.kamailio.dev | thank you |
+| 2020-11-25 11:28:54 -0500 EST | @miconda:matrix.kamailio.dev | 1 module |
+| 2020-11-25 11:29:22 -0500 EST | @miconda:matrix.kamailio.dev | which is going towards what we discussed for Kamailio 6.0 in Dusseldorf last year |
+| 2020-11-25 11:29:46 -0500 EST | @jchavanton:matrix.kamailio.dev | > <@miconda:matrix.kamailio.dev> 1 module |
+| 2020-11-25 11:29:53 -0500 EST | @miconda:matrix.kamailio.dev | having a group of processes that can handle the SIP traffic, no matter what is the transport they come in |
+| 2020-11-25 11:30:09 -0500 EST | @miconda:matrix.kamailio.dev | but is a hybrid solution for now |
+| 2020-11-25 11:30:25 -0500 EST | @joelsdc1:matrix.org > <@miconda:matrix.kamailio.dev> ok, so we may have to look at github actions ... |
+| 2020-11-25 11:30:27 -0500 EST | @miconda:matrix.kamailio.dev | obviously, still WIP, today only the skeleton |
+| 2020-11-25 11:31:03 -0500 EST | @miconda:matrix.kamailio.dev | the current design should work for UDP, likely for TCP, hoping for TLS ;-) |
+| 2020-11-25 11:31:18 -0500 EST | @henning:matrix.kamailio.dev | @miconda about the work distribution topic, do you think a module might be ultimately the way to go forward, or we might need to extend the core in this regards |
+| 2020-11-25 11:31:44 -0500 EST | @miconda:matrix.kamailio.dev | it still needs the usual SIP receive workers, but only to read from sockets, then push in internal queues |
+| 2020-11-25 11:32:14 -0500 EST | @miconda:matrix.kamailio.dev | Joel Serrano: you are more than welcome to join and help with GH actions |
+| 2020-11-25 11:32:39 -0500 EST | @miconda:matrix.kamailio.dev | Henning Westerholt: the module is just a wrapper to the core framework, for config functions |
+| 2020-11-25 11:33:47 -0500 EST | @miconda:matrix.kamailio.dev | so right now is like: request received as usual by a sip worker, and then passed to a group of "independent" workers, using in memory sockets for immediate reaction |
+| 2020-11-25 11:34:08 -0500 EST | @miconda:matrix.kamailio.dev | and from there goes again to request_route for usual processing |
+| 2020-11-25 11:34:33 -0500 EST | @miconda:matrix.kamailio.dev | but I will have to a sort of pre-routing event route to decide this kind of delegation for processing |
+| 2020-11-25 11:35:00 -0500 EST | @miconda:matrix.kamailio.dev | to avoid executing twice some internal callback for pre/post-config processing |
+| 2020-11-25 11:35:24 -0500 EST | @miconda:matrix.kamailio.dev | I will send more details when it gets to a better shape |
+| 2020-11-25 11:36:42 -0500 EST | @miconda:matrix.kamailio.dev | it reuses the code from core related to async task processing, but no longer creates and suspends the transaction ... passes the request as it is received and the sip receiver can read the next one, then it can pass to another group |
+| 2020-11-25 11:37:25 -0500 EST | @miconda:matrix.kamailio.dev | this is the first stage not to be very intrusive and change radically exiting design, to avoid the need to change code in modules |
+| 2020-11-25 11:38:17 -0500 EST | @miconda:matrix.kamailio.dev | iirc, Federico Cabiddu started the topic in Dusseldorf last year |
+| 2020-11-25 11:38:44 -0500 EST | @miconda:matrix.kamailio.dev | we planned to do some coding this year, but obviously some virus didn't want us meet again this autum :-) |
+| 2020-11-25 11:39:51 -0500 EST | @federico:matrix.kamailio.dev | sounds very good :) |
+| 2020-11-25 11:39:55 -0500 EST | @miconda:matrix.kamailio.dev | the version from today lacks ability to define groups of worker processes, to be added next |
+| 2020-11-25 11:40:02 -0500 EST | @oej:matrix.kamailio.dev | Sounds cool |
+| 2020-11-25 11:40:50 -0500 EST | @miconda:matrix.kamailio.dev | expect more details on mailing list next week, or so |
+| 2020-11-25 11:41:06 -0500 EST | @miconda:matrix.kamailio.dev | I wanted to show today that work started :-) |
+| 2020-11-25 11:41:30 -0500 EST | @henning:matrix.kamailio.dev | great |
+| 2020-11-25 11:41:59 -0500 EST | @miconda:matrix.kamailio.dev | then, before presenting what other modules I consider for next release, let's hear about LREPRoxy |
+| 2020-11-25 11:42:21 -0500 EST | @miconda:matrix.kamailio.dev | mojtaba.esfandiari wanted to discuss its status and his plans here |
+| 2020-11-25 11:42:38 -0500 EST | @mojtaba.esfandiari:matrix.org | Yes, Sure |
+| 2020-11-25 11:44:13 -0500 EST | @mojtaba.esfandiari:matrix.org | LREProxy is powerful and useful module that is developed for Kamailio for relaying RTP session in high performance |
+| 2020-11-25 11:45:34 -0500 EST | @miconda:matrix.kamailio.dev | is it based on the existing pull request, or you wrote it from scratch again? |
+| 2020-11-25 11:46:02 -0500 EST | @oej:matrix.kamailio.dev | Please explain why you wrote yet another RTP module in addition to the ones we have :-) |
+| 2020-11-25 11:46:10 -0500 EST | @mojtaba.esfandiari:matrix.org | You could run LREProxy module in a simple computer server. It could handle and relaying RTP between peers more than other modules in Kamailio as well as connection tracking in Linux |
+| 2020-11-25 11:47:58 -0500 EST | @oej:matrix.kamailio.dev | Maybe I'm stupid, but don't we already have integration with iptables in kernel in some modules? |
+| 2020-11-25 11:48:45 -0500 EST | @miconda:matrix.kamailio.dev | oej rtpengine app does that |
+| 2020-11-25 11:48:59 -0500 EST | @mojtaba.esfandiari:matrix.org | The concept of developing this module is because of in SBC node or edge-node in network we have huge number of incoming real-time packet  |
+| 2020-11-25 11:49:14 -0500 EST | @oej:matrix.kamailio.dev | @moj |
+| 2020-11-25 11:49:23 -0500 EST | @miconda:matrix.kamailio.dev | there was long time ago another module in kamailio using kernel, but removed, required a non-maintained patch to kernel |
+| 2020-11-25 11:49:41 -0500 EST | @mojtaba.esfandiari:matrix.org | And it could consume  more resources in server. |
+| 2020-11-25 11:49:55 -0500 EST | @oej:matrix.kamailio.dev | So the existing modules/apps failed for you? |
+| 2020-11-25 11:50:20 -0500 EST | @mojtaba.esfandiari:matrix.org | With using LREProxy, you could handle more RTP serssion relaying with no more consuming resources  |
+| 2020-11-25 11:50:55 -0500 EST | @mojtaba.esfandiari:matrix.org | RTPEnging app dose the same work but in local-hooking network stack |
+| 2020-11-25 11:51:21 -0500 EST | @mojtaba.esfandiari:matrix.org | LREProxy do this in prerouting-hooking in netfilter |
+| 2020-11-25 11:51:59 -0500 EST | @mojtaba.esfandiari:matrix.org | oej: absolutely yes |
+| 2020-11-25 11:52:29 -0500 EST | @mojtaba.esfandiari:matrix.org | For more information about this:https://www.slideshare.net/mespio/lreproxy-module-for-kamailio-presenation |
+| 2020-11-25 11:52:51 -0500 EST | @henning:matrix.kamailio.dev | i think the focus of rtpengine is more to provide a wide range of RTP handling functionality, and the focus of lreproxy more on proxy performance and throughput, correct? |
+| 2020-11-25 11:52:52 -0500 EST | @mojtaba.esfandiari:matrix.org | This module also accepted in ICCKE2020 conferences, too |
+| 2020-11-25 11:53:27 -0500 EST | @mojtaba.esfandiari:matrix.org | I think during next week this module could be published in Kamailio project |
+| 2020-11-25 11:53:43 -0500 EST | @miconda:matrix.kamailio.dev | mojtaba.esfandiari so we wait for you pull request and then see how people find it good to use |
+| 2020-11-25 11:55:02 -0500 EST | @mojtaba.esfandiari:matrix.org | Henning Westerholt: Yes, For edge nodes that encountered with huge number of packets per second  |
+| 2020-11-25 11:55:37 -0500 EST | @mojtaba.esfandiari:matrix.org | miconda: Sure, During next week |
+| 2020-11-25 11:56:21 -0500 EST | @oej:matrix.kamailio.dev | Why the name "LRE"? Seems confusing. |
+| 2020-11-25 11:56:33 -0500 EST | @mojtaba.esfandiari:matrix.org | Already, the LREProxy engine have developed with Python, it will publish, too.  |
+| 2020-11-25 11:58:03 -0500 EST | @jchavanton:matrix.kamailio.dev | > <@oej:matrix.kamailio.dev> Why the name "LRE"? Seems confusing. |
+| 2020-11-25 11:58:06 -0500 EST | @miconda:matrix.kamailio.dev | ok, then we wait for next week and can discuss on GH PR if is more to say |
+| 2020-11-25 11:58:16 -0500 EST | @mojtaba.esfandiari:matrix.org | oej: The LRE means Light-RTP-Engine, becuase the logic of the module uses off-loading Cpu techniques. |
+| 2020-11-25 11:58:45 -0500 EST | @miconda:matrix.kamailio.dev | since Julien Chavanton is active and he did a lot of code lately |
+| 2020-11-25 11:58:59 -0500 EST | @jchavanton:matrix.kamailio.dev | > <@mojtaba.esfandiari:matrix.org> oej: The LRE means Light-RTP-Engine, becuase the logic of the module uses off-loading Cpu techniques. |
+| 2020-11-25 11:59:01 -0500 EST | @miconda:matrix.kamailio.dev | anything else new coming from you soon, Julien? |
+| 2020-11-25 11:59:11 -0500 EST | @oej:matrix.kamailio.dev | "RTP-engine" is a product name, so I would consider avoiding that |
+| 2020-11-25 11:59:12 -0500 EST | @jchavanton:matrix.kamailio.dev | I saw Salman Ali @asalman18 was present, he helped with the review of dispatcher algorithm 13. |
+| 2020-11-25 11:59:42 -0500 EST | @henning:matrix.kamailio.dev | oej: we can discuss on the name as well on the patch/pull request then |
+| 2020-11-25 12:00:16 -0500 EST | @mojtaba.esfandiari:matrix.org | Sure, No problem. It is just name and could be changed :) |
+| 2020-11-25 12:00:35 -0500 EST | @miconda:matrix.kamailio.dev | Julien Chavanton isn't algo 13 already merged? |
+| 2020-11-25 12:01:49 -0500 EST | @mojtaba.esfandiari:matrix.org | Any question? |
+| 2020-11-25 12:02:52 -0500 EST | @mojtaba.esfandiari:matrix.org | maryambaghdadi: Mariam help me in developing Kernel-Space section in LREProxy. |
+| 2020-11-25 12:03:16 -0500 EST | @jchavanton:matrix.kamailio.dev | > <@mojtaba.esfandiari:matrix.org> Any question? |
+| 2020-11-25 12:03:52 -0500 EST | @mojtaba.esfandiari:matrix.org | Mariam do you want to say somethings about our work in lreproxy? |
+| 2020-11-25 12:04:45 -0500 EST | @jchavanton:matrix.kamailio.dev | > <@miconda:matrix.kamailio.dev> Julien Chavanton isn't algo 13 already merged? |
+| 2020-11-25 12:05:02 -0500 EST | @miconda:matrix.kamailio.dev | so we can move to next topic |
+| 2020-11-25 12:05:31 -0500 EST | @miconda:matrix.kamailio.dev | anyone else that wants to share what they plan to add till 5.5 is out? |
+| 2020-11-25 12:06:12 -0500 EST | @jchavanton:matrix.kamailio.dev | There may be an improvement to RTPengine module, I am waiting for a review on RTPengine before I submit the module part |
+| 2020-11-25 12:06:13 -0500 EST | @miconda:matrix.kamailio.dev | from my side: maybe some additions related to JWT |
+| 2020-11-25 12:06:45 -0500 EST | @miconda:matrix.kamailio.dev | and want to look at the RFC related to push notifications, although I hoped Federico Cabiddu is going to be faster than me ;-) |
+| 2020-11-25 12:06:56 -0500 EST | @oej:matrix.kamailio.dev | On my wishlist: Support for the new SHA* auth in combination with MD5 according to the RFC |
+| 2020-11-25 12:07:05 -0500 EST | @oej:matrix.kamailio.dev | But that's a feature request |
+| 2020-11-25 12:07:19 -0500 EST | @miconda:matrix.kamailio.dev | Julien Chavanton ok |
+| 2020-11-25 12:07:19 -0500 EST | @oej:matrix.kamailio.dev | if I get time I will make ds_list_exists support pvars |
+| 2020-11-25 12:07:47 -0500 EST | @miconda:matrix.kamailio.dev | isn't ds_list_exists() supporting vars? |
+| 2020-11-25 12:08:46 -0500 EST | @henning:matrix.kamailio.dev | i have some changes that i like to merge: one addition to the crypto module, another operating mode to support interoperability with other implementation for crypt/decrypt, and some additions to topology hiding for more flexibility in contact header handling |
+| 2020-11-25 12:09:12 -0500 EST | @miconda:matrix.kamailio.dev | code suggests ds_list_exists() does support var as parameter, like ds_list_exists("$var(id)") |
+| 2020-11-25 12:11:44 -0500 EST | @miconda:matrix.kamailio.dev | ok, if nothing to be added here, we can go to next topic |
+| 2020-11-25 12:12:00 -0500 EST | @oej:matrix.kamailio.dev | > <@miconda:matrix.kamailio.dev> code suggests ds_list_exists() does support var as parameter, like ds_list_exists("$var(id)") |
+| 2020-11-25 12:12:20 -0500 EST | @miconda:matrix.kamailio.dev | I assume everyone is ok with the loose plan of 2nd part/late spring 2021 for target date of 5.5 release |
+| 2020-11-25 12:13:58 -0500 EST | @henning:matrix.kamailio.dev | fine with me |
+| 2020-11-25 12:14:23 -0500 EST | @fred:matrix.lod.com | works for me |
+| 2020-11-25 12:14:34 -0500 EST | @miconda:matrix.kamailio.dev | ok |
+| 2020-11-25 12:14:44 -0500 EST | @miconda:matrix.kamailio.dev | so then the wiki/documentation |
+| 2020-11-25 12:15:12 -0500 EST | @henning:matrix.kamailio.dev | for development docs i think Markus Böhnke did some conversion scripts some months ago |
+| 2020-11-25 12:15:35 -0500 EST | @miconda:matrix.kamailio.dev | Julien Chavanton - you mentioned something above |
+| 2020-11-25 12:15:44 -0500 EST | @miconda:matrix.kamailio.dev | can you elaborate more ... |
+| 2020-11-25 12:18:06 -0500 EST | @jchavanton:matrix.kamailio.dev | I would like to write an article on how-to use algorithm 13 it may not be that intuitive, I do not want to put to much details about one algorithm in the html doc, while trying to explain it in the mailing list it was clear that a wiki page would result in better content. |
+| 2020-11-25 12:18:37 -0500 EST | @oej:matrix.kamailio.dev | We can publish something on the home page to start page |
+| 2020-11-25 12:18:45 -0500 EST | @oej:matrix.kamailio.dev | s/start/web page/ |
+| 2020-11-25 12:19:17 -0500 EST | @oej:matrix.kamailio.dev | sorry multitasking |
+| 2020-11-25 12:19:33 -0500 EST | @oej:matrix.kamailio.dev | An article like that could be published to introduce the algo |
+| 2020-11-25 12:19:58 -0500 EST | @fred:matrix.lod.com | Yeah... would be good as a post |
+| 2020-11-25 12:20:24 -0500 EST | @miconda:matrix.kamailio.dev | Julien Chavanton - there is a repo on github for docs, maybe you can add it there |
+| 2020-11-25 12:20:50 -0500 EST | @miconda:matrix.kamailio.dev | https://github.com/kamailio/kamailio-docs |
+| 2020-11-25 12:21:02 -0500 EST | @miconda:matrix.kamailio.dev |  * Julien Chavanton - there is a repo on github for docs, maybe you can add it there |
+| 2020-11-25 12:21:06 -0500 EST | @jchavanton:matrix.kamailio.dev | > <@miconda:matrix.kamailio.dev> Julien Chavanton - there is a repo on github for docs, maybe you can add it there |
+| 2020-11-25 12:22:17 -0500 EST | @miconda:matrix.kamailio.dev | yes, we will do also a news about, but I thought you want to have something to improve and maintain over the time |
+| 2020-11-25 12:23:10 -0500 EST | @miconda:matrix.kamailio.dev | Henning Westerholt - if you have reference to what Markus did, try to paste here a link to work from there |
+| 2020-11-25 12:24:15 -0500 EST | @henning:matrix.kamailio.dev | ok, i will need to dig out the message |
+| 2020-11-25 12:24:15 -0500 EST | @miconda:matrix.kamailio.dev | but the main question is: shall we migrate dokuwiki to markdown (e.g., mkdocks, ...) and use github repo to accept content with PRs? |
+| 2020-11-25 12:24:17 -0500 EST | @henning:matrix.kamailio.dev | but will do |
+| 2020-11-25 12:24:29 -0500 EST | @miconda:matrix.kamailio.dev |  * but the main question is: shall we migrate dokuwiki to markdown (e.g., mkdocks, ...) and use github repo to accept content with PRs? |
+| 2020-11-25 12:26:06 -0500 EST | @miconda:matrix.kamailio.dev | silence is an answer, too :-) |
+| 2020-11-25 12:26:22 -0500 EST | @miconda:matrix.kamailio.dev |  * silence is an answer, too :-) |
+| 2020-11-25 12:26:42 -0500 EST | @fred:matrix.lod.com | I like the idea of markdown |
+| 2020-11-25 12:27:29 -0500 EST | @federico:matrix.kamailio.dev | I like the idea of managing the doc too through PRs |
+| 2020-11-25 12:28:21 -0500 EST | @miconda:matrix.kamailio.dev | ok, so let's try to do it |
+| 2020-11-25 12:28:51 -0500 EST | @miconda:matrix.kamailio.dev | we can still have it shown on kamailio.org, just stored on github |
+| 2020-11-25 12:29:10 -0500 EST | @miconda:matrix.kamailio.dev | for the benefit of PRs |
+| 2020-11-25 12:29:25 -0500 EST | @miconda:matrix.kamailio.dev | so people do not need to make an account on our dokuwiki portal |
+| 2020-11-25 12:29:59 -0500 EST | @miconda:matrix.kamailio.dev | I looked at the option of using git backend for dokuwiki, but didn't seem that easy at that moment and then also the format is different than the usual markdown |
+| 2020-11-25 12:30:19 -0500 EST | @miconda:matrix.kamailio.dev | so if we do it, then better switch both  |
+| 2020-11-25 12:30:35 -0500 EST | @miconda:matrix.kamailio.dev | then people that contribute can use the markdown format |
+| 2020-11-25 12:31:27 -0500 EST | @miconda:matrix.kamailio.dev | ohhh ... a really good session so far, almost 2h30min ... |
+| 2020-11-25 12:32:00 -0500 EST | @miconda:matrix.kamailio.dev | let's try to get slowly to the end ... |
+| 2020-11-25 12:32:19 -0500 EST | @fred:matrix.lod.com | =) |
+| 2020-11-25 12:32:32 -0500 EST | @miconda:matrix.kamailio.dev | last main topic ... community: collaboration, announcements |
+| 2020-11-25 12:32:48 -0500 EST | @miconda:matrix.kamailio.dev | anything that someone wants to work on and would like others to join? |
+| 2020-11-25 12:33:16 -0500 EST | @miconda:matrix.kamailio.dev | anything that you want to announce (in what cool cases have you used kamailio lately ;-) )? |
+| 2020-11-25 12:33:27 -0500 EST | @miconda:matrix.kamailio.dev | or new products, tools, ... etc. |
+| 2020-11-25 12:33:39 -0500 EST | @jsmith:matrix.org | You already mentioned secsipid, but I'll continue to test and make suggestions/PRs on that |
+| 2020-11-25 12:34:13 -0500 EST | @miconda:matrix.kamailio.dev | Jared Smith - really appreciating that, STIR/SHAKEN is not much in Europe |
+| 2020-11-25 12:34:27 -0500 EST | @miconda:matrix.kamailio.dev | so not easy to test in "production-like" interconnects |
+| 2020-11-25 12:34:54 -0500 EST | @fred:matrix.lod.com | Recently switched APIBAN to redis backend for some parts... and I was thinking of stupid uses, and thought maybe htable could be used (with http front end). It couldn't, but just for fun, was able to run over 1000cps on a pi |
+| 2020-11-25 12:35:22 -0500 EST | @fred:matrix.lod.com | so htable would store json, and return it via xhttp |
+| 2020-11-25 12:35:29 -0500 EST | @fred:matrix.lod.com |  * so htable would store json, and return it via xhttp |
+| 2020-11-25 12:35:34 -0500 EST | @jsmith:matrix.org | Fred Posner: Have you checked out the KeyDB fork of Redis?  Much higher performance, and multi-master :-) |
+| 2020-11-25 12:35:59 -0500 EST | @fred:matrix.lod.com | No, only because it hasn't reached any concern of that level yet |
+| 2020-11-25 12:36:06 -0500 EST | @miconda:matrix.kamailio.dev | not sure if Torrey Searle is online now, but he added some mocking stuff for KEMI Python, so if anyone uses that, check it: https://github.com/kamailio/kamailio/tree/master/misc/tools/kemi/python_mock |
+| 2020-11-25 12:36:47 -0500 EST | @miconda:matrix.kamailio.dev |  * not sure if Torrey Searle is online now, but he added some mocking stuff for KEMI Python, so if anyone uses that, check it: https://github.com/kamailio/kamailio/tree/master/misc/tools/kemi/python_mock |
+| 2020-11-25 12:37:35 -0500 EST | @miconda:matrix.kamailio.dev | then, for KEMI Lua, I added some tools that can help detecting errors in the Lua script: https://github.com/kamailio/kamailio/tree/master/misc/tools/kemi/lua |
+| 2020-11-25 12:40:14 -0500 EST | @miconda:matrix.kamailio.dev | and again from me - the URL expander extension for browser to jump quickly to kamailio web resources - already announced to mailing list, but for the records: https://github.com/miconda/KSR-URL-Expander |
+| 2020-11-25 12:43:46 -0500 EST | @miconda:matrix.kamailio.dev | last call if someone still wants to add something here |
+| 2020-11-25 12:44:09 -0500 EST | @miconda:matrix.kamailio.dev | if not, we can consider this meeting finished! |
+| 2020-11-25 12:44:35 -0500 EST | @miconda:matrix.kamailio.dev | thanks everyone for participating! |
+| 2020-11-25 12:44:48 -0500 EST | @miconda:matrix.kamailio.dev | now free discussions ... |
+
