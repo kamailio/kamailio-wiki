@@ -763,7 +763,7 @@ Example of usage:
 Note: the hostname has to be enclosed in between quotes if it has reserved tokens such as **forward**, **drop** ... or operators such as **-** (minus) ...
 ==== async_workers ====
 
-Specify how many child processes to create for asynchronous execution. These are processes that can receive tasks from various components and execute them locally, which is different process than the task sender.
+Specify how many child processes to create for asynchronous execution in the group "default". These are processes that can receive tasks from various components (e.g, modules such as async, acc, sqlops) and execute them locally, which is different process than the task sender.
 
 Default: 0 (asynchronous framework is disabled).
 
@@ -772,6 +772,35 @@ Example:
 <code>
     async_workers=4
 </code>
+
+==== async_workers_group ====
+
+Define groups of asynchronous worker processes.
+
+Prototype:
+
+<code>
+async_workers_group="name=X;workers=N;nonblock=[0|1];usleep=M"
+</code>
+
+The attributes are:
+
+  * **name** - the group name (used by functions such as **sworker_task(name)**)
+  * **workers** - the number of processes to create for this group
+  * **nonblock** - set or not set the non-block flag for internal communication socket
+  * **usleep** - the number of microseconds to sleep before trying to receive next task (can be useful if nonblock=1)
+
+Default: "".
+
+Example:
+
+<code>
+    async_workers_group="name=reg;workers=4;nonblock=0;usleep=0"
+</code>
+
+If the **name** is default, then it overwrites the value set by **async_workers**.
+
+See also **event_route[core:pre-routing]** and **sworker** module.
 
 ==== auto_aliases ====
 
