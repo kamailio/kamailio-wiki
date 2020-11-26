@@ -1114,6 +1114,21 @@ Example:
 <code c>
 kemi.onsend_route_callback="ksr_my_reply_route"
 </code>
+
+==== kemi.pre_routing_callback ====
+
+Set the name of callback function in the KEMI script to be executed as the equivalent of `event_route[core:pre-routing]` block (from the native configuration file).
+
+Default value: none
+
+Set it to empty string or "none" to skip execution of this callback function.
+
+Example:
+
+<code c>
+kemi.pre_routing_callback="ksr_pre_routing"
+</code>
+
 ==== latency_cfg_log ====
 
 If set to a log level less or equal than debug parameter, a log message with the duration in microseconds of executing request route or reply route is printed to syslog.
