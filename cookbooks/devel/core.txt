@@ -3450,6 +3450,24 @@ event_route[core:msg-received] {
   }
 }
 </code>
+
+  * **event_route[core:pre-routing]** - executed by core on receiving SIP traffic before running request_route or reply_route.
+    * if drop is used, then the message is not processed further with request_route or reply_route in the same process. This can be useful together with sworker module which can delegate the processing to another worker.
+
+<code c>
+async_workers_group="name=reg;workers=4"
+...
+event_route[core:pre-routing] {
+    xinfo("pre-routing rules\n");
+    if(is_method("REGISTER")) {
+        # delegate processing of REGISTERs to a special group of workers
+        if(sworker_task("reg")) {
+            drop;
+        }
+    }
+}
+</code>
+
 === Module Event Routes ===
 
 Here are only a few examples, to see if a module exports event_route blocks and when they are executed, check the readme of the module.
