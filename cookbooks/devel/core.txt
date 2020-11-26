@@ -763,7 +763,7 @@ Example of usage:
 Note: the hostname has to be enclosed in between quotes if it has reserved tokens such as **forward**, **drop** ... or operators such as **-** (minus) ...
 ==== async_workers ====
 
-Specify how many child processes to create for asynchronous execution in the group "default". These are processes that can receive tasks from various components (e.g, modules such as async, acc, sqlops) and execute them locally, which is different process than the task sender.
+Specify how many child processes (workers) to create for asynchronous execution in the group "default". These are processes that can receive tasks from various components (e.g, modules such as async, acc, sqlops) and execute them locally, which is different process than the task sender.
 
 Default: 0 (asynchronous framework is disabled).
 
@@ -771,6 +771,30 @@ Example:
 
 <code>
     async_workers=4
+</code>
+
+==== async_nonblock ====
+
+Set the non-block mode for the internal sockets used by default group of async workers.
+
+Default: 0
+
+Example:
+
+<code>
+    async_nonblock=1
+</code>
+
+==== async_usleep ====
+
+Set the number of microseconds to sleep before trying to receive next task (can be useful when async_nonblock=1).
+
+Default: 0
+
+Example:
+
+<code>
+    async_usleep=100
 </code>
 
 ==== async_workers_group ====
