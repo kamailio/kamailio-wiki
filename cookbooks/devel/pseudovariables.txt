@@ -206,16 +206,16 @@ Example:
 xlog("FLT_ACC: $def(ABC)\n");
 </code>
 
-==== $def(name) - Defined Value As Number ====
+==== $defn(name) - Defined Value As Number ====
 
-**$def(name)** - return a defined value as a signed integer.
+**$defn(name)** - return a defined value as a signed integer.
 
 Example:
 
 <code c>
 #!define FLT_ACC 1
 
-xlog("FLT_ACC: $def(FLT_ACC)\n");
+xlog("FLT_ACC: $defn(FLT_ACC)\n");
 </code>
 ==== $di - Diversion header URI ====
 
