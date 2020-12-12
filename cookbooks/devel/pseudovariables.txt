@@ -194,7 +194,29 @@ xlog("$$avp(x) fount $cnt($avp(x)) times\n");
 
 **$dd** - reference to domain of destination uri (without port)
 
+==== $def(name) - Defined Value ====
 
+**$def(name)** - return a defined value.
+
+Example:
+
+<code c>
+#!define ABC xyz
+
+xlog("FLT_ACC: $def(ABC)\n");
+</code>
+
+==== $def(name) - Defined Value As Number ====
+
+**$def(name)** - return a defined value as a signed integer.
+
+Example:
+
+<code c>
+#!define FLT_ACC 1
+
+xlog("FLT_ACC: $def(FLT_ACC)\n");
+</code>
 ==== $di - Diversion header URI ====
 
 **$di** - reference to Diversion header URI
