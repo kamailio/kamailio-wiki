@@ -1237,6 +1237,10 @@ Example of usage:
     loadmodule "dialplan.so"
 </code>
 
+==== loadmodulex ====
+
+Similar to **loadmodule** with the ability to evaluate variables in its parameter.
+
 ==== loadpath ====
 
 **Alias name: mpath**
