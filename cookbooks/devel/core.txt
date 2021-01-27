@@ -3491,6 +3491,16 @@ event_route[core:pre-routing] {
 }
 </code>
 
+  * ** event_route[core:receive-parse-error]** - executed by core on receiving a broken SIP message that can not be parsed.
+    * note that the SIP message is broken in this case, but it gets access to source and local socket addresses (ip, port, proto, af) as    well as the whole message buffer and its size 
+
+<code c>
+event_route[core:receive-parse-error] {
+        xlog("got an parsing error from $si:$sp, message $mb\n");
+}
+
+</code>
+
 === Module Event Routes ===
 
 Here are only a few examples, to see if a module exports event_route blocks and when they are executed, check the readme of the module.
