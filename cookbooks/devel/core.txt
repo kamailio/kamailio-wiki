@@ -3043,7 +3043,25 @@ Examples of usage:
     route(@received.proto + "_proto_" + $var(route_set));
 
 
+==== selval ====
 
+Select a value based on conditional expression.
+
+Prototype:
+
+<code c>
+selval(evalexpr, valexp1, valexpr2)
+</code>
+
+This is a core statement that return the 2nd parameter if the 1st parameter is evaluated to true, or 3rd parameter if the 1st parameter is evaluated to false. It can be considered a core function that is equivalent of ternary condition/operator
+
+Example:
+
+<code c>
+$var(x) = selval($Ts mod 2, "true/" + $ru, "false/" + $rd);
+</code>
+
+The first parameter is a conditional expression, like those used for IF, the 2nd and 3rd parameters can be expressions like those used in the right side of assignments.
 ==== set_advertised_address ====
 
 Same as 'advertised_address' but it affects only the current message. It has priority if 'advertised_address' is also set.
