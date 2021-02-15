@@ -374,11 +374,27 @@ $var(uri) = $(var(x){s.unbracket});
 Count how many times c appears in the pv value.
 
 <code c>
-abababa"{s.count,a}
+"abababa"{s.count,a}
 # will return 4
 </code>
 
+==== {s.after,x} ====
 
+Return the part of the string after the character **x**. If the character **x** is not found, it returns empty string.
+
+<code c>
+"abcdef"{s.after,c}
+# will return "def"
+</code>
+
+==== {s.before,x} ====
+
+Return the part of the string before the character **x**. If the character **x** is not found, it returns the entire input string.
+
+<code c>
+"abcdef"{s.before,c}
+# will return "ab"
+</code>
 ==== {s.urlencode.param} ====
 
 Encode the value for URL param format.
