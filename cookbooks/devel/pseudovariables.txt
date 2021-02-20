@@ -267,6 +267,8 @@ To reset $du:
 
 **$fd** - reference to domain in URI of 'From' header
 
+<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file)</fc>
+
 ==== $fn - From display name ====
 
 **$fn** - reference to display name of 'From' header
