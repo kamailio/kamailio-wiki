@@ -98,9 +98,12 @@ The 'name' can be:
   * send_socket - return the socket to be used to send the branch
   * count - return the number of the branches
   * flags - return the branch flags value
-  * ruid - return the ruid of the branch (Record internal Unique ID from usrloc)
+  * ruid - (readonly) - return the ruid of the branch (Record internal Unique ID from usrloc
+  * location_ua - (readonly) - user agent from the location record
+  * instance - (readonly) - the value of instance field
+  * otcpid - outbound tcp connection id
 
-The PV can take an index to access a specif branch: $(branch(name)[index])
+The PV can take an index to access a specific branch: $(branch(name)[index])
 
 Example:
 
