@@ -1928,6 +1928,42 @@ Example of usage:
 <code c>
    version_table="version44"
 </code>
+==== wait_child1_mode ====
+
+Enable waiting for child SIP worker one to complete initialization, then create the other child worker processes.
+
+Default: 0 (do not wait for child worker one to complete initialization).
+
+Example:
+
+<code c>
+wait_child1_mode = 1
+</code>
+
+==== wait_child1_time ====
+
+How long to wait for child worker one to complete the initialization. In micro-seconds.
+
+Default: 4000000 (micro-seconds = 4 seconds).
+
+Example:
+
+<code c>
+wait_child1_time = 1000000
+</code>
+
+==== wait_child1_usleep ====
+
+How long to wait for child worker one to complete the initialization. In micro-seconds.
+
+Default: 100000 (micro-seconds = 0.1 seconds).
+
+Example:
+
+<code c>
+wait_child1_usleep = 50000
+</code>
+
 ==== workdir ====
 
 **Alias name: wdir**
