@@ -1583,7 +1583,11 @@ $xml(x=>xpath:/a/b) = "1234";
 
 ==== $T_branch_idx ====
 
-  * the index (starting with 1 for the first branch) of the branch for which is executed the branch_route[]. If used outside of branch_route[] block, the value is '0'.
+  * the index (starting with 0 for the first branch) of the branch for which is executed the branch_route[].
+  * in failure_route[] block, the value is the number of completed branches added to the number of new new branches
+  * in request_route block, the value is number of created branches
+  * in onreply_route[], the value is the index of the branch receiving the reply
+  * if used outside of transaction processing, the value is '-1'
 
 ==== $T_reply_ruid ====
 
