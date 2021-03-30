@@ -830,3 +830,23 @@ You can use the transformation to extract values from the json structured pseudo
 $var(Custom-Data) = $(rb{json.parse,Custom-Data});
 
 </code>
+
+===== URI Alias Transformations =====
+
+Transformations related to URI alias values (**addr~port~protoid**).
+
+==== {urialias.encode} ====
+
+Encode SIP URI to alias value.
+
+<code c>
+"sip:127.0.0.1:5060;transport=udp"{urialias.encode} => "127.0.0.1~5060~1"
+</code>
+
+==== {urialias.decode} ====
+
+Decode from alias value to SIP URI.
+
+<code c>
+"127.0.0.1~5060~1"{urialias.decode} => "sip:127.0.0.1:5060;transport=udp"
+</code>
