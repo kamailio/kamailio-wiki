@@ -1,12 +1,12 @@
-====== Upgrade Kamailio from v5.4.x to v5.5.0 (devel) ======
+====== Upgrade Kamailio from v5.5.x to v5.6.0 (devel) ======
 
-The page contains the details about the changes that were made to old components during the development of v5.5.0 compared with what existed in v5.4.x. It does not include the brand new modules, focusing on how to upgrade database and configuration file from v5.4.x to run with Kamailio 5.5.0.
+The page contains the details about the changes that were made to old components during the development of v5.6.0 compared with what existed in v5.5.x. It does not include the brand new modules, focusing on how to upgrade database and configuration file from v5.5.x to run with Kamailio 5.6.0.
 
 ===== Previous Stable Release =====
 
 If you look for the guidelines to upgrade to previous stable release, see:
 
-  * [[install:upgrade:5.3.x-to-5.4.0|Upgrade Kamailio v5.3.x to v5.4.0]]
+  * [[install:upgrade:5.4.x-to-5.5.0|Upgrade Kamailio v5.4.x to v5.5.0]]
 
 ===== Remarks =====
 
@@ -52,7 +52,7 @@ For example, **use_dst_blacklist** used in older versions has to be replaced by 
 
 ==== MySQL Database Structure ====
 
-Run following SQL statements in MySQL client to upgrade database structure from v5.4 to v5.5:
+Run following SQL statements in MySQL client to upgrade database structure from v5.5 to v5.6:
 
 <code sql>
 ...
