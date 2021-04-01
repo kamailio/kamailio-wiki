@@ -54,6 +54,7 @@ Few guidelines to edit the wiki:
 ==== Upgrade ====
 
   * [[install:upgrade:stable-to-devel|Upgrade Kamailio stable to devel]]
+  * [[install:upgrade:5.4.x-to-5.5.0|Upgrade Kamailio v5.4.x to v5.5.0]]
   * [[install:upgrade:5.3.x-to-5.4.0|Upgrade Kamailio v5.3.x to v5.4.0]]
   * [[install:upgrade:5.2.x-to-5.3.0|Upgrade Kamailio v5.2.x to v5.3.0]]
   * [[install:upgrade:5.1.x-to-5.2.0|Upgrade Kamailio v5.1.x to v5.2.0]]
