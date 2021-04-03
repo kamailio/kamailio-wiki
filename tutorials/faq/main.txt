@@ -633,6 +633,14 @@ if($var(rc4)==$var(rc2)) {
 } else {
    # it goes here
 }
+...
+if (function_returns_four() && $rc ieq 6 ) {
+   # it doesn't go here
+} else if ($rc ieq 4) {
+   # it goes here
+} else {
+   # it doesn't go here
+}
 </code>
 
 Note that $rc is overwritten by a new function call, therefore store its value in another variable (like $var(...)) if it is needed for longer time.
