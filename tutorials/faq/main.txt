@@ -615,6 +615,26 @@ if($var(x) == 0) {
 }
 </code>
 
+To compare the return code of a function with a number is recommended to use the value stored in $rc, because the priority of the operators can convert function return code to internal-true or internal-false. Therefore the next approach should be used:
+
+<code c>
+function_returns_four();
+$var(rc4) = $rc;
+if($var(rc4)==4) {
+   # it goes here
+} else {
+   # it doesn't go here
+}
+...
+function_returns_two();
+$var(rc2) = $rc;
+if($var(rc4)==$var(rc2)) {
+   # it doesn't go here
+} else {
+   # it goes here
+}
+</code>
+
 For pseudo-variables, the non-zero value is evaluated to true and zero to false, for example:
 
 <code c>
