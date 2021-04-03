@@ -3649,7 +3649,6 @@ The logical operators that can be used in 'expr':
   &&      logical AND
   ||      logical OR
   !       logical NOT
-  [ ... ] test operator - inside can be any arithmetic expression
 </code>
 
 Example of usage:
