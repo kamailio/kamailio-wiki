@@ -3663,7 +3663,7 @@ Example of usage:
         log("this sip message is not an invite\n");
     }
 
-See also how the function return code is evaluated:
+See also the FAQ for how the function return code is evaluated:
 
   * https://www.kamailio.org/wiki/tutorials/faq/main#how_is_the_function_return_cod
 ==== switch ====
