@@ -3660,7 +3660,9 @@ Example of usage:
         log("this sip message is not an invite\n");
     }
 
+See also how the function return code is evaluated:
 
+  * https://www.kamailio.org/wiki/tutorials/faq/main#how_is_the_function_return_cod
 ==== switch ====
 
 SWITCH statement - it can be used to test the value of a pseudo-variable. 
