@@ -436,6 +436,27 @@ Note that changing the From: header may break backwards compatibility with SIP 1
 
 **$retcode** - same as **$rc**
 
+Note that the value of $rc is overwritten by each new function call.
+
+Example of use:
+
+<code c>
+	lookup("location");
+	$var(rc) = $rc;
+	if ($var(rc) < 0) {
+		t_newtran();
+		switch ($var(rc)) {
+			case -1:
+			case -3:
+				send_reply("404", "Not Found");
+				exit;
+			case -2:
+				send_reply("405", "Method Not Allowed");
+				exit;
+		}
+	}
+
+</code>
 ==== $rd - Domain in R-URI ====
 
 **$rd** - reference to domain in request's URI (without port) or to the Namespace Specific String of a URN (see RFC 2141)
