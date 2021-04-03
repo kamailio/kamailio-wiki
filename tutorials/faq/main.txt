@@ -635,6 +635,8 @@ if($var(rc4)==$var(rc2)) {
 }
 </code>
 
+Note that $rc is overwritten by a new function call, therefore store its value in another variable (like $var(...)) if it is needed for longer time.
+
 For pseudo-variables, the non-zero value is evaluated to true and zero to false, for example:
 
 <code c>
