@@ -2993,6 +2993,9 @@ route[2] {
 }
 </code>
 
+See also the FAQ for how the function return code is evaluated:
+
+  * https://www.kamailio.org/wiki/tutorials/faq/main#how_is_the_function_return_cod
 ==== revert_uri ====
 
 Set the R-URI to the value of the R-URI as it was when the request was received by server (undo all changes of R-URI).
