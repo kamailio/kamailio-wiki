@@ -1,6 +1,7 @@
 ====== Core Cookbook ======
 
-Version: Kamailio SIP Server v5.5.x (devel)
+Version: Kamailio SIP Server v5.6.x (devel)
+
 ===== Overview =====
 
 This tutorial collects the functions and parameters exported by Kamailio core to configuration file.
