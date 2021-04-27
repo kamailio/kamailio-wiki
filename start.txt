@@ -108,6 +108,7 @@ Alphabetic indexes generated from documentation (modules' readme docs).
 
 | Version ^ Modules Parameters  ^ Modules Functions ^ RPC Commands ^ Statistics ^ 
 ^ devel   |  [[alphaindexes:devel:modparameters|link]]  |  [[alphaindexes:devel:modfunctions|link]]  |  [[alphaindexes:devel:rpccommands|link]]  |  [[alphaindexes:devel:modstatistics|link]]  |
+^ 5.5.x   |  [[alphaindexes:5.5.x:modparameters|link]]  |  [[alphaindexes:5.5.x:modfunctions|link]]  |  [[alphaindexes:5.5.x:rpccommands|link]]  |  [[alphaindexes:5.5.x:modstatistics|link]]  |
 ^ 5.4.x   |  [[alphaindexes:5.4.x:modparameters|link]]  |  [[alphaindexes:5.4.x:modfunctions|link]]  |  [[alphaindexes:5.4.x:rpccommands|link]]  |  [[alphaindexes:5.4.x:modstatistics|link]]  |
 ^ 5.3.x   |  [[alphaindexes:5.3.x:modparameters|link]]  |  [[alphaindexes:5.3.x:modfunctions|link]]  |  [[alphaindexes:5.3.x:rpccommands|link]]  |  [[alphaindexes:5.3.x:modstatistics|link]]  |
 ^ 5.2.x   |  [[alphaindexes:5.2.x:modparameters|link]]  |  [[alphaindexes:5.2.x:modfunctions|link]]  |  [[alphaindexes:5.2.x:rpccommands|link]]  |  [[alphaindexes:5.2.x:modstatistics|link]]  |
