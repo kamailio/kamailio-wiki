@@ -29,8 +29,38 @@ Following tokens are used to mark the changes:
 
 ==== Renamed Modules ====
 
-  * none
+=== userblacklist to userblocklist ===
 
+  * https://www.kamailio.org/docs/modules/5.5.x/modules/userblocklist.html
+
+Impacted resources:
+
+  * database table **globalblacklist** renamed to **globalblocklist** - its definition is now:
+
+<code>
+CREATE TABLE globalblocklist (
+  id int(10) unsigned NOT NULL AUTO_INCREMENT,
+  prefix varchar(64) NOT NULL DEFAULT '',
+  allowlist tinyint(1) NOT NULL DEFAULT 0,
+  description varchar(255) DEFAULT NULL,
+  PRIMARY KEY (id),
+  KEY globalblocklist_idx (prefix)
+);
+</code>
+
+  * database table **userblacklist** renamed to **userblocklist** - its definition is now:
+
+<code>
+CREATE TABLE userblocklist (
+  id int(10) unsigned NOT NULL AUTO_INCREMENT,
+  username varchar(64) NOT NULL DEFAULT '',
+  domain varchar(64) NOT NULL DEFAULT '',
+  prefix varchar(64) NOT NULL DEFAULT '',
+  allowlist tinyint(1) NOT NULL DEFAULT 0,
+  PRIMARY KEY (id),
+  KEY userblocklist_idx (username,domain,prefix)
+);
+</code>
 ===== Internal Libraries =====
 
 
