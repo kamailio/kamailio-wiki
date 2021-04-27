@@ -1,7 +1,8 @@
-{{ :cookbooks:devel:pseudovariables.png?200|}}
 ====== Pseudo-Variables ======
 
-Version: Kamailio SIP Server v5.5.x (devel)
+Version: Kamailio SIP Server v5.6.x (devel)
+
+{{ :cookbooks:devel:pseudovariables.png?200|}}
 
 ===== Introduction =====
 
