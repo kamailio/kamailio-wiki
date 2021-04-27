@@ -1,6 +1,6 @@
 ====== Selects Variables ======
 
-Version: Kamailio SIP Server v5.5.x (devel)
+Version: Kamailio SIP Server v5.6.x (devel)
 
 The **select** is a READ-ONLY "function", that helps to get direct access to some parts of SIP message within the script (like @to, @cseg.method, @msg["P-anyheader-youwant"]), but generally it could be seen as a function with a certain number of parameters that returns a string.
 
