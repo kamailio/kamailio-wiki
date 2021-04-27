@@ -1,6 +1,6 @@
 ====== Transformations ======
 
-Version: Kamailio SIP Server v5.5.x (devel)
+Version: Kamailio SIP Server v5.6.x (devel)
 
 <code>
 Main author:
