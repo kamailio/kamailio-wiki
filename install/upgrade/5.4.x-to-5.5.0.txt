@@ -85,5 +85,16 @@ For example, **use_dst_blacklist** used in older versions has to be replaced by 
 Run following SQL statements in MySQL client to upgrade database structure from v5.4 to v5.5:
 
 <code sql>
-...
+-- topos_d table
+ALTER TABLE topos_d ADD COLUMN x_context varchar(64) NOT NULL DEFAULT '';
+UPDATE version SET table_version=2 WHERE TABLE_NAME='topos_d';
+
+-- topos_t table
+ALTER TABLE topos_t ADD COLUMN x_context varchar(64) NOT NULL DEFAULT '';
+UPDATE version SET table_version=2 WHERE TABLE_NAME='topos_t';
+
+-- uacreg table
+ALTER TABLE uacreg ADD COLUMN contact_addr varchar(255) NOT NULL DEFAULT '';
+
+-- IMPORTANT: see also the notes about the userblocklist module
 </code>
