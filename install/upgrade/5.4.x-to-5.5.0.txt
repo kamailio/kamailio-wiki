@@ -48,6 +48,9 @@ CREATE TABLE globalblocklist (
 );
 </code>
 
+Note also the changes in the column names and indexes.
+
+
   * database table **userblacklist** renamed to **userblocklist** - its definition is now:
 
 <code>
@@ -61,6 +64,9 @@ CREATE TABLE userblocklist (
   KEY userblocklist_idx (username,domain,prefix)
 );
 </code>
+
+Note also the changes in the column names and indexes.
+
 ===== Internal Libraries =====
 
 
