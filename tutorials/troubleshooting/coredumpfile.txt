@@ -5,12 +5,12 @@
 
 After a crash of the server it may generate a core file in its working directory, if the functionality is not disabled. This core file can be used to get the cause (or at least a hint) of the crash. The core file contains the memory of the process at the moment it crashes as well as the execution trace, so it could contain sensitive data.
 
-===== Potential causes =====
+===== Potential Causes =====
 
   * Invalid input data, e.g. some messages or from the database
   * Errors in the program code, e.g. null pointer access
 
-===== What to do with a core file =====
+===== Analyze Core File =====
 
 Core files can be examined with **gdb**, the GNU debugger. It can read the crash informations, and display (among other things) the backtrace that leads to the crash. Just run:
 
