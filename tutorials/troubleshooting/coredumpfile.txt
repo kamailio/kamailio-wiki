@@ -50,7 +50,7 @@ In order to get a meaningful backtrace gdb needs some debugging informations in 
 
 If you don't understand the information that gdb prints, some developer on the mailling list should be able to help you.
 
-===== How do get a core file =====
+===== How To Get Core Files =====
 
 Sometimes the server don't write the core file after a crash.
 
@@ -64,7 +64,11 @@ First check if the "disable_core_dump" variable is set in your configuration. If
 ulimit -c unlimited
 </code>
 
-in the shell where you started the server. If you run from a init script it should normally already take care of this. If its still not create a core file then perhaps the server has no permissions to write into its working directory, check its permissions and the startup option "-w"..
+in the shell where you started the server. If you run from a init script it should normally already take care of this. If its still not create a core file then perhaps the server has no permissions to write into its working directory, check its permissions and the startup option "-w".
+
+On some operating systems it may be required to run Kamailio as privileged user (e.g., root) or change the **fs.suid_dumpable** sysctl setting:
+
+  * https://sysctl-explorer.net/fs/suid_dumpable/
 
 To get per-process core file then you can use on Linux:
 
@@ -78,6 +82,25 @@ A similar command for FreeBSD:
 sysctl kern.corefile='%N.%P.core'
 </code>
 
+==== CentOS Core Dump Settings ====
+
+For CentOS 7, the following settings can be useful:
+
+Edit **/etc/sysctl.d/99-sysctl.conf** and add:
+
+<code>
+kernel.core_pattern = /tmp/core.%e.%p.%h.%t
+kernel.core_uses_pid=1
+fs.suid_dumpable = 2
+</code>
+
+Run **sysctl --system** to reload kernel parameters.
+
+Edit **/etc/sysconfig/kamailio** and set:
+
+<code>
+DUMP_CORE=yes
+</code>
 
 ===== Useful Links =====
 
