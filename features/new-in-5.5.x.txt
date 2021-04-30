@@ -17,7 +17,7 @@ Countless bugfixes were implemented for this release in core, tools and modules.
 
 ===== New Modules =====
 
-==== 111 ====
+==== 1111 ====
 
 aaaa
 
@@ -25,15 +25,186 @@ aaaa
 
 ===== New in existing Modules =====
 
-==== 111 ====
+==== acc ====
 
-  * aaa
-  * bbb
+  * add to-tag for locally generated replies
+  * use sent reason phrase for locally generated replies
+
+==== async ====
+
+  * fix async_ms_route and export it to kemi
+
+==== cfgutils ====
+
+  * export route check functions to kemi
+
+==== corex ====
+
+  * add rpc command shm.info
+  * add rpc command shm.stats
+
+==== ctl ====
+
+  * skip handling rpc commands if kamilio is in shutdown phase
+
+==== dmq_usrloc ====
+
+  * do not replicate socket if the field is not set
+
+==== dialog ====
+
+  * logging improvements
+
+==== dispatcher ====
+
+  * update state if sending keepalive OPTIONS fails
+  * sync on updating last used fields
+
+==== evapi ====
+
+  * export async_unicast() to kemi
+
+==== http_async_client ====
+
+  * set curl memory callbacks in module initialization
+
+==== ims_charging ====
+
+  * use correct default User-Equipment-Info-Type AVP format
+
+==== ims_usrloc_scscf ====
+
+  * add a new contact state, udomain/impu and cleanup timer improvements
+  * add a new parameter for reverse search in get_pcontact
+
+==== ims_registrar_scscf ====
+
+  * added a new registrar event, notification improvements
+  * update_contacts, if the reply doesn't include contact alias, get received info from the request
+  * fix extraction of received host in save()
+
+==== ims_ipsec_pcscf ====
+
+  * add a new function parameter to delete unused tunnels before creation of new ipsec connection
+  * add new global parameters for ipsec listen addresses.
+  * extension related to reverse search functionality
+
+==== ims_qos ====
+
+  * extension related to reverse search functionality
+
+==== kex ====
+
+  * use mutex to sync the mod mem stats rpc commands
+  * add pkg.info rpc command, to get details about pkg manager
+
+==== keepalive ====
+
+  * logging improvements
+  * improvements in internal data structure passing to other modules
+  * prevent race condition when deleting a destination
+
+==== log_custom ====
+
+  * print to stderror if sending log message fails
+
+==== msrp ====
+
+  * proper parsing ipv6 host part in uri
+
+==== registrar ====
+
+  * documentation improvements
+
+==== rr ====
+
+  * new function loose_route_mode(vmode), to specify certain loose routing behaviour
+
+==== pike ====
+
+  * rpc pike.top, support for case insensitive match of parameter
+
+==== pua ====
+
+  * update_version_puadb() use pres_id to select record
+  * fix send_publish() behavior on PUA_DB_ONLY
+
+==== pv ====
+
+  * new transformation {uri.suri} to get the simple routing uri, keep only transport parameter, if exists
+  * new transformation {uri.duri} to get the uri needed for destination address (e.g., sip:host:port;transport=tcp)
+  * new transformation {uri.saor} to get the sip aor (sip:[user@]domain)
+
+==== p_usrloc ====
+
+  * reworking of mdb_availability_control functionality
+
+==== rtp_media_server ====
+  * update to mediastreamer 4.4.0
+
+==== sipdump ====
+
+  * if drop executed in event route, skip writing to file
+  * refactoring to support more storage engines, like writing UDP pcap files or adding P-KSR-SIPDump header
+
+==== siptrace ====
+
+  * exec event_route[siptrace:msg] on message replication with core events
+
+==== topoh ====
+
+  * remove the Via cookie when skipping topoh via event route
+  * event route is now executed with parsed sip message to be sent out
+
+==== tls ====
+
+  * support compilation without deprecated OpenSSL APIs
+
+==== tm ====
+
+  * logging improvements
+
+==== tmx ====
+
+  * safety check of expected route blocks for using $T_*() variables
+
+==== textops ====
+
+  *  added change_reply_status_code() function to change only the status code for non-2xx replies
+
+==== topos ====
+
+  * add two new modes for topology hiding to preserve Contact user necessary for certain interconnection providers
+
+==== uac ====
+
+  * added uac_event_callback for kemi
+  * restore first display name then uri with dialog callback
+  * support to set contact address in uacreg database record, enable per registration contact address
+  * allow empty contact addr in rpc add command for uacreg, it has to be set to .
+
+==== usrloc ====
+
+  * export ka_logmsg parameter to kemi
+  * print Route header name in keepalive when Path is present
+  * export modparam to set keepalive timeout
+
+==== xhttp_prom ====
+
+  * add support for histogram metrics
 
 ===== New in Core =====
 
-  * aaa
-  * bbb
+  * add websocket even support
+  * several build infrastructure improvements for MacOS with clang compiler
+  * support for gcc 10.x compiler in build infrastructure
+  * add a global flag in shared memory to detect server shutdown
+  * build improvements for FreeBSD
+  * skip abort() in free_lump() for LUMPFLAG_DUPED for proper branch route support
+
+==== SIP parser ====
+
+  * simplify implementation, use static map for header name and type for parsing
 
 ==== Command line arguments ====
 
@@ -41,23 +212,29 @@ aaaa
 
 ==== Interpreter ====
 
+  * exported core route function to kemi
+
 ==== Parameters ====
 
-  * aaa
+  * add sip_parser_log core parameter to log parser error with a certain log level
+  * add hdr_name_extra_chars parameter to allow specific characters in header names
 
 ==== Functions ====
 
+  * helper functions to search variants of str in another str
+
 ==== Memory Managers ====
 
-  * aaa
+  *  define mem_counter struct in meminfo for all memory managers
 
 ==== Architecture ====
 
-  * aaa
+  * further migration of many modules to use core SHM_MEM_ERROR and PKG_MEM_ERROR defines
+  * add CAP_CHOWN capability to Kamailio systemd service files to allow chown needed for some modules
 
 ==== kamailio.cfg ====
 
-  * aaa
+  * set load_backends to 1 for permissions module, the config uses only address table
 
 ===== Tools =====
 
@@ -71,6 +248,7 @@ aaaa
 
 ==== kamdbctl ====
 
-  * aaa
+  * proper id format for dbtext records
+  * increased contact_addr_len entity to 255, e.g. for IMS use-cases
 
 ==== kamcli ====
