@@ -1,0 +1,76 @@
+====== Kamailio SIP Server - New Features in v5.5.x ======
+
+<fc #0000FF>
+**Previous version was 5.4.x (released on July, 2020), see what was new in that release at**:
+</fc>
+  * <fc #0000FF>http://www.kamailio.org/wiki/features/new-in-5.4.x</fc>
+
+<fc #800000>//This is a draft of new features added in this version, manually updated, thus not always synchronized with what is new in source code repository.//</fc>
+
+===== Documentation =====
+
+Many fixes were done to the modules, missing parameter were added, wrong parameter or function names fixed and explanation or clarifications added. Furthermore many debug messages in the core and modules were extended, to help analyzing problems or bugs. The full details can be found in the release Changelog or with the "git log" command.
+
+===== Bugfixes =====
+
+Countless bugfixes were implemented for this release in core, tools and modules. Furthermore the code base was scanned with several static analyzers, to detect otherwise hard to find bugs. The full details can be found in the release Changelog or with the "git log" command.
+
+===== New Modules =====
+
+==== 111 ====
+
+aaaa
+
+  * https://www.kamailio.org/docs/modules/5.5.x/modules/a.html
+
+===== New in existing Modules =====
+
+==== 111 ====
+
+  * aaa
+  * bbb
+
+===== New in Core =====
+
+  * aaa
+  * bbb
+
+==== Command line arguments ====
+
+  * aaa 
+
+==== Interpreter ====
+
+==== Parameters ====
+
+  * aaa
+
+==== Functions ====
+
+==== Memory Managers ====
+
+  * aaa
+
+==== Architecture ====
+
+  * aaa
+
+==== kamailio.cfg ====
+
+  * aaa
+
+===== Tools =====
+
+  * aaa
+
+==== kamcmd ====
+
+==== kamctl ====
+
+  * aaa
+
+==== kamdbctl ====
+
+  * aaa
+
+==== kamcli ====
