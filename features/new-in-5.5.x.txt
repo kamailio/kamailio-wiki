@@ -38,6 +38,10 @@ aaaa
 
   * export route check functions to kemi
 
+==== crypto ====
+
+  * add crypto_hmac_sha256() function
+
 ==== corex ====
 
   * add rpc command shm.info
@@ -54,11 +58,15 @@ aaaa
 ==== dialog ====
 
   * logging improvements
+  * internal locking improvements
 
 ==== dispatcher ====
 
   * update state if sending keepalive OPTIONS fails
   * sync on updating last used fields
+  * internal refactoring
+  * add an attribute to preset the latency estimator
+  * congestion control logic refactoring, to handle mis-configuration gracefully
 
 ==== evapi ====
 
@@ -67,6 +75,10 @@ aaaa
 ==== http_async_client ====
 
   * set curl memory callbacks in module initialization
+
+==== imc ====
+
+  * jump over printing error log messages when list commands are ok
 
 ==== ims_charging ====
 
@@ -93,6 +105,15 @@ aaaa
 
   * extension related to reverse search functionality
 
+==== jansson ====
+
+  * Add en-/decode to/from xavp function
+  * internal refactoring
+
+==== janssonrpcc ====
+
+  * internal refactoring
+
 ==== kex ====
 
   * use mutex to sync the mod mem stats rpc commands
@@ -108,21 +129,33 @@ aaaa
 
   * print to stderror if sending log message fails
 
+==== nathelper ====
+
+  * fix_nated_sdp added support for a=rtcp param RFC3605
+
+==== ndb_redis ====
+
+  * fix cluster support
+  * logging improvements
+
 ==== msrp ====
 
   * proper parsing ipv6 host part in uri
 
-==== registrar ====
+==== mqueue ====
 
-  * documentation improvements
+  * use HTTP status codes for rpc
+  * add rpc mqueue.sizes to return queue sizes
+  * add more rpc features
 
-==== rr ====
+==== permissions ====
 
-  * new function loose_route_mode(vmode), to specify certain loose routing behaviour
+  * exported allow_trusted() to kemi
 
 ==== pike ====
 
-  * rpc pike.top, support for case insensitive match of parameter
+  * add rpc function pike.top, support for case insensitive match of parameter
+  * add pike_check_ip(ipaddr), check the parameter ipaddr in the pike tree
 
 ==== pua ====
 
@@ -134,13 +167,34 @@ aaaa
   * new transformation {uri.suri} to get the simple routing uri, keep only transport parameter, if exists
   * new transformation {uri.duri} to get the uri needed for destination address (e.g., sip:host:port;transport=tcp)
   * new transformation {uri.saor} to get the sip aor (sip:[user@]domain)
+  * add xavp_slist_explode(), breaks a string in tokens by separators, storing them in xavp
 
 ==== p_usrloc ====
 
   * reworking of mdb_availability_control functionality
 
+==== registrar ====
+
+  * documentation improvements
+  * add functionality to store advertised address instead of bind address in socket field, default is existing behaviour
+
+==== rtpengine ====
+
+  * support new codec flags, adds explicit support for codec-set and codec-except.
+
+==== rr ====
+
+  * new function loose_route_mode(vmode), to specify certain loose routing behaviour
+  * use safer msg_ctx_id_t checks for asserting validity of cached param value
+
 ==== rtp_media_server ====
+
   * update to mediastreamer 4.4.0
+  * state transition improvement, fix disconnection while in bridge,
+
+==== sanity ====
+
+  * extended check 4 (required headers) for uniqueness, Call-ID, CSeq, From and To have to present only once
 
 ==== sipdump ====
 
@@ -151,10 +205,24 @@ aaaa
 
   * exec event_route[siptrace:msg] on message replication with core events
 
+==== sqlops ====
+
+  * new modparam results_maxsize, allow setting the maximum size of the result containers list
+
+==== textops ====
+
+  * correct behaviour for append_hf, adds header after last header occurance
+
 ==== topoh ====
 
   * remove the Via cookie when skipping topoh via event route
   * event route is now executed with parsed sip message to be sent out
+  * execute msg-outgoing and msg-sending event routes, similar to topos module
+
+==== topos ====
+
+  * update to-tag and rr on reply even to-tag is already set
+  * store branch record before dialog record
 
 ==== tls ====
 
@@ -163,10 +231,13 @@ aaaa
 ==== tm ====
 
   * logging improvements
+  * do not add duplicate headers in local requests
+  * Instead of passing the to be evaluated reply as the "best" reply, pass the actual "best" reply.
 
 ==== tmx ====
 
   * safety check of expected route blocks for using $T_*() variables
+  * Allow $T_branch(flags) in onreply_route
 
 ==== textops ====
 
@@ -188,6 +259,10 @@ aaaa
   * export ka_logmsg parameter to kemi
   * print Route header name in keepalive when Path is present
   * export modparam to set keepalive timeout
+  * use unsigned int for rpc output for the fields having this type
+  * do keepalive-based contact expire on internal callback
+  * set last keepalive value to current time on new records
+  * also send keepalive over ws and wss connections
 
 ==== xhttp_prom ====
 
@@ -195,16 +270,22 @@ aaaa
 
 ===== New in Core =====
 
-  * add websocket even support
+  * add websocket event support
   * several build infrastructure improvements for MacOS with clang compiler
   * support for gcc 10.x compiler in build infrastructure
   * add a global flag in shared memory to detect server shutdown
   * build improvements for FreeBSD
-  * skip abort() in free_lump() for LUMPFLAG_DUPED for proper branch route support
+  * remove internal abort() calls in certain lump handling related functions
+  * improve http/2 support, support also requests, internal refactoring
+  * logging improvements for core utility functions, DB1 API and other
+  * relocation and refactoring on core ip addr handling code
+  * Zero terminate str copies made with pkg_str_dup() and shm_str_dup()
+  * Refactor tcp flags to enum, add more typedefs
 
 ==== SIP parser ====
 
   * simplify implementation, use static map for header name and type for parsing
+  * logging improvements
 
 ==== Command line arguments ====
 
@@ -218,10 +299,16 @@ aaaa
 
   * add sip_parser_log core parameter to log parser error with a certain log level
   * add hdr_name_extra_chars parameter to allow specific characters in header names
+  * new parameter ipv6_hex_style, default is the now lowercase and compact, to follow recommendations of RFC5952, section 4.2.1 and 4.3
+  * new parameter sip_parser_mode, allow to control how sip parser behaves and how strict it is, default is existing mode
 
 ==== Functions ====
 
-  * helper functions to search variants of str in another str
+  * add utility helper functions to search variants of str in another str
+  * add parser wrapper function to parse str header name
+  * add kemi function hdr.match_content(hname, op, mval, hidx)
+  * add tcp helper function to send data over ws/wss connection
+
 
 ==== Memory Managers ====
 
@@ -238,7 +325,7 @@ aaaa
 
 ===== Tools =====
 
-  * aaa
+  * pdbt: use more relaxed permission when creating files
 
 ==== kamcmd ====
 
