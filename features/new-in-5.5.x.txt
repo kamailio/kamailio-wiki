@@ -30,6 +30,10 @@ aaaa
   * add to-tag for locally generated replies
   * use sent reason phrase for locally generated replies
 
+==== auth_radius ====
+
+  * add VENDOR() definition if the freeradius-client library does not contain one already
+
 ==== async ====
 
   * fix async_ms_route and export it to kemi
@@ -118,6 +122,7 @@ aaaa
 
   * use mutex to sync the mod mem stats rpc commands
   * add pkg.info rpc command, to get details about pkg manager
+  * internal refactoring and optimization
 
 ==== keepalive ====
 
@@ -137,6 +142,10 @@ aaaa
 
   * fix cluster support
   * logging improvements
+
+==== misc_radius ====
+
+  * add VENDOR() definition if the freeradius-client library does not contain one already
 
 ==== msrp ====
 
@@ -253,6 +262,7 @@ aaaa
   * restore first display name then uri with dialog callback
   * support to set contact address in uacreg database record, enable per registration contact address
   * allow empty contact addr in rpc add command for uacreg, it has to be set to .
+  * logging and documentation improvements
 
 ==== usrloc ====
 
@@ -263,6 +273,10 @@ aaaa
   * do keepalive-based contact expire on internal callback
   * set last keepalive value to current time on new records
   * also send keepalive over ws and wss connections
+
+==== xhttp_server ====
+
+  * internal improvements for xpath search function
 
 ==== xhttp_prom ====
 
@@ -308,7 +322,7 @@ aaaa
   * add parser wrapper function to parse str header name
   * add kemi function hdr.match_content(hname, op, mval, hidx)
   * add tcp helper function to send data over ws/wss connection
-
+  * add utility helper function to search a token before an end pointer
 
 ==== Memory Managers ====
 
