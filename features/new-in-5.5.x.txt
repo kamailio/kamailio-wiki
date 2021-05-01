@@ -39,8 +39,8 @@ New module providing json web token generation and validation functions
 
 ==== stirshaken ====
 
-New module adding support to implement STIR-Shaken authentication and verification functions (STI-AS/VS)
-   
+New module adding support to implement STIR-Shaken authentication and verification functions
+
   * https://www.kamailio.org/docs/modules/5.5.x/modules/stirshaken.html
    
 ==== lwsc ====
