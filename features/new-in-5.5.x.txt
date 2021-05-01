@@ -11,6 +11,8 @@
 
 Many fixes were done to the modules, missing parameter were added, wrong parameter or function names fixed and explanation or clarifications added. Furthermore many debug messages in the core and modules were extended, to help analyzing problems or bugs. The full details can be found in the release Changelog or with the "git log" command.
 
+A few parameters and also modules were renamed in this release. For details please refer to the module documentation .
+
 ===== Bugfixes =====
 
 Countless bugfixes were implemented for this release in core, tools and modules. Furthermore the code base was scanned with several static analyzers, to detect otherwise hard to find bugs. The full details can be found in the release Changelog or with the "git log" command.
@@ -56,6 +58,10 @@ New module adding websocket client connector for interaction with external syste
   * new parameter acc_extra_nullable to set NULL for variables that are $null
   * adapt database scheme to support for acc_extra_nullable and cdr_extra_nullable
 
+==== acc_json ====
+
+  * add parameter to accept pre-encoded json values
+
 ==== app_lua ====
 
   * improve support for functions with many parameter
@@ -91,6 +97,7 @@ New module adding websocket client connector for interaction with external syste
 ==== crypto ====
 
   * add crypto_hmac_sha256() function
+  * add two new parameters to provide interoperability with existing crypto libraries
 
 ==== corex ====
 
@@ -104,6 +111,8 @@ New module adding websocket client connector for interaction with external syste
 ==== cplc ====
 
   * permanent contacts are not skipped by lookup anymore
+  * add new redirect and add ignore3xx parameter
+  * rpc command and documentation improvements
 
 ==== db_postgres ====
 
@@ -115,6 +124,8 @@ New module adding websocket client connector for interaction with external syste
   * use more standard terms in documentation
   * add support for additional transport protocols for DMQ, like TCP or TLS
   * add support to specify a notification address multiple times, to be able to specify multiple servers in the configuration
+  * new function dmq_process_message(), similar to dmq_handle_message(), but processes the dmq message immediately
+  * add dmq.remove rpc command
 
 ==== dmq_usrloc ====
 
@@ -169,6 +180,7 @@ New module adding websocket client connector for interaction with external syste
 ==== ims_charging ====
 
   * use correct default User-Equipment-Info-Type AVP format
+  * export functions to kemi
 
 ==== ims_usrloc_scscf ====
 
@@ -287,6 +299,13 @@ New module adding websocket client connector for interaction with external syste
   * update_version_puadb() use pres_id to select record
   * fix send_publish() behavior on PUA_DB_ONLY
 
+==== pua_dialoginfo ====
+
+  * add publish_dialog_req_within parameter
+  * add callee_entity_when_publish_disabled parameter
+  * new parameter attribute_display to configure display name setting
+  * skip requests that do not control call state
+
 ==== pv ====
 
   * new transformation {uri.suri} to get the simple routing uri, keep only transport parameter, if exists
@@ -339,6 +358,7 @@ New module adding websocket client connector for interaction with external syste
   * new function secsipid_get_url(url, ovar), convenience function to get the content of an URL and store the result
   * improve build process by using pkg-config
   * redesign to use per-process API functions
+  * make it possible to verify certificates
 
 ==== sl ====
 
@@ -348,6 +368,7 @@ New module adding websocket client connector for interaction with external syste
 
   * use proper length for concatenated SMS according to TS 23.040, section 9.2.3.16
   * fix parsing of validity period
+  * improvements in decode_3gpp_sms() and pv_sms_body()
 
 ==== sipdump ====
 
@@ -357,6 +378,7 @@ New module adding websocket client connector for interaction with external syste
 ==== siptrace ====
 
   * exec event_route[siptrace:msg] on message replication with core events
+  * fallback to udp if send sock is not set
 
 ==== sqlops ====
 
@@ -382,6 +404,9 @@ New module adding websocket client connector for interaction with external syste
   * store branch record before dialog record
   * added rr_update modparam, to control if record-route should be updated for requests within dialog
   * handle 100 response completely, as they might be needed from other modules
+  * add functionality to set a variable host part for the Contact header
+  * use a common xavu variable instead of different AVPs to control Contact header creation
+  * uniform processing for requests during early dialog, requests that are handled during 1xx state, like PRACK, UPDATE, BYE
 
 ==== topos_redis ====
 
@@ -393,6 +418,8 @@ New module adding websocket client connector for interaction with external syste
   * support compilation without deprecated OpenSSL APIs
   * export function KSR.tls.cget(aname) to kemi
   * add ca_path config option to configure tls certificate paths
+  * add tls_set_connect_server_id(srvid) function, set the server id of the tls profile to be used by next client connect
+  * don't use OpenSSL < 1.0.2 fallback on version 1.1+
 
 ==== tm ====
 
@@ -430,7 +457,11 @@ New module adding websocket client connector for interaction with external syste
 
 ==== uac_redirect ====
 
-  * Make default q-value configurable, default value is the existing one
+  * make default q-value configurable, default value is the existing one
+
+==== userblacklist ====
+
+  * renamed to userblocklist module
 
 ==== usrloc ====
 
@@ -513,7 +544,9 @@ New module adding websocket client connector for interaction with external syste
 
 ==== Memory Managers ====
 
-  *  define mem_counter struct in meminfo for all memory managers
+  * define mem_counter struct in meminfo for all memory managers
+  * synchronize tlsf malloc with upstream version 3.1
+  * debugging output improvements
 
 ==== Architecture ====
 
@@ -554,5 +587,6 @@ New module adding websocket client connector for interaction with external syste
 
   * proper id format for dbtext records
   * increased contact_addr_len entity to 255, e.g. for IMS use-cases
+  * db scheme updates to usrbloclist and topos modules
 
 ==== kamcli ====
