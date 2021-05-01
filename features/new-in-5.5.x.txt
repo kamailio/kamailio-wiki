@@ -23,6 +23,30 @@ New module to delegate sip message processing to a group of workers
 
   * https://www.kamailio.org/docs/modules/5.5.x/modules/sworker.html
 
+==== lrkproxy ====
+
+New rtp relay module, use kernel based forwarding controlled via an external application
+
+  * https://www.kamailio.org/docs/modules/5.5.x/modules/lrkproxy.html
+
+==== jwt ====
+
+New module providing json web token generation and validation functions
+
+  * https://www.kamailio.org/docs/modules/5.5.x/modules/jwt.html
+
+==== stirshaken ====
+
+New module adding support to implement STIR-Shaken authentication and verification functions (STI-AS/VS)
+   
+  * https://www.kamailio.org/docs/modules/5.5.x/modules/stirshaken.html
+   
+==== lwsc ====
+
+New module adding websocket client connector for interaction with external system, not for usual SIP forwarding
+
+  * https://www.kamailio.org/docs/modules/5.5.x/modules/lwsc.html
+
 ===== New in existing Modules =====
 
 ==== acc ====
@@ -32,6 +56,18 @@ New module to delegate sip message processing to a group of workers
   * new parameter acc_extra_nullable to set NULL for variables that are $null
   * adapt database scheme to support for acc_extra_nullable and cdr_extra_nullable
 
+==== app_lua ====
+
+  * improve support for functions with many parameter
+
+==== app_python3 ====
+
+  * improve thread handling related to deprecated APIs
+
+==== app_jsdt ====
+
+  * duktape interpreter upgraded to v2.6.0
+
 ==== auth_radius ====
 
   * add VENDOR() definition if the freeradius-client library does not contain one already
@@ -39,6 +75,10 @@ New module to delegate sip message processing to a group of workers
 ==== async ====
 
   * fix async_ms_route and export it to kemi
+
+==== carrierroute ====
+
+  * replace existing warning mechanism related to carrier/domain probabilities
 
 ==== cfgutils ====
 
@@ -54,17 +94,27 @@ New module to delegate sip message processing to a group of workers
 
 ==== corex ====
 
-  * add rpc command shm.info
-  * add rpc command shm.stats
+  * add rpc command shm.info and shm.stats
+  * add is_socket_name(sockname) config function
 
 ==== ctl ====
 
   * skip handling rpc commands if kamailio is in shutdown phase
 
+==== cplc ====
+
+  * permanent contacts are not skipped by lookup anymore
+
+==== db_postgres ====
+
+  * added parameter to control postgresql database connection parameters
+
 ==== dmq ====
 
   * new parameter notification_channel to set the channel id for peer notifications
   * use more standard terms in documentation
+  * add support for additional transport protocols for DMQ, like TCP or TLS
+  * add support to specify a notification address multiple times, to be able to specify multiple servers in the configuration
 
 ==== dmq_usrloc ====
 
@@ -101,11 +151,16 @@ New module to delegate sip message processing to a group of workers
 ==== http_client ====
 
   * add http_client_get() function to do explicit GET request with headers (and body)
+  * improve http_client_request to include default clientcert, clientkey etc..
+  * http_client_request (api) content-type header support, including a content-type argument implemented as new function 
 
 ==== http_async_client ====
 
   * set curl memory callbacks in module initialization
   * add http_time pseudovariable
+  * disable HTTP/2 multiplexing
+  * fix build with older versionss of libcurl
+  * add curl_follow_redirect parameter
 
 ==== imc ====
 
@@ -147,14 +202,15 @@ New module to delegate sip message processing to a group of workers
 
 ==== jsonrpcs ====
 
-  * exported dispatch() function to kemi
+  * export dispatch() function to kemi
 
 ==== kemix ====
 
-  * exported function get_rcvadvip() and get_rcvadvport()
-  * exported functions to get socket string and name
+  * export function get_rcvadvip() and get_rcvadvport()
+  * export functions to get socket string and name
   * add functions to get contact header uri
-  * exported functions to get define values
+  * export functions to get define values
+  * export get_srcuri() to kemi
 
 ==== kex ====
 
@@ -173,14 +229,26 @@ New module to delegate sip message processing to a group of workers
 
   * print to stderror if sending log message fails
 
+==== lost ====
+
+  * add Geolocation header value list support
+  * new features and attributes for LoST redirect, dynamic HELD url resolving and LoST NAPTR
+
+
 ==== nathelper ====
 
   * fix_nated_sdp added support for a=rtcp param RFC3605
+  * improve logging
 
 ==== ndb_redis ====
 
   * fix cluster support
   * logging improvements
+  * add result check when reconnecting
+
+==== mohqueue ====
+
+  * add support for ptime matching
 
 ==== misc_radius ====
 
@@ -196,15 +264,23 @@ New module to delegate sip message processing to a group of workers
   * add rpc mqueue.sizes to return queue sizes
   * add more rpc features
 
+==== path ====
+
+  * add option to set received parameter name
+
 ==== permissions ====
 
-  * exported allow_trusted() to kemi
+  * export allow_trusted() to kemi
   * enforce limit in reload interval time, add reload_delta parameter to configure rate limit
 
 ==== pike ====
 
   * add rpc function pike.top, support for case insensitive match of parameter
   * add pike_check_ip(ipaddr), check the parameter ipaddr in the pike tree
+
+==== pipelimit ====
+
+  * added pl_active() - return true if pipe is active
 
 ==== pua ====
 
@@ -219,6 +295,9 @@ New module to delegate sip message processing to a group of workers
   * add xavp_slist_explode(), breaks a string in tokens by separators, storing them in xavp
   * new variable $Rn - return receiving socket name
   * new variable $defn(name), return the value of a define converted to number
+  * add $fsp, return send socket port, or 0 if $fs not set
+  * new transformations {s.after,char} and {s.before,char}
+  * new transformation class urialias, encode/decode uri alias values (addr~port~proto)
 
 ==== p_usrloc ====
 
@@ -234,7 +313,10 @@ New module to delegate sip message processing to a group of workers
 
   * support new codec flags, adds explicit support for codec-set and codec-except.
   * add CRC32 hash algorithm for message hashing
-  * query round-trip-time per call leg 
+  * query round-trip-time per call leg
+  * improve IPv6 handling for database mode and in other situations
+  * improve node fallback if node ran out of ports
+  * improve node connection for any skipped nodes due to dns or connection issues on kamailio startup
 
 ==== rr ====
 
@@ -255,6 +337,8 @@ New module to delegate sip message processing to a group of workers
   * add parameter to set url file cache options
   * add secsipid_check_identity_pubkey(pubkeyVal) function to check the identity header validity with a public key
   * new function secsipid_get_url(url, ovar), convenience function to get the content of an URL and store the result
+  * improve build process by using pkg-config
+  * redesign to use per-process API functions
 
 ==== sl ====
 
@@ -263,6 +347,7 @@ New module to delegate sip message processing to a group of workers
 ==== smsops ====
 
   * use proper length for concatenated SMS according to TS 23.040, section 9.2.3.16
+  * fix parsing of validity period
 
 ==== sipdump ====
 
@@ -281,6 +366,9 @@ New module to delegate sip message processing to a group of workers
 
   * correct behaviour for append_hf, adds header after last header occurrence
   * added functions to manipulate the message body in the exported api
+  * add ends_with() function
+  * add search_str(), similar to search(), but performs the regex match over the parameter
+  * added str_find and str_ifind() functions to find a string inside another one
 
 ==== topoh ====
 
@@ -290,13 +378,21 @@ New module to delegate sip message processing to a group of workers
 
 ==== topos ====
 
-  * update to-tag and rr on reply even to-tag is already set
+  * update to-tag and record-route on reply even to-tag is already set
   * store branch record before dialog record
+  * added rr_update modparam, to control if record-route should be updated for requests within dialog
+  * handle 100 response completely, as they might be needed from other modules
+
+==== topos_redis ====
+
+  * do record-route update for requests within dialog based of flags
+  * support SUBSCRIBE dialogs
 
 ==== tls ====
 
   * support compilation without deprecated OpenSSL APIs
   * export function KSR.tls.cget(aname) to kemi
+  * add ca_path config option to configure tls certificate paths
 
 ==== tm ====
 
@@ -307,6 +403,8 @@ New module to delegate sip message processing to a group of workers
   * export t_relay_to_xxx protocol functions to kemi
   * export t_relay_to_<proto>(host, port) functions to kemi
   * correct 200 OK processing by proxy after a final non-2xx reply
+  * implemented t_uac_wait_block rpc command
+  * new parameter reply_relay_mode, default is 1, new behavior
 
 ==== tmx ====
 
@@ -330,6 +428,10 @@ New module to delegate sip message processing to a group of workers
   * logging and documentation improvements
   * new rpc command uac.reg_unregister to unregister records
 
+==== uac_redirect ====
+
+  * Make default q-value configurable, default value is the existing one
+
 ==== usrloc ====
 
   * export ka_logmsg parameter to kemi
@@ -339,6 +441,11 @@ New module to delegate sip message processing to a group of workers
   * do keepalive-based contact expire on internal callback
   * set last keepalive value to current time on new records
   * also send keepalive over ws and wss connections
+  * new parameter load_rank, allow to set the rank of the child to load the location records, default is current behavior
+
+==== xhttp ====
+
+  * add kemi funtion to return $hu, http uri
 
 ==== xhttp_server ====
 
@@ -348,23 +455,19 @@ New module to delegate sip message processing to a group of workers
 
   * add support for histogram metrics
 
+==== xmlrpc ====
+
+  * use <nil/> for null string values
+
 ===== New in Core =====
 
   * add websocket event support
   * several build infrastructure improvements for MacOS with clang compiler
   * support for gcc 10.x compiler in build infrastructure
-  * add a global flag in shared memory to detect server shutdown
   * build improvements for FreeBSD
   * remove internal abort() calls in certain lump handling related functions
   * improve http/2 support, support also requests, internal refactoring
   * logging improvements for core utility functions, DB1 API and other
-  * relocation and refactoring on core ip addr handling code
-  * Zero terminate str copies made with pkg_str_dup() and shm_str_dup()
-  * Refactor tcp flags to enum, add more typedefs
-  * Improvements in DNS support for NAPTR records
-  * add helper function to parse all contact headers to parser
-  * add functionality to delegate sip processing to a group of workers
-  * improve signal handling from system
 
 ==== SIP parser ====
 
@@ -374,14 +477,18 @@ New module to delegate sip message processing to a group of workers
 ==== Command line arguments ====
 
   * new command line parameter --cfg-print to output the config file by evaluating includes ifdefs, subst and define pre-processor directive
+  * add --atexit=val cli parameter, to skip atexit callbacks execution from external libraries, default is existing behavior
 
-==== Interpreter ====
+==== Config interpreter ====
 
-  * exported core route function to kemi
+  * export core route function to kemi
   * new preprocessor directive #!defenv ID=ENVVAR, define an ID to the value of an environment variable with the name ENVVAR, also possible to use #!defenv ENVVAR
   * new event_route[core:pre-routing], executed before running config script for SIP messages, if received from the network  
+  * add $envn(name) - return environment variable as int number
+  * add selval(evalexpr, valexp1, valexpr2) to return second or third parameter depending on first parameter evaluation
+  * new core directive modparamx() alternative, where all its parameters are evaluated for config script variables
 
-==== Parameters ====
+==== Config parameters ====
 
   * add sip_parser_log core parameter to log parser error with a certain log level
   * add hdr_name_extra_chars parameter to allow specific characters in header names
@@ -389,14 +496,20 @@ New module to delegate sip message processing to a group of workers
   * new parameter sip_parser_mode, allow to control how sip parser behaves and how strict it is, default is existing mode
   * add local_rport parameter, similar to add_local_rport() but set globally
   * new parameter async_workers_group to define groups of async worker processes
+  * new parameters to enable waiting for child one worker initialization
 
-==== Functions ====
+==== Internal functions ====
 
   * add utility helper functions to search variants of str in another str
   * add parser wrapper function to parse str header name
   * add kemi function hdr.match_content(hname, op, mval, hidx)
+  * add helper function to parse all contact headers
+  * add functionality to delegate sip processing to a group of workers
   * add tcp helper function to send data over ws/wss connection
   * add utility helper function to search a token before an end pointer
+  * add xavu_serialize_fields function
+  * add functions to shm-duplicate str in a block
+  * add module version control function
 
 ==== Memory Managers ====
 
@@ -406,6 +519,16 @@ New module to delegate sip message processing to a group of workers
 
   * further migration of many modules to use core SHM_MEM_ERROR and PKG_MEM_ERROR defines
   * add CAP_CHOWN capability to Kamailio systemd service files to allow chown needed for some modules
+  * add a global flag in shared memory to detect server shutdown
+  * relocation and refactoring on core ip addr handling code
+  * Zero terminate str copies made with pkg_str_dup() and shm_str_dup()
+  * Refactor tcp flags to enum, add more typedefs
+  * Improvements in DNS support for NAPTR records
+  * improve signal handling from system
+  * increase network interface handling buffer from 8kb to 32kb, improve logging
+  * improve automatic binding for IPv6 addresses
+  * new option BUILD_NEW_LOCAL_VIA to recreate the local via
+  * improve to tag suffix generation to use more input values for randomness
 
 ==== kamailio.cfg ====
 
@@ -416,12 +539,16 @@ New module to delegate sip message processing to a group of workers
 
   * pdbt: use more relaxed permission when creating files
   * misc/tools/kemi: lua tools useful for using Kamailio with KEMI Lua scripts
+  * support for fuzzing integration based on oss-fuzz
+  * use github worker for continous integration instead of travis-ci
 
 ==== kamcmd ====
 
 ==== kamctl ====
 
-  * aaa
+  * option for rpc command to replace tokens in parameters
+  * use tm.t_uac_wait_block rpc for ping command
+  * added srv debug subcommand to control server debug level
 
 ==== kamdbctl ====
 
