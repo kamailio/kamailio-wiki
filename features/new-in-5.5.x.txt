@@ -17,11 +17,11 @@ Countless bugfixes were implemented for this release in core, tools and modules.
 
 ===== New Modules =====
 
-==== 1111 ====
+==== sworker ====
 
-aaaa
+New module to delegate sip message processing to a group of workers
 
-  * https://www.kamailio.org/docs/modules/5.5.x/modules/a.html
+  * https://www.kamailio.org/docs/modules/5.5.x/modules/sworker.html
 
 ===== New in existing Modules =====
 
@@ -29,6 +29,8 @@ aaaa
 
   * add to-tag for locally generated replies
   * use sent reason phrase for locally generated replies
+  * new parameter acc_extra_nullable to set NULL for variables that are $null
+  * adapt database scheme to support for acc_extra_nullable and cdr_extra_nullable
 
 ==== auth_radius ====
 
@@ -42,6 +44,10 @@ aaaa
 
   * export route check functions to kemi
 
+==== cfgt ====
+
+  * logging improvements
+
 ==== crypto ====
 
   * add crypto_hmac_sha256() function
@@ -53,7 +59,12 @@ aaaa
 
 ==== ctl ====
 
-  * skip handling rpc commands if kamilio is in shutdown phase
+  * skip handling rpc commands if kamailio is in shutdown phase
+
+==== dmq ====
+
+  * new parameter notification_channel to set the channel id for peer notifications
+  * use more standard terms in documentation
 
 ==== dmq_usrloc ====
 
@@ -63,6 +74,7 @@ aaaa
 
   * logging improvements
   * internal locking improvements
+  * skip CSEQ updates for certain messages
 
 ==== dispatcher ====
 
@@ -70,15 +82,30 @@ aaaa
   * sync on updating last used fields
   * internal refactoring
   * add an attribute to preset the latency estimator
-  * congestion control logic refactoring, to handle mis-configuration gracefully
+  * congestion control logic refactoring, to handle misconfiguration gracefully
+  * add test no-dns flag to skip ip matching for hostnames
+  * dispatcher add new algorithm 13, latency optimized round-robin with failover
+
+==== drouting ====
+
+  * enable SRV DNS queries
 
 ==== evapi ====
 
-  * export async_unicast() to kemi
+  * export async_unicast() and async_multicast() to kemi
+
+==== htable ====
+
+  * improve DMQ synchronisation for hash table operations
+
+==== http_client ====
+
+  * add http_client_get() function to do explicit GET request with headers (and body)
 
 ==== http_async_client ====
 
   * set curl memory callbacks in module initialization
+  * add http_time pseudovariable
 
 ==== imc ====
 
@@ -118,6 +145,17 @@ aaaa
 
   * internal refactoring
 
+==== jsonrpcs ====
+
+  * exported dispatch() function to kemi
+
+==== kemix ====
+
+  * exported function get_rcvadvip() and get_rcvadvport()
+  * exported functions to get socket string and name
+  * add functions to get contact header uri
+  * exported functions to get define values
+
 ==== kex ====
 
   * use mutex to sync the mod mem stats rpc commands
@@ -129,6 +167,7 @@ aaaa
   * logging improvements
   * improvements in internal data structure passing to other modules
   * prevent race condition when deleting a destination
+  * improve module initialization logic
 
 ==== log_custom ====
 
@@ -160,6 +199,7 @@ aaaa
 ==== permissions ====
 
   * exported allow_trusted() to kemi
+  * enforce limit in reload interval time, add reload_delta parameter to configure rate limit
 
 ==== pike ====
 
@@ -177,6 +217,8 @@ aaaa
   * new transformation {uri.duri} to get the uri needed for destination address (e.g., sip:host:port;transport=tcp)
   * new transformation {uri.saor} to get the sip aor (sip:[user@]domain)
   * add xavp_slist_explode(), breaks a string in tokens by separators, storing them in xavp
+  * new variable $Rn - return receiving socket name
+  * new variable $defn(name), return the value of a define converted to number
 
 ==== p_usrloc ====
 
@@ -185,15 +227,18 @@ aaaa
 ==== registrar ====
 
   * documentation improvements
-  * add functionality to store advertised address instead of bind address in socket field, default is existing behaviour
+  * add functionality to store advertised address instead of bind address in socket field, default is existing behavior
+  * allow taking expires value from xavp_cfg expires field
 
 ==== rtpengine ====
 
   * support new codec flags, adds explicit support for codec-set and codec-except.
+  * add CRC32 hash algorithm for message hashing
+  * query round-trip-time per call leg 
 
 ==== rr ====
 
-  * new function loose_route_mode(vmode), to specify certain loose routing behaviour
+  * new function loose_route_mode(vmode), to specify certain loose routing behavior
   * use safer msg_ctx_id_t checks for asserting validity of cached param value
 
 ==== rtp_media_server ====
@@ -204,6 +249,20 @@ aaaa
 ==== sanity ====
 
   * extended check 4 (required headers) for uniqueness, Call-ID, CSeq, From and To have to present only once
+
+==== secsipid ====
+
+  * add parameter to set url file cache options
+  * add secsipid_check_identity_pubkey(pubkeyVal) function to check the identity header validity with a public key
+  * new function secsipid_get_url(url, ovar), convenience function to get the content of an URL and store the result
+
+==== sl ====
+
+  * add new function send_reply_mode() to control the execution mode
+
+==== smsops ====
+
+  * use proper length for concatenated SMS according to TS 23.040, section 9.2.3.16
 
 ==== sipdump ====
 
@@ -220,7 +279,8 @@ aaaa
 
 ==== textops ====
 
-  * correct behaviour for append_hf, adds header after last header occurance
+  * correct behaviour for append_hf, adds header after last header occurrence
+  * added functions to manipulate the message body in the exported api
 
 ==== topoh ====
 
@@ -236,12 +296,17 @@ aaaa
 ==== tls ====
 
   * support compilation without deprecated OpenSSL APIs
+  * export function KSR.tls.cget(aname) to kemi
 
 ==== tm ====
 
   * logging improvements
   * do not add duplicate headers in local requests
-  * Instead of passing the to be evaluated reply as the "best" reply, pass the actual "best" reply.
+  * Instead of passing the to be evaluated reply as the "best" reply, pass the actual "best" reply
+  * fix ordering of contact loading after proportional loading extensions
+  * export t_relay_to_xxx protocol functions to kemi
+  * export t_relay_to_<proto>(host, port) functions to kemi
+  * correct 200 OK processing by proxy after a final non-2xx reply
 
 ==== tmx ====
 
@@ -263,6 +328,7 @@ aaaa
   * support to set contact address in uacreg database record, enable per registration contact address
   * allow empty contact addr in rpc add command for uacreg, it has to be set to .
   * logging and documentation improvements
+  * new rpc command uac.reg_unregister to unregister records
 
 ==== usrloc ====
 
@@ -295,6 +361,10 @@ aaaa
   * relocation and refactoring on core ip addr handling code
   * Zero terminate str copies made with pkg_str_dup() and shm_str_dup()
   * Refactor tcp flags to enum, add more typedefs
+  * Improvements in DNS support for NAPTR records
+  * add helper function to parse all contact headers to parser
+  * add functionality to delegate sip processing to a group of workers
+  * improve signal handling from system
 
 ==== SIP parser ====
 
@@ -303,11 +373,13 @@ aaaa
 
 ==== Command line arguments ====
 
-  * aaa 
+  * new command line parameter --cfg-print to output the config file by evaluating includes ifdefs, subst and define pre-processor directive
 
 ==== Interpreter ====
 
   * exported core route function to kemi
+  * new preprocessor directive #!defenv ID=ENVVAR, define an ID to the value of an environment variable with the name ENVVAR, also possible to use #!defenv ENVVAR
+  * new event_route[core:pre-routing], executed before running config script for SIP messages, if received from the network  
 
 ==== Parameters ====
 
@@ -315,6 +387,8 @@ aaaa
   * add hdr_name_extra_chars parameter to allow specific characters in header names
   * new parameter ipv6_hex_style, default is the now lowercase and compact, to follow recommendations of RFC5952, section 4.2.1 and 4.3
   * new parameter sip_parser_mode, allow to control how sip parser behaves and how strict it is, default is existing mode
+  * add local_rport parameter, similar to add_local_rport() but set globally
+  * new parameter async_workers_group to define groups of async worker processes
 
 ==== Functions ====
 
@@ -336,10 +410,12 @@ aaaa
 ==== kamailio.cfg ====
 
   * set load_backends to 1 for permissions module, the config uses only address table
+  * improve checks related to SIP scanning tools
 
 ===== Tools =====
 
   * pdbt: use more relaxed permission when creating files
+  * misc/tools/kemi: lua tools useful for using Kamailio with KEMI Lua scripts
 
 ==== kamcmd ====
 
