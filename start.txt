@@ -145,6 +145,7 @@ Documentation and functions exported to KEMI framework, that can be used in embe
 ===== Features =====
 
   * [[features:new-in-devel|New Features in Devel Version]]
+  * [[features:new-in-5.5.x|New Features in Release 5.5.x]]
   * [[features:new-in-5.4.x|New Features in Release 5.4.x]]
   * [[features:new-in-5.3.x|New Features in Release 5.3.x]]
   * [[features:new-in-5.2.x|New Features in Release 5.2.x]]
