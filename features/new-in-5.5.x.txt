@@ -590,3 +590,11 @@ New module adding websocket client connector for interaction with external syste
   * db scheme updates to usrbloclist and topos modules
 
 ==== kamcli ====
+
+  * major enhancements and many new features
+  * embedded interactive shell
+  * tab completions and history suggestions in embedded shell
+  * command line syntax highlighting in embedded shell
+  * command aliases and remapping
+  * new subcommands: pstrap, pkg, shm, pipelimit, sipreq
+  * supported backend databases: mysql, mariadb, postgres, sqlite
