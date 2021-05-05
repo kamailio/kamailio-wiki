@@ -49,6 +49,12 @@ New module adding websocket client connector for interaction with external syste
 
   * https://www.kamailio.org/docs/modules/5.5.x/modules/lwsc.html
 
+==== secsipid_proc ====
+
+Pseudo-module providing per-proces STIR/SHAKEN API from libsecsipid.
+
+  * https://www.kamailio.org/docs/modules/5.5.x/modules/secsipid_proc.html
+
 ===== New in existing Modules =====
 
 ==== acc ====
