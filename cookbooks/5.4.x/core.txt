@@ -492,7 +492,7 @@ Example of usage:
 
 ==== status ====
 
-If used in onreply_route, this variable is a referece to the status code of the reply. If it used in a standard route block, the variable is a reference to the status of the last reply sent out for the current request.
+If used in **onreply_route**, this variable is a reference to the status code of the reply. If used in a standard route block, the variable is a reference to the status of the last reply sent out for the current request.
 
 Example of usage:
 <code c>
