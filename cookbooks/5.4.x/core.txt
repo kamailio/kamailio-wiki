@@ -682,7 +682,7 @@ This is a reference to the list of local IP addresses, hostnames and aliases tha
 
 The variable can be used to test if the host part of an URI is in the list. The usefulness of this test is to select the messages that has to be processed locally or has to be forwarded to another server.
 
-See "alias" to add hostnames,IP addresses and aliases to the list.
+See **alias** to add hostnames, IP addresses and aliases to the list.
 
 Example of usage:
 <code c>
