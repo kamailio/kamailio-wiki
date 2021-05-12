@@ -128,7 +128,7 @@ There are three types of values:
 
   * integer - numbers of 32bit size
   * boolean - aliases to 1 (true, on, yes) or 0 (false, off, no)
-  * string - tokens enclosed in between double or single quotes
+  * string - tokens enclosed in double or single quotes
 
 
 Example:
