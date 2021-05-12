@@ -511,6 +511,7 @@ In **onsend_route** it identifies the address family (see **af**) used to send t
 In **onsend_route** it contains the IP address used by Kamailio to send the message out.
 ==== snd_port ====
 
+In **onsend_route** it contains the port used by Kamailio to send the message out.
 ==== snd_proto ====
 
 In **onsend_route** it identifies the protocol (see **proto**) used to send the message out.
