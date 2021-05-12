@@ -63,7 +63,7 @@ listen=tcp:127.0.0.1:5060 advertise "sip.dns.example.com":5060
 
 This is the second section of the configuration file, containing the directives to load modules and set their parameters.
 
-It contains the directives **loadmodule** and **modparam**. In the default configuration file starts with the line setting the path to modules (the assignment to **mpath** core parameter.
+It contains the directives **loadmodule** and **modparam**. In the default configuration file it starts with the line setting the path to modules (the assignment to **mpath** core parameter).
 
 Example of content:
 
