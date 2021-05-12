@@ -508,6 +508,7 @@ Example of usage:
 In **onsend_route** it identifies the address family (see **af**) used to send the message out.
 ==== snd_ip ====
 
+In **onsend_route** it contains the IP address used by Kamailio to send the message out.
 ==== snd_port ====
 
 ==== snd_proto ====
