@@ -151,7 +151,7 @@ Example:
 
 ==== Identifiers ====
 
-Identifiers are tokens which are not enclosed in single or double quotes and to match the rules for integer or boolean values.
+Identifiers are tokens which are not enclosed in single or double quotes and don't match the rules for integer or boolean values.
 
 For example, the identifiers are the core parameters and functions, module functions, core keywords and statements.
 
