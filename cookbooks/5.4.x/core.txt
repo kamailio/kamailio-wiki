@@ -505,6 +505,7 @@ Example of usage:
 
 ==== snd_af ====
 
+In **onsend_route** it identifies the address family (see **af**) used to send the message out.
 ==== snd_ip ====
 
 ==== snd_port ====
