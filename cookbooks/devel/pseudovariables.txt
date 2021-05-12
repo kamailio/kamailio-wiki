@@ -1098,6 +1098,27 @@ event_route[core:msg-received] {
 }
 </code>
 
+==== $rpl(key) ====
+
+Attributes of the SIP reply processed at that moment. The variables must be used during SIP reply processing, otherwise it returns $null.
+
+The key can be:
+
+  * duri - SIP URI corresponding to the address where the SIP reply is going to be sent based on 2nd via
+  * dhost - host part of duri
+  * dport - port part of duri
+  * dproto - proto part of duri
+  * dprotoid - proto id of duri
+  * cntvia - the number of Via header bodies
+
+Example of usage:
+
+<code c>
+reply_route{
+  xinfo("reply to be sent to: $rpl(duri)\n");
+}
+</code>
+
 ===== Send Data Attributes =====
 
 ==== $sndfrom(name) ====
