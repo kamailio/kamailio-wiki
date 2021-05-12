@@ -544,6 +544,7 @@ Example of usage:
 In **onsend_route** it contains the destination IP address where the message will be sent to.
 ==== to_port ====
 
+In **onsend_route** it contains the destination port where the message will be sent to.
 ==== to_uri ====
 
 This variable can be used to test the value of URI from To header.
