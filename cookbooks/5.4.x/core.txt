@@ -541,6 +541,7 @@ Example of usage:
 
 ==== to_ip ====
 
+In **onsend_route** it contains the destination IP address where the message will be sent to.
 ==== to_port ====
 
 ==== to_uri ====
