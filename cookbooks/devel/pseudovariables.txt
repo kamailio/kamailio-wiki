@@ -1056,6 +1056,24 @@ Example:
 xlog("The time is $utimef(%m/%d/%y %H:%M:%S)\n");
 </code>
 
+===== $ccp(key) - Config Custom Parameters =====
+
+Get the value for global custom parameters:
+
+  * https://www.kamailio.org/wiki/cookbooks/devel/core#custom_global_parameters
+
+
+Example:
+
+<code c>
+gv.sval = "hello" desc "hello var"
+gv.ival = 10 desc "ten var"
+
+request_route {
+    xinfo("global vars: $ccp(gv.sval) :: $ccp(gv.ival)\n");
+}
+</code>
+
 ===== $sel(name) - Selects =====
 
 **$sel(name)** - return the value of **select** specified by name. **select** refers a class of config variables introduced by SER 2.0, allowing to select and return parts of sip messages and not only.
