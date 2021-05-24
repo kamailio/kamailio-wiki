@@ -83,6 +83,7 @@ All global parameters related to dst blocking are now using blocklist instead of
 For example, **use_dst_blacklist** used in older versions has to be replaced by **use_dst_blocklist**.
 ==== Misc ====
 
+  * **#!substdef "/match/replacement/flags"** evaluates the **replacement** for variables to be coherent with **#!subst**, if there are variables that should not be evaluated during pre-processing phase, use **$$** at the beginning of variable (e.g., **$$var(x)***
 ===== Database =====
 
 
