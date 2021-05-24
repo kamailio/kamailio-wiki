@@ -101,6 +101,7 @@ UPDATE version SET table_version=2 WHERE TABLE_NAME='topos_t';
 
 -- uacreg table
 ALTER TABLE uacreg ADD COLUMN contact_addr varchar(255) NOT NULL DEFAULT '';
+UPDATE version SET table_version=5 WHERE TABLE_NAME='uacreg';
 
 -- IMPORTANT: see also the notes about the userblocklist module
 </code>
