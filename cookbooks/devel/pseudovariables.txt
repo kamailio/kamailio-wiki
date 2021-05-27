@@ -898,9 +898,9 @@ $xavi(WhatEver=>FoO) = 123; # <- set the value
 ===== $hdr(name) - Headers =====
 
 
-**$hdr(name)** - represents the body of first header identified by 'name'
+**$hdr(name)** - represents the body of first header field identified by 'name'
 
-**$(hdr(name)[N])** - represents the body of the N-th header identified by 'name'.
+**$(hdr(name)[N])** - represents the body of the N-th header field identified by 'name'.
 
 If [N] is omitted then the body of the first header is printed. The body of first header is returned when N=0, for the second N=1, a.s.o. In case of a comma-separated multi-body headers, it returns all the bodies, comma-separated. To print the last header of that type, use -1, or other negative values to count from the end. No white spaces are allowed inside the specifier (before }, before or after {, [, ] symbols). When N='*', all headers of that type are printed.
 
@@ -918,6 +918,27 @@ if($hdr(From)=~"kamailio\.org") {
 
 <fc #0000ff>It is read-only variable. You can remove or add headers using functions from textops module.</fc>
 
+===== $hfl(name) - Header Field With List Of Bodies =====
+
+Similar to **$hdr(name)**, but for some of the standard headers that can have many bodies serialized in the same header field (i.e., comma separated list of bodies in same header field) is able to return the individual body values.
+
+Implemented for:
+
+  * Via
+
+For the rest of the headers works like **$hdr(name)**.
+
+**$hfl(name)** - represents the first body of first header field identified by 'name'.
+
+**$(hfl(name)[N])** - represents the body of the N-th header field identified by 'name'.
+
+Example of usage:
+
+<code c>
+if($(hdr(Via)[1])=~"TLS") {
+...
+}
+</code>
 ===== $hdrc(name) - Number of Headers =====
 
 **$hdrc(name)** - get the number of headers with the respective name
