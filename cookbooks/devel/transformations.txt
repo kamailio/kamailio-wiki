@@ -535,6 +535,19 @@ Example:
 
 'delimiter' allows you to specify a single character to use as the parameter delimiter. For example, when parsing HTTP URL query strings use '&'.
 
+==== {param.in,name[,delimiter]} ====
+
+Return 1 if the parameter 'name' is found in parameters list, 0 if not found.
+
+Example:
+<code>
+"a=1;b=2;c=3"{param.in,c} = 1
+</code>
+
+'name' can be a pseudo-variable
+
+'delimiter' allows you to specify a single character to use as the parameter delimiter. For example, when parsing HTTP URL query strings use '&'.
+
 ==== {param.valueat,index[, delimiter]} ====
 
 Return the value of parameter at position give by 'index' (0-based index)
