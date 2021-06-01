@@ -35,7 +35,7 @@ kamailio -M 12 -m 128 ...
 There could be two reasons for getting insufficient memory log messages:
 
   * too small PKG or SHM - insufficient size to accommodate all data needed to be stored in memory
-  * memory leak - some part of code allocates memory at runtine and does not free it
+  * memory leak - some part of code allocates memory at runtime and does not free it
 
 ===== Monitoring Memory =====
 
