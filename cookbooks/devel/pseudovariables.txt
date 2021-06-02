@@ -924,6 +924,8 @@ Similar to **$hdr(name)**, but for some of the standard headers that can have ma
 
 Implemented for:
 
+  * Record-Route
+  * Route
   * Via
 
 For the rest of the headers works like **$hdr(name)**.
