@@ -937,7 +937,7 @@ For the rest of the headers works like **$hdr(name)**.
 Example of usage:
 
 <code c>
-if($(hdr(Via)[1])=~"TLS") {
+if($(hfl(Via)[1])=~"TLS") {
 ...
 }
 </code>
