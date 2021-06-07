@@ -660,7 +660,7 @@ $(var(x){line.count})
 
 ==== {line.at,pos} ====
 
-Return the line at position 'pos'. The index start from 0. Negative position can be used to count from last line (which is -1).
+Return the line at position 'pos'. The index start from 0. Negative position can be used to count from last line (which is -1). The pos can be also a variable holding the index value.
 
 Example:
 
