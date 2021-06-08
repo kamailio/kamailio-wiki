@@ -953,6 +953,24 @@ if($hdrc(Via) == 2) {
 }
 </code>
 
+===== $hflc(name) - Number of Header Bodies =====
+
+Similar to **$hdrc(name)**, but for some of the standard headers that can have many bodies serialized in the same header field (i.e., comma separated list of bodies in same header field) is able to count the number of individual bodies.
+
+Implemented for:
+
+  * Via
+
+For the rest of the headers works like **$hdrc(name)**.
+
+
+Example of usage:
+
+<code c>
+if($hflc(Via)==3) {
+...
+}
+</code>
 ===== $var(name) - Private memory variables (zero) =====
 
 **$var(name)** - refers to variables that can be used in configuration script, having integer or string value. This kind of variables are faster than AVPs, being referenced directly to memory location.
