@@ -924,6 +924,7 @@ Similar to **$hdr(name)**, but for some of the standard headers that can have ma
 
 Implemented for:
 
+  * Contact
   * Record-Route
   * Route
   * Via
