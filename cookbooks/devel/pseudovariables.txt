@@ -2497,8 +2497,25 @@ Colors could be:
   * w : White 
 
 
+===== $K(key) - Kamailio Constants =====
+
+$K(key) - return the numeric values corresponding to Kamailio configuration constants.
+
+The key can be:
+
+  * IPv4 - return AF_INET
+  * IPv6 - return AF_INET6
+  * UDP - return PROTO_UDP
+  * TCP - return PROTO_TCP
+  * TLS - return PROTO_TLS
+  * SCTP - return PROTO_SCTP
+  * WS - return PROTO_WS
+  * WSS - return PROTO_WSS
 
 
+<code c>
+xinfo("proto UDP numeric id: $K(UDP)\n");
+</code>
 ===== Examples =====
 
 
