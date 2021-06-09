@@ -1266,7 +1266,7 @@ event_route[sipdump:msg] {
 }
 event_route[siptrace:msg]
 {
-  $var(troubleshoot_ip) = $(siptrace(dst_uri){re.subst,/^(udp|tcp|tls):(.*):[0-9]*/\2/});
+  $var(troubleshoot_ip) = $(siptrace(dst_addr){re.subst,/^(udp|tcp|tls):(.*):[0-9]*/\2/});
   if (compare_ips($var(troubleshoot_ip), "[2001:DB8::1]")) {
       return;
   }
