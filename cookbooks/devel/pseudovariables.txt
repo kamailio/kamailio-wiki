@@ -960,6 +960,8 @@ Similar to **$hdrc(name)**, but for some of the standard headers that can have m
 
 Implemented for:
 
+  * Record-Route
+  * Route
   * Via
 
 For the rest of the headers works like **$hdrc(name)**.
