@@ -1258,12 +1258,6 @@ The name can be:
 Example:
 
 <code c>
-
-event_route[sipdump:msg] {
-  if($sipdump(len) > 1024) {
-    ...
-  }
-}
 event_route[siptrace:msg]
 {
   $var(troubleshoot_ip) = $(siptrace(dst_addr){re.subst,/^(udp|tcp|tls):(.*):[0-9]*/\2/});
