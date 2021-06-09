@@ -1252,8 +1252,8 @@ event_route[sipdump:msg] {
 
 The name can be:
 
-  * src_uri - source socket
-  * dst_uri - destination socket
+  * src_addr - source socket address (proto:ip:port)
+  * dst_addr - destination socket address (proto:ip:port)
 
 Example:
 
