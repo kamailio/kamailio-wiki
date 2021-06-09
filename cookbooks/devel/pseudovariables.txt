@@ -1858,7 +1858,7 @@ Seconds and microseconds taken from struct timeval. The time at that moment is r
 
 ==== $nh(key) ====
 
-Return attributes of next hop for the SIP request. Address is taken from dst_uri, if set, if not from new r-uri or original r-uri.
+Return attributes of next hop for the SIP messages. For SIP requests, the address is taken from dst_uri, if set, if not from new r-uri or original r-uri. For SIP replies, the attributes are taken from 2nd Via header (username is always $null for SIP replies).
 
   * $nh(u) - uri (lower case u)
   * $nh(U) - username (upper case u)
