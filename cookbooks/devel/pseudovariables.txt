@@ -1256,16 +1256,27 @@ The name can be:
 
   * src_addr - source socket address (proto:ip:port)
   * dst_addr - destination socket address (proto:ip:port)
+  * src_host - source host, for IPv6 host contains `[]`
+  * dst_host - destination host, for IPv6 host contains `[]`
+  * src_hostip - source host, for IPv6 host do not contains `[]`
+  * dst_hostip - destination host, for IPv6 host do not contains `[]`
+  * src_port - source port
+  * dst_port - destination port
+  * src_proto - source proto
+  * dst_proto - destination proto
 
 Example:
 
 <code c>
 event_route[siptrace:msg]
 {
-  $var(troubleshoot_ip) = $(siptrace(dst_addr){re.subst,/^(udp|tcp|tls):(.*):[0-9]*/\2/});
-  if (compare_ips($var(troubleshoot_ip), "[2001:DB8::1]")) {
-      return;
-  }
+    if (allow_address("1", "$siptrace(src_hostip)", "0")) {
+        return;
+
+    }
+    if (compare_ips($siptrace(src_host), "[2001:DB8::1]")) {
+        return;
+    }
 }
 </code>
 
