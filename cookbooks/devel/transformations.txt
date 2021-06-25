@@ -380,13 +380,21 @@ Count how many times c appears in the pv value.
 
 ==== {s.after,x} ====
 
-Return the part of the string after the character **x**. If the character **x** is not found, it returns empty string.
+Return the part of the string after the character **x** searched from the start of the value. If the character **x** is not found, it returns empty string.
 
 <code c>
 "abcdef"{s.after,c}
 # will return "def"
 </code>
 
+==== {s.rafter,x} ====
+
+Return the part of the string after the character **x** searched from the end of the value. If the character **x** is not found, it returns empty string.
+
+<code c>
+"abcdefcgh"{s.rafter,c}
+# will return "gh"
+</code>
 ==== {s.before,x} ====
 
 Return the part of the string before the character **x**. If the character **x** is not found, it returns the entire input string.
