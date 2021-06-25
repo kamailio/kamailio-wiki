@@ -409,8 +409,24 @@ Return the part of the string before the character **x** searched from the start
 Return the part of the string before the character **x** searched from the end of the value. If the character **x** is not found, it returns the entire input string.
 
 <code c>
-"abcdefcgf"{s.rbefore,c}
+"abcdefcgh"{s.rbefore,c}
 # will return "abcdef"
+</code>
+
+==== {s.fmtlines,n,m} ====
+
+Format the value in lines of n characters, adding m spaces to the start of each new line (not to first line). Each line is ended with "\r\n" apart of last line.
+
+<code c>
+"abcdefgh"{s.fmtlines,4,2}
+</code>
+
+==== {s.fmtlinet,n,m} ====
+
+Format the value in lines of n characters, adding m tabs to the start of each new line (not to first line). Each line is ended with "\r\n" apart of last line.
+
+<code c>
+"abcdefgh"{s.fmtlinet,4,2}
 </code>
 ==== {s.urlencode.param} ====
 
