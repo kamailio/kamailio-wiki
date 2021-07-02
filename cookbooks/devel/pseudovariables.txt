@@ -2506,6 +2506,20 @@ $ltt(key) - return local generated To-tag when Kamailio sends a reply
   * $ltt(t) - the to-tag used in transaction stateful replies (transaction has to be created at that time, eg., by t_newtran() or in a branch/failure route, otherwise it returns $null)
   * $ltt(x) - $ltt(t) if the transaction was created already, otherwise $ltt(s)
 
+===== $via0(attr) - Via[0] Attributes =====
+
+$via0(attr) - attributes of first Via header.
+
+The attr can be:
+
+  * host - host part (string)
+  * port - port (number)
+  * proto - protocol - transport part (string)
+  * protoid - protocol id (integer id)
+  * branch - branch parameter
+  * rport - rport parameter value (string)
+  * received - received parameter value (string)
+  * i - i parameter value (string)
 ===== tcpops module variable =====
 
 $tcp(key) - return TCP connection attributes.
