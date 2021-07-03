@@ -2520,6 +2520,10 @@ The attr can be:
   * rport - rport parameter value (string)
   * received - received parameter value (string)
   * i - i parameter value (string)
+
+===== $viaZ(attr) - Last Via Attributes =====
+
+$viaZ(attr) - attributes of last Via header. The attr can be the same as for $via0(attr).
 ===== tcpops module variable =====
 
 $tcp(key) - return TCP connection attributes.
