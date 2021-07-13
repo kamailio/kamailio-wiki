@@ -2521,6 +2521,10 @@ The attr can be:
   * received - received parameter value (string)
   * i - i parameter value (string)
 
+===== $via1(attr) - Second Via Attributes =====
+
+$via1(attr) - attributes of second Via header. The attr can be the same as for $via0(attr).
+
 ===== $viaZ(attr) - Last Via Attributes =====
 
 $viaZ(attr) - attributes of last Via header. The attr can be the same as for $via0(attr).
