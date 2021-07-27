@@ -1160,7 +1160,7 @@ event_route[core:msg-received] {
 }
 </code>
 
-==== $rpl(key) ====
+===== $rpl(key) =====
 
 Attributes of the SIP reply processed at that moment. The variables must be used during SIP reply processing, otherwise it returns $null.
 
@@ -1181,6 +1181,23 @@ reply_route{
 }
 </code>
 
+===== $msgbuf(index) =====
+
+Get or set the character in the message buffer at the position index.
+
+The index has to be a positive integer or a variable holding such value.
+
+Note that the variable returns a clone of the character stored in a static buffer, copy it to another variable if you want to compare with another $msgbuf(index).
+
+The update is done directly and immediately in the message buffer -- use it with care!
+
+Example of usage:
+
+<code c>
+if ($msgbuf(20)=="V") {
+    $msgbuf(20) = "v";
+}
+</code>
 ===== Send Data Attributes =====
 
 ==== $sndfrom(name) ====
