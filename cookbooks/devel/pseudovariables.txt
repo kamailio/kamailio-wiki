@@ -1230,7 +1230,7 @@ Example:
 
 ===== Body Line Iterator =====
 
-====== $blitval(iname) ======
+==== $blitval(iname) ====
 
 The value of the body line iterator.
 
