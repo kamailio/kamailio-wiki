@@ -1214,7 +1214,7 @@ Example:
     hf_iterator_end("i1");
 </code>
 
-====== $hfitbody(iname) ======
+==== $hfitbody(iname) ====
 
 The header body of the header field iterator.
 
