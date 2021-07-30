@@ -1198,6 +1198,53 @@ if ($msgbuf(20)=="V") {
     $msgbuf(20) = "v";
 }
 </code>
+===== Header Field Iterator =====
+
+====== $hfitname(iname) ======
+
+The header name of the header field iterator.
+
+Example:
+
+<code c>
+    hf_iterator_start("i1");
+    while(hf_iterator_next("i1")) {
+        xlog("hdr[$hfitname(i1)] is: $hfitbody(i1)\n");
+    }
+    hf_iterator_end("i1");
+</code>
+
+====== $hfitbody(iname) ======
+
+The header body of the header field iterator.
+
+Example:
+
+<code c>
+    hf_iterator_start("i1");
+    while(hf_iterator_next("i1")) {
+        xlog("hdr[$hfitname(i1)] is: $hfitbody(i1)\n");
+    }
+    hf_iterator_end("i1");
+</code>
+
+===== Body Line Iterator =====
+
+====== $blitval(iname) ======
+
+The value of the body line iterator.
+
+Example:
+
+<code c>
+    bl_iterator_start("b1");
+    while(bl_iterator_next("b1")) {
+        xlog("body line: $blitval(b1)");
+    }
+    bl_iterator_end("b1");
+</code>
+
+
 ===== Send Data Attributes =====
 
 ==== $sndfrom(name) ====
