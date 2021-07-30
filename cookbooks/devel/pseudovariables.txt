@@ -1200,7 +1200,7 @@ if ($msgbuf(20)=="V") {
 </code>
 ===== Header Field Iterator =====
 
-====== $hfitname(iname) ======
+==== $hfitname(iname) ====
 
 The header name of the header field iterator.
 
