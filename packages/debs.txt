@@ -20,6 +20,12 @@ The list of APT repositories and associated operating systems is available at:
 
   * **https://deb.kamailio.org**
 
+====== DEB Packages Archive ======
+
+Starting with August 25, 2021, an archive with apt repositories corresponding to Kamailio stable versions is available at:
+
+  * **https://deb-archive.kamailio.org**
+
 ===== Using OBS Repository =====
 
 ==== Status ====
