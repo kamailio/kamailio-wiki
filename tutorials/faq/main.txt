@@ -227,6 +227,14 @@ Updating From/To headers is recommended to be done in **branch_route**, speciall
 
 The examples above were with assignments to $fU (can be other vars as well, such as $fu, $tU, $tu, ..), but it is the same behaviour when using functions such as uac_replace_from() or uac_replace_to().
 
+??? Why body or other parts of the SIP message appear multiple times?
+
+!!! It is practically the same reason as for multiple From/To parts.
+
+The configuration file does an operation that changes parts in the headers or body many times. For example, if the body has two concatenated IP addresses for media stream, then likely the rtpproxy function is used twice, or, if the SDP appears two time, then the rtpengine function is used two times.
+
+If the update has to be done many times, use **msg_apply_changes()** in between, otherwise refactor the config to perform the operation only once (e.g., the RTP relaying functions should be used in a branch_route block).
+
 ??? How to set different header values for each destination of a SIP request?
 
 !!! Set the value of the header inside a **branch_route**.
