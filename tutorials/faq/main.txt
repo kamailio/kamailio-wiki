@@ -359,7 +359,7 @@ You can increase the debug parameter value to 3 in the configuration file, resta
 ??? Does Kamailio relay media streams?
 
 !!! No, //however// Kamailio can be configured to proxy media if needed. 
-  * [[http://www.kamailio.org/docs/modules/stable/|See rtpproxy, iptrtpproxy, and mediaproxy]]
+  * [[http://www.kamailio.org/docs/modules/stable/|See rtpengine, rtpproxy, lrkproxy, or mediaproxy]]
 
 ??? What codecs are supported by Kamailio?
 
