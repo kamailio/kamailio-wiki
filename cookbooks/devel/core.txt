@@ -2013,7 +2013,7 @@ See function //via_use_xavp_fields()// from "corex" module.
 
 ===== DNS Parameters =====
 
-Note: See also file doc/dns.txt for details about Kamailio's DNS client.
+Note: See also file doc/tutorials/dns.txt for details about Kamailio's DNS client.
 
 Kamailio has an internal DNS resolver with caching capabilities. If this caching resolver is activated (default setting) then the system's stub resolver won't be used. Thus, also local name resolution configuration like /etc/hosts entries will not be used. If the DNS cache is deactivated (use_dns_cache=no), then system's resolver will be used. The DNS failover functionality in the tm module references directly records in the DNS cache (which saves a lot of memory) and hence DNS based failover only works if the internal DNS cache is enabled.
 
@@ -2156,7 +2156,7 @@ Example of usage:
 
 **Alias name: dns_srv_loadbalancing**
 
-Enable dns srv weight based load balancing (see doc/dns.txt)
+Enable dns srv weight based load balancing (see doc/tutorials/dns.txt)
 
   dns_srv_lb = yes | no (default no)
 
@@ -2172,7 +2172,7 @@ Example of usage:
     dns_try_ipv6=yes
 
 ==== dns_try_naptr ====
-Enable NAPTR support according to RFC 3263 (see doc/dns.txt for more info)
+Enable NAPTR support according to RFC 3263 (see doc/tutorials/dns.txt for more info)
     
   dns_try_naptr = yes | no (default no)
 
@@ -2183,7 +2183,7 @@ Enable NAPTR support according to RFC 3263 (see doc/dns.txt for more info)
 Set preference for each protocol when doing naptr lookups. By default dns_udp_pref=30, dns_tcp_pref=20, 
 dns_tls_pref=10 and dns_sctp_pref=20. To use the remote site preferences set all dns_*_pref to the same positive value (e.g. dns_udp_pref=1,
 dns_tcp_pref=1, dns_tls_pref=1, dns_sctp_pref=1). To completely ignore NAPTR records for a specific protocol, set the corresponding protocol 
-preference to -1 (or any other negative number). (see doc/dns.txt for more info)
+preference to -1 (or any other negative number). (see doc/tutorials/dns.txt for more info)
 
   dns_{udp,tcp,tls,sctp}_pref = number
 
