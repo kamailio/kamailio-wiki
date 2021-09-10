@@ -6,7 +6,7 @@ Version: Kamailio SIP Server v5.6.x (devel)
 
 This tutorial collects the functions and parameters exported by Kamailio core to configuration file.
 
-**Note:** The parameters on this page are **NOT** in alphabetical order. Test
+**Note:** The parameters on this page are **NOT** in alphabetical order.
 
 ===== Structure =====
 
