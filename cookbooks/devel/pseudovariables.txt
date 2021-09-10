@@ -2395,6 +2395,115 @@ Can return the following values:
   * 3 spare
 
 
+==== $sipt(redirection_info) / $sipt_redirection_info ===
+Returns the value of the Redirecting reason of the Call Diversion Information header from ISUP. 
+Returns -1 if there is a parsing error or if the Call Diversion Information is not present.
+
+Can return the following values:
+
+  * 0 Unknown
+  * 1 User busy
+  * 2 no reply
+  * 3 unconditional
+  * 4 deflection during alerting
+  * 5 deflection immediate response
+  * 6 mobile subscriber not reachable
+
+
+==== $sipt(redirection_number) / $sipt_redirection_number ===
+Returns the value (Address signal) of the Redirection Number.
+Returns -1 if there is a parsing error or if the Redirection Number is not present.
+
+Example:
+<code c>
+# get the redirection number
+$avp(s:redir_num) = $sipt(redirection_number);
+</code>
+
+
+==== $sipt(redirection_number.nai) / $sipt_redirection_number_nai ===
+Returns the value of the Nature of Address Indicator of the Redirection Number. Returns -1 if there is a parsing error or if the Redirection Number is not present.
+
+Can return the following values:
+
+  * 0 Spare
+  * 1 Subscriber Number (national use)
+  * 2 Unknown (national use)
+  * 3 National (significant) number
+  * 4 International use
+
+
+==== $sipt(calling_party_number) ===
+Returns the value (Address signal) of the Calling Party for the IAM message.
+Returns -1 if there is a parsing error or if the Calling Party Number is not present.
+
+
+==== $sipt(called_party_number) ===
+Returns the value (Address signal) of the Called Party for the IAM message.
+Returns -1 if there is a parsing error or if the Called Party Number is not present.
+
+
+==== $sipt(sipt_redirection_information_reason) ===
+Returns the value of the Redirection reason of the Redirection information header from ISUP. 
+Returns -1 if there is a parsing error or if the Redirection information is not present.
+
+
+==== $sipt(sipt_redirection_information_original_reason) ===
+Returns the value of the Original Redirection reason of the Redirection information header from ISUP. 
+Returns -1 if there is a parsing error or if the Redirection information is not present.
+
+
+==== $sipt(redirecting_number.nai) ===
+Returns the value of the Nature of Address Indicator of the Redirecting Number. Returns -1 if there is a parsing error or if the Redirecting Number is not present.
+
+Can return the following values:
+
+  * 0 Spare
+  * 1 Subscriber Number (national use)
+  * 2 Unknown (national use)
+  * 3 National (significant) number
+  * 4 International use
+
+
+==== $sipt(redirecting_number) ===
+Returns the value (Address signal) of the Redirecting Number for the IAM message.
+Returns -1 if there is a parsing error or if the Redirecting Number is not present.
+
+
+==== $sipt(original_called_number.nai) ===
+Returns the value of the Nature of Address Indicator of the Original Called Number. Returns -1 if there is a parsing error or if the Original Called Number is not present.
+
+Can return the following values:
+
+  * 0 Spare
+  * 1 Subscriber Number (national use)
+  * 2 Unknown (national use)
+  * 3 National (significant) number
+  * 4 International use
+
+
+==== $sipt(original_called_number) ===
+Returns the value (Address signal) of the Original Called Number for the IAM message.
+Returns -1 if there is a parsing error or if the Original Called Number is not present.
+
+
+==== $sipt(generic_number.nai) ===
+Returns the value of the Nature of Address Indicator of the Generic Number. Returns -1 if there is a parsing error or if the Generic Number is not present.
+
+Can return the following values:
+
+  * 0 Spare
+  * 1 Subscriber Number (national use)
+  * 2 Unknown (national use)
+  * 3 National (significant) number
+  * 4 International use
+
+
+==== $sipt(generic_number) ===
+Returns the value (Address signal) of the Generic Number for the IAM message.
+Returns -1 if there is a parsing error or if the Generic Number is not present.
+
+
 ===== $cfg(key) - Config File Attributes =====
 
 Attributes related to configuration file.
