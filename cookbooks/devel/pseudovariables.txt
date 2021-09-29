@@ -2195,6 +2195,18 @@ Return attributes of SIP message:
   * $msg(hdrs) - sip message headers
   * $msg(fline) - sip message first line
 
+===== POSOPS Module =====
+
+==== $pos(key) ====
+
+Get attributes after a function of the module is executed.
+
+The key can be:
+
+  * ret - the return code on success or -1
+  * idx - position inside message buffer, for find/search it is the start of matching
+  * len - the length of matching string for search functions
+
 ===== XHTTP Module =====
 
 ==== $hu ====
