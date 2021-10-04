@@ -35,6 +35,7 @@ Following tokens are used to mark the changes:
 
 Impacted resources:
 
+  * version table, userblacklist and globalblacklist entries renamed to userblocklist and globalblocklist
   * database table **globalblacklist** renamed to **globalblocklist** - its definition is now:
 
 <code>
