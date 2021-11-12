@@ -3948,6 +3948,7 @@ The name of the log engine can be:
       * **a** - add log prefix as a special field
       * **A** - do not add log prefix
       * **c** - add Call-ID (when available) as a dedicated JSON attribute
+      * **j** - the log message field is printed in JSON structure format, detecting if it is enclosed in between **{ }** or adding it as a **text** field
       * **M** - strip EOL ('\n') from the value of the log message field
       * **N** - do not add EOL at the end of JSON document
 
