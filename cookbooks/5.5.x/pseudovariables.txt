@@ -517,7 +517,11 @@ The variable is exported by **rr** module and append_fromtag parameter must be e
 
 ==== $rs - SIP reply code ====
 
-**$rs** - reference to reply's status (status-code, response-code, reply-code)
+**$rs** - return status code for SIP replies and $null for SIP requests
+
+==== $rsi - SIP reply code - int ====
+
+**$rsi** - return status code for SIP replies and 0 for SIP requests
 
 ==== $rt - Refer-to URI ====
 
