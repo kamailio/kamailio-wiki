@@ -850,3 +850,25 @@ Decode from alias value to SIP URI.
 <code c>
 "127.0.0.1~5060~1"{urialias.decode} => "sip:127.0.0.1:5060;transport=udp"
 </code>
+
+===== Value Transformations  =====
+
+Exported by **pv** module.
+
+==== {val.json} ====
+
+If value is $null, return empty string; if value is string, then it is escaped for use as json value (without surrounding quotes.
+
+<code c>
+$var(x) = '"name" <sip:name@a.com>';
+$(var(x){val.json}) => \"name\" <sip:name@a.com>
+</code>
+
+==== {val.n0} ====
+
+Return integer 0 for values that are $null.
+
+<code c>
+$sht(a=>x) = $null;
+$(sht(a=>x){val.n0}) => 0
+</code>
