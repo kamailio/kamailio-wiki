@@ -1383,6 +1383,7 @@ Example of usage:
 
     maxbuffer=65536
 
+Note: it is not the size of the internal SIP message receive buffer.
 ==== max_branches ====
 
 The maximum number of outgoing branches for each SIP request. It has impact on the size of destination set created in core (e.g., via append_branch()) as well as the serial and parallel forking done via tm module. It replaces the old defined constant MAX_BRANCHES.
