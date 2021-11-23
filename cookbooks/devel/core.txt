@@ -1377,7 +1377,7 @@ The name can be the identifier of an embedded language interpreter, such as "lua
 
 ==== maxbuffer ====
 
-The size in bytes not to be exceeded during the auto-probing procedure of descovering the maximum buffer size for receiving UDP messages. Default value is 262144.
+The size in bytes not to be exceeded during the auto-probing procedure of discovering and increasing the maximum OS buffer size for receiving UDP messages (socket option SO_RCVBUF). Default value is 262144.
 
 Example of usage:
 
