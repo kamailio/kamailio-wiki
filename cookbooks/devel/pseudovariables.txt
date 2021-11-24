@@ -2056,7 +2056,25 @@ if($gip(src=>cc)==$gip(dst=>cc))
 
 ===== TLS Module =====
 
+==== $tls(key) ====
+
+Variables related to TLS communication and certificates.
+
+The **key** can be:
+
+  * **m_subject_line** - return local (my) certificate subject line
+  * **p_subject_line** - return remote (peer) certificate subject line
+
+Example:
+
+<code c>
+if(proto==TLS) {
+    xinfo("local certificate subject: $tls(m_subject_line)\n");
+}
+</code>
+
 ==== $tls_version ====
+
 The TLS/SSL version which is used on the TLS connection from which the message was received. String type.
 ==== $tls_description ====
 The TLS/SSL description of the TLS connection from which the message was received. String type.
