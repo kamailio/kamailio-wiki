@@ -2062,6 +2062,8 @@ Variables related to TLS communication and certificates.
 
 The **key** can be:
 
+  * **m_issuer_line** - return local (my) certificate issuer line
+  * **p_issuer_line** - return remote (peer) certificate issuer line
   * **m_subject_line** - return local (my) certificate subject line
   * **p_subject_line** - return remote (peer) certificate subject line
 
