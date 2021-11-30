@@ -171,6 +171,22 @@ $(branch(uri)[2]) = "sip:test@kamailio.org;transport=sctp";
 <code c>
 xlog("$$avp(x) fount $cnt($avp(x)) times\n");
 </code>
+
+**$cnt(xavp)** - return the number of xavps
+
+<code>
+ * $cnt($xavp(key[*])) : number of XAVPs "key".
+ * $cnt($xavp(key[n]=>sub[*])) : number of children "sub" in XAVP "key[n]".
+ * $cnt($xavp(key[*]=>sub[*])) : total number of children "sub" in all XAVPs "key".
+
+ * $cnt($xavp(key[n])) : 1 or 0 (if this index exists or not).
+ * $cnt($xavp(key[-n])) : same but with reverse indexing (-1 is the last index).
+
+ * $cnt($xavp(key[*]=>sub[n])) : number of children "sub[n]" that exist in all XAPVs "key".
+
+ * $cnt($xavp(key)) is the same as $cnt($xavp(key[*])).
+ * $cnt($xavp(key=>sub)) is the same as $cnt($xavp(key[*]=>sub[*]))
+</code>
 ==== $conid - TCP Connection ID ====
 
 **$conid** - The TCP connection ID of the connection the current message arrived on for TCP, TLS, WS, and WSS.  Set to $null for SCTP and UDP.
