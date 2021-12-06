@@ -4,7 +4,7 @@
 
 Date:
   * **Proposed: 15:00 UTC, Wednesday, Dec 15, 2021**
-    * can attend: dcm, ...
+    * can attend: dcm, qxork, ...
     * cannot attend:
 
 
@@ -39,6 +39,7 @@ Participation is open to anyone, just join the chat room if you want to particip
 People adding notes in the agenda using abbreviations:
 
   * dcm - Daniel-Constantin Mierla
+  * qxork - Fred Posner
 
 ===== Agenda =====
 
