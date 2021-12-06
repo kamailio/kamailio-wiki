@@ -1,4 +1,4 @@
-====== Online IRC Devel Meeting - 2021-12-15 ======
+====== Online Devel Meeting - 2021-12-15 ======
 
 **Note: //the online meeting is planned to be hosted on a Matrix room where we will try to grant guest access and people can join via web browser. See more details below.//**
 
