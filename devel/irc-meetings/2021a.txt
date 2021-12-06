@@ -1,0 +1,77 @@
+====== Online IRC Devel Meeting - 2021-12-15 ======
+
+**Note: //the online meeting is planned to be hosted on a Matrix room where we will try to grant guest access and people can join via web browser. See more details below.//**
+
+Date:
+  * **Proposed: 15:00 UTC, Wednesday, Dec 15, 2021**
+    * can attend: dcm, ...
+    * cannot attend:
+
+
+Time of the meeting across the world:
+  * 16:00 - Berlin, Germany
+  * 15:00 - London, UK
+  * 10:00 - New York, USA
+  * 07:00 - Seattle, USA
+
+**Place:**
+  * Matrix chat room: **#kamailio:matrix.kamailio.dev**
+    * https://riot.kamailio.dev/#/room/#kamailio:matrix.kamailio.dev
+  * To join as a guest:
+    * go to: https://riot.kamailio.dev/#/welcome
+    * click on **Room Directory**
+    * then click on **kamailio** room to join it 
+
+
+Utilities:
+  * [[http://www.timeanddate.com/worldclock/converter.html|Time Converter]]
+  * Matrix resources
+    * website: https://matrix.org/
+      * it allows public registrations for getting a Matrix user account
+    * client applications: https://matrix.org/clients
+    * unofficial list of other public matrix servers: https://www.anchel.nl/matrix-publiclist/
+
+
+===== Participants =====
+
+Participation is open to anyone, just join the chat room if you want to participate.
+
+People adding notes in the agenda using abbreviations:
+
+  * dcm - Daniel-Constantin Mierla
+
+===== Agenda =====
+
+Kamailio Development Status:
+
+  * open issues (dcm)
+  * minor releases for 5.4 and 5.5 branches (dcm)
+  * tracker issues review:
+    * https://github.com/kamailio/kamailio/issues/
+  * packaging and distributions
+
+Administration:
+
+  * servers maintenance
+  * community interaction and communication channels
+  * existing mailing lists review
+
+Kamailio 5.6 (next major release):
+
+  * roadmap
+  * features
+    * anything relevant that is missing?
+    * priorities
+
+Documentation:
+
+  * tutorials/cookbooks -- wiki vs mkdocs (github markdown)
+
+Collaborative Projects:
+
+  * unit testing, documentation, etc.
+  * community announcements
+
+===== Transcript =====
+
+TBA
