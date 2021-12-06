@@ -394,7 +394,15 @@ Then it is like:
 </code>
 
 It is a simplified alternative of using **#!substdef** with **$env(NAME)** in the replacement part.
-    
+
+==== defenvs ====
+
+Similar to **#!defenv**, but the value is defined in between double quotes to make it convenient to be used as a string token.
+
+<code c>
+#!defenvs ENVVAR
+#!defenvs ID=ENVVAR
+</code>
 ==== subst ====
 
   * perform substitutions inside the strings of config (note that define is replacing only IDs - alphanumeric tokens not enclosed in quotes)
