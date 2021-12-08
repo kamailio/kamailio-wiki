@@ -2228,9 +2228,10 @@ Return attributes of SIP message:
   * $msg(buf) - sip message buffer
   * $msg(body) - sip message body
   * $msg(body_len) - sip message body length
-  * $msg(hdrs) - sip message headers
-  * $msg(fline) - sip message first line
-
+  * $msg(hdrs) - sip message headers (surrounding white space and EoL chars trimmed)
+  * $msg(fline) - sip message first line (surrounding white space and EoL chars trimmed)
+  * $msg(fpart) - sip message first line and the headers
+  * $msg(lpart) - sip message headers and the body
 ===== POSOPS Module =====
 
 ==== $pos(key) ====
