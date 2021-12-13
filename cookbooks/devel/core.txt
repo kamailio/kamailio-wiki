@@ -2447,9 +2447,21 @@ Set the source IP for all outbound TCP connections. If setting of the IP fails, 
   tcp_source_ipv6 = IPv6 address
 
 ==== tcp_syncnt ====
+
 Number of SYN retransmissions before aborting a connect attempt (see linux tcp(7) TCP_SYNCNT). Linux only.
 
   tcp_syncnt = number of syn retr. (default not set)
+
+
+==== tcp_wait_data ====
+
+Specify how long to wait (in milliseconds) to wait for data on tcp connections in certain cases. Now applies when reading on tcp connection for haproxy protocol.
+
+Default: 5000ms (5secs)
+
+<code c>
+tcp_wait_data = 10000
+</code>
 
 ==== tcp_wq_blk_size ====
 Block size used for tcp async writes. It should be big enough to hold a few datagrams. If it's smaller then a datagram (in fact a tcp write()) size, it will be rounded up. It has no influenced on the number of datagrams queued (for that see tcp_conn_wq_max or tcp_wq_max). It has mostly debugging and testing value (can be ignored).
