@@ -4,7 +4,7 @@
 
 Date:
   * **Proposed: 15:00 UTC, Wednesday, Dec 15, 2021**
-    * can attend: dcm, qxork, ...
+    * can attend: dcm, qxork, oej...
     * cannot attend: vseva
 
 
@@ -40,6 +40,7 @@ People adding notes in the agenda using abbreviations:
 
   * dcm - Daniel-Constantin Mierla
   * qxork - Fred Posner
+  * oej - Olle E Johansson
 
 ===== Agenda =====
 
@@ -63,6 +64,7 @@ Kamailio 5.6 (next major release):
   * features
     * anything relevant that is missing?
     * priorities
+  * Updating RPC with more responses (OEJ)
 
 Documentation:
 
