@@ -51,6 +51,9 @@ Kamailio Development Status:
   * tracker issues review:
     * https://github.com/kamailio/kamailio/issues/
   * packaging and distributions
+  * continuous integration
+    * what is left from travis-ci
+    * use of github actions
 
 Administration:
 
