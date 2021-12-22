@@ -1905,6 +1905,8 @@ The key can be:
   * ouri - Outbound proxy URI
   * hdrs - SIP Headers
   * body - Body
+  * flags - flags for processing
+    * 1 - the password is provided in HA1 format
   * auser - authentication username
   * apasswd - authentication password
   * sock - local socket to be used for sending (proto:address:port)
