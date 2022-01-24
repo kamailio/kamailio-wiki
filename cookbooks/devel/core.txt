@@ -1228,6 +1228,22 @@ The name has to be provided as a string enclosed in between quotes after the **n
 </code>
 
 Note that there is no internal check for uniqueness of the socket names, the admin has to ensure it in order to be sure the desired socket is selected, otherwise the first socket with a matching name is used.
+
+As of 5.6, there is now a **virtual** identifier which can be added to the end of teach listen directive. This can be used in combination with any other identifier, but must be added at the end of the line.
+
+<code c>
+    listen=udp:10.1.1.1:5060 virtual
+    listen=udp:10.0.0.10:5060 name "s1" virtual
+    listen=udp:10.10.10.10:5060 advertise 11.11.11.11:5060 virtual
+    listen=udp:10.10.10.20:5060 advertise "mysipdomain.com" name "s3" virtual
+</code>
+
+The **virtual** identifier is meant for use in situations where you have a floating/virtual IP address on your system that may not always be active on the system. It is particularly useful for active/active virtual IP situations, where otherwise things like usrloc PATH support can break due to incorrect "check_self" results.
+
+This identifier will change the behaviour of how "myself" or "check_self" matches against traffic destined to this IP address. By default, Kamailio always considers traffic destined to a listen IP as "local" regardless of if the IP is currently locally active. With this flag set, Kamailio will do an extra check to make sure the IP is currently a local IP address before considering the traffic as local. 
+
+This means that if Kamailio is listening on an IP that is not currently local, it will recognise that, and can relay the traffic to another Kamailio node as needed, instead of thinking it always needs to handle the traffic.
+
 ==== loadmodule ====
 
 Loads a module for later usage in the configuration script. The modules is searched in the path specified by **loadpath**.
