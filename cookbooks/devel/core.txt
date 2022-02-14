@@ -2462,7 +2462,7 @@ Specify if connection should be closed (set to CONN_ERROR) if processing the rec
 Default 0 (close connection)
 
 <code>
-tcp_script_mode
+tcp_script_mode = 1
 </code>
 
 ==== tcp_send_timeout ====
