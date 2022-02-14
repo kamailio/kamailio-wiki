@@ -2455,6 +2455,16 @@ Allows reuse of TCP ports. This means,for example, that the same TCP ports on wh
 
   tcp_reuse_port = yes (default no)
 
+==== tcp_script_mode ====
+
+Specify if connection should be closed (set to CONN_ERROR) if processing the received message results in error (that can also be due to negative return code from a configuration script main route block). If set to 1, the processing continues with the connection open.
+
+Default 0 (close connection)
+
+<code>
+tcp_script_mode
+</code>
+
 ==== tcp_send_timeout ====
 
 Time in seconds after a TCP connection will be closed if it is not available for writing in this interval (and Kamailio wants to send something on it). Lower this value for faster detection of broken TCP connections. The default value is 10s.
