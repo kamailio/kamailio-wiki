@@ -693,6 +693,8 @@ It is exported by **rr** module and has to be used after loose_route(). The appe
 
 **$tu** - reference to URI of 'To' header
 
+It is R/W variable (you can assign values to it directly in configuration file, but its value does not change)
+
 ==== $tU - To URI Username ====
 
 **$tU** - reference to username in URI of 'To' header
