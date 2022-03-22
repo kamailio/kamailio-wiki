@@ -674,6 +674,8 @@ Its value looks like:
 
 **$td** - reference to domain in URI of 'To' header
 
+<fc #0000FF>It is R/W variable (you can assign values to it directly in configuration file, but its value does not change)</fc>
+
 ==== $tn - To display name ====
 
 **$tn** - reference to display name of 'To' header
