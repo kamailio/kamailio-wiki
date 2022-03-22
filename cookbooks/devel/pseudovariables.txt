@@ -290,6 +290,8 @@ To reset $du:
 
 **$fn** - reference to display name of 'From' header
 
+<fc #0000ff>It is R/W variable (you can assign values to it directly in configuration file, but its value does not change)</fc>
+
 ==== $fs - Forced Send Socket ====
 
 **$fs** - reference to the forced send socket for the SIP message (if any) in the form "proto:ip:port". It is the socket from where Kamailio is going to send out the message.
