@@ -569,6 +569,9 @@ The variable is exported by **rr** module and append_fromtag parameter must be e
 
 **$Rp** - reference to the port where the message was received
 
+==== $Rn - Received socket name ====
+
+**$Rn** - reference to the name of the socket where the message was received
 ==== $RAu - Advertised socket URI ====
 
 **$RAu** - local socket where the SIP messages was received in URI format, without transport parameter for UDP, using advertised address when available.
