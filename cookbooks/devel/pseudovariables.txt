@@ -699,6 +699,8 @@ It is exported by **rr** module and has to be used after loose_route(). The appe
 
 **$tU** - reference to username in URI of 'To' header
 
+<fc #0000FF>It is R/W variable (you can assign values to it directly in configuration file, but its value does not change)</fc>
+
 ==== $tUl - To URI Username Length ====
 
 **$tU** - the length of the username in To URI
