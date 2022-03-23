@@ -94,3 +94,20 @@ You can test the existence of pid files before using kill, like:
         kill -HUP `cat /var/run/syslog-ng.pid`; \
     fi;
 </code>
+
+
+For **rsyslogd**:
+
+<code>
+/var/log/kamailio.log {
+        daily
+        missingok
+        rotate 14
+        compress
+        delaycompress
+        create 0644 root adm
+        postrotate
+                /usr/lib/rsyslog/rsyslog-rotate
+        endscript
+}
+</code>
