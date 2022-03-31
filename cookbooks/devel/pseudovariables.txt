@@ -2659,6 +2659,18 @@ The key can be:
   * text - text of the code for the JSONRPC response
   * body - the body of the JSONRPC response
 
+===== Evrexec Module =====
+
+==== $evr(key) ====
+
+evrexec attributes:
+
+  * $evr(data) - processing data
+  * $evr(srcip) - source ip
+  * $evr(srcport) - sourceport as string
+  * $evr(srcportno) - source port as number
+
+
 ===== Presence Module =====
 
 ==== $subs(key) - Subscription Attributes ====
