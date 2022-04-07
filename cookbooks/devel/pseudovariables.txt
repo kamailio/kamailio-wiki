@@ -2680,7 +2680,7 @@ The key can be:
 
 ===== $lsock(expr) =====
 
-Get attributes for listen sockets.
+Get attributes for listen sockets (from corex module).
 
 The **expr** is an expression specifying what to match and return, the format is:
 
