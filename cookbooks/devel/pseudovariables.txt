@@ -2659,6 +2659,43 @@ The key can be:
   * text - text of the code for the JSONRPC response
   * body - the body of the JSONRPC response
 
+===== $lsock(expr) =====
+
+Get attributes for listen sockets.
+
+The **expr** is an expression specifying what to match and return, the format is:
+
+<code>
+matchid/value/field
+</code>
+
+The **expr** can contain variables that are evaluated before parsing the expression.
+
+The **matchid** can be:
+
+  * n - match on name
+  * l - match on listen address
+
+The **value** specifies what to match with.
+
+The **field** can be (only first character matches):
+
+  * name - return name
+  * listen - return the listen address
+  * advertise - return the advertise address
+  * index - return the index in the list of all sockets
+
+Example:
+
+<code>
+listen=udp:127.0.0.1:5060 advertise 127.0.0.1:5090 name "s0"
+...
+xinfo("$lsock(n/s0/listen)\n");
+xinfo("$lsock(l/udp:127.0.0.1:5060/name)\n");
+$var(s0) = "n/s0/listen";
+xinfo("$lsock($var(s0))\n");
+</code>
+
 ===== Evrexec Module =====
 
 ==== $evr(key) ====
