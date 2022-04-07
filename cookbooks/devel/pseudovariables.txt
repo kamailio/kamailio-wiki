@@ -2269,36 +2269,47 @@ The key can be:
 ===== MSRP Module =====
 
 This class of pseudo-variables is exported by MSRP module and give access to attributes of MSRP frames.
+
 ==== $msrp(buf) ====
 
 The entire content of MSRP frame - first line, headers, body and end-line.
+
 ==== $msrp(body) ====
 
 The body of MSRP frame.
+
 ==== $msrp(code) ====
 
 The code of MSRP replies.
+
 ==== $msrp(hdrs) ====
 
 The headers in a MSRP frame.
+
 ==== $msrp(msgid) ====
 
 The body of Message-Id header.
+
 ==== $msrp(method) ====
 
 The method of a MSRP request.
+
 ==== $msrp(buflen) ====
 
 The length of entire MSRP frame.
+
 ==== $msrp(sessid) ====
 
 The session id for MSRP frame. It is taken from the first MSRP URI in To-Path header.
+
 ==== $msrp(reason) ====
 
 The reason text in a MSRP reply.
+
 ==== $msrp(crthop) ====
 
 The URI for current hop - it is the first URI in To-Path header.
+
 ==== $msrp(bodylen) ====
 
 The length of the body in MSRP frame.
@@ -2306,27 +2317,35 @@ The length of the body in MSRP frame.
 ==== $msrp(transid) ====
 
 The transaction ID from the first line of MSRP frame.
+
 ==== $msrp(prevhop) ====
 
 The MSRP URI of the previous hop - the first address in From-Path header.
+
 ==== $msrp(nexthop) ====
 
 The URI of the next hop - the second address in To-Path header.
+
 ==== $msrp(lasthop) ====
 
 The last hop URI - the last address in To-Path header.
+
 ==== $msrp(srcaddr) ====
 
 The address of the previous hop set as MSRP URI using received source IP and port.
+
 ==== $msrp(srcsock) ====
 
-The local socket where the MSRP frame was received, set as **proto:ipaddr:port".
+The local socket where the MSRP frame was received, set as **proto:ipaddr:port**.
+
 ==== $msrp(firsthop) ====
 
 The URI of the first hop - the last address in From-Path header.
+
 ==== $msrp(prevhops) ====
 
 The number of previous hops - it is the number of addresses in From-Path header.
+
 ==== $msrp(nexthops) ====
 
 The number of next hops - it is the number of addresses in To-Path header minus 1 (the first address in To-Path is current hop).
