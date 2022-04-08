@@ -877,6 +877,26 @@ $var(Custom-Data) = $(rb{json.parse,Custom-Data});
 
 </code>
 
+===== Socket Address Transformations =====
+
+Transformations related to socket address values (**proto:host:port**).
+
+==== {sock.host} ====
+
+Return the host part.
+
+==== {sock.port} ====
+
+Return the port part.
+
+==== {sock.proto} ====
+
+Return the proto part.
+
+==== {sock.touri} ====
+
+Return the socket address converted to SIP URI: **sip:host:port;transport=proto**.
+
 ===== URI Alias Transformations =====
 
 Transformations related to URI alias values (**addr~port~protoid**).
