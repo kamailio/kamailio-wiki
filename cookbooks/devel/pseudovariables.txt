@@ -2086,6 +2086,40 @@ if($gip(src=>cc)==$gip(dst=>cc))
 
 </code>
 
+==== $gip2(pvc=>key) ====
+
+Variables exported by GeoIP2 module, returning geo-location attributes. The attributes are populated upon calling function **geoip_match2(ipaddr, pvc)**.
+
+**pvc** (container id) is second parameter of geoip_match2(..) and **key** can be:
+
+  * cc - country code
+  * tz - time zone
+  * zip - postal code
+  * lat - latitude
+  * lon - longitude
+  * dma - dma code
+  * ips - ip start
+  * ipe - ip end
+  * city - city
+  * area - area code
+  * regc - region
+  * regn - region name
+  * metro - metro code
+  * contc - continent code
+
+You can call several time **geoip_match(ipaddr, pvc)** with different ip address and containers in your config, to compare, for example, attributes of source and destination of a call.
+
+<code c>
+geoip_match2("$si", "src");
+geoip_match2("$nh(d)", "dst");
+
+if($gip2(src=>cc)==$gip2(dst=>cc))
+{
+    # source and destination from same country
+}
+
+</code>
+
 ===== TLS Module =====
 
 ==== $tls(key) ====
