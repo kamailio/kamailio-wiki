@@ -438,6 +438,32 @@ Similar to **subst**, but in addition it adds a **#!define ID subst**.
 </code>
 
 Similar to **subst**, but in addition it adds a **#!define ID "subst"** (note the difference from #!substdef that the value for define is enclosed in double quotes, useful when the define is used in a place for a string value).
+
+==== trydefenv ====
+
+<code c>
+#!trydefenv ID=ENVVAR
+</code>
+
+Similar to **defenv**, but will not error if the environmental variable is not set.  This allows for boolean defines via system ENVVARs.  For example, using an environmental variable to toggle loading of db_mysql:
+
+<code c>
+#!trydefenv WITH_MYSQL
+
+#!ifdef WITH_MYSQL
+loadmodule "db_mysql.so"
+#!ifdef
+</code>
+
+==== trydefenvns ====
+
+Similar to **#!trydefenv**, but the value is defined in between double quotes to make it convenient to be used as a string token.
+
+<code c>
+#!trydefenvs ENVVAR
+#!trydefenvs ID=ENVVAR
+</code>
+
 ===== Core Keywords =====
 
 Keywords specific to SIP messages which can be used mainly in ''if'' expressions.
