@@ -1,363 +1,372 @@
-====== Lua API for Kamailio 4.3.x Version ======
+# Lua API for Kamailio 4.3.x Version
 
-===== Overview =====
+## Overview
 
-<code c>
+``` c
 Initial author:
     Daniel-Constantin Mierla
-</code>
+```
 
-Module **app_lua** allows execution of Lua scripts from SIP router configuration file, providing access to SIP message which is processed at that time.
-Exported functions by **app_lua** are available in the Lua script as package **sr**.
+Module **app_lua** allows execution of Lua scripts from SIP router
+configuration file, providing access to SIP message which is processed
+at that time. Exported functions by **app_lua** are available in the Lua
+script as package **sr**.
 
 References:
 
-  * **app_lua** module: [[http://kamailio.org/docs/modules/4.3.x/modules/app_lua.html|README]]
-  * **Lua**: http://www.lua.org
+-   **app_lua** module:
+    [README](http://kamailio.org/docs/modules/4.3.x/modules/app_lua.html)
+-   **Lua**: <http://www.lua.org>
 
 Remarks:
 
-  * check the modules' documentation that export functions to Lua (they match subpackage name) to understand better the functionality provided by specific functions
-  * the parameters must be strings if the prototype have them in between double quotes, or integers if there are no double quotes
-  * any parameter specified in prototype enclosed in between square brackets is optional
- 
-===== SR Package =====
+-   check the modules' documentation that export functions to Lua (they
+    match subpackage name) to understand better the functionality
+    provided by specific functions
+-   the parameters must be strings if the prototype have them in between
+    double quotes, or integers if there are no double quotes
+-   any parameter specified in prototype enclosed in between square
+    brackets is optional
+
+## SR Package
 
 Core functions.
 
-==== sr.dbg ====
+### sr.dbg
 
 Print message to L_DBG level using internal log API.
 
 Prototype
 
-<code c>
+``` c
 sr.dbg("message")
-</code>
+```
 
-==== sr.err ====
+### sr.err
 
 Print message to L_ERR level using internal log API.
 
 Prototype
 
-<code c>
+``` c
 sr.err("message")
-</code>
+```
 
-==== sr.log ====
+### sr.log
 
 Print message to 'level' using internal log API.
 
 Prototype
 
-<code c>
+``` c
 sr.log("level", "message")
-</code>
+```
 
 Parameter level can be"
 
-  * dbg
-  * info
-  * warn
-  * err
-  * crit
+-   dbg
+-   info
+-   warn
+-   err
+-   crit
 
-==== sr.modf ====
+### sr.modf
 
 Run a function exported by a module
 
 Prototype:
 
-<code c>
+``` c
 sr.modf("function", "param1", "param2", ...);
-</code>
+```
 
 Can be up to 6 optional parameters.
 
 Example:
 
-<code c>
+``` c
 sr.modf("sl_reply_error");
-</code>
+```
 
-Note that module functions that have parameter fixups cannot be executed unless they have free fixup. This is to prevent memory leaks caused by fixup functions. If you have doubts about a module function, whether it is safe to execute or not from Lua, ask on devel mailing list: **sr-dev [at] lists.sip-router.org**.
+Note that module functions that have parameter fixups cannot be executed
+unless they have free fixup. This is to prevent memory leaks caused by
+fixup functions. If you have doubts about a module function, whether it
+is safe to execute or not from Lua, ask on devel mailing list: **sr-dev
+\[at\] lists.sip-router.org**.
 
-==== sr.is_myself ====
+### sr.is_myself
 
 Return true if the URI matches local IPs and aliases.
 
 Prototype
 
-<code c>
+``` c
 sr.is_myself("uri")
-</code>
+```
 
-
-==== sr.setflag ====
+### sr.setflag
 
 Set message flag.
 
 Prototype
 
-<code c>
+``` c
 sr.setflag(index)
-</code>
+```
 
-==== sr.resetflag ====
+### sr.resetflag
 
 Reset message flag.
 
 Prototype
 
-<code c>
+``` c
 sr.resetflag(index)
-</code>
+```
 
-==== sr.isflagser ====
+### sr.isflagser
 
 Test if message flag is set.
 
 Prototype
 
-<code c>
+``` c
 sr.isflagset(index)
-</code>
+```
 
-==== sr.sebtflag ====
+### sr.sebtflag
 
 Set branch flag.
 
 Prototype
 
-<code c>
+``` c
 sr.setbflag(index)
-</code>
+```
 
-==== sr.resetflag ====
+### sr.resetflag
 
 Reset branch flag.
 
 Prototype
 
-<code c>
+``` c
 sr.resetflag(index)
-</code>
+```
 
-==== sr.isbflagser ====
+### sr.isbflagser
 
 Test if branch flag is set.
 
 Prototype
 
-<code c>
+``` c
 sr.isbflagset(index)
-</code>
+```
 
-
-==== sr.seturi ====
+### sr.seturi
 
 Set request URI.
 
 Prototype
 
-<code c>
+``` c
 sr.seturi("uri")
-</code>
+```
 
-==== sr.setuser ====
+### sr.setuser
 
 Set request URI user part.
 
 Prototype
 
-<code c>
+``` c
 sr.setuser("user")
-</code>
+```
 
-==== sr.sethost ====
+### sr.sethost
 
 Set request URI host part.
 
 Prototype
 
-<code c>
+``` c
 sr.sethost("host")
-</code>
+```
 
-==== sr.setdsturi ====
+### sr.setdsturi
 
 Set destination URI (outbound proxy).
 
 Prototype
 
-<code c>
+``` c
 sr.setdsturi("uri")
-</code>
+```
 
-==== sr.resetdsturi ====
+### sr.resetdsturi
 
 Reset destination URI (outbound proxy).
 
 Prototype
 
-<code c>
+``` c
 sr.resetdsturi()
-</code>
+```
 
-===== SR.HDR Package =====
+## SR.HDR Package
 
 Header management functions.
 
-==== sr.hdr.append ====
+### sr.hdr.append
 
 Append header to end of headers list.
 
 Prototype
 
-<code c>
+``` c
 sr.hdr.append("text")
-</code>
+```
 
-
-==== sr.hdr.insert ====
+### sr.hdr.insert
 
 Insert header to first position.
 
 Prototype
 
-<code c>
+``` c
 sr.hdr.insert("text")
-</code>
+```
 
-==== sr.hdr.remove ====
+### sr.hdr.remove
 
 Remove header.
 
 Prototype
 
-<code c>
+``` c
 sr.hdr.remove("hdrname")
-</code>
+```
 
-==== sr.hdr.append_to_reply ====
+### sr.hdr.append_to_reply
 
 Append a header to SIP reply generated by proxy.
 
 Prototype
 
-<code c>
+``` c
 sr.hdr.append_to_reply("text")
-</code>
+```
 
-===== SR.PV Package =====
+## SR.PV Package
 
 Pseudo-variable management functions.
 
-==== sr.pv.get ====
+### sr.pv.get
 
 Get the value of a pseudo-variable.
 
 Prototype
 
-<code c>
+``` c
 sr.pv.get("pv")
-</code>
+```
 
-==== sr.pv.seti ====
+### sr.pv.seti
 
 Set the integer value to pseudo-variable.
 
 Prototype
 
-<code c>
+``` c
 sr.pv.seti("pv", value)
-</code>
+```
 
-==== sr.pv.sets ====
+### sr.pv.sets
 
 Set the string value to pseudo-variable.
 
 Prototype
 
-<code c>
+``` c
 sr.pv.sets("pv", "value")
-</code>
+```
 
-==== sr.pv.unset ====
+### sr.pv.unset
 
 Unset pseudo-variables (assign $null).
 
 Prototype
 
-<code c>
+``` c
 sr.pv.unset("pv")
-</code>
+```
 
-
-==== sr.pv.is_null ====
+### sr.pv.is_null
 
 Check if the pseudo-variable value is $null or not.
 
 Prototype
 
-<code c>
+``` c
 sr.pv.is_null("pv")
-</code>
+```
 
-===== SR.XAVP =====
+## SR.XAVP
 
 xavp management functions.
 
-==== sr.xavp.get_keys ====
+### sr.xavp.get_keys
 
 returns an array table with the key names of the xavp variable.
 
 Prototype
 
-<code c>
+``` c
 t = sr.xavp.get_keys("xavp_name", 0)
-</code>
+```
 
 Example
 
-<code c>
+``` c
 $xavp(test=>one) = 1;
 $xavp(test[0]=>two) = "two";
 $xavp(test[0]=>three) = 3;
-</code>
+```
 
-<code c>
+``` c
 t = sr.xavp.get_keys("test", 0)
 for k,v in pairs(t) do
   sr.log("info", string.format("%d:%s\n", k, v))
 end
-</code>
+```
 
 Result
 
-<code c>
+``` c
 1:three
 2:two
 3:one
-</code>
+```
 
-==== sr.xavp.get ====
+### sr.xavp.get
 
-returns a dictionary table with the values of the xavp variable.
-Third param is optional and it choose between get all the values of a key ( 0, default) or just the first ones (1)
+returns a dictionary table with the values of the xavp variable. Third
+param is optional and it choose between get all the values of a key ( 0,
+default) or just the first ones (1)
 
-If second param is nil will return all indexes. If second param is <0 will return the index counting from then end ( -1 is the last value )
+If second param is nil will return all indexes. If second param is \<0
+will return the index counting from then end ( -1 is the last value )
 
 Prototype
 
-<code c>
+``` c
  sr.xavp.get(xavp_name, indx, flag)
-</code>
+```
 
 Example
 
-<code c>
+``` c
 $xavp(test=>a) = 4;
 $xavp(test[0]=>b) = "four";
 $xavp(test[0]=>a) = 5;
@@ -371,9 +380,9 @@ $xavp(test[0]=>a) = 3;
 $xavp(test[0]=>b) = "one";
 $xavp(test[0]=>b) = "two";
 $xavp(test[0]=>b) = "three";
-</code>
+```
 
-<code c>
+``` c
  t = sr.xavp.get("test", 0, 0)
  sr.log("dbg", string.format("sr.xavp.get('test', 0, 0)->%s\n", table.tostring(t)))
  t = sr.xavp.get("test", 0, 1)
@@ -384,451 +393,442 @@ $xavp(test[0]=>b) = "three";
  sr.log("dbg", string.format("sr.xavp.get('test', nil, 1)->%s\n", table.tostring(t)))
  t = sr.xavp.get("test", -1, 1)
  sr.log("dbg", string.format("sr.xavp.get('test', -1, 1)->%s\n", table.tostring(t)))
-</code>
+```
 
 Result
 
-<code c>
+``` c
  sr.xavp.get('test', 0, 0)->{a={3,2,1},b={"three","two","one"}}
  sr.xavp.get('test', 0, 1)->{a=3,b="three"}
  sr.xavp.get('test', nil, 0)->{{a={3,2,1},b={"three","two","one"}},{a={6,5,4},b={"six","five","four"}}}
  sr.xavp.get('test', nil, 1)->{{a=3,b="three"},{a=6,b="six"}}
  sr.xavp.get('test', -1, 1)->{a=6,b="six"}
-</code>
-===== SR.SL Package =====
+```
+
+## SR.SL Package
 
 Functions of SL module.
 
-==== sr.sl.send_reply ====
+### sr.sl.send_reply
 
 Send SIP reply.
 
 Prototype
 
-<code c>
+``` c
 sr.sl.send_reply(code, "reason")
-</code>
+```
 
 Example:
-<code c>
-lua_dostring("sr.sl.send_reply(200, [[ok from lua]])");
-</code>
 
-==== sr.sl.get_reply_totag ====
+``` c
+lua_dostring("sr.sl.send_reply(200, [[ok from lua]])");
+```
+
+### sr.sl.get_reply_totag
 
 Return To-dag for SIP reply.
 
 Prototype
 
-<code c>
+``` c
 sr.sl.get_reply_totag()
-</code>
+```
 
-===== SR.TM Package =====
+## SR.TM Package
 
-
-==== sr.tm.t_reply ====
+### sr.tm.t_reply
 
 Send stateful SIP reply.
 
 Prototype
 
-<code c>
+``` c
 sr.tm.t_reply(code, "reason")
-</code>
+```
 
-==== sr.tm.t_relay ====
+### sr.tm.t_relay
 
 Forward statefully SIP request.
 
 Prototype
 
-<code c>
+``` c
 sr.tm.t_relay()
-</code>
+```
 
-==== sr.tm.t_on_branch ====
+### sr.tm.t_on_branch
 
 Set on branch route.
 
 Prototype
 
-<code c>
+``` c
 sr.tm.t_on_branch("routeid")
-</code>
+```
 
-==== sr.tm.t_on_reply ====
+### sr.tm.t_on_reply
 
 Set on reply route.
 
 Prototype
 
-<code c>
+``` c
 sr.tm.t_on_reply("routeid")
-</code>
+```
 
-==== sr.tm.t_on_failure ====
+### sr.tm.t_on_failure
 
 Set on failure route.
 
 Prototype
 
-<code c>
+``` c
 sr.tm.t_on_failure("routeid")
-</code>
+```
 
-==== sr.tm.t_check_trans ====
+### sr.tm.t_check_trans
 
 Check for existence of transaction.
 
 Prototype
 
-<code c>
+``` c
 sr.tm.t_check_trans()
-</code>
+```
 
-==== sr.tm.t_is_canceled ====
+### sr.tm.t_is_canceled
 
-Return >0 if the INVITE transaction is canceled.
+Return \>0 if the INVITE transaction is canceled.
 
 Prototype
 
-<code c>
+``` c
 sr.tm.t_is_canceled()
-</code>
+```
 
-===== SR.SQLOPS Package =====
+## SR.SQLOPS Package
 
-==== sr.sqlops.query ====
+### sr.sqlops.query
 
 Execute SQL query.
 
 Prototype
 
-<code c>
+``` c
 sr.sqlops.query("connection", "query", "result")
-</code>
+```
 
-==== sr.sqlops.value ====
+### sr.sqlops.value
 
 Return a value from result of SQL query.
 
 Prototype
 
-<code c>
+``` c
 sr.sqlops.value("result", row, column)
-</code>
+```
 
-
-==== sr.sqlops.is_null ====
+### sr.sqlops.is_null
 
 Return true if a value from result is NULL.
 
 Prototype
 
-<code c>
+``` c
 sr.sqlops.is_null("result", row, column)
-</code>
+```
 
-==== sr.sqlops.column ====
+### sr.sqlops.column
 
 Return a column name from result of SQL query.
 
 Prototype
 
-<code c>
+``` c
 sr.sqlops.column("result", index)
-</code>
+```
 
-==== sr.sqlops.nrows ====
+### sr.sqlops.nrows
 
 Return number of rows from result of SQL query.
 
 Prototype
 
-<code c>
+``` c
 sr.sqlops.nrows("result")
-</code>
+```
 
-==== sr.sqlops.ncols ====
-
+### sr.sqlops.ncols
 
 Return number of columns from result of SQL query.
 
 Prototype
 
-<code c>
+``` c
 sr.sqlops.ncols("result")
-</code>
+```
 
-==== sr.sqlops.reset ====
-
+### sr.sqlops.reset
 
 Free the result of SQL query.
 
 Prototype
 
-<code c>
+``` c
 sr.sqlops.reset("result")
-</code>
+```
 
-==== sr.sqlops.xquery ====
+### sr.sqlops.xquery
 
 Execute SQL query and store in XAVP.
 
 Prototype
 
-<code c>
+``` c
 sr.sqlops.xquery("connection", "query", "xavp")
-</code>
+```
 
-===== SR.RR Package =====
+## SR.RR Package
 
-==== sr.rr.record_route ====
+### sr.rr.record_route
 
 Add Record-Route header.
 
 Prototype
 
-<code c>
+``` c
 sr.rr.record_route(["params"])
-</code>
+```
 
-==== sr.rr.loose_route ====
-
+### sr.rr.loose_route
 
 Handle Route headers.
 
 Prototype
 
-<code c>
+``` c
 sr.rr.loose_route()
-</code>
+```
 
+## SR.AUTH Package
 
-===== SR.AUTH Package =====
-
-==== sr.auth.www_challenge ====
+### sr.auth.www_challenge
 
 Send WWW digest authentication challenge reply (401).
 
 Prototype
 
-<code c>
+``` c
 sr.auth.www_challenge("realm", flags)
-</code>
+```
 
-==== sr.auth.proxy_challenge ====
+### sr.auth.proxy_challenge
 
 Send Proxy digest authentication challenge reply (401).
 
 Prototype
 
-<code c>
+``` c
 sr.auth.proxy_challenge("realm", flags)
-</code>
+```
 
-==== sr.auth.pv_www_authenticate ====
+### sr.auth.pv_www_authenticate
 
 Perform WWW digest authentication using password from parameter.
 
 Prototype
 
-<code c>
+``` c
 sr.auth.pv_www_authenticate("realm", "password", flags)
-</code>
+```
 
-
-==== sr.auth.pv_proxy_authenticate ====
-
+### sr.auth.pv_proxy_authenticate
 
 Perform Proxy digest authentication using password from parameter.
 
 Prototype
 
-<code c>
+``` c
 sr.auth.pv_proxy_authenticate("realm", "password", flags)
-</code>
+```
 
-==== sr.auth.consume_credentials ====
+### sr.auth.consume_credentials
 
 Delete authentication credentials from SIP request.
 
 Prototype
 
-<code c>
+``` c
 sr.auth.consume_credentials()
-</code>
+```
 
-===== SR.AUTH_DB Package =====
+## SR.AUTH_DB Package
 
-==== sr.auth_db.www_authenticate ====
+### sr.auth_db.www_authenticate
 
 Perform WWW digest authentication against database.
 
 Prototype
 
-<code c>
+``` c
 sr.auth_db.www_authenticate("realm", "table")
-</code>
+```
 
-==== sr.auth_db.proxy_authenticate ====
+### sr.auth_db.proxy_authenticate
 
 Perform Proxy digest authentication against database.
 
 Prototype
 
-<code c>
+``` c
 sr.auth_db.proxy_authenticate("realm", "table")
-</code>
+```
 
-===== SR.MAXFWD Package =====
+## SR.MAXFWD Package
 
-==== sr.maxfwd.process_maxfwd ====
-
+### sr.maxfwd.process_maxfwd
 
 Handle Max Forward header.
 
 Prototype
 
-<code c>
+``` c
 sr.maxfwd.process_maxfwd(newlimit)
-</code>
+```
 
-===== SR.REGISTRAR Package =====
+## SR.REGISTRAR Package
 
-==== sr.registrar.save ====
+### sr.registrar.save
 
 Save contacts to user location table.
 
 Prototype
 
-<code c>
+``` c
 sr.registrar.save("table" [, flags])
-</code>
+```
 
-
-==== sr.registrar.lookup ====
+### sr.registrar.lookup
 
 Lookup contacts in user location table.
 
 Prototype
 
-<code c>
+``` c
 sr.registrar.lookup("table")
-</code>
+```
 
+## SR.DISPATCHER Package
 
-===== SR.DISPATCHER Package =====
-
-==== sr.dispatcher.select ====
+### sr.dispatcher.select
 
 Select first destination address.
 
 Prototype
 
-<code c>
+``` c
 sr.dispatcher...
-</code>
+```
 
-==== sr.dispatcher.next ====
+### sr.dispatcher.next
 
 Select next destination address.
 
 Prototype
 
-<code c>
+``` c
 sr.dispatcher...
-</code>
+```
 
-==== sr.dispatcher.mark ====
+### sr.dispatcher.mark
 
 Set status for destination address.
 
 Prototype
 
-<code c>
+``` c
 sr.dispatcher...
-</code>
+```
 
-==== sr.dispatcher.is_from ====
+### sr.dispatcher.is_from
 
 Detects if the message comes from a dispatcher address.
 
 Prototype
 
-<code c>
+``` c
 sr.dispatcher...
-</code>
+```
 
-===== SR.XHTTP Package =====
+## SR.XHTTP Package
 
-==== sr.xhttp.reply ====
+### sr.xhttp.reply
 
 Send an HTTP reply.
 
 Prototype
 
-<code c>
+``` c
 sr.xhttp.reply(code, reason, content-type, body)
-</code>
+```
 
-===== SR.MSILO Package =====
+## SR.MSILO Package
 
-==== sr.msilo.store ====
+### sr.msilo.store
 
-==== sr.msilo.dump ====
+### sr.msilo.dump
 
-===== SR.SDPOPS Package =====
+## SR.SDPOPS Package
 
-==== sr.sdpops.sdp_with_media ====
+### sr.sdpops.sdp_with_media
 
-===== SR.PRESENCE Package =====
+## SR.PRESENCE Package
 
-==== sr.presence.pres_auth_status ====
+### sr.presence.pres_auth_status
 
-==== sr.presence.handle_publish ====
+### sr.presence.handle_publish
 
-==== sr.presence.handle_subscribe ====
+### sr.presence.handle_subscribe
 
-===== SR.PRESENCE_XML Package =====
+## SR.PRESENCE_XML Package
 
-==== sr.presence_xml.pres_check_basic ====
+### sr.presence_xml.pres_check_basic
 
-==== sr.presence_xml.pres_check_activities ====
+### sr.presence_xml.pres_check_activities
 
-===== SR.TEXTOPS Package =====
+## SR.TEXTOPS Package
 
-==== sr.textops.is_privacy ====
+### sr.textops.is_privacy
 
-===== SR.PUA_USRLOC Package =====
+## SR.PUA_USRLOC Package
 
-==== sr.pua_usrloc.set_publish ====
+### sr.pua_usrloc.set_publish
 
-===== SR.SIPUTILS Package =====
+## SR.SIPUTILS Package
 
-==== sr.siputils.has_totag ====
+### sr.siputils.has_totag
 
-==== sr.siputils.is_uri_user_e164 ====
+### sr.siputils.is_uri_user_e164
 
-===== SR.RLS Package =====
+## SR.RLS Package
 
-==== sr.rls.handle_subscribe ====
+### sr.rls.handle_subscribe
 
-==== sr.rls.handle_notify ====
+### sr.rls.handle_notify
 
-===== SR.ALIAS_DB Package =====
+## SR.ALIAS_DB Package
 
-==== sr.alias_db.lookup ====
+### sr.alias_db.lookup
 
-===== SR.UAC Package =====
+## SR.UAC Package
 
-==== sr.uac.replace_from ====
+### sr.uac.replace_from
 
-===== SR.TMX Package =====
+## SR.TMX Package
 
-==== sr.tmx.t_suspend ====
+### sr.tmx.t_suspend
 
-===== SR.MQUEUE Package =====
+## SR.MQUEUE Package
 
-==== sr.mq.add ====
+### sr.mq.add
