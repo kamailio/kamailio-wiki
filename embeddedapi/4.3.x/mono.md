@@ -1,156 +1,160 @@
-====== Mono - C# API for Kamailio 4.3.x Version ======
+# Mono - C# API for Kamailio 4.3.x Version
 
 Kamailio can execute managed code assemblies via **app_mono** module:
 
-  * http://kamailio.org/docs/modules/4.3.x/modules/app_mono.html
+-   <http://kamailio.org/docs/modules/4.3.x/modules/app_mono.html>
 
-The C# API exported by Kamailio to the embedded Mono interpreter is defined in **SR.cs** file located in source tree **modules/app_mono/lib/SR.cs**.
+The C# API exported by Kamailio to the embedded Mono interpreter is
+defined in **SR.cs** file located in source tree
+**modules/app_mono/lib/SR.cs**.
 
 To compile **SR.cs** to a library, use:
 
-<code>
-gmcs -t:library SR.cs
-</code>
+    gmcs -t:library SR.cs
 
 This will generate the file **SR.dll**. To link your C# file to it, use:
 
-<code>
-$ gmcs -r:SR.dll MyFile.cs
-</code>
+    $ gmcs -r:SR.dll MyFile.cs
 
-The API is stored in a **namespace**, named **SR**. The several classes offer access to internal Kamailio functionalities via public static functions.
+The API is stored in a **namespace**, named **SR**. The several classes
+offer access to internal Kamailio functionalities via public static
+functions.
 
-===== Class Core =====
+## Class Core
 
-==== APIVersion ====
+### APIVersion
 
-<code c>
+``` c
 public extern static string APIVersion();
-</code>
+```
 
 Return API version string.
 
-==== Log ====
+### Log
 
-<code c>
+``` c
 public extern static void Log(int level, string text);
-</code>
+```
 
 Write a message via Kamailio logging system to specified log level.
 
-==== Err ====
+### Err
 
-<code c>
+``` c
 public extern static void Err(string text);
-</code>
+```
 
 Write a message via Kamailio logging system to error log level.
 
-==== Dbg ====
+### Dbg
 
-<code c>
+``` c
 public extern static void Dbg(string text);
-</code>
+```
 
 Write a message via Kamailio logging system to debug log level.
 
-==== ModF ====
+### ModF
 
-<code c>
+``` c
 public extern static int ModF(string text);
-</code>
+```
 
-Execute the function named by the value of parameter 'text' exported by a Kamailio module. It has to be a function with no parameters.
+Execute the function named by the value of parameter 'text' exported by
+a Kamailio module. It has to be a function with no parameters.
 
-===== Class PV =====
+## Class PV
 
-==== GetS ====
+### GetS
 
-<code c>
+``` c
 public extern static string GetS(string pvn);
-</code>
+```
 
 Get the string value of a pseudo-variable.
 
-==== GetI ====
+### GetI
 
-<code c>
+``` c
 public extern static int GetI(string pvn);
-</code>
+```
 
 Get the integer value of a pseudo-variable.
 
-==== SetS ====
+### SetS
 
-<code c>
+``` c
 public extern static int SetS(string pvn, string val);
-</code>
+```
 
 Set the pseudo-variable to a string value.
 
-==== SetI ====
+### SetI
 
-<code c>
+``` c
 public extern static int SetI(string pvn, int val);
-</code>
+```
 
 Set the pseudo-variable to an integer value.
 
-==== Unset ====
+### Unset
 
-<code c>
+``` c
 public extern static int Unset(string pvn);
-</code>
+```
 
 Unset the pseudo-variable (like assigning $null in kamailio.cfg).
 
-==== IsNull ====
+### IsNull
 
-<code c>
+``` c
 public extern static int IsNull(string pvn);
-</code>
+```
 
 Return true if the pseudo-variable is null.
 
-===== Class HDR =====
+## Class HDR
 
-==== Append ====
+### Append
 
-<code c>
+``` c
 public extern static int Append(string hv);
-</code>
+```
 
-Add a header to the end of the headers list. The parameter must be full header, including name, body header and ending '\r\n'.
+Add a header to the end of the headers list. The parameter must be full
+header, including name, body header and ending '\\r\\n'.
 
-==== Remove ====
+### Remove
 
-<code c>
+``` c
 public extern static int Remove(string name);
-</code>
+```
 
 Remove all headers matching the name.
 
-==== Insert ====
+### Insert
 
-<code c>
+``` c
 public extern static int Insert(string hv);
-</code>
+```
 
-Add a header to the beginning of the headers list. The parameter must be full header, including name, body header and ending '\r\n'.
+Add a header to the beginning of the headers list. The parameter must be
+full header, including name, body header and ending '\\r\\n'.
 
-==== AppendToReply ====
+### AppendToReply
 
-<code c>
+``` c
 public extern static int AppendToReply(string hv);
-</code>
+```
 
-Add a header to the headers list for local reply. The parameter must be full header, including name, body header and ending '\r\n'.
+Add a header to the headers list for local reply. The parameter must be
+full header, including name, body header and ending '\\r\\n'.
 
-===== Example =====
+## Example
 
 A basic example of C# application using SR API:
 
-<code c>
+``` c
 using SR;
 
 namespace MySRTest {
@@ -169,4 +173,4 @@ namespace MySRTest {
                 }
         }
 }
-</code>
+```
