@@ -1,3 +1,0 @@
-====== Various Scripts ======
-
-  * [[scripts:python:sdp-parser|Basic SDP parser to use with app_python module]]
