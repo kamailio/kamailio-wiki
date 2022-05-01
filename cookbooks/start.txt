@@ -1,3 +1,0 @@
-== Kamailio Cookbooks ==
-
-See [[/start#cookbooks]]
