@@ -1,0 +1,7 @@
+-   [Wiki Home](start)
+-   [Kamailio Site](http://www.kamailio.org)
+-   [Docs Index](http://www.kamailio.org/docs/)
+-   [Modules Docs](http://www.kamailio.org/docs/modules/)
+-   [Old Wiki](http://www.kamailio.org/dokuwiki/)
+-   [Wiki Help](/wiki/dokuwiki)
+-   [Wiki Syntax](/wiki/syntax)
