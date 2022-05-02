@@ -1,20 +1,6 @@
 # Kamailio SIP Server Documentation Wiki
 
-**\<fc #2244FF>NOTE: The wiki requires user registration and login to
-edit the content. You can create an account via registration
-form:\</fc>**
-
--   **<https://www.kamailio.org/wiki/start?do=register>**
-
-**\<fc #2244FF>Once the user account has been created, an exiting admin
-user will have to grant write permissions to the new account. If it
-takes too long, then write an email to sr-dev@lists.kamailio.org asking
-for wiki editing permissions. These restrictions had to be put in place
-because of malicious users creating accounts to post inappropriate
-content.\</fc>**
-
-**It is recommended you connect over HTTPS to log in and edit the
-wiki.**
+:blue_book: **Contributions are very much appreciated! Use pull requests to add or update content of this repository.**
 
 Few guidelines to edit the wiki:
 
@@ -28,18 +14,18 @@ Few guidelines to edit the wiki:
     email to mailing lists \<sr-users \[at\] lists.sip-router.org>
     asking for review
 
-\<color blue>*IMPORTANT: For a cleaner presentation, the front page in
+:fire:*IMPORTANT: For a cleaner presentation, the front page in
 this wiki site is linking the documents for latest stable versions, 4.3
 or newer, respectively the installation and upgrade tutorials, new
 features, a.s.o... For older releases, 3.2.x to 4.2.x, go to **Older
-Releases Index**:*\</color>
+Releases Index**:*
 
--   [Link To Content For Older Releases](/content/old-releases)
+  * [Link To Content For Older Releases](content/old-releases)
 
-\<color blue>*IMPORTANT: Content for older releases than 3.2.0 is
-available at the **Old Wiki Site**:*\</color>
+:fire:*IMPORTANT: Content for older releases than 3.2.0 is
+available at the **Old Wiki Site**:*
 
--   [Link To Old Wiki Site](https://www.kamailio.org/dokuwiki/)
+  * [Link To Old Wiki Site](https://www.kamailio.org/dokuwiki/)
 
 ## Installation
 
@@ -138,7 +124,7 @@ available at the **Old Wiki Site**:*\</color>
 
   
 
-===== Alphabetic Indexes =====
+## Alphabetic Indexes
 
 Alphabetic indexes generated from documentation (modules' readme docs).
 
@@ -165,7 +151,7 @@ Alphabetic indexes generated from documentation (modules' readme docs).
 
   
 
-===== C Code Export Lists =====
+## C Code Export Lists
 
 Lists of exported symbols generated from C code.
 
@@ -176,8 +162,6 @@ Lists of exported symbols generated from C code.
 | Version | RPC Commands List                                                           | Cfg Vars List                                                                       | Selects List                                                                      | Counters List                                                                       |
 | devel   | [link](https://www.kamailio.org/docs/docbooks/devel/rpc_list/rpc_list.html) | [link](https://www.kamailio.org/docs/docbooks/devel/cfg_var_list/cfg_var_list.html) | [link](https://www.kamailio.org/docs/docbooks/devel/select_list/select_list.html) | [link](https://www.kamailio.org/docs/docbooks/devel/counter_list/counter_list.html) |
 | 5.0.x   | [link](https://www.kamailio.org/docs/docbooks/5.0.x/rpc_list/rpc_list.html) | ---                                                                                 | ---                                                                               | ---                                                                                 |
-
-  
 
 ## KEMI Framework
 
@@ -315,9 +299,8 @@ Old Exports APIs:
 
 ## Disclaimer
 
-\<color grey> The dokuwiki is left open for contribution to anybody but
-may be abused by malicious people out there. Hence, the content of the
-dokuwiki page may have \</color>\<color green>*illegal*\</color>\<color
-grey> content at some points in time. Please report such cases as soon
-as you see them at *sr-dev@lists.kamailio.org*. Kamailio.org is not
-responsible for the content in the dokuwiki pages. \</color>
+📓 The initial content was migrated to github from an open wiki portal, where people could contribute
+without any restrictions. Should anyone notice any *illegal* content please email to
+*sr-dev@lists.kamailio.org* or open an issue. **kamailio.org** organization is not responsible
+for the content contributed by external people and commits to react in a reasonable time when
+such content is reported.
