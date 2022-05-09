@@ -1,8 +1,8 @@
 # Kamailio Wiki #
 
-**work in progress**
+*Kamailio Wiki with content in markdown format.*
 
-Kamailio Wiki with content in markdown format.
+**[Browse Wiki Pages](start)**
 
 Initial content was converted from the Dokuwiki at:
 
