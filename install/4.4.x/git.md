@@ -1,4 +1,4 @@
-======= Install And Maintain Kamailio v4.4.x From GIT =======
+# Install And Maintain Kamailio v4.4.x From GIT
 
     Main author:
        Daniel-Constantin Mierla
