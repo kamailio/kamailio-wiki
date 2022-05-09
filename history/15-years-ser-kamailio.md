@@ -72,7 +72,7 @@ contributors, estimated cost of development: **over 18 000 000 USD**
 
 Kamailio Only:
 
--   \* 0.9.4 - 2005-06-14
+-   0.9.4 - 2005-06-14
 -   0.9.5 - 2005-07-01
 -   1.0.0 - 2006-02-27
 -   1.0.1 - 2006-02-27
