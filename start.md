@@ -20,7 +20,7 @@ or newer, respectively the installation and upgrade tutorials, new
 features, a.s.o... For older releases, 3.2.x to 4.2.x, go to **Older
 Releases Index**:*
 
-  * [Link To Content For Older Releases](content/old-releases)
+  * [Link To Content For Older Releases](content/old-releases.md)
 
 :fire:*IMPORTANT: Content for older releases than 3.2.0 is
 available at the **Old Wiki Site**:*
@@ -46,38 +46,38 @@ available at the **Old Wiki Site**:*
     (html)](https://kamailio.org/docs/tutorials/5.1.x/kamailio-install-guide-git/)
 -   [Install Kamailio v5.0.x From GIT
     (html)](https://kamailio.org/docs/tutorials/5.0.x/kamailio-install-guide-git/)
--   [Install Kamailio v4.4.x From GIT](/install/4.4.x/git)
--   [Install Kamailio v4.3.x From GIT](/install/4.3.x/git)
+-   [Install Kamailio v4.4.x From GIT](install/4.4.x/git.md)
+-   [Install Kamailio v4.3.x From GIT](install/4.3.x/git.md)
 
 ### Installation By Building Packages
 
 -   [Install Kamailio v4.0.x By Building Debian
-    Packages](/install/4.0.x/debian)
+    Packages](install/4.0.x/debian.md)
 -   [Install Kamailio v3.2.x By Building Debian
-    Packages](/install/3.2.x/debian)
+    Packages](install/3.2.x/debian.md)
 
 ### Installation From Packages
 
 -   [Install Kamailio On Debian Or Ubuntu
     (html)](https://kamailio.org/docs/tutorials/devel/kamailio-install-guide-deb/)
--   [Install Kamailio On Debian](/install/stable/debian)
+-   [Install Kamailio On Debian](install/stable/debian.md)
 
 ### Installation On Containers
 
--   [Install Kamailio On Docker](/install/container/docker)
+-   [Install Kamailio On Docker](install/container/docker.md)
 -   [Install Kamailio using Ansible and
     Docker](https://github.com/ghrst/Kamailio-HA)
 
 ### Upgrade
 
--   [Upgrade Kamailio stable to devel](/install/upgrade/stable-to-devel)
--   [Upgrade Kamailio v5.4.x to v5.5.0](/install/upgrade/5.4.x-to-5.5.0)
--   [Upgrade Kamailio v5.3.x to v5.4.0](/install/upgrade/5.3.x-to-5.4.0)
--   [Upgrade Kamailio v5.2.x to v5.3.0](/install/upgrade/5.2.x-to-5.3.0)
--   [Upgrade Kamailio v5.1.x to v5.2.0](/install/upgrade/5.1.x-to-5.2.0)
--   [Upgrade Kamailio v5.0.x to v5.1.0](/install/upgrade/5.0.x-to-5.1.0)
--   [Upgrade Kamailio v4.4.x to v5.0.0](/install/upgrade/4.4.x-to-5.0.0)
--   [Upgrade Kamailio v4.3.x to v4.4.0](/install/upgrade/4.3.x-to-4.4.0)
+-   [Upgrade Kamailio stable to devel](install/upgrade/stable-to-devel.md)
+-   [Upgrade Kamailio v5.4.x to v5.5.0](install/upgrade/5.4.x-to-5.5.0.md)
+-   [Upgrade Kamailio v5.3.x to v5.4.0](install/upgrade/5.3.x-to-5.4.0.md)
+-   [Upgrade Kamailio v5.2.x to v5.3.0](install/upgrade/5.2.x-to-5.3.0.md)
+-   [Upgrade Kamailio v5.1.x to v5.2.0](install/upgrade/5.1.x-to-5.2.0.md)
+-   [Upgrade Kamailio v5.0.x to v5.1.0](install/upgrade/5.0.x-to-5.1.0.md)
+-   [Upgrade Kamailio v4.4.x to v5.0.0](install/upgrade/4.4.x-to-5.0.0.md)
+-   [Upgrade Kamailio v4.3.x to v4.4.0](install/upgrade/4.3.x-to-4.4.0.md)
 
 ## Download
 
@@ -85,25 +85,25 @@ available at the **Old Wiki Site**:*
 -   [Download Tarball with Sources of Latest Stable
     Release](https://www.kamailio.org/pub/kamailio/latest/src/)
 -   [Download Sources of v5.4.x from GIT
-    Repository](/download/v5.4.x-from-git)
+    Repository](download/v5.4.x-from-git.md)
 -   [Download Sources of v5.3.x from GIT
-    Repository](/download/v5.3.x-from-git)
+    Repository](download/v5.3.x-from-git.md)
 -   [Download Sources of v5.2.x from GIT
-    Repository](/download/v5.2.x-from-git)
+    Repository](download/v5.2.x-from-git.md)
 -   [Download Sources of v5.1.x from GIT
-    Repository](/download/v5.1.x-from-git)
+    Repository](download/v5.1.x-from-git.md)
 -   [Download Sources of v5.0.x from GIT
-    Repository](/download/v5.0.x-from-git)
+    Repository](download/v5.0.x-from-git.md)
 -   [Download Sources of v4.4.x from GIT
-    Repository](/download/v4.4.x-from-git)
+    Repository](download/v4.4.x-from-git.md)
 -   [Download Sources of v4.3.x from GIT
-    Repository](/download/v4.3.x-from-git)
+    Repository](download/v4.3.x-from-git.md)
 
 ### Linux - Unix Distributions
 
--   [DEBS: Debian - Ubuntu](/packages/debs)
--   [RPMS: CentOS - RedHat - Fedora - OpenSUSE](/packages/rpms)
--   [AlpineLinux](/packages/alpinelinux)
+-   [DEBS: Debian - Ubuntu](packages/debs.md)
+-   [RPMS: CentOS - RedHat - Fedora - OpenSUSE](packages/rpms.md)
+-   [AlpineLinux](packages/alpinelinux.md)
 
 ## Cookbooks
 
@@ -112,15 +112,15 @@ available at the **Old Wiki Site**:*
 |         |                               |                                          |                                          |                                  |                                                  |
 |---------|-------------------------------|------------------------------------------|------------------------------------------|----------------------------------|--------------------------------------------------|
 | Version | Core Cookbook                 | Pseudo Variables                         | Transformations                          | Selects                          | Modules                                          |
-| devel   | [link](/cookbooks/devel/core) | [link](/cookbooks/devel/pseudovariables) | [link](/cookbooks/devel/transformations) | [link](/cookbooks/devel/selects) | [link](https://kamailio.org/docs/modules/devel/) |
-| 5.5.x   | [link](/cookbooks/5.5.x/core) | [link](/cookbooks/5.5.x/pseudovariables) | [link](/cookbooks/5.5.x/transformations) | [link](/cookbooks/5.5.x/selects) | [link](https://kamailio.org/docs/modules/5.5.x/) |
-| 5.4.x   | [link](/cookbooks/5.4.x/core) | [link](/cookbooks/5.4.x/pseudovariables) | [link](/cookbooks/5.4.x/transformations) | [link](/cookbooks/5.4.x/selects) | [link](https://kamailio.org/docs/modules/5.4.x/) |
-| 5.3.x   | [link](/cookbooks/5.3.x/core) | [link](/cookbooks/5.3.x/pseudovariables) | [link](/cookbooks/5.3.x/transformations) | [link](/cookbooks/5.3.x/selects) | [link](https://kamailio.org/docs/modules/5.3.x/) |
-| 5.2.x   | [link](/cookbooks/5.2.x/core) | [link](/cookbooks/5.2.x/pseudovariables) | [link](/cookbooks/5.2.x/transformations) | [link](/cookbooks/5.2.x/selects) | [link](https://kamailio.org/docs/modules/5.2.x/) |
-| 5.1.x   | [link](/cookbooks/5.1.x/core) | [link](/cookbooks/5.1.x/pseudovariables) | [link](/cookbooks/5.1.x/transformations) | [link](/cookbooks/5.1.x/selects) | [link](https://kamailio.org/docs/modules/5.1.x/) |
-| 5.0.x   | [link](/cookbooks/5.0.x/core) | [link](/cookbooks/5.0.x/pseudovariables) | [link](/cookbooks/5.0.x/transformations) | [link](/cookbooks/5.0.x/selects) | [link](https://kamailio.org/docs/modules/5.0.x/) |
-| 4.4.x   | [link](/cookbooks/4.4.x/core) | [link](/cookbooks/4.4.x/pseudovariables) | [link](/cookbooks/4.4.x/transformations) | [link](/cookbooks/4.4.x/selects) | [link](https://kamailio.org/docs/modules/4.4.x/) |
-| 4.3.x   | [link](/cookbooks/4.3.x/core) | [link](/cookbooks/4.3.x/pseudovariables) | [link](/cookbooks/4.3.x/transformations) | [link](/cookbooks/4.3.x/selects) | [link](https://kamailio.org/docs/modules/4.3.x/) |
+| devel   | [link](cookbooks/devel/core.md) | [link](cookbooks/devel/pseudovariables.md) | [link](cookbooks/devel/transformations.md) | [link](cookbooks/devel/selects.md) | [link](https://kamailio.org/docs/modules/devel/) |
+| 5.5.x   | [link](cookbooks/5.5.x/core.md) | [link](cookbooks/5.5.x/pseudovariables.md) | [link](cookbooks/5.5.x/transformations.md) | [link](cookbooks/5.5.x/selects.md) | [link](https://kamailio.org/docs/modules/5.5.x/) |
+| 5.4.x   | [link](cookbooks/5.4.x/core.md) | [link](cookbooks/5.4.x/pseudovariables.md) | [link](cookbooks/5.4.x/transformations.md) | [link](cookbooks/5.4.x/selects.md) | [link](https://kamailio.org/docs/modules/5.4.x/) |
+| 5.3.x   | [link](cookbooks/5.3.x/core.md) | [link](cookbooks/5.3.x/pseudovariables.md) | [link](cookbooks/5.3.x/transformations.md) | [link](cookbooks/5.3.x/selects.md) | [link](https://kamailio.org/docs/modules/5.3.x/) |
+| 5.2.x   | [link](cookbooks/5.2.x/core.md) | [link](cookbooks/5.2.x/pseudovariables.md) | [link](cookbooks/5.2.x/transformations.md) | [link](cookbooks/5.2.x/selects.md) | [link](https://kamailio.org/docs/modules/5.2.x/) |
+| 5.1.x   | [link](cookbooks/5.1.x/core.md) | [link](cookbooks/5.1.x/pseudovariables.md) | [link](cookbooks/5.1.x/transformations.md) | [link](cookbooks/5.1.x/selects.md) | [link](https://kamailio.org/docs/modules/5.1.x/) |
+| 5.0.x   | [link](cookbooks/5.0.x/core.md) | [link](cookbooks/5.0.x/pseudovariables.md) | [link](cookbooks/5.0.x/transformations.md) | [link](cookbooks/5.0.x/selects.md) | [link](https://kamailio.org/docs/modules/5.0.x/) |
+| 4.4.x   | [link](cookbooks/4.4.x/core.md) | [link](cookbooks/4.4.x/pseudovariables.md) | [link](cookbooks/4.4.x/transformations.md) | [link](cookbooks/4.4.x/selects.md) | [link](https://kamailio.org/docs/modules/4.4.x/) |
+| 4.3.x   | [link](cookbooks/4.3.x/core.md) | [link](cookbooks/4.3.x/pseudovariables.md) | [link](cookbooks/4.3.x/transformations.md) | [link](cookbooks/4.3.x/selects.md) | [link](https://kamailio.org/docs/modules/4.3.x/) |
 
   
 
@@ -133,21 +133,21 @@ Alphabetic indexes generated from documentation (modules' readme docs).
 |         |                                           |                                          |                                         |                                           |
 |---------|-------------------------------------------|------------------------------------------|-----------------------------------------|-------------------------------------------|
 | Version | Modules Parameters                        | Modules Functions                        | RPC Commands                            | Statistics                                |
-| devel   | [link](/alphaindexes/devel/modparameters) | [link](/alphaindexes/devel/modfunctions) | [link](/alphaindexes/devel/rpccommands) | [link](/alphaindexes/devel/modstatistics) |
-| 5.5.x   | [link](/alphaindexes/5.5.x/modparameters) | [link](/alphaindexes/5.5.x/modfunctions) | [link](/alphaindexes/5.5.x/rpccommands) | [link](/alphaindexes/5.5.x/modstatistics) |
-| 5.4.x   | [link](/alphaindexes/5.4.x/modparameters) | [link](/alphaindexes/5.4.x/modfunctions) | [link](/alphaindexes/5.4.x/rpccommands) | [link](/alphaindexes/5.4.x/modstatistics) |
-| 5.3.x   | [link](/alphaindexes/5.3.x/modparameters) | [link](/alphaindexes/5.3.x/modfunctions) | [link](/alphaindexes/5.3.x/rpccommands) | [link](/alphaindexes/5.3.x/modstatistics) |
-| 5.2.x   | [link](/alphaindexes/5.2.x/modparameters) | [link](/alphaindexes/5.2.x/modfunctions) | [link](/alphaindexes/5.2.x/rpccommands) | [link](/alphaindexes/5.2.x/modstatistics) |
-| 5.1.x   | [link](/alphaindexes/5.1.x/modparameters) | [link](/alphaindexes/5.1.x/modfunctions) | [link](/alphaindexes/5.1.x/rpccommands) | [link](/alphaindexes/5.1.x/modstatistics) |
-| 5.0.x   | [link](/alphaindexes/5.0.x/modparameters) | [link](/alphaindexes/5.0.x/modfunctions) | [link](/alphaindexes/5.0.x/rpccommands) | [link](/alphaindexes/5.0.x/modstatistics) |
+| devel   | [link](alphaindexes/devel/modparameters.md) | [link](alphaindexes/devel/modfunctions.md) | [link](alphaindexes/devel/rpccommands.md) | [link](alphaindexes/devel/modstatistics.md) |
+| 5.5.x   | [link](alphaindexes/5.5.x/modparameters.md) | [link](alphaindexes/5.5.x/modfunctions.md) | [link](alphaindexes/5.5.x/rpccommands.md) | [link](alphaindexes/5.5.x/modstatistics.md) |
+| 5.4.x   | [link](alphaindexes/5.4.x/modparameters.md) | [link](alphaindexes/5.4.x/modfunctions.md) | [link](alphaindexes/5.4.x/rpccommands.md) | [link](alphaindexes/5.4.x/modstatistics.md) |
+| 5.3.x   | [link](alphaindexes/5.3.x/modparameters.md) | [link](alphaindexes/5.3.x/modfunctions.md) | [link](alphaindexes/5.3.x/rpccommands.md) | [link](alphaindexes/5.3.x/modstatistics.md) |
+| 5.2.x   | [link](alphaindexes/5.2.x/modparameters.md) | [link](alphaindexes/5.2.x/modfunctions.md) | [link](alphaindexes/5.2.x/rpccommands.md) | [link](alphaindexes/5.2.x/modstatistics.md) |
+| 5.1.x   | [link](alphaindexes/5.1.x/modparameters.md) | [link](alphaindexes/5.1.x/modfunctions.md) | [link](alphaindexes/5.1.x/rpccommands.md) | [link](alphaindexes/5.1.x/modstatistics.md) |
+| 5.0.x   | [link](alphaindexes/5.0.x/modparameters.md) | [link](alphaindexes/5.0.x/modfunctions.md) | [link](alphaindexes/5.0.x/rpccommands.md) | [link](alphaindexes/5.0.x/modstatistics.md) |
 
   
 
 |         |                                           |                                          |                                        |                                           |                                                                             |
 |---------|-------------------------------------------|------------------------------------------|----------------------------------------|-------------------------------------------|-----------------------------------------------------------------------------|
 | Version | Modules Parameters                        | Modules Functions                        | MI Commands                            | Statistics                                | RPC Commands (List)                                                         |
-| 4.4.x   | [link](/alphaindexes/4.4.x/modparameters) | [link](/alphaindexes/4.4.x/modfunctions) | [link](/alphaindexes/4.4.x/micommands) | [link](/alphaindexes/4.4.x/modstatistics) | [link](https://www.kamailio.org/docs/docbooks/4.4.x/rpc_list/rpc_list.html) |
-| 4.3.x   | [link](/alphaindexes/4.3.x/modparameters) | [link](/alphaindexes/4.3.x/modfunctions) | [link](/alphaindexes/4.3.x/micommands) | [link](/alphaindexes/4.3.x/modstatistics) | [link](https://www.kamailio.org/docs/docbooks/4.3.x/rpc_list/rpc_list.html) |
+| 4.4.x   | [link](alphaindexes/4.4.x/modparameters.md) | [link](alphaindexes/4.4.x/modfunctions.md) | [link](alphaindexes/4.4.x/micommands.md) | [link](alphaindexes/4.4.x/modstatistics.md) | [link](https://www.kamailio.org/docs/docbooks/4.4.x/rpc_list/rpc_list.html) |
+| 4.3.x   | [link](alphaindexes/4.3.x/modparameters.md) | [link](alphaindexes/4.3.x/modfunctions.md) | [link](alphaindexes/4.3.x/micommands.md) | [link](alphaindexes/4.3.x/modstatistics.md) | [link](https://www.kamailio.org/docs/docbooks/4.3.x/rpc_list/rpc_list.html) |
 
   
 
@@ -175,43 +175,43 @@ in embedded Lua/Python/JavaScript/Ruby/... SIP routing scripts:
 
 ## Features
 
--   [New Features in Devel Version](/features/new-in-devel)
--   [New Features in Release 5.5.x](/features/new-in-5.5.x)
--   [New Features in Release 5.4.x](/features/new-in-5.4.x)
--   [New Features in Release 5.3.x](/features/new-in-5.3.x)
--   [New Features in Release 5.2.x](/features/new-in-5.2.x)
--   [New Features in Release 5.1.x](/features/new-in-5.1.x)
--   [New Features in Release 5.0.x](/features/new-in-5.0.x)
--   [New Features in Release 4.4.x](/features/new-in-4.4.x)
--   [New Features in Release 4.3.x](/features/new-in-4.3.x)
+-   [New Features in Devel Version](features/new-in-devel.md)
+-   [New Features in Release 5.5.x](features/new-in-5.5.x.md)
+-   [New Features in Release 5.4.x](features/new-in-5.4.x.md)
+-   [New Features in Release 5.3.x](features/new-in-5.3.x.md)
+-   [New Features in Release 5.2.x](features/new-in-5.2.x.md)
+-   [New Features in Release 5.1.x](features/new-in-5.1.x.md)
+-   [New Features in Release 5.0.x](features/new-in-5.0.x.md)
+-   [New Features in Release 4.4.x](features/new-in-4.4.x.md)
+-   [New Features in Release 4.3.x](features/new-in-4.3.x.md)
 
 ## Tutorials
 
--   [Kamailio and Syslog with Log Rotate](/tutorials/3.2.x/syslog)
+-   [Kamailio and Syslog with Log Rotate](tutorials/3.2.x/syslog.md)
 -   [Testing and Debugging TLS
-    Connections](/tutorials/tls/testing-and-debugging)
--   [Frequently Asked Questions](/tutorials/faq/main)
--   [Kamailio with DNSSEC](/tutorials/dns/dnssec)
--   [Mini HowTo Tutorials](/tutorials/mini-howto-admin/main)
+    Connections](tutorials/tls/testing-and-debugging.md)
+-   [Frequently Asked Questions](tutorials/faq/main.md)
+-   [Kamailio with DNSSEC](tutorials/dns/dnssec.md)
+-   [Mini HowTo Tutorials](tutorials/mini-howto-admin/main.md)
 -   [Howto install and configure IMS with
-    Kamailio](/tutorials/IMS/installation-howto)
--   [Howto setup auth_db and usrloc](/tutorials/auth/auth_db)
+    Kamailio](tutorials/IMS/installation-howto.md)
+-   [Howto setup auth_db and usrloc](tutorials/auth/auth_db.md)
 -   [Howto switch to OpenSSL 1.0 for TLS
-    Connections](/tutorials/tls/howto-openssl-1-0)
--   [Troubleshooting - Memory](/tutorials/troubleshooting/memory)
+    Connections](tutorials/tls/howto-openssl-1-0.md)
+-   [Troubleshooting - Memory](tutorials/troubleshooting/memory.md)
 -   [Troubleshooting - Core Dump
-    File](/tutorials/troubleshooting/coredumpfile)
--   [Getting Started](/tutorials/getting-started/main)
--   [Kamailio and MongoDB](/tutorials/kamailio-and-mongodb)
--   [Kamailio Startup Scripts](/tutorials/kamailio-startup-scripts)
--   [Kamailio Flag Operations](/tutorials/kamailio-flag-operations)
+    File](tutorials/troubleshooting/coredumpfile.md)
+-   [Getting Started](tutorials/getting-started/main.md)
+-   [Kamailio and MongoDB](tutorials/kamailio-and-mongodb.md)
+-   [Kamailio Startup Scripts](tutorials/kamailio-startup-scripts.md)
+-   [Kamailio Flag Operations](tutorials/kamailio-flag-operations.md)
 
 ### Security related tutorials
 
 -   [Overview of Security issues for SIP
-    routers](/tutorials/Security/Security-threats)
+    routers](tutorials/Security/Security-threats.md)
 -   [Overview of Security related config
-    snippets](/tutorials/Security/Kamailio-Security)
+    snippets](tutorials/Security/Kamailio-Security.md)
 
 ### External Tutorials
 
@@ -257,8 +257,8 @@ Old Exports APIs:
 |         |                                 |                                |                                 |                                 |                                   |
 |---------|---------------------------------|--------------------------------|---------------------------------|---------------------------------|-----------------------------------|
 | Version | \- Java -                       | \- Lua -                       | \- Mono -                       | \- Perl -                       | \- Python -                       |
-| devel   | [link](/embeddedapi/devel/java) | [link](/embeddedapi/devel/lua) | [link](/embeddedapi/devel/mono) | [link](/embeddedapi/devel/perl) | [link](/embeddedapi/devel/python) |
-| 4.3.x   | [link](/embeddedapi/4.3.x/java) | [link](/embeddedapi/4.3.x/lua) | [link](/embeddedapi/4.3.x/mono) | [link](/embeddedapi/4.3.x/perl) | [link](/embeddedapi/4.3.x/python) |
+| devel   | [link](embeddedapi/devel/java.md) | [link](embeddedapi/devel/lua.md) | [link](embeddedapi/devel/mono.md) | [link](embeddedapi/devel/perl.md) | [link](embeddedapi/devel/python.md) |
+| 4.3.x   | [link](embeddedapi/4.3.x/java.md) | [link](embeddedapi/4.3.x/lua.md) | [link](embeddedapi/4.3.x/mono.md) | [link](embeddedapi/4.3.x/perl.md) | [link](embeddedapi/4.3.x/python.md) |
 
   
 
@@ -266,36 +266,36 @@ Old Exports APIs:
 
 -   [Kamailio SIP Server v3.2.x Devel Guide](https://asipto.com/u/kdg)
 -   [Backporting Patches from Devel Branch to
-    3.2.x](/devel/backporting-to-3.2.x)
--   [GIT Commit Guidelines](/devel/git-commit-guidelines)
--   [Contributions via Github](/devel/github-contributions)
--   [Update Database Schema](/devel/update-database-schema)
--   [Mini How-To Guides for Development](/devel/how-to/main)
+    3.2.x](devel/backporting-to-3.2.x.md)
+-   [GIT Commit Guidelines](devel/git-commit-guidelines.md)
+-   [Contributions via Github](devel/github-contributions.md)
+-   [Update Database Schema](devel/update-database-schema.md)
+-   [Mini How-To Guides for Development](devel/how-to/main.md)
 -   [Writing Docbook Files for Module
-    Readme](/devel/module-docbook-readme)
--   [Developer Git Access](/devel/git-access)
--   [Process for handling Security Vulnerabilities](/security/policy)
--   [Configuration File Engines](/devel/config-engines)
--   [Troubleshooting - GDB Scripts](/devel/troubleshooting-gdb-scripts)
+    Readme](devel/module-docbook-readme.md)
+-   [Developer Git Access](devel/git-access.md)
+-   [Process for handling Security Vulnerabilities](security/policy.md)
+-   [Configuration File Engines](devel/config-engines.md)
+-   [Troubleshooting - GDB Scripts](devel/troubleshooting-gdb-scripts.md)
 
 ### Misc
 
--   [New Features Requests](/devel/new-features-requests)
+-   [New Features Requests](devel/new-features-requests.md)
 -   [Contributors - List of Active
-    Developers](/devel/active-contributors)
--   [Online IRC Development Meetings](/devel/irc-meetings)
--   [Makefile System](/devel/makefile-system)
+    Developers](devel/active-contributors.md)
+-   [Online IRC Development Meetings](devel/irc-meetings.md)
+-   [Makefile System](devel/makefile-system.md)
 -   [Kamailio Chinese Community-中国社区](https://www.kamailio.org.cn)
--   [Various Scripts](/scripts/toc)
--   [Kamailio v5.0 Design](/devel/kamailio-5.0-design)
+-   [Various Scripts](scripts/toc.md)
+-   [Kamailio v5.0 Design](devel/kamailio-5.0-design.md)
 -   [Kamailio KEMI Framework
     Tutorial](https://kamailio.org/docs/tutorials/devel/kamailio-kemi-framework/)
--   [KEMI Configuration File Engines](/devel/config-engines)
--   [History - 9 Years of SER-Kamailio](/history/09-years-ser-kamailio)
--   [History - 15 Years of SER-Kamailio](/history/15-years-ser-kamailio)
+-   [KEMI Configuration File Engines](devel/config-engines.md)
+-   [History - 9 Years of SER-Kamailio](history/09-years-ser-kamailio.md)
+-   [History - 15 Years of SER-Kamailio](history/15-years-ser-kamailio.md)
 -   [Kamailio related event presentation
     archive](https://www.kamailio.org/events/)
--   [KEMI Performances](/kemi/performances)
+-   [KEMI Performances](kemi/performances.md)
 
 ## Disclaimer
 
