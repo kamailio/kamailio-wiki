@@ -1,4 +1,4 @@
-======= Install And Maintain Kamailio v3.3.x Version From GIT =======
+# Install And Maintain Kamailio v3.3.x Version From GIT
 
     Main author:
        Daniel-Constantin Mierla <miconda (at) gmail.com>
