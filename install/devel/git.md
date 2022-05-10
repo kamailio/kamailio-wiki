@@ -1,4 +1,4 @@
-======= Install And Maintain Kamailio Devel Version From GIT =======
+# Install And Maintain Kamailio Devel Version From GIT
 
     Main author:
        Daniel-Constantin Mierla
