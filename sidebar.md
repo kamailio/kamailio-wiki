@@ -1,4 +1,4 @@
--   [Wiki Home](start)
+-   [Wiki Home](start.md)
 -   [Kamailio Site](http://www.kamailio.org)
 -   [Docs Index](http://www.kamailio.org/docs/)
 -   [Modules Docs](http://www.kamailio.org/docs/modules/)
