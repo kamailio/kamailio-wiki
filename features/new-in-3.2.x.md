@@ -623,7 +623,7 @@ modparam("acc", "failed_filter", "401,407")
 
 ### xavp
 
--    [xavp](/devel/xavp)'s are enabled by default now.
+-    [xavp](../devel/xavp.md)'s are enabled by default now.
 
 ### xcap_server
 

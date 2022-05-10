@@ -52,8 +52,7 @@ If you can not ping by DNS address, try:
     host pcscf.kamailio-ims.org
 
 If the DNS address resolved to IP address currectly. You may need to
-update your "/etc/nsswitch.conf" file according to [this question on
-SO.](https://askubuntu.com/questions/81797/nslookup-finds-ip-but-ping-doesnt).
+update your "/etc/nsswitch.conf" file according to [this question on SO.](https://askubuntu.com/questions/81797/nslookup-finds-ip-but-ping-doesnt).
 After that modification you should be able to ping by DNS address.
 
 # Installation of the Kamailio-IMS-Packages

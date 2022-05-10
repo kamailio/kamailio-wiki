@@ -31,42 +31,31 @@ available at the **Old Wiki Site**:*
 
 ### Installation from GIT Sources
 
--   [Install Kamailio Devel Version From GIT
-    (html)](https://kamailio.org/docs/tutorials/devel/kamailio-install-guide-git/)
--   [Install Kamailio Devel Version From GIT (wiki)](/install/devel/git)
--   [Install Kamailio v5.5.x From GIT
-    (html)](https://kamailio.org/docs/tutorials/5.5.x/kamailio-install-guide-git/)
--   [Install Kamailio v5.4.x From GIT
-    (html)](https://kamailio.org/docs/tutorials/5.4.x/kamailio-install-guide-git/)
--   [Install Kamailio v5.3.x From GIT
-    (html)](https://kamailio.org/docs/tutorials/5.3.x/kamailio-install-guide-git/)
--   [Install Kamailio v5.2.x From GIT
-    (html)](https://kamailio.org/docs/tutorials/5.2.x/kamailio-install-guide-git/)
--   [Install Kamailio v5.1.x From GIT
-    (html)](https://kamailio.org/docs/tutorials/5.1.x/kamailio-install-guide-git/)
--   [Install Kamailio v5.0.x From GIT
-    (html)](https://kamailio.org/docs/tutorials/5.0.x/kamailio-install-guide-git/)
+-   [Install Kamailio Devel Version From GIT (html)](https://kamailio.org/docs/tutorials/devel/kamailio-install-guide-git/)
+-   [Install Kamailio Devel Version From GIT (wiki)](../install/devel/git.md)
+-   [Install Kamailio v5.5.x From GIT (html)](https://kamailio.org/docs/tutorials/5.5.x/kamailio-install-guide-git/)
+-   [Install Kamailio v5.4.x From GIT (html)](https://kamailio.org/docs/tutorials/5.4.x/kamailio-install-guide-git/)
+-   [Install Kamailio v5.3.x From GIT (html)](https://kamailio.org/docs/tutorials/5.3.x/kamailio-install-guide-git/)
+-   [Install Kamailio v5.2.x From GIT (html)](https://kamailio.org/docs/tutorials/5.2.x/kamailio-install-guide-git/)
+-   [Install Kamailio v5.1.x From GIT (html)](https://kamailio.org/docs/tutorials/5.1.x/kamailio-install-guide-git/)
+-   [Install Kamailio v5.0.x From GIT (html)](https://kamailio.org/docs/tutorials/5.0.x/kamailio-install-guide-git/)
 -   [Install Kamailio v4.4.x From GIT](install/4.4.x/git.md)
 -   [Install Kamailio v4.3.x From GIT](install/4.3.x/git.md)
 
 ### Installation By Building Packages
 
--   [Install Kamailio v4.0.x By Building Debian
-    Packages](install/4.0.x/debian.md)
--   [Install Kamailio v3.2.x By Building Debian
-    Packages](install/3.2.x/debian.md)
+-   [Install Kamailio v4.0.x By Building Debian Packages](install/4.0.x/debian.md)
+-   [Install Kamailio v3.2.x By Building Debian Packages](install/3.2.x/debian.md)
 
 ### Installation From Packages
 
--   [Install Kamailio On Debian Or Ubuntu
-    (html)](https://kamailio.org/docs/tutorials/devel/kamailio-install-guide-deb/)
+-   [Install Kamailio On Debian Or Ubuntu (html)](https://kamailio.org/docs/tutorials/devel/kamailio-install-guide-deb/)
 -   [Install Kamailio On Debian](install/stable/debian.md)
 
 ### Installation On Containers
 
 -   [Install Kamailio On Docker](install/container/docker.md)
--   [Install Kamailio using Ansible and
-    Docker](https://github.com/ghrst/Kamailio-HA)
+-   [Install Kamailio using Ansible and Docker](https://github.com/ghrst/Kamailio-HA)
 
 ### Upgrade
 
@@ -82,22 +71,14 @@ available at the **Old Wiki Site**:*
 ## Download
 
 -   [Main Download Page](https://www.kamailio.org/w/download/)
--   [Download Tarball with Sources of Latest Stable
-    Release](https://www.kamailio.org/pub/kamailio/latest/src/)
--   [Download Sources of v5.4.x from GIT
-    Repository](download/v5.4.x-from-git.md)
--   [Download Sources of v5.3.x from GIT
-    Repository](download/v5.3.x-from-git.md)
--   [Download Sources of v5.2.x from GIT
-    Repository](download/v5.2.x-from-git.md)
--   [Download Sources of v5.1.x from GIT
-    Repository](download/v5.1.x-from-git.md)
--   [Download Sources of v5.0.x from GIT
-    Repository](download/v5.0.x-from-git.md)
--   [Download Sources of v4.4.x from GIT
-    Repository](download/v4.4.x-from-git.md)
--   [Download Sources of v4.3.x from GIT
-    Repository](download/v4.3.x-from-git.md)
+-   [Download Tarball with Sources of Latest Stable Release](https://www.kamailio.org/pub/kamailio/latest/src/)
+-   [Download Sources of v5.4.x from GIT Repository](download/v5.4.x-from-git.md)
+-   [Download Sources of v5.3.x from GIT Repository](download/v5.3.x-from-git.md)
+-   [Download Sources of v5.2.x from GIT Repository](download/v5.2.x-from-git.md)
+-   [Download Sources of v5.1.x from GIT Repository](download/v5.1.x-from-git.md)
+-   [Download Sources of v5.0.x from GIT Repository](download/v5.0.x-from-git.md)
+-   [Download Sources of v4.4.x from GIT Repository](download/v4.4.x-from-git.md)
+-   [Download Sources of v4.3.x from GIT Repository](download/v4.3.x-from-git.md)
 
 ### Linux - Unix Distributions
 
@@ -188,19 +169,15 @@ in embedded Lua/Python/JavaScript/Ruby/... SIP routing scripts:
 ## Tutorials
 
 -   [Kamailio and Syslog with Log Rotate](tutorials/3.2.x/syslog.md)
--   [Testing and Debugging TLS
-    Connections](tutorials/tls/testing-and-debugging.md)
+-   [Testing and Debugging TLS Connections](tutorials/tls/testing-and-debugging.md)
 -   [Frequently Asked Questions](tutorials/faq/main.md)
 -   [Kamailio with DNSSEC](tutorials/dns/dnssec.md)
 -   [Mini HowTo Tutorials](tutorials/mini-howto-admin/main.md)
--   [Howto install and configure IMS with
-    Kamailio](tutorials/IMS/installation-howto.md)
+-   [Howto install and configure IMS with Kamailio](tutorials/IMS/installation-howto.md)
 -   [Howto setup auth_db and usrloc](tutorials/auth/auth_db.md)
--   [Howto switch to OpenSSL 1.0 for TLS
-    Connections](tutorials/tls/howto-openssl-1-0.md)
+-   [Howto switch to OpenSSL 1.0 for TLS Connections](tutorials/tls/howto-openssl-1-0.md)
 -   [Troubleshooting - Memory](tutorials/troubleshooting/memory.md)
--   [Troubleshooting - Core Dump
-    File](tutorials/troubleshooting/coredumpfile.md)
+-   [Troubleshooting - Core Dump File](tutorials/troubleshooting/coredumpfile.md)
 -   [Getting Started](tutorials/getting-started/main.md)
 -   [Kamailio and MongoDB](tutorials/kamailio-and-mongodb.md)
 -   [Kamailio Startup Scripts](tutorials/kamailio-startup-scripts.md)
@@ -208,43 +185,30 @@ in embedded Lua/Python/JavaScript/Ruby/... SIP routing scripts:
 
 ### Security related tutorials
 
--   [Overview of Security issues for SIP
-    routers](tutorials/Security/Security-threats.md)
--   [Overview of Security related config
-    snippets](tutorials/Security/Kamailio-Security.md)
+-   [Overview of Security issues for SIP routers](tutorials/Security/Security-threats.md)
+-   [Overview of Security related config snippets](tutorials/Security/Kamailio-Security.md)
 
 ### External Tutorials
 
--   [Kamailio and Asterisk
-    Integration](http://kb.asipto.com/asterisk:index)
--   [Kamailio and FreeSwitch
-    Integration](http://kb.asipto.com/freeswitch:index)
--   [Various Kamailio Use Case
-    Tutorials](http://kb.asipto.com/kamailio:index)
+-   [Kamailio and Asterisk Integration](http://kb.asipto.com/asterisk:index)
+-   [Kamailio and FreeSwitch Integration](http://kb.asipto.com/freeswitch:index)
+-   [Various Kamailio Use Case Tutorials](http://kb.asipto.com/kamailio:index)
 
 ### Database Structure
 
--   [Devel
-    Version](https://www.kamailio.org/docs/db-tables/kamailio-db-devel.html)
--   [5.2.x
-    Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.2.x.html)
--   [5.1.x
-    Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.1.x.html)
--   [5.0.x
-    Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.0.x.html)
--   [4.4.x
-    Version](https://www.kamailio.org/docs/db-tables/kamailio-db-4.4.x.html)
--   [4.3.x
-    Version](https://www.kamailio.org/docs/db-tables/kamailio-db-4.3.x.html)
+-   [Devel Version](https://www.kamailio.org/docs/db-tables/kamailio-db-devel.html)
+-   [5.2.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.2.x.html)
+-   [5.1.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.1.x.html)
+-   [5.0.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.0.x.html)
+-   [4.4.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-4.4.x.html)
+-   [4.3.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-4.3.x.html)
 
 ## Development
 
 ### Development APIs
 
--   [RPC Control Interface -
-    API](https://www.kamailio.org/docs/docbooks/3.2.x/rpc_api/rpc_api.html)
--   [Kamailio Development
-    Guide](https://www.asipto.com/pub/kamailio-devel-guide/)
+-   [RPC Control Interface - API](https://www.kamailio.org/docs/docbooks/3.2.x/rpc_api/rpc_api.html)
+-   [Kamailio Development Guide](https://www.asipto.com/pub/kamailio-devel-guide/)
 
 ### Embedded APIs
 
@@ -265,14 +229,12 @@ Old Exports APIs:
 ### Guidelines
 
 -   [Kamailio SIP Server v3.2.x Devel Guide](https://asipto.com/u/kdg)
--   [Backporting Patches from Devel Branch to
-    3.2.x](devel/backporting-to-3.2.x.md)
+-   [Backporting Patches from Devel Branch to 3.2.x](devel/backporting-to-3.2.x.md)
 -   [GIT Commit Guidelines](devel/git-commit-guidelines.md)
 -   [Contributions via Github](devel/github-contributions.md)
 -   [Update Database Schema](devel/update-database-schema.md)
 -   [Mini How-To Guides for Development](devel/how-to/main.md)
--   [Writing Docbook Files for Module
-    Readme](devel/module-docbook-readme.md)
+-   [Writing Docbook Files for Module Readme](devel/module-docbook-readme.md)
 -   [Developer Git Access](devel/git-access.md)
 -   [Process for handling Security Vulnerabilities](security/policy.md)
 -   [Configuration File Engines](devel/config-engines.md)
@@ -281,20 +243,17 @@ Old Exports APIs:
 ### Misc
 
 -   [New Features Requests](devel/new-features-requests.md)
--   [Contributors - List of Active
-    Developers](devel/active-contributors.md)
+-   [Contributors - List of Active Developers](devel/active-contributors.md)
 -   [Online IRC Development Meetings](devel/irc-meetings.md)
 -   [Makefile System](devel/makefile-system.md)
 -   [Kamailio Chinese Community-中国社区](https://www.kamailio.org.cn)
 -   [Various Scripts](scripts/toc.md)
 -   [Kamailio v5.0 Design](devel/kamailio-5.0-design.md)
--   [Kamailio KEMI Framework
-    Tutorial](https://kamailio.org/docs/tutorials/devel/kamailio-kemi-framework/)
+-   [Kamailio KEMI Framework Tutorial](https://kamailio.org/docs/tutorials/devel/kamailio-kemi-framework/)
 -   [KEMI Configuration File Engines](devel/config-engines.md)
 -   [History - 9 Years of SER-Kamailio](history/09-years-ser-kamailio.md)
 -   [History - 15 Years of SER-Kamailio](history/15-years-ser-kamailio.md)
--   [Kamailio related event presentation
-    archive](https://www.kamailio.org/events/)
+-   [Kamailio related event presentation archive](https://www.kamailio.org/events/)
 -   [KEMI Performances](kemi/performances.md)
 
 ## Disclaimer

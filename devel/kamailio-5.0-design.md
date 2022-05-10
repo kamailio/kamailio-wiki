@@ -35,7 +35,7 @@ Goals:
 Ongoing implementation that enables writing routing blocks in Lua and
 Python as alternative to native language is documented at:
 
--   [Configuration File Engines](/devel/config-engines)
+-   [Configuration File Engines](../devel/config-engines.md)
 
 ## Source Tree Structure
 

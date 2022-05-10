@@ -13,8 +13,7 @@ Each module can extend the syntax the select framework understands by
 registering its own select table. Look at the TLS module or db_ops as
 good samples.
 
-For a more detailed overview check [The Select
-Framework](http://sip-router.org/wiki/ref_manual/selects).
+For a more detailed overview check [The Select Framework](http://sip-router.org/wiki/ref_manual/selects).
 
 ## Select Classes
 

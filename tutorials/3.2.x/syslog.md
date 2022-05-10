@@ -12,8 +12,7 @@ Kamailio SIP server in a dedicated file and rotate it when becomes too
 big.
 
 This tutorial is updated for Kamailio v3.2.0 or newer (original tutorial
-written for [older versions is
-here](http://www.kamailio.org/dokuwiki/doku.php/tutorials:debug-syslog-messages)).
+written for [older versions is here](http://www.kamailio.org/dokuwiki/doku.php/tutorials:debug-syslog-messages)).
 
 ## Syslog - Custom Log File
 

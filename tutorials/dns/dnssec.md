@@ -68,7 +68,7 @@ Once you download the deb files, install them with **dpkg -i ...**
 Here is a quick guide to install Kamailio development version from GIT
 repository. If you look for a more detailed tutorial, check:
 
--   [Install Kamailio Devel Version From GIT](/install/devel/git)
+-   [Install Kamailio Devel Version From GIT](../install/devel/git.md)
 
 ### Prerequisites
 

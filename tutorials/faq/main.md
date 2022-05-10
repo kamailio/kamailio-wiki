@@ -73,8 +73,7 @@ app_python3, app_jsdt, app_ruby, app_sqlang).
 License version 2 (aka GPLv2). It can be used for free "as in beer" on
 your infrastructure. Keep in mind that you need also distribute the
 source code of your changes, if you distribute it as a binary to your
-customer. For more information have a look to the [GPLv2
-FAQ](https://www.gnu.org/licenses/old-licenses/gpl-2.0-faq.html.en).
+customer. For more information have a look to the [GPLv2 FAQ](https://www.gnu.org/licenses/old-licenses/gpl-2.0-faq.html.en).
 
 Starting with end of 2008, contributions to core and several modules are
 done under BSD license. That means parts of it can be extracted and used
@@ -366,8 +365,7 @@ outgoing branches.
 :page_with_curl: SIP allows that certain header fields may appear multiple times in a
 SIP message. This header fields (e.g. Via, Route, Record-Route, Contact)
 may be written either on a single line (with comma separated) or on
-multiple lines (see [RFC 3261 section
-7.3](http://tools.ietf.org/html/rfc3261#section-7.3) for details).
+multiple lines (see [RFC 3261 section 7.3](http://tools.ietf.org/html/rfc3261#section-7.3) for details).
 
 The remove_hf() function from textops module always removes all header
 fields with a certain name, thus it can not be used in this case.
@@ -453,8 +451,7 @@ Kamailio is printing at least few debug messages.
 
 :page_with_curl: No, *however* Kamailio can be configured to proxy media if needed.
 
--   [See rtpengine, rtpproxy, lrkproxy, or
-    mediaproxy](http://www.kamailio.org/docs/modules/stable/)
+-   [See rtpengine, rtpproxy, lrkproxy, or mediaproxy](http://www.kamailio.org/docs/modules/stable/)
 
 ### What codecs are supported by Kamailio?
 

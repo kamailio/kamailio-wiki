@@ -1064,7 +1064,7 @@ flags
 
 (\*) The named flags feature was propagated from the source code merge
 back in 2008 and is not extensively tested. The recommended way of
-defining flags is using [#!define](/cookbooks/5.2.x/core#define) (which
+defining flags is using [#!define](../cookbooks/5.2.x/core#define.md) (which
 is also valid for branch/script flags):
 
 ``` c

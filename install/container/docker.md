@@ -22,7 +22,5 @@ access the links listed above.
 
 Documentation links:
 
--   [Installation Of Alpine Based Images
-    (html)](https://store.docker.com/community/images/kamailio/kamailio-ci)
--   [Installation Of Debian Based Images
-    (html)](https://store.docker.com/community/images/kamailio/kamailio)
+-   [Installation Of Alpine Based Images (html)](https://store.docker.com/community/images/kamailio/kamailio-ci)
+-   [Installation Of Debian Based Images (html)](https://store.docker.com/community/images/kamailio/kamailio)
