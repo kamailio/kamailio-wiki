@@ -2,10 +2,8 @@
 
 References:
 
--   [Asterisk security
-    process](https://wiki.asterisk.org/wiki/display/AST/Asterisk+Security+Vulnerabilities)
--   [Wikipedia reference for
-    vulnerabilities](https://en.wikipedia.org/wiki/Vulnerability_(computing))
+-   [Asterisk security process](https://wiki.asterisk.org/wiki/display/AST/Asterisk+Security+Vulnerabilities)
+-   [Wikipedia reference for vulnerabilities](https://en.wikipedia.org/wiki/Vulnerability_(computing))
 
 #### Definition
 

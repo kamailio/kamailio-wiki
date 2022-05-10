@@ -318,8 +318,7 @@ The Homer project has a few methods to detect common attacks. It makes
 sense to add this to you config, as these attacks should just not be
 given any attention.
 
-Config is based on the [work of the Homer
-team](https://code.google.com/p/homer/source/browse/configs/kamailio.cfg?r=e10bad0893cb56dc8f63c52947601e4c9981d254)
+Config is based on the [work of the Homer team](https://code.google.com/p/homer/source/browse/configs/kamailio.cfg?r=e10bad0893cb56dc8f63c52947601e4c9981d254)
 
     #!define WITH_HOMER_SECURITY_CHECKS
 
@@ -597,8 +596,7 @@ calls.
 Kamailio has stock already a few mechanisms to combat this, but it can
 be tweaked to be better. By default a digest can be replayed for 300
 seconds, but Kamailio can do better. If you want to test, ngrep an
-INVITE which has a digest, and follow this [quick and (very) dirty way
-to replay a SIP packet](http://www.applit.be/?page_id=102).
+INVITE which has a digest, and follow this [quick and (very) dirty way to replay a SIP packet](http://www.applit.be/?page_id=102).
 
 You can improve this by adding the following. This will break the
 possibility to do a replay attack from a different machine, and will

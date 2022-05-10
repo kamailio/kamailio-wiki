@@ -2943,7 +2943,7 @@ is 1). The value of the parameter can be in range of 0..31.
 
 For more see
 <http://www.kamailio.org/dokuwiki/doku.php/tutorials:openser-flag-operations>
-or [flags](/utils/flags).
+or [flags](../utils/flags.md).
 
 Example of usage:
 

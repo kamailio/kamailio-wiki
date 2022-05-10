@@ -59,14 +59,10 @@ Other online SIP learning resources:
 
 SIP Books:
 
--   [SIP Beyond
-    VoIP](http://www.amazon.com/SIP-Beyond-VoIP-Communications-Revolution/dp/0974813001)
--   [Understanding the Session Initiation
-    Protocol](http://www.amazon.com/Understanding-Session-Initiation-Protocol-Telecommunications-ebook/dp/B003E2UQ8M/)
--   [SIP
-    Demystified](http://www.amazon.com/SIP-Demystified-Gonzalo-Camarillo-ebook/dp/B000T8OAHC/)
--   [Internet Communications Using
-    SIP](http://www.amazon.com/Internet-Communications-Using-SIP-Delivering-ebook/dp/B008O5JR20/)
+-   [SIP Beyond VoIP](http://www.amazon.com/SIP-Beyond-VoIP-Communications-Revolution/dp/0974813001)
+-   [Understanding the Session Initiation Protocol](http://www.amazon.com/Understanding-Session-Initiation-Protocol-Telecommunications-ebook/dp/B003E2UQ8M/)
+-   [SIP Demystified](http://www.amazon.com/SIP-Demystified-Gonzalo-Camarillo-ebook/dp/B000T8OAHC/)
+-   [Internet Communications Using SIP](http://www.amazon.com/Internet-Communications-Using-SIP-Delivering-ebook/dp/B008O5JR20/)
 
 ### Logical Programming
 
@@ -109,11 +105,11 @@ remote, is quite obvious (e.g., vim, joe, nano, pico, emacs, etc.).
 
 Install current stable version:
 
--   [Install Kamailio v4.3.x From GIT](/install/4.3.x/git)
+-   [Install Kamailio v4.3.x From GIT](../install/4.3.x/git.md)
 
 Install development version (master branch):
 
--   [Install Kamailio Devel Version From GIT](/install/devel/git)
+-   [Install Kamailio Devel Version From GIT](../install/devel/git.md)
 
 When installing from sources:
 
@@ -128,7 +124,7 @@ Ubuntu cousin), but might be an older version.
 To use most recent Kamailio release, you can use the APT repositories
 hosted by Kamailio project, see details at:
 
--   [KAMAILIO DEBS Repositories](/packages/debs)
+-   [KAMAILIO DEBS Repositories](../packages/debs.md)
 
 Then, the typical way of installing packages can be used:
 
@@ -155,7 +151,7 @@ When installing from deb packages:
 Kamailio RPMs are available for several distributions, such as RedHat
 Enterprise, CentOS, OpenSuse and Fedora. For more details, see:
 
--   [KAMAILIO RPMS Repositories](/packages/rpms)
+-   [KAMAILIO RPMS Repositories](../packages/rpms.md)
 
 You can add them to YUM configuration and then install Kamailio with
 usual yum commands:
@@ -188,7 +184,7 @@ at:
 Kamailio uses its own configuration file language. Its structure is
 described in the Core Cookbook:
 
--   [Devel Core Cookbook](/cookbooks/devel/core)
+-   [Devel Core Cookbook](../cookbooks/devel/core.md)
 
 ### Default Configuration File
 
@@ -372,15 +368,12 @@ See the module:
 
 ### Kamailio Books
 
--   [SIP Routing with
-    Kamailio](http://www.asipto.com/sw/kamailio-admin-book/)
+-   [SIP Routing with Kamailio](http://www.asipto.com/sw/kamailio-admin-book/)
 
 ### Kamailio Online Tutorials
 
--   [Kamailio Devel
-    Tutorial](http://www.asipto.com/pub/kamailio-devel-guide/)
--   [SER Getting
-    Started](http://kamailio.org/docs/ser-getting-started/SER-GettingStarted.pdf)
+-   [Kamailio Devel Tutorial](http://www.asipto.com/pub/kamailio-devel-guide/)
+-   [SER Getting Started](http://kamailio.org/docs/ser-getting-started/SER-GettingStarted.pdf)
 
 ### Related Open Source Projects
 

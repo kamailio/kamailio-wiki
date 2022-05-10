@@ -100,18 +100,14 @@ overlapping, counted once), internal VCS branching representations were:
 -   2005-10-25: Kamailio (OpenSER) 1.0.x
 -   2006-07-10: Kamailio (OpenSER) 1.1.x
 -   2007-03-12: Kamailio (OpenSER) 1.2.x
--   2007-12-13: Kamailio (OpenSER) 1.3.x - [See what was added in
-    1.3.x](http://www.kamailio.org/dokuwiki/doku.php/features:new-in-1.3.x)
--   2008-08-07: Kamailio (OpenSER) 1.4.x - [See what was added in
-    1.4.x](http://www.kamailio.org/dokuwiki/doku.php/features:new-in-1.4.x)
--   2009-03-02: Kamailio (OpenSER) 1.5.x - [See what was added in
-    1.5.x](http://www.kamailio.org/dokuwiki/doku.php/features:new-in-1.5.x)
+-   2007-12-13: Kamailio (OpenSER) 1.3.x - [See what was added in 1.3.x](http://www.kamailio.org/dokuwiki/doku.php/features:new-in-1.3.x)
+-   2008-08-07: Kamailio (OpenSER) 1.4.x - [See what was added in 1.4.x](http://www.kamailio.org/dokuwiki/doku.php/features:new-in-1.4.x)
+-   2009-03-02: Kamailio (OpenSER) 1.5.x - [See what was added in 1.5.x](http://www.kamailio.org/dokuwiki/doku.php/features:new-in-1.5.x)
 
 #### Combined Versions
 
 -   2010-01-11: SER and Kamailio (OpenSER) 3.0.x
-    -   [See what was added in
-        3.0.x](http://www.kamailio.org/dokuwiki/doku.php/features:new-in-3.0.x)
+    -   [See what was added in 3.0.x](http://www.kamailio.org/dokuwiki/doku.php/features:new-in-3.0.x)
 
 #### Next Combined Version
 
@@ -519,36 +515,21 @@ and **SER**.
 Next sections show the latest versions of default config files. If you
 want to see the evolution for each major version, then follow the links:
 
--   [Default config for SER
-    0.8.x](http://sip-router.org/pub/configs/ser-0.8.x.cfg)
--   [Default config for SER
-    0.9.x](http://sip-router.org/pub/configs/ser-0.9.x.cfg)
--   [Default config for SER
-    2.0.x](http://sip-router.org/pub/configs/ser-2.0.x.cfg)
--   [Default config for SER
-    2.1.x](http://sip-router.org/pub/configs/ser-2.1.x.cfg)
--   [Default config for SER
-    3.0.x](http://sip-router.org/pub/configs/ser-3.0.x.cfg)
--   [Default config for SER
-    3.1.x-devel](http://sip-router.org/pub/configs/ser-3.1.x.cfg)
--   [Default config for Kamailio (OpenSER)
-    0.9.x](http://sip-router.org/pub/configs/kamailio-0.9.x.cfg)
--   [Default config for Kamailio (OpenSER)
-    1.0.x](http://sip-router.org/pub/configs/kamailio-1.0.x.cfg)
--   [Default config for Kamailio (OpenSER)
-    1.1.x](http://sip-router.org/pub/configs/kamailio-1.1.x.cfg)
--   [Default config for Kamailio (OpenSER)
-    1.2.x](http://sip-router.org/pub/configs/kamailio-1.2.x.cfg)
--   [Default config for Kamailio (OpenSER)
-    1.3.x](http://sip-router.org/pub/configs/kamailio-1.3.x.cfg)
--   [Default config for Kamailio (OpenSER)
-    1.4.x](http://sip-router.org/pub/configs/kamailio-1.4.x.cfg)
--   [Default config for Kamailio (OpenSER)
-    1.5.x](http://sip-router.org/pub/configs/kamailio-1.5.x.cfg)
--   [Default config for Kamailio (OpenSER)
-    3.0.x](http://sip-router.org/pub/configs/kamailio-3.0.x.cfg)
--   [Default config for Kamailio (OpenSER)
-    3.1.x-devel](http://sip-router.org/pub/configs/kamailio-3.1.x.cfg)
+-   [Default config for SER 0.8.x](http://sip-router.org/pub/configs/ser-0.8.x.cfg)
+-   [Default config for SER 0.9.x](http://sip-router.org/pub/configs/ser-0.9.x.cfg)
+-   [Default config for SER 2.0.x](http://sip-router.org/pub/configs/ser-2.0.x.cfg)
+-   [Default config for SER 2.1.x](http://sip-router.org/pub/configs/ser-2.1.x.cfg)
+-   [Default config for SER 3.0.x](http://sip-router.org/pub/configs/ser-3.0.x.cfg)
+-   [Default config for SER 3.1.x-devel](http://sip-router.org/pub/configs/ser-3.1.x.cfg)
+-   [Default config for Kamailio (OpenSER) 0.9.x](http://sip-router.org/pub/configs/kamailio-0.9.x.cfg)
+-   [Default config for Kamailio (OpenSER) 1.0.x](http://sip-router.org/pub/configs/kamailio-1.0.x.cfg)
+-   [Default config for Kamailio (OpenSER) 1.1.x](http://sip-router.org/pub/configs/kamailio-1.1.x.cfg)
+-   [Default config for Kamailio (OpenSER) 1.2.x](http://sip-router.org/pub/configs/kamailio-1.2.x.cfg)
+-   [Default config for Kamailio (OpenSER) 1.3.x](http://sip-router.org/pub/configs/kamailio-1.3.x.cfg)
+-   [Default config for Kamailio (OpenSER) 1.4.x](http://sip-router.org/pub/configs/kamailio-1.4.x.cfg)
+-   [Default config for Kamailio (OpenSER) 1.5.x](http://sip-router.org/pub/configs/kamailio-1.5.x.cfg)
+-   [Default config for Kamailio (OpenSER) 3.0.x](http://sip-router.org/pub/configs/kamailio-3.0.x.cfg)
+-   [Default config for Kamailio (OpenSER) 3.1.x-devel](http://sip-router.org/pub/configs/kamailio-3.1.x.cfg)
 
 ### The Configs Today
 

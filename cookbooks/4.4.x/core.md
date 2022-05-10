@@ -2802,8 +2802,7 @@ proper port later on in a SIP transaction.
 This is useful for NAT traversal, to enforce symmetric response
 signalling.
 
-The rport parameter is defined in [RFC
-3581](https://tools.ietf.org/html/rfc3581).
+The rport parameter is defined in [RFC 3581](https://tools.ietf.org/html/rfc3581).
 
 Note: there is also a force_rport parameter which changes the global
 behaviour of the SIP proxy.
@@ -2836,8 +2835,7 @@ force_tcp_alias(port)
 
 adds a tcp port alias for the current connection (if tcp). Usefull if
 you want to send all the trafic to port_alias through the same
-connection this request came from \[it could help for firewall or nat
-traversal\]. With no parameters adds the port from the message via as
+connection this request came from \[it could help for firewall or nat traversal\]. With no parameters adds the port from the message via as
 the alias. When the "aliased" connection is closed (e.g. it's idle for
 too much time), all the port aliases are removed.
 
@@ -2859,7 +2857,7 @@ is 1). The value of the parameter can be in range of 0..31.
 
 For more see
 <http://www.kamailio.org/dokuwiki/doku.php/tutorials:openser-flag-operations>
-or [flags](/utils/flags).
+or [flags](../utils/flags.md).
 
 Example of usage:
 

@@ -62,8 +62,7 @@ see what was new in that release at:** \</fc>
 
 -   new **acc_prepare_always** parameter to allow preparation of the
     request no matter if the acc_prepare_flag is set at the moment of
-    the transaction creation. See [sr-user
-    discussion](http://lists.sip-router.org/pipermail/sr-users/2015-July/089191.html)
+    the transaction creation. See [sr-user discussion](http://lists.sip-router.org/pipermail/sr-users/2015-July/089191.html)
 
 ### acc_radius
 

@@ -6,7 +6,7 @@ capacity when using KEMI.
 
 ## Performance Tests
 
--   [KEMI Performance Tests For v5.2.x](/kemi/performance-tests/5.2.x)
+-   [KEMI Performance Tests For v5.2.x](../kemi/performance-tests/5.2.x.md)
 
 ## Tips And Tricks
 

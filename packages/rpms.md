@@ -9,7 +9,7 @@ Safarov and infrastructure provided by LOD.com.
 Note: the OpenSUSE Build Service (OBS) project is still available,
 mainly kept for testing purposes (should not be used anymore):
 
--   [OBS Packages Details](/packages/rpms-obs)
+-   [OBS Packages Details](../packages/rpms-obs.md)
 
 ## Kamailio 5.5.x (Latest Stable)
 

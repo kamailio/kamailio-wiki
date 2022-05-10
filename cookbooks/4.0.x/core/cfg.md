@@ -42,8 +42,7 @@ It closely resembles the PHP style, ***except*** you **can not use**
 double-slash ( ⁄ ⁄ ) for line comments. Only the hash (#) may be used
 for line comments.  
   
-It can be confusing seeing the C-Style Control Directives ([explained
-later](cfg#c-style_control_directives)) that begin with a hash-bang (#!)
+It can be confusing seeing the C-Style Control Directives ([explained later](cfg#c-style_control_directives)) that begin with a hash-bang (#!)
 mixed with line comments beginning with a hash (#).
 
 | Examples:                                                                           |
@@ -174,8 +173,7 @@ You call the procedure and it modifies the defined modules parameter.
 
 \<fc #800000>Strings should be enclosed in quotes.\</fc>
 
-See the [module
-documentation](http://www.kamailio.org/docs/modules/4.0.x/) for support
+See the [module documentation](http://www.kamailio.org/docs/modules/4.0.x/) for support
 parameter settings.
 
 | Examples:                                                                             |

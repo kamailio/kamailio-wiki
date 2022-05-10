@@ -9,8 +9,7 @@ confronted with.
 
 ## Security Risks
 
-Quoting shamelessly from [RFC3261 Chapter
-26](http://www.ietf.org/rfc/rfc3261.txt):
+Quoting shamelessly from [RFC3261 Chapter 26](http://www.ietf.org/rfc/rfc3261.txt):
 
 `SIP is not an easy protocol to secure. Its use of intermediaries, its multi-faceted trust relationships, its expected usage between elements with no trust at all, and its user-to-user operation make security far from trivial.`
 

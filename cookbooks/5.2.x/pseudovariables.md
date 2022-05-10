@@ -2416,7 +2416,6 @@ xlog("local hostanme is $HN(n)\n");
 ## $RANDOM - Random number
 
 Returns a random value from the \[0 - 2^31) range.
-
 (Part of the cfgutils module)
 
 ``` c

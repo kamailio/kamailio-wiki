@@ -1,7 +1,7 @@
 # Kamailio SIP Server v4.0.x (stable): Core Cookbook
 
 This tutorial collects the functions and parameters exported by Kamailio
-core to [configuration file](/cookbooks/4.0.x/core/cfg).
+core to [configuration file](../cookbooks/4.0.x/core/cfg.md).
 
 **Note:** The parameters on this page are **NOT** in alphabetical order.
 
@@ -2611,8 +2611,7 @@ force_tcp_alias(port)
 
 adds a tcp port alias for the current connection (if tcp). Usefull if
 you want to send all the trafic to port_alias through the same
-connection this request came from \[it could help for firewall or nat
-traversal\]. With no parameters adds the port from the message via as
+connection this request came from \[it could help for firewall or nat traversal\]. With no parameters adds the port from the message via as
 the alias. When the "aliased" connection is closed (e.g. it's idle for
 too much time), all the port aliases are removed.
 
@@ -2651,7 +2650,7 @@ is 1). The value of the parameter can be in range of 0..31.
 
 For more see
 <http://www.kamailio.org/dokuwiki/doku.php/tutorials:openser-flag-operations>
-or [flags](/utils/flags).
+or [flags](../utils/flags.md).
 
 Example of usage:
 

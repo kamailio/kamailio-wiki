@@ -19,7 +19,7 @@ See also:
 -   <http://www.tpope.net/node/106>
 
 More information about the git workflow for Kamailio can be also found
-at the wiki page [GIT Commit Guidelines](/devel/git-commit-guidelines) -
+at the wiki page [GIT Commit Guidelines](../devel/git-commit-guidelines.md) -
 it is recommended you read that one as well.
 
 ## Further Assistance
