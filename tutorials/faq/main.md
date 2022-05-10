@@ -885,6 +885,9 @@ Example for the configuration syntax:
 Check also the access privileges of the FIFO file in order to be sure
 that the user running kamctl can read and write to the file.
 
+:warning: Note: the MI control interface was removed starting with Kamailio v5.0.0,
+being replaced by RPC control interface.
+
 ### Kamcmd sometime fails to execute RPC commands with number parameters, why?
 
 :page_with_curl: There are situations when a **kamcmd** RPC command fails because the
