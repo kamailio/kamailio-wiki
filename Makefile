@@ -11,6 +11,8 @@ PDHTMLS=$(patsubst %.md,$(PDOUTDIR)/%.html, $(MDS))
 .PHONY : all
 all :
 	@echo "  available commands:"
+	@echo "    make mkdocs"
+	@echo "    make mkdocs-clean"
 	@echo "    make pandoc"
 	@echo "    make pandoc-clean"
 
@@ -27,3 +29,15 @@ $(PDOUTDIR) :
 $(PDOUTDIR)/%.html : %.md $(PDOUTDIR)
 	mkdir -p $$(dirname $@)
 	pandoc --toc --lua-filter=fmt/pandoc/links.lua -t html -f markdown -s $< -o $@
+
+.PHONY : mkdocs
+mkdocs :
+	mkdocs build -f fmt/mkdocs/mkdocs.yml
+
+.PHONY : mkdocs-clean
+mkdocs-clean :
+	rm -rf html/mkdocs
+
+.PHONY : clean
+clean :
+	rm -rf html
