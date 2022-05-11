@@ -1,0 +1,5 @@
+#toc-collapse {
+    padding: 0;
+    max-height: 85vh;
+    overflow-y: auto;
+}
