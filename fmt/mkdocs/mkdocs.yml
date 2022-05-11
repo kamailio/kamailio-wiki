@@ -1,6 +1,11 @@
 site_name: Kamailio Wiki Documentation
 docs_dir: '../../docs'
 site_dir: '../../html/mkdocs'
+theme:
+    name: mkdocs
+    navigation_depth: 3
+extra_css:
+    - '_xcfg/mkdocs/css/custom.css'
 nav:
     - 'Wiki Home': index.md
     - 'Kamailio Site': 'https://www.kamailio.org/'
