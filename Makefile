@@ -1,17 +1,29 @@
-OUTDIR?=html
+# make commands to build html from markdown
+#
+
+# list with markdown files
 MDS=$(shell find docs/* -name '*.md')
-HTMLS=$(patsubst %.md,$(OUTDIR)/%.html, $(MDS))
+
+# pandoc variables
+PDOUTDIR?=html/pandoc
+PDHTMLS=$(patsubst %.md,$(PDOUTDIR)/%.html, $(MDS))
 
 .PHONY : all
+all :
+	@echo "  available commands:"
+	@echo "    make pandoc"
+	@echo "    make pandoc-clean"
 
-all : $(HTMLS) $(OUTDIR)
+.PHONY : pandoc
+pandoc : $(PDHTMLS) $(PDOUTDIR)
 
-clean :
-	rm -rf $(OUTDIR)
+.PHONY : pandoc-clean
+pandoc-clean :
+	rm -rf $(PDOUTDIR)
 
-$(OUTDIR) :
-	mkdir -p $(OUTDIR)
+$(PDOUTDIR) :
+	mkdir -p $(PDOUTDIR)
 
-$(OUTDIR)/%.html : %.md $(OUTDIR)
+$(PDOUTDIR)/%.html : %.md $(PDOUTDIR)
 	mkdir -p $$(dirname $@)
 	pandoc --toc --lua-filter=fmt/pandoc/links.lua -t html -f markdown -s $< -o $@
