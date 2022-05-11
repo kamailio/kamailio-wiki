@@ -463,7 +463,7 @@ quotes to make it convenient to be used as a string token.
 
 -   perform substitutions inside the strings of config (note that define
     is replacing only IDs - alphanumeric tokens not enclosed in quotes)
--   #!subst offers an easy way to search and replace inside strings
+-   `#!subst` offers an easy way to search and replace inside strings
     before cfg parsing. E.g.,:
 
 ``` c
@@ -497,7 +497,7 @@ Similar to **subst**, but in addition it adds a **#!define ID subst**.
 ```
 
 Similar to **subst**, but in addition it adds a **#!define ID "subst"**
-(note the difference from #!substdef that the value for define is
+(note the difference from `#!substdef` that the value for define is
 enclosed in double quotes, useful when the define is used in a place for
 a string value).
 
