@@ -1,16 +1,17 @@
-TXTDIR=html
-MDS=$(shell find * -name '*.md')
-HTMLS=$(patsubst %.md,$(TXTDIR)/%.html, $(MDS))
+OUTDIR?=html
+MDS=$(shell find docs/* -name '*.md')
+HTMLS=$(patsubst %.md,$(OUTDIR)/%.html, $(MDS))
 
 .PHONY : all
 
-all : $(HTMLS) $(TXTDIR)
+all : $(HTMLS) $(OUTDIR)
+
 clean :
-	rm -rf $(TXTDIR)
+	rm -rf $(OUTDIR)
 
-$(TXTDIR) :
-	mkdir -p $(TXTDIR)
+$(OUTDIR) :
+	mkdir -p $(OUTDIR)
 
-$(TXTDIR)/%.html : %.md $(TXTDIR)
+$(OUTDIR)/%.html : %.md $(OUTDIR)
 	mkdir -p $$(dirname $@)
-	pandoc --toc --lua-filter=links.lua -t html -f markdown -s $< -o $@
+	pandoc --toc --lua-filter=fmt/pandoc/links.lua -t html -f markdown -s $< -o $@
