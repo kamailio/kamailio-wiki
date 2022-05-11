@@ -2,7 +2,7 @@ site_name: Kamailio Wiki Documentation
 docs_dir: '../../docs'
 site_dir: '../../html/mkdocs'
 nav:
-    - 'Start': start.md
+    - 'Wiki Home': index.md
     - 'Kamailio Site': 'https://www.kamailio.org/'
     - 'Docs Index': 'http://www.kamailio.org/docs/'
     - 'Modules Docs': 'http://www.kamailio.org/docs/modules/'
