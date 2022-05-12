@@ -1,1 +1,22 @@
+# output dir
 html
+
+# mdbook specific symlinks
+docs/SUMMARY.md
+
+# vim swaps
+.*.swp
+.*.swo
+
+# Emacs backup files
+*~
+# Emacs file locks
+.#*
+# Emacs desktop files
+.emacs.desktop*
+
+# MacOSX auto-generated files
+.DS_Store
+
+# vscode tmp files
+.vscode
