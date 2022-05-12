@@ -2,16 +2,16 @@
 
 Version: Kamailio SIP Server v5.6.x (devel)
 
-<img src="/cookbooks/devel/pseudovariables.png" class="align-right" width="200" />
+<img src="pseudovariables.png" class="align-right" width="200" />
 
 ## Introduction
 
-The term “pseudo-variable” is used for special tokens that can be given
+The term `pseudo-variable` is used for special tokens that can be given
 as parameters to different script functions and they will be replaced
 with a value before the execution of the function.
 
-The beginning of a “pseudo-variable” is marked by the character “$”. If
-you want to have the character “$” just double it “$$”.
+The beginning of a `pseudo-variable` is marked by the character `$`. If
+you want to have the character `$` just double it `$$`.
 
 There is a set of predefined pseudo-variables, which have the name
 composed from one or more characters, and special pseudo-variables that
