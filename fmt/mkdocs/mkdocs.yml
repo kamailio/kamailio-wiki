@@ -2,13 +2,25 @@ site_name: Kamailio Wiki Documentation
 docs_dir: '../../docs'
 site_dir: '../../html/mkdocs'
 theme:
-    name: mkdocs
-    navigation_depth: 3
+  name: mkdocs
+  navigation_depth: 3
 extra_css:
     - '_xcfg/mkdocs/css/custom.css'
+markdown_extensions:
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:pymdownx.emoji.gemoji
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - toc:
+      toc_depth: 3
 nav:
-    - 'Wiki Home': index.md
-    - 'Kamailio Site': 'https://www.kamailio.org/'
-    - 'Docs Index': 'http://www.kamailio.org/docs/'
-    - 'Modules Docs': 'http://www.kamailio.org/docs/modules/'
-    - 'Old Wiki': 'http://www.kamailio.org/dokuwiki/'
+  - 'Wiki Home': index.md
+  - 'Kamailio Site': 'https://www.kamailio.org/'
+  - 'Docs Index': 'http://www.kamailio.org/docs/'
+  - 'Modules Docs': 'http://www.kamailio.org/docs/modules/'
+  - 'Old Wiki': 'http://www.kamailio.org/dokuwiki/'
