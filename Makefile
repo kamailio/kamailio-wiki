@@ -38,7 +38,7 @@ $(PDOUTDIR) :
 
 $(PDOUTDIR)/%.html : %.md $(PDOUTDIR)
 	mkdir -p $$(dirname $@)
-	pandoc --toc --css $(CSS) --lua-filter=fmt/pandoc/links.lua -t html -f markdown -s $< -o $@
+	pandoc --toc --css $(CSS) --template fmt/pandoc/template.html --lua-filter=fmt/pandoc/links.lua -t html -f markdown -s $< -o $@
 
 .PHONY : mkdocs
 mkdocs :
@@ -69,4 +69,3 @@ mdbook-clean :
 clean :
 	rm -f docs/SUMMARY.md
 	rm -rf html
-

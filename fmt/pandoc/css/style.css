@@ -354,7 +354,7 @@ body {
 
 #TOC {
     position: fixed;
-    top: 0;
+    top: 60px;
     padding: 10px;
     left: 0;
     bottom: 10px;
@@ -373,4 +373,3 @@ body {
         overflow-y: auto;
     }
 }
-
