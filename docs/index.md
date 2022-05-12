@@ -2,7 +2,7 @@
 
 📘 **Contributions are very much appreciated! Use pull requests to add or update content of this repository.**
 
-  - https://github.com/kamailio/kamailio-wiki
+  - **[https://github.com/kamailio/kamailio-wiki](https://github.com/kamailio/kamailio-wiki)**
 
 The wiki content is also available in HTML format:
 
