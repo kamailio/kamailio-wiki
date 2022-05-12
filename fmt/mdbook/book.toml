@@ -1,0 +1,6 @@
+[book]
+authors = ["Seven Du"]
+language = "en"
+multilingual = false
+src = "../../docs"
+title = "Kamailio Wiki"

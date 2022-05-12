@@ -41,3 +41,6 @@ mkdocs-clean :
 .PHONY : clean
 clean :
 	rm -rf html
+
+mdbook:
+	cd fmt/mdbook && mdbook serve --open
