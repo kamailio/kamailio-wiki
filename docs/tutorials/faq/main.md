@@ -14,7 +14,7 @@ right answer.
 
 ### What is Kamailio?
 
-:page_with_curl: Kamailio is a SIP server, implementing the specifications from
+📃 Kamailio is a SIP server, implementing the specifications from
 RFC3261. Its root functionality is routing any kind of SIP packets. On
 top of that, many conceptual features are implemented, see more at:
 
@@ -22,38 +22,38 @@ top of that, many conceptual features are implemented, see more at:
 
 ### Is Kamailio a B2BUA?
 
-:page_with_curl: No, Kamailio is a flexible SIP proxy. Many people integrate
+📃 No, Kamailio is a flexible SIP proxy. Many people integrate
 Asterisk, FreeSWITCH, SEMS, or other products with Kamailio for a B2BUA.
 
      * [[http://ftp.iptel.org/pub/sems/doc/current/ModuleDoc_sbc.html|SEMS B2BUA]]
 
 ### Can Kamailio be used as SIP redirect server?
 
-:page_with_curl: Yes.
+📃 Yes.
 
 ### Can Kamailio be used as SIP registrar and location server?
 
-:page_with_curl: Yes.
+📃 Yes.
 
 ### Can Kamailio be used as SIP proxy server?
 
-:page_with_curl: Yes.
+📃 Yes.
 
 ### Can Kamailio be used as SIP load balancer server?
 
-:page_with_curl: Yes.
+📃 Yes.
 
 ### Can I load balance Asterisk or FreeSwitch with Kamailio?
 
-:page_with_curl: Yes.
+📃 Yes.
 
 ### Can Kamailio be used as SIP least cost routing server?
 
-:page_with_curl: Yes.
+📃 Yes.
 
 ### Is it possible to reload Kamailio configuration file?
 
-:page_with_curl: If you use native scripting language, you must restart after you
+📃 If you use native scripting language, you must restart after you
 update the configuration file.
 
 But note that many global parameters can be changed via RPC/MI commands
@@ -69,7 +69,7 @@ app_python3, app_jsdt, app_ruby, app_sqlang).
 
 ### What is the license of Kamailio?
 
-:page_with_curl: Kamailio is an open source application licensed under GNU Public
+📃 Kamailio is an open source application licensed under GNU Public
 License version 2 (aka GPLv2). It can be used for free "as in beer" on
 your infrastructure. Keep in mind that you need also distribute the
 source code of your changes, if you distribute it as a binary to your
@@ -82,7 +82,7 @@ use must follow the terms of GPLv2, because GPLv2 is viral.
 
 ### Can it be installed on Windows?
 
-:page_with_curl: No. There is no official development pushed in this direction,
+📃 No. There is no official development pushed in this direction,
 Linux/Unix being the de facto for running servers. But it might not be
 big effort to make it compile using the Linux-like environments for
 Windows (such as cygwin).
@@ -91,7 +91,7 @@ Windows (such as cygwin).
 
 ### What transport layer protocols are implemented in Kamailio?
 
-:page_with_curl: At network layer, Kamailio supports both IPv4 and IPv6.
+📃 At network layer, Kamailio supports both IPv4 and IPv6.
 
 At transport layer, Kamailio support UDP, TCP, TLS and SCTP.
 Transmission can be done in asynchronous mode (configuration option),
@@ -107,19 +107,19 @@ through Kamailio.
 
 ### Does Kamailio have support for WebSockets?
 
-:page_with_curl: Yes, starting with version 4.0.0. It supports WebSockets over TCP
+📃 Yes, starting with version 4.0.0. It supports WebSockets over TCP
 (WS) and over TLS (WSS), on both IPv4 and IPv6.
 
 ### Can Kamailio do gatewaying between transport layers?
 
-:page_with_curl: Yes. You can use Kamailio to receive SIP message on one transport
+📃 Yes. You can use Kamailio to receive SIP message on one transport
 and send out on a different transport. For example, receive TLS on IPv6
 and send out UDP on IPv4.
 
 ### Can Kamailio be used to call from web browsers (webrtc) to classic
 SIP phones?
 
-:page_with_curl: Yes, from signaling point of view. Remember that Kamailio is SIP
+📃 Yes, from signaling point of view. Remember that Kamailio is SIP
 packet router, not handling media plane at all. Simply, Kamailio can do
 gatewaying from WebSocket to UDP, TCP, TLS or SCTP for all SIP messages.
 
@@ -131,13 +131,13 @@ phones.
 
 ### What is a Kamailio module?
 
-:page_with_curl: A module is an extension that compiles in a separate object file and
+📃 A module is an extension that compiles in a separate object file and
 can be loaded at Kamailio startup. Usually a module exports new
 functions that can be used in configuration file routing blocks.
 
 ### Where are Kamailio modules located?
 
-:page_with_curl: Inside the source tree, there are three directories:
+📃 Inside the source tree, there are three directories:
 
 -   modules/
 -   modules_k/ - no longer used since version 4.0.0
@@ -150,7 +150,7 @@ modules that are bundled in Kamailio packages is available at:
 
 ### Which modules are compiled by default?
 
-:page_with_curl: The modules that have the same dependencies as the core of Kamailio.
+📃 The modules that have the same dependencies as the core of Kamailio.
 Those that are not compiled by default are kept in the variable
 'exclude_modules' of Makefile. To print the list of excluded modules:
 
@@ -158,7 +158,7 @@ Those that are not compiled by default are kept in the variable
 
 ### How can I compile and install a module that is excluded by default?
 
-:page_with_curl: Add it to the variable 'include_modules' to the command 'make cfg'.
+📃 Add it to the variable 'include_modules' to the command 'make cfg'.
 For example, compiling and installing the modules app_lua and db_mysql:
 
     make FLAVOUR=kamailio include_modules="app_lua db_mysql" cfg
@@ -167,7 +167,7 @@ For example, compiling and installing the modules app_lua and db_mysql:
 
 ### I use 'make all', but I can't get the db_mysql.so. How can I get this?
 
-:page_with_curl: The module is not compiled by default, because depends on
+📃 The module is not compiled by default, because depends on
 libmysqlclient. Use following commands to get in compiled and installed:
 
     make modules include_modules="db_mysql"
@@ -176,7 +176,7 @@ libmysqlclient. Use following commands to get in compiled and installed:
 
 ### How to compile only one module?
 
-:page_with_curl: First be sure that the core compiles fine with the command:
+📃 First be sure that the core compiles fine with the command:
 
     make 
 
@@ -193,7 +193,7 @@ for example, compiling only tls module:
 
 ### Why changes made to headers or body are not visible immediately?
 
-:page_with_curl: Kamailio is working always with the received SIP message (request or
+📃 Kamailio is working always with the received SIP message (request or
 reply). Changes done to headers or body are kept as a list of operations
 to be applied before writing to the network. If you want changes to be
 applied immediately, use **msg_apply_changes()** from textopsx module:
@@ -236,7 +236,7 @@ if(is_present_hf("X-Hdr")) {
 
 ### Why parts of From/To header appear many times?
 
-:page_with_curl: After doing header management operations, it can result that parts
+📃 After doing header management operations, it can result that parts
 of From/To header are duplicated or the result is the concatenation of
 many values. That is related to previous question, because the changes
 are not applied immediately and updates to parts of headers are not a
@@ -282,7 +282,7 @@ using functions such as uac_replace_from() or uac_replace_to().
 
 ### Why body or other parts of the SIP message appear multiple times?
 
-:page_with_curl: It is practically the same reason as for multiple From/To parts.
+📃 It is practically the same reason as for multiple From/To parts.
 
 The configuration file does an operation that changes parts in the
 headers or body many times. For example, if the body has two
@@ -297,7 +297,7 @@ block).
 
 ### How to set different header values for each destination of a SIP request?
 
-:page_with_curl: Set the value of the header inside a **branch_route**.
+📃 Set the value of the header inside a **branch_route**.
 
 All the operations done over a SIP message inside the **request_route**
 (including from the sub-routes executed from request_route) will be
@@ -362,7 +362,7 @@ outgoing branches.
 
 ### How to remove a single header field when a header appears multiple times?
 
-:page_with_curl: SIP allows that certain header fields may appear multiple times in a
+📃 SIP allows that certain header fields may appear multiple times in a
 SIP message. This header fields (e.g. Via, Route, Record-Route, Contact)
 may be written either on a single line (with comma separated) or on
 multiple lines (see [RFC 3261 section 7.3](http://tools.ietf.org/html/rfc3261#section-7.3) for details).
@@ -403,7 +403,7 @@ Remove the last header (\<<sip:3.3.3.3:22506;lr;transport=udp>\>):
 
 ### Why the SIP requests are replied with "483 Too Many Hops" or "513 Message Too Large"?
 
-:page_with_curl: In both cases, the reason is probably an error in request routing
+📃 In both cases, the reason is probably an error in request routing
 script which caused an infinite loop.
 
 You can easily verify whether this happens by watching SIP traffic on
@@ -432,7 +432,7 @@ to serve by Kamailio and which appears in request-URIs.
 
 ### I send SIP requests to Kamailio, but nothing happens, why?
 
-:page_with_curl: Check if you have a firewall rule dropping traffic on SIP port
+📃 Check if you have a firewall rule dropping traffic on SIP port
 (5060). Note that network sniffing tools have hooks in kernel before the
 firewall, so even if you see the SIP packets with ngrep or wireshark,
 they may be dropped by the firewall.
@@ -449,13 +449,13 @@ Kamailio is printing at least few debug messages.
 
 ### Does Kamailio relay media streams?
 
-:page_with_curl: No, *however* Kamailio can be configured to proxy media if needed.
+📃 No, *however* Kamailio can be configured to proxy media if needed.
 
 -   [See rtpengine, rtpproxy, lrkproxy, or mediaproxy](http://www.kamailio.org/docs/modules/stable/)
 
 ### What codecs are supported by Kamailio?
 
-:page_with_curl: **Kamailio supports all codecs** (*even codecs that haven't been
+📃 **Kamailio supports all codecs** (*even codecs that haven't been
 created yet*).
 
 Since Kamailio is a SIP proxy, it does not handle the media streams.
@@ -463,19 +463,19 @@ Codecs are negotiated between the two endpoints.
 
 ### Can Kamailio be used for video calls?
 
-:page_with_curl: Yes, Kamailio can be used for video calls. The two SIP phones must
+📃 Yes, Kamailio can be used for video calls. The two SIP phones must
 support video codecs/calling.
 
 ## Getting Started
 
 ### What are the minimum knowledge requirements before starting with Kamailio?
 
-:page_with_curl: To be familiar with Linux or UNIX (FreeBSD, OpenBSD, OS/X) and
+📃 To be familiar with Linux or UNIX (FreeBSD, OpenBSD, OS/X) and
 understand Session Initiation Protocol (SIP - RFC3261).
 
 ### Any step-by-step guide to install Kamailio?
 
-:page_with_curl: Yes, see:
+📃 Yes, see:
 
 -   <http://www.kamailio.org/wiki/#installation>
 
@@ -483,14 +483,14 @@ understand Session Initiation Protocol (SIP - RFC3261).
 
 ### Are there public mailing list where one can ask questions about Kamailio?
 
-:page_with_curl: Yes, there are few of them, each addressing a particular category of
+📃 Yes, there are few of them, each addressing a particular category of
 topics, see the list at:
 
 -   <http://www.kamailio.org/w/mailing-lists/>
 
 ### What are the rules for posting questions about Kamailio?
 
-:page_with_curl: You must subscribe to be able to post questions. Subscription is
+📃 You must subscribe to be able to post questions. Subscription is
 free, instructions are presented at the link related to each mailing
 list.
 
@@ -520,13 +520,13 @@ to:
 
 ### Where I can report an issue?
 
-:page_with_curl: Use the bug tracker available at:
+📃 Use the bug tracker available at:
 
 -   <https://github.com/kamailio/kamailio/issues>
 
 ### Where can I buy commercial support?
 
-:page_with_curl: See details posted at:
+📃 See details posted at:
 
 -   <http://www.kamailio.org/w/business-directory/>
 -   <http://www.kamailio.org/w/business/>
@@ -535,20 +535,20 @@ to:
 
 ### Does it have support for ENUM?
 
-:page_with_curl: Yes. See enum module.
+📃 Yes. See enum module.
 
 ### What kind of DNS queries can it do?
 
-:page_with_curl: Kamailio can do next DNS query types: A-Name, C-Name, AAAA (IPv6),
+📃 Kamailio can do next DNS query types: A-Name, C-Name, AAAA (IPv6),
 SRV, NAPTR and TXT.
 
 ### Can it do DNS-based (SRV) load balancing?
 
-:page_with_curl: Yes.
+📃 Yes.
 
 ### How to avoid reverse DNS for **src_ip** comparison?
 
-:page_with_curl: Do not enclose the IP address between quotes. Use like:
+📃 Do not enclose the IP address between quotes. Use like:
 
     if(src_ip==1.2.3.4) { ...
 
@@ -561,49 +561,49 @@ compared with a string:
 
 ### Can it route SIP instant messaging requests (page mode, RFC3428)?
 
-:page_with_curl: Yes. There is nothing special to do for that in configuration file,
+📃 Yes. There is nothing special to do for that in configuration file,
 MESSAGE requests are simply routed as any other SIP request.
 
 ### Can it store instant messages for offline users and deliver them
 when the users become online?
 
-:page_with_curl: Yes. See msilo module.
+📃 Yes. See msilo module.
 
 ### Can it route instant messages using MSRP (RFC4975)?
 
-:page_with_curl: Yes. Kamailio offers an embedded MSRP relay function via msrp
+📃 Yes. Kamailio offers an embedded MSRP relay function via msrp
 module. You don't need any external application for relaying MSRP
 packets.
 
 ### Can it handle end-to-end presence requests?
 
-:page_with_curl: Yes. There is nothing special to do for that in configuration file,
+📃 Yes. There is nothing special to do for that in configuration file,
 SUBSCRIBE and NOTIFY requests are simply routed as any other SIP
 request.
 
 ### Does it have support for SIP SIMPLE Presence (presence agent model)?
 
-:page_with_curl: Yes. You have to use presence and presence_xml modules to handle
+📃 Yes. You have to use presence and presence_xml modules to handle
 PUBLISH and SUBSCRIBE requests.
 
 ### Does it have support for Resource Lists Service?
 
-:page_with_curl: Yes. You have to use rls module.
+📃 Yes. You have to use rls module.
 
 ### Can it act as a presence user agent?
 
-:page_with_curl: Yes. See pua module and its extensions named with 'pua\_' prefix
+📃 Yes. See pua module and its extensions named with 'pua\_' prefix
 (such as pua_usrloc, pua_dialoginfo, etc.).
 
 ### Can it handle subscription requests for dialog states (aka, blinking
 lamps)?
 
-:page_with_curl: Yes. You have to use dialog module together with presence_dialoginfo
+📃 Yes. You have to use dialog module together with presence_dialoginfo
 and pua_dialoginfo modules.
 
 ### Does it have support for handling XCAP?
 
-:page_with_curl: Yes. Kamailio offers an embedded XCAP server via xcap_server module.
+📃 Yes. Kamailio offers an embedded XCAP server via xcap_server module.
 It can receive and handle directly the XCAP requests without using any
 external application.
 
@@ -614,7 +614,7 @@ external XCAP server (that could be another instance of Kamailio).
 
 ### Can Kamailio be used with phones connecting from behind NAT?
 
-:page_with_curl: Yes, Kamailio supports the so called "far-end NAT traversal". One
+📃 Yes, Kamailio supports the so called "far-end NAT traversal". One
 solution is to use nathelper for NAT traversal of SIP signaling, and
 rtpproxy modules with the rtpproxy (<http://rtpproxy.org>) application
 for relaying RTP packets.
@@ -627,7 +627,7 @@ define WITH_NAT:
 
 ### Can Kamailio be installed behind NAT (e.g., like on Amazon EC2)?
 
-:page_with_curl: Yes. You have to set the public IP address as advertised attribute
+📃 Yes. You have to set the public IP address as advertised attribute
 to listen parameter:
 
       listen=_localsocket_ advertise _publicaddr_
@@ -640,7 +640,7 @@ Example:
 
 ### Can I check the configuration files for syntax errors?
 
-:page_with_curl: Yes. Use '-c' command line parameter, like:
+📃 Yes. Use '-c' command line parameter, like:
 
     /usr/local/sbin/kamailio -c -f /usr/local/etc/kamailio/kamailio.cfg
 
@@ -652,7 +652,7 @@ causing kamailio to fail starting.
 
 ### Do I have to delete the AVPs added in the configuration file for a SIP message?
 
-:page_with_curl: No. The AVPs are automatically deleted when associated SIP
+📃 No. The AVPs are automatically deleted when associated SIP
 transaction is destroyed.
 
 If you want to do it on purpose, you can delete the AVP using assignment
@@ -662,7 +662,7 @@ to $null, like:
 
 ### What is a pseudo-variable?
 
-:page_with_curl: A pseudo-variable is a special token that is expanded at runtume
+📃 A pseudo-variable is a special token that is expanded at runtume
 with a specific value. It can be used inside the parameters of some
 functions or in configuration file expressions.
 
@@ -675,7 +675,7 @@ For more see:
 
 ### How to iterate through the items in a comma separated string?
 
-:page_with_curl: If you have a variable holding a string like "a,b,c,d" and want to
+📃 If you have a variable holding a string like "a,b,c,d" and want to
 get each character separately, you have to use a WHILE loop with
 {s.count,separator} and {s.select,index,separator} transformations.
 
@@ -694,7 +694,7 @@ while( $var(i) <= $var(n) ) {
 
 ### How is the function return code evaluated?
 
-:page_with_curl: Configuration file interpreter evaluates the return code of a
+📃 Configuration file interpreter evaluates the return code of a
 function as follow:
 
 -   \<0 (negative value) - it is evaluated to false
@@ -792,7 +792,7 @@ if($var(x)) {
 
 ### How is the SIP request retransmission handled?
 
-:page_with_curl: The next snippet is detecting retransmissions:
+📃 The next snippet is detecting retransmissions:
 
 ``` c
     # handle retransmissions
@@ -829,7 +829,7 @@ triggers internally the **exit** for configuration file execution.
 
 ### I get 'out of memory' errors, what can be done?
 
-:page_with_curl: Most probably you run out of memory allocated for Kamailio. The
+📃 Most probably you run out of memory allocated for Kamailio. The
 application does not use the entire system memory, but up to a
 configured size.
 
@@ -856,19 +856,19 @@ private memory:
 
 ### How to generate HA1 value in command line?
 
-:page_with_curl: Use following command:
+📃 Use following command:
 
     echo -n 'user:realm:password' | md5sum | awk '{ print $1 }'
 
 ### How to generate HA1B value in command line?
 
-:page_with_curl: Use following command:
+📃 Use following command:
 
     echo -n 'user@realm:realm:password' | md5sum | awk '{ print $1 }'
 
 ### Kamctl gives an error regarding opening FIFO file, why?
 
-:page_with_curl: Kamctl couldn't connect to FIFO file for sending MI commands -
+📃 Kamctl couldn't connect to FIFO file for sending MI commands -
 default FIFO file is **/tmp/kamailio_fifo**.
 
 Check if your configuration loads the mi_fifo module and configures a
@@ -885,12 +885,12 @@ Example for the configuration syntax:
 Check also the access privileges of the FIFO file in order to be sure
 that the user running kamctl can read and write to the file.
 
-:warning: Note: the MI control interface was removed starting with Kamailio v5.0.0,
+⚠️ **Note:** the MI control interface was removed starting with Kamailio v5.0.0,
 being replaced by RPC control interface.
 
 ### Kamcmd sometime fails to execute RPC commands with number parameters, why?
 
-:page_with_curl: There are situations when a **kamcmd** RPC command fails because the
+📃 There are situations when a **kamcmd** RPC command fails because the
 parameters that are provided are auto-converted to integer numbers. This
 happens when the implementation of the RPC commands expects a string
 parameter (e.g., username).
