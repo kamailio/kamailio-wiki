@@ -1,0 +1,6 @@
+[book]
+authors = ["Kamailio Developers and Contributors"]
+language = "en"
+multilingual = false
+src = "../../docs"
+title = "Kamailio Wiki Documentation"
