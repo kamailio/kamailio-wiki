@@ -3,3 +3,7 @@
     max-height: 85vh;
     overflow-y: auto;
 }
+.gemoji {
+    height: 1em;
+    width: auto;
+}
