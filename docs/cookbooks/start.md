@@ -1,3 +1,3 @@
 ##### Kamailio Cookbooks
 
-See [/start#cookbooks](../start#cookbooks.md)
+See [index#cookbooks](../index#cookbooks.md)
