@@ -1,6 +1,6 @@
 # Kamailio SIP Server Documentation Wiki
 
-:blue_book: **Contributions are very much appreciated! Use pull requests to add or update content of this repository.**
+📘 **Contributions are very much appreciated! Use pull requests to add or update content of this repository.**
 
 Few guidelines to edit the wiki:
 
@@ -14,7 +14,7 @@ Few guidelines to edit the wiki:
     email to mailing lists \<sr-users \[at\] lists.sip-router.org>
     asking for review
 
-:fire:*IMPORTANT: For a cleaner presentation, the front page in
+🔥 * **IMPORTANT:** For a cleaner presentation, the front page in
 this wiki site is linking the documents for latest stable versions, 4.3
 or newer, respectively the installation and upgrade tutorials, new
 features, a.s.o... For older releases, 3.2.x to 4.2.x, go to **Older
@@ -22,7 +22,7 @@ Releases Index**:*
 
   * [Link To Content For Older Releases](content/old-releases.md)
 
-:fire:*IMPORTANT: Content for older releases than 3.2.0 is
+🔥 * **IMPORTANT:** Content for older releases than 3.2.0 is
 available at the **Old Wiki Site**:*
 
   * [Link To Old Wiki Site](https://www.kamailio.org/dokuwiki/)
