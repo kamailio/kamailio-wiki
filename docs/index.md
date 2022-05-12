@@ -2,19 +2,25 @@
 
 📘 **Contributions are very much appreciated! Use pull requests to add or update content of this repository.**
 
+  - https://github.com/kamailio/kamailio-wiki
+
+The wiki content is also available in HTML format:
+
+  - **[Browse Wiki HTML Pages On Kamailio.Org](https://www.kamailio.org/wikidocs/)**
+
 Few guidelines to edit the wiki:
 
 -   everyone is welcome to add useful content to the wiki
--   use namespaces when adding new pages
--   if there is a root namespace that matches the new page topic, add it
-    inside it, eventually create a new sub-namespace
+-   use subfolders per category when adding new pages
+-   if there is subfolder that matches the new page topic, add it
+    inside it, eventually create a new sub-folder if you want to narrow down to a sub-category
 -   if you add many pages for the same subject, group them under same
-    sub-namespace
+    sub-folder
 -   if you are not sure that the content is entirely correct, send an
-    email to mailing lists \<sr-users \[at\] lists.sip-router.org>
+    email to mailing list **sr-users (at) lists.sip-router.org**
     asking for review
 
-🔥 * **IMPORTANT:** For a cleaner presentation, the front page in
+🔥 **IMPORTANT:** *For a cleaner presentation, the front page in
 this wiki site is linking the documents for latest stable versions, 4.3
 or newer, respectively the installation and upgrade tutorials, new
 features, a.s.o... For older releases, 3.2.x to 4.2.x, go to **Older
@@ -22,7 +28,7 @@ Releases Index**:*
 
   * [Link To Content For Older Releases](content/old-releases.md)
 
-🔥 * **IMPORTANT:** Content for older releases than 3.2.0 is
+🔥 **IMPORTANT:** *Content for older releases than 3.2.0 is
 available at the **Old Wiki Site**:*
 
   * [Link To Old Wiki Site](https://www.kamailio.org/dokuwiki/)
