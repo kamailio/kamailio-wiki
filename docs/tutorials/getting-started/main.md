@@ -33,7 +33,7 @@ rules.
 Session Initiation Protocol (SIP) is specified by IETF (www.ietf.org),
 with the core specification in the RFC 3261:
 
--   <https://tools.ietf.org/html/rfc3261>
+-   [https://tools.ietf.org/html/rfc3261](https://tools.ietf.org/html/rfc3261)
 
 Many other RFCs add to the core specifications, look at what is
 published by the IETF Working Groups for SIP and SIMPLE.
@@ -49,7 +49,7 @@ some time ago. It is available inside source tree of Kamailio, in the
 folder doc/sip/. It is docbook xml format, the html version can be read
 online at:
 
--   <http://www.kamailio.org/docs/tutorials/sip-introduction/>
+-   [https://www.kamailio.org/docs/tutorials/sip-introduction/](https://www.kamailio.org/docs/tutorials/sip-introduction/)
 
 Other online SIP learning resources:
 
@@ -105,17 +105,16 @@ remote, is quite obvious (e.g., vim, joe, nano, pico, emacs, etc.).
 
 Install current stable version:
 
--   [Install Kamailio v4.3.x From GIT](../install/4.3.x/git.md)
+-   [Install Kamailio v4.3.x From GIT](../../install/4.3.x/git.md)
 
 Install development version (master branch):
 
--   [Install Kamailio Devel Version From GIT](../install/devel/git.md)
+-   [Install Kamailio Devel Version From GIT](../../install/devel/git.md)
 
 When installing from sources:
 
--   configuration files are deployed in: /usr/local/etc/kamailio
--   binary files are deployed in: /usr/local/sbin/
-
+-   configuration files are deployed in: `/usr/local/etc/kamailio`
+-   binary files are deployed in: `/usr/local/sbin/`
 ### Debian
 
 Kamailio is part of latest official stable Debian distributions (and its
@@ -124,7 +123,7 @@ Ubuntu cousin), but might be an older version.
 To use most recent Kamailio release, you can use the APT repositories
 hosted by Kamailio project, see details at:
 
--   [KAMAILIO DEBS Repositories](../packages/debs.md)
+-   [KAMAILIO DEBS Repositories](../../packages/debs.md)
 
 Then, the typical way of installing packages can be used:
 
@@ -151,7 +150,7 @@ When installing from deb packages:
 Kamailio RPMs are available for several distributions, such as RedHat
 Enterprise, CentOS, OpenSuse and Fedora. For more details, see:
 
--   [KAMAILIO RPMS Repositories](../packages/rpms.md)
+-   [KAMAILIO RPMS Repositories](../../packages/rpms.md)
 
 You can add them to YUM configuration and then install Kamailio with
 usual yum commands:
@@ -184,7 +183,7 @@ at:
 Kamailio uses its own configuration file language. Its structure is
 described in the Core Cookbook:
 
--   [Devel Core Cookbook](../cookbooks/devel/core.md)
+-   [Devel Core Cookbook](../../cookbooks/devel/core.md)
 
 ### Default Configuration File
 
@@ -306,7 +305,7 @@ command line. It requires that the **ctl** module is loaded by Kamailio.
 It is a web management interface for Kamailio, written in PHP -- more
 at:
 
--   <http://www.siremis.org>
+-   [http://www.siremis.org](http://www.siremis.org)
 
 ### kamcli
 
@@ -316,7 +315,7 @@ extend it by writing new plugins.
 
 See more at:
 
--   <https://github.com/asipto/kamcli>
+-   [https://github.com/kamailio/kamcli](https://github.com/kamailio/kamcli)
 
 ## Typical Use Cases
 
@@ -330,22 +329,22 @@ configuration file for more details.
 
 See dispatcher module:
 
--   <http://kamailio.org/docs/modules/stable/modules/dispatcher.html>
+-   [https://kamailio.org/docs/modules/stable/modules/dispatcher.html](https://kamailio.org/docs/modules/stable/modules/dispatcher.html)
 
 ### Least Cost Routing
 
 See the modules:
 
--   <http://kamailio.org/docs/modules/stable/modules/lcr.html>
--   <http://kamailio.org/docs/modules/stable/modules/carrierroute.html>
--   <http://kamailio.org/docs/modules/stable/modules/drouting.html>
+-   [https://kamailio.org/docs/modules/stable/modules/lcr.html](https://kamailio.org/docs/modules/stable/modules/lcr.html)
+-   [https://kamailio.org/docs/modules/stable/modules/carrierroute.html](https://kamailio.org/docs/modules/stable/modules/carrierroute.html)
+-   [https://kamailio.org/docs/modules/stable/modules/drouting.html](https://kamailio.org/docs/modules/stable/modules/drouting.html)
 
 ### IMS/VoLTE
 
 Look at the modules that have the name prefixed with **ims\_** or
 starting with **cdp** (the later are for Diameter):
 
--   <http://kamailio.org/docs/modules/stable/>
+-   [https://kamailio.org/docs/modules/stable/](http://kamailio.org/docs/modules/stable/)
 
 Example of configuration files for different IMS roles (eg., ICSCF,
 PCSCF, SCSCF) are available in the source tree, look inside the
@@ -356,13 +355,13 @@ sub-directory **examples/**.
 Look at the modules that have the name prefixed with **presence**
 (presence server) or **pua** (presence user agent):
 
--   <http://kamailio.org/docs/modules/stable/>
+-   [http://kamailio.org/docs/modules/stable/](http://kamailio.org/docs/modules/stable/)
 
 ### WebRTC
 
 See the module:
 
--   <http://kamailio.org/docs/modules/stable/modules/websocket.html>
+-   [http://kamailio.org/docs/modules/stable/modules/websocket.html](http://kamailio.org/docs/modules/stable/modules/websocket.html)
 
 ## Useful Resources
 
