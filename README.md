@@ -16,6 +16,8 @@ To update the content, make pull requests at:
 
   - https://github.com/kamailio/kamailio-wiki
 
+The wiki pages are inside the **[docs/](docs/)** folder.
+
 Questions and discussions about wiki content have to be done via mailing list:
 
   - [sr-users (at) lists.kamailio.org](https://lists.kamailio.org/cgi-bin/mailman/listinfo/sr-users)
