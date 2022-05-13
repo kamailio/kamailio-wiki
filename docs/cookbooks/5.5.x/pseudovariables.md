@@ -37,7 +37,7 @@ Predefined pseudo-variables are listed in alphabetical order.
 
 ### $$ - Pseudo-variable marker
 
-**$$** - represents the character '$'
+`$$` - represents the character `$`
 
 ### $\_s(format) - Evaluate dynamic format
 
@@ -2943,7 +2943,8 @@ route {
 Following are some examples how RURI and DURI are parsed, for SIP-URIs,
 tel-URIs and Service-URNs:
 
-     === Request URI contains SIP URI ===
+```shell
+    # Request URI contains SIP URI
     $ru = "sip:example.com"
     $rz = "sip"
     $rU = "<null>"
@@ -2951,15 +2952,15 @@ tel-URIs and Service-URNs:
     $rp = "5060"
     $rP = "UDP"
 
-    === Request URI contains SIP URI ===
-    $ru = "sips:john.q.public:hispw@example.com:6061;transport=tls;foo=bar"
+    # Request URI contains SIP URI
+    $ru = "sips:john.q.public:hispw@example.com:6061 transport=tls;foo=bar"
       $rz = "sips"
       $rU = "john.q.public"
       $rd = "example.com"
       $rp = "6061"
       $rP = "tls"
 
-    === Request URI contains service URN ===
+    # Request URI contains service URN
     $ru = "urn:service:sos.fire"
       $rz = "urn"
       $rU = "service"
@@ -2967,7 +2968,7 @@ tel-URIs and Service-URNs:
       $rp = "5060"
       $rP = "UDP"
 
-    === Request URI contains tel: URI ===
+    # Request URI contains tel: URI
     $ru = "tel:+1-201-555-0123"
       $rz = "tel"
       $rU = "+1-201-555-0123"
@@ -2975,7 +2976,7 @@ tel-URIs and Service-URNs:
       $rp = "5060"
       $rP = "UDP"
 
-    === Request URI contains tel: URI with phone-context ===
+    # Request URI contains tel: URI with phone-context
     $ru = "tel:7042;phone-context=example.com"
       $rz = "tel"
       $rU = "7042"
@@ -2983,8 +2984,9 @@ tel-URIs and Service-URNs:
       $rp = "5060"
       $rP = "UDP"
 
-    === Destination URI (must be a SIP(S) URI) ===
+    # Destination URI (must be a SIP(S) URI)
     $du = "sip:example.com:6061;transport=tls;foo=bar"
       $dd = "example.com"
       $dp = "6061"
       $dP = "tls"
+```
