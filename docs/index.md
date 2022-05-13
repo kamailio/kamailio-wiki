@@ -38,7 +38,7 @@ available at the **Old Wiki Site**:*
 ### Installation from GIT Sources
 
 -   [Install Kamailio Devel Version From GIT (html)](https://kamailio.org/docs/tutorials/devel/kamailio-install-guide-git/)
--   [Install Kamailio Devel Version From GIT (wiki)](../install/devel/git.md)
+-   [Install Kamailio Devel Version From GIT (wiki)](install/devel/git.md)
 -   [Install Kamailio v5.5.x From GIT (html)](https://kamailio.org/docs/tutorials/5.5.x/kamailio-install-guide-git/)
 -   [Install Kamailio v5.4.x From GIT (html)](https://kamailio.org/docs/tutorials/5.4.x/kamailio-install-guide-git/)
 -   [Install Kamailio v5.3.x From GIT (html)](https://kamailio.org/docs/tutorials/5.3.x/kamailio-install-guide-git/)
@@ -179,7 +179,7 @@ in embedded Lua/Python/JavaScript/Ruby/... SIP routing scripts:
 -   [Frequently Asked Questions](tutorials/faq/main.md)
 -   [Kamailio with DNSSEC](tutorials/dns/dnssec.md)
 -   [Mini HowTo Tutorials](tutorials/mini-howto-admin/main.md)
--   [Howto install and configure IMS with Kamailio](tutorials/IMS/installation-howto.md)
+-   [Howto install and configure IMS with Kamailio](tutorials/ims/installation-howto.md)
 -   [Howto setup auth_db and usrloc](tutorials/auth/auth_db.md)
 -   [Howto switch to OpenSSL 1.0 for TLS Connections](tutorials/tls/howto-openssl-1-0.md)
 -   [Troubleshooting - Memory](tutorials/troubleshooting/memory.md)
@@ -191,8 +191,8 @@ in embedded Lua/Python/JavaScript/Ruby/... SIP routing scripts:
 
 ### Security related tutorials
 
--   [Overview of Security issues for SIP routers](tutorials/Security/Security-threats.md)
--   [Overview of Security related config snippets](tutorials/Security/Kamailio-Security.md)
+-   [Overview of Security issues for SIP routers](tutorials/security/security-threats.md)
+-   [Overview of Security related config snippets](tutorials/security/kamailio-security.md)
 
 ### External Tutorials
 
