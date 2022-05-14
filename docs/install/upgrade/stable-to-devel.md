@@ -11,7 +11,7 @@ upgrade database and configuration file from v5.6.x to run with Kamailio
 If you look for the guidelines to upgrade to previous stable release,
 see:
 
--   [Upgrade Kamailio v5.5.x to v5.6.0](../install/upgrade/5.5.x-to-5.6.0.md)
+-   [Upgrade Kamailio v5.5.x to v5.6.0](5.5.x-to-5.6.0.md)
 
 ## Remarks
 
