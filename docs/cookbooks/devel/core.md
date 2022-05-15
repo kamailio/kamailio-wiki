@@ -3645,7 +3645,7 @@ Test if a flag is set for current processed message (if the flag value
 is 1). The value of the parameter can be in range of 0..31.
 
 For more see:
-<https://www.kamailio.org/wiki/tutorials/kamailio-flag-operations>.
+- [Kamailio - Flag Operations](../tutorials/../../tutorials/kamailio-flag-operations.md)
 
 Example of usage:
 
@@ -3739,7 +3739,7 @@ Example usage:
 
 See also the FAQ for how the function return code is evaluated:
 
--   <https://www.kamailio.org/wiki/tutorials/faq/main#how_is_the_function_return_cod>
+-   [Frequently Asked Questions](../tutorials/../../tutorials/faq/main.md#how-is-the-function-return-code-evaluated)
 
 ### revert_uri
 
@@ -3999,7 +3999,7 @@ processing (e.g., accounting) or to keep some state (e.g., message
 authenticated).
 
 For more see:
-<https://www.kamailio.org/wiki/tutorials/kamailio-flag-operations> .
+- [Kamailio flag operations](../tutorials/../../tutorials/kamailio-flag-operations.md)
 
 Example of usage:
 
@@ -4092,7 +4092,7 @@ route_block_id[NAME] {
 The name can be any alphanumeric string, with specific routing blocks
 enforcing a particular format.
 
-\<fc #4682b4>Note: route(number) is equivalent to route("number").\</fc>
+:fire:**IMPORTANT**: Note: route(number) is equivalent to route("number").
 
 Route blocks can be executed on network events (e.g., receiving a SIP
 message), timer events (e.g., retransmission timeout) or particular
@@ -4125,9 +4125,9 @@ It contains a set of actions to be executed for SIP requests received
 from the network. It is the equivalent of \*main()\* function for
 handling the SIP requests.
 
-\<fc #4682b4>For backward compatibility reasons, the main request
+:fire:**IMPORTANT**: For backward compatibility reasons, the main request
 'route' block can be identified by 'route{...}' or
-'route\[0\]{...}'.\</fc>
+'route\[0\]{...}'.
 
 The implicit action after execution of the main route block is to drop
 the SIP request. To send a reply or forward the request, explicit
@@ -4284,9 +4284,9 @@ reply_route {
 }
 ```
 
-\<fc #4682b4>Note: for backward compatibility reasons, the main 'reply'
+:fire:**IMPORTANT**: Note: for backward compatibility reasons, the main 'reply'
 routing block can be also identified by 'onreply_route {...}' or
-'onreply_route\[0\] {...}'.\</fc>
+'onreply_route\[0\] {...}'.
 
 ### onreply_route
 
@@ -4547,7 +4547,7 @@ Example of usage:
 
 See also the FAQ for how the function return code is evaluated:
 
--   <https://www.kamailio.org/wiki/tutorials/faq/main#how_is_the_function_return_cod>
+-   [How is the function code evaluated](../../tutorials/faq/main.md#how-is-the-function-return-code-evaluated)
 
 ### switch
 
