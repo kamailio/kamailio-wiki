@@ -4092,7 +4092,7 @@ route_block_id[NAME] {
 The name can be any alphanumeric string, with specific routing blocks
 enforcing a particular format.
 
-:fire:**IMPORTANT**: Note: route(number) is equivalent to route("number").
+🔥**IMPORTANT**: Note: route(number) is equivalent to route("number").
 
 Route blocks can be executed on network events (e.g., receiving a SIP
 message), timer events (e.g., retransmission timeout) or particular
@@ -4125,7 +4125,7 @@ It contains a set of actions to be executed for SIP requests received
 from the network. It is the equivalent of \*main()\* function for
 handling the SIP requests.
 
-:fire:**IMPORTANT**: For backward compatibility reasons, the main request
+🔥**IMPORTANT**: For backward compatibility reasons, the main request
 'route' block can be identified by 'route{...}' or
 'route\[0\]{...}'.
 
@@ -4284,7 +4284,7 @@ reply_route {
 }
 ```
 
-:fire:**IMPORTANT**: Note: for backward compatibility reasons, the main 'reply'
+🔥**IMPORTANT**: Note: for backward compatibility reasons, the main 'reply'
 routing block can be also identified by 'onreply_route {...}' or
 'onreply_route\[0\] {...}'.
 

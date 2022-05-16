@@ -157,7 +157,7 @@ $(branch(uri)[2]) = "sip:test@kamailio.org;transport=sctp";
 
 **$br** - reference to request's first branch
 
-:fire:**IMPORTANT**: It is R/W variable, you can assign values to it directly in
+🔥**IMPORTANT**: It is R/W variable, you can assign values to it directly in
 configuration file (will add a new branch).
 
 ### $bR - Request's all branches
@@ -168,14 +168,14 @@ configuration file (will add a new branch).
 
 **$bf** - reference to branch flags of branch 0 (RURI) - decimal output
 
-:fire:**IMPORTANT**: It is R/W variable (you can assign values to it directly in
+🔥**IMPORTANT**: It is R/W variable (you can assign values to it directly in
 configuration file)
 
 ### $bF - Branch flags
 
 **$bF** - reference to branch flags of branch 0 (RURI) - hexa output
 
-:fire:**IMPORTANT**: It is R/W variable (you can assign values to it directly in
+🔥**IMPORTANT**: It is R/W variable (you can assign values to it directly in
 configuration file)
 
 ### $bs - Body size
@@ -305,7 +305,7 @@ it. You can set $du to any SIP URI.
      sip:pbx123.kamailio.org;transport=udp
      sip:[2001:DB8::33:2]:5980;transport=tls
 
-:fire:**IMPORTANT**: It is R/W variable (you can assign values to it directly in
+🔥**IMPORTANT**: It is R/W variable (you can assign values to it directly in
 configuration file)
 
 To reset $du:
@@ -316,14 +316,14 @@ To reset $du:
 
 **$fd** - reference to domain in URI of 'From' header
 
-:fire:**IMPORTANT**: It is R/W variable (you can assign values to it directly in
+🔥**IMPORTANT**: It is R/W variable (you can assign values to it directly in
 configuration file, but its value does not change)
 
 ### $fn - From display name
 
 **$fn** - reference to display name of 'From' header
 
-:fire:**IMPORTANT**: It is R/W variable (you can assign values to it directly in
+🔥**IMPORTANT**: It is R/W variable (you can assign values to it directly in
 configuration file, but its value does not change)
 
 ### $fs - Forced Send Socket
@@ -332,7 +332,7 @@ configuration file, but its value does not change)
 any) in the form "proto:ip:port". It is the socket from where Kamailio
 is going to send out the message.
 
-:fire:**IMPORTANT**: It is R/W variable (you can assign values to it directly in
+🔥**IMPORTANT**: It is R/W variable (you can assign values to it directly in
 configuration file). Transport proto can be omitted when assigning
 value, in which case it is taken from destination URI of the
 message.
@@ -382,7 +382,7 @@ this variable returning the right value.
 
 **$fu** - reference to URI of 'From' header
 
-:fire:**IMPORTANT**: It is R/W variable (you can assign values to it directly in
+🔥**IMPORTANT**: It is R/W variable (you can assign values to it directly in
 configuration file, but its value does not change)
 
 Note that changing the From: header may break backwards compatibility
@@ -392,7 +392,7 @@ with SIP 1.0 devices.
 
 **$fU** - reference to username in URI of 'From' header
 
-:fire:**IMPORTANT**: It is R/W variable (you can assign values to it directly in
+🔥**IMPORTANT**: It is R/W variable (you can assign values to it directly in
 configuration file, but its value does not change)
 
 Note that changing the From: header may break backwards compatibility
@@ -416,7 +416,7 @@ changes
 **$mf** - reference to message/transaction flags set for current SIP
 request
 
-:fire:**IMPORTANT**: It is R/W variable (you can assign values to it directly in
+🔥**IMPORTANT**: It is R/W variable (you can assign values to it directly in
 configuration file)
 
 ### $mF - Flags in hexadecimal
@@ -424,7 +424,7 @@ configuration file)
 **$mF** -reference to message/transaction flags set for current SIP
 request in hexa-decimal
 
-:fire:**IMPORTANT**: It is R/W variable (you can assign values to it directly in
+🔥**IMPORTANT**: It is R/W variable (you can assign values to it directly in
 configuration file)
 
 ### $mi - SIP message id
@@ -543,7 +543,7 @@ Example of use:
 **$rd** - reference to domain in request's URI (without port) or to the
 Namespace Specific String of a URN (see RFC 2141)
 
-:fire:**IMPORTANT**: It is R/W variable (you can assign values to it directly in
+🔥**IMPORTANT**: It is R/W variable (you can assign values to it directly in
 configuration file)
 
 ### $rdir(key) - Request Direction
@@ -593,7 +593,7 @@ header
 
 **$rp** - reference to port of R-URI
 
-:fire:**IMPORTANT**: It is R/W variable (you can assign values to it directly in
+🔥**IMPORTANT**: It is R/W variable (you can assign values to it directly in
 configuration file)
 
 ### $rP - Protocol of R-URI
@@ -618,7 +618,7 @@ reply-code)
 **$ru** - reference to request's URI (address in the first line of a SIP
 request)
 
-:fire:**IMPORTANT**: It is R/W variable (you can assign values to it directly in
+🔥**IMPORTANT**: It is R/W variable (you can assign values to it directly in
 configuration file)
 
 ### $rU - Username in R-URI
@@ -626,7 +626,7 @@ configuration file)
 **$rU** - reference to username in request's URI or to the Namespace
 Identifier of a URN (see RFC 2141)
 
-:fire:**IMPORTANT**: It is R/W variable (you can assign values to it directly in
+🔥**IMPORTANT**: It is R/W variable (you can assign values to it directly in
 configuration file)
 
 ### $rUl - R-URI Username Length
@@ -777,14 +777,14 @@ Its value looks like:
 
 **$td** - reference to domain in URI of 'To' header
 
-:fire:**IMPORTANT**: It is R/W variable (you can assign values to it directly in
+🔥**IMPORTANT**: It is R/W variable (you can assign values to it directly in
 configuration file, but its value does not change)
 
 ### $tn - To display name
 
 **$tn** - reference to display name of 'To' header
 
-:fire:**IMPORTANT**: It is R/W variable (you can assign values to it directly in
+🔥**IMPORTANT**: It is R/W variable (you can assign values to it directly in
 configuration file, but its value does not change)
 
 ### $tt - To tag
@@ -809,14 +809,14 @@ this variable returning the right value.
 
 **$tu** - reference to URI of 'To' header
 
-:fire:**IMPORTANT**: It is R/W variable (you can assign values to it directly in
+🔥**IMPORTANT**: It is R/W variable (you can assign values to it directly in
 configuration file, but its value does not change)
 
 ### $tU - To URI Username
 
 **$tU** - reference to username in URI of 'To' header
 
-:fire:**IMPORTANT**: It is R/W variable (you can assign values to it directly in
+🔥**IMPORTANT**: It is R/W variable (you can assign values to it directly in
 configuration file, but its value does not change)
 
 ### $tUl - To URI Username Length
@@ -1113,7 +1113,7 @@ if($hdr(From)=~"kamailio\.org") {
 }
 ```
 
-:fire:**IMPORTANT**: It is read-only variable. You can remove or add headers
+🔥**IMPORTANT**: It is read-only variable. You can remove or add headers
 using functions from textops module.
 
 ## $hfl(name) - Header Field With List Of Bodies
@@ -1216,7 +1216,7 @@ it was initialized, so be sure of giving it a new value before reading
 it or you'll get the value asigned in any other previous message
 processed by the same Kamailio process (pid).
 
-:fire:**IMPORTANT**: It is R/W variable (you can assign values to it directly in
+🔥**IMPORTANT**: It is R/W variable (you can assign values to it directly in
 configuration file)
 
 **pv** module can be used to initialize the script variables.
@@ -1261,7 +1261,7 @@ Example - shv(name) pseudo-variable usage:
     }
     ...
 
-:fire:**IMPORTANT**: It is R/W variable (you can assign values to it directly in
+🔥**IMPORTANT**: It is R/W variable (you can assign values to it directly in
 configuration file)
 
 ## $dsv(key) - Dispatcher variables
@@ -1609,7 +1609,7 @@ bm_log_timer() was called.
 
 Return the attribute of the current processed dialog.
 
-:fire:**IMPORTANT**: It is R/O variable.
+🔥**IMPORTANT**: It is R/O variable.
 
 The 'attr' can be:
 
@@ -1640,7 +1640,7 @@ The 'attr' can be:
 
 Return the attribute of the context for current processed dialog.
 
-:fire:**IMPORTANT**: Some of the attributes are R/W variables.
+🔥**IMPORTANT**: Some of the attributes are R/W variables.
 
 The 'attr' can be:
 
@@ -1662,7 +1662,7 @@ The 'attr' can be:
 
 Store and retrieve custom variable for current processed dialog.
 
-:fire:**IMPORTANT**: It is R/W variable.
+🔥**IMPORTANT**: It is R/W variable.
 
 The 'key' can be any string.
 
@@ -1751,7 +1751,7 @@ Erlang module.
 
 Access hash table entries.
 
-:fire:**IMPORTANT**: It is R/W variable, you can assign values to it directly in
+🔥**IMPORTANT**: It is R/W variable, you can assign values to it directly in
 configuration file. Hash table entry can be deleted by assigning value
 $null to it. Value of a non-existing hash table entry is $null.
 
@@ -1775,7 +1775,7 @@ The “key” can be:
 Access hash table entry expire value. Value represents the seconds until
 the htable entry will expire and be deleted from htable.
 
-:fire:**IMPORTANT**: It is R/W variable, you can assign values to it directly in
+🔥**IMPORTANT**: It is R/W variable, you can assign values to it directly in
 configuration file.
 
 The “htname” must be a hash table name defined via “htable” parameter
@@ -1900,7 +1900,7 @@ event_route[htable:expired:h1] {
 
 Access hash table entries stored in the memcached server.
 
-:fire:**IMPORTANT**: It is R/W variable, you can assign values to it directly in
+🔥**IMPORTANT**: It is R/W variable, you can assign values to it directly in
 configuration file.
 
 The “key” can be:
@@ -1937,7 +1937,7 @@ including a custom value at time of assignment.
 Do a atomic increment operation on the value stored in memcached. You
 need to add a value previously.
 
-:fire:**IMPORTANT**: It is R/W variable, you can assign values to it directly in
+🔥**IMPORTANT**: It is R/W variable, you can assign values to it directly in
 configuration file.
 
 The “key” can be:
@@ -1957,7 +1957,7 @@ The “key” can be:
 Do a atomic decrement operation on the value stored in memcached. You
 need to add a value previously.
 
-:fire:**IMPORTANT**: It is R/W variable, you can assign values to it directly in
+🔥**IMPORTANT**: It is R/W variable, you can assign values to it directly in
 configuration file.
 
 The “key” can be:
