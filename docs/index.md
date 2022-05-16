@@ -66,6 +66,7 @@ available at the **Old Wiki Site**:*
 ### Upgrade
 
 -   [Upgrade Kamailio stable to devel](install/upgrade/stable-to-devel.md)
+-   [Upgrade Kamailio v5.5.x to v5.6.0](install/upgrade/5.5.x-to-5.6.0.md)
 -   [Upgrade Kamailio v5.4.x to v5.5.0](install/upgrade/5.4.x-to-5.5.0.md)
 -   [Upgrade Kamailio v5.3.x to v5.4.0](install/upgrade/5.3.x-to-5.4.0.md)
 -   [Upgrade Kamailio v5.2.x to v5.3.0](install/upgrade/5.2.x-to-5.3.0.md)
