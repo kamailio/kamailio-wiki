@@ -26,11 +26,11 @@ should create distinct RTCWeb Breaker sessions in branch-failure routes
 enabling sessions to be successfully forked to WebRTC and non-WebRTC
 end-points.
 
-![breaker2.png](../devel/breaker2.png.md)
+![breaker2.png](breaker2.png)
 
 ## Example RTCWeb Breaker signalling flow
 
-![breaker.png](../devel/breaker.png.md)
+![breaker.png](breaker.png)
 
 ## Scenarios
 
