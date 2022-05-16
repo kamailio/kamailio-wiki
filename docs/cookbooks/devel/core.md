@@ -1,6 +1,6 @@
 # Core Cookbook
 
-Version: Kamailio SIP Server v5.6.x (devel)
+Version: Kamailio SIP Server v5.7.x (devel)
 
 ## Overview
 

@@ -1,6 +1,6 @@
 # Pseudo-Variables
 
-Version: Kamailio SIP Server v5.6.x (devel)
+Version: Kamailio SIP Server v5.7.x (devel)
 
 <img src="pseudovariables.png" class="align-right" width="200" />
 

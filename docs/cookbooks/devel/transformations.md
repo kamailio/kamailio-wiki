@@ -1,6 +1,6 @@
 # Transformations
 
-Version: Kamailio SIP Server v5.6.x (devel)
+Version: Kamailio SIP Server v5.7.x (devel)
 
     Main author:
        Daniel-Constantin Mierla <miconda (at) gmail.com>
