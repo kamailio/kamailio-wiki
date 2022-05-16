@@ -693,8 +693,8 @@ Return the length of the entire name-addr part from the value.
 
 ## To-Body Transformations
 
-\<fc #0000ff>This transformation class is exported by **pv**
-module.\</fc>
+:fire:**IMPORTANT**: This transformation class is exported by **pv**
+module.
 
 Access parts of a ToBody-like structure.
 
@@ -760,8 +760,8 @@ $(var(x){line.sw,mytext})
 
 ## MSRP Transformations
 
-\<fc #0000ff>This transformation class is exported by **msrp**
-module.\</fc>
+:fire:**IMPORTANT**: This transformation class is exported by **msrp**
+module.
 
 ### {msrpuri.user}
 
@@ -795,8 +795,8 @@ whole part after scheme and before '@' in front of host.
 
 ## Regular Expression Transformations
 
-\<fc #0000ff>This transformation class is exported by **textops**
-module.\</fc>
+:fire:**IMPORTANT**: This transformation class is exported by **textops**
+module.
 
 ### {re.subst,expression}
 
@@ -828,8 +828,8 @@ The prototype is:
 
 ## SQL Transformations
 
-\<fc #0000ff>The transformations in this class are exported by the
-**sqlops** module.\</fc>
+:fire:**IMPORTANT**: The transformations in this class are exported by the
+**sqlops** module.
 
 ### {sql.val}
 
@@ -888,8 +888,8 @@ first position, 1 is second position)
 
 ## HTTP URL Transformations
 
-\<fc #0000ff>This transformation class is exported by **xhttp**
-module.\</fc>
+:fire:**IMPORTANT**: This transformation class is exported by **xhttp**
+module.
 
 ### {url.path}
 
@@ -913,8 +913,8 @@ Query string part of an HTTP URL. For example,
 
 ## JSON Transformations
 
-\<fc #0000ff>This transformation class is exported by **json**
-module.\</fc>
+:fire:**IMPORTANT**: This transformation class is exported by **json**
+module.
 
 ### {json.parse}
 
