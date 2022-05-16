@@ -7,7 +7,7 @@ Kamailio (OpenSER) version 3.2.x.
 
 Full commits log for release 3.2.0 is available at:
 
--   <http://www.kamailio.org/pub/kamailio/3.2.0/ChangeLog>
+-   [https://www.kamailio.org/pub/kamailio/3.2.0/ChangeLog](https://www.kamailio.org/pub/kamailio/3.2.0/ChangeLog)
 
 ## Configuration File
 
@@ -623,7 +623,7 @@ modparam("acc", "failed_filter", "401,407")
 
 ### xavp
 
--    [xavp](../devel/xavp.md)'s are enabled by default now.
+-    XAVP's are enabled by default now.
 
 ### xcap_server
 
