@@ -124,6 +124,7 @@ Alphabetic indexes generated from documentation (modules' readme docs).
 |---------|-------------------------------------------|------------------------------------------|-----------------------------------------|-------------------------------------------|
 | Version | Modules Parameters                        | Modules Functions                        | RPC Commands                            | Statistics                                |
 | devel   | [link](alphaindexes/devel/modparameters.md) | [link](alphaindexes/devel/modfunctions.md) | [link](alphaindexes/devel/rpccommands.md) | [link](alphaindexes/devel/modstatistics.md) |
+| 5.6.x   | [link](alphaindexes/5.6.x/modparameters.md) | [link](alphaindexes/5.6.x/modfunctions.md) | [link](alphaindexes/5.6.x/rpccommands.md) | [link](alphaindexes/5.6.x/modstatistics.md) |
 | 5.5.x   | [link](alphaindexes/5.5.x/modparameters.md) | [link](alphaindexes/5.5.x/modfunctions.md) | [link](alphaindexes/5.5.x/rpccommands.md) | [link](alphaindexes/5.5.x/modstatistics.md) |
 | 5.4.x   | [link](alphaindexes/5.4.x/modparameters.md) | [link](alphaindexes/5.4.x/modfunctions.md) | [link](alphaindexes/5.4.x/rpccommands.md) | [link](alphaindexes/5.4.x/modstatistics.md) |
 | 5.3.x   | [link](alphaindexes/5.3.x/modparameters.md) | [link](alphaindexes/5.3.x/modfunctions.md) | [link](alphaindexes/5.3.x/rpccommands.md) | [link](alphaindexes/5.3.x/modstatistics.md) |
