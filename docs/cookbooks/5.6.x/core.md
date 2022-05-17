@@ -3704,9 +3704,9 @@ Example of usage:
 
 The return() function allows you to return any integer value from a
 called route() block. You can test the value returned by a route using
-[$retcode](devel#retcode) or $? variable.
+[`$retcode`](devel#retcode) or `$?` variable.
 
-return(0) is same as [exit()](devel#exit);
+`return(0)` is same as [`exit()`](devel#exit);
 
 In bool expressions:
 
@@ -3715,7 +3715,7 @@ In bool expressions:
 
 If no value is specified, or a route reaches its end without executing a
 return statement, it returns 1. If return is used in the top level route
-is equivalent with exit \[val\].
+is equivalent with exit `[val]`.
 
 Example usage:
 
@@ -3867,8 +3867,8 @@ right side of assignments.
 
 ### set_advertised_address
 
-Same as 'advertised_address' but it affects only the current message. It
-has priority if 'advertised_address' is also set.
+Same as `advertised_address` but it affects only the current message. It
+has priority if `advertised_address` is also set.
 
 Example of usage:
 
@@ -3876,8 +3876,8 @@ Example of usage:
 
 ### set_advertised_port
 
-Same as 'advertised_port' but it affects only the current message. It
-has priority over 'advertised_port'.
+Same as `advertised_port` but it affects only the current message. It
+has priority over `advertised_port`.
 
 Example of usage:
 
@@ -3896,12 +3896,12 @@ behavior depends in which route block the function is called:
 
 <!-- -->
 
--   onreply_route\[0\] (stateless): equivalent to set_reply\_\*() (it's
-    better to use set_reply\_\* though)
+-   `onreply_route[0]` (stateless): equivalent to `set_reply_*()` (it's
+    better to use `set_reply_*` though)
 
 <!-- -->
 
--   onreply_route\[!=0\] (tm): ignored
+-   `onreply_route[!=0]` (tm): ignored
 
 <!-- -->
 
@@ -3929,25 +3929,25 @@ Example of usage:
 
 Try to close the connection (the one on which the message is sent out)
 after forwarding the current message. Can be used in same route blocks
-as set_forward_no_connect().
+as `set_forward_no_connect()`.
 
 Note: Use with care as you might not receive the replies anymore as the
 connection is closed.
 
 ### set_reply_no_connect
 
-Like set_forward_no_connect(), but for replies to the current message
+Like `set_forward_no_connect()`, but for replies to the current message
 (local generated replies and replies forwarded by tm). The behavior
 depends in which route block the function is called:
 
 -   normal request route: affects all replies sent back on the
     transaction (either local or forwarded) and all local stateless
-    replies (sl_reply()).
+    replies (`sl_reply()`).
 
 <!-- -->
 
--   onreply_route: affects the current reply (so the send_flags set in
-    the onreply_route will be used if the reply for which they were set
+-   `onreply_route`: affects the current reply (so the send_flags set in
+    the `onreply_route` will be used if the reply for which they were set
     is the winning final reply or it's a provisional reply that is
     forwarded)
 
@@ -3971,8 +3971,8 @@ Example of usage:
 
 ### set_reply_close
 
-Like set_reply_no_connect, but closes the TCP connection after sending.
-Can be used in same route blocks as set_reply_no_connect.
+Like `set_reply_no_connect`, but closes the TCP connection after sending.
+Can be used in same route blocks as `set_reply_no_connect`.
 
 Example of usage:
 
@@ -4025,7 +4025,7 @@ Example of usage:
 
 ### udp_mtu_try_proto(proto)
 
--   proto - TCP\|TLS\|SCTP\|UDP - like udp_mtu_try_proto global
+-   proto - `TCP|TLS|SCTP|UDP` - like `udp_mtu_try_proto` global
     parameter but works on a per packet basis and not globally.
 
 Example:
@@ -4092,14 +4092,14 @@ route_block_id[NAME] {
 The name can be any alphanumeric string, with specific routing blocks
 enforcing a particular format.
 
-🔥**IMPORTANT**: Note: route(number) is equivalent to route("number").
+🔥**IMPORTANT**: Note: `route(number)` is equivalent to `route("number")`.
 
 Route blocks can be executed on network events (e.g., receiving a SIP
 message), timer events (e.g., retransmission timeout) or particular
 events specific to modules.
 
 There can be so called sub-route blocks, which can be invoked from
-another route blocks, like a function. Invocation is done with 'route'
+another route blocks, like a function. Invocation is done with `route`
 followed by the name of sub-route to execute, enclosed in between
 parentheses.
 
@@ -4122,12 +4122,12 @@ Example:
 Request routing block - is executed for each SIP request.
 
 It contains a set of actions to be executed for SIP requests received
-from the network. It is the equivalent of \*main()\* function for
+from the network. It is the equivalent of `main()` function for
 handling the SIP requests.
 
 🔥**IMPORTANT**: For backward compatibility reasons, the main request
-'route' block can be identified by 'route{...}' or
-'route\[0\]{...}'.
+`route` block can be identified by `route{...}` or
+`route[0]{...}`'.
 
 The implicit action after execution of the main route block is to drop
 the SIP request. To send a reply or forward the request, explicit
@@ -4207,7 +4207,7 @@ simplifying the logic and helping to avoid duplication of actions.
 
 Request's branch routing block. It contains a set of actions to be taken
 for each branch of a SIP request. It is executed only by TM module after
-it was armed via t_on_branch("branch_route_index").
+it was armed via `t_on_branch("branch_route_index")`.
 
 Example of usage:
 
@@ -4230,11 +4230,11 @@ Example of usage:
 ### failure_route
 
 Failed transaction routing block. It contains a set of actions to be
-taken each transaction that received only negative replies (>=300) for
-all branches. The 'failure_route' is executed only by TM module after it
-was armed via t_on_failure("failure_route_index").
+taken each transaction that received only negative replies (`>=300`) for
+all branches. The `failure_route` is executed only by TM module after it
+was armed via `t_on_failure("failure_route_index")`.
 
-Note that in 'failure_route' is processed the request that initiated the
+Note that in `failure_route` is processed the request that initiated the
 transaction, not the reply .
 
 Example of usage:
@@ -4284,9 +4284,9 @@ reply_route {
 }
 ```
 
-🔥**IMPORTANT**: Note: for backward compatibility reasons, the main 'reply'
-routing block can be also identified by 'onreply_route {...}' or
-'onreply_route\[0\] {...}'.
+🔥**IMPORTANT**: Note: for backward compatibility reasons, the main `reply`
+routing block can be also identified by `onreply_route {...}` or
+`onreply_route[0] {...}`.
 
 ### onreply_route
 
@@ -4294,8 +4294,8 @@ SIP reply routing block executed by **tm** module. It contains a set of
 actions to be taken for SIP replies in the contect of an active
 transaction.
 
-The 'onreply_route' must be armed for the SIP requests whose replies
-should be processed within it, via t_on_reply("onreply_route_index").
+The `onreply_route` must be armed for the SIP requests whose replies
+should be processed within it, via `t_on_reply`("`onreply_route_index`").
 
 Core 'reply_route' block is executed before a possible **tm**
 'onreply_route' block.
@@ -4325,11 +4325,11 @@ Core 'reply_route' block is executed before a possible **tm**
 ### onsend_route
 
 The route is executed in when a SIP request is sent out. Only a limited
-number of commands are allowed (drop, if + all the checks, msg flag
-manipulations, send(), log(), textops::search()).
+number of commands are allowed (`drop`, `if` + all the checks, msg flag
+manipulations, `send()`, `log()`, `textops::search()`).
 
 In this route the final destination of the message is available and can
-be checked (with snd_ip, snd_port, to_ip, to_port, snd_proto, snd_af).
+be checked (with `snd_ip`, `snd_port`, `to_ip`, `to_port`, `snd_proto`, `snd_af`).
 
 This route is executed only when forwarding requests - it is not
 executed for replies, retransmissions, or locally generated messages
@@ -4357,13 +4357,13 @@ Example:
 -   msg:len - when used in an onsend_route, msg:len will contain the
     length of the message on the wire (after all the changes in the
     script are applied, Vias are added a.s.o) and not the lentgh of the
-    original message.
+    original messa ge.
 
 ### event_route
 
 Generic type of route executed when specific events happen.
 
-Prototype: event_route\[groupid:eventid\]
+Prototype: `event_route[groupid:eventid]`
 
 -   groupid - should be the name of the module that triggers the event
 -   eventid - some meaningful short text describing the event
@@ -4372,7 +4372,7 @@ Prototype: event_route\[groupid:eventid\]
 
 Implementations:
 
--   **event_route\[core:worker-one-init\]** - executed by core after the
+-   `event_route[core:worker-one-init]` - executed by core after the
     first udp sip worker process executed the child_init() for all
     modules, before starting to process sip traffic
     -   note that due to forking, other sip workers can get faster to
@@ -4384,7 +4384,7 @@ event_route[core:worker-one-init] {
 }
 ```
 
--   **event_route\[core:msg-received\]** - executed when a message is
+-   `event_route[core:msg-received]` - executed when a message is
     received from the network. It runs with a faked request and makes
     available the $rcv(key) variables to access what was received and
     related attribtues.
@@ -4402,7 +4402,7 @@ event_route[core:msg-received] {
 }
 ```
 
--   **event_route\[core:pre-routing\]** - executed by core on receiving
+-   `event_route[core:pre-routing]` - executed by core on receiving
     SIP traffic before running request_route or reply_route.
     -   if drop is used, then the message is not processed further with
         request_route or reply_route in the same process. This can be
@@ -4423,7 +4423,7 @@ event_route[core:pre-routing] {
 }
 ```
 
--   \*\* event_route\[core:receive-parse-error\]\*\* - executed by core
+-   `event_route[core:receive-parse-error]` - executed by core
     on receiving a broken SIP message that can not be parsed.
     -   note that the SIP message is broken in this case, but it gets
         access to source and local socket addresses (ip, port, proto,
@@ -4441,7 +4441,7 @@ event_route[core:receive-parse-error] {
 Here are only a few examples, to see if a module exports event_route
 blocks and when they are executed, check the readme of the module.
 
--   **event_route\[htable:mod-init\]** - executed by **htable** module
+-   `event_route[htable:mod-init]` - executed by **htable** module
     after all modules have been initialised. Good for initialising
     values in hash tables.
 
@@ -4474,7 +4474,7 @@ request_route {
 }
 ```
 
--   **event_route \[tm:local-request\]** - executed on locally generated
+-   `event_route[tm:local-request]` - executed on locally generated
     requests.
 
 ``` c
@@ -4484,7 +4484,7 @@ event_route [tm:local-request] { # Handle locally generated requests
 }
 ```
 
--   **event_route \[tm:branch-failure\]** - executed on all failure
+-   `event_route[tm:branch-failure]` - executed on all failure
     responses.
 
 ``` c
@@ -4520,21 +4520,21 @@ Prototype:
            actions;
         }
 
-The 'expr' should be a valid logical expression.
+The `expr` should be a valid logical expression.
 
-The logical operators that can be used in 'expr':
+The logical operators that can be used in `expr`:
 
-      ==      equal
-      !=      not equal
-      =~      regular expression matching: Note: Posix regular expressions will be used, e.g. use [[:digit:]]{3} instead of \d\d\d
-      !~      regular expression not-matching (NOT PORTED from Kamailio 1.x, use '!(x =~ y)')
-      >       greater
-      >=      greater or equal
-      <       less
-      <=      less or equal
-      &&      logical AND
-      ||      logical OR
-      !       logical NOT
+- `==`:      equal
+- `!=`:     not equal
+- `=~`:      regular expression matching: Note: Posix regular expressions will be used, e.g. use `[[:digit:]]{3}` instead of `\d\d\d`
+- `!~`:      regular expression not-matching (NOT PORTED from Kamailio 1.x, use `!(x =~ y)`)
+- `>`:       greater
+- `>=`:      greater or equal
+- `<`:       less
+- `<=`:      less or equal
+- `&&`:      logical AND
+- `||`:      logical OR
+- `!`:       logical NOT
 
 Example of usage:
 
@@ -4554,10 +4554,10 @@ See also the FAQ for how the function return code is evaluated:
 SWITCH statement - it can be used to test the value of a
 pseudo-variable.
 
-IMPORTANT NOTE: 'break' can be used only to mark the end of a 'case'
-branch (as it is in shell scripts). If you are trying to use 'break'
-outside a 'case' block the script will return error -- you must use
-'return' there.
+IMPORTANT NOTE: `break` can be used only to mark the end of a `case`
+branch (as it is in shell scripts). If you are trying to use `break`
+outside a `case` block the script will return error -- you must use
+`return` there.
 
 Example of usage:
 
@@ -4614,7 +4614,7 @@ Example of usage:
             return(-2);
         }
 
-NOTE: take care while using 'return' - 'return(0)' stops the execution
+NOTE: take care while using `return` - `return(0)` stops the execution
 of the script.
 
 ### while
@@ -4637,22 +4637,22 @@ directly in configuration file.
 
 ### Assignment
 
-Assignments can be done like in C, via '=' (equal). The following
+Assignments can be done like in C, via `=` (equal). The following
 pseudo-variables can be used in left side of an assignment:
 
 -   Unordered List Item AVPs - to set the value of an AVP
--   script variables ($var(...)) - to set the value of a script variable
--   shared variables ($shv(...))
--   $ru - to set R-URI
--   $rd - to set domain part of R-URI
--   $rU - to set user part of R-URI
--   $rp - to set the port of R-URI
--   $du - to set dst URI
--   $fs - to set send socket
--   $br - to set branch
--   $mf - to set message flags value
--   $sf - to set script flags value
--   $bf - to set branch flags value
+-   script variables `($var(...))` - to set the value of a script variable
+-   shared variables (`$shv(...)`)
+-   `$ru` - to set R-URI
+-   `$rd` - to set domain part of R-URI
+-   `$rU` - to set user part of R-URI
+-   `$rp` - to set the port of R-URI
+-   `$du` - to set dst URI
+-   `$fs` - to set send socket
+-   `$br` - to set branch
+-   `$mf` - to set message flags value
+-   `$sf` - to set script flags value
+-   `$bf` - to set branch flags value
 
 <!-- -->
 
@@ -4660,15 +4660,15 @@ pseudo-variables can be used in left side of an assignment:
 
 For avp's there a way to remove all values and assign a single value in
 one statement (in other words, delete existing AVPs with same name, add
-a new one with the right side value). This replaces the := assignment
-operator from kamailio \< 3.0.
+a new one with the right side value). This replaces the `:=` assignment
+operator from kamailio `< 3.0`.
 
     $(avp(i:3)[*]) = 123;
     $(avp(i:3)[*]) = $null;
 
 ### String Operations
 
-For strings, '+' is available to concatenate.
+For strings, `+` is available to concatenate.
 
     $var(a) = "test";
     $var(b) = "sip:" + $var(a) + "@" + $fd;
@@ -4677,17 +4677,17 @@ For strings, '+' is available to concatenate.
 
 For numbers, one can use:
 
--   \+ : plus
--   \- : minus
--   / : divide
--   \* : multiply
--   % : modulo (Kamailio uses 'mod' instead of '%')
--   \| : bitwise OR
--   & : bitwise AND
--   ^ : bitwise XOR
--   \~ : bitwise NOT
--   \<\< : bitwise left shift
--   \>\> : bitwise right shift
+-   `+` : plus
+-   `-` : minus
+-   `/` : divide
+-   `*` : multiply
+-   `%` : modulo (Kamailio uses `mod` instead of `%`)
+-   `|` : bitwise OR
+-   `&` : bitwise AND
+-   `^` : bitwise XOR
+-   `~` : bitwise NOT
+-   `<<` : bitwise left shift
+-   `>>` : bitwise right shift
 
 Example:
 
@@ -4703,26 +4703,24 @@ Arithmetic expressions can be used in condition expressions.
 
 ## Operators
 
-1.  type casts operators: (int), (str).
-2.  string comparison: eq, ne
-3.  integer comparison: ieq, ine
+1.  type casts operators: `(int)`, `(str)`.
+2.  string comparison: `eq`, `ne`
+3.  integer comparison: `ieq`, `ine`
 
 Note: The names are not yet final (use them at your own risk). Future
-version might use ==/!= only for ints (ieq/ine) and eq/ne for strings
-(under debate). They are almost equivalent to == or !=, but they force
-the conversion of their operands (eq to string and ieq to int), allowing
+version might use `==`/`!=` only for ints (`ieq/ine`) and `eq/ne` for strings
+(under debate). They are almost equivalent to `==` or `!=`, but they force
+the conversion of their operands (`eq` to string and `ieq` to int), allowing
 among other things better type checking on startup and more
 optimizations.
 
 Non equiv. examples:
 
-0 == "" (true) is not equivalent to 0 eq "" (false: it evaluates to "0"
-eq "").
+`0 == ""` (true) is not equivalent to `0 eq ""` (false: it evaluates to `"0" eq ""`).
 
-"a" ieq "b" (true: (int)"a" is 0 and (int)"b" is 0) is not equivalent to
-"a" == "b" (false).
+`"a" ieq "b"` (true: `(int)"a" is 0` and `(int)"b" is 0`) is not equivalent to `"a" == "b"` (false).
 
-Note: internally == and != are converted on startup to eq/ne/ieq/ine
+Note: internally `==` and `!=` are converted on startup to `eq/ne/ieq/ine`
 whenever possible (both operand types can be safely determined at start
 time and they are the same).
 
@@ -4730,7 +4728,7 @@ time and they are the same).
     support multiple types are used on different typed operands. In
     general convert the right operand to the type of the left operand
     and then perform the operation. Exception: the left operand is
-    undef. This applies to the following operators: +, == and !=.
+    undef. This applies to the following operators: `+`, `==` and `!=`.
 
 <!-- -->
 
