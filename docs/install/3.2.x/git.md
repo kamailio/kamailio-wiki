@@ -9,7 +9,7 @@ repository - the choice for those willing to write code for Kamailio or
 to try the new features to be released in the future with the next major
 stable version.
 
-:fire:*This document focuses on Kamailio v3.2.x with MySQL
+🔥*This document focuses on Kamailio v3.2.x with MySQL
 support, using a Debian unstable system.*
 
 The first version in release series 3.2 is 3.2.0. 3.2.x refers to the
