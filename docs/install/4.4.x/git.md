@@ -11,8 +11,8 @@ repository - the choice for those willing to write code for Kamailio or
 to try the new features to be released in the future with the next major
 stable version.
 
-\<color blue>*This document focuses on Kamailio v4.3.x with MySQL
-support, using a Debian unstable system.*\</color>
+:fire:*This document focuses on Kamailio v4.3.x with MySQL
+support, using a Debian unstable system.*
 
 The first version in release series 4.4 is 4.4.0, 4.4.x refers to the
 most recent version released at some point in time that starts with 4.4.
