@@ -3026,7 +3026,7 @@ is 1). The value of the parameter can be in range of 0..31.
 
 For more see
 <http://www.kamailio.org/dokuwiki/doku.php/tutorials:openser-flag-operations>
-or [flags](../utils/flags.md).
+or [Kamailio Flags Operations](../../tutorials/kamailio-flag-operations.md).
 
 Example of usage:
 
@@ -3352,7 +3352,7 @@ authenticated).
 
 For more see
 <http://www.kamailio.org/dokuwiki/doku.php/tutorials:openser-flag-operations>
-.
+or [Kamailio Flags Operations](../../tutorials/kamailio-flag-operations.md).
 
 Example of usage:
 

@@ -3350,7 +3350,8 @@ Test if a flag is set for current processed message (if the flag value
 is 1). The value of the parameter can be in range of 0..31.
 
 For more see:
-<https://www.kamailio.org/wiki/tutorials/kamailio-flag-operations>.
+<https://www.kamailio.org/wiki/tutorials/kamailio-flag-operations> or
+[Kamailio Flags Operations](../../tutorials/kamailio-flag-operations.md).
 
 Example of usage:
 
@@ -3675,7 +3676,8 @@ processing (e.g., accounting) or to keep some state (e.g., message
 authenticated).
 
 For more see:
-<https://www.kamailio.org/wiki/tutorials/kamailio-flag-operations> .
+<https://www.kamailio.org/wiki/tutorials/kamailio-flag-operations>
+or [Kamailio Flags Operations](../../tutorials/kamailio-flag-operations.md).
 
 Example of usage:
 

@@ -2649,7 +2649,8 @@ Test if a flag is set for current processed message (if the flag value
 is 1). The value of the parameter can be in range of 0..31.
 
 For more see
-<http://www.kamailio.org/dokuwiki/doku.php/tutorials:openser-flag-operations>.
+<http://www.kamailio.org/dokuwiki/doku.php/tutorials:openser-flag-operations>
+or [Kamailio Flags Operations](../../tutorials/kamailio-flag-operations.md).
 
 Example of usage:
 
