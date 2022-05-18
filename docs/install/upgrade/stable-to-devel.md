@@ -46,16 +46,6 @@ Following tokens are used to mark the changes:
 
 ### Parameters
 
-#### Dst Blocklist Parameters
-
-All global parameters related to dst blocking are now using blocklist
-instead of blacklist in the name, see:
-
--   <https://www.kamailio.org/wiki/cookbooks/devel/core#blocklist_parameters>
-
-For example, **use_dst_blacklist** used in older versions has to be
-replaced by **use_dst_blocklist**.
-
 ### Misc
 
 ## Database
