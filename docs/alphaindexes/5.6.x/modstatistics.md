@@ -1,288 +1,283 @@
 # Modules Statistics
 
-([0](#0)) ([1](#1)) ([2](#2)) ([3](#3)) ([4](#4)) ([5](#5)) ([6](#6))
-([7](#7)) ([8](#8)) ([9](#9)) ([A](#A)) ([B](#B)) ([C](#C)) ([D](#d))
-([E](#E)) ([F](#F)) ([G](#G)) ([H](#H)) ([I](#I)) ([J](#J)) ([K](#k))
-([L](#L)) ([M](#M)) ([N](#N)) ([O](#O)) ([P](#P)) ([Q](#Q)) ([R](#r))
-([S](#S)) ([T](#T)) ([U](#U)) ([V](#V)) ([W](#W)) ([X](#X)) ([Y](#y))
-([Z](#z))
-
-## \[0\]
-
-| Name | Module Path | Module Name |
-|------|-------------|-------------|
-
-## \[1\]
-
-| Name            | Module Path | Module Name                                                                           |
-|-----------------|-------------|---------------------------------------------------------------------------------------|
-| **1xx_replies** | *modules*   | [sl](http://www.kamailio.org/docs/modules/5.6.x/modules/sl.html#sl.stats.1xx_replies) |
-
-## \[2\]
-
-| Name                 | Module Path | Module Name                                                                           |
-|----------------------|-------------|---------------------------------------------------------------------------------------|
-| **200_replies**      | *modules*   | [sl](http://www.kamailio.org/docs/modules/5.6.x/modules/sl.html#sl.stats.200_replies) |
-| **202_replies**      | *modules*   | [sl](http://www.kamailio.org/docs/modules/5.6.x/modules/sl.html#sl.stats.202_replies) |
-| **2xx_replies**      | *modules*   | [sl](http://www.kamailio.org/docs/modules/5.6.x/modules/sl.html#sl.stats.2xx_replies) |
-| **2xx_transactions** | *modules*   | [tmx](http://www.kamailio.org/docs/modules/5.6.x/modules/tmx.html)                    |
-
-## \[3\]
-
-| Name                 | Module Path | Module Name                                                                           |
-|----------------------|-------------|---------------------------------------------------------------------------------------|
-| **300_replies**      | *modules*   | [sl](http://www.kamailio.org/docs/modules/5.6.x/modules/sl.html#sl.stats.300_replies) |
-| **301_replies**      | *modules*   | [sl](http://www.kamailio.org/docs/modules/5.6.x/modules/sl.html#sl.stats.301_replies) |
-| **302_replies**      | *modules*   | [sl](http://www.kamailio.org/docs/modules/5.6.x/modules/sl.html#sl.stats.302_replies) |
-| **3xx_replies**      | *modules*   | [sl](http://www.kamailio.org/docs/modules/5.6.x/modules/sl.html#sl.stats.3xx_replies) |
-| **3xx_transactions** | *modules*   | [tmx](http://www.kamailio.org/docs/modules/5.6.x/modules/tmx.html)                    |
-
-## \[4\]
-
-| Name                 | Module Path | Module Name                                                                           |
-|----------------------|-------------|---------------------------------------------------------------------------------------|
-| **400_replies**      | *modules*   | [sl](http://www.kamailio.org/docs/modules/5.6.x/modules/sl.html#sl.stats.400_replies) |
-| **401_replies**      | *modules*   | [sl](http://www.kamailio.org/docs/modules/5.6.x/modules/sl.html#sl.stats.401_replies) |
-| **403_replies**      | *modules*   | [sl](http://www.kamailio.org/docs/modules/5.6.x/modules/sl.html#sl.stats.403_replies) |
-| **404_replies**      | *modules*   | [sl](http://www.kamailio.org/docs/modules/5.6.x/modules/sl.html#sl.stats.404_replies) |
-| **407_replies**      | *modules*   | [sl](http://www.kamailio.org/docs/modules/5.6.x/modules/sl.html#sl.stats.407_replies) |
-| **408_replies**      | *modules*   | [sl](http://www.kamailio.org/docs/modules/5.6.x/modules/sl.html#sl.stats.408_replies) |
-| **483_replies**      | *modules*   | [sl](http://www.kamailio.org/docs/modules/5.6.x/modules/sl.html#sl.stats.483_replies) |
-| **4xx_replies**      | *modules*   | [sl](http://www.kamailio.org/docs/modules/5.6.x/modules/sl.html#sl.stats.4xx_replies) |
-| **4xx_transactions** | *modules*   | [tmx](http://www.kamailio.org/docs/modules/5.6.x/modules/tmx.html)                    |
-
-## \[5\]
-
-| Name                 | Module Path | Module Name                                                                           |
-|----------------------|-------------|---------------------------------------------------------------------------------------|
-| **500_replies**      | *modules*   | [sl](http://www.kamailio.org/docs/modules/5.6.x/modules/sl.html#sl.stats.500_replies) |
-| **5xx_replies**      | *modules*   | [sl](http://www.kamailio.org/docs/modules/5.6.x/modules/sl.html#sl.stats.5xx_replies) |
-| **5xx_transactions** | *modules*   | [tmx](http://www.kamailio.org/docs/modules/5.6.x/modules/tmx.html)                    |
-
-## \[6\]
-
-| Name                 | Module Path | Module Name                                                                           |
-|----------------------|-------------|---------------------------------------------------------------------------------------|
-| **6xx_replies**      | *modules*   | [sl](http://www.kamailio.org/docs/modules/5.6.x/modules/sl.html#sl.stats.6xx_replies) |
-| **6xx_transactions** | *modules*   | [tmx](http://www.kamailio.org/docs/modules/5.6.x/modules/tmx.html)                    |
-
-## \[7\]
-
-| Name | Module Path | Module Name |
-|------|-------------|-------------|
-
-## \[8\]
-
-| Name | Module Path | Module Name |
-|------|-------------|-------------|
-
-## \[9\]
-
-| Name | Module Path | Module Name |
-|------|-------------|-------------|
-
-## \[A\]
-
-| Name                                                  | Module Path | Module Name                                                                                      |
-|-------------------------------------------------------|-------------|--------------------------------------------------------------------------------------------------|
-| **AAR Timeouts (aar_timeouts)**                       | *modules*   | [ims_qos](http://www.kamailio.org/docs/modules/5.6.x/modules/ims_qos.html)                       |
-| **accepted_regs**                                     | *modules*   | [registrar](http://www.kamailio.org/docs/modules/5.6.x/modules/registrar.html)                   |
-| **active_dialogs**                                    | *modules*   | [dialog](http://www.kamailio.org/docs/modules/5.6.x/modules/dialog.html)                         |
-| **active_rooms**                                      | *modules*   | [imc](http://www.kamailio.org/docs/modules/5.6.x/modules/imc.html)                               |
-| **active_transactions**                               | *modules*   | [tmx](http://www.kamailio.org/docs/modules/5.6.x/modules/tmx.html)                               |
-| **added_branches**                                    | *modules*   | [tsilo](http://www.kamailio.org/docs/modules/5.6.x/modules/tsilo.html#tsilo.stat.added_branches) |
-| **Average AAR Response Time (aar_avg_response_time)** | *modules*   | [ims_qos](http://www.kamailio.org/docs/modules/5.6.x/modules/ims_qos.html)                       |
-| **Average LIR Response Time (lir_avg_response_time)** | *modules*   | [ims_icscf](http://www.kamailio.org/docs/modules/5.6.x/modules/ims_icscf.html)                   |
-| **Average MAR Response Time (mar_avg_response_time)** | *modules*   | [ims_auth](http://www.kamailio.org/docs/modules/5.6.x/modules/ims_auth.html)                     |
-| **Average UAR Response Time (uar_avg_response_time)** | *modules*   | [ims_icscf](http://www.kamailio.org/docs/modules/5.6.x/modules/ims_icscf.html)                   |
-
-## \[B\]
-
-| Name                             | Module Path | Module Name                                                                          |
-|----------------------------------|-------------|--------------------------------------------------------------------------------------|
-| **Billed seconds (billed_secs)** | *modules*   | [ims_charging](http://www.kamailio.org/docs/modules/5.6.x/modules/ims_charging.html) |
+ ([0](#0))  ([1](#1))  ([2](#2))  ([3](#3))  ([4](#4))  ([5](#5))  ([6](#6))  ([7](#7))  ([8](#8))  ([9](#9))  ([a](#a))  ([b](#b))  ([c](#c))  ([d](#d))  ([e](#e))  ([f](#f))  ([g](#g))  ([h](#h))  ([i](#i))  ([j](#j))  ([k](#k))  ([l](#l))  ([m](#m))  ([n](#n))  ([o](#o))  ([p](#p))  ([q](#q))  ([r](#r))  ([s](#s))  ([t](#t))  ([u](#u))  ([v](#v))  ([w](#w))  ([x](#x))  ([y](#y))  ([z](#z)) 
 
-## \[C\]
+## [0]
 
-| Name                                                         | Module Path | Module Name                                                                                |
-|--------------------------------------------------------------|-------------|--------------------------------------------------------------------------------------------|
-| **CCRs average response time (ccr_avg_response_time)**       | *modules*   | [ims_charging](http://www.kamailio.org/docs/modules/5.6.x/modules/ims_charging.html)       |
-| **CCRs requests, which ended with a timeout (ccr_timeouts)** | *modules*   | [ims_charging](http://www.kamailio.org/docs/modules/5.6.x/modules/ims_charging.html)       |
-| **CCRs responses time (ccr_responses_time)**                 | *modules*   | [ims_charging](http://www.kamailio.org/docs/modules/5.6.x/modules/ims_charging.html)       |
-| **contacts**                                                 | *modules*   | [usrloc](http://www.kamailio.org/docs/modules/5.6.x/modules/usrloc.html#usrloc.s.contacts) |
+| Name | Module Name |
+|------|-------------|
 
-## \[D\]
+## [1]
 
-| Name                 | Module Path | Module Name                                                                            |
-|----------------------|-------------|----------------------------------------------------------------------------------------|
-| **default_expires**  | *modules*   | [registrar](http://www.kamailio.org/docs/modules/5.6.x/modules/registrar.html)         |
-| **dialog_endpoints** | *modules*   | [nat_traversal](http://www.kamailio.org/docs/modules/5.6.x/modules/nat_traversal.html) |
-| **dumped_messages**  | *modules*   | [msilo](http://www.kamailio.org/docs/modules/5.6.x/modules/msilo.html)                 |
-| **dumped_reminders** | *modules*   | [msilo](http://www.kamailio.org/docs/modules/5.6.x/modules/msilo.html)                 |
+| Name | Module Name |
+|------|-------------|
+| **1xx_replies** | [sl](http://www.kamailio.org/docs/modules/5.7.x/modules/sl.html#sl.stats.1xx_repliessl) |
 
-## \[E\]
+## [2]
+
+| Name | Module Name |
+|------|-------------|
+| **200_replies** | [sl](http://www.kamailio.org/docs/modules/5.7.x/modules/sl.html#sl.stats.200_repliessl) |
+| **202_replies** | [sl](http://www.kamailio.org/docs/modules/5.7.x/modules/sl.html#sl.stats.202_repliessl) |
+| **2xx_replies** | [sl](http://www.kamailio.org/docs/modules/5.7.x/modules/sl.html#sl.stats.2xx_repliessl) |
+| **2xx_transactions** | [tmx](http://www.kamailio.org/docs/modules/5.7.x/modules/tmx.htmltmx) |
+
+## [3]
+
+| Name | Module Name |
+|------|-------------|
+| **300_replies** | [sl](http://www.kamailio.org/docs/modules/5.7.x/modules/sl.html#sl.stats.300_repliessl) |
+| **301_replies** | [sl](http://www.kamailio.org/docs/modules/5.7.x/modules/sl.html#sl.stats.301_repliessl) |
+| **302_replies** | [sl](http://www.kamailio.org/docs/modules/5.7.x/modules/sl.html#sl.stats.302_repliessl) |
+| **3xx_replies** | [sl](http://www.kamailio.org/docs/modules/5.7.x/modules/sl.html#sl.stats.3xx_repliessl) |
+| **3xx_transactions** | [tmx](http://www.kamailio.org/docs/modules/5.7.x/modules/tmx.htmltmx) |
+
+## [4]
+
+| Name | Module Name |
+|------|-------------|
+| **400_replies** | [sl](http://www.kamailio.org/docs/modules/5.7.x/modules/sl.html#sl.stats.400_repliessl) |
+| **401_replies** | [sl](http://www.kamailio.org/docs/modules/5.7.x/modules/sl.html#sl.stats.401_repliessl) |
+| **403_replies** | [sl](http://www.kamailio.org/docs/modules/5.7.x/modules/sl.html#sl.stats.403_repliessl) |
+| **404_replies** | [sl](http://www.kamailio.org/docs/modules/5.7.x/modules/sl.html#sl.stats.404_repliessl) |
+| **407_replies** | [sl](http://www.kamailio.org/docs/modules/5.7.x/modules/sl.html#sl.stats.407_repliessl) |
+| **408_replies** | [sl](http://www.kamailio.org/docs/modules/5.7.x/modules/sl.html#sl.stats.408_repliessl) |
+| **483_replies** | [sl](http://www.kamailio.org/docs/modules/5.7.x/modules/sl.html#sl.stats.483_repliessl) |
+| **4xx_replies** | [sl](http://www.kamailio.org/docs/modules/5.7.x/modules/sl.html#sl.stats.4xx_repliessl) |
+| **4xx_transactions** | [tmx](http://www.kamailio.org/docs/modules/5.7.x/modules/tmx.htmltmx) |
+
+## [5]
+
+| Name | Module Name |
+|------|-------------|
+| **500_replies** | [sl](http://www.kamailio.org/docs/modules/5.7.x/modules/sl.html#sl.stats.500_repliessl) |
+| **5xx_replies** | [sl](http://www.kamailio.org/docs/modules/5.7.x/modules/sl.html#sl.stats.5xx_repliessl) |
+| **5xx_transactions** | [tmx](http://www.kamailio.org/docs/modules/5.7.x/modules/tmx.htmltmx) |
+
+## [6]
+
+| Name | Module Name |
+|------|-------------|
+| **6xx_replies** | [sl](http://www.kamailio.org/docs/modules/5.7.x/modules/sl.html#sl.stats.6xx_repliessl) |
+| **6xx_transactions** | [tmx](http://www.kamailio.org/docs/modules/5.7.x/modules/tmx.htmltmx) |
+
+## [7]
+
+| Name | Module Name |
+|------|-------------|
+
+## [8]
 
-| Name                 | Module Path | Module Name                                                                                        |
-|----------------------|-------------|----------------------------------------------------------------------------------------------------|
-| **early_dialogs**    | *modules*   | [dialog](http://www.kamailio.org/docs/modules/5.6.x/modules/dialog.html)                           |
-| **errors**           | *modules*   | [http_async_client](http://www.kamailio.org/docs/modules/5.6.x/modules/http_async_client.html)     |
-| **expired contacts** | *modules*   | [ims_registrar_scscf](http://www.kamailio.org/docs/modules/5.6.x/modules/ims_registrar_scscf.html) |
-| **expired contacts** | *modules*   | [ims_usrloc_pcscf](http://www.kamailio.org/docs/modules/5.6.x/modules/ims_usrloc_pcscf.html)       |
-| **expired_dialogs**  | *modules*   | [dialog](http://www.kamailio.org/docs/modules/5.6.x/modules/dialog.html)                           |
-| **expired_sst**      | *modules*   | [sst](http://www.kamailio.org/docs/modules/5.6.x/modules/sst.html)                                 |
-| **expires**          | *modules*   | [usrloc](http://www.kamailio.org/docs/modules/5.6.x/modules/usrloc.html#usrloc.s.expires)          |
+| Name | Module Name |
+|------|-------------|
+
+## [9]
 
-## \[F\]
+| Name | Module Name |
+|------|-------------|
 
-| Name                                          | Module Path | Module Name                                                                          |
-|-----------------------------------------------|-------------|--------------------------------------------------------------------------------------|
-| **Failed final CCRs (failed_final_ccrs)**     | *modules*   | [ims_charging](http://www.kamailio.org/docs/modules/5.6.x/modules/ims_charging.html) |
-| **Failed initial CCRs (failed_initial_ccrs)** | *modules*   | [ims_charging](http://www.kamailio.org/docs/modules/5.6.x/modules/ims_charging.html) |
-| **Failed interim CCRs (failed_interim_ccrs)** | *modules*   | [ims_charging](http://www.kamailio.org/docs/modules/5.6.x/modules/ims_charging.html) |
-| **failed_dialogs**                            | *modules*   | [dialog](http://www.kamailio.org/docs/modules/5.6.x/modules/dialog.html)             |
-| **failed_messages**                           | *modules*   | [msilo](http://www.kamailio.org/docs/modules/5.6.x/modules/msilo.html)               |
-| **failed_reminders**                          | *modules*   | [msilo](http://www.kamailio.org/docs/modules/5.6.x/modules/msilo.html)               |
-| **failures**                                  | *modules*   | [sl](http://www.kamailio.org/docs/modules/5.6.x/modules/sl.html#sl.stats.failures)   |
-| **Final CCRs (final_ccrs)**                   | *modules*   | [ims_charging](http://www.kamailio.org/docs/modules/5.6.x/modules/ims_charging.html) |
-
-## \[G\]
-
-| Name | Module Path | Module Name |
-|------|-------------|-------------|
-
-## \[H\]
-
-| Name | Module Path | Module Name |
-|------|-------------|-------------|
-
-## \[I\]
-
-| Name                            | Module Path | Module Name                                                                                        |
-|---------------------------------|-------------|----------------------------------------------------------------------------------------------------|
-| **impus**                       | *modules*   | [ims_registrar_scscf](http://www.kamailio.org/docs/modules/5.6.x/modules/ims_registrar_scscf.html) |
-| **impus**                       | *modules*   | [ims_usrloc_pcscf](http://www.kamailio.org/docs/modules/5.6.x/modules/ims_usrloc_pcscf.html)       |
-| **Initial CCRs (initial_ccrs)** | *modules*   | [ims_charging](http://www.kamailio.org/docs/modules/5.6.x/modules/ims_charging.html)               |
-| **Interim CCRs (interim_ccrs)** | *modules*   | [ims_charging](http://www.kamailio.org/docs/modules/5.6.x/modules/ims_charging.html)               |
-| **inuse_transactions**          | *modules*   | [tmx](http://www.kamailio.org/docs/modules/5.6.x/modules/tmx.html)                                 |
-
-## \[J\]
-
-| Name | Module Path | Module Name |
-|------|-------------|-------------|
-
-## \[K\]
+## [a]
+
+| Name | Module Name |
+|------|-------------|
+| **AAR Timeouts (aar_timeouts)** | [ims_qos](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_qos.htmlims_qos) |
+| **accepted_regs** | [registrar](http://www.kamailio.org/docs/modules/5.7.x/modules/registrar.htmlregistrar) |
+| **active_dialogs** | [dialog](http://www.kamailio.org/docs/modules/5.7.x/modules/dialog.htmldialog) |
+| **active_rooms** | [imc](http://www.kamailio.org/docs/modules/5.7.x/modules/imc.htmlimc) |
+| **active_transactions** | [tmx](http://www.kamailio.org/docs/modules/5.7.x/modules/tmx.htmltmx) |
+| **added_branches** | [tsilo](http://www.kamailio.org/docs/modules/5.7.x/modules/tsilo.html#tsilo.stat.added_branchestsilo) |
+| **Average AAR Response Time (aar_avg_response_time)** | [ims_qos](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_qos.htmlims_qos) |
+| **Average LIR Response Time (lir_avg_response_time)** | [ims_icscf](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_icscf.htmlims_icscf) |
+| **Average MAR Response Time (mar_avg_response_time)** | [ims_auth](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_auth.htmlims_auth) |
+| **Average UAR Response Time (uar_avg_response_time)** | [ims_icscf](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_icscf.htmlims_icscf) |
 
-| Name                            | Module Path | Module Name                                                                            |
-|---------------------------------|-------------|----------------------------------------------------------------------------------------|
-| **keepalive_endpoints**         | *modules*   | [nat_traversal](http://www.kamailio.org/docs/modules/5.6.x/modules/nat_traversal.html) |
-| **Killed calls (killed_calls)** | *modules*   | [ims_charging](http://www.kamailio.org/docs/modules/5.6.x/modules/ims_charging.html)   |
+## [b]
 
-## \[L\]
+| Name | Module Name |
+|------|-------------|
+| **Billed seconds (billed_secs)** | [ims_charging](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_charging.htmlims_charging) |
 
-| Name                            | Module Path | Module Name                                                                    |
-|---------------------------------|-------------|--------------------------------------------------------------------------------|
-| **LIR Timeouts (lir_timeouts)** | *modules*   | [ims_icscf](http://www.kamailio.org/docs/modules/5.6.x/modules/ims_icscf.html) |
+## [c]
 
-## \[M\]
+| Name | Module Name |
+|------|-------------|
+| **CCRs average response time (ccr_avg_response_time)** | [ims_charging](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_charging.htmlims_charging) |
+| **CCRs requests, which ended with a timeout (ccr_timeouts)** | [ims_charging](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_charging.htmlims_charging) |
+| **CCRs responses time (ccr_responses_time)** | [ims_charging](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_charging.htmlims_charging) |
+| **contacts** | [usrloc](http://www.kamailio.org/docs/modules/5.7.x/modules/usrloc.html#usrloc.s.contactsusrloc) |
 
-| Name                            | Module Path | Module Name                                                                    |
-|---------------------------------|-------------|--------------------------------------------------------------------------------|
-| **MAR Timeouts (mar_timeouts)** | *modules*   | [ims_auth](http://www.kamailio.org/docs/modules/5.6.x/modules/ims_auth.html)   |
-| **max_contacts**                | *modules*   | [registrar](http://www.kamailio.org/docs/modules/5.6.x/modules/registrar.html) |
-| **max_expires**                 | *modules*   | [registrar](http://www.kamailio.org/docs/modules/5.6.x/modules/registrar.html) |
+## [d]
 
-## \[N\]
+| Name | Module Name |
+|------|-------------|
+| **default_expires** | [registrar](http://www.kamailio.org/docs/modules/5.7.x/modules/registrar.htmlregistrar) |
+| **dialog_endpoints** | [nat_traversal](http://www.kamailio.org/docs/modules/5.7.x/modules/nat_traversal.htmlnat_traversal) |
+| **dumped_messages** | [msilo](http://www.kamailio.org/docs/modules/5.7.x/modules/msilo.htmlmsilo) |
+| **dumped_reminders** | [msilo](http://www.kamailio.org/docs/modules/5.7.x/modules/msilo.htmlmsilo) |
 
-| Name | Module Path | Module Name |
-|------|-------------|-------------|
+## [e]
 
-## \[O\]
+| Name | Module Name |
+|------|-------------|
+| **early_dialogs** | [dialog](http://www.kamailio.org/docs/modules/5.7.x/modules/dialog.htmldialog) |
+| **errors** | [http_async_client](http://www.kamailio.org/docs/modules/5.7.x/modules/http_async_client.htmlhttp_async_client) |
+| **expired contacts** | [ims_registrar_scscf](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_registrar_scscf.htmlims_registrar_scscf) |
+| **expired contacts** | [ims_usrloc_pcscf](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_usrloc_pcscf.htmlims_usrloc_pcscf) |
+| **expired_dialogs** | [dialog](http://www.kamailio.org/docs/modules/5.7.x/modules/dialog.htmldialog) |
+| **expired_sst** | [sst](http://www.kamailio.org/docs/modules/5.7.x/modules/sst.htmlsst) |
+| **expires** | [usrloc](http://www.kamailio.org/docs/modules/5.7.x/modules/usrloc.html#usrloc.s.expiresusrloc) |
+
+## [f]
 
-| Name | Module Path | Module Name |
-|------|-------------|-------------|
+| Name | Module Name |
+|------|-------------|
+| **Failed final CCRs (failed_final_ccrs)** | [ims_charging](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_charging.htmlims_charging) |
+| **Failed initial CCRs (failed_initial_ccrs)** | [ims_charging](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_charging.htmlims_charging) |
+| **Failed interim CCRs (failed_interim_ccrs)** | [ims_charging](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_charging.htmlims_charging) |
+| **failed_dialogs** | [dialog](http://www.kamailio.org/docs/modules/5.7.x/modules/dialog.htmldialog) |
+| **failed_messages** | [msilo](http://www.kamailio.org/docs/modules/5.7.x/modules/msilo.htmlmsilo) |
+| **failed_reminders** | [msilo](http://www.kamailio.org/docs/modules/5.7.x/modules/msilo.htmlmsilo) |
+| **failures** | [sl](http://www.kamailio.org/docs/modules/5.7.x/modules/sl.html#sl.stats.failuressl) |
+| **Final CCRs (final_ccrs)** | [ims_charging](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_charging.htmlims_charging) |
+
+## [g]
+
+| Name | Module Name |
+|------|-------------|
+
+## [h]
+
+| Name | Module Name |
+|------|-------------|
+
+## [i]
+
+| Name | Module Name |
+|------|-------------|
+| **impus** | [ims_registrar_scscf](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_registrar_scscf.htmlims_registrar_scscf) |
+| **impus** | [ims_usrloc_pcscf](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_usrloc_pcscf.htmlims_usrloc_pcscf) |
+| **Initial CCRs (initial_ccrs)** | [ims_charging](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_charging.htmlims_charging) |
+| **Interim CCRs (interim_ccrs)** | [ims_charging](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_charging.htmlims_charging) |
+| **inuse_transactions** | [tmx](http://www.kamailio.org/docs/modules/5.7.x/modules/tmx.htmltmx) |
+
+## [j]
+
+| Name | Module Name |
+|------|-------------|
+
+## [k]
+
+| Name | Module Name |
+|------|-------------|
+| **keepalive_endpoints** | [nat_traversal](http://www.kamailio.org/docs/modules/5.7.x/modules/nat_traversal.htmlnat_traversal) |
+| **Killed calls (killed_calls)** | [ims_charging](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_charging.htmlims_charging) |
+
+## [l]
+
+| Name | Module Name |
+|------|-------------|
+| **LIR Timeouts (lir_timeouts)** | [ims_icscf](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_icscf.htmlims_icscf) |
 
-## \[P\]
+## [m]
 
-| Name                  | Module Path | Module Name                                                              |
-|-----------------------|-------------|--------------------------------------------------------------------------|
-| **processed_dialogs** | *modules*   | [dialog](http://www.kamailio.org/docs/modules/5.6.x/modules/dialog.html) |
+| Name | Module Name |
+|------|-------------|
+| **MAR Timeouts (mar_timeouts)** | [ims_auth](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_auth.htmlims_auth) |
+| **max_contacts** | [registrar](http://www.kamailio.org/docs/modules/5.7.x/modules/registrar.htmlregistrar) |
+| **max_expires** | [registrar](http://www.kamailio.org/docs/modules/5.7.x/modules/registrar.htmlregistrar) |
 
-## \[Q\]
+## [n]
 
-| Name | Module Path | Module Name |
-|------|-------------|-------------|
+| Name | Module Name |
+|------|-------------|
 
-## \[R\]
+## [o]
 
-| Name                     | Module Path | Module Name                                                                                        |
-|--------------------------|-------------|----------------------------------------------------------------------------------------------------|
-| **received_ACKs**        | *modules*   | [sl](http://www.kamailio.org/docs/modules/5.6.x/modules/sl.html#sl.stats.received_acks)            |
-| **registered contacts**  | *modules*   | [ims_registrar_scscf](http://www.kamailio.org/docs/modules/5.6.x/modules/ims_registrar_scscf.html) |
-| **registered contacts**  | *modules*   | [ims_usrloc_pcscf](http://www.kamailio.org/docs/modules/5.6.x/modules/ims_usrloc_pcscf.html)       |
-| **registered_endpoints** | *modules*   | [nat_traversal](http://www.kamailio.org/docs/modules/5.6.x/modules/nat_traversal.html)             |
-| **registered_users**     | *modules*   | [usrloc](http://www.kamailio.org/docs/modules/5.6.x/modules/usrloc.html#usrloc.s.registered_users) |
-| **rejected_regs**        | *modules*   | [registrar](http://www.kamailio.org/docs/modules/5.6.x/modules/registrar.html)                     |
-| **replies**              | *modules*   | [http_async_client](http://www.kamailio.org/docs/modules/5.6.x/modules/http_async_client.html)     |
-| **requests**             | *modules*   | [http_async_client](http://www.kamailio.org/docs/modules/5.6.x/modules/http_async_client.html)     |
-| **rpl_absorbed**         | *modules*   | [tmx](http://www.kamailio.org/docs/modules/5.6.x/modules/tmx.html)                                 |
-| **rpl_generated**        | *modules*   | [tmx](http://www.kamailio.org/docs/modules/5.6.x/modules/tmx.html)                                 |
-| **rpl_received**         | *modules*   | [tmx](http://www.kamailio.org/docs/modules/5.6.x/modules/tmx.html)                                 |
-| **rpl_relayed**          | *modules*   | [tmx](http://www.kamailio.org/docs/modules/5.6.x/modules/tmx.html)                                 |
-| **rpl_sent**             | *modules*   | [tmx](http://www.kamailio.org/docs/modules/5.6.x/modules/tmx.html)                                 |
+| Name | Module Name |
+|------|-------------|
 
-## \[S\]
+## [p]
 
-| Name                                                  | Module Path | Module Name                                                                                           |
-|-------------------------------------------------------|-------------|-------------------------------------------------------------------------------------------------------|
-| **sent_err_replies**                                  | *modules*   | [sl](http://www.kamailio.org/docs/modules/5.6.x/modules/sl.html#sl.stats.sent_err_replies)            |
-| **sent_replies**                                      | *modules*   | [sl](http://www.kamailio.org/docs/modules/5.6.x/modules/sl.html#sl.stats.sent_replies)                |
-| **stored_messages**                                   | *modules*   | [msilo](http://www.kamailio.org/docs/modules/5.6.x/modules/msilo.html)                                |
-| **stored_ruris**                                      | *modules*   | [tsilo](http://www.kamailio.org/docs/modules/5.6.x/modules/tsilo.html#tsilo.stat.stored_ruris)        |
-| **stored_transactions**                               | *modules*   | [tsilo](http://www.kamailio.org/docs/modules/5.6.x/modules/tsilo.html#tsilo.stat.stored_transactions) |
-| **subscribed_endpoints**                              | *modules*   | [nat_traversal](http://www.kamailio.org/docs/modules/5.6.x/modules/nat_traversal.html)                |
-| **Successful final CCRs (successful_final_ccrs)**     | *modules*   | [ims_charging](http://www.kamailio.org/docs/modules/5.6.x/modules/ims_charging.html)                  |
-| **Successful initial CCRs (successful_initial_ccrs)** | *modules*   | [ims_charging](http://www.kamailio.org/docs/modules/5.6.x/modules/ims_charging.html)                  |
-| **Successful interim CCRs (successful_interim_ccrs)** | *modules*   | [ims_charging](http://www.kamailio.org/docs/modules/5.6.x/modules/ims_charging.html)                  |
+| Name | Module Name |
+|------|-------------|
+| **processed_dialogs** | [dialog](http://www.kamailio.org/docs/modules/5.7.x/modules/dialog.htmldialog) |
 
-## \[T\]
+## [q]
 
-| Name                   | Module Path | Module Name                                                                                          |
-|------------------------|-------------|------------------------------------------------------------------------------------------------------|
-| **timeouts**           | *modules*   | [http_async_client](http://www.kamailio.org/docs/modules/5.6.x/modules/http_async_client.html)       |
-| **total_ruris**        | *modules*   | [tsilo](http://www.kamailio.org/docs/modules/5.6.x/modules/tsilo.html#tsilo.stat.total_ruris)        |
-| **total_transactions** | *modules*   | [tsilo](http://www.kamailio.org/docs/modules/5.6.x/modules/tsilo.html#tsilo.stat.total_transactions) |
+| Name | Module Name |
+|------|-------------|
 
-## \[U\]
+## [r]
 
-| Name                            | Module Path | Module Name                                                                             |
-|---------------------------------|-------------|-----------------------------------------------------------------------------------------|
-| **UAC_transactions**            | *modules*   | [tmx](http://www.kamailio.org/docs/modules/5.6.x/modules/tmx.html)                      |
-| **UAR Timeouts (uar_timeouts)** | *modules*   | [ims_icscf](http://www.kamailio.org/docs/modules/5.6.x/modules/ims_icscf.html)          |
-| **UAS_transactions**            | *modules*   | [tmx](http://www.kamailio.org/docs/modules/5.6.x/modules/tmx.html)                      |
-| **users**                       | *modules*   | [usrloc](http://www.kamailio.org/docs/modules/5.6.x/modules/usrloc.html#usrloc.s.users) |
+| Name | Module Name |
+|------|-------------|
+| **received_ACKs** | [sl](http://www.kamailio.org/docs/modules/5.7.x/modules/sl.html#sl.stats.received_ACKssl) |
+| **registered contacts** | [ims_registrar_scscf](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_registrar_scscf.htmlims_registrar_scscf) |
+| **registered contacts** | [ims_usrloc_pcscf](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_usrloc_pcscf.htmlims_usrloc_pcscf) |
+| **registered_endpoints** | [nat_traversal](http://www.kamailio.org/docs/modules/5.7.x/modules/nat_traversal.htmlnat_traversal) |
+| **registered_users** | [usrloc](http://www.kamailio.org/docs/modules/5.7.x/modules/usrloc.html#usrloc.s.registered_usersusrloc) |
+| **rejected_regs** | [registrar](http://www.kamailio.org/docs/modules/5.7.x/modules/registrar.htmlregistrar) |
+| **replies** | [http_async_client](http://www.kamailio.org/docs/modules/5.7.x/modules/http_async_client.htmlhttp_async_client) |
+| **requests** | [http_async_client](http://www.kamailio.org/docs/modules/5.7.x/modules/http_async_client.htmlhttp_async_client) |
+| **rpl_absorbed** | [tmx](http://www.kamailio.org/docs/modules/5.7.x/modules/tmx.htmltmx) |
+| **rpl_generated** | [tmx](http://www.kamailio.org/docs/modules/5.7.x/modules/tmx.htmltmx) |
+| **rpl_received** | [tmx](http://www.kamailio.org/docs/modules/5.7.x/modules/tmx.htmltmx) |
+| **rpl_relayed** | [tmx](http://www.kamailio.org/docs/modules/5.7.x/modules/tmx.htmltmx) |
+| **rpl_sent** | [tmx](http://www.kamailio.org/docs/modules/5.7.x/modules/tmx.htmltmx) |
 
-## \[V\]
+## [s]
 
-| Name | Module Path | Module Name |
-|------|-------------|-------------|
+| Name | Module Name |
+|------|-------------|
+| **sent_err_replies** | [sl](http://www.kamailio.org/docs/modules/5.7.x/modules/sl.html#sl.stats.sent_err_repliessl) |
+| **sent_replies** | [sl](http://www.kamailio.org/docs/modules/5.7.x/modules/sl.html#sl.stats.sent_repliessl) |
+| **stored_messages** | [msilo](http://www.kamailio.org/docs/modules/5.7.x/modules/msilo.htmlmsilo) |
+| **stored_ruris** | [tsilo](http://www.kamailio.org/docs/modules/5.7.x/modules/tsilo.html#tsilo.stat.stored_ruristsilo) |
+| **stored_transactions** | [tsilo](http://www.kamailio.org/docs/modules/5.7.x/modules/tsilo.html#tsilo.stat.stored_transactionstsilo) |
+| **subscribed_endpoints** | [nat_traversal](http://www.kamailio.org/docs/modules/5.7.x/modules/nat_traversal.htmlnat_traversal) |
+| **Successful final CCRs (successful_final_ccrs)** | [ims_charging](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_charging.htmlims_charging) |
+| **Successful initial CCRs (successful_initial_ccrs)** | [ims_charging](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_charging.htmlims_charging) |
+| **Successful interim CCRs (successful_interim_ccrs)** | [ims_charging](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_charging.htmlims_charging) |
 
-## \[W\]
+## [t]
 
-| Name | Module Path | Module Name |
-|------|-------------|-------------|
+| Name | Module Name |
+|------|-------------|
+| **timeouts** | [http_async_client](http://www.kamailio.org/docs/modules/5.7.x/modules/http_async_client.htmlhttp_async_client) |
+| **total_ruris** | [tsilo](http://www.kamailio.org/docs/modules/5.7.x/modules/tsilo.html#tsilo.stat.total_ruristsilo) |
+| **total_transactions** | [tsilo](http://www.kamailio.org/docs/modules/5.7.x/modules/tsilo.html#tsilo.stat.total_transactionstsilo) |
 
-## \[X\]
+## [u]
 
-| Name            | Module Path | Module Name                                                                           |
-|-----------------|-------------|---------------------------------------------------------------------------------------|
-| **xxx_replies** | *modules*   | [sl](http://www.kamailio.org/docs/modules/5.6.x/modules/sl.html#sl.stats.xxx_replies) |
+| Name | Module Name |
+|------|-------------|
+| **UAC_transactions** | [tmx](http://www.kamailio.org/docs/modules/5.7.x/modules/tmx.htmltmx) |
+| **UAR Timeouts (uar_timeouts)** | [ims_icscf](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_icscf.htmlims_icscf) |
+| **UAS_transactions** | [tmx](http://www.kamailio.org/docs/modules/5.7.x/modules/tmx.htmltmx) |
+| **users** | [usrloc](http://www.kamailio.org/docs/modules/5.7.x/modules/usrloc.html#usrloc.s.usersusrloc) |
 
-## \[Y\]
+## [v]
 
-| Name | Module Path | Module Name |
-|------|-------------|-------------|
+| Name | Module Name |
+|------|-------------|
 
-## \[Z\]
+## [w]
 
-| Name | Module Path | Module Name |
-|------|-------------|-------------|
+| Name | Module Name |
+|------|-------------|
+
+## [x]
+
+| Name | Module Name |
+|------|-------------|
+| **xxx_replies** | [sl](http://www.kamailio.org/docs/modules/5.7.x/modules/sl.html#sl.stats.xxx_repliessl) |
+
+## [y]
+
+| Name | Module Name |
+|------|-------------|
+
+## [z]
+
+| Name | Module Name |
+|------|-------------|
