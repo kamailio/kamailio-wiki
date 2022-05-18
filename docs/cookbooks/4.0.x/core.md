@@ -1,7 +1,7 @@
 # Kamailio SIP Server v4.0.x (stable): Core Cookbook
 
 This tutorial collects the functions and parameters exported by Kamailio
-core to [configuration file](../cookbooks/4.0.x/core/cfg.md).
+core to [configuration file](core/cfg.md).
 
 **Note:** The parameters on this page are **NOT** in alphabetical order.
 
@@ -2649,8 +2649,7 @@ Test if a flag is set for current processed message (if the flag value
 is 1). The value of the parameter can be in range of 0..31.
 
 For more see
-<http://www.kamailio.org/dokuwiki/doku.php/tutorials:openser-flag-operations>
-or [flags](../utils/flags.md).
+<http://www.kamailio.org/dokuwiki/doku.php/tutorials:openser-flag-operations>.
 
 Example of usage:
 
