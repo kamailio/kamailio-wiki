@@ -168,6 +168,7 @@ in embedded Lua/Python/JavaScript/Ruby/... SIP routing scripts:
 ## Features
 
 -   [New Features in Devel Version](features/new-in-devel.md)
+-   [New Features in Release 5.6.x](features/new-in-5.6.x.md)
 -   [New Features in Release 5.5.x](features/new-in-5.5.x.md)
 -   [New Features in Release 5.4.x](features/new-in-5.4.x.md)
 -   [New Features in Release 5.3.x](features/new-in-5.3.x.md)
