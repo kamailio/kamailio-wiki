@@ -50,6 +50,11 @@ source code repository.*
 
 ## New In Existing Modules
 
+### db_cluster
+
+  - RPC commands to control database connections
+    - commands to list, enable or disable database connections of a cluster
+
 ### debugger
 
   - added `cfgtrace_format` parameter
@@ -71,6 +76,14 @@ source code repository.*
 
   - more algorithms, SA improvements
 
+### ims_registrar_scscf
+
+  - extended `save()` with optional flag `DO_NOT_USE_REALM_FOR_PRIVATE_IDENTITY`
+
+### kazoo
+
+  - allow optional AMQP-headers in `kazoo_query()` and `kazoo_publish()`
+
 ### kemix
 
   - added functions `KSR.kx.ifdef()` and `KSR.kx.ifndef()`
@@ -85,6 +98,11 @@ source code repository.*
 
   - several functions exported to kemi framework
 
+### lrkproxy
+
+  - added `gt` option for optimization port resource allocation
+  - added `custom_sdp_ip_avp` option for handling NAT client
+
 ### mqueue
 
   - added parameters `mqueue_name` and `mqueue_size` to define queues
@@ -96,11 +114,24 @@ source code repository.*
 
 ### outbound
 
-  - add flow_token_secret param
+  - added `flow_token_secret` parameter
+
+### permissions
+
+  - added parameter `trusted_cleanup_interval`
+    - cleanup old data of trusted `hash_table` by timer function
+
+### presence
+
+  - added option to return 200 instead of 202 on subscriptions
 
 ### pua_json
 
   - exported `KSR.pua_json.publish()`
+
+### pua_dialoginfo
+
+  - generate uuid instead of using call-id value to support parallel forking
 
 ### pv
 
@@ -120,6 +151,14 @@ source code repository.*
   - added `$viaZ(attr)` variable - get the attributes of last via header
   - added `$msgbuf(index)` variable
   - added functions for `$xavu(...)` params explode/implode
+  - added `$rsi` variable - return status code for replies and `0` for requests
+  - added transformation class `{val}`
+    - `{val.n0}` - return int `0` instead of `$null` value, or existing value
+    - `{val.json}` - if value is $null, return empty string; if value is
+      string, then it is escaped for use as json value (without surrounding
+      quotes)
+    - `{val.ne}` - return empty string if the variable value is `$null`
+  - extended `$cnt(...)` to work with `$xavp(...)`
 
 ### registrar
 
@@ -208,7 +247,7 @@ source code repository.*
 
 ### textops
 
-  - added `remove_hf_idx(hname, idx)`
+  - added function `remove_hf_idx(hname, idx)`
 
 ### textopsx
 
@@ -220,10 +259,23 @@ source code repository.*
   - body lines iterator functions exported to kemi
   - exported `msg_set_buffer(data)` function
 
+### tls
+
+  - new config variable `$tls(key)` - key:
+    - `m_subject_line` - return local (my) certificate subject line
+    - `p_subject_line` - return remote (peer) certificate subject line
+    - `m_issuer_line`
+    - `p_issuer_line`
+
 ### tm
 
   - added `callid_cseq_matching` parameter
     - transaction matching using callid and cseq values
+
+### tsilo
+
+  - added support for lookup and branch creating by contact
+  - added function `ts_append_by_contact(table, ruri [, contact])`
 
 ### uac
 
@@ -243,15 +295,29 @@ source code repository.*
 
 ## New in Core
 
+  - support for `time64` `libcs` - using the `lld` format for `time_t`
+  - added `#!defenvs` preprocessor directive
+    - similar to `#!defenv`, but the value is enclosed in double quotes to
+    make it covenient to be used as a string token
+
 ### Command Line Arguments
 
   - logging: `JSON` - add `CEE` schema support
+  - new option `j` for json logging to print message in json format
+    - if the log message starts with `{` and ends with `}`,
+    then it is expected to be a json document, printed as it is in the
+    message value, otherwise it is printed as field `text`
+  - new option `p` for json logging
+    - prefix is printed as it is in the root json, expected to be a list of
+    json field starting with comma
 
 ### Interpreter
 
   - accept `IPv4/6` as alternative keywords for `INET/6`
 
 ### Parameters
+
+  - added `sip_parser_log_oneline` - log SIP headers with `.` instead of `\r\n`
 
 ### Functions
 
@@ -266,6 +332,11 @@ source code repository.*
 
 ### Architecture
 
+  - mechanism to execute `child_init()` for special ranks on demand
+  - new special rank `PROC_POSTCHILDINIT`, to execute `child_init()` for main
+  process only when `ksr_module_set_flag(KSRMOD_FLAG_POSTCHILDINIT)` is
+  executed in `mod_init()`
+
 ### kamailio.cfg
 
 ## Tools
@@ -276,6 +347,8 @@ source code repository.*
 
   - subcommand `tls gen-certs`
     - generate self signed certificate in current directory
+  - subcommand `srv modules`
+    - list the loaded modules
 
 ### kamdbctl
 
