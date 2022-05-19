@@ -58,8 +58,14 @@ source code repository.*
 ### dispatcher
 
   - options to control better when the dns query should be done
-  - added ds_is_active(group [, uri])
+  - added `ds_is_active(group [, uri])`
     - check if any or a specific uri in a group is active
+
+### htable
+
+  - added iterator function `sht_iterator_rm(iname)` to remove current item
+  - added iterator functions `sht_iterator_sets()` and `sht_iterator_seti()` to set the value of current item
+  - added iterator function `sht_iterator_setex()` to set expire of current item
 
 ### ims_ipsec_pcscf
 
@@ -73,6 +79,7 @@ source code repository.*
 
   - source port check for `from_any_gw()` and `from_gw()`
   - updated kemi exports with new functions having port parameter
+  - improve binary search to support a match including src port
 
 ### ldap
 
@@ -112,6 +119,7 @@ source code repository.*
   - added `$via1(attr)` variable - get the attributes of 2nd via
   - added `$viaZ(attr)` variable - get the attributes of last via header
   - added `$msgbuf(index)` variable
+  - added functions for `$xavu(...)` params explode/implode
 
 ### registrar
 
@@ -135,6 +143,7 @@ source code repository.*
   - aliased `$rtpestat` to `$rtpstat`
   - added `rtpengine_query_v()` function
     - do a query cmd and store the response in a variable as a json
+  - rpc reload is limited to 10secs frequency
 
 ### rtpproxy
 
@@ -191,6 +200,7 @@ source code repository.*
 ### sworker
 
   - function `KSR.sworker.active()` exported to kemi
+  - added parameter `xdata` to be able to pass extra data to worker
 
 ### tcpops
 
@@ -208,6 +218,12 @@ source code repository.*
   - added body lines iterator functions
     - iterate through lines of message body, get the value via `$blitval(iname)`
   - body lines iterator functions exported to kemi
+  - exported `msg_set_buffer(data)` function
+
+### tm
+
+  - added `callid_cseq_matching` parameter
+    - transaction matching using callid and cseq values
 
 ### uac
 
@@ -257,6 +273,9 @@ source code repository.*
 ### kamcmd
 
 ### kamctl
+
+  - subcommand `tls gen-certs`
+    - generate self signed certificate in current directory
 
 ### kamdbctl
 
