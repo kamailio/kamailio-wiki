@@ -50,15 +50,71 @@ source code repository.*
 
 ## New In Existing Modules
 
+### app_jsdt
+
+  - added `duk_module_node` for JS module resolution
+  - added parameter mode to control initialization of js module api
+
+### app_lua
+
+  -  support for lua `5.4.x`
+
+### app_lua_sr
+
+  - support for lua `5.4.x`
+
+### async
+
+  - added `async_task_group_route(routename, groupname)` function
+  - added functions to execute async tasks only with custom data
+    - variants which do not suspend transaction
+  - added variable `$async(key)` - get async task group name and async task data
+  - exported functions to kemi to get async group name and data
+  - module parameter to set return code on success
+
+### corex
+
+  - added `virtual` flag to output of rpc `corex.list_sockets`
+  - rpc shm stats values printed as `unsigned long`
+  - support adding dns srv records via dns_cache param
+  - added `shm.report` rpc command
+
+### cplc
+
+  - manage case where TZ environment variable is not set
+
+### ctl
+
+  - implement `long` and `long long` types of values
+  - `float/double` values are stored over a `long long int` instead of `int`
+    - cope with larger values than `MAX_INT/1000`, supporting now up to `MAX_LLONG/1000`
+
 ### db_cluster
 
   - RPC commands to control database connections
     - commands to list, enable or disable database connections of a cluster
 
+### db_postgres
+
+  -  added support for async queries
+
+### db_redis
+
+  - support to use Redis cluster api
+
 ### debugger
 
   - added `cfgtrace_format` parameter
     - control what is printed in the cfgtrace log message (e.g., do not print config file path)
+
+### dialog
+
+  - added `local_only` parameter to RPC `dlg.stats_active`
+  - added `duration` field in dialog rpc output
+  - added filter based on start timestamp to rpc `dlg.list_match`
+  - added `dlg_filter_mode` parameter
+    - do nothing on timeout if dialog is not local
+    - do not send ka if dialog is not local
 
 ### dispatcher
 
@@ -66,19 +122,43 @@ source code repository.*
   - added `ds_is_active(group [, uri])`
     - check if any or a specific uri in a group is active
 
+### evrexec
+
+  -execute event route on data received on a custom udp socket
+
 ### htable
 
   - added iterator function `sht_iterator_rm(iname)` to remove current item
   - added iterator functions `sht_iterator_sets()` and `sht_iterator_seti()` to set the value of current item
   - added iterator function `sht_iterator_setex()` to set expire of current item
+  - added rpc command `htable.setex` to set expire for an item
+  - added config functions to set item value and expire at once
+  - added rpc commands to set value and expire at the same time
 
 ### ims_ipsec_pcscf
 
   - more algorithms, SA improvements
+  - added virtual flag to output of rpc sockets list
 
 ### ims_registrar_scscf
 
   - extended `save()` with optional flag `DO_NOT_USE_REALM_FOR_PRIVATE_IDENTITY`
+  - added a new contact state for notifications
+
+### ims_usrloc_scscf
+
+  - added capability to skip a specific realm
+
+### jsonrpcs
+
+  - support for `long/long` values in rpc messages
+    - `l` and `j` for `long` and `unsigned long`
+    - `L` and `J` for `long long` and `unsigned long long`
+
+### jwt
+
+  - possibility to add headers when generating jwt
+  - exported jwt_generate_hdrs() function to kemi
 
 ### kazoo
 
@@ -87,6 +167,13 @@ source code repository.*
 ### kemix
 
   - added functions `KSR.kx.ifdef()` and `KSR.kx.ifndef()`
+  - added function `kx.get_srcaddr_sock()` - return source address in socket format
+    similar to `$sas`
+  - added function `KSR.kx.get_rcvaddr_sock()` - return local received address in socket
+
+### kex
+
+  - use `unsigned long` for rpc `stats.fetchn` values
 
 ### lcr
 
@@ -111,6 +198,8 @@ source code repository.*
 
   - optional parameter mode for `handle_ruri_alias()`
   - new nat test (`512`) based on target address
+  - added `alias_name` parameter
+    - allows to set the name of the parameter used for `alias`
 
 ### outbound
 
@@ -124,6 +213,30 @@ source code repository.*
 ### presence
 
   - added option to return 200 instead of 202 on subscriptions
+
+### presence_conference
+
+  - added parameter `default_expires` (`3600s`)
+
+### presence_dialoginfo
+
+  - added parameter `default_expires` (`3600s`)
+
+### presence_mwi
+
+  - added parameter `default_expires` (`3600s`)
+
+### presence_profile
+
+  - added parameter `default_expires` (`3600s`)
+
+### presence_reginfo
+
+  - added parameter `default_expires` (`3600s`)
+
+### presence_xml
+
+  - added parameter `default_expires` (`3600s`)
 
 ### pua_json
 
@@ -154,11 +267,18 @@ source code repository.*
   - added `$rsi` variable - return status code for replies and `0` for requests
   - added transformation class `{val}`
     - `{val.n0}` - return int `0` instead of `$null` value, or existing value
-    - `{val.json}` - if value is $null, return empty string; if value is
+    - `{val.json}` - if value is `$null`, return empty string; if value is
       string, then it is escaped for use as json value (without surrounding
       quotes)
     - `{val.ne}` - return empty string if the variable value is `$null`
+    - `{val.jsonqe}` - quoted json value
   - extended `$cnt(...)` to work with `$xavp(...)`
+  - added `$msg(lpart)` variabek - return last part of the message - headers and body (skips first line)
+  - added `$Ras` - return local received address in socket format
+
+### p_usrloc
+
+  - added `UTC_timestamps` parameter
 
 ### registrar
 
@@ -216,6 +336,7 @@ source code repository.*
 ### siptrace
 
   - added `$siptrace(...)` variable
+  - added `direction `attribute to module variable
 
 ### siputils
 
@@ -227,6 +348,8 @@ source code repository.*
 ### smsops
 
   - support for 7bit special chars
+  - extended rpdata params manipulation
+    - capability to set RPData originator and destination addresses flags
 
 ### snmpstats
 
@@ -235,6 +358,10 @@ source code repository.*
 ### stastd
 
   - support for histogram
+
+### stirshaken
+
+  - added PVs to allow access to x509 subject and ppt grants
 
 ### sworker
 
@@ -248,6 +375,7 @@ source code repository.*
 ### textops
 
   - added function `remove_hf_idx(hname, idx)`
+  - added function `remove_hf_match(hname, op, expr)`
 
 ### textopsx
 
@@ -271,6 +399,7 @@ source code repository.*
 
   - added `callid_cseq_matching` parameter
     - transaction matching using callid and cseq values
+  - added `enable_uac_fr` parameter
 
 ### tsilo
 
@@ -282,16 +411,27 @@ source code repository.*
   - new parameter `reg_hash_size` to control better scalability
   - new parameter `reg_use_domain`
   - added `uac_reg_lookup_uri()` - do lookup for user in the uri
+  - exposed internal flags for `$uac_req(key)` variable
+    - if set to `1`, the password is considered to be `HA1` value
+  - trigger event route for failure and timeout when `$uac_req(evroute) = 2`
 
 ### usrloc
 
   - added `db_clean_tcp` parameter
     - if set, tcp contacts are deleted before loading location table at start time
 
+### uuid
+
+  - set sruid hooks for uuid generation on mod register
+
 ### xlog
 
   - added `prefix_mode` parameter
     - allows pv-format specifier in `prefix` parameter
+
+### xmlrpc
+
+  - implemented specifiers for `long` and `long long` types of values
 
 ## New in Core
 
@@ -299,6 +439,17 @@ source code repository.*
   - added `#!defenvs` preprocessor directive
     - similar to `#!defenv`, but the value is enclosed in double quotes to
     make it covenient to be used as a string token
+  - added `#!trydefenv` - The same as `#!defenv`, except if the variable is
+  undefined, the def value will be undefined as well
+  - added `#!trydefenvs` - The same as `#!defenvs`, except if the variable is
+  undefined, the def value will be undefined as well
+  - tcp - added core parameter `tcp_wait_data`
+    - specify how long to wait (in milliseconds) to wait for data on tcp
+    connections in certain cases - default is `5000ms` (`5secs`)
+  - added `virtual` flag to output of rpc `core.sockets_list`
+  - sruid - functions to get sruid with suffix from hasing a string
+  - sruid - api hooks for setting uuid generation callbacks
+  - added support of ICE media options to SDP parser
 
 ### Command Line Arguments
 
@@ -310,6 +461,8 @@ source code repository.*
   - new option `p` for json logging
     - prefix is printed as it is in the root json, expected to be a list of
     json field starting with comma
+  - added rpc command `core.runinfo`
+    - return runtime info: running version, uptime, ...
 
 ### Interpreter
 
@@ -318,6 +471,11 @@ source code repository.*
 ### Parameters
 
   - added `sip_parser_log_oneline` - log SIP headers with `.` instead of `\r\n`
+  - `listen` can have a `virtual` flag to check for nonlocal floating IPs
+  - `mem_summary` set to `12` by default
+  - added `tcp_script_mode` global parameter
+    - control if the tcp connection should be closed if received message
+    processing resulted in error return code
 
 ### Functions
 
@@ -330,6 +488,9 @@ source code repository.*
 
 ### Memory Managers
 
+  - added api function for getting usage report for qm manager
+  - store file, line, module and functions in memory reports
+
 ### Architecture
 
   - mechanism to execute `child_init()` for special ranks on demand
@@ -339,9 +500,9 @@ source code repository.*
 
 ### kamailio.cfg
 
-## Tools
+  - added return to root blocks - make it more explicit for returned code
 
-### kamcmd
+## Tools
 
 ### kamctl
 
@@ -349,6 +510,12 @@ source code repository.*
     - generate self signed certificate in current directory
   - subcommand `srv modules`
     - list the loaded modules
+
+### kamcmd
+
+  - `double/floa`t values printed without decimals when they are `0`
+    - cope better with `long (long)` values stored in double fields
+
 
 ### kamdbctl
 
