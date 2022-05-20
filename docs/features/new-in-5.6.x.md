@@ -54,6 +54,7 @@ source code repository.*
 
   - added `duk_module_node` for JS module resolution
   - added parameter mode to control initialization of js module api
+  - `duktape` interpreter upgraded to v2.7.0
 
 ### app_lua
 
@@ -62,6 +63,10 @@ source code repository.*
 ### app_lua_sr
 
   - support for lua `5.4.x`
+
+### app_squirrel
+
+  - updated `squirrel` interpreter to latest git version (3.2+)
 
 ### async
 
@@ -78,6 +83,10 @@ source code repository.*
   - rpc shm stats values printed as `unsigned long`
   - support adding dns srv records via dns_cache param
   - added `shm.report` rpc command
+  - added variable `$lsock(expr)` - get listen socket attributes
+    - `n/s1/listen` - match the socket with the name `s1` and return the listen address
+  - added transformation `{sock.attr}` - get attributes of a socket address `proto:host:port`
+  - added `forward_reply()` function
 
 ### cplc
 
@@ -119,12 +128,27 @@ source code repository.*
 ### dispatcher
 
   - options to control better when the dns query should be done
+  - added `ds_dns_mode` parameter
+  - option to do srv dns query for target addresses
   - added `ds_is_active(group [, uri])`
     - check if any or a specific uri in a group is active
+  - option to get shorter result for rpc list command
+  - option for rpc list command to print more attributes
+  - support for dns resolving of destination addresses done on timer
+  - added `ds_dns_mode` and `ds_dns_interval` parameters
+  - rpc command to add a record updated to set priority
+  - track time of last dns timer update
+  - added `ds_dns_ttl` parameter - option to set ttl for dns queries done by dispatcher
 
 ### evrexec
 
-  -execute event route on data received on a custom udp socket
+  - execute event route on data received on a custom udp socket
+  - new `sockaddr` attribute
+  - exposed src ip and port via variable
+
+### geoip2
+
+  - added reload RCP command fuctionality
 
 ### htable
 
@@ -140,6 +164,12 @@ source code repository.*
   - more algorithms, SA improvements
   - added virtual flag to output of rpc sockets list
 
+### ims_qos
+
+  - added new parameters for AAR, AVP517
+    - `af_signaling_ip6`, `component_media_type`, `flow_protocol`, `omit_flow_ports`,
+    `rs_default_bandwidth`, `rr_default_bandwidth`
+
 ### ims_registrar_scscf
 
   - extended `save()` with optional flag `DO_NOT_USE_REALM_FOR_PRIVATE_IDENTITY`
@@ -148,6 +178,10 @@ source code repository.*
 ### ims_usrloc_scscf
 
   - added capability to skip a specific realm
+
+### ipops
+
+  - added function `dns_set_local_ttl()` to set local ttl for dns queries
 
 ### jsonrpcs
 
@@ -193,6 +227,7 @@ source code repository.*
 ### mqueue
 
   - added parameters `mqueue_name` and `mqueue_size` to define queues
+  - added  `mqueue_mode` parameter
 
 ### nathelper
 
@@ -275,6 +310,13 @@ source code repository.*
   - extended `$cnt(...)` to work with `$xavp(...)`
   - added `$msg(lpart)` variabek - return last part of the message - headers and body (skips first line)
   - added `$Ras` - return local received address in socket format
+  - added set function for variable `$rcv(buf)`
+
+### pv_headers
+
+  - added support to remove a specific value from a header
+    - `pvh_remove_header_param()` remove the value from the given header or the entire header if no other value is present
+  - `pvh_header_param_exists()` check if the value is present to a given header
 
 ### p_usrloc
 
@@ -415,6 +457,10 @@ source code repository.*
     - if set to `1`, the password is considered to be `HA1` value
   - trigger event route for failure and timeout when `$uac_req(evroute) = 2`
 
+### userblocklist
+
+  - added RPC commands that used to be MI commands
+
 ### usrloc
 
   - added `db_clean_tcp` parameter
@@ -450,6 +496,8 @@ source code repository.*
   - sruid - functions to get sruid with suffix from hasing a string
   - sruid - api hooks for setting uuid generation callbacks
   - added support of ICE media options to SDP parser
+  - enable updating received data via `$rcv(buf)` on `event_route[core:msg-received]`
+  - dns cache - option to set local ttl to overwrite the global value
 
 ### Command Line Arguments
 
