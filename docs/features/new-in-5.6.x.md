@@ -561,10 +561,18 @@ source code repository.*
 
 ### kamcmd
 
-  - `double/floa`t values printed without decimals when they are `0`
+  - `double/float` values printed without decimals when they are `0`
     - cope better with `long (long)` values stored in double fields
 
 
 ### kamdbctl
 
 ### kamcli
+
+  - added subcommand `tls` to generate self-signed certificates
+  - added subcommand `apiban` for APIBan records management
+  - auto-complete options for subcommand `srv rpchelp`
+  - embedded shell
+    - connect on starting to running Kamailio and display its version
+    - display sip server uptime on start
+    - config section for shell command
