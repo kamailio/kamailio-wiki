@@ -285,19 +285,21 @@ source code repository.*
 
   - added `$rpl(key)` variable - manage reply
   - added `$ccp(gname.vname)` variable - access core custom parameters
-  - added `$hfl(name)` variable
+  - added `$hfl(name)` variable - header field list
   - added `{param.in,name[,sep]}` transformation
-  - added `$hflc(hname)` variable
+  - added `$hflc(hname)` variable - header field list couting
   - extended `$nh(k)` to work for replies using 2nd via
   - added `WS` and `WSS` to `$K(key)` variable
   - support `INET/6` as alternative `IPv4/6` for `$K(key)`
   - `$nh(i)` returns ip address family version
-  - added `{s.rafter,x}` and `{s.rbefore,x}` transformations
-  - added `{s.fmtlines,n,m}` and `{s.fmtlinet,n,m}`
+  - added `{s.rafter,x}` and `{s.rbefore,x}` transformations - get content of a
+  string after or before a character with reverse searching
+  - added `{s.fmtlines,n,m}` and `{s.fmtlinet,n,m}` - format string in multi-lines
+  with indentation
   - added `$via0(attr)` variable - get the attributes of first via header
   - added `$via1(attr)` variable - get the attributes of 2nd via
   - added `$viaZ(attr)` variable - get the attributes of last via header
-  - added `$msgbuf(index)` variable
+  - added `$msgbuf(index)` variable - get content of SIP message buffer by index
   - added functions for `$xavu(...)` params explode/implode
   - added `$rsi` variable - return status code for replies and `0` for requests
   - added transformation class `{val}`
@@ -308,7 +310,7 @@ source code repository.*
     - `{val.ne}` - return empty string if the variable value is `$null`
     - `{val.jsonqe}` - quoted json value
   - extended `$cnt(...)` to work with `$xavp(...)`
-  - added `$msg(lpart)` variabek - return last part of the message - headers and body (skips first line)
+  - added `$msg(lpart)` variable - return last part of the message - headers and body (skips first line)
   - added `$Ras` - return local received address in socket format
   - added set function for variable `$rcv(buf)`
 
