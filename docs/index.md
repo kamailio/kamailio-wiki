@@ -21,17 +21,17 @@ Few guidelines to edit the wiki:
     asking for review
 
 🔥 **IMPORTANT:** *For a cleaner presentation, the front page in
-this wiki site is linking the documents for latest stable versions, 4.3
+this wiki site is linking the documents for latest stable versions, 5.2
 or newer, respectively the installation and upgrade tutorials, new
 features, a.s.o... For older releases, 3.2.x to 5.1.x, go to **Older
 Releases Index**:*
 
-  * [Link To Content For Older Releases](content/old-releases.md)
+  * [Link To Content For Older Releases - 3.2.x to 5.1.x](content/old-releases.md)
 
 🔥 **IMPORTANT:** *Content for older releases than 3.2.0 is
 available at the **Old Wiki Site**:*
 
-  * [Link To Old Wiki Site](https://www.kamailio.org/dokuwiki/)
+  * [Link To Old Wiki Site - Kamailio Releases Older Than 3.2.0](https://www.kamailio.org/dokuwiki/)
 
 ## Installation
 
