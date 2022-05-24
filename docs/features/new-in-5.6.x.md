@@ -46,7 +46,7 @@ source code repository.*
 ### tlsa
 
   - (pseudo) module to compile tls module linked statically with libssl
-  - [https://www.kamailio.org/docs/modules/5.6.x/modules/tsla.html](https://www.kamailio.org/docs/modules/5.6.x/modules/tsla.html)
+  - [https://www.kamailio.org/docs/modules/5.6.x/modules/tlsa.html](https://www.kamailio.org/docs/modules/5.6.x/modules/tlsa.html)
 
 ## New In Existing Modules
 
