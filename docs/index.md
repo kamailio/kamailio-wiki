@@ -23,7 +23,7 @@ Few guidelines to edit the wiki:
 🔥 **IMPORTANT:** *For a cleaner presentation, the front page in
 this wiki site is linking the documents for latest stable versions, 4.3
 or newer, respectively the installation and upgrade tutorials, new
-features, a.s.o... For older releases, 3.2.x to 4.2.x, go to **Older
+features, a.s.o... For older releases, 3.2.x to 5.1.x, go to **Older
 Releases Index**:*
 
   * [Link To Content For Older Releases](content/old-releases.md)
@@ -44,10 +44,6 @@ available at the **Old Wiki Site**:*
 -   [Install Kamailio v5.4.x From GIT (html)](https://kamailio.org/docs/tutorials/5.4.x/kamailio-install-guide-git/)
 -   [Install Kamailio v5.3.x From GIT (html)](https://kamailio.org/docs/tutorials/5.3.x/kamailio-install-guide-git/)
 -   [Install Kamailio v5.2.x From GIT (html)](https://kamailio.org/docs/tutorials/5.2.x/kamailio-install-guide-git/)
--   [Install Kamailio v5.1.x From GIT (html)](https://kamailio.org/docs/tutorials/5.1.x/kamailio-install-guide-git/)
--   [Install Kamailio v5.0.x From GIT (html)](https://kamailio.org/docs/tutorials/5.0.x/kamailio-install-guide-git/)
--   [Install Kamailio v4.4.x From GIT](install/4.4.x/git.md)
--   [Install Kamailio v4.3.x From GIT](install/4.3.x/git.md)
 
 ### Installation By Building Packages
 
@@ -71,10 +67,6 @@ available at the **Old Wiki Site**:*
 -   [Upgrade Kamailio v5.4.x to v5.5.0](install/upgrade/5.4.x-to-5.5.0.md)
 -   [Upgrade Kamailio v5.3.x to v5.4.0](install/upgrade/5.3.x-to-5.4.0.md)
 -   [Upgrade Kamailio v5.2.x to v5.3.0](install/upgrade/5.2.x-to-5.3.0.md)
--   [Upgrade Kamailio v5.1.x to v5.2.0](install/upgrade/5.1.x-to-5.2.0.md)
--   [Upgrade Kamailio v5.0.x to v5.1.0](install/upgrade/5.0.x-to-5.1.0.md)
--   [Upgrade Kamailio v4.4.x to v5.0.0](install/upgrade/4.4.x-to-5.0.0.md)
--   [Upgrade Kamailio v4.3.x to v4.4.0](install/upgrade/4.3.x-to-4.4.0.md)
 
 ## Download
 
@@ -85,10 +77,6 @@ available at the **Old Wiki Site**:*
 -   [Download Sources of v5.4.x from GIT Repository](download/v5.4.x-from-git.md)
 -   [Download Sources of v5.3.x from GIT Repository](download/v5.3.x-from-git.md)
 -   [Download Sources of v5.2.x from GIT Repository](download/v5.2.x-from-git.md)
--   [Download Sources of v5.1.x from GIT Repository](download/v5.1.x-from-git.md)
--   [Download Sources of v5.0.x from GIT Repository](download/v5.0.x-from-git.md)
--   [Download Sources of v4.4.x from GIT Repository](download/v4.4.x-from-git.md)
--   [Download Sources of v4.3.x from GIT Repository](download/v4.3.x-from-git.md)
 
 ### Linux - Unix Distributions
 
@@ -109,11 +97,6 @@ available at the **Old Wiki Site**:*
 | 5.4.x   | [link](cookbooks/5.4.x/core.md) | [link](cookbooks/5.4.x/pseudovariables.md) | [link](cookbooks/5.4.x/transformations.md) | [link](cookbooks/5.4.x/selects.md) | [link](https://kamailio.org/docs/modules/5.4.x/) |
 | 5.3.x   | [link](cookbooks/5.3.x/core.md) | [link](cookbooks/5.3.x/pseudovariables.md) | [link](cookbooks/5.3.x/transformations.md) | [link](cookbooks/5.3.x/selects.md) | [link](https://kamailio.org/docs/modules/5.3.x/) |
 | 5.2.x   | [link](cookbooks/5.2.x/core.md) | [link](cookbooks/5.2.x/pseudovariables.md) | [link](cookbooks/5.2.x/transformations.md) | [link](cookbooks/5.2.x/selects.md) | [link](https://kamailio.org/docs/modules/5.2.x/) |
-| 5.1.x   | [link](cookbooks/5.1.x/core.md) | [link](cookbooks/5.1.x/pseudovariables.md) | [link](cookbooks/5.1.x/transformations.md) | [link](cookbooks/5.1.x/selects.md) | [link](https://kamailio.org/docs/modules/5.1.x/) |
-| 5.0.x   | [link](cookbooks/5.0.x/core.md) | [link](cookbooks/5.0.x/pseudovariables.md) | [link](cookbooks/5.0.x/transformations.md) | [link](cookbooks/5.0.x/selects.md) | [link](https://kamailio.org/docs/modules/5.0.x/) |
-| 4.4.x   | [link](cookbooks/4.4.x/core.md) | [link](cookbooks/4.4.x/pseudovariables.md) | [link](cookbooks/4.4.x/transformations.md) | [link](cookbooks/4.4.x/selects.md) | [link](https://kamailio.org/docs/modules/4.4.x/) |
-| 4.3.x   | [link](cookbooks/4.3.x/core.md) | [link](cookbooks/4.3.x/pseudovariables.md) | [link](cookbooks/4.3.x/transformations.md) | [link](cookbooks/4.3.x/selects.md) | [link](https://kamailio.org/docs/modules/4.3.x/) |
-
   
 
 ## Alphabetic Indexes
@@ -131,18 +114,8 @@ Alphabetic indexes generated from documentation (modules' readme docs).
 | 5.4.x   | [link](alphaindexes/5.4.x/modparameters.md) | [link](alphaindexes/5.4.x/modfunctions.md) | [link](alphaindexes/5.4.x/rpccommands.md) | [link](alphaindexes/5.4.x/modstatistics.md) |
 | 5.3.x   | [link](alphaindexes/5.3.x/modparameters.md) | [link](alphaindexes/5.3.x/modfunctions.md) | [link](alphaindexes/5.3.x/rpccommands.md) | [link](alphaindexes/5.3.x/modstatistics.md) |
 | 5.2.x   | [link](alphaindexes/5.2.x/modparameters.md) | [link](alphaindexes/5.2.x/modfunctions.md) | [link](alphaindexes/5.2.x/rpccommands.md) | [link](alphaindexes/5.2.x/modstatistics.md) |
-| 5.1.x   | [link](alphaindexes/5.1.x/modparameters.md) | [link](alphaindexes/5.1.x/modfunctions.md) | [link](alphaindexes/5.1.x/rpccommands.md) | [link](alphaindexes/5.1.x/modstatistics.md) |
-| 5.0.x   | [link](alphaindexes/5.0.x/modparameters.md) | [link](alphaindexes/5.0.x/modfunctions.md) | [link](alphaindexes/5.0.x/rpccommands.md) | [link](alphaindexes/5.0.x/modstatistics.md) |
 
-  
 
-|         |                                           |                                          |                                        |                                           |                                                                             |
-|---------|-------------------------------------------|------------------------------------------|----------------------------------------|-------------------------------------------|-----------------------------------------------------------------------------|
-| Version | Modules Parameters                        | Modules Functions                        | MI Commands                            | Statistics                                | RPC Commands (List)                                                         |
-| 4.4.x   | [link](alphaindexes/4.4.x/modparameters.md) | [link](alphaindexes/4.4.x/modfunctions.md) | [link](alphaindexes/4.4.x/micommands.md) | [link](alphaindexes/4.4.x/modstatistics.md) | [link](https://www.kamailio.org/docs/docbooks/4.4.x/rpc_list/rpc_list.html) |
-| 4.3.x   | [link](alphaindexes/4.3.x/modparameters.md) | [link](alphaindexes/4.3.x/modfunctions.md) | [link](alphaindexes/4.3.x/micommands.md) | [link](alphaindexes/4.3.x/modstatistics.md) | [link](https://www.kamailio.org/docs/docbooks/4.3.x/rpc_list/rpc_list.html) |
-
-  
 
 ## C Code Export Lists
 
@@ -174,10 +147,6 @@ in embedded Lua/Python/JavaScript/Ruby/... SIP routing scripts:
 -   [New Features in Release 5.4.x](features/new-in-5.4.x.md)
 -   [New Features in Release 5.3.x](features/new-in-5.3.x.md)
 -   [New Features in Release 5.2.x](features/new-in-5.2.x.md)
--   [New Features in Release 5.1.x](features/new-in-5.1.x.md)
--   [New Features in Release 5.0.x](features/new-in-5.0.x.md)
--   [New Features in Release 4.4.x](features/new-in-4.4.x.md)
--   [New Features in Release 4.3.x](features/new-in-4.3.x.md)
 
 ## Tutorials
 
@@ -210,11 +179,11 @@ in embedded Lua/Python/JavaScript/Ruby/... SIP routing scripts:
 ### Database Structure
 
 -   [Devel Version](https://www.kamailio.org/docs/db-tables/kamailio-db-devel.html)
+-   [5.6.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.6.x.html)
+-   [5.5.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.5.x.html)
+-   [5.4.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.4.x.html)
+-   [5.3.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.3.x.html)
 -   [5.2.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.2.x.html)
--   [5.1.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.1.x.html)
--   [5.0.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.0.x.html)
--   [4.4.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-4.4.x.html)
--   [4.3.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-4.3.x.html)
 
 ## Development
 
