@@ -7,7 +7,7 @@
 | Name | Module Name |
 |------|-------------|
 | **accept_filter (string)** | [uac_redirect](http://www.kamailio.org/docs/modules/5.7.x/modules/uac_redirect.html#uac_redirect.p.accept_filteruac_redirect) |
-| **accept_pem_certs ([0|1])** | [auth_identity](http://www.kamailio.org/docs/modules/5.7.x/modules/auth_identity.html#accept_pem_certsauth_identity) |
+| **accept_pem_certs (int)** | [auth_identity](http://www.kamailio.org/docs/modules/5.7.x/modules/auth_identity.html#accept_pem_certsauth_identity) |
 | **acc_callid_column (string)** | [acc](http://www.kamailio.org/docs/modules/5.7.x/modules/acc.html#acc.p.acc_callid_columnacc) |
 | **acc_db_table (string)** | [uac_redirect](http://www.kamailio.org/docs/modules/5.7.x/modules/uac_redirect.html#uac_redirect.p.acc_db_tableuac_redirect) |
 | **acc_extra (string)** | [acc_json](http://www.kamailio.org/docs/modules/5.7.x/modules/acc_json.html#acc_json.p.acc_extraacc_json) |
