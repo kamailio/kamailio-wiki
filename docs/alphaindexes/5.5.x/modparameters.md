@@ -1,16 +1,13 @@
 # Modules Parameters
 
-([A](#A)) ([B](#B)) ([C](#C)) ([D](#D)) ([E](#E)) ([F](#F)) ([G](#g))
-([H](#H)) ([I](#I)) ([J](#J)) ([K](#K)) ([L](#L)) ([M](#M)) ([N](#n))
-([O](#O)) ([P](#P)) ([Q](#Q)) ([R](#R)) ([S](#S)) ([T](#T)) ([U](#u))
-([V](#V)) ([W](#W)) ([X](#X)) ([Y](#Y)) ([Z](#z))
+ ([a](#a))  ([b](#b))  ([c](#c))  ([d](#d))  ([e](#e))  ([f](#f))  ([g](#g))  ([h](#h))  ([i](#i))  ([j](#j))  ([k](#k))  ([l](#l))  ([m](#m))  ([n](#n))  ([o](#o))  ([p](#p))  ([q](#q))  ([r](#r))  ([s](#s))  ([t](#t))  ([u](#u))  ([v](#v))  ([w](#w))  ([x](#x))  ([y](#y))  ([z](#z)) 
 
 ## \[A\]
 
 | Name                                     | Module Path | Module Name                                                                                                                 |
 |------------------------------------------|-------------|-----------------------------------------------------------------------------------------------------------------------------|
 | **accept_filter (string)**               | *modules*   | [uac_redirect](http://www.kamailio.org/docs/modules/5.5.x/modules/uac_redirect.html#uac_redirect.p.accept_filter)           |
-| **accept_pem_certs (\[0\|1\])**          | *modules*   | [auth_identity](http://www.kamailio.org/docs/modules/5.5.x/modules/auth_identity.html#accept_pem_certs)                     |
+| **accept_pem_certs (int)**          | *modules*   | [auth_identity](http://www.kamailio.org/docs/modules/5.5.x/modules/auth_identity.html#accept_pem_certs)                     |
 | **acc_callid_column (string)**           | *modules*   | [acc](http://www.kamailio.org/docs/modules/5.5.x/modules/acc.html#acc.p.acc_callid_column)                                  |
 | **acc_db_table (string)**                | *modules*   | [uac_redirect](http://www.kamailio.org/docs/modules/5.5.x/modules/uac_redirect.html#uac_redirect.p.acc_db_table)            |
 | **acc_extra (string)**                   | *modules*   | [acc_json](http://www.kamailio.org/docs/modules/5.5.x/modules/acc_json.html#acc_json.p.acc_extra)                           |
