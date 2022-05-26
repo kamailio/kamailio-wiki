@@ -3,7 +3,7 @@
 📘 **Previous version was 5.5.x (released on May 2021), see
 what was new in that release at**:
 
-  -  [New In v5.5.x](http://www.kamailio.org/wiki/features/new-in-5.5.x)
+  -  [New In v5.5.x](new-in-5.5.x.md)
 
 📘 *This is a draft of new features added in this version,
 manually updated, thus not always synchronized with what is new in

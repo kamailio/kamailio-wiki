@@ -1,14 +1,13 @@
 # Kamailio SIP Server - New Features in v5.5.x
 
-\<fc #0000FF> **Previous version was 5.4.x (released on July, 2020), see
-what was new in that release at**: \</fc>
+📘 **Previous version was 5.4.x (released on July, 2020), see
+what was new in that release at**:
 
--   \<fc
-    #0000FF><http://www.kamailio.org/wiki/features/new-in-5.4.x>\</fc>
+-   [New In 5.4.x](new-in-5.4.x.md)
 
-\<fc #800000>*This is a draft of new features added in this version,
+📘 *This is a draft of new features added in this version,
 manually updated, thus not always synchronized with what is new in
-source code repository.*\</fc>
+source code repository.*
 
 ## Documentation
 
