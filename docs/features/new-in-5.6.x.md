@@ -569,6 +569,8 @@ source code repository.*
 
 ### kamdbctl
 
+  - database schema updates
+
 ### kamcli
 
   - added subcommand `tls` to generate self-signed certificates

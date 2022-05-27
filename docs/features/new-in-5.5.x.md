@@ -33,40 +33,40 @@ be found in the release Changelog or with the "git log" command.
 
 New module to delegate sip message processing to a group of workers
 
--   <https://www.kamailio.org/docs/modules/5.5.x/modules/sworker.html>
+-   [https://www.kamailio.org/docs/modules/5.5.x/modules/sworker.html](https://www.kamailio.org/docs/modules/5.5.x/modules/sworker.html)
 
 ### lrkproxy
 
 New rtp relay module, use kernel based forwarding controlled via an
 external application
 
--   <https://www.kamailio.org/docs/modules/5.5.x/modules/lrkproxy.html>
+-   [https://www.kamailio.org/docs/modules/5.5.x/modules/lrkproxy.html](https://www.kamailio.org/docs/modules/5.5.x/modules/lrkproxy.html)
 
 ### jwt
 
 New module providing json web token generation and validation functions
 
--   <https://www.kamailio.org/docs/modules/5.5.x/modules/jwt.html>
+-   [https://www.kamailio.org/docs/modules/5.5.x/modules/jwt.html](https://www.kamailio.org/docs/modules/5.5.x/modules/jwt.html)
 
 ### stirshaken
 
 New module adding support to implement STIR-Shaken authentication and
 verification functions
 
--   <https://www.kamailio.org/docs/modules/5.5.x/modules/stirshaken.html>
+-   [https://www.kamailio.org/docs/modules/5.5.x/modules/stirshaken.html](https://www.kamailio.org/docs/modules/5.5.x/modules/stirshaken.html)
 
 ### lwsc
 
 New module adding websocket client connector for interaction with
 external system, not for usual SIP forwarding
 
--   <https://www.kamailio.org/docs/modules/5.5.x/modules/lwsc.html>
+-   [https://www.kamailio.org/docs/modules/5.5.x/modules/lwsc.html](https://www.kamailio.org/docs/modules/5.5.x/modules/lwsc.html)
 
 ### secsipid_proc
 
 Pseudo-module providing per-proces STIR/SHAKEN API from libsecsipid.
 
--   <https://www.kamailio.org/docs/modules/5.5.x/modules/secsipid_proc.html>
+-   [https://www.kamailio.org/docs/modules/5.5.x/modules/secsipid_proc.html](https://www.kamailio.org/docs/modules/5.5.x/modules/secsipid_proc.html)
 
 ## New in existing Modules
 
