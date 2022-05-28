@@ -1,14 +1,13 @@
 # Kamailio SIP Server - New Features in v5.4.x
 
-\<fc #0000FF> **Previous version was 5.3.x (released on October, 2019),
-see what was new in that release at**: \</fc>
+📘 **Previous version was 5.3.x (released on October, 2019),
+see what was new in that release at**:
 
--   \<fc
-    #0000FF><http://www.kamailio.org/wiki/features/new-in-5.3.x>\</fc>
+-   📘 [new-in-5.3.x](new-in-5.3.x.md)
 
-\<fc #800000>*This is a draft of new features added in this version,
+📘 *This is a draft of new features added in this version,
 manually updated, thus not always synchronized with what is new in
-source code repository.*\</fc>
+source code repository.
 
 ## Documentation
 
@@ -32,16 +31,17 @@ be found in the release Changelog or with the "git log" command.
 Flexible headers management $x_hdr exported variables, to offload header
 processing and to simplify SIP header modifications
 
--   <https://www.kamailio.org/docs/modules/5.4.x/modules/pv_headers.html>
+-   [https://www.kamailio.org/docs/modules/5.4.x/modules/pv_headers.html](https://www.kamailio.org/docs/modules/5.4.x/modules/pv_headers.html)
 
 ### kafka
 
 New module to produce and send messages to a Kafka server:
 
--   <https://kamailio.org/docs/modules/devel/modules/kafka.html>
+-   [https://kamailio.org/docs/modules/devel/modules/kafka.html](https://kamailio.org/docs/modules/devel/modules/kafka.html)
 
 ### secsipid
 
+-   [https://kamailio.org/docs/modules/devel/modules/secsipid.html](https://kamailio.org/docs/modules/devel/modules/secsipid.html)
 -   new module implementing STIR and SHAKEN IETF extensions, see RFC
     8224 and RFC 8588 for details
 
@@ -49,14 +49,14 @@ New module to produce and send messages to a Kafka server:
 
 New module to facilitate integration with systemd:
 
--   <https://kamailio.org/docs/modules/devel/modules/systemdops.html>
+-   [https://kamailio.org/docs/modules/devel/modules/systemdops.html](https://kamailio.org/docs/modules/devel/modules/systemdops.html)
 
 ### dlgs
 
 New module to enable lightwight, stateless dialog tracking and
 statistics
 
--   <https://kamailio.org/docs/modules/devel/modules/dlgs.html>
+-   [https://kamailio.org/docs/modules/devel/modules/dlgs.html](https://kamailio.org/docs/modules/devel/modules/dlgs.html)
 
 ## New in existing Modules
 
@@ -118,8 +118,8 @@ statistics
 
 Added new **cfgt.list** and **cfgt.clean** RPC commands
 
--   <https://www.kamailio.org/docs/modules/5.4.x/modules/cfgt.html#cfgt.r.list>
--   <https://www.kamailio.org/docs/modules/5.4.x/modules/cfgt.html#cfgt.r.clean>
+-   https://www.kamailio.org/docs/modules/5.4.x/modules/cfgt.html#cfgt.r.list
+-   https://www.kamailio.org/docs/modules/5.4.x/modules/cfgt.html#cfgt.r.clean
 -   switch from deprecated /var/run to /run
 
 ### corex
@@ -248,13 +248,13 @@ Added new **cfgt.list** and **cfgt.clean** RPC commands
 
 -   new parameter pres_subs_mode, allow disabling cloning subscription
     structure for pv use to save run-time memory
--   add delete_same_subs module parameter, to enable deleting of
+-   add `delete_same_subs` module parameter, to enable deleting of
     subscriptions with the same presence uri and callid
 -   timer_mode, new module parameter to control what timer process to
     use
 -   add support to keep presentity records in memory instead of DB
 -   add new parameter publ_cache parameter to define caching mode
--   add RCP command presence.presentity_list \[mode\] to print all
+-   add RCP command `presence.presentity_list [mode]` to print all
     attributes of the presentity record
 
 ### presence_xml
@@ -289,8 +289,8 @@ Add new pseudo-variables:
 -   add transformations for base64-url encode/decode variants
 -   add config and kemi functions to print xavu vars
 -   new config variable $fsn - forced send socket name
--   add KEMI functions pvx.xavp_get_keys and pvx.xavp_getd
--   add $xavi(...) config variables implementation, same as $xavp but
+-   add KEMI functions `pvx.xavp_get_keys()` and `pvx.xavp_getd()`
+-   add `$xavi(...)` config variables implementation, same as $xavp but
     case insensitive for keys
 -   new var $mts, return msg type as string
 -   add vars to get the length for o-uri/r-uri/f-uri/t-uri username,
@@ -300,7 +300,7 @@ Add new pseudo-variables:
 
 -   add matching_mode modparam, to specify the Contact matching
 -   add a new uniq column to support new update modes
--   change "-" for "\_" in stats name to be prometheus compliant
+-   change `-` for `_` in stats name to be prometheus compliant
 
 ### ratelimit
 
@@ -310,11 +310,11 @@ Add new pseudo-variables:
 
 Add **path** value to xavp_rcd location record
 
--   <https://www.kamailio.org/docs/modules/5.4.x/modules/registrar.html#registrar.p.xavp_rcd>
+-   https://www.kamailio.org/docs/modules/5.4.x/modules/registrar.html#registrar.p.xavp_rcd
 
 Add **xavp_rcd_mask** parameter to control what values to skip
 
--   <https://www.kamailio.org/docs/modules/5.4.x/modules/registrar.html#registrar.p.xavp_rcd_mask>
+-   https://www.kamailio.org/docs/modules/5.4.x/modules/registrar.html#registrar.p.xavp_rcd_mask
 -   control what values to add to xavp_rcd via xavp_rcd_mask parameter
 -   option to send 423 when expires less than min_expires with the
     min_expires_mode parameter
@@ -365,7 +365,7 @@ Add **xavp_rcd_mask** parameter to control what values to skip
 ### sipdump
 
 -   switch from deprecated /var/run to /run
--   option to run event_route\[sipdump:msg\] on received/send messages
+-   option to run `event_route[sipdump:msg]` on received/send messages
 -   KEMI functions to return buf and tag values
 -   KEMI exports to get src/dst ip of the message
 
@@ -383,7 +383,7 @@ Add **xavp_rcd_mask** parameter to control what values to skip
 
 ### sqlops
 
--   export sql_result_get() to KEMI
+-   export `sql_result_get()` to KEMI
 -   add functions to get null result value as empty or zer
 
 ### textops
@@ -392,9 +392,9 @@ Add **xavp_rcd_mask** parameter to control what values to skip
 
 ### tcpops
 
--   new variabale $tcp(key), return attributes related to tcp connection
+-   new variable `$tcp(key)`, return attributes related to tcp connection
 -   add function to control use of outbound tcp connection id,
-    tcp_set_otcpid() and tcp_set_otcpid_flag()
+    `tcp_set_otcpid()` and `tcp_set_otcpid_flag()`
 
 ### tm
 
@@ -405,7 +405,7 @@ Add **xavp_rcd_mask** parameter to control what values to skip
 -   add new t_clean() script function, as low-level helper to cleanup
     transactions in certain situations, also export it to KEMI
 -   add support for using socket names in UAC
--   new parameter exec_time_check for safety checks on lenghtly
+-   new parameter exec_time_check for safety checks on lengthly
     callbacks, try to detect when failure callbacks execution take too
     long and do safety check of the transaction
 
@@ -413,16 +413,16 @@ Add **xavp_rcd_mask** parameter to control what values to skip
 
 -   use internal cryptographic algorithm for pseudo-random number
     generation, prevent crashes on newer libssl versions
--   add fall-back fastrand and kamailio mutex protection pseudo-random
+-   add fall-back `fastrand` and kamailio mutex protection pseudo-random
     number generation as well
--   use TLSv1.2 in default configuration
+-   use `TLSv1.2` in default configuration
 -   set default tls method (version) to 1+
 -   add verify_client support parameter
 -   add support for urlencoded cert PVs and select,
-    1.  new PVs: $tls_peer_raw_cert, $tls_peer_urlencoded_cert,
-        $tls_my_raw_cert, $tls_my_urlencoded_cert
-    2.  new selects: @tls.peer.raw_cert, @tls.peer.urlencoded_cert,
-        @tls.my.raw_cert, @tls.my.urlencoded_cert
+    1.  new PVs: `$tls_peer_raw_cert`, `$tls_peer_urlencoded_cert`,
+        `$tls_my_raw_cert`, `$tls_my_urlencoded_cert`
+    2.  new selects: `@tls.peer.raw_cert`, `@tls.peer.urlencoded_cert`,
+        `@tls.my.raw_cert`, `@tls.my.urlencoded_cert`
 -    add select for tls verified cert chain (requires OpenSSL 1.1+)
 -   add support to link against static libraries in Makefile
 
@@ -434,13 +434,13 @@ Add **xavp_rcd_mask** parameter to control what values to skip
 
 ### ims_usrloc_pcscf
 
--   change "-" for "\_" in stats name to be prometheus compliant
+-   change `-` for `_` in stats name to be prometheus compliant
 
 ### ims_ipsec_pcscf
 
--   new parameter in ipsec_forward() to set or not 'send force socket'
+-   new parameter in `ipsec_forward()` to set or not `send force socket`
     for request messages, useful for IPSEC or TCP connections
--   new config param - ipsec_reuse_server_port, to specify the re-use of
+-   new config param - `ipsec_reuse_server_port`, to specify the re-use of
     the PCSCF server port for UA Re-registration
 
 ### ims_diameter_server
@@ -492,14 +492,14 @@ Add **xavp_rcd_mask** parameter to control what values to skip
 -   export function to get next hop URI to KEMI
 -   convenience function KS.is_proto() to test many transport protocols
     with KEMI
--   export get_conid() function to retrieve tcp connection id to KEMI
+-   export `get_conid()` function to retrieve tcp connection id to KEMI
 
 ### nathelper
 
 -   add new function set_alias_to_avp
--   add new parameter nat_addr_mode, to include/exlude reserved
-    addresses in nat_uac_test()
--   add optional set_contact_alias(\[trim\]) parameter
+-   add new parameter `nat_addr_mode`, to include/exlude reserved
+    addresses in `nat_uac_test()`
+-   add optional `set_contact_alias(trim])` parameter
 
 ### nat_traversal
 
@@ -529,7 +529,7 @@ Add **xavp_rcd_mask** parameter to control what values to skip
 -   add options to do keepalive for natted or udp contacts only, similar
     to nathelper module
 -   add internal keepalive support for db only mode
--   change "-" for "\_" in stats name to be prometheus compliant
+-   change `-` for `_` in stats name to be prometheus compliant
 
 ### userblacklist
 
@@ -557,18 +557,18 @@ Add **xavp_rcd_mask** parameter to control what values to skip
 
 ### Command line arguments
 
--   add --loadmodule=name, enable the option to load a module from
+-   add `--loadmodule=name`, enable the option to load a module from
     command line
--   add --modparam, to allow setting a module parameter via command line
--   add --log-engine, to allow setting the log engine from command line
--   add --debug=val command line parameter to control the value for
-    debug global parameter as alternative to -d switch
+-   add `--modparam`, to allow setting a module parameter via command line
+-   add `--log-engine`, to allow setting the log engine from command line
+-   add `--debug=val` command line parameter to control the value for
+    debug global parameter as alternative to `-d` switch
 
 ### Interpreter
 
 ### Parameters
 
--   new global parameter uri_host_extra_chars, to allow specifying
+-   new global parameter `uri_host_extra_chars`, to allow specifying
     additional chars to be allowed in host part
 
 ### Functions
