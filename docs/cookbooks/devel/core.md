@@ -2154,6 +2154,47 @@ Example of usage:
 
       sip_warning=0
 
+### socket
+
+Specify an address to listen (bind) to, a simplified alternative to `listen`
+paramter that allows specifying the attributes using a structure style.
+
+Prototype:
+
+```
+socket = {
+    attr1 = value1;
+    ...
+    attrN = valueN;
+}
+```
+
+The attributes are:
+
+  - `bind` - the address to listen on in format `[proto:]address[:port]`
+  - `advertise` - the address to advertise in SIP headers in format `address[:port]`
+  - `name` - name of the socket to be referenced in configuration file
+  - `virtual` - set to `yes/no` to indicate if the IP has to be considered virtual or not
+
+The attribute `bind` is mandatory and has to provide at list the address to listen on.
+
+Example:
+
+```
+socket = {
+	bind = udp:10.10.10.10:5060;
+	advertise = 11.11.11.11:5060;
+	name = "s0";
+    virtual = yes;
+}
+```
+
+The above is the equivalent of:
+
+```
+listen=udp:10.10.10.10:5060 advertise 11.11.11.11:5060 name "s0" virtual
+```
+
 ### socket_workers
 
 Number of workers to process SIP traffic per listen socket - typical use
