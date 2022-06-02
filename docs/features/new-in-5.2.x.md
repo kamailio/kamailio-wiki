@@ -1,14 +1,13 @@
 # Kamailio SIP Server - New Features in 5.2.0
 
-\<fc #0000FF> **Previous stable version was 5.1.x, see what was new in
-that release at:** \</fc>
+📘 **Previous stable version was 5.1.x, see what was new in
+that release at:**
 
--   \<fc
-    #0000FF><http://www.kamailio.org/wiki/features/new-in-5.1.x>\</fc>
+-   <http://www.kamailio.org/wiki/features/new-in-5.1.x>
 
-\<fc #800000>*This is a draft of new features added in this version,
+📘 *This is a draft of new features added in this version,
 manually updated, thus not always synchronized with what is new in
-source code repository.*\</fc>
+source code repository.*
 
 ## New Modules
 
@@ -16,43 +15,43 @@ source code repository.*\</fc>
 
 Generate accounting records in JSON format.
 
--   <https://www.kamailio.org/docs/modules/devel/modules/acc_json.html>
+-   [https://www.kamailio.org/docs/modules/devel/modules/acc_json.html](https://www.kamailio.org/docs/modules/devel/modules/acc_json.html)
 
 ### app_python3
 
 KEMI interpreter implementation for Python3.
 
--   <https://www.kamailio.org/docs/modules/devel/modules/app_python3.html>
+-   [https://www.kamailio.org/docs/modules/devel/modules/app_python3.html](https://www.kamailio.org/docs/modules/devel/modules/app_python3.html)
 
 ### app_ruby
 
 KEMI interpreter implementation for Ruby.
 
--   <https://www.kamailio.org/docs/modules/devel/modules/app_ruby.html>
+-   [https://www.kamailio.org/docs/modules/devel/modules/app_ruby.html](https://www.kamailio.org/docs/modules/devel/modules/app_ruby.html)
 
 ### db_redis
 
 Database APIv1 implementation with a REDIS backend.
 
--   <https://www.kamailio.org/docs/modules/devel/modules/db_redis.html>
+-   [https://www.kamailio.org/docs/modules/devel/modules/db_redis.html](https://www.kamailio.org/docs/modules/devel/modules/db_redis.html)
 
 ### ims_ipsec_pcscf
 
 IMS IPSec implementation for P-CSCF systems.
 
--   <https://kamailio.org/docs/modules/devel/modules/ims_ipsec_pcscf.html>
+-   [https://kamailio.org/docs/modules/devel/modules/ims_ipsec_pcscf.html](https://kamailio.org/docs/modules/devel/modules/ims_ipsec_pcscf.html)
 
 ### pua_json
 
 Presence User Agent implementation with JSON messages.
 
--   <https://www.kamailio.org/docs/modules/devel/modules/pua_json.html>
+-   [https://www.kamailio.org/docs/modules/devel/modules/pua_json.html](https://www.kamailio.org/docs/modules/devel/modules/pua_json.html)
 
 ## New in Old Modules
 
 ### acc
 
--   use acc.time_mode to save cdrs in gmt time
+-   use `acc.time_mode` to save cdrs in gmt time
 
 ### app_lua
 
@@ -273,7 +272,7 @@ Presence User Agent implementation with JSON messages.
     (proto:address:port)
 -   added new transformation {uri.tosocket}
     -   converts a sip uri to socket address format
-    -   from <sip:address:port;transport=proto> to proto:address:port
+    -   from `sip:address:port;transport=proto` to `proto:address:port`
 -   new function - xavp_params_implode(xname, pv)
     -    serialize the subbfields of $xavp(xname) in params format
         (name=value;) and set the output to variable pv
@@ -344,7 +343,7 @@ Presence User Agent implementation with JSON messages.
     -   forward the hep packet to another address
     -   the address has to be provided as parameter in sip uri format
     -   the function should be used inside
-        event_route\[sipcapture:request\]
+        `event_route[sipcapture:request]`
 
 ``` c
     event_route[sipcapture:request] {
@@ -413,7 +412,7 @@ Presence User Agent implementation with JSON messages.
         private keys TLSv1.2 and PFS cipher suites
 -   allow defining a tls profile (domain) for any address
     -   token 'any' or 'all' can be used instead of the address
-        \[server:any\] or \[client:any\]
+        `[server:any]` or `[client:any]`
     -   useful when the IP address/port to listen on is not known
         upfront or many addresses are used to listen on
     -   such profiles can be defined many times and must have
@@ -442,11 +441,11 @@ Presence User Agent implementation with JSON messages.
 
 ### topos
 
--   execute event_route\[topos:sending\] with current sip message to be
+-   execute `event_route[topos:sending]` with current sip message to be
     sent
     -   if drop is used, then the message processing with topos is
         skipped
-    -   event route is executed after event_route\[topos:outgoing\]
+    -   event route is executed after `event_route[topos:outgoing]`
     -   new parameter event_mode to control what event_route blocks are
         executed
 -   added param contact_host - set the address in Contact header
@@ -492,8 +491,8 @@ Presence User Agent implementation with JSON messages.
 -   xavp - extended to hold a bare void pointer value
     -   useful to link data that doesn't need cloning or freeing
 -   added config defines for application version
-    -   three tokens are defined for version X.Y.Z: KAMAILIO_X,
-        KAMAILIO_X\_Y, KAMAILIO_X\_Y_Z
+    -   three tokens are defined for version X.Y.Z: `KAMAILIO_X`,
+        `KAMAILIO_X_Y`, `KAMAILIO_X_Y_Z`
 -   print log_prefix after loglevel for more intuitive parsing
 
 ### Interpreter
@@ -585,4 +584,4 @@ Presence User Agent implementation with JSON messages.
 
 ## Testing Framework
 
--   new tests: <https://github.com/kamailio/kamailio-tests>
+-   new tests: [https://github.com/kamailio/kamailio-tests](https://github.com/kamailio/kamailio-tests)
