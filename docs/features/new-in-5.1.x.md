@@ -1,68 +1,67 @@
 # Kamailio SIP Server (SER) - New Features in 5.1.0
 
-\<fc #0000FF> **Previous stable version was 5.0.x (released on February
-27, 2017), see what was new in that release at:** \</fc>
+📘 **Previous stable version was 5.0.x (released on February
+27, 2017), see what was new in that release at:**
 
--   \<fc
-    #0000FF><http://www.kamailio.org/wiki/features/new-in-5.0.x>\</fc>
+-   [http://www.kamailio.org/wiki/features/new-in-5.0.x](http://www.kamailio.org/wiki/features/new-in-5.0.x)
 
-\<fc #800000>*This is a draft of new features added in devel version,
+📘 *This is a draft of new features added in devel version,
 manually updated, thus not always synchronized with what is new in
-source code repository.*\</fc>
+source code repository.*
 
 ## New Modules
 
 ### acc_diameter
 
 -   accounting with a diameter server (split from acc module)
--   <https://kamailio.org/docs/modules/devel/modules/acc_diameter.html>
+-   [https://kamailio.org/docs/modules/devel/modules/acc_diameter.html](https://kamailio.org/docs/modules/devel/modules/acc_diameter.html)
 
 ### app_sqlang
 
 -   kemi interpreter for Squirrel scripting language
--   <https://kamailio.org/docs/modules/devel/modules/app_sqlang.html>
+-   [https://kamailio.org/docs/modules/devel/modules/app_sqlang.html](https://kamailio.org/docs/modules/devel/modules/app_sqlang.html)
 
 ### call_obj
 
 -   track active calls with integer ids
--   <https://kamailio.org/docs/modules/devel/modules/call_obj.html>
+-   [https://kamailio.org/docs/modules/devel/modules/call_obj.html](https://kamailio.org/docs/modules/devel/modules/call_obj.html)
 
 ### evrexec
 
 -   execute event routes at startup
--   <https://kamailio.org/docs/modules/devel/modules/evrexec.html>
+-   [https://kamailio.org/docs/modules/devel/modules/evrexec.html](https://kamailio.org/docs/modules/devel/modules/evrexec.html)
 
 ### ims_diameter_server
 
 -   diameter server implementation
--   <https://kamailio.org/docs/modules/devel/modules/ims_diameter_server.html>
+-   [https://kamailio.org/docs/modules/devel/modules/ims_diameter_server.html](https://kamailio.org/docs/modules/devel/modules/ims_diameter_server.html)
 
 ### keepalive
 
 -   perform keepalive checking against a set of sip addresses
--   <https://kamailio.org/docs/modules/devel/modules/keepalive.html>
+-   [https://kamailio.org/docs/modules/devel/modules/keepalive.html](https://kamailio.org/docs/modules/devel/modules/keepalive.html)
 
 ### phonenum
 
 -   phone number lookup module
--   <https://kamailio.org/docs/modules/devel/modules/phonenum.html>
+-   [https://kamailio.org/docs/modules/devel/modules/phonenum.html](https://kamailio.org/docs/modules/devel/modules/phonenum.html)
 
 ### sipdump
 
 -   write sip traffic and runtime metadata to files
--   <https://kamailio.org/docs/modules/devel/modules/sipdump.html>
+-   [https://kamailio.org/docs/modules/devel/modules/sipdump.html](https://kamailio.org/docs/modules/devel/modules/sipdump.html)
 
 ### topos_redis
 
 -   redis backend for topos module
--   <https://kamailio.org/docs/modules/devel/modules/topos_redis.html>
+-   [https://kamailio.org/docs/modules/devel/modules/topos_redis.html](https://kamailio.org/docs/modules/devel/modules/topos_redis.html)
 
 ## KEMI Framework
 
 Most of the modules have the functions exported to KEMI framework. A
 tutorial is available at:
 
--   <http://kamailio.org/docs/tutorials/devel/kamailio-kemi-framework/>
+-   [https://kamailio.org/docs/tutorials/devel/kamailio-kemi-framework/](https://kamailio.org/docs/tutorials/devel/kamailio-kemi-framework/)
 
 This allows writing SIP routing logic in Lua, JavaScript, Python or
 Squirrel scripting.
@@ -338,14 +337,14 @@ Squirrel scripting.
 ### tls
 
 -   basic level of libressl compatibility (for openssl v1.0.x)
--   event_route\[tls:connection-out\] - executed after the connect to
+-   `event_route[tls:connection-out]` - executed after the connect to
     destination is done
     -   using drop() in the event route marks connection for no-send
         data, so nothing is sent over it, being also closed
 
 ### topoh
 
--   execute event_route\[topoh:msg-outgoing\] - executed when a message
+-   execute `event_route[topoh:msg-outgoing]` - executed when a message
     is going to be sent out
     -   if drop is used, then the message is no longer processed with
         topoh
@@ -353,7 +352,7 @@ Squirrel scripting.
 
 ### topos
 
--   execute event_route\[topos:msg-outgoing\] - executed when a message
+-   execute `event_route[topos:msg-outgoing]` - executed when a message
     is going to be sent out
     -   if drop is used, then the message is no longer processed with
         topos
@@ -435,7 +434,7 @@ Squirrel scripting.
     in config
 -   tcp - new flag F_CONN_NOSEND (mark connection for no-send data)
     -   if flag set, the data is not sent over the connection
-    -   can be set by drop() inside event_route\[tls:connection-out\]
+    -   can be set by drop() inside `event_route[tls:connection-out]`
 -   added rpc command core.modules - list the names of loaded modules
 -   handle hep3 over tcp/tls and print first characters if matching hep3
     header fails
