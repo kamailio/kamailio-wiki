@@ -6,166 +6,166 @@
 
 | Name | Module Name |
 |------|-------------|
-| **app_jsdt.api_list** | [app_jsdt](http://www.kamailio.org/docs/modules/5.7.x/modules/app_jsdt.html#app_jsdt.r.api_listapp_jsdt) |
-| **app_jsdt.reload** | [app_jsdt](http://www.kamailio.org/docs/modules/5.7.x/modules/app_jsdt.html#app_jsdt.r.reloadapp_jsdt) |
-| **app_lua.api_list** | [app_lua](http://www.kamailio.org/docs/modules/5.7.x/modules/app_lua.html#app_lua.r.api_listapp_lua) |
-| **app_lua.list** | [app_lua](http://www.kamailio.org/docs/modules/5.7.x/modules/app_lua.html#app_lua.r.listapp_lua) |
-| **app_lua.reload** | [app_lua](http://www.kamailio.org/docs/modules/5.7.x/modules/app_lua.html#app_lua.r.reloadapp_lua) |
-| **app_perl.get_reset_cycles** | [app_perl](http://www.kamailio.org/docs/modules/5.7.x/modules/app_perl.html#app_perl.r.get_reset_cyclesapp_perl) |
-| **app_perl.set_reset_cycles** | [app_perl](http://www.kamailio.org/docs/modules/5.7.x/modules/app_perl.html#app_perl.r.set_reset_cyclesapp_perl) |
-| **app_python.api_list** | [app_python3](http://www.kamailio.org/docs/modules/5.7.x/modules/app_python3.html#app_python3.r.api_listapp_python3) |
-| **app_python.api_list** | [app_python](http://www.kamailio.org/docs/modules/5.7.x/modules/app_python.html#app_python.r.api_listapp_python) |
-| **app_python.reload** | [app_python3](http://www.kamailio.org/docs/modules/5.7.x/modules/app_python3.html#app_python3.r.reloadapp_python3) |
-| **app_python.reload** | [app_python](http://www.kamailio.org/docs/modules/5.7.x/modules/app_python.html#app_python.r.reloadapp_python) |
-| **app_ruby.api_list** | [app_ruby](http://www.kamailio.org/docs/modules/5.7.x/modules/app_ruby.html#app_ruby.r.api_listapp_ruby) |
-| **app_ruby.reload** | [app_ruby](http://www.kamailio.org/docs/modules/5.7.x/modules/app_ruby.html#app_ruby.r.reloadapp_ruby) |
-| **app_sqlang.api_list** | [app_sqlang](http://www.kamailio.org/docs/modules/5.7.x/modules/app_sqlang.html#app_sqlang.r.api_listapp_sqlang) |
-| **app_sqlang.reload** | [app_sqlang](http://www.kamailio.org/docs/modules/5.7.x/modules/app_sqlang.html#app_sqlang.r.reloadapp_sqlang) |
-| **autheph.add_secret** | [auth_ephemeral](http://www.kamailio.org/docs/modules/5.7.x/modules/auth_ephemeral.html#auth_eph.rpc.autheph.add_secretauth_ephemeral) |
-| **autheph.dump_secrets** | [auth_ephemeral](http://www.kamailio.org/docs/modules/5.7.x/modules/auth_ephemeral.html#auth_eph.rpc.autheph.dump_secretsauth_ephemeral) |
-| **autheph.rm_secret** | [auth_ephemeral](http://www.kamailio.org/docs/modules/5.7.x/modules/auth_ephemeral.html#auth_eph.rpc.autheph.rm_secretauth_ephemeral) |
+| **app_jsdt.api_list** | [app_jsdt](https://www.kamailio.org/docs/modules/5.6.x/modules/app_jsdt.html#app_jsdt.r.api_list) |
+| **app_jsdt.reload** | [app_jsdt](https://www.kamailio.org/docs/modules/5.6.x/modules/app_jsdt.html#app_jsdt.r.reload) |
+| **app_lua.api_list** | [app_lua](https://www.kamailio.org/docs/modules/5.6.x/modules/app_lua.html#app_lua.r.api_list) |
+| **app_lua.list** | [app_lua](https://www.kamailio.org/docs/modules/5.6.x/modules/app_lua.html#app_lua.r.list) |
+| **app_lua.reload** | [app_lua](https://www.kamailio.org/docs/modules/5.6.x/modules/app_lua.html#app_lua.r.reload) |
+| **app_perl.get_reset_cycles** | [app_perl](https://www.kamailio.org/docs/modules/5.6.x/modules/app_perl.html#app_perl.r.get_reset_cycles) |
+| **app_perl.set_reset_cycles** | [app_perl](https://www.kamailio.org/docs/modules/5.6.x/modules/app_perl.html#app_perl.r.set_reset_cycles) |
+| **app_python.api_list** | [app_python3](https://www.kamailio.org/docs/modules/5.6.x/modules/app_python3.html#app_python3.r.api_list) |
+| **app_python.api_list** | [app_python](https://www.kamailio.org/docs/modules/5.6.x/modules/app_python.html#app_python.r.api_list) |
+| **app_python.reload** | [app_python3](https://www.kamailio.org/docs/modules/5.6.x/modules/app_python3.html#app_python3.r.reload) |
+| **app_python.reload** | [app_python](https://www.kamailio.org/docs/modules/5.6.x/modules/app_python.html#app_python.r.reload) |
+| **app_ruby.api_list** | [app_ruby](https://www.kamailio.org/docs/modules/5.6.x/modules/app_ruby.html#app_ruby.r.api_list) |
+| **app_ruby.reload** | [app_ruby](https://www.kamailio.org/docs/modules/5.6.x/modules/app_ruby.html#app_ruby.r.reload) |
+| **app_sqlang.api_list** | [app_sqlang](https://www.kamailio.org/docs/modules/5.6.x/modules/app_sqlang.html#app_sqlang.r.api_list) |
+| **app_sqlang.reload** | [app_sqlang](https://www.kamailio.org/docs/modules/5.6.x/modules/app_sqlang.html#app_sqlang.r.reload) |
+| **autheph.add_secret** | [auth_ephemeral](https://www.kamailio.org/docs/modules/5.6.x/modules/auth_ephemeral.html#auth_eph.rpc.autheph.add_secret) |
+| **autheph.dump_secrets** | [auth_ephemeral](https://www.kamailio.org/docs/modules/5.6.x/modules/auth_ephemeral.html#auth_eph.rpc.autheph.dump_secrets) |
+| **autheph.rm_secret** | [auth_ephemeral](https://www.kamailio.org/docs/modules/5.6.x/modules/auth_ephemeral.html#auth_eph.rpc.autheph.rm_secret) |
 
 ## [b]
 
 | Name | Module Name |
 |------|-------------|
-| **benchmark.enable_global** | [benchmark](http://www.kamailio.org/docs/modules/5.7.x/modules/benchmark.html#benchmark.rpc.enable_globalbenchmark) |
-| **benchmark.enable_timer** | [benchmark](http://www.kamailio.org/docs/modules/5.7.x/modules/benchmark.html#benchmark.rpc.enable_timerbenchmark) |
-| **benchmark.granularity** | [benchmark](http://www.kamailio.org/docs/modules/5.7.x/modules/benchmark.html#benchmark.rpc.granularitybenchmark) |
-| **benchmark.loglevel** | [benchmark](http://www.kamailio.org/docs/modules/5.7.x/modules/benchmark.html#benchmark.rpc.loglevelbenchmark) |
-| **benchmark.timer_list** | [benchmark](http://www.kamailio.org/docs/modules/5.7.x/modules/benchmark.html#benchmark.rpc.timer_listbenchmark) |
-| **benchmark.timer_name_list** | [benchmark](http://www.kamailio.org/docs/modules/5.7.x/modules/benchmark.html#benchmark.rpc.timer_name_listbenchmark) |
+| **benchmark.enable_global** | [benchmark](https://www.kamailio.org/docs/modules/5.6.x/modules/benchmark.html#benchmark.rpc.enable_global) |
+| **benchmark.enable_timer** | [benchmark](https://www.kamailio.org/docs/modules/5.6.x/modules/benchmark.html#benchmark.rpc.enable_timer) |
+| **benchmark.granularity** | [benchmark](https://www.kamailio.org/docs/modules/5.6.x/modules/benchmark.html#benchmark.rpc.granularity) |
+| **benchmark.loglevel** | [benchmark](https://www.kamailio.org/docs/modules/5.6.x/modules/benchmark.html#benchmark.rpc.loglevel) |
+| **benchmark.timer_list** | [benchmark](https://www.kamailio.org/docs/modules/5.6.x/modules/benchmark.html#benchmark.rpc.timer_list) |
+| **benchmark.timer_name_list** | [benchmark](https://www.kamailio.org/docs/modules/5.6.x/modules/benchmark.html#benchmark.rpc.timer_name_list) |
 
 ## [c]
 
 | Name | Module Name |
 |------|-------------|
-| **call_obj.free** | [call_obj](http://www.kamailio.org/docs/modules/5.7.x/modules/call_obj.html#call_obj.rpc.freecall_obj) |
-| **call_obj.free_all** | [call_obj](http://www.kamailio.org/docs/modules/5.7.x/modules/call_obj.html#call_obj.rpc.free_allcall_obj) |
-| **call_obj.list** | [call_obj](http://www.kamailio.org/docs/modules/5.7.x/modules/call_obj.html#call_obj.rpc.listcall_obj) |
-| **call_obj.stats** | [call_obj](http://www.kamailio.org/docs/modules/5.7.x/modules/call_obj.html#call_obj.rpc.statscall_obj) |
-| **cdp.disable_peer** | [cdp](http://www.kamailio.org/docs/modules/5.7.x/modules/cdp.htmlcdp) |
-| **cdp.enable_peer** | [cdp](http://www.kamailio.org/docs/modules/5.7.x/modules/cdp.htmlcdp) |
-| **cfgt.clean** | [cfgt](http://www.kamailio.org/docs/modules/5.7.x/modules/cfgt.html#cfgt.r.cleancfgt) |
-| **cfgt.list** | [cfgt](http://www.kamailio.org/docs/modules/5.7.x/modules/cfgt.html#cfgt.r.listcfgt) |
-| **cfgt.mask** | [cfgt](http://www.kamailio.org/docs/modules/5.7.x/modules/cfgt.html#cfgt.r.maskcfgt) |
-| **cfgutils.check_config_hash** | [cfgutils](http://www.kamailio.org/docs/modules/5.7.x/modules/cfgutils.html#cfgutils.rpc.check_config_hashcfgutils) |
-| **cfgutils.get_config_hash** | [cfgutils](http://www.kamailio.org/docs/modules/5.7.x/modules/cfgutils.html#cfgutils.rpc.get_config_hashcfgutils) |
-| **cfgutils.get_gflags** | [cfgutils](http://www.kamailio.org/docs/modules/5.7.x/modules/cfgutils.html#cfgutils.rpc.get_gflagscfgutils) |
-| **cfgutils.is_gflag** | [cfgutils](http://www.kamailio.org/docs/modules/5.7.x/modules/cfgutils.html#cfgutils.rpc.is_gflagcfgutils) |
-| **cfgutils.rand_get_prob** | [cfgutils](http://www.kamailio.org/docs/modules/5.7.x/modules/cfgutils.html#cfgutils.rpc.rand_get_probcfgutils) |
-| **cfgutils.rand_reset_prob** | [cfgutils](http://www.kamailio.org/docs/modules/5.7.x/modules/cfgutils.html#cfgutils.rpc.rand_reset_probcfgutils) |
-| **cfgutils.rand_set_prop** | [cfgutils](http://www.kamailio.org/docs/modules/5.7.x/modules/cfgutils.html#cfgutils.rpc.rand_set_probcfgutils) |
-| **cfgutils.reset_gflag** | [cfgutils](http://www.kamailio.org/docs/modules/5.7.x/modules/cfgutils.html#cfgutils.rpc.reset_gflagcfgutils) |
-| **cfgutils.set_gflag** | [cfgutils](http://www.kamailio.org/docs/modules/5.7.x/modules/cfgutils.html#cfgutils.rpc.set_gflagcfgutils) |
-| **cnxcc.active_clients** | [cnxcc](http://www.kamailio.org/docs/modules/5.7.x/modules/cnxcc.html#cnxcc.rpc.active_clientscnxcc) |
-| **cnxcc.check_client** | [cnxcc](http://www.kamailio.org/docs/modules/5.7.x/modules/cnxcc.html#cnxcc.rpc.check_clientcnxcc) |
-| **cnxcc.kill_call** | [cnxcc](http://www.kamailio.org/docs/modules/5.7.x/modules/cnxcc.html#cnxcc.rpc.kill_callcnxcc) |
-| **cnxcc.stats** | [cnxcc](http://www.kamailio.org/docs/modules/5.7.x/modules/cnxcc.html#cnxcc.rpc.statscnxcc) |
-| **core.aliases_list** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.core.aliases_listkex) |
-| **core.arg** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.core.argkex) |
-| **core.echo** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.core.echokex) |
-| **core.flags** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.core.flagskex) |
-| **core.info** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.core.infokex) |
-| **core.kill** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.core.killkex) |
-| **core.modules** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.core.moduleskex) |
-| **core.ppdefines** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.core.ppdefineskex) |
-| **core.printi** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.core.printikex) |
-| **core.prints** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.core.printskex) |
-| **core.ps** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.core.pskex) |
-| **core.psx** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.core.psxkex) |
-| **core.pwd** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.core.pwdkex) |
-| **core.runinfo** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.core.runinfokex) |
-| **core.shmmem** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.core.shmmemkex) |
-| **core.sockets_list** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.core.sockets_listkex) |
-| **core.tcp_info** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.core.tcp_infokex) |
-| **core.tcp_list** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.core.tcp_listkex) |
-| **core.tcp_options** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.core.tcp_optionskex) |
-| **core.udp4_raw_info** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.core.udp4_raw_infokex) |
-| **core.uptime** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.core.uptimekex) |
-| **core.version** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.core.versionkex) |
-| **corex.debug** | [corex](http://www.kamailio.org/docs/modules/5.7.x/modules/corex.html#corex.rpc.debugcorex) |
-| **corex.list_aliases** | [corex](http://www.kamailio.org/docs/modules/5.7.x/modules/corex.html#corex.rpc.list_aliasescorex) |
-| **corex.list_sockets** | [corex](http://www.kamailio.org/docs/modules/5.7.x/modules/corex.html#corex.rpc.list_socketscorex) |
-| **corex.pkg_summary** | [corex](http://www.kamailio.org/docs/modules/5.7.x/modules/corex.html#corex.rpc.pkg_summarycorex) |
-| **corex.shm.info** | [corex](http://www.kamailio.org/docs/modules/5.7.x/modules/corex.html#corex.rpc.shm.infocorex) |
-| **corex.shm.report** | [corex](http://www.kamailio.org/docs/modules/5.7.x/modules/corex.html#corex.rpc.shm.reportcorex) |
-| **corex.shm.stats** | [corex](http://www.kamailio.org/docs/modules/5.7.x/modules/corex.html#corex.rpc.shm.statscorex) |
-| **corex.shm_status** | [corex](http://www.kamailio.org/docs/modules/5.7.x/modules/corex.html#corex.rpc.shm_statuscorex) |
-| **corex.shm_summary** | [corex](http://www.kamailio.org/docs/modules/5.7.x/modules/corex.html#corex.rpc.shm_summarycorex) |
-| **cpl.get** | [cplc](http://www.kamailio.org/docs/modules/5.7.x/modules/cplc.html#cpl.r.getcplc) |
-| **cpl.load** | [cplc](http://www.kamailio.org/docs/modules/5.7.x/modules/cplc.html#cpl.r.loadcplc) |
-| **cpl.remove** | [cplc](http://www.kamailio.org/docs/modules/5.7.x/modules/cplc.html#cpl.r.removecplc) |
+| **call_obj.free** | [call_obj](https://www.kamailio.org/docs/modules/5.6.x/modules/call_obj.html#call_obj.rpc.free) |
+| **call_obj.free_all** | [call_obj](https://www.kamailio.org/docs/modules/5.6.x/modules/call_obj.html#call_obj.rpc.free_all) |
+| **call_obj.list** | [call_obj](https://www.kamailio.org/docs/modules/5.6.x/modules/call_obj.html#call_obj.rpc.list) |
+| **call_obj.stats** | [call_obj](https://www.kamailio.org/docs/modules/5.6.x/modules/call_obj.html#call_obj.rpc.stats) |
+| **cdp.disable_peer** | [cdp](https://www.kamailio.org/docs/modules/5.6.x/modules/cdp.html) |
+| **cdp.enable_peer** | [cdp](https://www.kamailio.org/docs/modules/5.6.x/modules/cdp.html) |
+| **cfgt.clean** | [cfgt](https://www.kamailio.org/docs/modules/5.6.x/modules/cfgt.html#cfgt.r.clean) |
+| **cfgt.list** | [cfgt](https://www.kamailio.org/docs/modules/5.6.x/modules/cfgt.html#cfgt.r.list) |
+| **cfgt.mask** | [cfgt](https://www.kamailio.org/docs/modules/5.6.x/modules/cfgt.html#cfgt.r.mask) |
+| **cfgutils.check_config_hash** | [cfgutils](https://www.kamailio.org/docs/modules/5.6.x/modules/cfgutils.html#cfgutils.rpc.check_config_hash) |
+| **cfgutils.get_config_hash** | [cfgutils](https://www.kamailio.org/docs/modules/5.6.x/modules/cfgutils.html#cfgutils.rpc.get_config_hash) |
+| **cfgutils.get_gflags** | [cfgutils](https://www.kamailio.org/docs/modules/5.6.x/modules/cfgutils.html#cfgutils.rpc.get_gflags) |
+| **cfgutils.is_gflag** | [cfgutils](https://www.kamailio.org/docs/modules/5.6.x/modules/cfgutils.html#cfgutils.rpc.is_gflag) |
+| **cfgutils.rand_get_prob** | [cfgutils](https://www.kamailio.org/docs/modules/5.6.x/modules/cfgutils.html#cfgutils.rpc.rand_get_prob) |
+| **cfgutils.rand_reset_prob** | [cfgutils](https://www.kamailio.org/docs/modules/5.6.x/modules/cfgutils.html#cfgutils.rpc.rand_reset_prob) |
+| **cfgutils.rand_set_prop** | [cfgutils](https://www.kamailio.org/docs/modules/5.6.x/modules/cfgutils.html#cfgutils.rpc.rand_set_prob) |
+| **cfgutils.reset_gflag** | [cfgutils](https://www.kamailio.org/docs/modules/5.6.x/modules/cfgutils.html#cfgutils.rpc.reset_gflag) |
+| **cfgutils.set_gflag** | [cfgutils](https://www.kamailio.org/docs/modules/5.6.x/modules/cfgutils.html#cfgutils.rpc.set_gflag) |
+| **cnxcc.active_clients** | [cnxcc](https://www.kamailio.org/docs/modules/5.6.x/modules/cnxcc.html#cnxcc.rpc.active_clients) |
+| **cnxcc.check_client** | [cnxcc](https://www.kamailio.org/docs/modules/5.6.x/modules/cnxcc.html#cnxcc.rpc.check_client) |
+| **cnxcc.kill_call** | [cnxcc](https://www.kamailio.org/docs/modules/5.6.x/modules/cnxcc.html#cnxcc.rpc.kill_call) |
+| **cnxcc.stats** | [cnxcc](https://www.kamailio.org/docs/modules/5.6.x/modules/cnxcc.html#cnxcc.rpc.stats) |
+| **core.aliases_list** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.core.aliases_list) |
+| **core.arg** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.core.arg) |
+| **core.echo** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.core.echo) |
+| **core.flags** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.core.flags) |
+| **core.info** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.core.info) |
+| **core.kill** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.core.kill) |
+| **core.modules** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.core.modules) |
+| **core.ppdefines** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.core.ppdefines) |
+| **core.printi** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.core.printi) |
+| **core.prints** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.core.prints) |
+| **core.ps** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.core.ps) |
+| **core.psx** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.core.psx) |
+| **core.pwd** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.core.pwd) |
+| **core.runinfo** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.core.runinfo) |
+| **core.shmmem** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.core.shmmem) |
+| **core.sockets_list** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.core.sockets_list) |
+| **core.tcp_info** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.core.tcp_info) |
+| **core.tcp_list** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.core.tcp_list) |
+| **core.tcp_options** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.core.tcp_options) |
+| **core.udp4_raw_info** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.core.udp4_raw_info) |
+| **core.uptime** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.core.uptime) |
+| **core.version** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.core.version) |
+| **corex.debug** | [corex](https://www.kamailio.org/docs/modules/5.6.x/modules/corex.html#corex.rpc.debug) |
+| **corex.list_aliases** | [corex](https://www.kamailio.org/docs/modules/5.6.x/modules/corex.html#corex.rpc.list_aliases) |
+| **corex.list_sockets** | [corex](https://www.kamailio.org/docs/modules/5.6.x/modules/corex.html#corex.rpc.list_sockets) |
+| **corex.pkg_summary** | [corex](https://www.kamailio.org/docs/modules/5.6.x/modules/corex.html#corex.rpc.pkg_summary) |
+| **corex.shm.info** | [corex](https://www.kamailio.org/docs/modules/5.6.x/modules/corex.html#corex.rpc.shm.info) |
+| **corex.shm.report** | [corex](https://www.kamailio.org/docs/modules/5.6.x/modules/corex.html#corex.rpc.shm.report) |
+| **corex.shm.stats** | [corex](https://www.kamailio.org/docs/modules/5.6.x/modules/corex.html#corex.rpc.shm.stats) |
+| **corex.shm_status** | [corex](https://www.kamailio.org/docs/modules/5.6.x/modules/corex.html#corex.rpc.shm_status) |
+| **corex.shm_summary** | [corex](https://www.kamailio.org/docs/modules/5.6.x/modules/corex.html#corex.rpc.shm_summary) |
+| **cpl.get** | [cplc](https://www.kamailio.org/docs/modules/5.6.x/modules/cplc.html#cpl.r.get) |
+| **cpl.load** | [cplc](https://www.kamailio.org/docs/modules/5.6.x/modules/cplc.html#cpl.r.load) |
+| **cpl.remove** | [cplc](https://www.kamailio.org/docs/modules/5.6.x/modules/cplc.html#cpl.r.remove) |
 
 ## [d]
 
 | Name | Module Name |
 |------|-------------|
-| **dbcl.disable_connection** | [db_cluster](http://www.kamailio.org/docs/modules/5.7.x/modules/db_cluster.html#dbcl.disable_connectiondb_cluster) |
-| **dbcl.enable_connection** | [db_cluster](http://www.kamailio.org/docs/modules/5.7.x/modules/db_cluster.html#dbcl.enable_connectiondb_cluster) |
-| **dbcl.list_clusters** | [db_cluster](http://www.kamailio.org/docs/modules/5.7.x/modules/db_cluster.html#dbcl.list_clustersdb_cluster) |
-| **dbcl.list_connections** | [db_cluster](http://www.kamailio.org/docs/modules/5.7.x/modules/db_cluster.html#dbcl.list_connectionsdb_cluster) |
-| **dbg.bp** | [debugger](http://www.kamailio.org/docs/modules/5.7.x/modules/debugger.html#dbg.r.bpdebugger) |
-| **dbg.get_mod_facility** | [debugger](http://www.kamailio.org/docs/modules/5.7.x/modules/debugger.html#dbg.r.get_mod_facilitydebugger) |
-| **dbg.get_mod_level** | [debugger](http://www.kamailio.org/docs/modules/5.7.x/modules/debugger.html#dbg.r.get_mod_leveldebugger) |
-| **dbg.ls** | [debugger](http://www.kamailio.org/docs/modules/5.7.x/modules/debugger.html#dbg.r.lsdebugger) |
-| **dbg.mod_level** | [debugger](http://www.kamailio.org/docs/modules/5.7.x/modules/debugger.html#dbg.r.mod_leveldebugger) |
-| **dbg.reset_msgid** | [debugger](http://www.kamailio.org/docs/modules/5.7.x/modules/debugger.html#dbg.r.reset_msgiddebugger) |
-| **dbg.set_mod_facility** | [debugger](http://www.kamailio.org/docs/modules/5.7.x/modules/debugger.html#dbg.r.set_mod_facilitydebugger) |
-| **dbg.set_mod_level** | [debugger](http://www.kamailio.org/docs/modules/5.7.x/modules/debugger.html#dbg.r.set_mod_leveldebugger) |
-| **dbg.trace** | [debugger](http://www.kamailio.org/docs/modules/5.7.x/modules/debugger.html#dbg.r.tracedebugger) |
-| **db_berkely.reload** | [db_berkeley](http://www.kamailio.org/docs/modules/5.7.x/modules/db_berkeley.html#db_berkely.rpc.reloaddb_berkeley) |
-| **dialplan.dump** | [dialplan](http://www.kamailio.org/docs/modules/5.7.x/modules/dialplan.html#dialplan.r.dp.dumpdialplan) |
-| **dialplan.reload** | [dialplan](http://www.kamailio.org/docs/modules/5.7.x/modules/dialplan.html#dialplan.r.dp.reloaddialplan) |
-| **dialplan.translate** | [dialplan](http://www.kamailio.org/docs/modules/5.7.x/modules/dialplan.html#dialplan.r.dp.translatedialplan) |
-| **dispatcher.add** | [dispatcher](http://www.kamailio.org/docs/modules/5.7.x/modules/dispatcher.html#dispatcher.r.adddispatcher) |
-| **dispatcher.hash** | [dispatcher](http://www.kamailio.org/docs/modules/5.7.x/modules/dispatcher.html#dispatcher.r.hashdispatcher) |
-| **dispatcher.list** | [dispatcher](http://www.kamailio.org/docs/modules/5.7.x/modules/dispatcher.html#dispatcher.r.listdispatcher) |
-| **dispatcher.ping_active** | [dispatcher](http://www.kamailio.org/docs/modules/5.7.x/modules/dispatcher.html#dispatcher.r.ping_activedispatcher) |
-| **dispatcher.reload** | [dispatcher](http://www.kamailio.org/docs/modules/5.7.x/modules/dispatcher.html#dispatcher.r.reloaddispatcher) |
-| **dispatcher.remove** | [dispatcher](http://www.kamailio.org/docs/modules/5.7.x/modules/dispatcher.html#dispatcher.r.removedispatcher) |
-| **dispatcher.set_duid_state** | [dispatcher](http://www.kamailio.org/docs/modules/5.7.x/modules/dispatcher.html#dispatcher.r.set_duid_statedispatcher) |
-| **dispatcher.set_state** | [dispatcher](http://www.kamailio.org/docs/modules/5.7.x/modules/dispatcher.html#dispatcher.r.set_statedispatcher) |
-| **dlg.bridge_dlg** | [dialog](http://www.kamailio.org/docs/modules/5.7.x/modules/dialog.html#dlg.r.bridge_dlgdialog) |
-| **dlg.bridge_dlg** | [ims_dialog](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_dialog.htmlims_dialog) |
-| **dlg.briefing** | [dialog](http://www.kamailio.org/docs/modules/5.7.x/modules/dialog.html#dlg.r.briefingdialog) |
-| **dlg.dlg_list** | [dialog](http://www.kamailio.org/docs/modules/5.7.x/modules/dialog.html#dlg.r.dlg_listdialog) |
-| **dlg.dlg_list** | [ims_dialog](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_dialog.htmlims_dialog) |
-| **dlg.dlg_list_ctx** | [dialog](http://www.kamailio.org/docs/modules/5.7.x/modules/dialog.html#dlg.r.dlg_list_ctxdialog) |
-| **dlg.dlg_list_ctx** | [ims_dialog](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_dialog.htmlims_dialog) |
-| **dlg.dump_file** | [dialog](http://www.kamailio.org/docs/modules/5.7.x/modules/dialog.html#dlg.r.dump_filedialog) |
-| **dlg.end_dlg** | [dialog](http://www.kamailio.org/docs/modules/5.7.x/modules/dialog.htmldialog) |
-| **dlg.end_dlg** | [ims_dialog](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_dialog.htmlims_dialog) |
-| **dlg.is_alive** | [dialog](http://www.kamailio.org/docs/modules/5.7.x/modules/dialog.html#dlg.r.is_alivedialog) |
-| **dlg.list** | [dialog](http://www.kamailio.org/docs/modules/5.7.x/modules/dialog.html#dlg.r.listdialog) |
-| **dlg.list** | [ims_dialog](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_dialog.htmlims_dialog) |
-| **dlg.list_ctx** | [dialog](http://www.kamailio.org/docs/modules/5.7.x/modules/dialog.html#dlg.r.list_ctxdialog) |
-| **dlg.list_ctx** | [ims_dialog](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_dialog.htmlims_dialog) |
-| **dlg.list_match** | [dialog](http://www.kamailio.org/docs/modules/5.7.x/modules/dialog.html#dlg.r.list_matchdialog) |
-| **dlg.list_match_ctx** | [dialog](http://www.kamailio.org/docs/modules/5.7.x/modules/dialog.html#dlg.r.list_match_ctxdialog) |
-| **dlg.profile_get_size** | [dialog](http://www.kamailio.org/docs/modules/5.7.x/modules/dialog.html#dlg.r.profile_get_sizedialog) |
-| **dlg.profile_get_size** | [ims_dialog](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_dialog.htmlims_dialog) |
-| **dlg.profile_list** | [dialog](http://www.kamailio.org/docs/modules/5.7.x/modules/dialog.html#dlg.r.profile_listdialog) |
-| **dlg.profile_list** | [ims_dialog](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_dialog.htmlims_dialog) |
-| **dlg.set_state** | [dialog](http://www.kamailio.org/docs/modules/5.7.x/modules/dialog.htmldialog) |
-| **dlg.stats_active** | [dialog](http://www.kamailio.org/docs/modules/5.7.x/modules/dialog.html#dlg.r.stats_activedialog) |
-| **dlg.terminate_dlg** | [dialog](http://www.kamailio.org/docs/modules/5.7.x/modules/dialog.html#dlg.r.terminate_dlgdialog) |
-| **dlgs.briefing** | [dlgs](http://www.kamailio.org/docs/modules/5.7.x/modules/dlgs.html#dlgs.rpc.briefingdlgs) |
-| **dlgs.get** | [dlgs](http://www.kamailio.org/docs/modules/5.7.x/modules/dlgs.html#dlgs.rpc.getdlgs) |
-| **dlgs.getall** | [dlgs](http://www.kamailio.org/docs/modules/5.7.x/modules/dlgs.html#dlgs.rpc.getalldlgs) |
-| **dlgs.list** | [dlgs](http://www.kamailio.org/docs/modules/5.7.x/modules/dlgs.html#dlgs.rpc.listdlgs) |
-| **dlgs.stats** | [dlgs](http://www.kamailio.org/docs/modules/5.7.x/modules/dlgs.html#dlgs.rpc.statsdlgs) |
-| **dmq.list_nodes** | [dmq](http://www.kamailio.org/docs/modules/5.7.x/modules/dmq.html#dmq.r.list_nodesdmq) |
-| **dmq.remove** | [dmq](http://www.kamailio.org/docs/modules/5.7.x/modules/dmq.html#dmq.r.removedmq) |
-| **domain.dump** | [domain](http://www.kamailio.org/docs/modules/5.7.x/modules/domain.html#domain.rpc.dumpdomain) |
-| **domain.reload** | [domain](http://www.kamailio.org/docs/modules/5.7.x/modules/domain.html#domain.rpc.reloaddomain) |
-| **drouting.reload** | [drouting](http://www.kamailio.org/docs/modules/5.7.x/modules/drouting.html#drouting.rpc.reloaddrouting) |
+| **dbcl.disable_connection** | [db_cluster](https://www.kamailio.org/docs/modules/5.6.x/modules/db_cluster.html#dbcl.disable_connection) |
+| **dbcl.enable_connection** | [db_cluster](https://www.kamailio.org/docs/modules/5.6.x/modules/db_cluster.html#dbcl.enable_connection) |
+| **dbcl.list_clusters** | [db_cluster](https://www.kamailio.org/docs/modules/5.6.x/modules/db_cluster.html#dbcl.list_clusters) |
+| **dbcl.list_connections** | [db_cluster](https://www.kamailio.org/docs/modules/5.6.x/modules/db_cluster.html#dbcl.list_connections) |
+| **dbg.bp** | [debugger](https://www.kamailio.org/docs/modules/5.6.x/modules/debugger.html#dbg.r.bp) |
+| **dbg.get_mod_facility** | [debugger](https://www.kamailio.org/docs/modules/5.6.x/modules/debugger.html#dbg.r.get_mod_facility) |
+| **dbg.get_mod_level** | [debugger](https://www.kamailio.org/docs/modules/5.6.x/modules/debugger.html#dbg.r.get_mod_level) |
+| **dbg.ls** | [debugger](https://www.kamailio.org/docs/modules/5.6.x/modules/debugger.html#dbg.r.ls) |
+| **dbg.mod_level** | [debugger](https://www.kamailio.org/docs/modules/5.6.x/modules/debugger.html#dbg.r.mod_level) |
+| **dbg.reset_msgid** | [debugger](https://www.kamailio.org/docs/modules/5.6.x/modules/debugger.html#dbg.r.reset_msgid) |
+| **dbg.set_mod_facility** | [debugger](https://www.kamailio.org/docs/modules/5.6.x/modules/debugger.html#dbg.r.set_mod_facility) |
+| **dbg.set_mod_level** | [debugger](https://www.kamailio.org/docs/modules/5.6.x/modules/debugger.html#dbg.r.set_mod_level) |
+| **dbg.trace** | [debugger](https://www.kamailio.org/docs/modules/5.6.x/modules/debugger.html#dbg.r.trace) |
+| **db_berkely.reload** | [db_berkeley](https://www.kamailio.org/docs/modules/5.6.x/modules/db_berkeley.html#db_berkely.rpc.reload) |
+| **dialplan.dump** | [dialplan](https://www.kamailio.org/docs/modules/5.6.x/modules/dialplan.html#dialplan.r.dp.dump) |
+| **dialplan.reload** | [dialplan](https://www.kamailio.org/docs/modules/5.6.x/modules/dialplan.html#dialplan.r.dp.reload) |
+| **dialplan.translate** | [dialplan](https://www.kamailio.org/docs/modules/5.6.x/modules/dialplan.html#dialplan.r.dp.translate) |
+| **dispatcher.add** | [dispatcher](https://www.kamailio.org/docs/modules/5.6.x/modules/dispatcher.html#dispatcher.r.add) |
+| **dispatcher.hash** | [dispatcher](https://www.kamailio.org/docs/modules/5.6.x/modules/dispatcher.html#dispatcher.r.hash) |
+| **dispatcher.list** | [dispatcher](https://www.kamailio.org/docs/modules/5.6.x/modules/dispatcher.html#dispatcher.r.list) |
+| **dispatcher.ping_active** | [dispatcher](https://www.kamailio.org/docs/modules/5.6.x/modules/dispatcher.html#dispatcher.r.ping_active) |
+| **dispatcher.reload** | [dispatcher](https://www.kamailio.org/docs/modules/5.6.x/modules/dispatcher.html#dispatcher.r.reload) |
+| **dispatcher.remove** | [dispatcher](https://www.kamailio.org/docs/modules/5.6.x/modules/dispatcher.html#dispatcher.r.remove) |
+| **dispatcher.set_duid_state** | [dispatcher](https://www.kamailio.org/docs/modules/5.6.x/modules/dispatcher.html#dispatcher.r.set_duid_state) |
+| **dispatcher.set_state** | [dispatcher](https://www.kamailio.org/docs/modules/5.6.x/modules/dispatcher.html#dispatcher.r.set_state) |
+| **dlg.bridge_dlg** | [dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/dialog.html#dlg.r.bridge_dlg) |
+| **dlg.bridge_dlg** | [ims_dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/ims_dialog.html) |
+| **dlg.briefing** | [dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/dialog.html#dlg.r.briefing) |
+| **dlg.dlg_list** | [dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/dialog.html#dlg.r.dlg_list) |
+| **dlg.dlg_list** | [ims_dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/ims_dialog.html) |
+| **dlg.dlg_list_ctx** | [dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/dialog.html#dlg.r.dlg_list_ctx) |
+| **dlg.dlg_list_ctx** | [ims_dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/ims_dialog.html) |
+| **dlg.dump_file** | [dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/dialog.html#dlg.r.dump_file) |
+| **dlg.end_dlg** | [dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/dialog.html) |
+| **dlg.end_dlg** | [ims_dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/ims_dialog.html) |
+| **dlg.is_alive** | [dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/dialog.html#dlg.r.is_alive) |
+| **dlg.list** | [dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/dialog.html#dlg.r.list) |
+| **dlg.list** | [ims_dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/ims_dialog.html) |
+| **dlg.list_ctx** | [dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/dialog.html#dlg.r.list_ctx) |
+| **dlg.list_ctx** | [ims_dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/ims_dialog.html) |
+| **dlg.list_match** | [dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/dialog.html#dlg.r.list_match) |
+| **dlg.list_match_ctx** | [dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/dialog.html#dlg.r.list_match_ctx) |
+| **dlg.profile_get_size** | [dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/dialog.html#dlg.r.profile_get_size) |
+| **dlg.profile_get_size** | [ims_dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/ims_dialog.html) |
+| **dlg.profile_list** | [dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/dialog.html#dlg.r.profile_list) |
+| **dlg.profile_list** | [ims_dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/ims_dialog.html) |
+| **dlg.set_state** | [dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/dialog.html) |
+| **dlg.stats_active** | [dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/dialog.html#dlg.r.stats_active) |
+| **dlg.terminate_dlg** | [dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/dialog.html#dlg.r.terminate_dlg) |
+| **dlgs.briefing** | [dlgs](https://www.kamailio.org/docs/modules/5.6.x/modules/dlgs.html#dlgs.rpc.briefing) |
+| **dlgs.get** | [dlgs](https://www.kamailio.org/docs/modules/5.6.x/modules/dlgs.html#dlgs.rpc.get) |
+| **dlgs.getall** | [dlgs](https://www.kamailio.org/docs/modules/5.6.x/modules/dlgs.html#dlgs.rpc.getall) |
+| **dlgs.list** | [dlgs](https://www.kamailio.org/docs/modules/5.6.x/modules/dlgs.html#dlgs.rpc.list) |
+| **dlgs.stats** | [dlgs](https://www.kamailio.org/docs/modules/5.6.x/modules/dlgs.html#dlgs.rpc.stats) |
+| **dmq.list_nodes** | [dmq](https://www.kamailio.org/docs/modules/5.6.x/modules/dmq.html#dmq.r.list_nodes) |
+| **dmq.remove** | [dmq](https://www.kamailio.org/docs/modules/5.6.x/modules/dmq.html#dmq.r.remove) |
+| **domain.dump** | [domain](https://www.kamailio.org/docs/modules/5.6.x/modules/domain.html#domain.rpc.dump) |
+| **domain.reload** | [domain](https://www.kamailio.org/docs/modules/5.6.x/modules/domain.html#domain.rpc.reload) |
+| **drouting.reload** | [drouting](https://www.kamailio.org/docs/modules/5.6.x/modules/drouting.html#drouting.rpc.reload) |
 
 ## [e]
 
 | Name | Module Name |
 |------|-------------|
-| **evrexec.run** | [evrexec](http://www.kamailio.org/docs/modules/5.7.x/modules/evrexec.html#evrexec.r.runevrexec) |
+| **evrexec.run** | [evrexec](https://www.kamailio.org/docs/modules/5.6.x/modules/evrexec.html#evrexec.r.run) |
 
 ## [f]
 
@@ -176,33 +176,33 @@
 
 | Name | Module Name |
 |------|-------------|
-| **geoip2.reload** | [geoip2](http://www.kamailio.org/docs/modules/5.7.x/modules/geoip2.html#geoip2.r.reloadgeoip2) |
+| **geoip2.reload** | [geoip2](https://www.kamailio.org/docs/modules/5.6.x/modules/geoip2.html#geoip2.r.reload) |
 
 ## [h]
 
 | Name | Module Name |
 |------|-------------|
-| **htable.delete htable key** | [htable](http://www.kamailio.org/docs/modules/5.7.x/modules/htable.html#htable.rpc.deletehtable) |
-| **htable.dump htable** | [htable](http://www.kamailio.org/docs/modules/5.7.x/modules/htable.html#htable.rpc.dumphtable) |
-| **htable.flush htable** | [htable](http://www.kamailio.org/docs/modules/5.7.x/modules/htable.html#htable.rpc.flushhtable) |
-| **htable.get htable key** | [htable](http://www.kamailio.org/docs/modules/5.7.x/modules/htable.html#htable.rpc.gethtable) |
-| **htable.listTables** | [htable](http://www.kamailio.org/docs/modules/5.7.x/modules/htable.html#htable.rpc.listTableshtable) |
-| **htable.reload htable** | [htable](http://www.kamailio.org/docs/modules/5.7.x/modules/htable.html#htable.rpc.reloadhtable) |
-| **htable.setex htable key expire** | [htable](http://www.kamailio.org/docs/modules/5.7.x/modules/htable.html#htable.rpc.setexhtable) |
-| **htable.seti htable key value** | [htable](http://www.kamailio.org/docs/modules/5.7.x/modules/htable.html#htable.rpc.setihtable) |
-| **htable.sets htable key value** | [htable](http://www.kamailio.org/docs/modules/5.7.x/modules/htable.html#htable.rpc.setshtable) |
-| **htable.setxi htable key value expire** | [htable](http://www.kamailio.org/docs/modules/5.7.x/modules/htable.html#htable.rpc.setxihtable) |
-| **htable.setxs htable key value expire** | [htable](http://www.kamailio.org/docs/modules/5.7.x/modules/htable.html#htable.rpc.setxshtable) |
-| **htable.stats** | [htable](http://www.kamailio.org/docs/modules/5.7.x/modules/htable.html#htable.rpc.statshtable) |
-| **htable.store htable** | [htable](http://www.kamailio.org/docs/modules/5.7.x/modules/htable.html#htable.rpc.storehtable) |
-| **httpclient.listcon** | [http_client](http://www.kamailio.org/docs/modules/5.7.x/modules/http_client.html#httpclient.r.httpclient.listconhttp_client) |
+| **htable.delete htable key** | [htable](https://www.kamailio.org/docs/modules/5.6.x/modules/htable.html#htable.rpc.delete) |
+| **htable.dump htable** | [htable](https://www.kamailio.org/docs/modules/5.6.x/modules/htable.html#htable.rpc.dump) |
+| **htable.flush htable** | [htable](https://www.kamailio.org/docs/modules/5.6.x/modules/htable.html#htable.rpc.flush) |
+| **htable.get htable key** | [htable](https://www.kamailio.org/docs/modules/5.6.x/modules/htable.html#htable.rpc.get) |
+| **htable.listTables** | [htable](https://www.kamailio.org/docs/modules/5.6.x/modules/htable.html#htable.rpc.listTables) |
+| **htable.reload htable** | [htable](https://www.kamailio.org/docs/modules/5.6.x/modules/htable.html#htable.rpc.reload) |
+| **htable.setex htable key expire** | [htable](https://www.kamailio.org/docs/modules/5.6.x/modules/htable.html#htable.rpc.setex) |
+| **htable.seti htable key value** | [htable](https://www.kamailio.org/docs/modules/5.6.x/modules/htable.html#htable.rpc.seti) |
+| **htable.sets htable key value** | [htable](https://www.kamailio.org/docs/modules/5.6.x/modules/htable.html#htable.rpc.sets) |
+| **htable.setxi htable key value expire** | [htable](https://www.kamailio.org/docs/modules/5.6.x/modules/htable.html#htable.rpc.setxi) |
+| **htable.setxs htable key value expire** | [htable](https://www.kamailio.org/docs/modules/5.6.x/modules/htable.html#htable.rpc.setxs) |
+| **htable.stats** | [htable](https://www.kamailio.org/docs/modules/5.6.x/modules/htable.html#htable.rpc.stats) |
+| **htable.store htable** | [htable](https://www.kamailio.org/docs/modules/5.6.x/modules/htable.html#htable.rpc.store) |
+| **httpclient.listcon** | [http_client](https://www.kamailio.org/docs/modules/5.6.x/modules/http_client.html#httpclient.r.httpclient.listcon) |
 
 ## [i]
 
 | Name | Module Name |
 |------|-------------|
-| **imc.list_members** | [imc](http://www.kamailio.org/docs/modules/5.7.x/modules/imc.html#imc.r.list_membersimc) |
-| **imc.list_rooms** | [imc](http://www.kamailio.org/docs/modules/5.7.x/modules/imc.html#imc.r.list_roomsimc) |
+| **imc.list_members** | [imc](https://www.kamailio.org/docs/modules/5.6.x/modules/imc.html#imc.r.list_members) |
+| **imc.list_rooms** | [imc](https://www.kamailio.org/docs/modules/5.6.x/modules/imc.html#imc.r.list_rooms) |
 
 ## [j]
 
@@ -218,36 +218,36 @@
 
 | Name | Module Name |
 |------|-------------|
-| **lcr.defunct_gw** | [lcr](http://www.kamailio.org/docs/modules/5.7.x/modules/lcr.html#lcr.rpc.defunct_gwlcr) |
-| **lcr.dump_gws** | [lcr](http://www.kamailio.org/docs/modules/5.7.x/modules/lcr.html#lcr.rpc.dump_gwslcr) |
-| **lcr.dump_rules** | [lcr](http://www.kamailio.org/docs/modules/5.7.x/modules/lcr.html#lcr.rpc.dump_ruleslcr) |
-| **lcr.load_gws** | [lcr](http://www.kamailio.org/docs/modules/5.7.x/modules/lcr.html#lcr.rpc.load_gwslcr) |
-| **lcr.reload** | [lcr](http://www.kamailio.org/docs/modules/5.7.x/modules/lcr.html#lcr.rpc.reloadlcr) |
+| **lcr.defunct_gw** | [lcr](https://www.kamailio.org/docs/modules/5.6.x/modules/lcr.html#lcr.rpc.defunct_gw) |
+| **lcr.dump_gws** | [lcr](https://www.kamailio.org/docs/modules/5.6.x/modules/lcr.html#lcr.rpc.dump_gws) |
+| **lcr.dump_rules** | [lcr](https://www.kamailio.org/docs/modules/5.6.x/modules/lcr.html#lcr.rpc.dump_rules) |
+| **lcr.load_gws** | [lcr](https://www.kamailio.org/docs/modules/5.6.x/modules/lcr.html#lcr.rpc.load_gws) |
+| **lcr.reload** | [lcr](https://www.kamailio.org/docs/modules/5.6.x/modules/lcr.html#lcr.rpc.reload) |
 
 ## [m]
 
 | Name | Module Name |
 |------|-------------|
-| **matrix.reload** | [matrix](http://www.kamailio.org/docs/modules/5.7.x/modules/matrix.html#matrix.rpc.reloadmatrix) |
-| **mod.mem_stats** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.mod.mem_statskex) |
-| **mod.mem_statsx** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.mod.mem_statsxkex) |
-| **mod.stats** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.mod.statskex) |
-| **mohqueue.debug** | [mohqueue](http://www.kamailio.org/docs/modules/5.7.x/modules/mohqueue.html#rpc.debugmohqueue) |
-| **mohqueue.drop_call** | [mohqueue](http://www.kamailio.org/docs/modules/5.7.x/modules/mohqueue.html#rpc.drop_callmohqueue) |
-| **mqueue.fetch** | [mqueue](http://www.kamailio.org/docs/modules/5.7.x/modules/mqueue.html#mqueue.r.fetchmqueue) |
-| **mqueue.get_size** | [mqueue](http://www.kamailio.org/docs/modules/5.7.x/modules/mqueue.html#mqueue.r.get_sizemqueue) |
-| **mqueue.get_sizes** | [mqueue](http://www.kamailio.org/docs/modules/5.7.x/modules/mqueue.html#mqueue.r.get_sizesmqueue) |
-| **msrp.cmaplist** | [msrp](http://www.kamailio.org/docs/modules/5.7.x/modules/msrp.html#msrp.r.msrp.cmaplistmsrp) |
-| **mtree.list** | [mtree](http://www.kamailio.org/docs/modules/5.7.x/modules/mtree.html#mtree.rpc.listmtree) |
-| **mtree.match** | [mtree](http://www.kamailio.org/docs/modules/5.7.x/modules/mtree.html#mtree.rpc.matchmtree) |
-| **mtree.reload** | [mtree](http://www.kamailio.org/docs/modules/5.7.x/modules/mtree.html#mtree.rpc.reloadmtree) |
-| **mtree.summary** | [mtree](http://www.kamailio.org/docs/modules/5.7.x/modules/mtree.html#mtree.rpc.summarymtree) |
+| **matrix.reload** | [matrix](https://www.kamailio.org/docs/modules/5.6.x/modules/matrix.html#matrix.rpc.reload) |
+| **mod.mem_stats** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.mod.mem_stats) |
+| **mod.mem_statsx** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.mod.mem_statsx) |
+| **mod.stats** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.mod.stats) |
+| **mohqueue.debug** | [mohqueue](https://www.kamailio.org/docs/modules/5.6.x/modules/mohqueue.html#rpc.debug) |
+| **mohqueue.drop_call** | [mohqueue](https://www.kamailio.org/docs/modules/5.6.x/modules/mohqueue.html#rpc.drop_call) |
+| **mqueue.fetch** | [mqueue](https://www.kamailio.org/docs/modules/5.6.x/modules/mqueue.html#mqueue.r.fetch) |
+| **mqueue.get_size** | [mqueue](https://www.kamailio.org/docs/modules/5.6.x/modules/mqueue.html#mqueue.r.get_size) |
+| **mqueue.get_sizes** | [mqueue](https://www.kamailio.org/docs/modules/5.6.x/modules/mqueue.html#mqueue.r.get_sizes) |
+| **msrp.cmaplist** | [msrp](https://www.kamailio.org/docs/modules/5.6.x/modules/msrp.html#msrp.r.msrp.cmaplist) |
+| **mtree.list** | [mtree](https://www.kamailio.org/docs/modules/5.6.x/modules/mtree.html#mtree.rpc.list) |
+| **mtree.match** | [mtree](https://www.kamailio.org/docs/modules/5.6.x/modules/mtree.html#mtree.rpc.match) |
+| **mtree.reload** | [mtree](https://www.kamailio.org/docs/modules/5.6.x/modules/mtree.html#mtree.rpc.reload) |
+| **mtree.summary** | [mtree](https://www.kamailio.org/docs/modules/5.6.x/modules/mtree.html#mtree.rpc.summary) |
 
 ## [n]
 
 | Name | Module Name |
 |------|-------------|
-| **nathelper.enable_ping** | [nathelper](http://www.kamailio.org/docs/modules/5.7.x/modules/nathelper.html#nathelper.r.enable_pingnathelper) |
+| **nathelper.enable_ping** | [nathelper](https://www.kamailio.org/docs/modules/5.6.x/modules/nathelper.html#nathelper.r.enable_ping) |
 
 ## [o]
 
@@ -258,39 +258,39 @@
 
 | Name | Module Name |
 |------|-------------|
-| **pdb.activate** | [pdb](http://www.kamailio.org/docs/modules/5.7.x/modules/pdb.html#pdb.r.activatepdb) |
-| **pdb.deactivate** | [pdb](http://www.kamailio.org/docs/modules/5.7.x/modules/pdb.html#pdb.r.deactivatepdb) |
-| **pdb.status** | [pdb](http://www.kamailio.org/docs/modules/5.7.x/modules/pdb.html#pdb.r.statuspdb) |
-| **pdt.list** | [pdt](http://www.kamailio.org/docs/modules/5.7.x/modules/pdt.htmlpdt) |
-| **pdt.reload** | [pdt](http://www.kamailio.org/docs/modules/5.7.x/modules/pdt.htmlpdt) |
-| **permissions.addressDump** | [permissions](http://www.kamailio.org/docs/modules/5.7.x/modules/permissions.html#permissions.r.addressDumppermissions) |
-| **permissions.addressReload** | [permissions](http://www.kamailio.org/docs/modules/5.7.x/modules/permissions.html#permissions.r.addressReloadpermissions) |
-| **permissions.allowUri** | [permissions](http://www.kamailio.org/docs/modules/5.7.x/modules/permissions.html#permissions.r.allowUripermissions) |
-| **permissions.domainDump** | [permissions](http://www.kamailio.org/docs/modules/5.7.x/modules/permissions.html#permissions.r.domainDumppermissions) |
-| **permissions.subnetDump** | [permissions](http://www.kamailio.org/docs/modules/5.7.x/modules/permissions.html#permissions.r.subnetDumppermissions) |
-| **permissions.testUri** | [permissions](http://www.kamailio.org/docs/modules/5.7.x/modules/permissions.html#permissions.r.testUripermissions) |
-| **permissions.trustedDump** | [permissions](http://www.kamailio.org/docs/modules/5.7.x/modules/permissions.html#permissions.r.trustedDumppermissions) |
-| **permissions.trustedReload** | [permissions](http://www.kamailio.org/docs/modules/5.7.x/modules/permissions.html#permissions.r.trustedReloadpermissions) |
-| **pike.top** | [pike](http://www.kamailio.org/docs/modules/5.7.x/modules/pike.html#pike.rpc.toppike) |
-| **pkg.info** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.pkg.infokex) |
-| **pkg.stats** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.pkg.statskex) |
-| **pl.get_pid** | [pipelimit](http://www.kamailio.org/docs/modules/5.7.x/modules/pipelimit.html#pipelimit.r.pl.get_pidpipelimit) |
-| **pl.get_pipes** | [pipelimit](http://www.kamailio.org/docs/modules/5.7.x/modules/pipelimit.html#pipelimit.r.pl.get_pipespipelimit) |
-| **pl.list** | [pipelimit](http://www.kamailio.org/docs/modules/5.7.x/modules/pipelimit.html#pipelimit.r.pl.listpipelimit) |
-| **pl.push_load** | [pipelimit](http://www.kamailio.org/docs/modules/5.7.x/modules/pipelimit.html#pipelimit.r.pl.push_loadpipelimit) |
-| **pl.set_pid** | [pipelimit](http://www.kamailio.org/docs/modules/5.7.x/modules/pipelimit.html#pipelimit.r.pl.set_pidpipelimit) |
-| **pl.set_pipe** | [pipelimit](http://www.kamailio.org/docs/modules/5.7.x/modules/pipelimit.html#pipelimit.r.pl.set_pipepipelimit) |
-| **pl.stats** | [pipelimit](http://www.kamailio.org/docs/modules/5.7.x/modules/pipelimit.html#pipelimit.r.pl.statspipelimit) |
-| **presence.cleanup** | [presence](http://www.kamailio.org/docs/modules/5.7.x/modules/presence.html#presence.r.cleanuppresence) |
-| **presence.presentity_list** | [presence](http://www.kamailio.org/docs/modules/5.7.x/modules/presence.html#presence.rpc.presentity_listpresence) |
-| **presence.refreshWatchers** | [presence](http://www.kamailio.org/docs/modules/5.7.x/modules/presence.html#presence.r.refreshWatcherspresence) |
-| **presence.updateWatchers** | [presence](http://www.kamailio.org/docs/modules/5.7.x/modules/presence.html#presence.rpc.updateWatcherspresence) |
-| **pua.cleanup** | [pua](http://www.kamailio.org/docs/modules/5.7.x/modules/pua.html#pua.r.cleanuppua) |
-| **pua.publish** | [pua_rpc](http://www.kamailio.org/docs/modules/5.7.x/modules/pua_rpc.html#pua_rpc.r.pua.publishpua_rpc) |
-| **pua.send_publish** | [pua_rpc](http://www.kamailio.org/docs/modules/5.7.x/modules/pua_rpc.html#pua_rpc.r.pua.send_publishpua_rpc) |
-| **pua.subscribe** | [pua_rpc](http://www.kamailio.org/docs/modules/5.7.x/modules/pua_rpc.html#pua_rpc.r.subscribepua_rpc) |
-| **pv.shvGet** | [pv](http://www.kamailio.org/docs/modules/5.7.x/modules/pv.html#pv.rpc.shvGetpv) |
-| **pv.shvSet** | [pv](http://www.kamailio.org/docs/modules/5.7.x/modules/pv.html#pv.rpc.shvSetpv) |
+| **pdb.activate** | [pdb](https://www.kamailio.org/docs/modules/5.6.x/modules/pdb.html#pdb.r.activate) |
+| **pdb.deactivate** | [pdb](https://www.kamailio.org/docs/modules/5.6.x/modules/pdb.html#pdb.r.deactivate) |
+| **pdb.status** | [pdb](https://www.kamailio.org/docs/modules/5.6.x/modules/pdb.html#pdb.r.status) |
+| **pdt.list** | [pdt](https://www.kamailio.org/docs/modules/5.6.x/modules/pdt.html) |
+| **pdt.reload** | [pdt](https://www.kamailio.org/docs/modules/5.6.x/modules/pdt.html) |
+| **permissions.addressDump** | [permissions](https://www.kamailio.org/docs/modules/5.6.x/modules/permissions.html#permissions.r.addressDump) |
+| **permissions.addressReload** | [permissions](https://www.kamailio.org/docs/modules/5.6.x/modules/permissions.html#permissions.r.addressReload) |
+| **permissions.allowUri** | [permissions](https://www.kamailio.org/docs/modules/5.6.x/modules/permissions.html#permissions.r.allowUri) |
+| **permissions.domainDump** | [permissions](https://www.kamailio.org/docs/modules/5.6.x/modules/permissions.html#permissions.r.domainDump) |
+| **permissions.subnetDump** | [permissions](https://www.kamailio.org/docs/modules/5.6.x/modules/permissions.html#permissions.r.subnetDump) |
+| **permissions.testUri** | [permissions](https://www.kamailio.org/docs/modules/5.6.x/modules/permissions.html#permissions.r.testUri) |
+| **permissions.trustedDump** | [permissions](https://www.kamailio.org/docs/modules/5.6.x/modules/permissions.html#permissions.r.trustedDump) |
+| **permissions.trustedReload** | [permissions](https://www.kamailio.org/docs/modules/5.6.x/modules/permissions.html#permissions.r.trustedReload) |
+| **pike.top** | [pike](https://www.kamailio.org/docs/modules/5.6.x/modules/pike.html#pike.rpc.top) |
+| **pkg.info** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.pkg.info) |
+| **pkg.stats** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.pkg.stats) |
+| **pl.get_pid** | [pipelimit](https://www.kamailio.org/docs/modules/5.6.x/modules/pipelimit.html#pipelimit.r.pl.get_pid) |
+| **pl.get_pipes** | [pipelimit](https://www.kamailio.org/docs/modules/5.6.x/modules/pipelimit.html#pipelimit.r.pl.get_pipes) |
+| **pl.list** | [pipelimit](https://www.kamailio.org/docs/modules/5.6.x/modules/pipelimit.html#pipelimit.r.pl.list) |
+| **pl.push_load** | [pipelimit](https://www.kamailio.org/docs/modules/5.6.x/modules/pipelimit.html#pipelimit.r.pl.push_load) |
+| **pl.set_pid** | [pipelimit](https://www.kamailio.org/docs/modules/5.6.x/modules/pipelimit.html#pipelimit.r.pl.set_pid) |
+| **pl.set_pipe** | [pipelimit](https://www.kamailio.org/docs/modules/5.6.x/modules/pipelimit.html#pipelimit.r.pl.set_pipe) |
+| **pl.stats** | [pipelimit](https://www.kamailio.org/docs/modules/5.6.x/modules/pipelimit.html#pipelimit.r.pl.stats) |
+| **presence.cleanup** | [presence](https://www.kamailio.org/docs/modules/5.6.x/modules/presence.html#presence.r.cleanup) |
+| **presence.presentity_list** | [presence](https://www.kamailio.org/docs/modules/5.6.x/modules/presence.html#presence.rpc.presentity_list) |
+| **presence.refreshWatchers** | [presence](https://www.kamailio.org/docs/modules/5.6.x/modules/presence.html#presence.r.refreshWatchers) |
+| **presence.updateWatchers** | [presence](https://www.kamailio.org/docs/modules/5.6.x/modules/presence.html#presence.rpc.updateWatchers) |
+| **pua.cleanup** | [pua](https://www.kamailio.org/docs/modules/5.6.x/modules/pua.html#pua.r.cleanup) |
+| **pua.publish** | [pua_rpc](https://www.kamailio.org/docs/modules/5.6.x/modules/pua_rpc.html#pua_rpc.r.pua.publish) |
+| **pua.send_publish** | [pua_rpc](https://www.kamailio.org/docs/modules/5.6.x/modules/pua_rpc.html#pua_rpc.r.pua.send_publish) |
+| **pua.subscribe** | [pua_rpc](https://www.kamailio.org/docs/modules/5.6.x/modules/pua_rpc.html#pua_rpc.r.subscribe) |
+| **pv.shvGet** | [pv](https://www.kamailio.org/docs/modules/5.6.x/modules/pv.html#pv.rpc.shvGet) |
+| **pv.shvSet** | [pv](https://www.kamailio.org/docs/modules/5.6.x/modules/pv.html#pv.rpc.shvSet) |
 
 ## [q]
 
@@ -301,86 +301,86 @@
 
 | Name | Module Name |
 |------|-------------|
-| **regex.reload** | [regex](http://www.kamailio.org/docs/modules/5.7.x/modules/regex.html#regex.r.regex_reloadregex) |
-| **regscscf.dereg_impu** | [ims_registrar_scscf](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_registrar_scscf.htmlims_registrar_scscf) |
-| **rl.get_pid** | [ratelimit](http://www.kamailio.org/docs/modules/5.7.x/modules/ratelimit.htmlratelimit) |
-| **rl.get_pipes** | [ratelimit](http://www.kamailio.org/docs/modules/5.7.x/modules/ratelimit.htmlratelimit) |
-| **rl.get_queues** | [ratelimit](http://www.kamailio.org/docs/modules/5.7.x/modules/ratelimit.htmlratelimit) |
-| **rl.push_load** | [ratelimit](http://www.kamailio.org/docs/modules/5.7.x/modules/ratelimit.htmlratelimit) |
-| **rl.set_dbg** | [ratelimit](http://www.kamailio.org/docs/modules/5.7.x/modules/ratelimit.htmlratelimit) |
-| **rl.set_pid** | [ratelimit](http://www.kamailio.org/docs/modules/5.7.x/modules/ratelimit.htmlratelimit) |
-| **rl.set_pipe** | [ratelimit](http://www.kamailio.org/docs/modules/5.7.x/modules/ratelimit.htmlratelimit) |
-| **rl.set_queue** | [ratelimit](http://www.kamailio.org/docs/modules/5.7.x/modules/ratelimit.htmlratelimit) |
-| **rl.stats** | [ratelimit](http://www.kamailio.org/docs/modules/5.7.x/modules/ratelimit.htmlratelimit) |
-| **rls.cleanup** | [rls](http://www.kamailio.org/docs/modules/5.7.x/modules/rls.html#rls.rpc.cleanuprls) |
-| **rls.update_subs** | [rls](http://www.kamailio.org/docs/modules/5.7.x/modules/rls.html#rls.rpc.update_subsrls) |
-| **rtpengine.enable proxy_url/all 0/1** | [rtpengine](http://www.kamailio.org/docs/modules/5.7.x/modules/rtpengine.html#rtpengine.r.enablertpengine) |
-| **rtpengine.get_hash_total** | [rtpengine](http://www.kamailio.org/docs/modules/5.7.x/modules/rtpengine.html#rtpengine.m.show_hash_totalrtpengine) |
-| **rtpengine.ping proxy_url/all** | [rtpengine](http://www.kamailio.org/docs/modules/5.7.x/modules/rtpengine.html#rtpengine.m.pingrtpengine) |
-| **rtpengine.reload** | [rtpengine](http://www.kamailio.org/docs/modules/5.7.x/modules/rtpengine.html#rtpengine.r.reloadrtpengine) |
-| **rtpengine.show proxy_url/all** | [rtpengine](http://www.kamailio.org/docs/modules/5.7.x/modules/rtpengine.html#rtpengine.r.showrtpengine) |
-| **rtpproxy.enable** | [rtpproxy](http://www.kamailio.org/docs/modules/5.7.x/modules/rtpproxy.html#rtpproxy.r.enablertpproxy) |
-| **rtpproxy.list** | [rtpproxy](http://www.kamailio.org/docs/modules/5.7.x/modules/rtpproxy.html#rtpproxy.r.listrtpproxy) |
+| **regex.reload** | [regex](https://www.kamailio.org/docs/modules/5.6.x/modules/regex.html#regex.r.regex_reload) |
+| **regscscf.dereg_impu** | [ims_registrar_scscf](https://www.kamailio.org/docs/modules/5.6.x/modules/ims_registrar_scscf.html) |
+| **rl.get_pid** | [ratelimit](https://www.kamailio.org/docs/modules/5.6.x/modules/ratelimit.html) |
+| **rl.get_pipes** | [ratelimit](https://www.kamailio.org/docs/modules/5.6.x/modules/ratelimit.html) |
+| **rl.get_queues** | [ratelimit](https://www.kamailio.org/docs/modules/5.6.x/modules/ratelimit.html) |
+| **rl.push_load** | [ratelimit](https://www.kamailio.org/docs/modules/5.6.x/modules/ratelimit.html) |
+| **rl.set_dbg** | [ratelimit](https://www.kamailio.org/docs/modules/5.6.x/modules/ratelimit.html) |
+| **rl.set_pid** | [ratelimit](https://www.kamailio.org/docs/modules/5.6.x/modules/ratelimit.html) |
+| **rl.set_pipe** | [ratelimit](https://www.kamailio.org/docs/modules/5.6.x/modules/ratelimit.html) |
+| **rl.set_queue** | [ratelimit](https://www.kamailio.org/docs/modules/5.6.x/modules/ratelimit.html) |
+| **rl.stats** | [ratelimit](https://www.kamailio.org/docs/modules/5.6.x/modules/ratelimit.html) |
+| **rls.cleanup** | [rls](https://www.kamailio.org/docs/modules/5.6.x/modules/rls.html#rls.rpc.cleanup) |
+| **rls.update_subs** | [rls](https://www.kamailio.org/docs/modules/5.6.x/modules/rls.html#rls.rpc.update_subs) |
+| **rtpengine.enable proxy_url/all 0/1** | [rtpengine](https://www.kamailio.org/docs/modules/5.6.x/modules/rtpengine.html#rtpengine.r.enable) |
+| **rtpengine.get_hash_total** | [rtpengine](https://www.kamailio.org/docs/modules/5.6.x/modules/rtpengine.html#rtpengine.m.show_hash_total) |
+| **rtpengine.ping proxy_url/all** | [rtpengine](https://www.kamailio.org/docs/modules/5.6.x/modules/rtpengine.html#rtpengine.m.ping) |
+| **rtpengine.reload** | [rtpengine](https://www.kamailio.org/docs/modules/5.6.x/modules/rtpengine.html#rtpengine.r.reload) |
+| **rtpengine.show proxy_url/all** | [rtpengine](https://www.kamailio.org/docs/modules/5.6.x/modules/rtpengine.html#rtpengine.r.show) |
+| **rtpproxy.enable** | [rtpproxy](https://www.kamailio.org/docs/modules/5.6.x/modules/rtpproxy.html#rtpproxy.r.enable) |
+| **rtpproxy.list** | [rtpproxy](https://www.kamailio.org/docs/modules/5.6.x/modules/rtpproxy.html#rtpproxy.r.list) |
 
 ## [s]
 
 | Name | Module Name |
 |------|-------------|
-| **sctp.info** | [sctp](http://www.kamailio.org/docs/modules/5.7.x/modules/sctp.html#sctp.r.sctp.infosctp) |
-| **sctp.options** | [sctp](http://www.kamailio.org/docs/modules/5.7.x/modules/sctp.html#sctp.r.sctp.sctp) |
-| **sipcapture.status param** | [sipcapture](http://www.kamailio.org/docs/modules/5.7.x/modules/sipcapture.html#sipcapture.r.sipcapture.statussipcapture) |
-| **sipdump.enable** | [sipdump](http://www.kamailio.org/docs/modules/5.7.x/modules/sipdump.html#sipdump.rpc.enablesipdump) |
-| **siptrace.status param** | [siptrace](http://www.kamailio.org/docs/modules/5.7.x/modules/siptrace.html#siptrace.r.siptrace.statussiptrace) |
-| **stats.clear_statistics** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.stats.clear_statisticskex) |
-| **stats.fetch** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.stats.fetchkex) |
-| **stats.fetchn** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.stats.fetchnkex) |
-| **stats.get_statistics** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.stats.get_statisticskex) |
-| **stats.reset_statistics** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.stats.reset_statisticskex) |
-| **statsc.report** | [statsc](http://www.kamailio.org/docs/modules/5.7.x/modules/statsc.html#statsc.rpc.reportstatsc) |
-| **system.listMethods** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.system.listMethodskex) |
-| **system.methodHelp** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.system.methodHelpkex) |
-| **system.methodSignature** | [kex](http://www.kamailio.org/docs/modules/5.7.x/modules/kex.html#kex.r.system.methodSignaturekex) |
+| **sctp.info** | [sctp](https://www.kamailio.org/docs/modules/5.6.x/modules/sctp.html#sctp.r.sctp.info) |
+| **sctp.options** | [sctp](https://www.kamailio.org/docs/modules/5.6.x/modules/sctp.html#sctp.r.sctp.) |
+| **sipcapture.status param** | [sipcapture](https://www.kamailio.org/docs/modules/5.6.x/modules/sipcapture.html#sipcapture.r.sipcapture.status) |
+| **sipdump.enable** | [sipdump](https://www.kamailio.org/docs/modules/5.6.x/modules/sipdump.html#sipdump.rpc.enable) |
+| **siptrace.status param** | [siptrace](https://www.kamailio.org/docs/modules/5.6.x/modules/siptrace.html#siptrace.r.siptrace.status) |
+| **stats.clear_statistics** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.stats.clear_statistics) |
+| **stats.fetch** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.stats.fetch) |
+| **stats.fetchn** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.stats.fetchn) |
+| **stats.get_statistics** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.stats.get_statistics) |
+| **stats.reset_statistics** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.stats.reset_statistics) |
+| **statsc.report** | [statsc](https://www.kamailio.org/docs/modules/5.6.x/modules/statsc.html#statsc.rpc.report) |
+| **system.listMethods** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.system.listMethods) |
+| **system.methodHelp** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.system.methodHelp) |
+| **system.methodSignature** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.system.methodSignature) |
 
 ## [t]
 
 | Name | Module Name |
 |------|-------------|
-| **ts.dump** | [tsilo](http://www.kamailio.org/docs/modules/5.7.x/modules/tsilo.html#tsilo.rpc.ts.dumptsilo) |
-| **ts.lookup** | [tsilo](http://www.kamailio.org/docs/modules/5.7.x/modules/tsilo.html#tsilo.rpc.ts.lookuptsilo) |
+| **ts.dump** | [tsilo](https://www.kamailio.org/docs/modules/5.6.x/modules/tsilo.html#tsilo.rpc.ts.dump) |
+| **ts.lookup** | [tsilo](https://www.kamailio.org/docs/modules/5.6.x/modules/tsilo.html#tsilo.rpc.ts.lookup) |
 
 ## [u]
 
 | Name | Module Name |
 |------|-------------|
-| **uac.reg_active** | [uac](http://www.kamailio.org/docs/modules/5.7.x/modules/uac.html#uac.r.uac.reg_activeuac) |
-| **uac.reg_add** | [uac](http://www.kamailio.org/docs/modules/5.7.x/modules/uac.html#uac.r.uac.reg_adduac) |
-| **uac.reg_disable** | [uac](http://www.kamailio.org/docs/modules/5.7.x/modules/uac.html#uac.r.uac.reg_disableuac) |
-| **uac.reg_dump** | [uac](http://www.kamailio.org/docs/modules/5.7.x/modules/uac.html#uac.r.uac.reg_dumpuac) |
-| **uac.reg_enable** | [uac](http://www.kamailio.org/docs/modules/5.7.x/modules/uac.html#uac.r.uac.reg_enableuac) |
-| **uac.reg_info** | [uac](http://www.kamailio.org/docs/modules/5.7.x/modules/uac.html#uac.r.uac.reg_infouac) |
-| **uac.reg_refresh** | [uac](http://www.kamailio.org/docs/modules/5.7.x/modules/uac.html#uac.r.uac.reg_refreshuac) |
-| **uac.reg_reload** | [uac](http://www.kamailio.org/docs/modules/5.7.x/modules/uac.html#uac.r.uac.reg_reloaduac) |
-| **uac.reg_remove** | [uac](http://www.kamailio.org/docs/modules/5.7.x/modules/uac.html#uac.r.uac.reg_removeuac) |
-| **uac.reg_unregister** | [uac](http://www.kamailio.org/docs/modules/5.7.x/modules/uac.html#uac.r.uac.reg_unregisteruac) |
-| **ul.add** | [usrloc](http://www.kamailio.org/docs/modules/5.7.x/modules/usrloc.html#usrloc.r.addusrloc) |
-| **ul.db_contacts** | [usrloc](http://www.kamailio.org/docs/modules/5.7.x/modules/usrloc.html#usrloc.r.db_contactsusrloc) |
-| **ul.db_expired_contacts** | [usrloc](http://www.kamailio.org/docs/modules/5.7.x/modules/usrloc.html#usrloc.r.db_expired_contactsusrloc) |
-| **ul.db_users** | [usrloc](http://www.kamailio.org/docs/modules/5.7.x/modules/usrloc.html#usrloc.r.db_usersusrloc) |
-| **ul.dump** | [usrloc](http://www.kamailio.org/docs/modules/5.7.x/modules/usrloc.html#usrloc.r.dumpusrloc) |
-| **ul.flush** | [usrloc](http://www.kamailio.org/docs/modules/5.7.x/modules/usrloc.html#usrloc.r.flushusrloc) |
-| **ul.lookup table AOR** | [usrloc](http://www.kamailio.org/docs/modules/5.7.x/modules/usrloc.html#usrloc.r.lookupusrloc) |
-| **ul.rm table AOR** | [usrloc](http://www.kamailio.org/docs/modules/5.7.x/modules/usrloc.html#usrloc.r.rmusrloc) |
-| **ul.rm_contact table AOR contact** | [usrloc](http://www.kamailio.org/docs/modules/5.7.x/modules/usrloc.html#usrloc.r.rm_contactusrloc) |
-| **ulpcscf.status** | [ims_usrloc_pcscf](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_usrloc_pcscf.htmlims_usrloc_pcscf) |
-| **ulscscf.showimpu** | [ims_usrloc_scscf](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_usrloc_scscf.html#ims_usrloc_scscf.r.showimpuims_usrloc_scscf) |
-| **ulscscf.snapshot** | [ims_usrloc_scscf](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_usrloc_scscf.html#ims_usrloc_scscf.r.snapshotims_usrloc_scscf) |
-| **ulscscf.status** | [ims_usrloc_scscf](http://www.kamailio.org/docs/modules/5.7.x/modules/ims_usrloc_scscf.html#ims_usrloc_scscf.r.statusims_usrloc_scscf) |
-| **userblocklist.check_allowlist prefix** | [userblocklist](http://www.kamailio.org/docs/modules/5.7.x/modules/userblocklist.html#userblocklist.r.check_allowlistuserblocklist) |
-| **userblocklist.check_blocklist prefix** | [userblocklist](http://www.kamailio.org/docs/modules/5.7.x/modules/userblocklist.html#userblocklist.r.check_blocklistuserblocklist) |
-| **userblocklist.check_userallowlist prefix user [domain]** | [userblocklist](http://www.kamailio.org/docs/modules/5.7.x/modules/userblocklist.html#userblocklist.r.check_userallowlistuserblocklist) |
-| **userblocklist.check_userblocklist prefix user [domain]** | [userblocklist](http://www.kamailio.org/docs/modules/5.7.x/modules/userblocklist.html#userblocklist.r.check_userblocklistuserblocklist) |
-| **userblocklist.dump_blocklist** | [userblocklist](http://www.kamailio.org/docs/modules/5.7.x/modules/userblocklist.html#userblocklist.r.dump_blocklistuserblocklist) |
-| **userblocklist.reload_blocklist** | [userblocklist](http://www.kamailio.org/docs/modules/5.7.x/modules/userblocklist.html#userblocklist.r.reload_blocklistuserblocklist) |
+| **uac.reg_active** | [uac](https://www.kamailio.org/docs/modules/5.6.x/modules/uac.html#uac.r.uac.reg_active) |
+| **uac.reg_add** | [uac](https://www.kamailio.org/docs/modules/5.6.x/modules/uac.html#uac.r.uac.reg_add) |
+| **uac.reg_disable** | [uac](https://www.kamailio.org/docs/modules/5.6.x/modules/uac.html#uac.r.uac.reg_disable) |
+| **uac.reg_dump** | [uac](https://www.kamailio.org/docs/modules/5.6.x/modules/uac.html#uac.r.uac.reg_dump) |
+| **uac.reg_enable** | [uac](https://www.kamailio.org/docs/modules/5.6.x/modules/uac.html#uac.r.uac.reg_enable) |
+| **uac.reg_info** | [uac](https://www.kamailio.org/docs/modules/5.6.x/modules/uac.html#uac.r.uac.reg_info) |
+| **uac.reg_refresh** | [uac](https://www.kamailio.org/docs/modules/5.6.x/modules/uac.html#uac.r.uac.reg_refresh) |
+| **uac.reg_reload** | [uac](https://www.kamailio.org/docs/modules/5.6.x/modules/uac.html#uac.r.uac.reg_reload) |
+| **uac.reg_remove** | [uac](https://www.kamailio.org/docs/modules/5.6.x/modules/uac.html#uac.r.uac.reg_remove) |
+| **uac.reg_unregister** | [uac](https://www.kamailio.org/docs/modules/5.6.x/modules/uac.html#uac.r.uac.reg_unregister) |
+| **ul.add** | [usrloc](https://www.kamailio.org/docs/modules/5.6.x/modules/usrloc.html#usrloc.r.add) |
+| **ul.db_contacts** | [usrloc](https://www.kamailio.org/docs/modules/5.6.x/modules/usrloc.html#usrloc.r.db_contacts) |
+| **ul.db_expired_contacts** | [usrloc](https://www.kamailio.org/docs/modules/5.6.x/modules/usrloc.html#usrloc.r.db_expired_contacts) |
+| **ul.db_users** | [usrloc](https://www.kamailio.org/docs/modules/5.6.x/modules/usrloc.html#usrloc.r.db_users) |
+| **ul.dump** | [usrloc](https://www.kamailio.org/docs/modules/5.6.x/modules/usrloc.html#usrloc.r.dump) |
+| **ul.flush** | [usrloc](https://www.kamailio.org/docs/modules/5.6.x/modules/usrloc.html#usrloc.r.flush) |
+| **ul.lookup table AOR** | [usrloc](https://www.kamailio.org/docs/modules/5.6.x/modules/usrloc.html#usrloc.r.lookup) |
+| **ul.rm table AOR** | [usrloc](https://www.kamailio.org/docs/modules/5.6.x/modules/usrloc.html#usrloc.r.rm) |
+| **ul.rm_contact table AOR contact** | [usrloc](https://www.kamailio.org/docs/modules/5.6.x/modules/usrloc.html#usrloc.r.rm_contact) |
+| **ulpcscf.status** | [ims_usrloc_pcscf](https://www.kamailio.org/docs/modules/5.6.x/modules/ims_usrloc_pcscf.html) |
+| **ulscscf.showimpu** | [ims_usrloc_scscf](https://www.kamailio.org/docs/modules/5.6.x/modules/ims_usrloc_scscf.html#ims_usrloc_scscf.r.showimpu) |
+| **ulscscf.snapshot** | [ims_usrloc_scscf](https://www.kamailio.org/docs/modules/5.6.x/modules/ims_usrloc_scscf.html#ims_usrloc_scscf.r.snapshot) |
+| **ulscscf.status** | [ims_usrloc_scscf](https://www.kamailio.org/docs/modules/5.6.x/modules/ims_usrloc_scscf.html#ims_usrloc_scscf.r.status) |
+| **userblocklist.check_allowlist prefix** | [userblocklist](https://www.kamailio.org/docs/modules/5.6.x/modules/userblocklist.html#userblocklist.r.check_allowlist) |
+| **userblocklist.check_blocklist prefix** | [userblocklist](https://www.kamailio.org/docs/modules/5.6.x/modules/userblocklist.html#userblocklist.r.check_blocklist) |
+| **userblocklist.check_userallowlist prefix user [domain]** | [userblocklist](https://www.kamailio.org/docs/modules/5.6.x/modules/userblocklist.html#userblocklist.r.check_userallowlist) |
+| **userblocklist.check_userblocklist prefix user [domain]** | [userblocklist](https://www.kamailio.org/docs/modules/5.6.x/modules/userblocklist.html#userblocklist.r.check_userblocklist) |
+| **userblocklist.dump_blocklist** | [userblocklist](https://www.kamailio.org/docs/modules/5.6.x/modules/userblocklist.html#userblocklist.r.dump_blocklist) |
+| **userblocklist.reload_blocklist** | [userblocklist](https://www.kamailio.org/docs/modules/5.6.x/modules/userblocklist.html#userblocklist.r.reload_blocklist) |
 
 ## [v]
 
@@ -391,25 +391,25 @@
 
 | Name | Module Name |
 |------|-------------|
-| **ws.close** | [websocket](http://www.kamailio.org/docs/modules/5.7.x/modules/websocket.html#websocket.rpc.ws.closewebsocket) |
-| **ws.disable** | [websocket](http://www.kamailio.org/docs/modules/5.7.x/modules/websocket.html#websocket.rpc.ws.disablewebsocket) |
-| **ws.dump** | [websocket](http://www.kamailio.org/docs/modules/5.7.x/modules/websocket.html#websocket.rpc.ws.dumpwebsocket) |
-| **ws.enable** | [websocket](http://www.kamailio.org/docs/modules/5.7.x/modules/websocket.html#websocket.rpc.ws.enablewebsocket) |
-| **ws.ping** | [websocket](http://www.kamailio.org/docs/modules/5.7.x/modules/websocket.html#websocket.rpc.ws.pingwebsocket) |
-| **ws.pong** | [websocket](http://www.kamailio.org/docs/modules/5.7.x/modules/websocket.html#websocket.rpc.ws.pongwebsocket) |
+| **ws.close** | [websocket](https://www.kamailio.org/docs/modules/5.6.x/modules/websocket.html#websocket.rpc.ws.close) |
+| **ws.disable** | [websocket](https://www.kamailio.org/docs/modules/5.6.x/modules/websocket.html#websocket.rpc.ws.disable) |
+| **ws.dump** | [websocket](https://www.kamailio.org/docs/modules/5.6.x/modules/websocket.html#websocket.rpc.ws.dump) |
+| **ws.enable** | [websocket](https://www.kamailio.org/docs/modules/5.6.x/modules/websocket.html#websocket.rpc.ws.enable) |
+| **ws.ping** | [websocket](https://www.kamailio.org/docs/modules/5.6.x/modules/websocket.html#websocket.rpc.ws.ping) |
+| **ws.pong** | [websocket](https://www.kamailio.org/docs/modules/5.6.x/modules/websocket.html#websocket.rpc.ws.pong) |
 
 ## [x]
 
 | Name | Module Name |
 |------|-------------|
-| **xcap_client.refreshXcapDoc** | [xcap_client](http://www.kamailio.org/docs/modules/5.7.x/modules/xcap_client.html#xcap_client.rpc.refreshXcapDocxcap_client) |
-| **xhttp_pi.reload** | [xhttp_pi](http://www.kamailio.org/docs/modules/5.7.x/modules/xhttp_pi.htmlxhttp_pi) |
-| **xhttp_prom.counter_inc** | [xhttp_prom](http://www.kamailio.org/docs/modules/5.7.x/modules/xhttp_prom.html#xhttp_prom.rpc.counter_incxhttp_prom) |
-| **xhttp_prom.counter_reset** | [xhttp_prom](http://www.kamailio.org/docs/modules/5.7.x/modules/xhttp_prom.html#xhttp_prom.rpc.counter_resetxhttp_prom) |
-| **xhttp_prom.gauge_reset** | [xhttp_prom](http://www.kamailio.org/docs/modules/5.7.x/modules/xhttp_prom.html#xhttp_prom.rpc.gauge_resetxhttp_prom) |
-| **xhttp_prom.gauge_set** | [xhttp_prom](http://www.kamailio.org/docs/modules/5.7.x/modules/xhttp_prom.html#xhttp_prom.rpc.gauge_setxhttp_prom) |
-| **xhttp_prom.histogram_observe** | [xhttp_prom](http://www.kamailio.org/docs/modules/5.7.x/modules/xhttp_prom.html#xhttp_prom.rpc.histogram_observexhttp_prom) |
-| **xhttp_prom.metric_list_print** | [xhttp_prom](http://www.kamailio.org/docs/modules/5.7.x/modules/xhttp_prom.html#xhttp_prom.rpc.metric_list_printxhttp_prom) |
+| **xcap_client.refreshXcapDoc** | [xcap_client](https://www.kamailio.org/docs/modules/5.6.x/modules/xcap_client.html#xcap_client.rpc.refreshXcapDoc) |
+| **xhttp_pi.reload** | [xhttp_pi](https://www.kamailio.org/docs/modules/5.6.x/modules/xhttp_pi.html) |
+| **xhttp_prom.counter_inc** | [xhttp_prom](https://www.kamailio.org/docs/modules/5.6.x/modules/xhttp_prom.html#xhttp_prom.rpc.counter_inc) |
+| **xhttp_prom.counter_reset** | [xhttp_prom](https://www.kamailio.org/docs/modules/5.6.x/modules/xhttp_prom.html#xhttp_prom.rpc.counter_reset) |
+| **xhttp_prom.gauge_reset** | [xhttp_prom](https://www.kamailio.org/docs/modules/5.6.x/modules/xhttp_prom.html#xhttp_prom.rpc.gauge_reset) |
+| **xhttp_prom.gauge_set** | [xhttp_prom](https://www.kamailio.org/docs/modules/5.6.x/modules/xhttp_prom.html#xhttp_prom.rpc.gauge_set) |
+| **xhttp_prom.histogram_observe** | [xhttp_prom](https://www.kamailio.org/docs/modules/5.6.x/modules/xhttp_prom.html#xhttp_prom.rpc.histogram_observe) |
+| **xhttp_prom.metric_list_print** | [xhttp_prom](https://www.kamailio.org/docs/modules/5.6.x/modules/xhttp_prom.html#xhttp_prom.rpc.metric_list_print) |
 
 ## [y]
 
