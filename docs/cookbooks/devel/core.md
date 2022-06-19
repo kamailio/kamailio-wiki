@@ -846,7 +846,7 @@ The variable can be used to test if the host part of an URI is in the
 list. The usefulness of this test is to select the messages that has to
 be processed locally or has to be forwarded to another server.
 
-See "alias" to add hostnames,IP addresses and aliases to the list.
+See "alias" to add hostnames, IP addresses and aliases to the list.
 
 Example of usage:
 
@@ -893,6 +893,8 @@ is recommended to set **advertise** option for **listen** parameter.
 
 ### alias
 
+**Alias name: domain**
+
 Parameter to set alias hostnames for the server. It can be set many
 times, each value being added in a list to match the hostname when
 'myself' is checked.
@@ -907,8 +909,12 @@ requests with pre-loaded route set correctly.
 
 Example of usage:
 
-        alias=other.domain.com:5060
-        alias=another.domain.com:5060
+```
+    alias=other.domain.com:5060
+    alias=another.domain.com:5060
+
+    domain=new.domain.com:5060
+```
 
 Note: the hostname has to be enclosed in between quotes if it has
 reserved tokens such as **forward**, **drop** ... or operators such as
@@ -981,6 +987,8 @@ See also **event_route\[core:pre-routing\]** and **sworker** module.
 
 ### auto_aliases
 
+**Alias name: auto_domains**
+
 Kamailio by default discovers all IPv4 addresses on all interfaces and
 does a reverse DNS lookup on these addresses to find host names.
 Discovered host names are added to aliases list, matching the **myself**
@@ -988,7 +996,11 @@ condition. To disable host names auto-discovery, turn off auto_aliases.
 
 Example:
 
-        auto_aliases=no
+```
+    auto_aliases=no
+
+    auto_domains=no
+```
 
 ### auto_bind_ipv6
 
