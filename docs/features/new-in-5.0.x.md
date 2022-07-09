@@ -1,14 +1,13 @@
 # Kamailio SIP Server (SER) - New Features in v5.0.x
 
-\<fc #0000FF> **Previous stable version was 4.4.x (released on March,
-2016), see what was new in that release at:** \</fc>
+📘 **Previous stable version was 4.4.x (released on March,
+2016), see what was new in that release at:**
 
--   \<fc
-    #0000FF><http://www.kamailio.org/wiki/features/new-in-4.4.x>\</fc>
+-   📘 [New In 4.4.x](new-in-4.4.x.md)
 
-\<fc #800000>*This is a draft of new features added in v5.0.x, manually
+📘 *This is a draft of new features added in v5.0.x, manually
 updated, thus not always synchronized with what is new in source code
-repository.*\</fc>
+repository.*
 
 ## New Modules
 
@@ -16,32 +15,32 @@ repository.*\</fc>
 
 -   execute embedded JavaScript code inside kamailio.cfg
 -   relies on Duktape JS engine
--   <http://kamailio.org/docs/modules/devel/modules/app_jsdt.html>
+-   [https://kamailio.org/docs/modules/devel/modules/app_jsdt.html](https://kamailio.org/docs/modules/devel/modules/app_jsdt.html)
 
 ### ims_ocs
 
 -   IMS online charging module
--   <http://kamailio.org/docs/modules/devel/modules/ims_ocs.html>
+-   [https://kamailio.org/docs/modules/devel/modules/ims_ocs.html](https://kamailio.org/docs/modules/devel/modules/ims_ocs.html)
 
 ### nsq
 
 -   nsq.io connector for kamailio.cfg
--   <http://kamailio.org/docs/modules/devel/modules/nsq.html>
+-   [https://kamailio.org/docs/modules/devel/modules/nsq.html](https://kamailio.org/docs/modules/devel/modules/nsq.html)
 
 ### pua_rpc
 
 -   RPC commands related to presence user agent functionality
--   <http://kamailio.org/docs/modules/devel/modules/pua_rpc.html>
+-   [https://kamailio.org/docs/modules/devel/modules/pua_rpc.html](https://kamailio.org/docs/modules/devel/modules/pua_rpc.html)
 
 ### rabbitmq
 
 -   rabbitmq client for configuration script
--   <http://kamailio.org/docs/modules/devel/modules/rabbitmq.html>
+-   [https://kamailio.org/docs/modules/devel/modules/rabbitmq.html](https://kamailio.org/docs/modules/devel/modules/rabbitmq.html)
 
 ### ss7ops
 
 -   JSON-based access to SS7 packets received over HEP
--   <http://kamailio.org/docs/modules/devel/modules/ss7ops.html>
+-   [https://kamailio.org/docs/modules/devel/modules/ss7ops.html](https://kamailio.org/docs/modules/devel/modules/ss7ops.html)
 
 ## New in Old Modules
 
@@ -85,7 +84,7 @@ repository.*\</fc>
 
 ### cfgutils
 
--   added trylock() function
+-   added `trylock()` function
 -   implemented rpc commands
 
 ### cplc
@@ -115,11 +114,11 @@ repository.*\</fc>
 -   option to set the limit for failed keepalive to end the dialog
     -   new parameter ka_failed_limit, default value is 1
 -   support for dialog replication via DMQ
--   from-tag optional on dlg.dlg_list/\_ctx RPC commands
+-   from-tag optional on `dlg.dlg_list/_ctx` RPC commands
 
 ### dispatcher
 
--   new function ds_select(setid, alg, \[limit\])
+-   new function `ds_select(setid, alg, [limit])`
     -   puts the addresses from destination set in the internal avps
         lists, without updating dst-uri or r-uri
 -   added new function ds_reload()
@@ -163,7 +162,7 @@ repository.*\</fc>
 
 ### imc
 
--   implemented rpc commands imc.list_rooms, imc.list_memebers
+-   implemented rpc commands `imc.list_rooms`, `imc.list_members`
 
 ### ims_charging
 
@@ -175,12 +174,12 @@ repository.*\</fc>
 
 #### ims_icscf
 
--   if a route block is defined for lir_user_unknown, run it instead of
+-   if a route block is defined for `lir_user_unknown`, run it instead of
     default
 
 ### ims_registrar_scscf
 
--   new RPC command regscscf.dereg_impu to initiate network de-register
+-   new RPC command `regscscf.dereg_impu` to initiate network de-register
 -   add param max_notification list size and stat of current size
 
 ### ims_usrloc_scscf
@@ -191,17 +190,17 @@ repository.*\</fc>
 
 ### ims_qos
 
--   new param regex_sdp_ip_prefix_to_maintain_in_fd
+-   new param `regex_sdp_ip_prefix_to_maintain_in_fd`
 -   added support for IPv6 IPCAN Session on Rx interface towards PCRF
--   store vendor_id on auth session
--   new param delete_contact_on_rx_failure
+-   store `vendor_id` on auth session
+-   new param `delete_contact_on_rx_failure`
 -   added additional stat for total number of rx media sessions
 -   new mod_param to add RTCP flow description for media flow
 
 ### ipops
 
--   is_in_subnet(): add support for networks list
--   added detailed_ip_type() functions
+-   `is_in_subnet()`: add support for networks list
+-   added `detailed_ip_type()` functions
 
 ### kex
 
@@ -238,7 +237,7 @@ repository.*\</fc>
 
 ### log_systemd
 
--   new function sd_journal_send_xavp() - creates a structured log event
+-   new function `sd_journal_send_xavp()` - creates a structured log event
     in journald
 
 ### matrix
@@ -251,7 +250,7 @@ repository.*\</fc>
 
 ### nathelper
 
--   implemented rpc command nathelper.enable_ping
+-   implemented rpc command `nathelper.enable_ping`
 
 ### ndb_redis
 
@@ -261,14 +260,14 @@ repository.*\</fc>
 
 ### presence
 
--   new module parameter \`force_delete\`
+-   new module parameter `force_delete`
     -   disabled by default
     -   enabling this parameter will delete expired presentity records
         without updating watchers (no NOTIFY)
 
 <!-- -->
 
--   new module parameter \`retrieve_order_by\`
+-   new module parameter `retrieve_order_by`
     -   default value is "priority"
     -   Used to set the order-by of the db query for fetching the
         presence records
@@ -282,15 +281,15 @@ repository.*\</fc>
 
 ### pv
 
--   new function pv_evalx(dst, fmt)
+-   new function `pv_evalx(dst, fmt)`
     -   The fmt string is evaluated twice for exiting variables, the
         result is stored in dst variable.
 -   new class of pseudo-variable - $msg(attr) - return attributes of sip
     message
-    -   $msg(len) - sip message lenght
+    -   $msg(len) - sip message length
     -   $msg(buf) - sip message buffer
     -   $msg(body) - sip message body
-    -   $msg(body_len) - sip message body lenght
+    -   $msg(body_len) - sip message body length
     -   $msg(hdrs) - sip message headers
     -   $msg(fline) - sip message first line
 -   add s.escape.csv transformation
@@ -304,8 +303,8 @@ repository.*\</fc>
 
 -   added expiry value to the xavp.
     -   handy if Kamailio for some reason changes the expiry value (min,
-        max or variations caused by expiry_range)
--   added parameter "contact_max_size" to make max contact size
+        max or variations caused by `expiry_range`)
+-   added parameter `contact_max_size` to make max contact size
     configurable
 
 ### rls
@@ -321,13 +320,13 @@ repository.*\</fc>
 -   new 'unidirectional' flag in Sipwise rtpengine
     -   allows kernelization of one-way streams
 -   parameters configurable via cfg framework
-    -   rtpengine_disable_tout, rtpengine_tout_ms, queried_nodes_limit,
-        rtpengine_retr are now configurable via kamcmd commands
+    -   rtpengine_disable_tout, `rtpengine_tout_ms`, queried_nodes_limit,
+        `rtpengine_retr` are now configurable via kamcmd commands
 -   implemented rpc command rtpengine.reload
 
 ### rtpproxy
 
--   implemented rpc commands rtpproxy.enable and rtpproxy.list
+-   implemented rpc commands `rtpproxy.enable` and `rtpproxy.list`
 
 ### sca
 
@@ -336,25 +335,23 @@ repository.*\</fc>
         onhold
     -   **server_address**, force Contact header address in replies
 
-<!-- -->
-
--   sca_call_info_update(): new to/from URI parameters
-    -   skips parsing message for To/From header values and uses URI
+-   `sca_call_info_update()`: new `To/From` URI parameters
+    -   skips parsing message for `To/From` header values and uses URI
         values from parameters
 
 ### sdpops
 
-     * new config variable $sdp(body)
+     * new config variable `$sdp(body)`
        * returns the sdp body as raw string                  
      * new optional parameter to sdp_remove_line_by_prefix script function
-       * sdp_remove_line_by_prefix(string //[, mtype]//)
+       * `sdp_remove_line_by_prefix(string, mtype)`
        * mtype can be provided to apply the operations only to the streams matching m=mtype
        * allows setting a mediatype (e.g. video or audio), when removing a codec from the SDP
 
 ### sipcapture
 
 -   added nonsip_hook support. Now $hep variable available
--   added X-RTP-Stat-T38 and X-RTP-Stat-Add
+-   added `X-RTP-Stat-T38` and `X-RTP-Stat-Add`
 -   added support for custom fields
 
 ### siptrace
@@ -402,7 +399,7 @@ repository.*\</fc>
 
 ### userblacklist
 
--   implemented rpc command userblacklist.reload_blacklist
+-   implemented rpc command `userblacklist.reload_blacklist`
 
 ### uri_db
 
@@ -410,7 +407,7 @@ repository.*\</fc>
 
 ### utils
 
--   remove http_query function (use instead the http_client module)
+-   remove `http_query()` function (use instead the `http_client` module)
 
 ### xcap_clinet
 
@@ -418,7 +415,7 @@ repository.*\</fc>
 
 ### websocket
 
--   added $ws_conid pseudo variable
+-   added `$ws_conid` pseudo variable
     -   gives id of closed connection in websocket:closed event route
 -   implemented ws.ping and ws.pong rpc commands
 -   implemented ws.dump rpc command
@@ -445,7 +442,7 @@ A new framework (named kemi - kamailio embedded interface) was added,
 allowing to writing routing blocks in embedded languages such as Lua,
 JavaScript or Python:
 
--   <http://www.kamailio.org/wiki/devel/config-engines>
+-   [https://www.kamailio.org/wiki/devel/config-engines](https://www.kamailio.org/wiki/devel/config-engines)
 
 New global parameter to specify the config engine:
 
@@ -520,7 +517,7 @@ New global parameter to specify the config engine:
 
 -   kamctl rpc command is available for sending raw jsonrpc commands
     -   see
-        [documentation](http://www.kamailio.org/docs/docbooks/5.0.x/rpc_list/rpc_list.html)
+        [documentation](https://www.kamailio.org/docs/docbooks/5.0.x/rpc_list/rpc_list.html)
         for all RPC methods
     -   the prefix s: or i: can be used to enforce type string or int
         for parameters
@@ -543,7 +540,7 @@ New global parameter to specify the config engine:
 -   kamcli is aiming at being a modern and extensible alternative to the
     shell script kamctl
 -   communicates to Kamailio via jsonrpcs module
--   <https://github.com/kamailio/kamcli>
+-   [https://github.com/kamailio/kamcli](https://github.com/kamailio/kamcli)
 
 ### misc
 
