@@ -11,9 +11,9 @@ The wiki content is also available in HTML format:
 Few guidelines to edit the wiki:
 
 -   everyone is welcome to add useful content to the wiki
--   use subfolders per category when adding new pages
+-   use a sub-folder per category when adding new pages
 -   if there is subfolder that matches the new page topic, add it
-    inside it, eventually create a new sub-folder if you want to narrow down to a sub-category
+    inside it, eventually create there a new sub-folder if you want to narrow down to a sub-category
 -   if you add many pages for the same subject, group them under same
     sub-folder
 -   if you are not sure that the content is entirely correct, send an
