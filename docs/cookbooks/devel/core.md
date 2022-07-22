@@ -122,14 +122,15 @@ branch_route[MANAGE_BRANCH] {
 
 ### Comments
 
-Line comments start with **#** (hash/pound character - like in shell) or
-**/ /** (double forward slash - like in C++/Java).
+Line comments start with `#` (hash/pound character - like in shell) or
+`//` (double forward slash - like in C++/Java).
 
-Block comments start with /\* (forward slash and asterisk) and are ended
-by \*/ (sterisk and forward slash) (like in C, C++, Java).
+Block comments start with `/*` (forward slash and asterisk) and are ended
+by `*/` (asterisk and forward slash) (like in C, C++, Java).
 
 Example:
 
+```
       # this is a line comment
       
       // this is another line comment
@@ -139,8 +140,9 @@ Example:
          a
          block
          comment */
+```
 
-Important: be aware of preprocessor directives that start with **#!**
+Important: be aware of preprocessor directives that start with `#!`
 (hash/pound and exclamation) - those are no longer line comments.
 
 ### Values
@@ -228,7 +230,9 @@ if($var(x)>10)
 
 ### include_file
 
-       include_file "path_to_file"
+```
+    include_file "path_to_file"
+```
 
 Include the content of the file in config before parsing. path_to_file
 must be a static string. Including file operation is done at startup. If
@@ -252,27 +256,30 @@ You can use also the syntax **#!include_file** or **!!include_file**.
 Example of usage:
 
 ``` c
-route {
+request_route {
     ...
-    include_file "/sr/checks.cfg"
+    include_file "/etc/kamailio/checks.cfg"
     ...
 }
+```
 
---- /sr/checks.cfg ---
+- `/etc/kamailio/checks.cfg`:
+
+```c
 
    if (!mf_process_maxfwd_header("10")) {
        sl_send_reply("483","Too Many Hops");
        exit;
    }
-
----
 ```
 
 ### import_file
 
-       import_file "path_to_file"
+```
+    import_file "path_to_file"
+```
 
-Similar to **include_file**, but does not throw error if the included
+Similar to `include_file`, but does not throw error if the included
 file is not found.
 
 ### define
@@ -294,10 +301,10 @@ Available directives:
 
 Predefined keywords:
 
--   **KAMAILIO_X\[\_Y\[\_Z\]\]** - Kamailio versions
--   **MOD_X** - when module X has been loaded
+-   `KAMAILIO_X[_Y[_Z]]` - Kamailio versions
+-   ``MOD_X` - when module `X` has been loaded
 
-See 'kamctl core.ppdefines_full' for full list.
+See `kamctl core.ppdefines_full` for full list.
 
 Among benefits:
 
