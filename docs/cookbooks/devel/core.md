@@ -304,6 +304,17 @@ Predefined keywords:
 -   `KAMAILIO_X[_Y[_Z]]` - Kamailio versions
 -   ``MOD_X` - when module `X` has been loaded
 
+Examples:
+
+```
+KAMAILIO_5
+KAMAILIO_5_6
+KAMAILIO_5_6_2
+
+MOD_acc
+MOD_corex
+```
+
 See `kamctl core.ppdefines_full` for full list.
 
 Among benefits:
