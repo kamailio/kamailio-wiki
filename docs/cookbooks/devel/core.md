@@ -365,7 +365,7 @@ route[DEBUG] {
 
 ...
 
-route {
+request_route {
 #!ifdef TESTBED_MODE
   route(DEBUG);
 #!endif
@@ -408,7 +408,7 @@ $var(x) = 100 + 123;
 -   then in routing block
 
 ``` c
-route {
+request_route {
     ...
     IDLOOP
     ...
@@ -423,7 +423,7 @@ route {
     -   multilines defines are reduced to single line, so line counter
         should be fine
     -   column counter goes inside the define value, but you have to
-        omit the '\\' and CR for the accurate inside-define position
+        omit the `\` and `CR` for the accurate inside-define position
     -   text on the same line as the directive will cause problems. Keep
         the directive lines clean and only comment on a line before or
         after.
@@ -506,7 +506,7 @@ modparam("acc", "db_url", "mysql://user:DBPASSWD@localhost/db")
 #!substdef "/ID/subst/"
 ```
 
-Similar to **subst**, but in addition it adds a **#!define ID subst**.
+Similar to `#!subst`, but in addition it adds a `#!define ID subst`.
 
 ### substdefs
 
@@ -514,7 +514,7 @@ Similar to **subst**, but in addition it adds a **#!define ID subst**.
 #!substdefs "/ID/subst/"
 ```
 
-Similar to **subst**, but in addition it adds a **#!define ID "subst"**
+Similar to `#!subst`, but in addition it adds a `#!define ID "subst"`
 (note the difference from `#!substdef` that the value for define is
 enclosed in double quotes, useful when the define is used in a place for
 a string value).
