@@ -741,6 +741,8 @@ Keywords
 
 ### INET
 
+Variant: `IPv4`
+
 This keyword can be used to test whether the SIP packet was received
 over an IPv4 connection.
 
@@ -753,6 +755,8 @@ Example of usage:
 ```
 
 ### INET6
+
+Variant: `IPv6`
 
 This keyword can be used to test whether the SIP packet was received
 over an IPv6 connection.
