@@ -27,7 +27,9 @@ parameters for the core of kamailio and custom global parameters.
 
 Typically this is formed by directives of the form:
 
+```
     name=value
+```
 
 The name corresponds to a core parameter as listed in one of the next
 sections of this document. If a name is not matching a core parameter,
@@ -290,14 +292,14 @@ faster execution.
 
 Available directives:
 
--   **#!define NAME** - define a keyword
--   **#!define NAME VALUE** - define a keyword with value
--   **#!ifdef NAME** - check if a keyword is defined
--   **#!ifndef** - check if a keyword is not defined
--   **#!else** - switch to false branch of ifdef/ifndef region
--   **#!endif** - end ifdef/ifndef region
--   **#!trydef** - add a define if not already defined
--   **#!redefine** - force redefinition even if already defined
+-   `#!define NAME` - define a keyword
+-   `#!define NAME VALUE` - define a keyword with value
+-   `#!ifdef NAME` - check if a keyword is defined
+-   `#!ifndef` - check if a keyword is not defined
+-   `#!else` - switch to false branch of `ifdef/ifndef` region
+-   `#!endif` - end `ifdef/ifndef` region
+-   `#!trydef` - add a define if not already defined
+-   `#!redefine` - force redefinition even if already defined
 
 Predefined keywords:
 
@@ -894,8 +896,10 @@ from where the request will be sent is used.
 
 Example of usage:
 
+```
       advertised_address="​1.2.3.4"​
       advertised_address="kamailio.org"
+```
 
 Note: this option may be deprecated and removed in the near future, it
 is recommended to set **advertise** option for **listen** parameter.
@@ -908,7 +912,9 @@ for 'advertised_address'.
 
 Example of usage:
 
+```
       advertised_port=5080
+```
 
 Note: this option may be deprecated and removed in the near future, it
 is recommended to set **advertise** option for **listen** parameter.
@@ -954,29 +960,35 @@ Default: 0 (asynchronous framework is disabled).
 
 Example:
 
-        async_workers=4
+```
+    async_workers=4
+```
 
 ### async_nonblock
 
 Set the non-block mode for the internal sockets used by default group of
 async workers.
 
-Default: 0
+Default: `0`
 
 Example:
 
-        async_nonblock=1
+```
+    async_nonblock=1
+```
 
 ### async_usleep
 
 Set the number of microseconds to sleep before trying to receive next
 task (can be useful when async_nonblock=1).
 
-Default: 0
+Default: `0`
 
 Example:
 
-        async_usleep=100
+```
+    async_usleep=100
+```
 
 ### async_workers_group
 
@@ -984,7 +996,9 @@ Define groups of asynchronous worker processes.
 
 Prototype:
 
+```
     async_workers_group="name=X;workers=N;nonblock=[0|1];usleep=M"
+```
 
 The attributes are:
 
@@ -1000,7 +1014,9 @@ Default: "".
 
 Example:
 
-        async_workers_group="name=reg;workers=4;nonblock=0;usleep=0"
+```
+    async_workers_group="name=reg;workers=4;nonblock=0;usleep=0"
+```
 
 If the **name** is default, then it overwrites the value set by
 **async_workers**.
@@ -1031,7 +1047,9 @@ When turned on, Kamailio will automatically bind to all IPv6 addresses
 
 Example:
 
-        auto_bind_ipv6=1
+```
+    auto_bind_ipv6=1
+```
 
 ### bind_ipv6_link_local
 
@@ -1041,7 +1059,9 @@ added for the other protocols. Default is 0.
 
 Example:
 
-        bind_ipv6_link_local=1
+```
+    bind_ipv6_link_local=1
+```
 
 ### check_via
 
@@ -1050,7 +1070,9 @@ is 0 (check disabled).
 
 Example of usage:
 
+```
       check_via=1 
+```
 
 ### children
 
@@ -1064,7 +1086,9 @@ For configuration of the TCP/TLS worker threads see the option
 
 Example of usage:
 
-      children=16
+```
+    children=16
+```
 
 ### chroot
 
@@ -1073,7 +1097,9 @@ chroot (change root directory) to its value.
 
 Example of usage:
 
-      chroot=/other/fakeroot
+```
+    chroot=/other/fakeroot
+```
 
 ### corelog
 
@@ -1082,11 +1108,13 @@ might become annoying and don't represent critical errors. For example,
 such case is failure to parse incoming traffic from the network as SIP
 message, due to someone sending invalid content.
 
-Default value is -1 (L_ERR).
+Default value is `-1` (`L_ERR`).
 
 Example of usage:
 
+```
     corelog=1
+```
 
 ### debug
 
@@ -1096,6 +1124,7 @@ stderr was activated (see [#log_stderror](#log_stderror) parameter).
 
 The following log levels are defined:
 
+```
      L_ALERT     -5
      L_BUG       -4
      L_CRIT2     -3
@@ -1105,13 +1134,14 @@ The following log levels are defined:
      L_NOTICE     1 
      L_INFO       2 
      L_DBG        3 
+```
 
 A log message will be logged if its log-level is lower than the defined
 debug level. Log messages are either produced by the the code, or
 manually in the configuration script using log() or xlog() functions.
 For a production server you usually use a log value between -1 and 2.
 
-Default value: L_WARN (debug=0)
+Default value: `L_WARN` (`debug=0`)
 
 Examples of usage:
 
@@ -1126,9 +1156,11 @@ Examples of usage:
 Value of 'debug' parameter can also be get and set dynamically using the
 'debug' Core MI function or the RPC function, e.g.:
 
+```
     kamcmd cfg.get core debug
     kamcmd cfg.set_now_int core debug 2
     kamcmd cfg.set_now_int core debug -- -1
+```
 
 Note: There is a difference in log-levels between Kamailio 3.x and
 Kamailio\<=1.5: Up to Kamailio 1.5 the log level started with 4, whereas
@@ -1139,7 +1171,8 @@ For configuration of logging of the memory manager see the parameters
 [#memlog](#memlog) and [#memdbg](#memdbg).
 
 Further information can also be found at:
-<https://www.kamailio.org/wiki/tutorials/3.2.x/syslog>
+
+  - [https://www.kamailio.org/wiki/tutorials/3.2.x/syslog](https://www.kamailio.org/wiki/tutorials/3.2.x/syslog)
 
 ### description
 
@@ -1151,11 +1184,13 @@ Can be 'yes' or 'no'. By default core dump limits are set to unlimited
 or a high enough value. Set this config variable to 'yes' to disable
 core dump-ing (will set core limits to 0).
 
-Default value is 'no'.
+Default value is `no`.
 
 Example of usage:
 
-      disable_core_dump=yes
+```
+    disable_core_dump=yes
+```
 
 ### disable_tls
 
@@ -1168,7 +1203,9 @@ Note: Make sure to load the "tls" module to get tls functionality.
 
 Example of usage:
 
-      disable_tls=yes
+```
+    disable_tls=yes
+```
 
 In Kamailio TLS is implemented as a module. Thus, the TLS configuration
 is done as module configuration. For more details see the README of the
@@ -1180,7 +1217,9 @@ TLS module: <http://kamailio.org/docs/modules/devel/modules/tls.html>
 
 Reverse Meaning of the disable_tls parameter. See disable_tls parameter.
 
+```
     enable_tls=yes # enable tls support in core
+```
 
 ### exit_timeout
 
