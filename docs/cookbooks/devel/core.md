@@ -1232,7 +1232,9 @@ generate a core dump if the cleanup part takes too long).
 
 Default: 60 s. Use 0 to disable.
 
+```
      exit_timeout = seconds
+```
 
 ### flags
 
@@ -1247,10 +1249,10 @@ flags
 ...
 ```
 
-(\*) The named flags feature was propagated from the source code merge
-back in 2008 and is not extensively tested. The recommended way of
-defining flags is using [#!define](../cookbooks/5.2.x/core#define.md) (which
-is also valid for branch/script flags):
+- NOTE: The named flags feature was propagated from the source code merge
+  back in 2008 and is not extensively tested. The recommended way of
+  defining flags is using [#!define](../cookbooks/5.2.x/core#define.md) (which
+  is also valid for branch/script flags):
 
 ``` c
 #!define FLAG_NAME FLAG_BIT
@@ -1276,7 +1278,9 @@ Default value is 'yes'.
 
 Example of usage:
 
-      fork=no
+```
+    fork=no
+```
 
 ### fork_delay
 
@@ -1298,7 +1302,9 @@ The group id to run Kamailio.
 
 Example of usage:
 
-    group="siprouter"
+```
+    group="kamailio"
+```
 
 ### http_reply_parse
 
@@ -1312,7 +1318,9 @@ Default value is 'no'.
 
 Example of usage:
 
+```
     http_reply_parse=yes
+```
 
 ### ip_free_bind
 
@@ -1331,15 +1339,15 @@ Example of usage:
 
 ### ipv6_hex_style
 
-Can be set to "a", "A" or "c" to specify if locally computed string
+Can be set to `a`, `A` or `c` to specify if locally computed string
 representation of IPv6 addresses should be expanded lowercase, expanded
 uppercase or compacted lowercase hexa digits.
 
-Default is "c" (compacted lower hexa digits, conforming better with RFC
+Default is `c` (compacted lower hexa digits, conforming better with RFC
 5952).
 
-"A" is preserving the behaviour before this global parameter was
-introduced, while "a" enables the ability to follow some of the
+`A` is preserving the behaviour before this global parameter was
+introduced, while `a` enables the ability to follow some of the
 recommendations of RFC 5952, section 4.3.
 
 Example of usage:
@@ -1351,12 +1359,12 @@ Example of usage:
 ### kemi.onsend_route_callback
 
 Set the name of callback function in the KEMI script to be executed as
-the equivalent of \`onsend_route\` block (from the native configuration
+the equivalent of `onsend_route` block (from the native configuration
 file).
 
 Default value: ksr_onsend_route
 
-Set it to empty string or "none" to skip execution of this callback
+Set it to empty string or `none` to skip execution of this callback
 function.
 
 Example:
@@ -1368,13 +1376,13 @@ kemi.onsend_route_callback="ksr_my_onsend_route"
 ### kemi.received_route_callback
 
 Set the name of callback function in the KEMI script to be executed as
-the equivalent of \`event_route\[core:msg-received\]\` block (from the
+the equivalent of `event_route[core:msg-received]` block (from the
 native configuration file). For execution, it also require to have the
 received_route_mode global parameter set to 1.
 
-Default value: none
+Default value: `none`
 
-Set it to empty string or "none" to skip execution of this callback
+Set it to empty string or `none` to skip execution of this callback
 function.
 
 Example:
@@ -1386,12 +1394,12 @@ kemi.received_route_callback="ksr_my_receieved_route"
 ### kemi.reply_route_callback
 
 Set the name of callback function in the KEMI script to be executed as
-the equivalent of \`reply_route\` block (from the native configuration
+the equivalent of `reply_route` block (from the native configuration
 file).
 
-Default value: ksr_reply_route
+Default value: `ksr_reply_route`
 
-Set it to empty string or "none" to skip execution of this callback
+Set it to empty string or `none` to skip execution of this callback
 function.
 
 Example:
@@ -1403,12 +1411,12 @@ kemi.onsend_route_callback="ksr_my_reply_route"
 ### kemi.pre_routing_callback
 
 Set the name of callback function in the KEMI script to be executed as
-the equivalent of \`event_route\[core:pre-routing\]\` block (from the
+the equivalent of `event_route[core:pre-routing]` block (from the
 native configuration file).
 
-Default value: none
+Default value: `none`
 
-Set it to empty string or "none" to skip execution of this callback
+Set it to empty string or `none` to skip execution of this callback
 function.
 
 Example:
@@ -1423,7 +1431,7 @@ If set to a log level less or equal than debug parameter, a log message
 with the duration in microseconds of executing request route or reply
 route is printed to syslog.
 
-Default value is 3 (L_DBG).
+Default value is `3` (`L_DBG`).
 
 Example:
 
@@ -1438,10 +1446,10 @@ action executed by cfg interpreter takes longer than its value, a
 message is printed in the logs, showing config path, line and action
 name when it is a module function, as well as internal action id.
 
-Default value is 0 (disabled).
+Default value is `0` (disabled).
 
 ``` c
-latency_limit_action=500
+latency_limit_action=`500`
 ```
 
 ### latency_limit_db
@@ -1450,17 +1458,17 @@ Limit of latency in us (micro-seconds) for db operations. If a db
 operation executed via DB API v1 takes longer that its value, a message
 is printed in the logs, showing the first 50 characters of the db query.
 
-Default value is 0 (disabled).
+Default value is `0` (disabled).
 
 ``` c
-latency_limit_db=500
+latency_limit_db=`500`
 ```
 
 ### latency_log
 
 Log level to print the messages related to latency.
 
-Default value is -1 (L_ERR).
+Default value is `-1` (`L_ERR`).
 
 ``` c
 latency_log=3
