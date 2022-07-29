@@ -1477,9 +1477,9 @@ latency_log=3
 ### listen
 
 Set the network addresses the SIP server should listen to. It can be an
-IP address, hostname or network interface id or combination of
-protocol:address:port (e.g., <udp:10.10.10.10:5060>). This parameter can
-be set multiple times in same configuration file, the server listening
+`IP address`, `hostname` or `network interface id` or combination of
+`protocol:address:port` (e.g., `udp:10.10.10.10:5060`). This parameter can
+be set multiple times in same configuration file, the server is listening
 on all addresses specified.
 
 Example of usage:
@@ -1490,12 +1490,12 @@ Example of usage:
     listen=udp:10.10.10.10:5064
 ```
 
-If you omit this directive then the SIP server will listen on all
+If you omit this directive then the SIP server will listen on all network
 interfaces. On start the SIP server reports all the interfaces that it
 is listening on. Even if you specify only UDP interfaces here, the
 server will start the TCP engine too. If you don't want this, you need
 to disable the TCP support completely with the core parameter
-disable_tcp.
+`disable_tcp`.
 
 If you specify IPv6 addresses, you should put them into square brackets,
 e.g.:
@@ -1504,17 +1504,17 @@ e.g.:
     listen=udp:[2a02:1850:1:1::18]:5060
 ```
 
-You can specify an advertise address (like ip:port) per listening socket
-- it will be used to build headers such as Via and Record-Route:
+You can specify an advertise address (like `ip:port`) per listening socket
+- it will be used to build the SIP headers such as Via and Record-Route:
 
 ``` c
     listen=udp:10.10.10.10:5060 advertise 11.11.11.11:5060
 ```
 
-The advertise address must be the format 'address:port', the protocol is
+The advertise address must be the format `address:port`, the protocol is
 taken from the bind socket. The advertise address is a convenient
-alternative to advertised_address / advertised_port cfg parameters or
-set_advertised_address() / set_advertised_port() cfg functions.
+alternative to `advertised_address` / `advertised_port` config parameters or
+`set_advertised_address()` / `set_advertised_port()` config functions.
 
 A typical use case for advertise address is when running SIP server
 behind a NAT/Firewall, when the local IP address (to be used for bind)
@@ -1527,7 +1527,7 @@ shortcut to select the corresponding socket for routing subsequent
 requests.
 
 The name has to be provided as a string enclosed in between quotes after
-the **name** identifier.
+the `name` keyword.
 
 ``` c
     listen=udp:10.0.0.10:5060 name "s1"
@@ -1543,9 +1543,9 @@ Note that there is no internal check for uniqueness of the socket names,
 the admin has to ensure it in order to be sure the desired socket is
 selected, otherwise the first socket with a matching name is used.
 
-As of 5.6, there is now a **virtual** identifier which can be added to
+As of 5.6, there is now a `virtual` keyword which can be added to
 the end of each listen directive. This can be used in combination with
-any other identifier, but must be added at the end of the line.
+any other keyword, but must be added at the end of the line.
 
 ``` c
     listen=udp:10.1.1.1:5060 virtual
@@ -1554,16 +1554,16 @@ any other identifier, but must be added at the end of the line.
     listen=udp:10.10.10.20:5060 advertise "mysipdomain.com" name "s3" virtual
 ```
 
-The **virtual** identifier is meant for use in situations where you have
+The `virtual` keyword is meant for use in situations where you have
 a floating/virtual IP address on your system that may not always be
 active on the system. It is particularly useful for active/active
 virtual IP situations, where otherwise things like usrloc PATH support
-can break due to incorrect "check_self" results.
+can break due to incorrect `check_self` results.
 
-This identifier will change the behaviour of how "myself", "is_myself"
-or "check_self" matches against traffic destined to this IP address. By
+This identifier will change the behaviour of how `myself`, `is_myself()`
+or `check_self` matches against traffic destined to this IP address. By
 default, Kamailio always considers traffic destined to a listen IP as
-"local" regardless of if the IP is currently locally active. With this
+`local` regardless of if the IP is currently locally active. With this
 flag set, Kamailio will do an extra check to make sure the IP is
 currently a local IP address before considering the traffic as local.
 
