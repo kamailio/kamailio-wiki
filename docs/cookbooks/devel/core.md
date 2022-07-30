@@ -1575,12 +1575,12 @@ the traffic.
 ### loadmodule
 
 Loads a module for later usage in the configuration script. The modules
-is searched in the path specified by **loadpath**.
+is searched in the path specified by `loadpath`.
 
-Prototype: **loadmodule "modulepath"**
+Prototype: `loadmodule "modulepath"`
 
-If modulepath is only modulename or modulename.so, then Kamailio will
-try to search also for **modulename/modulename.so**, very useful when
+If `modulepath` is only `modulename` or `modulename.so`, then Kamailio will
+try to search also for `modulename/modulename.so`, very useful when
 using directly the version compiled in the source tree.
 
 Example of usage:
@@ -1596,16 +1596,16 @@ Example of usage:
 
 ### loadmodulex
 
-Similar to **loadmodule** with the ability to evaluate variables in its
+Similar to `loadmodule` with the ability to evaluate variables in its
 parameter.
 
 ### loadpath
 
-**Alias name: mpath**
+**Alias name:** `mpath`
 
-Set the module search path. loadpath takes a list of directories
-separated by ':'. The list is searched in-order. For each directory d,
-$d/${module_name}.so and $d/${module_name}/${module_name}.so are tried.
+Set the module search path. `loadpath` takes a list of directories
+separated by `:`. The list is searched in-order. For each directory `d`,
+`$d/${module_name}.so` and `$d/${module_name}/${module_name}.so` are tried.
 
 This can be used to simplify the loadmodule parameter and can include
 many paths separated by colon. First module found is used.
@@ -1622,8 +1622,8 @@ Example of usage:
     loadmodule "tm"
 ```
 
-The proxy tries to find the modules in a smart way, e.g: loadmodule
-"uri" tries to find uri.so in the loadpath, but also uri/uri.so.
+The proxy tries to find the modules in a smart way, e.g: `loadmodule "uri"`
+tries to find `uri.so` in the loadpath, but also `uri/uri.so`.
 
 ### local_rport
 
