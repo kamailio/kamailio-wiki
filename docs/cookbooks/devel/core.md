@@ -1668,13 +1668,16 @@ Very useful when you want to divert all Kamailio logs to a different log
 file. See the man page syslog(3) for more details.
 
 For more see:
-<http://www.kamailio.org/dokuwiki/doku.php/tutorials:debug-syslog-messages>
+
+- [https://www.kamailio.org/dokuwiki/doku.php/tutorials:debug-syslog-messages](https://www.kamailio.org/dokuwiki/doku.php/tutorials:debug-syslog-messages)
 
 Default value is LOG_DAEMON.
 
 Example of usage:
 
-      log_facility=LOG_LOCAL0
+```
+    log_facility=LOG_LOCAL0
+```
 
 ### log_name
 
@@ -1684,7 +1687,9 @@ the application name or full path that printed the log message. This is
 useful to filter log messages when running many instances of Kamailio on
 same server.
 
+```
     log_name="kamailio-proxy-5080"
+```
 
 ### log_prefix
 
@@ -1701,7 +1706,9 @@ message structure to work with.
 Example - prefix with message type (1 - request, 2 - response), CSeq and
 Call-ID:
 
+```
     log_prefix="{$mt $hdr(CSeq) $ci} "
+```
 
 ### log_prefix_mode
 
@@ -1718,25 +1725,29 @@ different based on the context of config execution, e.g., $cfg(line)).
 
 Example:
 
+```
     log_prefix_mode=1
+```
 
 ### log_stderror
 
 With this parameter you can make Kamailio to write log and debug
 messages to standard error. Possible values are:
 
-\- "yes" - write the messages to standard error
+- `yes` - write the messages to standard error
+- `no` - write the messages to syslog
 
-\- "no" - write the messages to syslog
-
-Default value is "no".
+Default value is `no`.
 
 For more see:
-<http://www.kamailio.org/dokuwiki/doku.php/tutorials:debug-syslog-messages>
+
+ - [https://www.kamailio.org/dokuwiki/doku.php/tutorials:debug-syslog-messages](https://www.kamailio.org/dokuwiki/doku.php/tutorials:debug-syslog-messages)
 
 Example of usage:
 
-      log_stderror=yes
+```
+    log_stderror=yes
+```
 
 ### cfgengine
 
@@ -1745,16 +1756,20 @@ inside the configuration file. Default is the native interpreter.
 
 Example of usage:
 
-      cfgengine="name"
-      cfgengine "name"
+```
+    cfgengine="name"
+    cfgengine "name"
+```
 
-If name is "native" or "default", it expects to have in native config
+If name is `native` or `default`, it expects to have in native config
 interpreter for routing logic.
 
 The name can be the identifier of an embedded language interpreter, such
-as "lua" which is registered by the app_lua module:
+as `lua` which is registered by the `app_lua` module:
 
-      cfgengine "lua"
+```
+    cfgengine "lua"
+```
 
 ### maxbuffer
 
@@ -1764,7 +1779,9 @@ UDP messages (socket option SO_RCVBUF). Default value is 262144.
 
 Example of usage:
 
-      maxbuffer=65536
+```
+    maxbuffer=65536
+```
 
 Note: it is not the size of the internal SIP message receive buffer.
 
@@ -1781,7 +1798,9 @@ Default value: 12
 
 Example of usage:
 
+```
     max_branches=16
+```
 
 ### max_recursive_level
 
@@ -1791,7 +1810,9 @@ Default is 256.
 
 Example of usage:
 
-      max_recursive_level=500
+```
+    max_recursive_level=500
+```
 
 ### max_while_loops
 
@@ -1803,7 +1824,9 @@ like while(1) {...}).
 
 Example of usage:
 
-      max_while_loops=200
+```
+    max_while_loops=200
+```
 
 ### mcast
 
@@ -1818,8 +1841,10 @@ kernel routing beforehand.
 
 Example of usage:
 
-      mcast="eth1"
-      listen=udp:224.0.1.75:5060
+```
+    mcast="eth1"
+    listen=udp:224.0.1.75:5060
+```
 
 ### mcast_loopback
 
@@ -1828,7 +1853,9 @@ over loopback. Default value is 'no'.
 
 Example of usage:
 
-      mcast_loopback=yes
+```
+    mcast_loopback=yes
+```
 
 ### mcast_ttl
 
@@ -1837,11 +1864,13 @@ Set the value for multicast ttl. Default value is OS specific (usually
 
 Example of usage:
 
-      mcast_ttl=32
+```
+    mcast_ttl=32
+```
 
 ### memdbg
 
-**Alias name: mem_dbg**
+**Alias name:** `mem_dbg`
 
 This parameter specifies on which log level the memory debugger messages
 will be logged. If memdbg is active, every request (alloc, free) to the
@@ -1853,17 +1882,19 @@ Default value: L_DBG (memdbg=3)
 For example, memdbg=2 means that memory debugging is activated if the
 debug level is 2 or higher.
 
+```
     debug=3    # no memory debugging as debug level 
     memdbg=4   # is lower than memdbg
 
     debug=3    # memory debugging is active as the debug level 
     memdbg=2   # is higher or equal memdbg
+```
 
 Please see also [#memlog](#memlog) and [#debug](#debug).
 
 ### memlog
 
-**Alias name: mem_log**
+**Alias name:** `mem_log`
 
 This parameter specifies on which log level the memory statistics will
 be logged. If memlog is active, Kamailio will log memory statistics on
@@ -1875,11 +1906,13 @@ Default value: L_DBG (memlog=3)
 For example, memlog=2 means that memory statistics dumping is activated
 if the debug level is 2 or higher.
 
+```
     debug=3    # no memory statistics as debug level 
     memlog=4   # is lower than memlog
 
     debug=3    # dumping of memory statistics is active as the 
     memlog=2   # debug level is higher or equal memlog
+```
 
 Please see also [#memdbg](#memdbg) and [#debug](#debug).
 
@@ -1899,7 +1932,9 @@ mem_join=1
 To change its value at runtime, **kamcmd** needs to be used and the
 modules **ctl** and **cfg_rpc** loaded. Enabling it can be done with:
 
-    kamcmd cfg.set_now_int core mem_join 1
+```
+    kamctl rpc cfg.set_now_int core mem_join 1
+```
 
 To disable, set its value to 0.
 
