@@ -1940,14 +1940,14 @@ To disable, set its value to 0.
 
 ### mem_safety
 
-If set to 1, memory free operation does not call abort() for double
+If set to `1`, memory free operation does not call `abort()` for double
 freeing a pointer or freeing an invalid address. The server still prints
 the alerting log messages. If set to 0, the SIP server stops by calling
-abort() to generate a core file.
+`abort()` to generate a core file.
 
 It can be set via config reload framework.
 
-Default is 1 (enabled).
+Default is `1` (enabled).
 
 ``` c
 mem_safety=0
@@ -1955,12 +1955,12 @@ mem_safety=0
 
 ### mem_status_mode
 
-If set to 1, memory status dump for qm allocator will print details
-about used fragments. If set to 0, the dump contains only free
+If set to `1`, memory status dump for `qm` allocator will print details
+about used fragments. If set to `0`, the dump contains only free
 fragments. It can be set at runtime via cfg param framework (e.g., via
-kamcmd).
+`kamcmd`).
 
-Default is 0.
+Default is `0`.
 
 ``` c
 mem_status_mode=1
@@ -1969,17 +1969,17 @@ mem_status_mode=1
 ### mem_summary
 
 Parameter to control printing of mmemory debugging information displayed
-on exit or SIGUSR1. The value can be composed by following flags:
+on `exit` or `SIGUSR1`. The value can be composed by following flags:
 
--   1 - dump all the pkg used blocks (status)
--   2 - dump all the shm used blocks (status)
--   4 - summary of pkg used blocks
--   8 - summary of shm used blocks
--   16 - short status
+-   `1` - dump all the pkg used blocks (status)
+-   `2` - dump all the shm used blocks (status)
+-   `4` - summary of pkg used blocks
+-   `8` - summary of shm used blocks
+-   `16` - short status
 
-If set to 0, nothing is printed.
+If set to `0`, nothing is printed.
 
-Default value: 12
+Default value: `12`
 
 Example:
 
@@ -2003,14 +2003,18 @@ IP address in the Via/Record-Route headers)
 
 Example of usage:
 
-      mhomed=1
+```
+    mhomed=1
+```
 
 ### mlock_pages
 
 Locks all Kamailio pages into memory making it unswappable (in general
 one doesn't want his SIP proxy swapped out :-))
 
+```
     mlock_pages = yes |no (default no)
+```
 
 ### modinit_delay
 
@@ -2020,7 +2024,9 @@ or other systems.
 
 Default value is 0 (no wait).
 
+```
     modinit_delay=100000
+```
 
 ### modparam
 
@@ -2028,8 +2034,10 @@ The modparam command will be used to set the options of the modules.
 
 Example:
 
+```
     modparam("usrloc", "db_mode", 2)
     modparam("usrloc", "nat_bflag", 6)
+```
 
 See the documenation of the respective module to find out the available
 options.
@@ -2044,20 +2052,24 @@ parameters.
 If set to 1 (yes, on), onsend_route block is executed for received
 replies that are sent out. Default is 0.
 
-      onsend_route_reply=yes
+```
+    onsend_route_reply=yes
+```
 
 ### open_files_limit
 
 If set and bigger than the current open file limit, Kamailio will try to
 increase its open file limit to this number. Note: Kamailio must be
 started as root to be able to increase a limit past the hard limit
-(which, for open files, is 1024 on most systems). "Files" include
+(which, for open files, is `1024` on most systems). "Files" include
 network sockets, so you need one for every concurrent session
 (especially if you use connection-oriented transports, like TCP/TLS).
 
 Example of usage:
 
-      open_files_limit=2048
+```
+    open_files_limit=2048
+```
 
 ### phone2tel
 
@@ -2065,16 +2077,20 @@ By enabling this feature, Kamailio internally treats SIP URIs with
 user=phone parameter as TEL URIs. If you do not want this behavior, you
 have to turn it off.
 
-Default value: 1 (enabled)
+Default value: `1` (enabled)
 
+```
     phone2tel = 0
+```
 
 ### pmtu_discovery
 
 If enabled, the Don't Fragment (DF) bit will be set in outbound IP
 packets.
 
+```
     pmtu_discovery = 0 | 1 (default 0)
+```
 
 ### port
 
@@ -2082,7 +2098,9 @@ The port the SIP server listens to. The default value for it is 5060.
 
 Example of usage:
 
-      port=5080
+```
+    port=5080
+```
 
 ### pv_buffer_size
 
@@ -2093,7 +2111,9 @@ set the internal buffer size.
 
 Example of usage:
 
+```
     pv_buffer_size=2048
+```
 
 ### pv_buffer_slots
 
@@ -2102,21 +2122,25 @@ pseudo-variables inside. The default value is 10.
 
 Example of usage:
 
+```
     pv_buffer_slots=12
+```
 
 ### pv_cache_limit
 
 The limit how many pv declarations in the cache after which an action is
 taken. Default value is 2048.
 
+```
     pv_cache_limit=1024
+```
 
 ### pv_cache_action
 
 Specify what action to be done when the size of pv cache is exceeded. If
-0, print an warning log message when the limit is exceeded. If 1,
+`0`, print an warning log message when the limit is exceeded. If `1`,
 warning log messages is printed and the cache systems tries to drop a
-$sht(...) declaration. Default is 0.
+`$sht(...)` declaration. Default is `0`.
 
     pv_cache_action=1
 
@@ -2127,18 +2151,20 @@ Alias: run_dir
 Set the folder for creating runtime files such as MI fifo or CTL
 unixsocket.
 
-Default: /var/run/kamailio
+Default: `/var/run/kamailio`
 
 Example of usage:
 
+```
     rundir="/tmp"
+```
 
 ### received_route_mode
 
-Enable or disable the execution of event_route\[core:msg-received\]
+Enable or disable the execution of `event_route[core:msg-received]`
 routing block or its corresponding Kemi callback.
 
-Default value: 0 (disabled)
+Default value: `0` (disabled)
 
 Example of usage:
 
@@ -2154,13 +2180,14 @@ request was received. Default value is 0 (off).
 
 Example of usage:
 
-      reply_to_via=0
-      
+```
+    reply_to_via=0
+```
 
 ### route_locks_size
 
 Set the number of mutex locks to be used for synchronizing the execution
-of config script for messages sharing the same Call-Id. In other words,
+of config script for messages sharing the same `Call-Id`. In other words,
 enables Kamailio to execute the config script sequentially for the
 requests and replies received within the same dialog -- a new message
 received within the same dialog waits until the previous one is routed
@@ -2193,7 +2220,7 @@ as IP addresses are the same.
 ### server_header
 
 Set the value of Server header for replies generated by Kamailio. It
-must contain the header name, but not the ending CRLF.
+must contain the header name, but not the ending `CRLF`.
 
 Example of usage:
 
@@ -2208,12 +2235,16 @@ message.
 
 Example of usage:
 
-       server_signature=no
+```
+    server_signature=no
+```
 
 If it is enabled (default=yes) a header is generated as in the following
 example:
 
-       Server: Kamailio (<version> (<arch>/<os>))
+```
+    Server: Kamailio (<version> (<arch>/<os>))
+```
 
 ### shm_force_alloc
 
@@ -2222,20 +2253,24 @@ start time will increase, but combined with mlock_pages will guarantee
 Kamailio will get all its memory from the beginning (no more kswapd slow
 downs)
 
-shm_force_alloc = yes \| no (default no)
+```
+shm_force_alloc = yes | no (default no)
+```
 
 ### shm_mem_size
 
 Set shared memory size (in Mb).
 
+```
 shm_mem_size = 64 (default 64)
+```
 
 ### sip_parser_log
 
 Log level for printing debug messages for some of the SIP parsing
 errors.
 
-Default: 0 (L_WARN)
+Default: `0` (`L_WARN`)
 
 ``` c
 sip_parser_log = 1
@@ -2245,14 +2280,14 @@ sip_parser_log = 1
 
 Control sip parser behaviour.
 
-If set to 1, the parser is more strict in accepting messages that have
+If set to `1`, the parser is more strict in accepting messages that have
 invalid headers (e.g., duplicate To or From). It can make the system
 safer, but loses the flexibility to be able to fix invalid messages with
 config operations.
 
-If set to 0, the parser is less strict on checking validity of headers.
+If set to `0`, the parser is less strict on checking validity of headers.
 
-Default: 1
+Default: `1`
 
 ``` c
 sip_parser_mode = 0
@@ -2260,7 +2295,7 @@ sip_parser_mode = 0
 
 ### sip_warning (noisy feedback)
 
-Can be 0 or 1. If set to 1 (default value is 0) a 'Warning' header is
+Can be `0` or `1`. If set to `1` (default value is `0`) a 'Warning' header is
 added to each reply generated by Kamailio. The header contains several
 details that help troubleshooting using the network traffic dumps, but
 might reveal details of your network infrastructure and internal SIP
@@ -2268,7 +2303,9 @@ routing.
 
 Example of usage:
 
-      sip_warning=0
+```
+    sip_warning=0
+```
 
 ### socket
 
