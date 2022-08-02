@@ -2402,7 +2402,9 @@ value is 65535.
 
 Example of usage:
 
-      sql_buffer_size=131070
+```
+    sql_buffer_size=131070
+```
 
 ### statistics
 
@@ -2415,12 +2417,13 @@ the "statistics" module.
 The statistics counters are read/updated either automatically by
 Kamailio internally (e.g. tcp counters), by the script writer via the
 module functions of the "statistics" module, by the script writer using
-the $stat() pseudo variable (read-only), or via MI commands.
+the `$stat()` pseudo variable (read-only), or via MI commands.
 
 Following are some examples how to access statistics variables:
 
-**script**
+**script**:
 
+```
     modparam("statistics", "variable", "NOTIFY")
 
     (if method == "NOTIFY") {
@@ -2428,27 +2431,32 @@ Following are some examples how to access statistics variables:
     }
 
     xlog("Number of received NOTIFYs: $stat(NOTIFY)");
+```
 
-**MI**
+**RPC**:
 
+```
     # get counter value
-    kamctl fifo get_statistics NOTIFY
+    kamctl rpc stats.get_statistics NOTIFY
     # set counter to zero
-    kamctl fifo reset_statistics NOTIFY
+    kamctl rpc stats.reset_statistics NOTIFY
     # get counter value and then set it to zero
-    kamctl fifo clear_statistics NOTIFY
+    kamctl rpc stats.clear_statistics NOTIFY
 
     # or use the kamcmd tool
-    kamcmd mi get_statistics 1xx_replies
+    kamcmd stats.get_statistics 1xx_replies
+```
 
 ### stats_name_separator
 
 Specify the character used as a separator for the internal statistics'
-names. Default value is "\_".
+names. Default value is `_`.
 
 Example of usage:
 
-      stats_name_separator = "-"
+```
+    stats_name_separator = "-"
+```
 
 ### tos
 
@@ -2457,24 +2465,28 @@ and UDP).
 
 Example of usage:
 
-      tos=IPTOS_LOWDELAY
-      tos=0x10
-      tos=IPTOS_RELIABILITY
+```
+    tos=IPTOS_LOWDELAY
+    tos=0x10
+    tos=IPTOS_RELIABILITY
+```
 
 ### udp_mtu
 
-Fallback to another protocol (udp_mtu_try_proto must be set also either
+Fallback to another protocol (`udp_mtu_try_proto` must be set also either
 globally or per packet) if the constructed request size is greater then
 udp_mtu.
 
-RFC 3261 specified size: 1300. Default: 0 (off).
+RFC 3261 specified size: `1300`. Default: `0` (off).
 
+```
     udp_mtu = number
+```
 
 ### udp_mtu_try_proto
 
-If udp_mtu !=0 and udp forwarded request size (after adding all the
-"local" headers) \> udp_mtu, use this protocol instead of udp. Only the
+If `udp_mtu != 0` and udp forwarded request size (after adding all the
+"local" headers) `> udp_mtu`, use this protocol instead of udp. Only the
 Via header will be updated (e.g. The Record-Route will be the one built
 for udp).
 
@@ -2483,11 +2495,13 @@ changing, enabling this feature can lead to problems with clients which
 do not support other protocols or are behind a firewall or NAT. Use this
 only when you know what you do!
 
-See also udp_mtu_try_proto(proto) function.
+See also `udp_mtu_try_proto(proto)` function.
 
-Default: UDP (off). Recommended: TCP.
+Default: `UDP` (`off`). Recommended: `TCP`.
 
+```
     udp_mtu_try_proto = TCP|TLS|SCTP|UDP
+```
 
 ### uri_host_extra_chars
 
