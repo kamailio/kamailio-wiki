@@ -2960,11 +2960,13 @@ The following parameters allows to tweak the TCP behaviour.
 ### disable_tcp
 
 Global parameter to disable TCP support in the SIP server. Default value
-is 'no'.
+is `no`.
 
 Example of usage:
 
-      disable_tcp=yes
+```
+    disable_tcp=yes
+```
 
 ### tcp_accept_aliases
 
@@ -2972,20 +2974,21 @@ If a message received over a tcp connection has "alias" in its via a new
 tcp alias port will be created for the connection the message came from
 (the alias port will be set to the via one).
 
-Based on draft-ietf-sip-connect-reuse-00.txt, but using only the port
+Based on `draft-ietf-sip-connect-reuse-00.txt`, but using only the port
 (host aliases are dangerous, involve extra DNS lookups and the need for
 them is questionable)
 
-See force_tcp_alias for more details.
+See `force_tcp_alias` for more details.
 
 Note: For NAT traversal of TCP clients it is better to not use
 tcp_accept_aliases but just use nathelper module and
-fix_nated\_\[contact\|register\] functions.
+`fix_nated_[contact|register]()` functions.
 
-Default is "no" (off)
+Default is `no` (`off`)
 
-     tcp_accept_aliases= yes|no
-     
+```
+    tcp_accept_aliases= yes|no
+```
 
 ### tcp_accept_haproxy
 
@@ -3000,8 +3003,9 @@ use of IP-based ACLs, even behind a load-balancer.
 Please note that enabling this option will reject any inbound TCP
 connection that does not conform to the PROXY-protocol spec.
 
-For reference: A PROXY protocol -
-<https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt>
+For reference - the PROXY protocol:
+
+  - [https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt](https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt)
 
 Default value is **no**.
 
@@ -3039,10 +3043,10 @@ tcp_accept_no_cl=yes
 
 ### tcp_accept_unique
 
-If set to 1, reject duplicate connections coming from same source IP and
+If set to `1`, reject duplicate connections coming from same source IP and
 port.
 
-Default set to 0.
+Default set to `0`.
 
 ``` c
 tcp_accept_unique = 1
@@ -3053,12 +3057,14 @@ tcp_accept_unique = 1
 **Alias name: tcp_buf_write**
 
 If enabled, all the tcp writes that would block / wait for connect to
-finish, will be queued and attempted latter (see also tcp_conn_wq_max
-and tcp_wq_max).
+finish, will be queued and attempted latter (see also `tcp_conn_wq_max`
+and `tcp_wq_max`).
 
 **Note:** It also applies for TLS.
 
+```
     tcp_async = yes | no (default yes)
+```
 
 ### tcp_children
 
@@ -3068,7 +3074,9 @@ children as UDP children (see "children" parameter) will be used.
 
 Example of usage:
 
-      tcp_children=4
+```
+    tcp_children=4
+```
 
 ### tcp_clone_rcvbuf
 
@@ -3076,33 +3084,37 @@ Control if the received buffer should be cloned from the TCP stream,
 needed by functions working inside the SIP message buffer (such as
 msg_apply_changes()).
 
-Default is 0 (don't clone), set it to 1 for cloning.
+Default is `0` (don't clone), set it to `1` for cloning.
 
 Example of usage:
 
-      tcp_clone_rcvbuf=1
+```
+    tcp_clone_rcvbuf=1
+```
 
 ### tcp_connection_lifetime
 
 Lifetime in seconds for TCP sessions. TCP sessions which are inactive
 for longer than **tcp_connection_lifetime** will be closed by Kamailio.
-Default value is defined is 120. Setting this value to 0 will close the
-TCP connection pretty quick ;-).
+Default value is defined is `120`. Setting this value to 0 will close the
+TCP connection pretty quick.
 
 Note: As many SIP clients are behind NAT/Firewalls, the SIP proxy should
 not close the TCP connection as it is not capable of opening a new one.
 
 Example of usage:
 
-      tcp_connection_lifetime=3605
+```
+    tcp_connection_lifetime=3605
+```
 
 ### tcp_connection_match
 
-If set to 1, try to be more strict in matching outbound TCP connections,
+If set to `1`, try to be more strict in matching outbound TCP connections,
 attempting to lookup first the connection using also local port, not
 only the local IP and remote IP+port.
 
-Default is 0.
+Default is `0`.
 
 ``` c
 tcp_connection_match=1
@@ -3116,7 +3128,9 @@ connection problems. The default value is 10s.
 
 Example of usage:
 
-      tcp_connect_timeout=5
+```
+    tcp_connect_timeout=5
+```
 
 ### tcp_conn_wq_max
 
@@ -3124,42 +3138,52 @@ Maximum bytes queued for write allowed per connection. Attempting to
 queue more bytes would result in an error and in the connection being
 closed (too slow). If tcp_buf_write is not enabled, it has no effect.
 
+```
     tcp_conn_wq_max = bytes (default 32 K)
+```
 
 ### tcp_crlf_ping
 
 Enable SIP outbound TCP keep-alive using PING-PONG (CRLFCRLF - CRLF).
 
+```
     tcp_crlf_ping = yes | no default: yes
+```
 
 ### tcp_defer_accept
 
 Tcp accepts will be delayed until some data is received (improves
 performance on proxies with lots of opened tcp connections). See linux
-tcp(7) TCP_DEFER_ACCEPT or freebsd ACCF_DATA(0). For now linux and
+`tcp(7)` `TCP_DEFER_ACCEPT` or freebsd `ACCF_DATA(0)`. For now linux and
 freebsd only.
 
-WARNING: the linux TCP_DEFER_ACCEPT is buggy (\<=2.6.23) and doesn't
+WARNING: the linux `TCP_DEFER_ACCEPT` is buggy (`<=2.6.23`) and doesn't
 work exactly as expected (if no data is received it will retransmit syn
-acks for \~ 190 s, irrespective of the set timeout and then it will
+acks for `~ 190 s`, irrespective of the set timeout and then it will
 silently drop the connection without sending a RST or FIN). Try to use
 it together with tcp_syncnt (this way the number of retrans. SYNACKs can
 be limited => the timeout can be controlled in some way).
 
 On FreeBSD:
 
+```
     tcp_defer_accept =  yes | no (default no)
+```
 
 On Linux:
 
+```
     tcp_defer_accept =  number of seconds before timeout (default disabled)
+```
 
 ### tcp_delayed_ack
 
 Initial ACK for opened connections will be delayed and sent with the
 first data segment (see linux tcp(7) TCP_QUICKACK). For now linux only.
 
+```
     tcp_delayed_ack  = yes | no (default yes when supported)
+```
 
 ### tcp_fd_cache
 
@@ -3167,41 +3191,53 @@ If enabled FDs used for sending will be cached inside the process
 calling tcp_send (performance increase for sending over tcp at the cost
 of slightly slower connection closing and extra FDs kept open)
 
+```
     tcp_fd_cache = yes | no (default yes)
+```
 
 ### tcp_keepalive
 
 Enables keepalive for tcp (sets SO_KEEPALIVE socket option)
 
+```
     tcp_keepalive = yes | no (default yes)
+```
 
 ### tcp_keepcnt
 
 Number of keepalives sent before dropping the connection (TCP_KEEPCNT
 socket option). Linux only.
 
+```
     tcp_keepcnt = number (not set by default)
+```
 
 ### tcp_keepidle
 
 Time before starting to send keepalives, if the connection is idle
 (TCP_KEEPIDLE socket option). Linux only.
 
+```
     tcp_keepidle  = seconds (not set by default)
+```
 
 ### tcp_keepintvl
 
 Time interval between keepalive probes, when the previous probe failed
 (TCP_KEEPINTVL socket option). Linux only.
 
+```
     tcp_keepintvl = seconds (not set by default)
+```
 
 ### tcp_linger2
 
 Lifetime of orphaned sockets in FIN_WAIT2 state (overrides
 tcp_fin_timeout on, see linux tcp(7) TCP_LINGER2). Linux only.
 
+```
     tcp_linger2 = seconds (not set by default)
+```
 
 ### tcp_max_connections
 
@@ -3211,7 +3247,9 @@ DEFAULT_TCP_MAX_CONNECTIONS 2048
 
 Example of usage:
 
-      tcp_max_connections=4096
+```
+    tcp_max_connections=4096
+```
 
 ### tcp_no_connect
 
@@ -3229,7 +3267,9 @@ poll, epoll_lt, epoll_et, sigio_rt, select, kqueue, /dev/poll
 
 Example of usage:
 
-      tcp_poll_method=select
+```
+    tcp_poll_method=select
+```
 
 ### tcp_rd_buf_size
 
@@ -3260,7 +3300,9 @@ compiled in a system implementing SO_REUSEPORT (Linux \> 3.9.0, FreeBSD,
 OpenBSD, NetBSD, MacOSX). This parameter takes effect only if also the
 system on which Kamailio is running on supports SO_REUSEPORT.
 
+```
     tcp_reuse_port = yes (default no)
+```
 
 ### tcp_script_mode
 
@@ -3269,9 +3311,11 @@ the received message results in error (that can also be due to negative
 return code from a configuration script main route block). If set to 1,
 the processing continues with the connection open.
 
-Default 0 (close connection)
+Default `0` (close connection)
 
+```
     tcp_script_mode = 1
+```
 
 ### tcp_send_timeout
 
@@ -3282,22 +3326,28 @@ connections. The default value is 10s.
 
 Example of usage:
 
-      tcp_send_timeout=3
+```
+    tcp_send_timeout=3
+```
 
 ### tcp_source_ipv4, tcp_source_ipv6
 
 Set the source IP for all outbound TCP connections. If setting of the IP
 fails, the TCP connection will use the default IP address.
 
+```
     tcp_source_ipv4 = IPv4 address
     tcp_source_ipv6 = IPv6 address
+```
 
 ### tcp_syncnt
 
 Number of SYN retransmissions before aborting a connect attempt (see
 linux tcp(7) TCP_SYNCNT). Linux only.
 
+```
     tcp_syncnt = number of syn retr. (default not set)
+```
 
 ### tcp_wait_data
 
@@ -3305,7 +3355,7 @@ Specify how long to wait (in milliseconds) to wait for data on tcp
 connections in certain cases. Now applies when reading on tcp connection
 for haproxy protocol.
 
-Default: 5000ms (5secs)
+Default: `5000ms` (`5secs`)
 
 ``` c
 tcp_wait_data = 10000
@@ -3319,14 +3369,16 @@ size, it will be rounded up. It has no influenced on the number of
 datagrams queued (for that see tcp_conn_wq_max or tcp_wq_max). It has
 mostly debugging and testing value (can be ignored).
 
-Default: 2100 (\~ 2 INVITEs), can be changed at runtime.
+Default: `2100` (`~ 2 INVITEs`), can be changed at runtime.
 
 ### tcp_wq_max
 
 Maximum bytes queued for write allowed globally. It has no effect if
 tcp_buf_write is not enabled.
 
+```
     tcp_wq_max = bytes (default 10 Mb)
+```
 
 ## TLS Parameters
 
