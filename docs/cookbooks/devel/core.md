@@ -3389,46 +3389,56 @@ parameters.
 
 The port the SIP server listens to for TLS connections.
 
-Default value is 5061.
+Default value is `5061`.
 
 Example of usage:
 
-      tls_port_no=6061
+```
+    tls_port_no=6061
+```
 
 ### tls_max_connections
 
 Maximum number of ls connections (if the number is exceeded no new ls
 connections will be accepted). It cannot exceed tcp_max_connections.
 
-Default value is 2048.
+Default value is `2048`.
 
 Example of usage:
 
-      tls_max_connections=4096
+```
+    tls_max_connections=4096
+```
 
 ## SCTP Parameters
 
 ### disable_sctp
 
-Global parameter to disable SCTP support in the SIP server. see
-enable_sctp
+Global parameter to disable SCTP support in the SIP server. See also
+`enable_sctp`.
 
-Default value is 'auto'.
+Default value is `auto`.
 
 Example of usage:
 
-      disable_sctp=yes
+```
+    disable_sctp=yes
+```
 
 ### enable_sctp
 
+```
     enable_sctp = 0/1/2  - SCTP disabled (0)/ SCTP enabled (1)/auto (2), 
                            default auto (2)
+```
 
 ### sctp_children
 
 sctp children no (similar to udp children)
 
+```
     sctp_children = number 
+```
 
 ### sctp_socket_rcvbuf
 
@@ -3436,7 +3446,9 @@ Size for the sctp socket receive buffer
 
 **Alias name: sctp_socket_receive_buffer**
 
+```
     sctp_socket_rcvbuf = number 
+```
 
 ### sctp_socket_sndbuf
 
@@ -3444,26 +3456,36 @@ Size for the sctp socket send buffer
 
 **Alias name: sctp_socket_send_buffer**
 
+```
     sctp_socket_sndbuf = number
+```
 
 ### sctp_autoclose
 
-Number of seconds before autoclosing an idle association (default: 180
+Number of seconds before autoclosing an idle association (default: `180`
 s). Can be changed at runtime, but it will affect only new associations.
 E.g.:
 
+```
     $ kamcmd cfg.set_now_int sctp autoclose 120
+```
 
+```
     sctp_autoclose = seconds
+```
 
 ### sctp_send_ttl
 
 Number of milliseconds before an unsent message/chunk is dropped
-(default: 32000 ms or 32 s). Can be changed at runtime, e.g.:
+(default: `32000` ms or `32` s). Can be changed at runtime, e.g.:
 
+```
     $ kamcmd cfg.set_now_int sctp send_ttl 180000
+```
 
+```
     sctp_send_ttl = milliseconds - n
+```
 
 ### sctp_send_retries
 
@@ -3475,7 +3497,9 @@ with peers that reboot/restart or fail over to another machine.
 WARNING: use with care and low values (e.g. 1-3) to avoid "multiplying"
 traffic to unresponding hosts (default: 0).Can be changed at runtime.
 
+```
     sctp_send_retries = 1
+```
 
 ### sctp_assoc_tracking
 
@@ -3497,7 +3521,9 @@ associations were tracked.
 Config options depending on sctp_assoc_tracking being on:
 sctp_assoc_reuse.
 
+```
     sctp_assoc_tracking = yes/no
+```
 
 ### sctp_assoc_reuse
 
@@ -3512,7 +3538,9 @@ association will be automatically reused by the sctp stack. Can be
 changed at runtime (sctp assoc_reuse), but it can be turned on only if
 sctp_assoc_tracking is on.
 
+```
     sctp_assoc_reuse = yes/no
+```
 
 ### sctp_max_assocs
 
@@ -3533,7 +3561,9 @@ association will first be opened and then immediately closed. In general
 this means that the initial sip packet will be sent (as part of the
 4-way handshake).
 
+```
     sctp_max_assocs = number
+```
 
 ### sctp_srto_initial
 
@@ -3543,7 +3573,9 @@ OS specific).
 Can be changed at runtime (sctp srto_initial) but it will affect only
 new associations.
 
+```
     sctp_srto_initial = milliseconds
+```
 
 ### sctp_srto_max
 
@@ -3557,7 +3589,9 @@ details).
 Can be changed at runtime (sctp srto_max) but it will affect only new
 associations.
 
+```
     sctp_srto_max = milliseconds
+```
 
 ### sctp_srto_min
 
@@ -3574,7 +3608,9 @@ is 1.
 Can be changed at runtime (sctp srto_min) but it will affect only new
 associations.
 
+```
     sctp_srto_min = milliseconds
+```
 
 ### sctp_asocmaxrxt
 
@@ -3584,7 +3620,9 @@ It should be set to sctp_pathmaxrxt \* no. of expected paths.
 Can be changed at runtime (sctp asocmaxrxt) but it will affect only new
 associations.
 
+```
     sctp_asocmaxrxt   = number
+```
 
 ### sctp_init_max_attempts
 
@@ -3592,7 +3630,9 @@ Maximum INIT retransmission attempts (default: OS specific).
 
 Can be changed at runtime (sctp init_max_attempts).
 
+```
     sctp_init_max_attempts = number
+```
 
 ### sctp_init_max_timeo
 
@@ -3601,7 +3641,9 @@ specific.
 
 Can be changed at runtime (sctp init_max_timeo).
 
+```
     sctp_init_max_timeo = milliseconds
+```
 
 ### sctp_hbinterval
 
@@ -3611,7 +3653,9 @@ Default: OS specific.
 Can be changed at runtime (sctp hbinterval) but it will affect only new
 associations.
 
+```
     sctp_hbinterval = milliseconds
+```
 
 ### sctp_pathmaxrxt
 
@@ -3621,7 +3665,9 @@ Default: OS specific.
 Can be changed at runtime (sctp pathmaxrxt) but it will affect only new
 associations.
 
+```
     sctp_pathmaxrxt = number
+```
 
 ### sctp_sack_delay
 
@@ -3636,7 +3682,9 @@ value should be between 200 and 500 ms.
 Can be changed at runtime (sctp sack_delay) but it will affect only new
 associations.
 
+```
     sctp_sack_delay = milliseconds
+```
 
 ### sctp_sack_freq
 
@@ -3650,7 +3698,9 @@ startup).
 Can be changed at runtime (sctp sack_freq) but it will affect only new
 associations.
 
+```
     sctp_sack_freq = number
+```
 
 ### sctp_max_burst
 
@@ -3660,7 +3710,9 @@ OS specific.
 Can be changed at runtime (sctp max_burst) but it will affect only new
 associations.
 
+```
     sctp_max_burst = number
+```
 
 ## UDP Parameters
 
