@@ -3721,18 +3721,20 @@ associations.
 Enables raw socket support for sending UDP IPv4 datagrams (40-50%
 performance increase on linux multi-cpu).
 
-Possible values: 0 - disabled (default), 1 - enabled, -1 auto.
+Possible values: `0` - disabled (default), `1` - enabled, `-1` auto.
 
 In "auto" mode it will be enabled if possible (sr started as root or
-with CAP_NET_RAW). udp4_raw can be used on Linux and FreeBSD. For other
-BSDs and Darwin one must compile with -DUSE_RAW_SOCKS. On Linux one
-should also set udp4_raw_mtu if the MTU on any network interface that
-could be used for sending is smaller then 1500.
+with `CAP_NET_RAW`). `udp4_raw` can be used on Linux and FreeBSD. For other
+BSDs and Darwin one must compile with `-DUSE_RAW_SOCKS`. On Linux one
+should also set `udp4_raw_mtu` if the MTU on any network interface that
+could be used for sending is smaller then `1500`.
 
 The parameter can be set at runtime as long as sr was started with
-enough privileges (core.udp4_raw).
+enough privileges (`core.udp4_raw`).
 
+```
     udp4_raw = on
+```
 
 ### udp4_raw_mtu
 
@@ -3742,15 +3744,15 @@ used for sending. The default value is 1500. Note that on BSDs it does
 not need to be set (if set it will be ignored, the proper MTU will be
 used automatically by the kernel). On Linux it should be set.
 
-The parameter can be set at runtime (core.udp4_raw_mtu).
-
+The parameter can be set at runtime (`core.udp4_raw_mtu`).
+`
 ### udp4_raw_ttl
 
 TTL value used for UDP IPv4 packets when udp4_raw is enabled. By default
-it is set to auto mode (-1), meaning that the same TTL will be used as
+it is set to auto mode (`-1`), meaning that the same TTL will be used as
 for normal UDP sockets.
 
-The parameter can be set at runtime (core.udp4_raw_ttl).
+The parameter can be set at runtime (`core.udp4_raw_ttl`).
 
 ## Blocklist Parameters
 
@@ -3761,28 +3763,36 @@ The parameter can be set at runtime (core.udp4_raw_ttl).
 How much time a blocklisted destination will be kept in the blocklist
 (w/o any update).
 
+```
     dst_blocklist_expire = time in s (default 60 s)
+```
 
 ### dst_blocklist_gc_interval
 
 How often the garbage collection will run (eliminating old, expired
 entries).
 
+```
     dst_blocklist_gc_interval = time in s (default 60 s)
+```
 
 ### dst_blocklist_init
 
 If off, the blocklist is not initialized at startup and cannot be
 enabled runtime, that saves some memory.
 
+```
     dst_blocklist_init = on | off (default on)
+```
 
 ### dst_blocklist_mem
 
 Maximum shared memory amount used for keeping the blocklisted
 destinations.
 
+```
     dst_blocklist_mem = size in Kb (default 250 Kb)
+```
 
 ### use_dst_blocklist
 
@@ -3793,9 +3803,11 @@ attempted (an error is returned immediately).
 
 Note: using the blocklist incurs a small performance penalty.
 
-See also doc/dst_blocklist.txt.
+See also `doc/dst_blocklist.txt`.
 
+```
     use_dst_blocklist = on | off (default off)
+```
 
 ## Real-Time Parameters
 
@@ -3808,55 +3820,70 @@ Sets real time priority for all the Kamailio processes, or the timers
                           1  - the "fast" timer
                           2  - the "slow" timer
                           4  - all processes, except the timers
-       Example: real_time= 7 => everything switched to real time priority.
 
+Example: `real_time= 7` => everything switched to real time priority.
+
+```
     real_time = <int> (flags) (default off)
+```
 
 ### rt_policy
 
-Real time scheduling policy, 0 = SCHED_OTHER, 1= SCHED_RR and
-2=SCHED_FIFO
+Real time scheduling policy, `0 = SCHED_OTHER`, `1= SCHED_RR` and
+`2=SCHED_FIFO`
 
+```
     rt_policy= <0..3> (default 0)
+```
 
 ### rt_prio
 
-Real time priority used for everything except the timers, if real_time
+Real time priority used for everything except the timers, if `real_time`
 is enabled.
 
+```
     rt_prio = <int> (default 0)
+```
 
 ### rt_timer1_policy
 
 **Alias name: rt_ftimer_policy**
 
-Like rt_policy but for the "fast" timer.
+Like `rt_policy` but for the "fast" timer.
 
+```
     rt_timer1_policy=<0..3> (default 0)
+```
 
 ### rt_timer1_prio
 
 **Alias name: rt_fast_timer_prio, rt_ftimer_prio**
 
-Like rt_prio but for the "fast" timer process (if real_time & 1).
+Like `rt_prio` but for the "fast" timer process (if `real_time & 1`).
 
+```
     rt_timer1_prio=<int> (default 0)
+```
 
 ### rt_timer2_policy
 
 **Alias name: rt_stimer_policy**
 
-Like rt_policy but for the "slow" timer.
+Like `rt_policy` but for the "slow" timer.
 
+```
     rt_timer2_policy=<0..3> (default 0)
+```
 
 ### rt_timer2_prio
 
 **Alias name: rt_stimer_prio**
 
-Like rt_prio but for the "slow" timer.
+Like `rt_prio` but for the "slow" timer.
 
+```
     rt_timer2_prio=<int> (default 0)
+```
 
 ## Core Functions
 
