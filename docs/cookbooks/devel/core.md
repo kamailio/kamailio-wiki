@@ -3924,17 +3924,19 @@ according to Via header.)
 
 Example of usage:
 
-      onreply_route {
-          if(status=="200") {
-              drop(); # this works
-          }
-      }
+```
+    onreply_route {
+        if(status=="200") {
+            drop(); # this works
+        }
+    }
 
-      onreply_route[FOOBAR] {
-          if(status=="200") {
-              drop(); # this is ignored
-          }
-      }
+    onreply_route[FOOBAR] {
+        if(status=="200") {
+            drop(); # this is ignored
+        }
+    }
+```
 
 ### exit
 
@@ -3942,15 +3944,16 @@ Stop the execution of the configuration script -- it has the same
 behaviour as return(0). It does not affect the implicit action to be
 taken after script execution.
 
-    route {
-      if (route(2)) {
+```
+    request_route {
+      if (route(ABC)) {
         xlog("L_NOTICE","method $rm is INVITE\n");
       } else {
         xlog("L_NOTICE","method is $rm\n");
-      };
+      }
     }
 
-    route[2] {
+    route[ABC] {
       if (is_method("INVITE")) {
         return(1);
       } else if (is_method("REGISTER")) {
@@ -3958,8 +3961,9 @@ taken after script execution.
       } else if (is_method("MESSAGE")) {
         sl_send_reply("403","IM not allowed");
         exit;
-      };
+      }
     }
+```
 
 ### error
 
