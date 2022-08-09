@@ -3967,6 +3967,12 @@ taken after script execution.
 
 ### error
 
+```
+error("p1", "p2");
+```
+
+Not properly implemented yet - prints a log messages with the two string parameters.
+
 ### exec
 
 ### force_rport
