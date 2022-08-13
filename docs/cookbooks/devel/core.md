@@ -3975,6 +3975,13 @@ Not properly implemented yet - prints a log messages with the two string paramet
 
 ### exec
 
+Basic implementation of executing an external application with C `system()`
+fuction. Look also at the functions exported by `exec` module.
+
+```
+exec("/path/to/app");
+```
+
 ### force_rport
 
 Force_rport() adds the rport parameter to the first Via header of the
