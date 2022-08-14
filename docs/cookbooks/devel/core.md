@@ -3984,7 +3984,7 @@ exec("/path/to/app");
 
 ### force_rport
 
-Force_rport() adds the rport parameter to the first Via header of the
+The `force_rport()` adds the rport parameter to the first Via header of the
 received message. Thus, Kamailio will add the received port to the top
 most Via header in the SIP message, even if the client does not indicate
 support for rport. This enables subsequent SIP messages to return to the
@@ -4000,7 +4000,9 @@ behavior of the SIP proxy.
 
 Example of usage:
 
-      force_rport();
+```
+    force_rport();
+```
 
 ### add_rport
 
@@ -4008,40 +4010,45 @@ Alias for force_rport();
 
 ### force_send_socket
 
-Force to send the message from the specified socket (it \_must\_ be one
-of the sockets specified with the "listen" directive). If the protocol
+Force to send the message from the specified socket (it **must** be one
+of the sockets specified with the `listen` directive). If the protocol
 doesn't match (e.g. UDP message "forced" to a TCP socket) the closest
 socket of the same protocol is used.
 
-This function does not support pseudo-variables, use the set_send_socket
+This function does not support pseudo-variables, use the `set_send_socket()`
 function from the corex module instead.
 
 Example of usage:
 
-        force_send_socket(10.10.10.10:5060);
-        force_send_socket(udp:10.10.10.10:5060);
+```
+    force_send_socket(10.10.10.10:5060);
+    force_send_socket(udp:10.10.10.10:5060);
+```
 
 ### force_tcp_alias
 
 **Alias name: add_tcp_alias**
 
-force_tcp_alias(port)
+`force_tcp_alias(port)`
 
 adds a tcp port alias for the current connection (if tcp). Useful if you
 want to send all the trafic to port_alias through the same connection
-this request came from \[it could help for firewall or nat traversal\].
+this request came from (it could help for firewall or nat traversal).
 With no parameters adds the port from the message via as the alias. When
 the "aliased" connection is closed (e.g. it's idle for too much time),
 all the port aliases are removed.
 
 ### forward
 
-Forward the SIP request to destination stored in $du in stateless mode.
+Forward in stateless mode the SIP request to destination address set in `$du`
+or `$ru`.
 
 Example of usage:
 
-      $du = "sip:10.0.0.10:5060;transport=tcp";
-      forward();
+```
+    $du = "sip:10.0.0.10:5060;transport=tcp";
+    forward();
+```
 
 ### isavpflagset
 
