@@ -4073,9 +4073,11 @@ For more see:
 
 Example of usage:
 
+```
       if(isflagset(3)) {
           log("flag 3 is set\n");
       };
+```
 
 Kamailio also supports named flags. They have to be declared at the
 beginning of the config file with:
@@ -4084,33 +4086,44 @@ beginning of the config file with:
 
 Example:
 
-         flags test, a:1, b:2 ;
-         route{
-                setflag(test);
-                if (isflagset(a)){ # equiv. to isflagset(1)
-                  ....
-                }
-                resetflag(b);  # equiv. to resetflag(2) 
+```
+    flags test, a:1, b:2 ;
+    request_route {
+        setflag(test);
+        if (isflagset(a)){ # equiv. to isflagset(1)
+            ....
+        }
+        resetflag(b);  # equiv. to resetflag(2)
+```
 
 ### is_int
 
 Checks if a pseudo variable argument contains integer value.
 
+```
     if(is_int("$avp(foobar)")) {
       log("foobar contains an integer\n");
     }
+```
 
 ### log
 
 Write text message to standard error terminal or syslog. You can specify
-the log level as first parameter.
+the log level (the integer id) as first parameter.
+
+The parameters are static values. If you want dynamic parameters with
+variables, look at `xlog` module.
 
 For more see:
-<http://www.kamailio.org/dokuwiki/doku.php/tutorials:debug-syslog-messages>
+
+  - [https://www.kamailio.org/dokuwiki/doku.php/tutorials:debug-syslog-messages](https://www.kamailio.org/dokuwiki/doku.php/tutorials:debug-syslog-messages)
 
 Example of usage:
 
+```
       log("just some text message\n");
+      log(1, "another text message\n");
+```
 
 ### prefix
 
@@ -4118,7 +4131,9 @@ Add the string parameter in front of username in R-URI.
 
 Example of usage:
 
+```
       prefix("00");
+```
 
 ### resetavpflag
 
