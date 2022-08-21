@@ -2085,11 +2085,22 @@ Default value: `1` (enabled)
 
 ### pmtu_discovery
 
-If enabled, the Don't Fragment (DF) bit will be set in outbound IP
-packets.
+If set to 1, the don't-fragment (DF) bit will be set in outbound IP
+packets, but not fragmentation from the kernel will be done for IPv4
+and IPv6. This means that packets might be dropped and its up to the
+user to reduce the packet size and try again.
+
+If set to 2, the kernel will will fragment a packet if needed
+according to the path MTU, or will set the don't-fragment flag
+otherwise. For IPv6 the kernel will fragment a packet if needed
+according to the path MTU. The kernel keeps track of the path MTU
+per destination host.
+
+The default is 0, do not set the don't-fragment bit or fragment
+packets for IPv4 and IPv6.
 
 ```
-    pmtu_discovery = 0 | 1 (default 0)
+    pmtu_discovery = 0 | 1 | 2 (default 0)
 ```
 
 ### port
