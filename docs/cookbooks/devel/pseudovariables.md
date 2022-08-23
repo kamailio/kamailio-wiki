@@ -2276,6 +2276,10 @@ moment is represented by **seconds.microseconds**.
     retrieved)
 -   $TV(Sn) - string representation seconds.microseconds (not cached,
     taken at that moment)
+-   $TV(Sm) - string representation of a always increasing monotonic
+    counter. Note that even if is based on clock, it starts from an
+    unspecified point in time, so should really be treated as an
+    opaque counter.
 
 ## Next hop address
 
