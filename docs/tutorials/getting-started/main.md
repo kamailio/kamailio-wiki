@@ -277,15 +277,15 @@ directly to the database server.
 
 ### kamdbctl
 
-Kamctl is part of Kamailio project (in the same source tree) and
+Kamdbctl is part of Kamailio project (in the same source tree) and
 installed by default.
 
 It uses the same configuration file like **kamctl**, respectively the
 **kamctlrc**.
 
 The tool can be used to create and manage the database structure needed
-by Kamailio, therefore it should be immediately after Kamailio
-installation, in case you plan to run Kamailio with a database backend.
+by Kamailio, therefore it should be run immediately after Kamailio
+installation if you plan to run Kamailio with a database backend.
 
 It is not used for managing the records inside the database tables, just
 for database structure and access to the database (e.g.,
@@ -294,7 +294,7 @@ inside database table, **kamctl** is the tool that has to be used.
 
 ### kamcmd
 
-Kamctl is part of Kamailio project (in the same source tree) and
+Kamcmd is part of Kamailio project (in the same source tree) and
 installed by default.
 
 This is an application that can send RPC commands to Kamailio from
