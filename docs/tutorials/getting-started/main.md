@@ -251,7 +251,7 @@ enabled by defining WITH_NAT:
 #!define WITH_NAT
 ```
 
-You have to install RTPProxy applicationand configure it to use the same
+You have to install RTPProxy application and configure it to use the same
 control socket as in **kamailio.cfg** parameter for **rtpproxy** module.
 
 ## Tools
