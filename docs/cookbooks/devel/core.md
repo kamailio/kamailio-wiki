@@ -2671,8 +2671,8 @@ DNS client.
 Kamailio has an internal DNS resolver with caching capabilities. If this
 caching resolver is activated (default setting) then the system's stub
 resolver won't be used. Thus, also local name resolution configuration
-like /etc/hosts entries will not be used. If the DNS cache is
-deactivated (use_dns_cache=no), then system's resolver will be used. The
+like `/etc/hosts` entries will not be used. If the DNS cache is
+deactivated (`use_dns_cache=no`), then system's resolver will be used. The
 DNS failover functionality in the tm module references directly records
 in the DNS cache (which saves a lot of memory) and hence DNS based
 failover only works if the internal DNS cache is enabled.
@@ -2733,6 +2733,8 @@ so turning dns to yes is not recommended.
 Default is `no`.
 
 ### rev_dns
+
+**Alias Name: dns_rev_via**
 
 This parameter controls if the SIP server will try doing a reverse DNS
 lookup on the source IP of a sip request to decide if adding a
@@ -2952,6 +2954,8 @@ Example of usage:
 
 ### use_dns_cache
 
+**Alias name: dns_use_cache**
+
 Tells if DNS responses are cached - this means that the internal DNS
 resolver (instead of the system's stub resolver) will be used. If set to
 "off", disables caching of DNS responses and, as side effect, DNS
@@ -2960,9 +2964,17 @@ failover. Default is "on". Settings can be changed also during runtime
 
 ### use_dns_failover
 
+**Alias name: dns_use_failover**
+
 ```
 use_dns_failover = on | off (default off)
 ```
+
+If `on` and sending a request fails (due to not being allowed from an `onsend_route`,
+send failure, blocklisted destination or, when using tm, invite timeout), and the
+destination resolves to multiple ip addresses and/or multiple `SRV` records, the send
+will be re-tried using the next ip/record. In `tm` case, a new branch will be
+created for each new send attempt.
 
 ## TCP Parameters
 
