@@ -136,6 +136,10 @@ in embedded Lua/Python/JavaScript/Ruby/... SIP routing scripts:
 
 -   Development:
     <https://kamailio.org/docs/tutorials/devel/kamailio-kemi-framework/>
+-   Version 5.6.x:
+    <https://kamailio.org/docs/tutorials/5.6.x/kamailio-kemi-framework/>
+-   Version 5.5.x:
+    <https://kamailio.org/docs/tutorials/5.5.x/kamailio-kemi-framework/>
 -   Version 5.4.x:
     <https://kamailio.org/docs/tutorials/5.4.x/kamailio-kemi-framework/>
 
@@ -240,7 +244,7 @@ Old Exports APIs:
 
 ## Disclaimer
 
-📓 The initial content was migrated to github from an open wiki portal, where people could contribute
+📓 The initial content was migrated to github.com from an open wiki portal, where people could contribute
 without any restrictions. Should anyone notice any *illegal* content please email to
 *sr-dev@lists.kamailio.org* or open an issue. **kamailio.org** organization is not responsible
 for the content contributed by external people and commits to react in a reasonable time when
