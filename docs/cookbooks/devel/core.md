@@ -1575,13 +1575,24 @@ the traffic.
 ### loadmodule
 
 Loads a module for later usage in the configuration script. The modules
-is searched in the path specified by `loadpath`.
+is searched in the path specified by `loadpath` (or `mpath`).
 
-Prototype: `loadmodule "modulepath"`
+Prototypes:
+
+  - `loadmodule "modulepath"`
+  - `loadmodule("modulepath")`
+  - `loadmodule("modulepath", "opts")`
 
 If `modulepath` is only `modulename` or `modulename.so`, then Kamailio will
 try to search also for `modulename/modulename.so`, very useful when
 using directly the version compiled in the source tree.
+
+The `opts` parameter is a list of characters that can specify loading options.
+They can be:
+
+  - `g` (or `G`) - open the module shared object file with `RTLD_GLOBAL` set,
+  which can be used for modules related to external scripting languages to avoid
+  reloading.
 
 Example of usage:
 
@@ -1592,6 +1603,7 @@ Example of usage:
     loadmodule "modules/usrloc.so"
     loadmodule "tm"
     loadmodule "dialplan.so"
+    loadmodule("app_lua.so", "g")
 ```
 
 ### loadmodulex
