@@ -304,7 +304,11 @@ Available directives:
 Predefined keywords:
 
 -   `KAMAILIO_X[_Y[_Z]]` - Kamailio versions
--   ``MOD_X` - when module `X` has been loaded
+-   `MOD_X` - when module `X` has been loaded
+-   `KAMAILIO_VERSION` - associated with a number representation of Kamailio
+     version (e.g., for version `X.Y.Z`, the value is `X00Y00Z`, representing
+    `X*1000000 + Y*1000 + z`)
+-   `OS_NAME` - associated with a string representing the Operating System name
 
 Examples:
 
@@ -317,7 +321,7 @@ MOD_acc
 MOD_corex
 ```
 
-See `kamctl core.ppdefines_full` for full list.
+See `kamctl rpc core.ppdefines_full` for full list.
 
 Among benefits:
 
