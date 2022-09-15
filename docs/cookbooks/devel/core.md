@@ -296,8 +296,9 @@ Available directives:
 -   `#!define NAME VALUE` - define a keyword with value
 -   `#!ifdef NAME` - check if a keyword is defined
 -   `#!ifndef` - check if a keyword is not defined
--   `#!else` - switch to false branch of `ifdef/ifndef` region
--   `#!endif` - end `ifdef/ifndef` region
+-   `#!ifexp` - check if an expression is true (see corresponding section for more)
+-   `#!else` - switch to false branch of `ifdef/ifndef/#!ifexp` region
+-   `#!endif` - end `ifdef/ifndef/#!ifexp` region
 -   `#!trydef` - add a define if not already defined
 -   `#!redefine` - force redefinition even if already defined
 
@@ -434,6 +435,129 @@ request_route {
         the directive lines clean and only comment on a line before or
         after.
 
+### ifexp
+
+Evaluate an expression and if true, then enable first region, otherwise
+enable the `#!else` region (if exists).
+
+The expression has to be till the end of the line (no support for multi-line yet).
+
+The evaluation is done using `snexpr` (which is embedded inside Kamailio code):
+
+- [https://github.com/miconda/snexpr](https://github.com/miconda/snexpr)
+
+Defined IDs can be used inside expressions with the following characteristics:
+
+- if there is an associated value, then the value is used as a string, with the
+enclosing quotes being removed
+- if there is no associated value, but the ID is defined, then the value `1`
+(integer) is used (equivalent of `true`)
+- if the ID is not defined, then the value `0` is used (equivalent of `false`)
+
+The result of an expression is evaluated to:
+
+- `true` if it is a number different than `0`
+- `false` if it is number `0`
+- `true` if it is a string with length greater than `0`
+- `false` if it is an empty string (length is `0`)
+
+Comparison operations between two strings are done using `strcmp(s1, s2)` and
+it is considered:
+
+- `s1 < s2` -  if the result of `strcmp(s1, s2)` is negative
+- `s1 == s2` -  if the result of `strcmp(s1, s2)` is `0`
+- `s1 > s2` -  if the result of `strcmp(s1, s2)` is positive
+
+Operations between two values with different types are done by converting
+the second value (right operand) to the type of the first value (left operand).
+
+Examples:
+
+```
+1 + "20" -> converted to: 1 + 20 (result: 21)
+```
+
+```
+"1" + 20 -> converted to: "1" + "20" (result: "120")
+```
+
+```
+4 > "20" -> converted to: 4 > 20 (result: false)
+```
+
+```
+"4" > 20 -> converted to: "4" > "20" (result: true)
+```
+
+#### Available Operators
+
+Arithmetic operations:
+
+  - `+` - addition
+  - `-` - subtraction
+  - `*` - multiplication
+  - `/` - division
+  - `%` - modulus (remainder)
+  - `**` - power
+
+Bitwise operations
+
+  - `<<` - shift left
+  - `>>` - shift right
+  - `&` - and
+  - `|` - or
+  - `^` - xor (unary bitwise negation)
+
+Logical operations:
+
+  - `==` - equal
+  - `!=` - not equal (different)
+  - `<` - less than
+  - `>` - greater than
+  - `<=` - less than or equal to
+  - `>=` - greater than or equal to
+  - `&&` - and
+  - `||` - or
+  - `!` - unary not
+
+String operations:
+
+  - `+` - concatenation
+
+Other operations:
+
+  - `=` - assignment
+  - `( ... )` - parenthesis to group parts of the expression
+  - `,` - comma (separates expressions or function parameters)
+
+#### ifexpr examples
+
+```
+#!ifexp KAMAILIO_VERSION >= 5006000
+...
+#!else
+...
+#!endif
+
+
+#!ifexpr MOD_xlog && (OS_NAME == "darwin")
+...
+#!endif
+
+
+#!define WITH_NAT
+#!define WITH_RTPENGINE
+
+#!ifexpr WITH_NAT && WITH_RTPENGINE
+...
+#!endif
+
+
+#!ifexpr WITH_RTPENGINE || WITH_RTPPROXY
+...
+#!endif
+```
+
 ### defenv
 
 Preprocessor directive to define an ID to the value of an environment
@@ -483,6 +607,34 @@ quotes to make it convenient to be used as a string token.
 #!defenvs ID=ENVVAR
 ```
 
+### trydefenv
+
+``` c
+#!trydefenv ID=ENVVAR
+```
+
+Similar to **defenv**, but will not error if the environmental variable
+is not set. This allows for boolean defines via system ENVVARs. For
+example, using an environmental variable to toggle loading of db_mysql:
+
+``` c
+#!trydefenv WITH_MYSQL
+
+#!ifdef WITH_MYSQL
+loadmodule "db_mysql.so"
+#!ifdef
+```
+
+### trydefenvns
+
+Similar to **#!trydefenv**, but the value is defined in between double
+quotes to make it convenient to be used as a string token.
+
+``` c
+#!trydefenvs ENVVAR
+#!trydefenvs ID=ENVVAR
+```
+
 ### subst
 
 -   perform substitutions inside the strings of config (note that define
@@ -524,34 +676,6 @@ Similar to `#!subst`, but in addition it adds a `#!define ID "subst"`
 (note the difference from `#!substdef` that the value for define is
 enclosed in double quotes, useful when the define is used in a place for
 a string value).
-
-### trydefenv
-
-``` c
-#!trydefenv ID=ENVVAR
-```
-
-Similar to **defenv**, but will not error if the environmental variable
-is not set. This allows for boolean defines via system ENVVARs. For
-example, using an environmental variable to toggle loading of db_mysql:
-
-``` c
-#!trydefenv WITH_MYSQL
-
-#!ifdef WITH_MYSQL
-loadmodule "db_mysql.so"
-#!ifdef
-```
-
-### trydefenvns
-
-Similar to **#!trydefenv**, but the value is defined in between double
-quotes to make it convenient to be used as a string token.
-
-``` c
-#!trydefenvs ENVVAR
-#!trydefenvs ID=ENVVAR
-```
 
 ## Core Keywords
 
