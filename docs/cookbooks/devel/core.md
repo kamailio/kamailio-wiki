@@ -530,7 +530,7 @@ Other operations:
   - `( ... )` - parenthesis to group parts of the expression
   - `,` - comma (separates expressions or function parameters)
 
-#### ifexpr examples
+#### ifexp examples
 
 ```
 #!ifexp KAMAILIO_VERSION >= 5006000
@@ -540,7 +540,7 @@ Other operations:
 #!endif
 
 
-#!ifexpr MOD_xlog && (OS_NAME == "darwin")
+#!ifexp MOD_xlog && (OS_NAME == "darwin")
 ...
 #!endif
 
@@ -548,12 +548,12 @@ Other operations:
 #!define WITH_NAT
 #!define WITH_RTPENGINE
 
-#!ifexpr WITH_NAT && WITH_RTPENGINE
+#!ifexp WITH_NAT && WITH_RTPENGINE
 ...
 #!endif
 
 
-#!ifexpr WITH_RTPENGINE || WITH_RTPPROXY
+#!ifexp WITH_RTPENGINE || WITH_RTPPROXY
 ...
 #!endif
 ```
