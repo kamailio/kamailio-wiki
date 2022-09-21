@@ -558,6 +558,29 @@ Other operations:
 #!endif
 ```
 
+### defexp
+
+Preprocessor directive to define an ID to the value of an expression.
+
+``` c
+#!defenv ID STM
+```
+
+The evaluation of `STM` is done using `snexpr`, see the section for `#!ifexp`
+for more details about how the expression can be built, what data types and
+operators are supported.
+
+Examples:
+
+```
+#!define IPADDR 127.0.0.1
+
+#!defexp SIPURI "sip:" + IPADDR + ":5060"
+#!defexp QSIPURI '"sip:' + IPADDR + ':5060"'
+
+#!defexp V16 1<<4
+```
+
 ### defenv
 
 Preprocessor directive to define an ID to the value of an environment
