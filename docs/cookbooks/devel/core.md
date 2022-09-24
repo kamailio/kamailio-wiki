@@ -581,6 +581,11 @@ Examples:
 #!defexp V16 1<<4
 ```
 
+### defexps
+
+Preprocessor directive similar to `#!defexp`, but the the result being enclosed
+in double quotes, suitable to be used for string values.
+
 ### defenv
 
 Preprocessor directive to define an ID to the value of an environment
