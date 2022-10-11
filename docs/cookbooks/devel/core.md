@@ -230,6 +230,11 @@ if($var(x)>10)
 
 ## Config Pre-Processor Directives
 
+Pre-processor directives are evaluated before building the execution
+tree (before 'understanding' configuration file content). They require an
+end-of-line (`\n`) after each one in order to be properly identified
+(e.g., `#!else\n`, `#!endif\n`).
+
 ### include_file
 
 ```
