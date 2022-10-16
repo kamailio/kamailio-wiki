@@ -5498,7 +5498,7 @@ The name of the log engine can be:
         -   **j** - the log prefix and message fields are printed in
             JSON structure format, detecting if they are enclosed in
             between **{ }** or adding them as a **text** field
-        -   **M** - strip EOL ('\\n') from the value of the log message
+        -   **M** - strip EOL (`\n`) from the value of the log message
             field
         -   **N** - do not add EOL at the end of JSON document
         -   **p** - the log prefix is printed as it is in the root json
@@ -5507,17 +5507,24 @@ The name of the log engine can be:
         -   **U** - CEE (Common Event Expression) schema format -
             <https://cee.mitre.org/language/1.0-beta1/core-profile.html>
 
-Example of JSON logs when running Kamailio with
-"**--log-engine=json:M**" :
+Example of JSON logs when running Kamailio with `--log-engine=json:M` :
 
+```
     { "idx": 1, "pid": 18239, "level": "DEBUG", "module": "maxfwd", "file": "mf_funcs.c", "line": 74, "function": "is_maxfwd_present", "logprefix": "{1 1 OPTIONS 715678756@192.168.188.20} ", "message": "value = 70 " }
 
     { "idx": 1, "pid": 18239, "level": "DEBUG", "module": "core", "file": "core/socket_info.c", "line": 644, "function": "grep_sock_info", "logprefix": "{1 1 OPTIONS 715678756@192.168.188.20} ", "message": "checking if host==us: 9==9 && [127.0.0.1] == [127.0.0.1]" }
+```
 
-Example config for printing log message with **j** flag:
+Example config for printing log message with `j` flag:
 
+
+```
     xinfo("{ \"src_ip\": \"$si\", \"method\": \"$rm\", \"text\": \"request received\" }");
+```
 
-Example config for printing log messages with **p** flag:
+Example config for printing log messages with `p` flag:
 
+```
     log_prefix=", \"src_ip\": \"$si\", \"tv\": $TV(Sn), \"mt\": $mt, \"ua\": \"$(ua{s.escape.common})\", \"cseq\": \"$hdr(CSeq)\""
+```
+
