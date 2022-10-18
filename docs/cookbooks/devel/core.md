@@ -5278,8 +5278,6 @@ pseudo-variables can be used in left side of an assignment:
 -   `$sf` - to set script flags value
 -   `$bf` - to set branch flags value
 
-<!-- -->
-
     $var(a) = 123;
 
 For avp's there a way to remove all values and assign a single value in
@@ -5318,7 +5316,7 @@ Example:
     $var(a) = 4 + ( 7 & ( ~2 ) );
 
 NOTE: to ensure the priority of operands in expression evaluations do
-use <u>parenthesis</u>.
+use **parenthesis**.
 
 Arithmetic expressions can be used in condition expressions.
 
@@ -5354,7 +5352,6 @@ time and they are the same).
     and then perform the operation. Exception: the left operand is
     undef. This applies to the following operators: `+`, `==` and `!=`.
 
-<!-- -->
 
        Special case: undef as left operand:
        For +: undef + expr -> undef is converted to string => "" + expr.
@@ -5365,14 +5362,12 @@ time and they are the same).
 1.  expression evaluation changes: Kamailio will auto-convert to integer
     or string in function of the operators:
 
-<!-- -->
 
          int(undef)==0,  int("")==0, int("123")==123, int("abc")==0
          str(undef)=="", str(123)=="123".
 
 1.  script operators for dealing with empty/undefined variables
 
-<!-- -->
 
         defined expr - returns true if expr is defined, and false if not.
                        Note: only a standalone avp or pvar can be
