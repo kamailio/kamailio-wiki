@@ -4328,7 +4328,7 @@ Example of usage:
 
 The return() function allows you to return any integer value from a
 called route() block. You can test the value returned by a route using
-[`$retcode`](devel#retcode) or `$?` variable.
+`$retcode` variable (which is same as `$rc` or `$?`).
 
 `return(0)` is same as [`exit()`](devel#exit);
 
@@ -4343,15 +4343,16 @@ is equivalent with exit `[val]`.
 
 Example usage:
 
-    route {
-      if (route(2)) {
+```
+    request_route {
+      if (route(RET)) {
         xlog("L_NOTICE","method $rm is INVITE\n");
       } else {
         xlog("L_NOTICE","method $rm is REGISTER\n");
       };
     }
 
-    route[2] {
+    route[RET] {
       if (is_method("INVITE")) {
         return(1);
       } else if (is_method("REGISTER")) {
@@ -4360,6 +4361,24 @@ Example usage:
         return(0);
       };
     }
+```
+
+IMPORTANT: do not compare route block or module function execution in a condition
+with the value of the return code. Next example is showing a wrong use:
+
+```
+    request_route {
+      if (route(RET) == -2) {
+        xinfo("return is -2\n");
+      } else {
+        xinfo("return is not -2\n"); ### THIS IS GOING TO BE EXECUTED
+      }
+    }
+
+    route[RET] {
+      return -2;
+    }
+```
 
 See also the FAQ for how the function return code is evaluated:
 
