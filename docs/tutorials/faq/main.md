@@ -697,9 +697,9 @@ while( $var(i) <= $var(n) ) {
 📃 Configuration file interpreter evaluates the return code of a
 function as follow:
 
--   \<0 (negative value) - it is evaluated to false
--   \>0 (positive value) - it is evaluated to true
--   =0 (zero) - it is evaluated as exit (stop execution of configuration
+-   `<0` (negative value) - it is evaluated to false
+-   `>0` (positive value) - it is evaluated to true
+-   `=0` (zero) - it is evaluated as exit (stop execution of configuration
     file)
 
 Example:
@@ -729,6 +729,11 @@ Note that you can use $rc to get the return code value, like:
 ``` c
 function();
 xlog("returned code by function() is $rc\n");
+
+function();
+if($rc < 0) {
+    xlog("returned code by function() is negative\n");
+}
 ```
 
 However, if return code is 0, the next action after function() is not
@@ -787,6 +792,18 @@ to false, for example:
 $var(x) = 1;
 if($var(x)) {
   # do something
+}
+```
+
+IMPORTANT: do not compare the execution of a function with the value of the
+return code, it is not matching as expected - the next example shows such a
+wrong usage:
+
+```
+if(function_returns_two() == 2) {
+   # it does not go here
+} else {
+   # it goes here
 }
 ```
 
