@@ -4384,6 +4384,17 @@ See also the FAQ for how the function return code is evaluated:
 
 -   [Frequently Asked Questions](../tutorials/../../tutorials/faq/main.md#how-is-the-function-return-code-evaluated)
 
+Note: starting with version `5.7.0-dev`, this behaviour can be changed with
+`return_mode` global parameter.
+
+### return_mode
+
+Control the return code evaluation mode:
+
+  - 0 (default) - evaluation is like so far (negative is false, positiv is true)
+  - 1 - propagate return value and evaluation has to be done with `>0` or `<0`, otherwise
+  `value!=0` is evaluated to true no matter is negative or positive
+
 ### revert_uri
 
 Set the R-URI to the value of the R-URI as it was when the request was
