@@ -807,6 +807,9 @@ if(function_returns_two() == 2) {
 }
 ```
 
+Note: starting with version `5.7.0-dev`, this return code evaluation can be changed with
+`return_mode` global parameter.
+
 ### How is the SIP request retransmission handled?
 
 📃 The next snippet is detecting retransmissions:
