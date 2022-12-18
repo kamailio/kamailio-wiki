@@ -149,10 +149,11 @@ Important: be aware of preprocessor directives that start with `#!`
 
 ### Values
 
-There are three types of values:
+There are three types of values used for parameters, assignments, arithmetic
+or string expressions:
 
 -   integer - numbers of 32bit size
--   boolean - aliases to 1 (true, on, yes) or 0 (false, off, no)
+-   boolean - aliases to `1` (`true`, `on`, `yes`) or `0` (`false`, `off`, `no`)
 -   string - tokens enclosed in between double or single quotes
 
 Example:
@@ -172,6 +173,9 @@ Example:
   64
 
 ```
+
+Note: be aware of specific rules for logical evaluation of expressions and
+return codes, see the docs for `IF` and `return`.
 
 ### Identifiers
 
@@ -4332,7 +4336,7 @@ called route() block. You can test the value returned by a route using
 
 `return(0)` is same as [`exit()`](devel#exit);
 
-In bool expressions:
+In logical evaluation expressions:
 
 -   Negative is FALSE
 -   Positive is TRUE
