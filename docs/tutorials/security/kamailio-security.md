@@ -125,7 +125,7 @@ Or you can just tell Kamailio to not put a server header:
     server_signature=no
 
 In the same category you have the sip_warning parameter, which is by
-default enabled. This setting exposes a lot of information about your
+default disabled. This setting exposes a lot of information about your
 infrastructure. In production it is advisable to just disable:
 
     sip_warning=0
