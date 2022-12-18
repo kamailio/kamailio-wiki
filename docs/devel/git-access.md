@@ -6,7 +6,7 @@ source code repository hosted at git.sip-router.org .
 
 ## Cloning Repository for Write Operations
 
-Each developer has an user ID for accessing the repository via ssh,
+Each developer has a user ID for accessing the repository via ssh,
 which allow push operations. Cloning can be done via command:
 
     git clone ssh://USERID@git.sip-router.org/kamailio 

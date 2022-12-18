@@ -79,7 +79,7 @@ The corresponding database URL in kamailio.cfg:
 
     #!define DBURL "mongodb://localhost/kamailio"
 
--   if MongoDB is on local host and there is an username and password to
+-   if MongoDB is on local host and there is a username and password to
     connect to it:
 
 <!-- -->

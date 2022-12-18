@@ -1257,7 +1257,7 @@ You can specify an advertise address (like ip:port) per listening socket
     listen=udp:10.10.10.10:5060 advertise  11.11.11.11:5060
 ```
 
-The advertise address must be the format 'address:port', the protocol is
+The advertise address must be in the format 'address:port', the protocol is
 taken from the bind socket. The advertise address is a convenient
 alternative to advertised_address / advertised_port cfg parameters or
 set_advertised_address() / set_advertised_port() cfg functions.
@@ -1607,7 +1607,7 @@ mem_status_mode=1
 
 ### mem_summary
 
-Parameter to control printing of mmemory debugging information displayed
+Parameter to control printing of memory debugging information displayed
 on exit or SIGUSR1. The value can be composed by following flags:
 
 -   1 - dump all the pkg used blocks (status)
@@ -1747,7 +1747,7 @@ taken. Default value is 2048.
 ### pv_cache_action
 
 Specify what action to be done when the size of pv cache is exceeded. If
-0, print an warning log message when the limit is exceeded. If 1,
+0, print a warning log message when the limit is exceeded. If 1,
 warning log messages is printed and the cache systems tries to drop a
 $sht(...) declaration. Default is 0.
 
@@ -2214,7 +2214,7 @@ Interval in seconds after which the dns cache is garbage collected
 ### dns_cache_init
 
 If off, the dns cache is not initialized at startup and cannot be
-enabled runtime, that saves some memory.
+enabled at runtime, this saves some memory.
 
     dns_cache_init = on | off (default on)
 
@@ -3045,7 +3045,7 @@ entries).
 ### dst_blacklist_init
 
 If off, the blacklist is not initialized at startup and cannot be
-enabled runtime, that saves some memory.
+enabled at runtime, this saves some memory.
 
     dst_blacklist_init = on | off (default on)
 
@@ -3223,7 +3223,7 @@ signaling.
 
 The rport parameter is defined in RFC 3581.
 
-Note: there is also a force_rport parameter which changes the gobal
+Note: there is also a force_rport parameter which changes the global
 behavior of the SIP proxy.
 
 Example of usage:

@@ -110,7 +110,7 @@ The 'name' can be:
 -   ruid - return the ruid of the branch (Record internal Unique ID from
     usrloc)
 
-The PV can take an index to access a specif branch:
+The PV can take an index to access a specific branch:
 $(branch(name)\[index\])
 
 Example:
@@ -172,11 +172,11 @@ in configuration file)\</fc>
 
 ### $ci - Call-Id
 
-**$ci** - reference to body of call-id header
+**$ci** - reference to the value of call-id header
 
 ### $cl - Content-Length
 
-**$cl** - reference to body of content-length header
+**$cl** - reference to the value of content-length header
 
 ### $cnt(pv) - Count number of pvs
 
@@ -199,11 +199,11 @@ $rm to get the method (works also for responses).
 
 ### $ct - Contact header
 
-**$ct** - reference to body of contact header
+**$ct** - reference to the value of contact header
 
 ### $cT - Content-Type
 
-**$cT** - reference to body of content-type header
+**$cT** - reference to the value of content-type header
 
 ### $dd - Domain of destination URI
 
@@ -731,7 +731,7 @@ Setting a variable to null is actually initializing the value to integer
 
 **Note:** A script variable persists over the SIP-Router process in
 which it was initialized, so be sure of giving it a new value before
-reading it or you'll get the value asigned in any other previous message
+reading it or you'll get the value assigned in any other previous message
 processed by the same SIP-Router process (pid).
 
 \<fc #0000FF>It is a R/W variable (you can assign values to it directly
@@ -1074,7 +1074,7 @@ including a custom value at time of assignment.
 
 ### $mcinc(key)
 
-Do a atomic increment operation on the value stored in memcached. You
+Do an atomic increment operation on the value stored in memcached. You
 need to add a value previously.
 
 \<fc #0000ff>It is a R/W variable, you can assign values to it directly
@@ -1096,7 +1096,7 @@ The “key” can be:
 
 ### $mcdec(key)
 
-Do a atomic decrement operation on the value stored in memcached. You
+Do an atomic decrement operation on the value stored in memcached. You
 need to add a value previously.
 
 \<fc #0000ff>It is a R/W variable, you can assign values to it directly
@@ -1142,7 +1142,7 @@ Example:
 ### $T_reply_ruid
 
 -   the ruid stored in the current branch of the transaction. The ruid
-    is stored in a branch from the details in a contact binding. In a
+    is stored in a branch from the details in a contact binding. In an
     event_route\[tm:branch-failure\] block, this is the ruid of the
     branch that sent a failure reply. In a failure_route\[\] block, this
     is the ruid of the winning failure response.
@@ -1225,7 +1225,7 @@ Note: the pair (id_index,id_label) uniquely identifies a transaction.
 
 The **name** can be:
 
--   flags - Flags of the branch. In a event_route\[tm:branch-failure\]
+-   flags - Flags of the branch. In an event_route\[tm:branch-failure\]
     block, this is the flags of the branch that sent a failure reply. In
     a failure_route\[\] block, this is the flags of the winning failure
     response.

@@ -170,7 +170,7 @@ thousands of packets passing over your screen. (stealing content from
 ### Pike
 
 The pike module tracks the number of SIP messages per source IP address,
-per period. Pike is a very easy to add to your config:
+per period. Pike is very easy to add to your config:
 
     loadmodule "pike.so"
      

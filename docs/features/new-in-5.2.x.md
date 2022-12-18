@@ -60,7 +60,7 @@ Presence User Agent implementation with JSON messages.
     -   reload feature enabbled by default, set to 0 to disable
 -   new module parameter - log_mode
     -   control what is printed in log messages by module
-    -   if bit 1 is set, the it prints the KEMI exports
+    -   if bit 1 is set, then it prints the KEMI exports
 
 ### app_python
 
@@ -511,7 +511,7 @@ Presence User Agent implementation with JSON messages.
     -   pv_cache_limit - the limit how many pv declarations in the cache
         after which an action is taken. Default value is 2048
     -   pv_cache_action - specify what action to be done when the size
-        of pv cache is exceeded. If 0, print an warning log message when
+        of pv cache is exceeded. If 0, print a warning log message when
         the limit is exceeded. If 1, warning log messages is printed and
         the cache systems tries to drop a $sht(...) declaration. Default
         is 0

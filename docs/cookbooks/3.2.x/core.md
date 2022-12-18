@@ -1338,7 +1338,7 @@ Interval in seconds after which the dns cache is garbage collected
 ### dns_cache_init
 
 If off, the dns cache is not initialized at startup and cannot be
-enabled runtime, that saves some memory.
+enabled at runtime, this saves some memory.
 
     dns_cache_init = on | off (default on)
 
@@ -2043,7 +2043,7 @@ entries).
 ### dst_blacklist_init
 
 If off, the blacklist is not initialized at startup and cannot be
-enabled runtime, that saves some memory.
+enabled at runtime, this saves some memory.
 
     dst_blacklist_init = on | off (default on)
 
@@ -2289,7 +2289,7 @@ signaling.
 
 The rport parameter is defined in RFC 3581.
 
-Note: there is also a force_rport parameter which changes the gobal
+Note: there is also a force_rport parameter which changes the global
 behavior of the SIP proxy.
 
 Example of usage:
@@ -2888,7 +2888,7 @@ The route is executed in when a SIP request is sent out. Only a limited
 number of commands are allowed (drop, if + all the checks, msg flag
 manipulations, send(), log(), textops::search()).
 
-In this route the final destination of the message is available an can
+In this route the final destination of the message is available and can
 be checked (with snd_ip, snd_port, to_ip, to_port, snd_proto, snd_af).
 
 This route is executed only when forwarding requests - it is not

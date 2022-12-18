@@ -311,7 +311,7 @@ Then alice@domainA.com can call `bob@domainB.com`. Kamailio instance
 serving `domainA.com` will do DNS lookup do discover the IP address of
 `domainB.com`
 
-One easy way to test is to use a Open DNS resolver that provides
+One easy way to test is to use an Open DNS resolver that provides
 Recursive DNSSEC capabilities. One of those is `8.8.8.8` ( Google Open
 DNS). As per the FAQ, DNSSEC support is enabled
 (<https://developers.google.com/speed/public-dns/faq#dnssec>)

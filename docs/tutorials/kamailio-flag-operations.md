@@ -188,7 +188,7 @@ Example 6. accounting config file
 ### Optimizations
 
 Flags may be used to optimize Kamailio's routing logic, avoiding
-duplicated rutines or executions of same security checks over database.
+duplicated routines or executions of same security checks over database.
 
 Example 7. optimization of config file
 
