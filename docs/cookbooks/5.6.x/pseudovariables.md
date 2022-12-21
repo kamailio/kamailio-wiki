@@ -2,7 +2,7 @@
 
 Version: Kamailio SIP Server v5.6.x (stable)
 
-<img src="pseudovariables.png" class="align-right" width="200" />
+![pseudovariables.png](pseudovariables.png)
 
 ## Introduction
 
