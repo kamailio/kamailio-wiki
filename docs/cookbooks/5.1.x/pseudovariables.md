@@ -86,7 +86,7 @@ header
 
 **$Au** - username for accounting purposes. It's a selective pseudo
 variable (inherited from acc module). It returns the auth username and
-realm ($au@$ar) if exists or From URI ($fu) otherwise.
+realm ($au@$ar) if it exists or From URI ($fu) otherwise.
 
 ### $branch(name) - Branch attributes
 
@@ -113,7 +113,7 @@ The 'name' can be:
 -   ruid - return the ruid of the branch (Record internal Unique ID from
     usrloc)
 
-The PV can take an index to access a specif branch:
+The PV can take an index to access a specific branch:
 $(branch(name)\[index\])
 
 Example:
@@ -175,18 +175,18 @@ configuration file)\</fc>
 
 ### $ci - Call-Id
 
-**$ci** - reference to body of call-id header
+**$ci** - reference to the value of call-id header
 
 ### $cl - Content-Length
 
-**$cl** - reference to body of content-length header
+**$cl** - reference to the value of content-length header
 
 ### $cnt(pv) - Count number of pvs
 
 **$cnt(avp)** - return the number of avps
 
 ``` c
-xlog("$$avp(x) fount $cnt($avp(x)) times\n");
+xlog("$$avp(x) found $cnt($avp(x)) times\n");
 ```
 
 ### $conid - TCP Connection ID
@@ -206,11 +206,11 @@ $rm to get the method (works also for responses).
 
 ### $ct - Contact header
 
-**$ct** - reference to body of contact header
+**$ct** - reference to the value of contact header
 
 ### $cT - Content-Type
 
-**$cT** - reference to body of content-type header
+**$cT** - reference to the value of content-type header
 
 ### $dd - Domain of destination URI
 
@@ -291,7 +291,7 @@ message.\</fc>
 initial request (e.g., initial INVITE).
 
 The value From tag in the initial request can be in the To tag, if the
-request within the dialog is sent by the callee. This variable detect
+request within the dialog is sent by the callee. This variable detects
 who sent the request within the dialog and returns the proper value that
 was in the From tag of the request initiating the dialog.
 
@@ -661,7 +661,7 @@ SIP response to the initial request (e.g., 200ok to the initial INVITE).
 
 The value To tag in the initial transaction can be in the From tag, if
 the request within the dialog is sent by the callee. This variable
-detect who sent the request within the dialog and returns the proper
+detects who sent the request within the dialog and returns the proper
 value that was in the To tag of the transaction initiating the dialog.
 
 It is exported by **rr** module and has to be used after loose_route().
@@ -952,7 +952,7 @@ if($var(x)==0) { # this is true
 
 **Note:** A script variable persists over the Kamailio process in which
 it was initialized, so be sure of giving it a new value before reading
-it or you'll get the value asigned in any other previous message
+it or you'll get the value assigned in any other previous message
 processed by the same Kamailio process (pid).
 
 \<fc #0000FF>It is R/W variable (you can assign values to it directly in
@@ -1462,7 +1462,7 @@ including a custom value at time of assignment.
 
 ### $mcinc(key)
 
-Do a atomic increment operation on the value stored in memcached. You
+Do an atomic increment operation on the value stored in memcached. You
 need to add a value previously.
 
 \<fc #0000ff>It is R/W variable, you can assign values to it directly in
@@ -1484,7 +1484,7 @@ The “key” can be:
 
 ### $mcdec(key)
 
-Do a atomic decrement operation on the value stored in memcached. You
+Do an atomic decrement operation on the value stored in memcached. You
 need to add a value previously.
 
 \<fc #0000ff>It is R/W variable, you can assign values to it directly in
@@ -1530,7 +1530,7 @@ Example:
 ### $T_reply_ruid
 
 -   the ruid stored in the current branch of the transaction. The ruid
-    is stored in a branch from the details in a contact binding. In a
+    is stored in a branch from the details in a contact binding. In an
     event_route\[tm:branch-failure\] block, this is the ruid of the
     branch that sent a failure reply. In a failure_route\[\] block, this
     is the ruid of the winning failure response.
@@ -1622,7 +1622,7 @@ Note: the pair (id_index,id_label) uniquely identifies a transaction.
 
 The **name** can be:
 
--   flags - Flags of the branch. In a event_route\[tm:branch-failure\]
+-   flags - Flags of the branch. In an event_route\[tm:branch-failure\]
     block, this is the flags of the branch that sent a failure reply. In
     a failure_route\[\] block, this is the flags of the winning failure
     response.

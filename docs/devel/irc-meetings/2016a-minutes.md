@@ -157,7 +157,7 @@ universe separate from that...
 with uid\_\*  
 **miconda:** cnxcc is not a bad one, but quite useful, just that I never
 got to use it  
-**oej:** I think it's a good idea to have a end-of-life process  
+**oej:** I think it's a good idea to have an end-of-life process
 **qxork:** sometimes you have to cut weight to move forward  
 **miconda:** i try to avoid charging per minute :-)  
 **abalashov:** If for no other reason than to manage your workload
@@ -835,7 +835,7 @@ if there is a general movement toward Lua for config-writing over time.
 It's not a question of being forced to do anything.  
 **miconda:** so far required to write wrappers from scratch for each of
 them  
-**oej:** So I don't see this a a big change in directions, just a way to
+**oej:** So I don't see this as a big change in directions, just a way to
 enable more functionality for lua, python, erlang and what else we
 ahve  
 **miconda:** my goal was write on export to all embedded interpreters  

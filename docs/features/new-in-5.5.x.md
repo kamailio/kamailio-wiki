@@ -347,8 +347,8 @@ Pseudo-module providing per-proces STIR/SHAKEN API from libsecsipid.
 
 ### pv
 
--   new transformation {uri.suri} to get the simple routing uri, keep
-    only transport parameter, if exists
+-   new transformation {uri.suri} to get the simple routing uri, keeping
+    only transport parameter, if it exists
 -   new transformation {uri.duri} to get the uri needed for destination
     address (e.g., <sip:host:port;transport=tcp>)
 -   new transformation {uri.saor} to get the sip aor

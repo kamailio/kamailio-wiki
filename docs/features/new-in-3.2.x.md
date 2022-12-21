@@ -171,11 +171,11 @@ xlog("foo is $var(foo)");
 
 ### IMS: CDP / CDP-AVP
 
--   The CDP (C-Diameter-Peer) modules provide an Diameter-interface,
+-   The CDP (C-Diameter-Peer) modules provide a Diameter-interface,
     which are used by several components of the OpenIMS-core: They are
     used as Cx-Interface for the I-/S-CSCF and for the Rx-Interface for
     the P-CSCF. The modules may be used in other ways, too (e.g. for an
-    Sh-Interface for an Kamailio-based aplication server)
+    Sh-Interface for a Kamailio-based aplication server)
 
 ### IMS: P-CSCF
 
@@ -188,7 +188,7 @@ xlog("foo is $var(foo)");
 
 ### IMS: I-CSCF
 
--   The Interrogating-CSCF is a kind of “Loadbalancer” or a entry Proxy
+-   The Interrogating-CSCF is a kind of “Loadbalancer” or an entry Proxy
     for the “home-network” of an IMS setup. The I-CSCF will retrieve the
     location for a user from the HSS, it will check, where a user is
     registered or where it should register (based on user-settings,

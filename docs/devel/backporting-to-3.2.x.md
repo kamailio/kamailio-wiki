@@ -25,7 +25,7 @@ repository with:
 
 Replace **userid** with your developer GIT username.
 
-If you are an user, you can clone the repository with:
+If you are a user, you can clone the repository with:
 
     git clone --depth 1 git://git.sip-router.org/sip-router kamailio-dev
 

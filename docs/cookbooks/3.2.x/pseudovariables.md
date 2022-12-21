@@ -92,7 +92,7 @@ The 'name' can be:
 -   flags - return the branch flags value
 -   count - return the number of the branches
 
-The PV can take an index to access a specif branch:
+The PV can take an index to access a specific branch:
 $(branch(name)\[index\])
 
 Example:
@@ -148,11 +148,11 @@ configuration file (will add a new branch).\</fc>
 
 ### Call-Id
 
-**$ci** - reference to body of call-id header
+**$ci** - reference to the value of call-id header
 
 ### Content-Length
 
-**$cl** - reference to body of content-length header
+**$cl** - reference to the value of content-length header
 
 ### CSeq
 
@@ -162,11 +162,11 @@ $rm to get the methode (works also for responses).
 
 ### Contact header
 
-**$ct** - reference to body of contact header
+**$ct** - reference to the value of contact header
 
 ### Content-Type
 
-**$cT** - reference to body of content-type header
+**$cT** - reference to the value of content-type header
 
 ### Domain of destination URI
 
@@ -626,7 +626,7 @@ Setting a variable to null is actually initializing the value to integer
 
 **Note:** A script variable persists over the SIP-Router process in
 which it was initialized, so be sure of giving it a new value before
-reading it or you'll get the value asigned in any other previous message
+reading it or you'll get the value assigned in any other previous message
 processed by the same SIP-Router process (pid).
 
 \<fc #0000FF>It is R/W variable (you can assign values to it directly in
@@ -913,7 +913,7 @@ The “key” can be:
 
 ### $mcinc(key)
 
-Do a atomic increment operation on the value stored in memcached. You
+Do an atomic increment operation on the value stored in memcached. You
 need to add a value previously.
 
 \<fc #0000ff>It is R/W variable, you can assign values to it directly in
@@ -935,7 +935,7 @@ The “key” can be:
 
 ### $mcdec(key)
 
-Do a atomic decrement operation on the value stored in memcached. You
+Do an atomic decrement operation on the value stored in memcached. You
 need to add a value previously.
 
 \<fc #0000ff>It is R/W variable, you can assign values to it directly in

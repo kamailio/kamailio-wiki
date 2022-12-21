@@ -447,7 +447,7 @@ request_route {
 ### ifexp
 
 Evaluate an expression and if true, then enable first region, otherwise
-enable the `#!else` region (if exists).
+enable the `#!else` region (if it exists).
 
 The expression has to be till the end of the line (no support for multi-line yet).
 
@@ -1676,7 +1676,7 @@ You can specify an advertise address (like `ip:port`) per listening socket
     listen=udp:10.10.10.10:5060 advertise 11.11.11.11:5060
 ```
 
-The advertise address must be the format `address:port`, the protocol is
+The advertise address must be in the format `address:port`, the protocol is
 taken from the bind socket. The advertise address is a convenient
 alternative to `advertised_address` / `advertised_port` config parameters or
 `set_advertised_address()` / `set_advertised_port()` config functions.
@@ -2145,7 +2145,7 @@ mem_status_mode=1
 
 ### mem_summary
 
-Parameter to control printing of mmemory debugging information displayed
+Parameter to control printing of memory debugging information displayed
 on `exit` or `SIGUSR1`. The value can be composed by following flags:
 
 -   `1` - dump all the pkg used blocks (status)
@@ -2263,9 +2263,9 @@ Default value: `1` (enabled)
 ### pmtu_discovery
 
 If set to 1, the don't-fragment (DF) bit will be set in outbound IP
-packets, but not fragmentation from the kernel will be done for IPv4
-and IPv6. This means that packets might be dropped and its up to the
-user to reduce the packet size and try again.
+packets, but no fragmentation from the kernel will be done for IPv4
+and IPv6. This means that packets might be dropped and it is up to
+the user to reduce the packet size and try again.
 
 If set to 2, the kernel will will fragment a packet if needed
 according to the path MTU, or will set the don't-fragment flag
@@ -2326,7 +2326,7 @@ taken. Default value is 2048.
 ### pv_cache_action
 
 Specify what action to be done when the size of pv cache is exceeded. If
-`0`, print an warning log message when the limit is exceeded. If `1`,
+`0`, print a warning log message when the limit is exceeded. If `1`,
 warning log messages is printed and the cache systems tries to drop a
 `$sht(...)` declaration. Default is `0`.
 
@@ -2975,7 +2975,7 @@ Interval in seconds after which the dns cache is garbage collected
 ### dns_cache_init
 
 If off, the dns cache is not initialized at startup and cannot be
-enabled runtime, that saves some memory.
+enabled at runtime, this saves some memory.
 
 ```
     dns_cache_init = on | off (default on)
@@ -3979,7 +3979,7 @@ entries).
 ### dst_blocklist_init
 
 If off, the blocklist is not initialized at startup and cannot be
-enabled runtime, that saves some memory.
+enabled at runtime, this saves some memory.
 
 ```
     dst_blocklist_init = on | off (default on)
@@ -4195,7 +4195,7 @@ signaling.
 
 The rport parameter is defined in RFC 3581.
 
-Note: there is also a force_rport parameter which changes the gobal
+Note: there is also a force_rport parameter which changes the global
 behavior of the SIP proxy.
 
 Example of usage:
@@ -4395,7 +4395,7 @@ Note: starting with version `5.7.0-dev`, this behaviour can be changed with
 
 Control the return code evaluation mode:
 
-  - 0 (default) - evaluation is like so far (negative is false, positiv is true)
+  - 0 (default) - evaluation is like so far (negative is false, positive is true)
   - 1 - propagate return value and evaluation has to be done with `>0` or `<0`, otherwise
   `value!=0` is evaluated to true no matter is negative or positive
 
@@ -5015,7 +5015,7 @@ Example:
 -   msg:len - when used in an onsend_route, msg:len will contain the
     length of the message on the wire (after all the changes in the
     script are applied, Vias are added a.s.o) and not the lentgh of the
-    original messa ge.
+    original message.
 
 ### event_route
 
@@ -5089,7 +5089,7 @@ event_route[core:pre-routing] {
 
 ``` c
 event_route[core:receive-parse-error] {
-        xlog("got an parsing error from $si:$sp, message $mb\n");
+        xlog("got a parsing error from $si:$sp, message $mb\n");
 }
 
 ```

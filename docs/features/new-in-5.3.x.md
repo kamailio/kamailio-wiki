@@ -167,7 +167,7 @@ Add support for multiple TCP connections to the ims_usrloc_pcscf module.
 
 ### ims_isc
 
-Add functionality to a add-on to third party registration in S-CSCF. The
+Add functionality to an add-on to third party registration in S-CSCF. The
 feature assumes two new flags in HSS database, where additional to the
 "Service Info XML" an "insertRegisterRequest" flag or an
 "insertRegisterResponse" flag can be set. These flags are sent with the

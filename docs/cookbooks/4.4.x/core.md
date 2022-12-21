@@ -1106,7 +1106,7 @@ You can specify an advertise address (like ip:port) per listening socket
     listen=udp:10.10.10.10:5060 advertise  11.11.11.11:5060
 ```
 
-The advertise address must be the format 'address:port', the protocol is
+The advertise address must be in the format 'address:port', the protocol is
 taken from the bind socket. The advertise address is a convenient
 alternative to advertised_address / advertised_port cfg parameters or
 set_advertised_address() / set_advertised_port() cfg functions.
@@ -1378,7 +1378,7 @@ mem_safety=1
 
 ### mem_summary
 
-Parameter to control printing of mmemory debugging information displayed
+Parameter to control printing of memory debugging information displayed
 on exit or SIGUSR1. The value can be composed by following flags:
 
 -   1 - dump all the pkg used blocks (status)
@@ -1866,7 +1866,7 @@ Interval in seconds after which the dns cache is garbage collected
 ### dns_cache_init
 
 If off, the dns cache is not initialized at startup and cannot be
-enabled runtime, that saves some memory.
+enabled at runtime, this saves some memory.
 
     dns_cache_init = on | off (default on)
 
@@ -2626,7 +2626,7 @@ entries).
 ### dst_blacklist_init
 
 If off, the blacklist is not initialized at startup and cannot be
-enabled runtime, that saves some memory.
+enabled at runtime, this saves some memory.
 
     dst_blacklist_init = on | off (default on)
 
@@ -3500,7 +3500,7 @@ The route is executed in when a SIP request is sent out. Only a limited
 number of commands are allowed (drop, if + all the checks, msg flag
 manipulations, send(), log(), textops::search()).
 
-In this route the final destination of the message is available an can
+In this route the final destination of the message is available and can
 be checked (with snd_ip, snd_port, to_ip, to_port, snd_proto, snd_af).
 
 This route is executed only when forwarding requests - it is not

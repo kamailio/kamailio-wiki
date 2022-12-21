@@ -1,6 +1,6 @@
 # Frequently Asked Questions
 
-This page is open for contributions, you must create an user account via
+This page is open for contributions, you must create a user account via
 registration form:
 
 -   <https://www.kamailio.org/wiki/start?do=register>
@@ -203,7 +203,7 @@ applied immediately, use **msg_apply_changes()** from textopsx module:
 Be careful with it and don't use it after record_route(), because this
 function has to insert a header containing the IP address from the local
 socket that is going to be used for forwarding - the socket is not yet
-know during configuration file execution.
+known during configuration file execution.
 
 For example, considering that X-Hdr does not exist in incoming message,
 here are some cases:
@@ -287,7 +287,7 @@ using functions such as uac_replace_from() or uac_replace_to().
 The configuration file does an operation that changes parts in the
 headers or body many times. For example, if the body has two
 concatenated IP addresses for media stream, then likely the rtpproxy
-function is used twice, or, if the SDP appears two time, then the
+function is used twice, or, if the SDP appears two times, then the
 rtpengine function is used two times.
 
 If the update has to be done many times, use **msg_apply_changes()** in
@@ -363,7 +363,7 @@ outgoing branches.
 ### How to remove a single header field when a header appears multiple times?
 
 📃 SIP allows that certain header fields may appear multiple times in a
-SIP message. This header fields (e.g. Via, Route, Record-Route, Contact)
+SIP message. These header fields (e.g. Via, Route, Record-Route, Contact)
 may be written either on a single line (with comma separated) or on
 multiple lines (see [RFC 3261 section 7.3](http://tools.ietf.org/html/rfc3261#section-7.3) for details).
 
@@ -564,8 +564,7 @@ compared with a string:
 📃 Yes. There is nothing special to do for that in configuration file,
 MESSAGE requests are simply routed as any other SIP request.
 
-### Can it store instant messages for offline users and deliver them
-when the users become online?
+### Can it store instant messages for offline users and deliver them when the users become online?
 
 📃 Yes. See msilo module.
 
@@ -595,8 +594,7 @@ PUBLISH and SUBSCRIBE requests.
 📃 Yes. See pua module and its extensions named with 'pua\_' prefix
 (such as pua_usrloc, pua_dialoginfo, etc.).
 
-### Can it handle subscription requests for dialog states (aka, blinking
-lamps)?
+### Can it handle subscription requests for dialog states (aka, blinking lamps)?
 
 📃 Yes. You have to use dialog module together with presence_dialoginfo
 and pua_dialoginfo modules.

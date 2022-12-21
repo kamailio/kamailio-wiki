@@ -101,7 +101,7 @@ Example:
 
 Return a field from PV value. The field is selected based on separator
 and index. The separator must be a character used to identify the
-fields. Index must be a integer value or a PV. If index is negative, the
+fields. Index must be an integer value or a PV. If index is negative, the
 count of fields starts from end of PV value, -1 being last field. If
 index is positive, 0 is the first field.
 
@@ -447,7 +447,7 @@ use '&'.
 
 ### {param.valueat,index\[, delimiter\]}
 
-Return the value of parameter at position give by 'index' (0-based
+Return the value of parameter at position given by 'index' (0-based
 index)
 
 Example:

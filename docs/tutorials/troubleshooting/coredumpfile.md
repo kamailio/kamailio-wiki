@@ -66,7 +66,7 @@ the core file generation. Just run:
 
     ulimit -c unlimited
 
-in the shell where you started the server. If you run from a init script
+in the shell where you started the server. If you run from an init script
 it should normally already take care of this. If its still not create a
 core file then perhaps the server has no permissions to write into its
 working directory, check its permissions and the startup option "-w".
