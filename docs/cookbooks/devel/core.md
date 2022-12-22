@@ -5370,7 +5370,7 @@ the conversion of their operands (`eq` to string and `ieq` to int), allowing
 among other things better type checking on startup and more
 optimizations.
 
-Non equiv. examples:
+Non equivalent examples:
 
 `0 == ""` (true) is not equivalent to `0 eq ""` (false: it evaluates to `"0" eq ""`).
 
@@ -5534,7 +5534,7 @@ The name of the log engine can be:
             document, it has to start with comma (**,**) and be a valid
             set of json fields
         -   **U** - CEE (Common Event Expression) schema format -
-            <https://cee.mitre.org/language/1.0-beta1/core-profile.html>
+            [https://cee.mitre.org/language/1.0-beta1/core-profile.html](https://cee.mitre.org/language/1.0-beta1/core-profile.html)
 
 Example of JSON logs when running Kamailio with `--log-engine=json:M` :
 
