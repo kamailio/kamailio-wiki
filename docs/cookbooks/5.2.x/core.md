@@ -2572,7 +2572,7 @@ tcp_buf_write is not enabled.
 
 ### tcp_reuse_port
 
-Allows reuse of TCP ports. This means,for example, that the same TCP
+Allows reuse of TCP ports. This means, for example, that the same TCP
 ports on which Kamailio is listening on, can be used as source ports of
 new TCP connections when acting as an UAC. Kamailio must have been
 compiled in a system implementing SO_REUSEPORT (Linux \> 3.9.0, FreeBSD,
@@ -2674,7 +2674,7 @@ to sctp protocol level retransmission). Useful to improve reliability
 with peers that reboot/restart or fail over to another machine.
 
 WARNING: use with care and low values (e.g. 1-3) to avoid "multiplying"
-traffic to unresponding hosts (default: 0).Can be changed at runtime.
+traffic to unresponding hosts (default: 0). Can be changed at runtime.
 
     sctp_send_retries = 1
 

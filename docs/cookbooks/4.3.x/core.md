@@ -2141,7 +2141,7 @@ to sctp protocol level retransmission). Useful to improve reliability
 with peers that reboot/restart or fail over to another machine.
 
 WARNING: use with care and low values (e.g. 1-3) to avoid "multiplying"
-traffic to unresponding hosts (default: 0).Can be changed at runtime.
+traffic to unresponding hosts (default: 0). Can be changed at runtime.
 
     sctp_send_retries = 1
 

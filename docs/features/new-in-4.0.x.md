@@ -215,7 +215,7 @@ the past).
 
 ### cpl-c
 
--   added an optional parameter to cpl_run_scritp() to provide the URI -
+-   added an optional parameter to cpl_run_script() to provide the URI -
     the parameter will be used instead of taking the URI from headers or
     R-URI
 

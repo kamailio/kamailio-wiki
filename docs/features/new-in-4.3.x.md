@@ -75,7 +75,7 @@ source code repository.*\</fc>
 
 -   exported additional tm functions
     -   sr.tm.t_load_contacts
-    -   sr.tm.t_next_contatcs
+    -   sr.tm.t_next_contacts
     -   sr.tm.t_on_branch_failure
 -   exported the APIs from uac and ndb_mongodb modules
 
