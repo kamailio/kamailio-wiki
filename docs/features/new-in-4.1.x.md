@@ -271,7 +271,7 @@ source code repository.*\</fc>
 ### permissions
 
 -   DNS domain names in address table - possibility to check also
-    against DNS domain names with allow_address() function.Now in the
+    against DNS domain names with allow_address() function. Now in the
     address table one group can have exact IPs, subnet IPs and DNS
     domain names
 

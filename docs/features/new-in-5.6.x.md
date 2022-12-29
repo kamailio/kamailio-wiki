@@ -148,7 +148,7 @@ source code repository.*
 
 ### geoip2
 
-  - added reload RCP command fuctionality
+  - added reload RCP command functionality
 
 ### htable
 

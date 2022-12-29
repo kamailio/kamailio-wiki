@@ -75,7 +75,7 @@ repository.*
 -   new function auth_challenge()
     -   combines www_challenge() and proxy_challenge() by calling the
         first for REGISTER and the second for the rest of request types
--   new funtion to return WWW-Authenticate hdr in a PV
+-   new function to return WWW-Authenticate hdr in a PV
 
 ### auth_db
 

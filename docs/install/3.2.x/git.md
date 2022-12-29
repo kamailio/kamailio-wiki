@@ -69,7 +69,7 @@ Download the sources from GIT using the following commands.
       cd kamailio
       git checkout -b 3.2 origin/3.2
 
-## 3.Tuning Makefiles
+## 3. Tuning Makefiles
 
 The **most important and first step** is to set build flavour to
 **kamailio**.

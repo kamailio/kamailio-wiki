@@ -68,7 +68,7 @@ Download the sources from GIT using the following commands.
 *Note: if your git client version does not support
 **--no-single-branch** command line parameter, then just remove it.*
 
-## 3.Tuning Makefiles
+## 3. Tuning Makefiles
 
 The first step is to generate config files for build system.
 

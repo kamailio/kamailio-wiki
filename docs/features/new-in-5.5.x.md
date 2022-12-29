@@ -549,7 +549,7 @@ Pseudo-module providing per-proces STIR/SHAKEN API from libsecsipid.
 
 ### xhttp
 
--   add kemi funtion to return $hu, http uri
+-   add kemi function to return $hu, http uri
 
 ### xhttp_server
 
