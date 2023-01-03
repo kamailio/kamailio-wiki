@@ -175,7 +175,7 @@ xlog("foo is $var(foo)");
     which are used by several components of the OpenIMS-core: They are
     used as Cx-Interface for the I-/S-CSCF and for the Rx-Interface for
     the P-CSCF. The modules may be used in other ways, too (e.g. for an
-    Sh-Interface for a Kamailio-based aplication server)
+    Sh-Interface for a Kamailio-based application server)
 
 ### IMS: P-CSCF
 

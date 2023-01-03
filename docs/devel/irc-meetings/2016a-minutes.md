@@ -276,7 +276,7 @@ http:*lists.sip-router.org/pipermail/sr-users/2016-April/092510.html
 **miconda:** ycaner is involved in it  
 **ycaner:** hello  
 **linuxmaniac:** return code?? should be http 4XX doesn't it?  
-**miconda: to summarize:** the complain is that some rpc comands don’t
+**miconda: to summarize:** the complain is that some rpc commands don’t
 return data  
 **miconda:** specially the reload ones  
 **ycaner:** http return code and rpc return code is different in my
@@ -1609,7 +1609,7 @@ Kamailio people are" support it.
 modules don't get as much maintenance or use. Human nature.  
 **qxork:** unless someone offers to take ownership  
 **qxork:** developers leave, retire, move on...  
-**qxork:** if noone wants to take it, it's like a hobbiest module  
+**qxork:** if no one wants to take it, it's like a hobbiest module  
 **miconda:** on the other hand, adding officially maintained means
 pressure on devs  
 **miconda:** there are many lcr modules, developed/used by various

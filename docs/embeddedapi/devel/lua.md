@@ -363,7 +363,7 @@ param is optional and it choose between get all the values of a key ( 0,
 default) or just the first ones (1)
 
 If second param is nil will return all indexes. If second param is \<0
-will return the index counting from then end ( -1 is the last value )
+will return the index counting from the end ( -1 is the last value )
 
 Prototype
 

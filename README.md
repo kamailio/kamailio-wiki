@@ -20,6 +20,6 @@ The wiki pages are inside the **[docs/](docs/)** folder.
 
 Questions and discussions about wiki content have to be done via mailing list:
 
-  - [sr-users (at) lists.kamailio.org](https://lists.kamailio.org/cgi-bin/mailman/listinfo/sr-users)
+  - [sr-users (at) lists.kamailio.org](https://lists.kamailio.org/mailman3/postorius/lists/sr-users.lists.kamailio.org/)
 
 *Thanks for flying Kamailio!*

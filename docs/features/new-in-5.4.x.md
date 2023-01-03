@@ -459,7 +459,7 @@ Add **xavp_rcd_mask** parameter to control what values to skip
 ### janssonrpcc
 
 -   remove redundant str trim implementation and use the one from core
--   replaced str dup wrapers with the functions from core
+-   replaced str dup wrappers with the functions from core
 
 ### jsonrpcc
 
@@ -601,7 +601,7 @@ Add **xavp_rcd_mask** parameter to control what values to skip
     modules
 -   add core support for xavi and xavu PVs
 -   add core support to assign names to listen sockets
--   KEMI suport for ARRAY and DICT types
+-   KEMI support for ARRAY and DICT types
 -   implementation for executing route blocks on send out events moved
     to onsend.c
 

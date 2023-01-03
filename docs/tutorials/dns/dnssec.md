@@ -18,7 +18,7 @@ initial version of this tutorial. For any assistance, email to
 **sr-users (at) lists.kamailio.org** -- it is a public mailing list
 that requires subscription, see more details at:
 
--   [https://lists.kamailio.org/cgi-bin/mailman/listinfo/sr-users](https://lists.kamailio.org/cgi-bin/mailman/listinfo/sr-users)
+-   [https://lists.kamailio.org/mailman3/postorius/lists/sr-users.lists.kamailio.org/](https://lists.kamailio.org/mailman3/postorius/lists/sr-users.lists.kamailio.org/)
 
 **Note:** Ubuntu 12.04 was chosen because dnssec tools devel library are
 provided for this distribution, making the installation of the required

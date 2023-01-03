@@ -685,7 +685,7 @@ modparam("acc_db", "log_flag", "FLAG_ACC")
 #modparam("tm", "restart_fr_on_each_reply", "0")
 
 # -- xmlrpc params --
-# using a sub-route from the module is a lot safer then relying on the
+# using a sub-route from the module is a lot safer than relying on the
 # request method to distinguish HTTP from SIP
 modparam("xmlrpc", "route", "RPC");
 

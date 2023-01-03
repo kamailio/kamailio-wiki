@@ -1324,7 +1324,7 @@ function.
 Example:
 
 ``` c
-kemi.onsend_route_callback="ksr_my_reply_route"
+kemi.reply_route_callback="ksr_my_reply_route"
 ```
 
 ### kemi.pre_routing_callback
@@ -1804,7 +1804,7 @@ Please see also [#memdbg](#memdbg) and [#debug](#debug).
 
 ### mem_join
 
-If set to 1, memory manger (e.g., q_malloc) does join of free fragments.
+If set to 1, memory manager (e.g., q_malloc) does join of free fragments.
 It is effective if MEM_JOIN_FREE compile option is defined.
 
 It can be set via config reload framework.
@@ -1908,12 +1908,17 @@ Default value is 0 (no wait).
 
 ### modparam
 
-The modparam command will be used to set the options of the modules.
+The modparam command will be used to set the options of the modules.  Several
+modules sharing the same option name can be configured by a single modparam
+execution, by listing the module names separated by pipe. The non-pipe form
+does catch more errors during startup.
 
 Example:
 
     modparam("usrloc", "db_mode", 2)
     modparam("usrloc", "nat_bflag", 6)
+    modparam("acc|auth_db|usrloc", "db_url",
+      "mysql://kamailio:kamailiorw@localhost/kamailio_testbed")
 
 See the documenation of the respective module to find out the available
 options.
@@ -2270,7 +2275,7 @@ Example of usage:
 ### udp_mtu
 
 Fallback to another protocol (udp_mtu_try_proto must be set also either
-globally or per packet) if the constructed request size is greater then
+globally or per packet) if the constructed request size is greater than
 udp_mtu.
 
 RFC 3261 specified size: 1300. Default: 0 (off).
@@ -3056,7 +3061,7 @@ tcp_wait_data = 10000
 ### tcp_wq_blk_size
 
 Block size used for tcp async writes. It should be big enough to hold a
-few datagrams. If it's smaller then a datagram (in fact a tcp write())
+few datagrams. If it's smaller than a datagram (in fact a tcp write())
 size, it will be rounded up. It has no influenced on the number of
 datagrams queued (for that see tcp_conn_wq_max or tcp_wq_max). It has
 mostly debugging and testing value (can be ignored).
@@ -3240,7 +3245,7 @@ new associations.
 Maximum value of the retransmission timeout (RTO) (default: OS
 specific).
 
-WARNING: values lower then the sctp sack_delay will cause lots of
+WARNING: values lower than the sctp sack_delay will cause lots of
 retransmissions and connection instability (see sctp_srto_min for more
 details).
 
@@ -3254,10 +3259,10 @@ associations.
 Minimum value of the retransmission timeout (RTO) (default: OS
 specific).
 
-WARNING: values lower then the sctp sack_delay of any peer might cause
+WARNING: values lower than the sctp sack_delay of any peer might cause
 retransmissions and possible interoperability problems. According to the
 standard the sack_delay should be between 200 and 500 ms, so avoid
-trying values lower then 500 ms unless you control all the possible sctp
+trying values lower than 500 ms unless you control all the possible sctp
 peers and you do make sure their sack_delay is higher or their sack_freq
 is 1.
 
@@ -3318,8 +3323,8 @@ associations.
 Delay until an ACK is generated after receiving a packet. Default: OS
 specific.
 
-WARNING: a value higher then srto_min can cause a lot of retransmissions
-(and strange problems). A value higher then srto_max will result in very
+WARNING: a value higher than srto_min can cause a lot of retransmissions
+(and strange problems). A value higher than srto_max will result in very
 high connections instability. According to the standard the sack_delay
 value should be between 200 and 500 ms.
 
@@ -3365,7 +3370,7 @@ In "auto" mode it will be enabled if possible (sr started as root or
 with CAP_NET_RAW). udp4_raw can be used on Linux and FreeBSD. For other
 BSDs and Darwin one must compile with -DUSE_RAW_SOCKS. On Linux one
 should also set udp4_raw_mtu if the MTU on any network interface that
-could be used for sending is smaller then 1500.
+could be used for sending is smaller than 1500.
 
 The parameter can be set at runtime as long as sr was started with
 enough privileges (core.udp4_raw).
@@ -3622,7 +3627,7 @@ Example of usage:
 force_tcp_alias(port)
 
 adds a tcp port alias for the current connection (if tcp). Useful if you
-want to send all the trafic to port_alias through the same connection
+want to send all the traffic to port_alias through the same connection
 this request came from \[it could help for firewall or nat traversal\].
 With no parameters adds the port from the message via as the alias. When
 the "aliased" connection is closed (e.g. it's idle for too much time),
@@ -4291,7 +4296,7 @@ routing block can be also identified by `onreply_route {...}` or
 ### onreply_route
 
 SIP reply routing block executed by **tm** module. It contains a set of
-actions to be taken for SIP replies in the contect of an active
+actions to be taken for SIP replies in the context of an active
 transaction.
 
 The `onreply_route` must be armed for the SIP requests whose replies
