@@ -2332,6 +2332,25 @@ warning log messages is printed and the cache systems tries to drop a
 
     pv_cache_action=1
 
+### rpc_exec_delta
+
+Specify the time interval (in seconds) required to wait before executing again
+an RPC command exported with the flag `RPC_EXEC_DELTA`. Practically it enables
+an execution rate limit for such command. The rate limiting is per RPC command.
+
+Such RPC commands can be those related to reload of data records or config options
+from backends such as database or hard drive. For them, executing the RPC command
+too ofter can result in compromizing the internal structures (e.g., previous reload
+of data was not finished when next reload is triggered).
+
+Default value: `0` (no rate limiting)
+
+Example:
+
+```
+rpc_exec_delta=5
+```
+
 ### rundir
 
 Alias: run_dir
