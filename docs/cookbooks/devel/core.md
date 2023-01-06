@@ -2207,13 +2207,43 @@ Default value is 0 (no wait).
 
 ### modparam
 
-The modparam command will be used to set the options of the modules.
+The modparam command will be used to set the options (parameters) for the loaded
+modules.
+
+Prototypes:
+
+```
+modparam("modname", "paramname", intval)
+modparam("modname", "paramname", "strval")
+```
+
+The first pameter is the name of the module or a list of module names separated
+by `|` (pipe). Actually, the `modname` is enclosed in beteen `^(` and `)$` and
+matched with the names of the loaded modules using POSIX regexp operation. For example,
+when `auth` is given, then the module name is matched with `^(auth)$`; when
+`acc|auth` is given, then the module name is matched with `^(acc|auth)$`. While
+using only `|` between the names of the modules is recommended for clarity, any
+value that can construct a valid regular expression can be used. Note also that
+`modparam` throws error only when no module name is matched and no parameter is
+set, if the list of modules in `modname` includes a wrong name, Kamailio starts.
+For example setting `modname` to `msilo|notamodule` does not result in a startup
+error if `msilo` module is loaded. Be also careful with expressions than can
+match more module names than wated, for example setting `modname` to `a|b` can
+result in matching all module names that include either `a` or `b`.
+
+The second parameter of `modparam` is the name of the module parameter.
+
+The third parameter of `modparam` has to be either an interger or a string value,
+a matter of what the module parameter expects, as documented in the README of the
+module.
 
 Example:
 
 ```
     modparam("usrloc", "db_mode", 2)
     modparam("usrloc", "nat_bflag", 6)
+    modparam("auth_db|msilo|usrloc", "db_url",
+        "mysql://kamailio:kamailiorw@localhost/kamailio")
 ```
 
 See the documenation of the respective module to find out the available
