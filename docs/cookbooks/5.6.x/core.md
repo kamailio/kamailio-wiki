@@ -1128,7 +1128,7 @@ Example of usage:
 **Alias name: tls_disable**
 
 Global parameter to disable TLS support in the SIP server. Default value
-is 'no'.
+is 'yes'.
 
 Note: Make sure to load the "tls" module to get tls functionality.
 
