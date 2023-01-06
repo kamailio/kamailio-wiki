@@ -2228,7 +2228,7 @@ value that can construct a valid regular expression can be used. Note also that
 set, if the list of modules in `modname` includes a wrong name, Kamailio starts.
 For example setting `modname` to `msilo|notamodule` does not result in a startup
 error if `msilo` module is loaded. Be also careful with expressions than can
-match more module names than wated, for example setting `modname` to `a|b` can
+match more module names than wanted, for example setting `modname` to `a|b` can
 result in matching all module names that include either `a` or `b`.
 
 The second parameter of `modparam` is the name of the module parameter.
