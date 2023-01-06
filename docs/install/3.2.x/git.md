@@ -243,7 +243,7 @@ is provided at:
     /usr/local/src/kamailio-3.2/kamailio/pkg/kamailio/deb/debian/kamailio.init
 
 Just copy the init file into the /etc/init.d/kamailio. Then change the
-permisions:
+permission:
 
       chmod 755 /etc/init.d/kamailio 
 

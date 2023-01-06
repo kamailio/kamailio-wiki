@@ -516,7 +516,7 @@ to:
 
 -   business \[at\] lists.kamailio.org
 -   mailing list web page:
-    -   <http://lists.kamailio.org/cgi-bin/mailman/listinfo/business>
+    -   <https://lists.kamailio.org/mailman3/postorius/lists/business.lists.kamailio.org/>
 
 ### Where I can report an issue?
 

@@ -435,7 +435,7 @@ source code repository.*\</fc>
 -   added two new rpc commands ul.db_users and ul.db_contacts - for
     accessing number of different AoRs and contacts in a location table
 -   new command ul.db_expired_contacts tells number of expired contacts
--   detect lost tcp connnections on timer and set associated contact as
+-   detect lost tcp connections on timer and set associated contact as
     expired
     -   new module parameter to control this feature: handle_lost_tcp
 

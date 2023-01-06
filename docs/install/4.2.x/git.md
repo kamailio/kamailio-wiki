@@ -239,7 +239,7 @@ nicer way. A sample of init.d script for Kamailio is provided at:
     /usr/local/src/kamailio-4.2/kamailio/pkg/kamailio/deb/debian/kamailio.init
 
 Just copy the init file into the /etc/init.d/kamailio. Then change the
-permisions:
+permission:
 
       cp /usr/local/src/kamailio-4.2/kamailio/pkg/kamailio/deb/debian/kamailio.init /etc/init.d/kamailio
       chmod 755 /etc/init.d/kamailio 
