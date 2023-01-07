@@ -604,7 +604,7 @@ the past).
     -   stats command can print a single group of statistics - groupid
         can be given as command parameter
     -   new command 'db showg' - uses \\G at end of sql query, resulting
-        in line-formated output (at least for mysql)
+        in line-formatted output (at least for mysql)
     -   added definition of tables for uid modules
     -   added option to grant sql access from a remote host - set
         DBACCESSHOST in kamctlrc

@@ -158,7 +158,7 @@ today):
         -u uid       change uid 
         -g gid       change gid 
         -P file      create a pid file
-        -i fifo_path create a fifo (usefull for monitoring ser) 
+        -i fifo_path create a fifo (useful for monitoring ser) 
 
 
     # ser -V
@@ -585,7 +585,7 @@ rev_dns=no      # (cmd. line: -R)
 #group=ser
 #disable_core=yes #disables core dumping
 #open_fd_limit=1024 # sets the open file descriptors limit
-#mhomed=yes  # usefull for multihomed hosts, small performance penalty
+#mhomed=yes  # useful for multihomed hosts, small performance penalty
 #disable_tcp=yes 
 #tcp_accept_aliases=yes # accepts the tcp alias via option (see NEWS)
 enable_tls=yes

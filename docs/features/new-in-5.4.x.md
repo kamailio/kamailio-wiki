@@ -149,7 +149,7 @@ Added new **cfgt.list** and **cfgt.clean** RPC commands
 ### db_mysql
 
 -   switch from deprecated /var/run to /run
--   new parameter opt_ssl_mode - allow controling ssl mode, can disable
+-   new parameter opt_ssl_mode - allow controlling ssl mode, can disable
     or enforce use of SSL
 
 ### db_redis

@@ -929,7 +929,7 @@ Examples of usage:
     messages.
 -   debug=-6: This will disable all log messages.
 
-Value of 'debug' parameter can also be get and set dynamically using the
+Value of 'debug' parameter can also be obtained and set dynamically using the
 'debug' Core MI function or the RPC function, e.g.:
 
     kamcmd cfg.get core debug
@@ -1819,8 +1819,8 @@ listen=udp:127.0.0.1:5070
 listen=udp:127.0.0.1:5060
 ```
 
--   it will start 2 workers to handle traffic on <udp:127.0.0.1:5080>
-    and 4 for each of <udp:127.0.0.1:5070> and <udp:127.0.0.1:5060>. In
+-   it will start 2 workers to handle traffic on udp:127.0.0.1:5080
+    and 4 for each of udp:127.0.0.1:5070 and udp:127.0.0.1:5060. In
     total there are 10 worker processes
 
 Example for tcp sockets:
