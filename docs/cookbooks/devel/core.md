@@ -2225,7 +2225,7 @@ when `auth` is given, then the module name is matched with `^(auth)$`; when
 using only `|` between the names of the modules is recommended for clarity, any
 value that can construct a valid regular expression can be used. Note also that
 `modparam` throws error only when no module name is matched and no parameter is
-set, if the list of modules in `modname` includes a wrong name, Kamailio starts.
+set. If the list of modules in `modname` includes a wrong name, Kamailio starts.
 For example setting `modname` to `msilo|notamodule` does not result in a startup
 error if `msilo` module is loaded. Be also careful with expressions than can
 match more module names than wanted, for example setting `modname` to `a|b` can
