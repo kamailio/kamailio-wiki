@@ -3225,7 +3225,7 @@ The logical operators that can be used in 'expr':
 
       ==      equal
       !=      not equal
-      =~      regular expression matching: Note: Posix regular expressions will be used, e.g. use [[:digit:]]{3} instead of \d\d\d
+      =~      case-insensitive regular expression matching: Note: Posix regular expressions will be used, e.g. use [[:digit:]]{3} instead of \d\d\d
       !~      regular expression not-matching
       >       greater
       >=      greater or equal
