@@ -5232,8 +5232,8 @@ The `expr` should be a valid logical expression.
 The logical operators that can be used in `expr`:
 
 - `==`:      equal
-- `!=`:     not equal
-- `=~`:      regular expression matching: Note: Posix regular expressions will be used, e.g. use `[[:digit:]]{3}` instead of `\d\d\d`
+- `!=`:      not equal
+- `=~`:      case-insensitive regular expression matching: Note: Posix regular expressions will be used, e.g. use `[[:digit:]]{3}` instead of `\d\d\d`
 - `!~`:      regular expression not-matching (NOT PORTED from Kamailio 1.x, use `!(x =~ y)`)
 - `>`:       greater
 - `>=`:      greater or equal
