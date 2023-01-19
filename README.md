@@ -12,13 +12,13 @@ Initial content was converted from the Dokuwiki at:
 
 ## Support ##
 
-To update the content, make pull requests at:
+To update the content, make a pull requests at:
 
   - https://github.com/kamailio/kamailio-wiki
 
 The wiki pages are inside the **[docs/](docs/)** folder.
 
-Questions and discussions about wiki content have to be done via mailing list:
+Questions and discussions about the wiki content have to be done via our mailing list:
 
   - [sr-users (at) lists.kamailio.org](https://lists.kamailio.org/mailman3/postorius/lists/sr-users.lists.kamailio.org/)
 
