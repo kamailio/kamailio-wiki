@@ -5299,6 +5299,13 @@ Example of usage:
                 case "104":
                     log("destination number is 103 or 104\n");
                 break;
+                # cases with starting slash are regular expressions
+                case /"\+49.*":
+                    log("destination number is germany\n");
+                break;
+                case /"\+33.*":
+                    log("destination number is france\n");
+                break;
                 default:
                     log("unknown destination number\n");
            }
