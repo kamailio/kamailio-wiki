@@ -71,8 +71,8 @@ Notice that for SHM only one group of statistics is printed, being one
 zone of memory, while for PKG you get a list with many groups of
 statistics, each specific for a Kamailio process (child).
 
-In order to merge the free memory fragments one should enable memory
-join. Default is disabled (mem_join=0).
+In order to merge the free memory fragments one should enable the memory
+join support in the core. Its is enabled by default (mem_join=1).
 
     mem_join=1
 
