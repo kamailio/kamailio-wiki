@@ -12,7 +12,7 @@ Initial content was converted from the Dokuwiki at:
 
 ## Support ##
 
-To update the content, make a pull requests at:
+To update the content, make a pull request at:
 
   - https://github.com/kamailio/kamailio-wiki
 
