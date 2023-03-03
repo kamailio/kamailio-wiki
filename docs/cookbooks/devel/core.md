@@ -5389,29 +5389,33 @@ For strings, `+` is available to concatenate.
 
 For numbers, one can use:
 
--   `+` : plus
--   `-` : minus
--   `/` : divide
--   `*` : multiply
--   `%` : modulo (Kamailio uses `mod` instead of `%`)
--   `|` : bitwise OR
--   `&` : bitwise AND
--   `^` : bitwise XOR
--   `~` : bitwise NOT
--   `<<` : bitwise left shift
--   `>>` : bitwise right shift
+  -   `+` : plus
+  -   `-` : minus
+  -   `/` : divide
+  -   `*` : multiply
+  -   `mod` : modulo (SER uses `%` instead of `mod`)
+  -   `|` : bitwise OR
+  -   `&` : bitwise AND
+  -   `^` : bitwise XOR
+  -   `~` : bitwise NOT
+  -   `<<` : bitwise left shift
+  -   `>>` : bitwise right shift
 
 Example:
 
+```
     $var(a) = 4 + ( 7 & ( ~2 ) );
+```
 
 NOTE: to ensure the priority of operands in expression evaluations do
 use **parenthesis**.
 
 Arithmetic expressions can be used in condition expressions.
 
+```
     if( $var(a) & 4 )
         log("var a has third bit set\n");
+```
 
 ## Operators
 
