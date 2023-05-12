@@ -28,6 +28,7 @@ source code repository.*
 ### app_perl ###
 
   * added modparam to control behaviour on perl_parse() code
+  * new parameter to set warn flag for perl parse
 
 ### app_sqlang ###
 
@@ -41,6 +42,7 @@ source code repository.*
 
   * added dlg_get_var(ci, ft, tt, key, dst_var) function
   * added dlg_set_var(callid, ft, tt, key, value) function
+  * added modparam dlg_ctxiuid_mode to control when iuid is set
 
 ### ims_ipsec_pcscf ###
 
@@ -59,6 +61,10 @@ source code repository.*
 
   * URI list support in LoST response (filter for sip/sips scheme)
 
+### lrkproxy ###
+
+  * TURN support, behind_nat support, subset of range ports
+
 ### nats ###
 
   * nats:connected event_route triggered on a successful connect
@@ -75,12 +81,26 @@ source code repository.*
   * added $shvinc(name) - return incremented value of $shv(inc)
   * kemi function to get $shvinc(name) value
   * added xavp_push_dst(xname) function
+  * added monotonic clock to TimeVal pseudovariable
 
 ### registrar ###
 
   * kemi functions to get $ulc(...) attributes
   * added lookup_xavp("ultable", "uri", "rxname", "cxname")
   * added reg_from_user(ultable, uri, mode) function
+
+### rtpengine ###
+
+  * added receive-from option
+
+### sipt ###
+
+  * isup generic_number and generic_number_nai decoding
+
+### siptrace ###
+
+  * trace in-dialog ACK and dialog spirals
+  * option to use socket name for hep mirroring
 
 ### siputils ###
 
@@ -89,6 +109,8 @@ source code repository.*
 ### tls ###
 
   * support serial numbers that exceed uint64
+  * add timestamp and sni info for a session
+  * support for configuration option TLSv1.3 and TLSv1.3+
 
 ### topos ###
 
@@ -96,6 +118,8 @@ source code repository.*
   *  added methods_nocontact parameter
   * skip inserting contact header for 4xx replies
   * new parameter to allow specifying initial request methods to skip topos
+  * option to disable multiple comma separated values in One Single Via, Record-Route or Route header
+  * detect known headers provided with variable for $hfl(...) and $hflc(...)
 
 ### topos_redis ###
 
@@ -105,6 +129,7 @@ source code repository.*
 ### tm ###
 
   * new param to specify reply codes for dns srv failover
+  * new function t_exists()
 
 ### uac ###
 
@@ -123,6 +148,22 @@ source code repository.*
   * stop at the first config error on startup
   * added domain and auto_domains as variants for alias and auto_aliases
   * pv buffers made available for cli params
+  * support SHA-512/256 for RFCs 8760/7616
+  * set pmtu_discovery core parameter for IPv6
+  * add pmtu_discovery=2 for IPv4 and IPv6 - set IP_PMTUDISC_WANT/IPV6_PMTUDISC_WANT
+  * aliased dns_use_cache to use_dns_cache
+  * aliased dns_use_failover to use_dns_failover
+  * aliased dns_rev_via to rev_dns
+  * added parser mode check
+  * support for loadmodule("path") and loadmodules("path")
+  * support to specify options for load module
+  * define KAMAILIO_VERSION with VERSION number value
+  * define OS_NAME at startup
+  * added simple expression evaluations with strings and numbers
+  * added preprocessor directive #!ifexp stm
+  * print address family for rpc core.sockets_list
+  * added #!defexp ID STM preprocessor directive
+  * added #!defexps preprocessor directive
 
 ### Command line arguments
 
