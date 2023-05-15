@@ -3,7 +3,7 @@
     Main author:
        Daniel-Constantin Mierla
 
-    Support: <sr-users@lists.sip-router.org>
+    Support: <sr-users@lists.kamailio.org>
 
 This is a step by step tutorial about how to install and maintain
 Kamailio SIP server development version using the sources downloaded
