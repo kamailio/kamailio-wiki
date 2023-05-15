@@ -39,6 +39,7 @@ available at the **Old Wiki Site**:*
 
 -   [Install Kamailio Devel Version From GIT (html)](https://kamailio.org/docs/tutorials/devel/kamailio-install-guide-git/)
 -   [Install Kamailio Devel Version From GIT (wiki)](install/devel/git.md)
+-   [Install Kamailio v5.7.x From GIT (html)](https://kamailio.org/docs/tutorials/5.7.x/kamailio-install-guide-git/)
 -   [Install Kamailio v5.6.x From GIT (html)](https://kamailio.org/docs/tutorials/5.6.x/kamailio-install-guide-git/)
 -   [Install Kamailio v5.5.x From GIT (html)](https://kamailio.org/docs/tutorials/5.5.x/kamailio-install-guide-git/)
 -   [Install Kamailio v5.4.x From GIT (html)](https://kamailio.org/docs/tutorials/5.4.x/kamailio-install-guide-git/)
@@ -73,6 +74,7 @@ available at the **Old Wiki Site**:*
 
 -   [Main Download Page](https://www.kamailio.org/w/download/)
 -   [Download Tarball with Sources of Latest Stable Release](https://www.kamailio.org/pub/kamailio/latest/src/)
+-   [Download Sources of v5.6.x from GIT Repository](download/v5.7.x-from-git.md)
 -   [Download Sources of v5.6.x from GIT Repository](download/v5.6.x-from-git.md)
 -   [Download Sources of v5.5.x from GIT Repository](download/v5.5.x-from-git.md)
 -   [Download Sources of v5.4.x from GIT Repository](download/v5.4.x-from-git.md)
@@ -93,6 +95,7 @@ available at the **Old Wiki Site**:*
 |---------|-------------------------------|------------------------------------------|------------------------------------------|----------------------------------|--------------------------------------------------|
 | Version | Core Cookbook                 | Pseudo Variables                         | Transformations                          | Selects                          | Modules                                          |
 | devel   | [link](cookbooks/devel/core.md) | [link](cookbooks/devel/pseudovariables.md) | [link](cookbooks/devel/transformations.md) | [link](cookbooks/devel/selects.md) | [link](https://kamailio.org/docs/modules/devel/) |
+| 5.7.x   | [link](cookbooks/5.7.x/core.md) | [link](cookbooks/5.7.x/pseudovariables.md) | [link](cookbooks/5.7.x/transformations.md) | [link](cookbooks/5.7.x/selects.md) | [link](https://kamailio.org/docs/modules/5.7.x/) |
 | 5.6.x   | [link](cookbooks/5.6.x/core.md) | [link](cookbooks/5.6.x/pseudovariables.md) | [link](cookbooks/5.6.x/transformations.md) | [link](cookbooks/5.6.x/selects.md) | [link](https://kamailio.org/docs/modules/5.6.x/) |
 | 5.5.x   | [link](cookbooks/5.5.x/core.md) | [link](cookbooks/5.5.x/pseudovariables.md) | [link](cookbooks/5.5.x/transformations.md) | [link](cookbooks/5.5.x/selects.md) | [link](https://kamailio.org/docs/modules/5.5.x/) |
 | 5.4.x   | [link](cookbooks/5.4.x/core.md) | [link](cookbooks/5.4.x/pseudovariables.md) | [link](cookbooks/5.4.x/transformations.md) | [link](cookbooks/5.4.x/selects.md) | [link](https://kamailio.org/docs/modules/5.4.x/) |
@@ -110,6 +113,7 @@ Alphabetic indexes generated from documentation (modules' readme docs).
 |---------|-------------------------------------------|------------------------------------------|-----------------------------------------|-------------------------------------------|
 | Version | Modules Parameters                        | Modules Functions                        | RPC Commands                            | Statistics                                |
 | devel   | [link](alphaindexes/devel/modparameters.md) | [link](alphaindexes/devel/modfunctions.md) | [link](alphaindexes/devel/rpccommands.md) | [link](alphaindexes/devel/modstatistics.md) |
+| 5.7.x   | [link](alphaindexes/5.7.x/modparameters.md) | [link](alphaindexes/5.7.x/modfunctions.md) | [link](alphaindexes/5.7.x/rpccommands.md) | [link](alphaindexes/5.7.x/modstatistics.md) |
 | 5.6.x   | [link](alphaindexes/5.6.x/modparameters.md) | [link](alphaindexes/5.6.x/modfunctions.md) | [link](alphaindexes/5.6.x/rpccommands.md) | [link](alphaindexes/5.6.x/modstatistics.md) |
 | 5.5.x   | [link](alphaindexes/5.5.x/modparameters.md) | [link](alphaindexes/5.5.x/modfunctions.md) | [link](alphaindexes/5.5.x/rpccommands.md) | [link](alphaindexes/5.5.x/modstatistics.md) |
 | 5.4.x   | [link](alphaindexes/5.4.x/modparameters.md) | [link](alphaindexes/5.4.x/modfunctions.md) | [link](alphaindexes/5.4.x/rpccommands.md) | [link](alphaindexes/5.4.x/modstatistics.md) |
@@ -137,6 +141,8 @@ in embedded Lua/Python/JavaScript/Ruby/... SIP routing scripts:
 
 -   Development:
     <https://kamailio.org/docs/tutorials/devel/kamailio-kemi-framework/>
+-   Version 5.7.x:
+    <https://kamailio.org/docs/tutorials/5.7.x/kamailio-kemi-framework/>
 -   Version 5.6.x:
     <https://kamailio.org/docs/tutorials/5.6.x/kamailio-kemi-framework/>
 -   Version 5.5.x:
@@ -185,6 +191,7 @@ in embedded Lua/Python/JavaScript/Ruby/... SIP routing scripts:
 ### Database Structure
 
 -   [Devel Version](https://www.kamailio.org/docs/db-tables/kamailio-db-devel.html)
+-   [5.6.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.7.x.html)
 -   [5.6.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.6.x.html)
 -   [5.5.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.5.x.html)
 -   [5.4.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.4.x.html)
