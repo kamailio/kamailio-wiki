@@ -34,15 +34,41 @@ source code repository.*
 
   * updated squirrel interpreter
 
+### async ###
+
+  * catch up on possible skipped slots due to slow tasks
+
 ### auth ###
 
   * added flag for not invalidating nc on auth failure
+
+### carrierroute ###
+  * exported cr_load_next_domain(), cr_route() and cr_nofallback_route() to kemi
+
+### cdp ###
+
+  * added SCTP support
+
+## ctl ###
+
+  * support for rpc commands that have execution limit with delta interval
 
 ### dialog ###
 
   * added dlg_get_var(ci, ft, tt, key, dst_var) function
   * added dlg_set_var(callid, ft, tt, key, value) function
   * added modparam dlg_ctxiuid_mode to control when iuid is set
+  * api function to get the status if dlg var is set or not
+
+### geoip2 ###
+
+  * new parameter to register result id to get pv work in kemi
+
+### imc ###
+
+  * added support to modify member role
+  * added db_mode support (memory or database records)
+  * propagate content-type header
 
 ### ims_ipsec_pcscf ###
 
@@ -53,9 +79,23 @@ source code repository.*
   * ipsec_forward() option to use UE client port for requests over TCP
   * option for ipsec_forward() to set trasport for tcp dst uri
 
+### ims_usrloc_pcscf ###
+
+  * expires_grace parameter
+  * implementation of db_mode DB_ONLY
+
 ### ipops ###
 
   * create dns container also for dns_update_pv()
+
+### jansson ###
+
+  * added jansson_pv_get(...)
+  * support for rpc commands that have execution limit with delta interval
+
+### jwt ###
+
+  * added function to verify with key value given as parameter
 
 ### lost ###
 
@@ -64,6 +104,10 @@ source code repository.*
 ### lrkproxy ###
 
   * TURN support, behind_nat support, subset of range ports
+
+### mqtt ###
+
+  * added tls_alpn module option
 
 ### nats ###
 
@@ -74,6 +118,10 @@ source code repository.*
 
   * added refresh_pubruri_avps_flag parameter
   * added local_identity_dlg_var parameter
+
+### presence_reginfo ###
+
+  * added option for aggregating presentities
 
 ### pv ###
 
@@ -92,6 +140,16 @@ source code repository.*
 ### rtpengine ###
 
   * added receive-from option
+  * allow to-tag usage for all commands
+
+### secfilter ###
+
+  * new parameter reload_delta
+  * new parameter cleanup_interval
+
+### secsipid ###
+
+  * support for multiple Identity headers
 
 ### sipt ###
 
@@ -106,11 +164,28 @@ source code repository.*
 
   * added e164_max_len modparam
 
+### stirshaken ###
+
+  * handle intermediary/chain certificates when caching certificates
+
+### textops ###
+
+  * new function to check if a character in a list is found in string
+
 ### tls ###
 
   * support serial numbers that exceed uint64
   * add timestamp and sni info for a session
   * support for configuration option TLSv1.3 and TLSv1.3+
+  * option to wrap memory management operations within pthread lock
+  * new init_mode parameter
+  * option to use openssl api for fork prepare
+
+### topoh ###
+
+  * modparam to control header masking
+  * added inter-module api function for masking call-id
+  * added mod param use_mode
 
 ### topos ###
 
@@ -139,6 +214,10 @@ source code repository.*
 
   * added RPC commands
 
+### xmlrpc ###
+
+  * support for rpc commands that have execution limit with delta interval
+
 ## New in Core
 
   * xavp - helper function to shift xavps to left with rotation
@@ -164,6 +243,14 @@ source code repository.*
   * print address family for rpc core.sockets_list
   * added #!defexp ID STM preprocessor directive
   * added #!defexps preprocessor directive
+  * pv - field for int value switched to long
+  * new global parameter return_mode
+  * kemi - function to get/set pv with long value
+  * kemi - added generic function to execute a kemi export with any kind of parameters
+  * added CodeQL workflow for GitHub code scanning
+  * rpc - support for executing commands with a delta interval limit
+  * new parameter rpc_exec_delta to set rpc command delta interval execution
+  * new rpc command core.echo_delta
 
 ### Command line arguments
 
