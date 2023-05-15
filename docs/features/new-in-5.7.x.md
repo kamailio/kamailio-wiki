@@ -60,6 +60,18 @@ source code repository.*
   * added modparam dlg_ctxiuid_mode to control when iuid is set
   * api function to get the status if dlg var is set or not
 
+### dmq_usrloc ###
+
+  * added option to replicate socket via its name
+
+### evapi ###
+
+  * wait when idle made a modparam
+  * use internal workers to handle client messages
+  * support for adaptive wait on idle to spare cpu when not busy
+  * wait increase limit made modparam
+  * if workers is 0, execute callback by evapi receiver
+
 ### geoip2 ###
 
   * new parameter to register result id to get pv work in kemi
@@ -91,7 +103,13 @@ source code repository.*
 ### jansson ###
 
   * added jansson_pv_get(...)
+
+### jsonrpcs ###
+
   * support for rpc commands that have execution limit with delta interval
+  * protocol extended to allow storing response in a file
+  * support for tcp transport
+  * added tcp_socket parameter
 
 ### jwt ###
 
@@ -114,14 +132,24 @@ source code repository.*
   * nats:connected event_route triggered on a successful connect
   * added KEMI publish function and event_callback param
 
-### pua_dialoginfo ###
+### pipelimit ###
 
-  * added refresh_pubruri_avps_flag parameter
-  * added local_identity_dlg_var parameter
+  * added rpc command pl.rm_pipe
+  * new rpc command pl.reset_pipe - reset associated values
+
+### presence ###
+
+  * added rpc command presence.presentity_show
+  * added presence.watcher_list rpc command
 
 ### presence_reginfo ###
 
   * added option for aggregating presentities
+
+### pua_dialoginfo ###
+
+  * added refresh_pubruri_avps_flag parameter
+  * added local_identity_dlg_var parameter
 
 ### pv ###
 
@@ -141,6 +169,7 @@ source code repository.*
 
   * added receive-from option
   * allow to-tag usage for all commands
+  * SDES-nonew and SDES-pad flags
 
 ### secfilter ###
 
@@ -273,6 +302,9 @@ source code repository.*
 ### kamcmd
 
 ### kamctl
+
+  * allow the definition of a specific startup file
+  * option to set store path for rpc commands
 
 ### kamdbctl
 
