@@ -41,6 +41,13 @@ source code repository.*
 ### auth ###
 
   * added flag for not invalidating nc on auth failure
+  * exported proxy_challenge() to kemi
+  * exported www_challenge() to kemi
+  * exported auth_get_www_authenticate() to kemi
+
+### auth_db ###
+
+  * exported www_authenticate_method() to kemi
 
 ### carrierroute ###
   * exported cr_load_next_domain(), cr_route() and cr_nofallback_route() to kemi
@@ -59,6 +66,7 @@ source code repository.*
   * added dlg_set_var(callid, ft, tt, key, value) function
   * added modparam dlg_ctxiuid_mode to control when iuid is set
   * api function to get the status if dlg var is set or not
+  * dlg_get_var() support early dialogs
 
 ### dmq_usrloc ###
 
@@ -118,6 +126,7 @@ source code repository.*
 ### lost ###
 
   * URI list support in LoST response (filter for sip/sips scheme)
+  * additions to via path element
 
 ### lrkproxy ###
 
@@ -131,6 +140,8 @@ source code repository.*
 
   * nats:connected event_route triggered on a successful connect
   * added KEMI publish function and event_callback param
+  * add a reply param to nats_publish()
+  * expose nats_publish_request() to KEMI
 
 ### pipelimit ###
 
@@ -193,6 +204,10 @@ source code repository.*
 
   * added e164_max_len modparam
 
+### stats ###
+
+  * use unsigned long long (J) for printing timestamp to rpc result
+
 ### stirshaken ###
 
   * handle intermediary/chain certificates when caching certificates
@@ -224,6 +239,7 @@ source code repository.*
   * new parameter to allow specifying initial request methods to skip topos
   * option to disable multiple comma separated values in One Single Via, Record-Route or Route header
   * detect known headers provided with variable for $hfl(...) and $hflc(...)
+  * handle initial dialog UPDATE requests from downstream
 
 ### topos_redis ###
 
@@ -281,31 +297,38 @@ source code repository.*
   * new parameter rpc_exec_delta to set rpc command delta interval execution
   * new rpc command core.echo_delta
 
-### Command line arguments
-
-### Interpreter
-
-### Parameters
-
-### Functions
-
-### Memory Managers
-
-### Architecture
-
 ### kamailio.cfg
 
   * use of htable guarded by own ifdef
 
 ## Tools
 
-### kamcmd
-
 ### kamctl
 
   * allow the definition of a specific startup file
   * option to set store path for rpc commands
 
-### kamdbctl
-
 ### kamcli
+
+  * support for tcp transport for RPC commands
+  * cmd_pipelimit: command to reset the pipe
+  * cmd_pstrap: option to print ps line for each pid
+  * cmd_trap: option to print system ps for each pid from rpc ps result
+  * cmd_trap: option to skip rpc command to get the list of processes
+  * cmd_jsonrpc: use shorter alias command in help message
+  * cli option to set store path for rpc commands
+  * cmd_srv: reimplemented cmd runinfo to execute rpc core.runinfo
+  * cmd_htable: added commands for rpc setxs and setxi
+  * aliased acl to command group
+  * cmd_speedial: added cli options to set fname and lname
+  * kamcli.ini: added mt command alias to mtree
+  * cmd_acc: no limit condition for cdrs list
+  * cmd_acc: list prints all acc records if --limit=0
+  * cmd_acc: added rates-generate command
+  * cmd_acc: added rates-proc-create command
+  * cmd_acc: added rates-rm command
+  * cmd_acc: added rates-add command
+  * cmd_acc: added cdrs-list command
+  * cmd_acc: added cdrs-generate command
+  * cmd_db: added create-table-like command
+  * cmd_db: updates to grant and revoke commands
