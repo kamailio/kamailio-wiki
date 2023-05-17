@@ -62,13 +62,14 @@ source code repository.*
   * exported www_authenticate_method() to kemi
 
 ### carrierroute ###
+
   * exported cr_load_next_domain(), cr_route() and cr_nofallback_route() to kemi
 
 ### cdp ###
 
   * added SCTP support
 
-## ctl ###
+### ctl ###
 
   * support for rpc commands that have execution limit with delta interval
 
@@ -241,7 +242,7 @@ source code repository.*
 
   * modparam to control header masking
   * added inter-module api function for masking call-id
-  * added mod param use_mode
+  * added module parameter use_mode to allow library-style use
 
 ### topos ###
 
@@ -252,6 +253,7 @@ source code repository.*
   * option to disable multiple comma separated values in One Single Via, Record-Route or Route header
   * detect known headers provided with variable for $hfl(...) and $hflc(...)
   * handle initial dialog UPDATE requests from downstream
+  * option to mask call-id via topoh
 
 ### topos_redis ###
 
