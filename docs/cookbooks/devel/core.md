@@ -1739,7 +1739,7 @@ the traffic.
 
 ### loadmodule
 
-Loads a module for later usage in the configuration script. The modules
+Loads a module for later usage in the configuration script. The module
 is searched in the path specified by `loadpath` (or `mpath`).
 
 Prototypes:

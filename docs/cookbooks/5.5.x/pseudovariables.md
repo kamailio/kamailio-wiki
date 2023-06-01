@@ -1942,9 +1942,9 @@ Example:
 The **name** can be:
 
 -   id_index - return the internal index of current transaction or $null
-    if not transaction is found
+    if no transaction is found
 -   id_label - return the internal label of current transaction or $null
-    if not transaction is found
+    if no transaction is found
 -   id_index_n - return the internal index of current transaction, if no
     transaction exists yet, create it
 -   id_label_n - return the internal label of current transaction, if no
