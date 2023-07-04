@@ -1543,10 +1543,10 @@ The name can be:
 -   buf - entire message buffer as string
 -   len - length of the message (length of above buf)
 -   af - address family
--   src_ip - source IP address
--   dst_ip - destination IP address
--   src_port - port of source address
--   dst_port - port of source address
+-   src_ip - source IP address as string
+-   dst_ip - destination IP address as string
+-   src_port - port of source address as number
+-   dst_port - port of source address as number
 -   proto - transport protocol
 
 Example:
