@@ -125,7 +125,7 @@ code repository.*\</fc>
 
 -   corex.shm_status and corex.shm_summary rpc commands
 -   new function send_data(uri, data)
-    -   send arbitrary formated data to uri
+    -   send arbitrary formatted data to uri
     -   uri param has to be a valid sip uri
     -   both parameters can include pseudo-variables
 -   functions for management of msg internal flags

@@ -669,7 +669,7 @@ Pseudo-module providing per-proces STIR/SHAKEN API from libsecsipid.
 -   misc/tools/kemi: lua tools useful for using Kamailio with KEMI Lua
     scripts
 -   support for fuzzing integration based on oss-fuzz
--   use github worker for continous integration instead of travis-ci
+-   use github worker for continuous integration instead of travis-ci
 
 ### kamcmd
 

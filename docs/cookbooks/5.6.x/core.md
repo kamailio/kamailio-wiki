@@ -1089,7 +1089,7 @@ Examples of usage:
     messages.
 -   debug=-6: This will disable all log messages.
 
-Value of 'debug' parameter can also be get and set dynamically using the
+Value of 'debug' parameter can also be obtained and set dynamically using the
 'debug' Core MI function or the RPC function, e.g.:
 
     kamcmd cfg.get core debug
@@ -2213,8 +2213,8 @@ listen=udp:127.0.0.1:5070
 listen=udp:127.0.0.1:5060
 ```
 
--   it will start 2 workers to handle traffic on <udp:127.0.0.1:5080>
-    and 4 for each of <udp:127.0.0.1:5070> and <udp:127.0.0.1:5060>. In
+-   it will start 2 workers to handle traffic on udp:127.0.0.1:5080
+    and 4 for each of udp:127.0.0.1:5070 and udp:127.0.0.1:5060. In
     total there are 10 worker processes
 
 Example for tcp sockets:
@@ -2410,8 +2410,9 @@ wait_worker1_time = 1000000
 
 ### wait_worker1_usleep
 
-How long to wait for child worker one to complete the initialization. In
-micro-seconds.
+Waiting for child worker one to complete the initialization is done in
+a loop, which loop waits until wait_worker1_time passes.  This parameter
+specifies how long after each iteration of that loop to wait in micro-seconds.
 
 Default: 100000 (micro-seconds = 0.1 seconds).
 

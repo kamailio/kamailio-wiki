@@ -693,7 +693,7 @@ Default value: L_WARN (debug=0)
 
 Examples of usage:
 
--   debug=3: print all log messages. This is only usefull for debugging
+-   debug=3: print all log messages. This is only useful for debugging
     of problems. Note: this produces a lot of data and therefore should
     not be used on production servers (on a busy server this can easily
     fill up your hard disk with log messages)
@@ -701,7 +701,7 @@ Examples of usage:
     messages.
 -   debug=-6: This will disable all log messages.
 
-Value of 'debug' parameter can also be get and set dynamically using the
+Value of 'debug' parameter can also be obtained and set dynamically using the
 'debug' Core MI function or the RPC function, e.g.:
 
     kamcmd cfg.get core debug
@@ -1374,8 +1374,8 @@ listen=udp:127.0.0.1:5070
 listen=udp:127.0.0.1:5060
 ```
 
--   it will start 2 workers to handle traffic on <udp:127.0.0.1:5080>
-    and 4 for each of <udp:127.0.0.1:5070> and <udp:127.0.0.1:5060>. In
+-   it will start 2 workers to handle traffic on udp:127.0.0.1:5080
+    and 4 for each of udp:127.0.0.1:5070 and udp:127.0.0.1:5060. In
     total there are 10 worker processes
 
 Example for tcp sockets:
@@ -2595,7 +2595,7 @@ Example of usage:
 
 force_tcp_alias(port)
 
-adds a tcp port alias for the current connection (if tcp). Usefull if
+adds a tcp port alias for the current connection (if tcp). Useful if
 you want to send all the traffic to port_alias through the same
 connection this request came from \[it could help for firewall or nat traversal\]. With no parameters adds the port from the message via as
 the alias. When the "aliased" connection is closed (e.g. it's idle for

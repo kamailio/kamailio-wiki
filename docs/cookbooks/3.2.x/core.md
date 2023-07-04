@@ -602,7 +602,7 @@ Default value: L_WARN (debug=0)
 
 Examples of usage:
 
--   debug=3: print all log messages. This is only usefull for debugging
+-   debug=3: print all log messages. This is only useful for debugging
     of problems. Note: this produces a lot of data and therefore should
     not be used on production servers (on a busy server this can easily
     fill up your hard disk with log messages)
@@ -610,7 +610,7 @@ Examples of usage:
     messages.
 -   debug=-6: This will disable all log messages.
 
-Value of 'debug' parameter can also be get and set dynamically using
+Value of 'debug' parameter can also be obtained and set dynamically using
 'debug' Core MI function, e.g.:
 
     sercmd cfg.get core debug
@@ -1226,7 +1226,7 @@ user_agent_header="User-Agent: My Super SIP Server"
 **Alias name: wdir**
 
 The working directory used by sip-router at runtime. You might find it
-usefull when come to generating core files :)
+useful when come to generating core files :)
 
 Example of usage:
 
@@ -2317,7 +2317,7 @@ Example of usage:
 
 force_tcp_alias(port)
 
-adds a tcp port alias for the current connection (if tcp). Usefull if
+adds a tcp port alias for the current connection (if tcp). Useful if
 you want to send all the traffic to port_alias through the same
 connection this request came from \[it could help for firewall or nat traversal\]. With no parameters adds the port from the message via as
 the alias. When the "aliased" connection is closed (e.g. it's idle for
