@@ -1694,7 +1694,7 @@ impact on the size of destination set created in core (e.g., via
 append_branch()) as well as the serial and parallel forking done via tm
 module. It replaces the old defined constant MAX_BRANCHES.
 
-The value has to be at least 1 and the upper limit is 31.
+The value has to be at least 1 and the upper limit is 30.
 
 Default value: 12
 
