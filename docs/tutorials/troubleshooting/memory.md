@@ -72,7 +72,7 @@ zone of memory, while for PKG you get a list with many groups of
 statistics, each specific for a Kamailio process (child).
 
 In order to merge the free memory fragments one should enable the memory
-join support in the core. Its is enabled by default (mem_join=1).
+join support in the core. It is enabled by default (mem_join=1).
 
     mem_join=1
 
@@ -268,19 +268,18 @@ Next is a diff showing the changes in Makefile.defs, but note that lines
 may vary on your specific Kamailio version.
 
 ``` c
-diff --git a/Makefile.defs b/Makefile.defs
-index 3890668..12ca37a 100644
---- a/Makefile.defs
-+++ b/Makefile.defs
-@@ -621,7 +621,7 @@ C_DEFS= $(extra_defs) \
-         -DSER_VER=$(SER_VER) \
-         -DCFG_DIR='"$(cfg_target)"'\
-         -DRUN_DIR='"$(run_target)"'\
--        -DPKG_MALLOC \
-+        -DDBG_SYS_MALLOC \
-         -DSHM_MEM  -DSHM_MMAP \
-         -DDNS_IP_HACK \
-         -DUSE_MCAST \
+diff --git a/src/Makefile.defs b/src/Makefile.defs
+index 675f2cf5bb..ac5972dfd7 100644
+--- a/src/Makefile.defs
++++ b/src/Makefile.defs
+@@ -118,6 +118,7 @@ MEMMNG ?= 0
+ # 0 - off (no-debug mode)
+ # 1 - on (debug mode)
+ MEMDBG ?= 1
++MEMPKG = sys
+ 
+ VERSIONVAL = $(shell expr $(VERSION) \* 1000000 + $(PATCHLEVEL) \* 1000 + \
+                        $(SUBLEVEL) )
 ```
 
 After updating Makefile.defs recompile and reinstall.
