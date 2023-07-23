@@ -14,22 +14,22 @@ source code repository.*
 ### app_python3s ###
 
   * kemi python3 interpreter with statically exported KSR object
-  * https://www.kamailio.org/docs/modules/devel/modules/app_python3.html
+  * [https://www.kamailio.org/docs/modules/devel/modules/app_python3.html](https://www.kamailio.org/docs/modules/devel/modules/app_python3.html)
 
 ### app_ruby_proc ###
 
   * per-process kemi ruby API
-  * https://www.kamailio.org/docs/modules/devel/modules/app_python3.html
+  * [https://www.kamailio.org/docs/modules/devel/modules/app_ruby_proc.html](https://www.kamailio.org/docs/modules/devel/modules/app_ruby_proc.html)
 
 ### math ###
 
   * extensions for math operations
-  * https://www.kamailio.org/docs/modules/devel/modules/app_python3.html
+  * [https://www.kamailio.org/docs/modules/devel/modules/math.html](https://www.kamailio.org/docs/modules/devel/modules/math.html)
 
 ### tls_wolfssl ###
 
   * tls module using wolfssl project
-  * https://www.kamailio.org/docs/modules/devel/modules/app_python3.html
+  * [https://www.kamailio.org/docs/modules/devel/modules/tls_wolfssl.html](https://www.kamailio.org/docs/modules/devel/modules/tls_wolfssl.html)
 
 ## New in existing Modules
 
