@@ -2890,6 +2890,24 @@ request_route {
 
 See function `via_use_xavp_fields()` from "corex" module.
 
+### xavp_via_reply_params
+
+Set the name of the XAVP of which subfields will be added as header parameters to the top `Via` of the replies sent out.
+
+If not set, `XAVP` to `Via` header parameter manipulation is not applied
+(default behaviour).
+
+If set, top `Via` header of the to-be-sent reply gets additional parameters from defined `XAVP`.
+Core flag `FL_ADD_XAVP_VIA_REPLY PARAMS` needs to be set¹.
+
+Example:
+
+```
+    xavp_via_reply_params="viarpl"
+```
+
+`[1]` See function `via_reply_vadd_xavp_params()` from "corex" module.
+
 ## DNS Parameters
 
 Note: See also file `doc/tutorials/dns.txt` for details about Kamailio's
