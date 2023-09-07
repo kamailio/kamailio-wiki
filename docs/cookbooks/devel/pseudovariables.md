@@ -1279,6 +1279,19 @@ The key can be:
 -   flags - flags set internally when executing event_route
     'dispatcher:dst-up' or 'dispatcher:dst-down'
 
+## $dsg(key) - Dispatcher group attributes
+
+Return attributes related to dispatcher group that is set via
+`ds_dsg_fetch()`.
+
+The key can be:
+
+  - `count` - the number of records (destination addresses) in the group
+  - `active`- the number of active destinations in the group
+  - `pactive`- the percent of active destinations in the group
+  - `inactive` - the number of inactive destination in the group
+  - `inactive` - the percent of inactive destination in the group
+
 ## $time(name) - Broken-down time
 
 **$time(name)** - the PV provides access to broken-down time attributes
