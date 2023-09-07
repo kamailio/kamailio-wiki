@@ -3380,6 +3380,11 @@ The attr can be:
 -   rport - rport parameter value (string)
 -   received - received parameter value (string)
 -   i - i parameter value (string)
+-   params - all parameters
+-   oc - 1 or 0 if the oc parameter is present or not
+-   ocalgo - the value of oc-algo parameter
+-   ocvalidity - the value of oc-validity parameter
+-   ocseq - the value of oc-seq parameter
 
 ## $via1(attr) - Second Via Attributes
 
