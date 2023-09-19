@@ -3381,7 +3381,8 @@ The attr can be:
 -   received - received parameter value (string)
 -   i - i parameter value (string)
 -   params - all parameters
--   oc - 1 or 0 if the oc parameter is present or not
+-   oc - 0 if the oc parameter is not present; 1 if present but no value; 2 if present with value
+-   ocval - value of oc parameter
 -   ocalgo - the value of oc-algo parameter
 -   ocvalidity - the value of oc-validity parameter
 -   ocseq - the value of oc-seq parameter
