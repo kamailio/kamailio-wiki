@@ -3423,6 +3423,19 @@ The key can be:
 -   $x_rs:
 -   $x_rr:
 
+## microhttpd module variables
+
+`$mhttpd(key)` - return attributes of the HTTP request received by microhttpd module.
+
+The key can be:
+
+  - `url` - the http url
+  - `data` - the body of http request
+  - `size` - the size of the body
+  - `method` - the http method
+  - `srcip` - the source ip
+  - `version` - the http version
+
 ## $C(xy) - Foreground and background colors
 
 $C(xy) - reference to an escape sequence. “x” represents the foreground
