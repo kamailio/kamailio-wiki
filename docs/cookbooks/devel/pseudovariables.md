@@ -115,7 +115,7 @@ The 'name' can be:
 -   uri - return uri of the branch
 -   dst_uri - return destination uri (next hop address)
 -   path - return the path vector for the branch
--   q - return the q value of the branch
+-   q - return the q value of the branch as integer `0..100` (representing `q * 100`)
 -   send_socket - return the socket to be used to send the branch
 -   count - return the number of the branches
 -   flags - return the branch flags value
