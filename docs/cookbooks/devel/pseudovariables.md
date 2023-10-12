@@ -1290,7 +1290,7 @@ The key can be:
   - `active`- the number of active destinations in the group
   - `pactive`- the percent of active destinations in the group
   - `inactive` - the number of inactive destination in the group
-  - `inactive` - the percent of inactive destination in the group
+  - `pinactive` - the percent of inactive destination in the group
 
 ## $time(name) - Broken-down time
 
