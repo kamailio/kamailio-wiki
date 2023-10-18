@@ -3344,6 +3344,18 @@ and `tcp_wq_max`).
     tcp_async = yes | no (default yes)
 ```
 
+### tcp_check_timer
+
+Set the check interval (in seconds) for tcp connections. It is used to check
+if there was any data received on new connections or if the receiving of SIP
+messages takes too long. See also `tcp_msg_data_timeout` and `tcp_msg_read_timeout`.
+
+Default 10.
+
+```
+tcp_check_timer=5
+```
+
 ### tcp_children
 
 Number of children processes to be created for reading from TCP
@@ -3527,6 +3539,24 @@ Example of usage:
 
 ```
     tcp_max_connections=4096
+```
+
+### tcp_msg_data_timeout
+
+Duration in seconds for how long to wait till data is received on a new tcp
+connection. Default 20.
+
+```
+tcp_msg_data_timeout=10
+```
+
+### tcp_msg_read_timeout
+
+Duration in seconds for how long to wait till data is received on a new tcp
+connection. Default 20.
+
+```
+tcp_msg_read_timeout=10
 ```
 
 ### tcp_no_connect
