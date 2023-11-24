@@ -40,3 +40,4 @@ Access type:
 -   [2020 - Second Meeting - Wednesday, Nov 25, 15:00UTC](irc-meetings/2020b.md)
 -   [2021 - First Meeting - Wednesday, Dec 15, 15:00UTC](irc-meetings/2021a.md)
 -   [2022 - First Meeting - Thursday, Dec 08, 15:00UTC](irc-meetings/2022a.md)
+-   [2023 - First Meeting - Tuesday, Dec 05, 14:30UTC](irc-meetings/2023a.md)
