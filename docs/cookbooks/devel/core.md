@@ -2093,6 +2093,20 @@ if the debug level is 2 or higher.
 
 Please see also [#memdbg](#memdbg) and [#debug](#debug).
 
+### mem_add_size
+
+Size in bytes to be added for each chunk allocated by the internal `qm` (quick malloc) memory manager.
+It could be useful in cases when external libraries initialized to use `qm` expose issues of buffer
+overflow.
+
+It can be set via config reload framework.
+
+Default is 0.
+
+``` c
+mem_add_size=4
+```
+
 ### mem_join
 
 If set to 1, memory manager (e.g., q_malloc) does join of free fragments.
