@@ -409,6 +409,10 @@ route {
     -   text on the same line as the directive will cause problems. Keep
         the directive lines clean and only comment on a line before or
         after.
+    -   if using git to pull the kamailio.cfg to your machine, make
+        sure that #!endif is NOT the last line of your config file.
+        this causes a "different number of preprocessor directives"
+        error.  if you need, put a comment line after the #!endif line
 
 ### defenv
 
