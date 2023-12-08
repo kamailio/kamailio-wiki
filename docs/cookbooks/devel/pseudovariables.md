@@ -1129,6 +1129,9 @@ Implemented for:
 -   Record-Route
 -   Route
 -   Via
+-   Diversion
+-   P-Asserted-Identity
+-   P-Preferred-Identity
 
 For the rest of the headers works like **$hdr(name)**.
 
@@ -1170,6 +1173,9 @@ Implemented for:
 -   Record-Route
 -   Route
 -   Via
+-   Diversion
+-   P-Asserted-Identity
+-   P-Preferred-Identity
 
 For the rest of the headers works like **$hdrc(name)**.
 
