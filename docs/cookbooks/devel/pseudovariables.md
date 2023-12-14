@@ -631,7 +631,7 @@ configuration file)
 
 ### $rUl - R-URI Username Length
 
-**$rU** - the length of the username in R-URI
+**$rUl** - the length of the username in R-URI
 
 ### $rv - SIP message version
 
@@ -821,7 +821,7 @@ configuration file, but its value does not change)
 
 ### $tUl - To URI Username Length
 
-**$tU** - the length of the username in To URI
+**$tUl** - the length of the username in To URI
 
 ### $Tb - Startup timestamp
 
