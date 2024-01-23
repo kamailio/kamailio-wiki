@@ -13,5 +13,3 @@ new developers or people working with installations from source code.
     Directory](/devel/how-to/source-tree-run)
 -   [How to Install Kamailio in a Custom
     Path](/devel/how-to/install-custom-path)
--   [How to troubleshoot out of memory
-    issues](/devel/how-to/troubleshoot-memory)
