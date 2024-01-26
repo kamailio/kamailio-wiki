@@ -3356,6 +3356,8 @@ if(secsipid_build_identity("$fU", "$rU", "A", "",
 -   $sdp(sess_version) - sess-version -attribute from SDP o= -line. When
     set to special value -1, current value is incremented. (read +
     write)
+-   $sdp(c:ip) - connection IP (read only) - taken from first media stream if specified,
+    otherwise from first session
 
 ## $sruid - Unique ID
 
