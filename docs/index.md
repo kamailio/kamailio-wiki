@@ -64,6 +64,7 @@ available at the **Old Wiki Site**:*
 ### Upgrade
 
 -   [Upgrade Kamailio stable to devel](install/upgrade/stable-to-devel.md)
+-   [Upgrade Kamailio v5.7.x to v5.8.0](install/upgrade/5.7.x-to-5.8.0.md)
 -   [Upgrade Kamailio v5.6.x to v5.7.0](install/upgrade/5.6.x-to-5.7.0.md)
 -   [Upgrade Kamailio v5.5.x to v5.6.0](install/upgrade/5.5.x-to-5.6.0.md)
 -   [Upgrade Kamailio v5.4.x to v5.5.0](install/upgrade/5.4.x-to-5.5.0.md)
@@ -153,6 +154,7 @@ in embedded Lua/Python/JavaScript/Ruby/... SIP routing scripts:
 ## Features
 
 -   [New Features in Devel Version](features/new-in-devel.md)
+-   [New Features in Release 5.8.x](features/new-in-5.8.x.md)
 -   [New Features in Release 5.7.x](features/new-in-5.7.x.md)
 -   [New Features in Release 5.6.x](features/new-in-5.6.x.md)
 -   [New Features in Release 5.5.x](features/new-in-5.5.x.md)
