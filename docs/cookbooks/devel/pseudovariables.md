@@ -1764,6 +1764,24 @@ used in send message.
 Generic pseudo variable to acts as other pseudo variables exported from
 Erlang module.
 
+## EVAPI Module
+
+### $evapi(srcaddr)
+
+The source ip
+
+### $evapi(srcport)
+
+The source port
+
+### $evapi(msg)
+
+Received event message
+
+### $evapi(conidx)
+
+internal connection index
+
 ## HTable Module
 
 ### $sht(htable=>key)
