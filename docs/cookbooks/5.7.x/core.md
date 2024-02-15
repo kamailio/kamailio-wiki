@@ -1950,8 +1950,8 @@ as `lua` which is registered by the `app_lua` module:
 
 ### maxbuffer
 
-The size in bytes not to be exceeded during the auto-probing procedure
-of discovering and increasing the maximum OS buffer size for receiving
+The size in bytes multiplied by 2 not to be exceeded during the auto-probing
+procedure of discovering and increasing the maximum OS buffer size for receiving
 UDP messages (socket option SO_RCVBUF). Default value is 262144.
 
 Example of usage:
