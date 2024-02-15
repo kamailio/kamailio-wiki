@@ -3274,6 +3274,16 @@ Default value is **no**.
 tcp_accept_hep3=yes
 ```
 
+### tcp_accept_iplimit
+
+Set limit for accepted connections from the same IP address.
+
+Default 1024.
+
+```
+tcp_accept_iplimit=32
+```
+
 ### tcp_accept_no_cl
 
 Control whether to throw or not error when there is no Content-Length
