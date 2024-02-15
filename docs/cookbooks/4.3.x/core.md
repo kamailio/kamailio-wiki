@@ -1018,8 +1018,8 @@ Example of usage:
 
 ### maxbuffer
 
-The size in bytes not to be exceeded during the auto-probing procedure
-of descovering the maximum buffer size for receiving UDP messages.
+The size in bytes multiplied by 2 not to be exceeded during the auto-probing
+procedure of discovering the maximum buffer size for receiving UDP messages.
 Default value is 262144.
 
 Example of usage:
