@@ -1962,6 +1962,18 @@ Example of usage:
 
 Note: it is not the size of the internal SIP message receive buffer.
 
+### maxsndbuffer
+
+The size in bytes multiplied by 2 not to be exceeded during the auto-probing
+procedure of discovering and increasing the maximum OS buffer size for sending
+UDP messages (socket option SO_SNDBUF). Default value is 262144.
+
+Example of usage:
+
+```
+    maxsndbuffer=65536
+```
+
 ### max_branches
 
 The maximum number of outgoing branches for each SIP request. It has
