@@ -11,6 +11,18 @@ source code repository.*
 
 ## New Modules
 
+### file_out ###
+
+### influxdbc ###
+
+### microhttpd ###
+
+## Archived Modules ##
+
+### app_sqlang ###
+
+### auth_identity ###
+
 ## New in existing Modules
 
 ### permissions
