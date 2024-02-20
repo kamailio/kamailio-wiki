@@ -3311,11 +3311,13 @@ tcp_accept_hep3=yes
 
 Set limit for accepted connections from the same IP address.
 
-Default 1024.
+Default: `1024`.
 
 ```
 tcp_accept_iplimit=32
 ```
+
+It can be set to `0` (or a negative value) to disable this limit.
 
 ### tcp_accept_no_cl
 
