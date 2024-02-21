@@ -2268,6 +2268,18 @@ options.
 Similar to **modparam**, with ability to evaluate the variables in its
 parameters.
 
+### msg_recv_max_size
+
+Set the maximum size in bytes of a SIP message to be accepted by Kamailio.
+
+Default: `32767` (`2^15 - 1`)
+
+Example:
+
+```
+msg_recv_max_size = 10000
+```
+
 ### onsend_route_reply
 
 If set to 1 (yes, on), onsend_route block is executed for received
