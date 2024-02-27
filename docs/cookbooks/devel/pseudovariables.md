@@ -3429,9 +3429,16 @@ $tcp(key) - return TCP connection attributes.
 
 The key can be:
 
--   c_si - connection source ip (useful with HAProxy connections)
--   c_sp - connection source port (useful with HAProxy connections)
--   conid - connection id
+-   `c_si` - connection source ip (useful with HAProxy connections), if the connection
+    is not found, it returns the SIP message source IP
+-   `c_sp` - connection source port (useful with HAProxy connections), if the connection
+    is not found, it returns the SIP message source port
+-   `conid` - connection id
+-   `ac_si` - active connection source ip (useful with HAProxy connections), if the connection
+    is not found, it returns `$null`
+-   `ac_sp` - active connection source port (useful with HAProxy connections), if the connection
+    is not found, it returns `$null`
+-   `aconid` - active connection id, if the connection is not found, it returns `$null`
 
 ## pv_headers module variables
 
