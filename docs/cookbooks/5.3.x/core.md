@@ -1039,7 +1039,7 @@ flags
 
 (\*) The named flags feature was propagated from the source code merge
 back in 2008 and is not extensively tested. The recommended way of
-defining flags is using [#!define](../cookbooks/5.2.x/core#define.md) (which
+defining flags is using [#!define](core.md#define) (which
 is also valid for branch/script flags):
 
 ``` c
@@ -3339,9 +3339,9 @@ Example of usage:
 
 The return() function allows you to return any integer value from a
 called route() block. You can test the value returned by a route using
-[$retcode](devel#retcode) or $? variable.
+[$retcode](#retcode) or $? variable.
 
-return(0) is same as [exit()](devel#exit);
+return(0) is same as [exit()](#exit);
 
 In bool expressions:
 
