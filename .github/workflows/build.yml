@@ -1,0 +1,22 @@
+---
+name: checks_build
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+jobs:
+  check-format:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read # to fetch code (actions/checkout)
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        uses: Tiryoh/actions-mkdocs@v0
+        with:
+          configfile: fmt/mkdocs/mkdocs.yml
