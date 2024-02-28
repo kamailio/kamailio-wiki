@@ -2651,9 +2651,9 @@ Example of usage:
 
 The return() function allows you to return any integer value from a
 called route() block. You can test the value returned by a route using
-[$retcode](devel#retcode) or $? variable.
+[$retcode](#retcode) or $? variable.
 
-return(0) is same as [exit()](devel#exit);
+return(0) is same as [exit()](#exit);
 
 In bool expressions:
 

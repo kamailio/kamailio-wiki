@@ -42,7 +42,7 @@ It closely resembles the PHP style, ***except*** you **can not use**
 double-slash ( ⁄ ⁄ ) for line comments. Only the hash (#) may be used
 for line comments.  
   
-It can be confusing seeing the C-Style Control Directives ([explained later](cfg#c-style_control_directives)) that begin with a hash-bang (#!)
+It can be confusing seeing the C-Style Control Directives ([explained later](cfg.md#c-style-control-directives)) that begin with a hash-bang (#!)
 mixed with line comments beginning with a hash (#).
 
 | Examples:                                                                           |
@@ -145,7 +145,7 @@ These name/value pairs are normally delimited by an equal sign.
 
 \<fc #FF0000>There are a couple situations where the value needs to be
 enclosed in quotes.\</fc>  
-Check the [core parameters](..//core#core_parameters) for the required
+Check the [core parameters](..//core.md#core_parameters) for the required
 syntax.
 
 | Examples:                |

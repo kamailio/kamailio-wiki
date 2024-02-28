@@ -105,4 +105,4 @@ new code that might not get to **master** branch after all.
 Several tutorials about committing with Git and backporting are
 available at:
 
--   [Guidelines TOC](../start#guidelines.md)
+-   [Guidelines TOC](../index.md#guidelines)
