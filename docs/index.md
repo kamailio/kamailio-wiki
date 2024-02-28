@@ -75,7 +75,7 @@ available at the **Old Wiki Site**:*
 
 -   [Main Download Page](https://www.kamailio.org/w/download/)
 -   [Download Tarball with Sources of Latest Stable Release](https://www.kamailio.org/pub/kamailio/latest/src/)
--   [Download Sources of v5.6.x from GIT Repository](download/v5.7.x-from-git.md)
+-   [Download Sources of v5.7.x from GIT Repository](download/v5.7.x-from-git.md)
 -   [Download Sources of v5.6.x from GIT Repository](download/v5.6.x-from-git.md)
 -   [Download Sources of v5.5.x from GIT Repository](download/v5.5.x-from-git.md)
 -   [Download Sources of v5.4.x from GIT Repository](download/v5.4.x-from-git.md)
@@ -193,7 +193,7 @@ in embedded Lua/Python/JavaScript/Ruby/... SIP routing scripts:
 ### Database Structure
 
 -   [Devel Version](https://www.kamailio.org/docs/db-tables/kamailio-db-devel.html)
--   [5.6.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.7.x.html)
+-   [5.7.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.7.x.html)
 -   [5.6.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.6.x.html)
 -   [5.5.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.5.x.html)
 -   [5.4.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.4.x.html)
