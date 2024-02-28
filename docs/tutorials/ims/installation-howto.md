@@ -69,10 +69,10 @@ Then add the repository to your "/etc/apt/sources.list":
 
 NOTE:
 
--   The repository is 64 Bit only
--   we do have packages for Debian 7, Debian 8 (jessie) and Ubuntu LTS
+- The repository is 64 Bit only
+- we do have packages for Debian 7, Debian 8 (jessie) and Ubuntu LTS
     (trusty)
--   the packages are updated regularly from trunk
+- the packages are updated regularly from trunk
 
 And update the available packets:
 
@@ -104,10 +104,10 @@ examples/scscf/.
 
 The configuration for each server consists of minimum two files:
 
--   kamailio.cfg - the main configuration-file (general for each entity)
--   pcscf.cfg / icscf.cfg / scscf.cfg - inidividual configurations for
+- kamailio.cfg - the main configuration-file (general for each entity)
+- pcscf.cfg / icscf.cfg / scscf.cfg - inidividual configurations for
     the P-/I-/S-CSCF (everything, that's individual per server)
--   pcscf.xml / icscf.xml / scscf.xml - Diameter configurations
+- pcscf.xml / icscf.xml / scscf.xml - Diameter configurations
 
 Copy the required config files to your /etc/kamailio/-folder, adapt the
 config in the pcscf.cfg/pcscf.xml to your needs (change "ng-voice.com"
@@ -176,11 +176,11 @@ The Webinterface should be reachable on port “8080″.
 
 The following config files (/etc/fhoss) may be of interest:
 
--   DiameterPeerHSS.xml: The Diameter Interconnects and listening IP
+- DiameterPeerHSS.xml: The Diameter Interconnects and listening IP
     definition
--   hss.properties: The listening IP definition for the Web-Interface
--   hibernate.properties: The database interconnection for the HSS
--   conf/tomcat-users.xml: Usernames and Passwords for the Web-User
+- hss.properties: The listening IP definition for the Web-Interface
+- hibernate.properties: The database interconnection for the HSS
+- conf/tomcat-users.xml: Usernames and Passwords for the Web-User
     (default Username is: “hssAdmin” and password “hss”)
--   Note: You will need to restart the FHoSS
+- Note: You will need to restart the FHoSS
     (“/etc/init.d/openimscore-fhoss restart”) in order to apply changes.

@@ -15,8 +15,8 @@ information about this:
 
 See also:
 
--   <http://www.kernel.org/pub/software/scm/git/docs/user-manual.html#creating-good-commit-messages>
--   <http://www.tpope.net/node/106>
+- <http://www.kernel.org/pub/software/scm/git/docs/user-manual.html#creating-good-commit-messages>
+- <http://www.tpope.net/node/106>
 
 More information about the git workflow for Kamailio can be also found
 at the wiki page [GIT Commit Guidelines](../devel/git-commit-guidelines.md) -
@@ -27,4 +27,4 @@ it is recommended you read that one as well.
 For any question, do not hesitate to contact other developers via
 mailing list:
 
--   **\<sr-dev \[at\] lists.sip-router.org>**
+- **\<sr-dev \[at\] lists.sip-router.org>**

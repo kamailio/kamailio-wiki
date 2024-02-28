@@ -3,7 +3,7 @@
 📘 **Previous version was 5.8.x (released on May 2023), see
 what was new in that release at**:
 
-  -  [New In v5.7.x](new-in-5.7.x.md)
+  - [New In v5.7.x](new-in-5.7.x.md)
 
 📘 *This is a draft of new features added in this version,
 manually updated, thus not always synchronized with what is new in

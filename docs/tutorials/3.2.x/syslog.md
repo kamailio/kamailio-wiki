@@ -29,9 +29,9 @@ Debian Linux is “/var/log/syslog” and in RedHat Linux is
 “/var/log/messages”. To make Kamailio print log messages in another file
 you have to follow the next instructions.
 
--   set option “log_facility=LOG_LOCAL0” in Kamailio configuration file
+- set option “log_facility=LOG_LOCAL0” in Kamailio configuration file
     (this is in the default Kamailio config)
--   then configure syslog to use a special file for log messages with
+- then configure syslog to use a special file for log messages with
     facility “LOG_LOCAL0”
 
 The configuration file of syslog can be usually found in
@@ -70,7 +70,7 @@ configuration file is:
 When using **syslog** daemon, in most of current Linux distributions,
 you just have to add a file:
 
-    /etc/logrotate.d/kamailio 
+    /etc/logrotate.d/kamailio
 
 Containing:
 

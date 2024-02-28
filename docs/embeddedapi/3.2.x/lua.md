@@ -14,18 +14,18 @@ script as package **sr**.
 
 References:
 
--   **app_lua** module:
+- **app_lua** module:
     [README](http://kamailio.org/docs/modules/3.2.x/modules/app_lua.html)
--   **Lua**: <http://www.lua.org>
+- **Lua**: <http://www.lua.org>
 
 Remarks:
 
--   check the modules' documentation that export functions to Lua (they
+- check the modules' documentation that export functions to Lua (they
     match subpackage name) to understand better the functionality
     provided by specific functions
--   the parameters must be strings if the prototype have them in between
+- the parameters must be strings if the prototype have them in between
     double quotes, or integers if there are no double quotes
--   any parameter specified in prototype enclosed in between square
+- any parameter specified in prototype enclosed in between square
     brackets is optional
 
 ## SR Package
@@ -64,11 +64,11 @@ sr.log("level", "message")
 
 Parameter level can be"
 
--   dbg
--   info
--   warn
--   err
--   crit
+- dbg
+- info
+- warn
+- err
+- crit
 
 ### sr.modf
 

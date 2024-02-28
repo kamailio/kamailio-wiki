@@ -29,23 +29,23 @@ can be done with:
 
 The docbook file are:
 
--   modname.xml (e.g., acc.xml) - the main docbook file, including other
+- modname.xml (e.g., acc.xml) - the main docbook file, including other
     files that have content
--   modname_admin.xml (e.g., acc_admin.xml) - the docbook file that
+- modname_admin.xml (e.g., acc_admin.xml) - the docbook file that
     includes content targeting administrators (e.g., short description,
     dependencies, parameters and functions for the config file, a.s.o.)
--   modname_devel.xml - the docbook file that includes content targeting
+- modname_devel.xml - the docbook file that includes content targeting
     developers (e.g., inter module APIs)
 
 ### SER Style
 
 The docbook file are:
 
--   modname.xml - the main docbook file, including other files that have
+- modname.xml - the main docbook file, including other files that have
     content
--   params.xml - the docbook file that includes module config parameters
--   funcs.xml - the docbook file that includes module config functions
--   ...
+- params.xml - the docbook file that includes module config parameters
+- funcs.xml - the docbook file that includes module config functions
+- ...
 
 ## Section IDs
 
@@ -58,16 +58,16 @@ value of ID attributes should use following pattern:
 
 The \[type\] should be:
 
--   p - parameters
--   f - functions
--   m - mi commands
--   r - rpc commands
--   s - statistics
--   e - event routes
--   v - pseudovariable
+- p - parameters
+- f - functions
+- m - mi commands
+- r - rpc commands
+- s - statistics
+- e - event routes
+- v - pseudovariable
 
 Next is an example showing the id for the section corresponding to
 parameter **workers** from module **async**:
 
     <section id="async.p.workers">
-            <title><varname>workers</varname> (int)</title> 
+            <title><varname>workers</varname> (int)</title>

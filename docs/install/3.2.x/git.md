@@ -23,9 +23,9 @@ meaning that they are more or less same application.
 The difference is in few compile time options that are enabled in
 Kamailio. These are:
 
--   enable Kamailio-style statistics framework - if you don't know what
+- enable Kamailio-style statistics framework - if you don't know what
     they are, then you don't need them anyhow
--   enable application server extensions in TM module needed only by
+- enable application server extensions in TM module needed only by
     seas module - unless you use seas module, these extensions make no
     difference to you
 
@@ -40,20 +40,20 @@ access.
 
 The following packages are required before proceeding to the next steps.
 
--   <u>git</u> client: apt-get install git-core - it is recommended to
+- <u>git</u> client: apt-get install git-core - it is recommended to
     have a recent version, if your Linux distro has an old version, you
     can download newer one from: <http://git-scm.com/>
--   <u>gcc</u> compiler: apt-get install gcc
--   <u>flex</u> - apt-get install flex
--   <u>bison</u> - apt-get install bison
--   <u>libmysqlclient-dev</u> - apt-get install libmysqlclient-dev
--   <u>make</u> - apt-get install make
--   if you want to enable more modules, some of them require extra
+- <u>gcc</u> compiler: apt-get install gcc
+- <u>flex</u> - apt-get install flex
+- <u>bison</u> - apt-get install bison
+- <u>libmysqlclient-dev</u> - apt-get install libmysqlclient-dev
+- <u>make</u> - apt-get install make
+- if you want to enable more modules, some of them require extra
     libraries:
-    -   <u>libssl</u> - apt-get install libssl-dev
-    -   <u>libcurl</u> - apt-get install libcurl4-openssl-dev
-    -   <u>libxml2</u> - apt-get install libxml2-dev
-    -   <u>libpcre3</u> - apt-get install libpcre3-dev
+    - <u>libssl</u> - apt-get install libssl-dev
+    - <u>libcurl</u> - apt-get install libcurl4-openssl-dev
+    - <u>libxml2</u> - apt-get install libxml2-dev
+    - <u>libpcre3</u> - apt-get install libpcre3-dev
 
 ## 2. Getting sources from GIT
 
@@ -109,7 +109,7 @@ PREFIX variable to the install path in 'make cfg ...' command:
 
 More hints about Makefile system at:
 
--   <http://sip-router.org/wiki/tutorials/makefile-system>
+- <http://sip-router.org/wiki/tutorials/makefile-system>
 
 ## 4. Compile Kamailio
 
@@ -137,10 +137,10 @@ The binaries and executable scripts were installed in:
 
 These are:
 
--   <u>kamailio</u> - Kamailio SIP server
--   <u>kamdbctl</u> - script to create and manage the Databases
--   <u>kamctl</u> - script to manage and control Kamailio SIP server
--   <u>sercmd</u> - CLI - command line tool to interface with Kamailio
+- <u>kamailio</u> - Kamailio SIP server
+- <u>kamdbctl</u> - script to create and manage the Databases
+- <u>kamctl</u> - script to manage and control Kamailio SIP server
+- <u>sercmd</u> - CLI - command line tool to interface with Kamailio
     SIP server
 
 To be able to use the binaries from command line, make sure that
@@ -245,7 +245,7 @@ is provided at:
 Just copy the init file into the /etc/init.d/kamailio. Then change the
 permission:
 
-      chmod 755 /etc/init.d/kamailio 
+      chmod 755 /etc/init.d/kamailio
 
 then edit the file updating the $DAEMON value:
 

@@ -3,7 +3,7 @@
 📘 **Previous version was 5.5.x (released on May 2021), see
 what was new in that release at**:
 
-  -  [New In v5.5.x](new-in-5.5.x.md)
+  - [New In v5.5.x](new-in-5.5.x.md)
 
 📘 *This is a draft of new features added in this version,
 manually updated, thus not always synchronized with what is new in
@@ -58,7 +58,7 @@ source code repository.*
 
 ### app_lua
 
-  -  support for lua `5.4.x`
+  - support for lua `5.4.x`
 
 ### app_lua_sr
 
@@ -105,7 +105,7 @@ source code repository.*
 
 ### db_postgres
 
-  -  added support for async queries
+  - added support for async queries
 
 ### db_redis
 
@@ -327,7 +327,7 @@ source code repository.*
 ### registrar
 
   - implemented lookup filter mode 2
-    -  use only contacts that have associated TCP/TLS/WSS connection active
+    - use only contacts that have associated TCP/TLS/WSS connection active
   - `save()` new flag to prepare the headers for reply
 
 ### rr

@@ -7,8 +7,8 @@ script as package OpenSER.
 
 References:
 
--   **perl** module:
+- **perl** module:
     [README](http://kamailio.org/docs/modules/3.3.x/modules_k/perl.html)
--   **Perl**: <http://www.perl.org>
+- **Perl**: <http://www.perl.org>
 
 Perl API documentation is part of module README.

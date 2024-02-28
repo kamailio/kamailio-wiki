@@ -31,4 +31,4 @@ end
 
 See:
 
--   <https://www.kamailio.org/wiki/tutorials/troubleshooting/memory#using_gdb>
+- <https://www.kamailio.org/wiki/tutorials/troubleshooting/memory#using_gdb>

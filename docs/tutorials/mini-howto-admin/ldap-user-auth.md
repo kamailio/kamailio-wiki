@@ -5,12 +5,12 @@ system.
 
 ## Prerequisites
 
--   install OpenLDAP library (libldap) v2.1 or greater, libldap header
+- install OpenLDAP library (libldap) v2.1 or greater, libldap header
     files (libldap-dev) are needed for compilation
--   read the documentation of auth module:
-    -   <http://kamailio.org/docs/modules/stable/modules/auth.html>
--   read the documentation of ldap module:
-    -   <http://kamailio.org/docs/modules/stable/modules/ldap.html>
+- read the documentation of auth module:
+    - <http://kamailio.org/docs/modules/stable/modules/auth.html>
+- read the documentation of ldap module:
+    - <http://kamailio.org/docs/modules/stable/modules/ldap.html>
 
 ## LDAP Tree
 
@@ -45,7 +45,7 @@ Next is an example of LDAP tree storing profiles for SIP subscribers.
 
 It has to be stored in:
 
--   /usr/local/etc/kamailio/ldap.cfg
+- /usr/local/etc/kamailio/ldap.cfg
 
 <!-- -->
 
@@ -68,7 +68,7 @@ loadmodule "ldap.so"
 ...
 modparam("ldap", "config_file", "/usr/local/etc/kamailio/ldap.cfg")
 ...
- 
+
 route[LDAPAUTH] {
     if(!(is_present_hf("Authorization") || is_present_hf("Proxy-Authorization"))) {
         # no credentials header - send back challenge

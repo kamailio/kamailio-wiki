@@ -7,18 +7,18 @@ Kamailio, following GIT installation guidelines.
 
 In short, this tutorial focuses on:
 
--   install Kamailio development version from GIT repository on Ubuntu
+- install Kamailio development version from GIT repository on Ubuntu
     12.04 32b
--   enable user authentication and persistent location service using
+- enable user authentication and persistent location service using
     MySQL server
--   add DNSSEC support to configuration file
+- add DNSSEC support to configuration file
 
 **Note:** the DNSSEC module is several days old at the time of writing
 initial version of this tutorial. For any assistance, email to
 **sr-users (at) lists.kamailio.org** -- it is a public mailing list
 that requires subscription, see more details at:
 
--   [https://lists.kamailio.org/mailman3/postorius/lists/sr-users.lists.kamailio.org/](https://lists.kamailio.org/mailman3/postorius/lists/sr-users.lists.kamailio.org/)
+- [https://lists.kamailio.org/mailman3/postorius/lists/sr-users.lists.kamailio.org/](https://lists.kamailio.org/mailman3/postorius/lists/sr-users.lists.kamailio.org/)
 
 **Note:** Ubuntu 12.04 was chosen because dnssec tools devel library are
 provided for this distribution, making the installation of the required
@@ -32,12 +32,12 @@ init.d scripts).
 
 For reading more about DNSSEC, head to:
 
--   [https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions](https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions)
+- [https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions](https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions)
 
 Many related resources, including the required libraries for Kamailio's
 DNSSEC module, are available at:
 
--   [http://www.dnssec-tools.org/](http://www.dnssec-tools.org/)
+- [http://www.dnssec-tools.org/](http://www.dnssec-tools.org/)
 
 ### DNSSEC Tools Installation
 
@@ -53,7 +53,7 @@ apt-get install dnssec-tools
 You need DNSSEC tools devel libraries to compile Kamailio's DNSSEC
 module. You can download the libraries from:
 
--   [https://dnssec-tools.org/download/#gotoBinaries](https://dnssec-tools.org/download/#gotoBinaries)
+- [https://dnssec-tools.org/download/#gotoBinaries](https://dnssec-tools.org/download/#gotoBinaries)
 
 The files are:
 
@@ -72,7 +72,7 @@ Once you download the deb files, install them with **dpkg -i ...**
 Here is a quick guide to install Kamailio development version from GIT
 repository. If you look for a more detailed tutorial, check:
 
--   [Install Kamailio Devel Version From GIT](../../install/devel/git.md)
+- [Install Kamailio Devel Version From GIT](../../install/devel/git.md)
 
 ### Prerequisites
 
@@ -121,10 +121,10 @@ The binaries and executable scripts were installed in:
 
 These are:
 
--   *kamailio* - Kamailio SIP server
--   *kamdbctl* - script to create and manage the databases
--   *kamctl* - script to manage and control Kamailio SIP server
--   *kamcmd* - CLI - command line tool to interface with Kamailio
+- *kamailio* - Kamailio SIP server
+- *kamdbctl* - script to create and manage the databases
+- *kamctl* - script to manage and control Kamailio SIP server
+- *kamcmd* - CLI - command line tool to interface with Kamailio
     SIP server
 
 To be able to use the binaries from command line, make sure that
@@ -274,7 +274,7 @@ to update the value for **DBURL** define.
 
 The README of DNSSEC module is available at:
 
--   [https://kamailio.org/docs/modules/devel/modules/dnssec.html](https://kamailio.org/docs/modules/devel/modules/dnssec.html)
+- [https://kamailio.org/docs/modules/devel/modules/dnssec.html](https://kamailio.org/docs/modules/devel/modules/dnssec.html)
 
 You have to load dnssec module in kamailio.cfg:
 
@@ -299,8 +299,8 @@ This tutorial does not include yet (left for future updates) how to
 setup a DNSSEC-enabled DNS server, there are many useful resources on
 the web. Among them:
 
--   <http://www.howtoforge.com/configuring-dnssec-on-bind9-9.7.3-on-debian-squeeze-ubuntu-11.10>
--   <http://wiki.wsartori.com/wiki/The_Perfect_BIND_DNS_Server_DNSSEC_enabled>
+- <http://www.howtoforge.com/configuring-dnssec-on-bind9-9.7.3-on-debian-squeeze-ubuntu-11.10>
+- <http://wiki.wsartori.com/wiki/The_Perfect_BIND_DNS_Server_DNSSEC_enabled>
 
 ## Testing
 
@@ -331,10 +331,10 @@ VAL_UNTRUSTED_ANSWER"
 
 ## Remarks
 
--   setup of a DNS server with DNSSEC support is left for future updates
+- setup of a DNS server with DNSSEC support is left for future updates
     of this tutorial
--   the DNSSEC module overwrites the API in the core for doing DNS
+- the DNSSEC module overwrites the API in the core for doing DNS
     queries, therefore is nothing else required to do apart of loading
     the module
--   Kamailio will do a DNS query each time it has to forward a SIP
+- Kamailio will do a DNS query each time it has to forward a SIP
     request based on hostname

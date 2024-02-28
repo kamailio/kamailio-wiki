@@ -17,14 +17,14 @@ inside the zone.
 
 There are two types of memory used by Kamailio:
 
--   private memory - allocated for each Kamailio process
-    -   one zone per child - no syncronization needed to access it
-    -   referred also as pkg (the operations in the code are done with
+- private memory - allocated for each Kamailio process
+    - one zone per child - no syncronization needed to access it
+    - referred also as pkg (the operations in the code are done with
         pkg_malloc()/pkg_free()/...)
--   shared memory - allocated for entire Kamailio instances
-    -   all processes use the same zone - syncronization (mutex)
+- shared memory - allocated for entire Kamailio instances
+    - all processes use the same zone - syncronization (mutex)
         required to access it
-    -   referred also as shm (the operations in the code are done with
+    - referred also as shm (the operations in the code are done with
         shm_malloc()/shm_free()/...)
 
 As of v4.2.0, default size for private memory is 8MB and for shared
@@ -46,9 +46,9 @@ up to 12MB of pkg and 128MB of shm, the command line should be:
 
 There could be two reasons for getting insufficient memory log messages:
 
--   too small PKG or SHM - insufficient size to accommodate all data
+- too small PKG or SHM - insufficient size to accommodate all data
     needed to be stored in memory
--   memory leak - some part of code allocates memory at runtime and does
+- memory leak - some part of code allocates memory at runtime and does
     not free it
 
 ## Monitoring Memory
@@ -81,14 +81,14 @@ join support in the core. It is enabled by default (mem_join=1).
 If the free memory size from printed statistics continues to decrease
 constantly then:
 
--   if you have growth on the service, like new subscribers, more calls,
+- if you have growth on the service, like new subscribers, more calls,
     then it can be the reason for increase in memory usage and you may
     need to restart with higher values if free size is getting too
     small. If possible, stop sending traffic to that instance (in case
     there can be added some traffic redirection) and watch to see if the
     memory usage starts decreasing, getting back to a state like at the
     moment when Kamailio was started.
--   if the number of subscribers, traffic is constant, no larger data
+- if the number of subscribers, traffic is constant, no larger data
     was reloaded (e.g., dispacher, lcr), then there is very likely a
     memory leak that has to be discovered and fixed
 
@@ -133,10 +133,10 @@ instead; see kamailio -h for more details.
 
 To get the list of chunks from memory manager, there are two ways:
 
--   stop kamailio - the log messages at kamailio shutdown will contain
+- stop kamailio - the log messages at kamailio shutdown will contain
     them
--   send a rpc command during runtime
-    -   for PKG memory:
+- send a rpc command during runtime
+    - for PKG memory:
 
 <!-- -->
 
@@ -162,7 +162,7 @@ manager. The ones for SHM should look like:
        0(17665)       0. N  address=0xb5ab240c frag=0xb5ab23f4 size=4 used=1
        0(17665)             alloc'd from mem/shm_mem.c: shm_mem_init_mallocs(199)
        0(17665)         start check=f0f0f0f0, end check= c0c0c0c0, abcdefed
-       0(17665)       1. N  address=0xb5ab2440 frag=0xb5ab2428 size=4 used=1 
+       0(17665)       1. N  address=0xb5ab2440 frag=0xb5ab2428 size=4 used=1
        0(17665)             alloc'd from timer.c: init_timer(52)
        0(17665)         start check=f0f0f0f0, end check= c0c0c0c0, abcdefed
 
@@ -277,7 +277,7 @@ index 675f2cf5bb..ac5972dfd7 100644
  # 1 - on (debug mode)
  MEMDBG ?= 1
 +MEMPKG = sys
- 
+
  VERSIONVAL = $(shell expr $(VERSION) \* 1000000 + $(PATCHLEVEL) \* 1000 + \
                         $(SUBLEVEL) )
 ```
@@ -311,7 +311,7 @@ An relevant excerpt from the blog article:
 
     Looking at the contents of /proc/meminfo showed these two lines:
 
-    Slab: 4126212 kB 
+    Slab: 4126212 kB
     SReclaimable: 4096172 kB
 
     So – almost 4G of memory was in use by the kernel slab memory structures – but

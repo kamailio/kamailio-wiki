@@ -5,11 +5,11 @@ new developers or people working with installations from source code.
 
 ## Table of Content
 
--   [How to Create and Use an Internal
+- [How to Create and Use an Internal
     Library](internal-lib.md)
--   [How to Regenerate the Readme File for a
+- [How to Regenerate the Readme File for a
     Module](module-readme.md)
--   [How to Run Kamailio from Source Tree
+- [How to Run Kamailio from Source Tree
     Directory](source-tree-run.md)
--   [How to Install Kamailio in a Custom
+- [How to Install Kamailio in a Custom
     Path](install-custom-path.md)

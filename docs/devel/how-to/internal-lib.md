@@ -2,13 +2,13 @@
 
 ## Create a library
 
--   make a new directory in `lib` folder
--   copy there the Makefile from `lib/print/` and change the name in it
--   add your `.c` and `.h` files.
+- make a new directory in `lib` folder
+- copy there the Makefile from `lib/print/` and change the name in it
+- add your `.c` and `.h` files.
 
 ## Use a library from a module
 
--   add to the module's Makefile (replace `print` with your lib name):
+- add to the module's Makefile (replace `print` with your lib name):
 
 <!-- -->
 

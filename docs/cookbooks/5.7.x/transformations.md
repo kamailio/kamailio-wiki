@@ -818,13 +818,13 @@ The prototype is:
 {re.subst,/match_expression/replacement_expression/flags}
 ```
 
--   match_expression - Posix regular expression
--   replacement_expression - substitution expression with back
+- match_expression - Posix regular expression
+- replacement_expression - substitution expression with back
     references to matched tokes: \\1, \\2, ..., \\9
--   flags:
-    -   i - match ignore case
-    -   s - match within multi-lines strings
-    -   g - replace all matches
+- flags:
+    - i - match ignore case
+    - s - match within multi-lines strings
+    - g - replace all matches
 
 ## SQL Transformations
 
@@ -835,9 +835,9 @@ The prototype is:
 
 This transformation outputs valid SQL values for various PV values:
 
--   \<null> values are output as NULL
--   integers are output as integers
--   everything else is output as quoted and escaped string
+- \<null> values are output as NULL
+- integers are output as integers
+- everything else is output as quoted and escaped string
 
 ``` c
     $var(null) = $null;

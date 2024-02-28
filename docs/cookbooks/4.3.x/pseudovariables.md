@@ -23,12 +23,12 @@ that the pseudo-variable is provided by **pv** module).
 
 Pseudo-variables can be used with many modules, among them:
 
--   acc
--   avpops
--   htable
--   textops
--   uac
--   xlog
+- acc
+- avpops
+- htable
+- textops
+- uac
+- xlog
 
 ## The list of pseudo-variables
 
@@ -103,14 +103,14 @@ of them.)
 
 The 'name' can be:
 
--   uri - return uri of the branch
--   dst_uri - return destination uri (next hop address)
--   path - return the path vector for the branch
--   q - return the q value of the branch
--   send_socket - return the socket to be used to send the branch
--   count - return the number of the branches
--   flags - return the branch flags value
--   ruid - return the ruid of the branch (Record internal Unique ID from
+- uri - return uri of the branch
+- dst_uri - return destination uri (next hop address)
+- path - return the path vector for the branch
+- q - return the q value of the branch
+- send_socket - return the socket to be used to send the branch
+- count - return the number of the branches
+- flags - return the branch flags value
+- ruid - return the ruid of the branch (Record internal Unique ID from
     usrloc)
 
 The PV can take an index to access a specific branch:
@@ -424,9 +424,9 @@ sent by callee.
 
 The key can be:
 
--   id - the returned value is an integer: 1 - for direction downstream,
+- id - the returned value is an integer: 1 - for direction downstream,
     2 - for direction upstream
--   name - the returned value is a string: 'downstream' or 'upstream'
+- name - the returned value is a string: 'downstream' or 'upstream'
 
 Example:
 
@@ -665,12 +665,12 @@ of $TS for same SIP message may return different values.
 
 The 'id' can be:
 
--   "\[(s\|i):\]name" - name is the id of an AVP; 's' and 'i' specifies
+- "\[(s\|i):\]name" - name is the id of an AVP; 's' and 'i' specifies
     if the id is string or integer. If missing, it is considered to be
     string.
--   "name" - the name is an AVP alias, or if the alias is not found, it
+- "name" - the name is an AVP alias, or if the alias is not found, it
     is a string name
--   pseudo variable - if value of pv is integer, id is integer, if
+- pseudo variable - if value of pv is integer, id is integer, if
     string, id is string
 
 $(avp(id)\[0\]) can be written in shorter form as $avp(id) and
@@ -732,8 +732,8 @@ If none is found, $null is returned.
 
 Possible 'key' values:
 
--   $expires(min) - the minimum value for expires
--   $expires(max) - the maximum value for expires
+- $expires(min) - the minimum value for expires
+- $expires(max) - the maximum value for expires
 
 When there is only one expires value, then min and max return the same.
 
@@ -925,15 +925,15 @@ configuration file)\</fc>
 
 The 'name' can be:
 
--   sec - return seconds (int 0-59)
--   min - return minutes (int 0-59)
--   hour - return hours (int 0-23)
--   mday - return the day of month (int 0-59)
--   mon - return the month (int 1-12)
--   year - return the year (int, e.g., 2008)
--   wday - return the day of week (int, 1=Sunday - 7=Saturday)
--   yday - return the day of year (int, 1-366)
--   isdst - return daylight saving time status (int, 0 - DST off, >0 DST
+- sec - return seconds (int 0-59)
+- min - return minutes (int 0-59)
+- hour - return hours (int 0-23)
+- mday - return the day of month (int 0-59)
+- mon - return the month (int 1-12)
+- year - return the year (int, e.g., 2008)
+- wday - return the day of week (int, 1=Sunday - 7=Saturday)
+- yday - return the day of year (int, 1-366)
+- isdst - return daylight saving time status (int, 0 - DST off, >0 DST
     on)
 
 Example - time(name) pseudo-variable usage:
@@ -966,7 +966,7 @@ allowing to select and return parts of sip messages and not only.
 
 List of available selects:
 
--   <http://www.kamailio.org/wiki/cookbooks/devel/selects>
+- <http://www.kamailio.org/wiki/cookbooks/devel/selects>
 
 Example:
 
@@ -996,12 +996,12 @@ is going to be sent (remote socket).
 
 They are available in **onsend_route**. The name can be:
 
--   ip - IP address of destination
--   af - address family to be used to send (numeric)
--   port - port of destination address
--   proto - transport protocol to be used to send (numeric)
--   buf - entire send buffer as string
--   len - length of outgoing packet (length of above buf)
+- ip - IP address of destination
+- af - address family to be used to send (numeric)
+- port - port of destination address
+- proto - transport protocol to be used to send (numeric)
+- buf - entire send buffer as string
+- len - length of outgoing packet (length of above buf)
 
 Example:
 
@@ -1032,28 +1032,28 @@ Return the attribute of the current processed dialog.
 
 The 'attr' can be:
 
--   h_id - hash id
--   h_entry - hash entry
--   ref - reference count
--   state - state of dialog
--   to_rs - To route set
--   from_rs - From route set
--   dflags - dialog internal flags
--   sflags - dialog script flags
--   callid - sip call id
--   to_uri - To uri
--   to_tag - To tag
--   from_uri - From uri
--   from_tag - From tag
--   toroute - timeout route
--   lifetime - timeout inteval
--   start_ts - start timestamp
--   to_cseq - To CSeq
--   from_cseq - From CSeq
--   to_contact - To contact address
--   from_contact - From contact address
--   to_bindaddr - To bind address
--   from_bindaddr - From bind address
+- h_id - hash id
+- h_entry - hash entry
+- ref - reference count
+- state - state of dialog
+- to_rs - To route set
+- from_rs - From route set
+- dflags - dialog internal flags
+- sflags - dialog script flags
+- callid - sip call id
+- to_uri - To uri
+- to_tag - To tag
+- from_uri - From uri
+- from_tag - From tag
+- toroute - timeout route
+- lifetime - timeout inteval
+- start_ts - start timestamp
+- to_cseq - To CSeq
+- from_cseq - From CSeq
+- to_contact - To contact address
+- from_contact - From contact address
+- to_bindaddr - To bind address
+- from_bindaddr - From bind address
 
 ### $dlg_ctx(attr)
 
@@ -1063,10 +1063,10 @@ Return the attribute of the context for current processed dialog.
 
 The 'attr' can be:
 
--   set
--   flags
--   timeout_route
--   timeout_bye
+- set
+- flags
+- timeout_route
+- timeout_bye
 
 ### $dlg_var(key)
 
@@ -1169,8 +1169,8 @@ The “htname” must be a hash table name defined via “htable” parameter.
 
 The “key” can be:
 
--   static string - set of characters without pseudo-variables
--   dynamic string - set of characters that include pseudo-variables.
+- static string - set of characters without pseudo-variables
+- dynamic string - set of characters that include pseudo-variables.
     The pseudo-variables will be evaluated at runtime.
 
 <!-- -->
@@ -1195,8 +1195,8 @@ and have auto-expire greater than 0.
 
 The “key” can be:
 
--   static string - set of characters without pseudo-variables
--   dynamic string - set of characters that include pseudo-variables.
+- static string - set of characters without pseudo-variables
+- dynamic string - set of characters that include pseudo-variables.
     The pseudo-variables will be evaluated at runtime.
 
 <!-- -->
@@ -1216,13 +1216,13 @@ The “htname” must be a hash table name defined via “htable” parameter.
 
 The **exp** can be:
 
--   reqexp - match by regular expression 'regexp'
--   \~\~regexp - match by regular expression 'regexp'
--   \~%prefix - match by right prefix
--   %\~prefix - match by left prefix
--   ==value - match by string value
--   eqvalue - match by integer value
--   \* \* - (two asterisks next to each other) - count all items
+- reqexp - match by regular expression 'regexp'
+- \~\~regexp - match by regular expression 'regexp'
+- \~%prefix - match by right prefix
+- %\~prefix - match by left prefix
+- ==value - match by string value
+- eqvalue - match by integer value
+- \* \* - (two asterisks next to each other) - count all items
 
 The **exp** can contain pseudo-variables.
 
@@ -1283,8 +1283,8 @@ configuration file.\</fc>
 
 The “key” can be:
 
--   static string - set of characters without pseudo-variables
--   dynamic string - set of characters that include pseudo-variables.
+- static string - set of characters without pseudo-variables
+- dynamic string - set of characters that include pseudo-variables.
     The pseudo-variables will be evaluated at runtime.
 
 When assigning values, the default expiry will be used.
@@ -1320,8 +1320,8 @@ configuration file.\</fc>
 
 The “key” can be:
 
--   static string - set of characters without pseudo-variables
--   dynamic string - set of characters that include pseudo-variables.
+- static string - set of characters without pseudo-variables
+- dynamic string - set of characters that include pseudo-variables.
     The pseudo-variables will be evaluated at runtime.
 
 <!-- -->
@@ -1342,8 +1342,8 @@ configuration file.\</fc>
 
 The “key” can be:
 
--   static string - set of characters without pseudo-variables
--   dynamic string - set of characters that include pseudo-variables.
+- static string - set of characters without pseudo-variables
+- dynamic string - set of characters that include pseudo-variables.
     The pseudo-variables will be evaluated at runtime.
 
 <!-- -->
@@ -1358,10 +1358,10 @@ The “key” can be:
 
 ### $xml(name=>spec)
 
--   name - id to refer the documet
--   spec - specifier:
-    -   doc - set/get the document as text
-    -   xpath:xpath-expression - evaluate xpath expression
+- name - id to refer the documet
+- spec - specifier:
+    - doc - set/get the document as text
+    - xpath:xpath-expression - evaluate xpath expression
 
 Example:
 
@@ -1373,13 +1373,13 @@ Example:
 
 ### $T_branch_idx
 
--   the index (starting with 1 for the first branch) of the branch for
+- the index (starting with 1 for the first branch) of the branch for
     which is executed the branch_route\[\]. If used outside of
     branch_route\[\] block, the value is '0'.
 
 ### $T_reply_ruid
 
--   the ruid stored in the current branch of the transaction. The ruid
+- the ruid stored in the current branch of the transaction. The ruid
     is stored in a branch from the details in a contact binding. In an
     event_route\[tm:branch-failure\] block, this is the ruid of the
     branch that sent a failure reply. In a failure_route\[\] block, this
@@ -1387,14 +1387,14 @@ Example:
 
 ### $T_reply_code
 
--   the code of the reply, as follows: in request_route will be the last
+- the code of the reply, as follows: in request_route will be the last
     stateful sent reply; in reply_route will be the current processed
     reply; in failure_route will be the negative winning reply. In case
     of no-reply or error, '0' value is returned
 
 ### $T_req(pv)
 
--   can be used in reply routes or inside the modules to get access to
+- can be used in reply routes or inside the modules to get access to
     attributes of the request belonging to same transaction as the reply
 
 <!-- -->
@@ -1410,7 +1410,7 @@ Example:
 
 ### $T_rpl(pv)
 
--   can be used in failure routes or inside the modules to get access to
+- can be used in failure routes or inside the modules to get access to
     attributes of the winning reply belonging to same transaction as the
     request
 
@@ -1427,7 +1427,7 @@ Example:
 
 ### $T_inv(pv)
 
--   can be used in request routes or inside the modules to get access to
+- can be used in request routes or inside the modules to get access to
     attributes of the INVITE request while processing a CANCEL.
 
 <!-- -->
@@ -1444,30 +1444,30 @@ Example:
 
 ### $T(name)
 
--   pseudo-variable class to access TM attributes
+- pseudo-variable class to access TM attributes
 
 The **name** can be:
 
--   id_index - return the internal index of current transaction
--   id_label - return the internal label of current transaction
--   reply_code - alias to $T_reply_code
--   branch_index - alias to $T_branch_idx
--   reply_type - 1 if it is a local generated reply, 0 - if no reply for
+- id_index - return the internal index of current transaction
+- id_label - return the internal label of current transaction
+- reply_code - alias to $T_reply_code
+- branch_index - alias to $T_branch_idx
+- reply_type - 1 if it is a local generated reply, 0 - if no reply for
     transaction or it is a received reply
 
 Note: the pair (id_index,id_label) uniquely identifies a transaction.
 
 ### $T_branch(name)
 
--   pseudo-variable class to access TM branch attributes
+- pseudo-variable class to access TM branch attributes
 
 The **name** can be:
 
--   flags - Flags of the branch. In an event_route\[tm:branch-failure\]
+- flags - Flags of the branch. In an event_route\[tm:branch-failure\]
     block, this is the flags of the branch that sent a failure reply. In
     a failure_route\[\] block, this is the flags of the winning failure
     response.
--   uri - the R-URI of the branch. Can be used in onreply_route\[id\] -
+- uri - the R-URI of the branch. Can be used in onreply_route\[id\] -
     reply route blocks executed by tm module. For other routing blocks
     handling requests, the R-URI is returned by $ru
 
@@ -1475,28 +1475,28 @@ The **name** can be:
 
 ### $uac_req(key)
 
--   used to build the input for uac_send_req() function of UAC module
+- used to build the input for uac_send_req() function of UAC module
 
 The key can be:
 
--   method - SIP method
--   ruri - request URI
--   furi - From URI
--   turi - To URI
--   ouri - Outbound proxy URI
--   hdrs - SIP Headers
--   body - Body
--   auser - authentication username
--   apasswd - authentication password
--   sock - local socket to be used for sending (proto:address:port)
--   callid - SIP-Call-ID of the generated request (by default, a call-id
+- method - SIP method
+- ruri - request URI
+- furi - From URI
+- turi - To URI
+- ouri - Outbound proxy URI
+- hdrs - SIP Headers
+- body - Body
+- auser - authentication username
+- apasswd - authentication password
+- sock - local socket to be used for sending (proto:address:port)
+- callid - SIP-Call-ID of the generated request (by default, a call-id
     is generated)
--   all - alias useful to reset all fields - $uac_req(all) = $null;
--   evroute - it has to be set to 1 in order to execute
+- all - alias useful to reset all fields - $uac_req(all) = $null;
+- evroute - it has to be set to 1 in order to execute
     event_route\[uac:reply\] when reply is received
--   evcode - reply code for the request sent with uac_req_send(),
+- evcode - reply code for the request sent with uac_req_send(),
     available inside event_route\[uac:reply\]
--   evtype - is 1 if the reply was received via network, 2 if the reply
+- evtype - is 1 if the reply was received via network, 2 if the reply
     was locally generated (e.g., retransmission timeout), available
     inside event_route\[uac:reply\]
 
@@ -1517,11 +1517,11 @@ event_route[uac:reply] {
 
 ### $rr_count
 
--   Number of Record Routes in received SIP request or reply.
+- Number of Record Routes in received SIP request or reply.
 
 ### $rr_top_count
 
--   If topmost Record Route in received SIP request or reply is a double
+- If topmost Record Route in received SIP request or reply is a double
     Record Route, value of $rr_top_count is 2. If it a single Record
     Route, value of $rr_top_count is 1. If there is no Record Route(s),
     value of $rr_top_count is 0.
@@ -1530,11 +1530,11 @@ event_route[uac:reply] {
 
 ### $mqk(q)
 
--   return the key of fetched item from queue q
+- return the key of fetched item from queue q
 
 ### $mqv(q)
 
--   return the value of fetched item from queue q
+- return the value of fetched item from queue q
 
 ``` c
 ...
@@ -1553,11 +1553,11 @@ while(mq_fetch("myq"))
 
 Seconds and microseconds taken from struct timeval.
 
--   $TV(s) - seconds (cached at first call per sip message)
--   $TV(u) - microseconds (cached at first call per sip message)
--   $TV(sn) - seconds (not cached)
--   $TV(un) - microseconds (not cached)
--   $TV(Sn) - string representation seconds.microseconds (not cached)
+- $TV(s) - seconds (cached at first call per sip message)
+- $TV(u) - microseconds (cached at first call per sip message)
+- $TV(sn) - seconds (not cached)
+- $TV(un) - microseconds (not cached)
+- $TV(Sn) - string representation seconds.microseconds (not cached)
 
 ## Next hop address
 
@@ -1566,11 +1566,11 @@ Seconds and microseconds taken from struct timeval.
 Return attributes of next hop for the SIP request. Address is taken from
 dst_uri, if set, if not from new r-uri or original r-uri.
 
--   $nh(u) - uri (lower case u)
--   $nh(U) - username (upper case u)
--   $nh(d) - domain
--   $nh(p) - port (lower case p)
--   $nh(P) - transport protocol (upper case p)
+- $nh(u) - uri (lower case u)
+- $nh(U) - username (upper case u)
+- $nh(d) - domain
+- $nh(p) - port (lower case p)
+- $nh(P) - transport protocol (upper case p)
 
 ## GeoIP module Pseudo-Variables
 
@@ -1583,20 +1583,20 @@ pvc)**.
 **pvc** (container id) is second parameter of geoip_match(..) and
 **key** can be:
 
--   cc - country code
--   tz - time zone
--   zip - postal code
--   lat - latitude
--   lon - longitude
--   dma - dma code
--   ips - ip start
--   ipe - ip end
--   city - city
--   area - area code
--   regc - region
--   regn - region name
--   metro - metro code
--   contc - continent code
+- cc - country code
+- tz - time zone
+- zip - postal code
+- lat - latitude
+- lon - longitude
+- dma - dma code
+- ips - ip start
+- ipe - ip end
+- city - city
+- area - area code
+- regc - region
+- regn - region name
+- metro - metro code
+- contc - continent code
 
 You can call several time **geoip_match(ipaddr, pvc)** with different ip
 address and containers in your config, to compare, for example,
@@ -1813,7 +1813,7 @@ ip address in the "subject alternative name" extension. String type.
 
 ### $hu
 
--   URL of http request.
+- URL of http request.
 
 ## MSRP Module Pseudo Variables
 
@@ -1957,8 +1957,8 @@ Attributes related to configuration file.
 
 The key can be:
 
--   line - return current line in config
--   name - return the name of current config file
+- line - return current line in config
+- name - return the name of current config file
 
 Example:
 
@@ -1971,14 +1971,14 @@ send_reply("404", "Not found at line $cfg(line)");
 This variable stores the DNS result details after a call of
 dns_query(hostname, pvid) function from ipops module.
 
--   pvid can be any string
--   key can be:
-    -   count - number of addresses
-    -   ipv4 - set to 1 if at least one ipv4 address (otherwise 0)
-    -   ipv6 - set to 1 if at least one ipv6 address (otherwise 0)
-    -   addr\[index\] - the address as string from position index in the
+- pvid can be any string
+- key can be:
+    - count - number of addresses
+    - ipv4 - set to 1 if at least one ipv4 address (otherwise 0)
+    - ipv6 - set to 1 if at least one ipv6 address (otherwise 0)
+    - addr\[index\] - the address as string from position index in the
         list (0 based indexing)
-    -   type\[index\] - the type of address from position index in the
+    - type\[index\] - the type of address from position index in the
         list (0 based indexing), the value is 4 for ipv4 and 6 for ipv6
 
 The index can be an integer or a variable with integer value. First
@@ -2007,10 +2007,10 @@ Give local hostname details (implemented by ipops module).
 
 The key can be:
 
--   n - the hostname
--   f - the fullname
--   d - the domain
--   i - the ip address
+- n - the hostname
+- f - the fullname
+- d - the domain
+- i - the ip address
 
 ``` c
 xlog("local hostanme is $HN(n)\n");
@@ -2043,9 +2043,9 @@ jsonrpc_exec(...) in kamailio.cfg.
 
 The key can be:
 
--   code - code for the JSONRPC response
--   text - text of the code for the JSONRPC response
--   body - the body of the JSONRPC response
+- code - code for the JSONRPC response
+- text - text of the code for the JSONRPC response
+- body - the body of the JSONRPC response
 
 ## Presence Module Pseudo-Variables
 
@@ -2057,7 +2057,7 @@ order to provide accurate values.
 
 The key can be:
 
--   uri - subscription URI. Useful in particular for subscriptions
+- uri - subscription URI. Useful in particular for subscriptions
     within the dialog, when the request URI in SUBSCRIBE is the Contact
     address from the initial subscription.
 
@@ -2068,15 +2068,15 @@ color and “y” represents the background color.
 
 Colors could be:
 
--   x : default color of the terminal
--   s : Black
--   r : Red
--   g : Green
--   y : Yellow
--   b : Blue
--   p : Purple
--   c : Cyan
--   w : White
+- x : default color of the terminal
+- s : Black
+- r : Red
+- g : Green
+- y : Yellow
+- b : Blue
+- p : Purple
+- c : Cyan
+- w : White
 
 ## Examples
 

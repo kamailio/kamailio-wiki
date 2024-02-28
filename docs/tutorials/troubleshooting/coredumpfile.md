@@ -10,8 +10,8 @@ the execution trace, so it could contain sensitive data.
 
 ## Potential Causes
 
--   Invalid input data, e.g. some messages or from the database
--   Errors in the program code, e.g. null pointer access
+- Invalid input data, e.g. some messages or from the database
+- Errors in the program code, e.g. null pointer access
 
 ## Analyze Core File
 
@@ -75,7 +75,7 @@ On some operating systems it may be required to run Kamailio as
 privileged user (e.g., root) or change the **fs.suid_dumpable** sysctl
 setting:
 
--   <https://sysctl-explorer.net/fs/suid_dumpable/>
+- <https://sysctl-explorer.net/fs/suid_dumpable/>
 
 To get per-process core file then you can use on Linux:
 
@@ -105,8 +105,8 @@ Edit **/etc/sysconfig/kamailio** and set:
 
 Debugging with GDB:
 
--   <https://sourceware.org/gdb/onlinedocs/gdb/index.html>
+- <https://sourceware.org/gdb/onlinedocs/gdb/index.html>
 
 Shortcut in the tutorial for **backtrace** command of **gdb**:
 
--   <https://sourceware.org/gdb/onlinedocs/gdb/Backtrace.html>
+- <https://sourceware.org/gdb/onlinedocs/gdb/Backtrace.html>

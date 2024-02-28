@@ -7,8 +7,8 @@ Java code as class Kamailio.
 
 References:
 
--   **app_java** module:
+- **app_java** module:
     [README](http://kamailio.org/docs/modules/4.1.x/modules/app_java.html)
--   **Java**: <http://www.java.com>
+- **Java**: <http://www.java.com>
 
 Java API documentation is part of module README.

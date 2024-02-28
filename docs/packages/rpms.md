@@ -9,26 +9,26 @@ Safarov and infrastructure provided by LOD.com.
 Note: the OpenSUSE Build Service (OBS) project is still available,
 mainly kept for testing purposes (should not be used anymore):
 
--   [OBS Packages Details](../packages/rpms-obs.md)
+- [OBS Packages Details](../packages/rpms-obs.md)
 
 ## Kamailio 5.5.x (Latest Stable)
 
 The RPM packages build using docker images for
 
-1.  RHEL 6, 7, 8;
-2.  CentOS 6, 7, 8;
-3.  officially supported Fedora releases;
-4.  OpenSUSE 15, 42.2 and 42.3.
+1. RHEL 6, 7, 8;
+2. CentOS 6, 7, 8;
+3. officially supported Fedora releases;
+4. OpenSUSE 15, 42.2 and 42.3.
 
 All RPM packages are built for x86_64 architecture.
 
 Compiled RPM packages are located in subdirectories at:
 
--   <https://rpm.kamailio.org>
+- <https://rpm.kamailio.org>
 
 To install Kamailio RPM repository, you can use the next commands:
 
--   for RHEL 8, CentOS 8 and Fedora:
+- for RHEL 8, CentOS 8 and Fedora:
 
 <!-- -->
 
@@ -36,7 +36,7 @@ To install Kamailio RPM repository, you can use the next commands:
     dnf config-manager --add-repo https://rpm.kamailio.org/centos/kamailio.repo
     dnf install kamailio
 
--   for RHEL 6 and 7, CentOS 6 and 7 you can use
+- for RHEL 6 and 7, CentOS 6 and 7 you can use
 
 <!-- -->
 
@@ -53,20 +53,20 @@ If you want to install a specific Kamailio version need use command like
 
 The RPM packages build using docker images for
 
-1.  RHEL 6, 7, 8;
-2.  CentOS 6, 7, 8;
-3.  officially supported Fedora releases;
-4.  OpenSUSE 15, 42.2 and 42.3.
+1. RHEL 6, 7, 8;
+2. CentOS 6, 7, 8;
+3. officially supported Fedora releases;
+4. OpenSUSE 15, 42.2 and 42.3.
 
 All RPM packages are built for x86_64 architecture.
 
 Compiled RPM packages are located in subdirectories at:
 
--   <https://rpm.kamailio.org>
+- <https://rpm.kamailio.org>
 
 To install Kamailio RPM repository, you can use the next commands:
 
--   for RHEL 8, CentOS 8 and Fedora:
+- for RHEL 8, CentOS 8 and Fedora:
 
 <!-- -->
 
@@ -74,7 +74,7 @@ To install Kamailio RPM repository, you can use the next commands:
     dnf config-manager --add-repo https://rpm.kamailio.org/centos/kamailio.repo
     dnf install kamailio
 
--   for RHEL 6 and 7, CentOS 6 and 7 you can use
+- for RHEL 6 and 7, CentOS 6 and 7 you can use
 
 <!-- -->
 
@@ -91,16 +91,16 @@ If you want to install a specific Kamailio version need use command like
 
 The RPM packages build using docker images for
 
-1.  RHEL 6, 7, 8;
-2.  CentOS 6, 7, 8;
-3.  officially support Fedora releases;
-4.  OpenSUSE 15, 42.2 and 42.3.
+1. RHEL 6, 7, 8;
+2. CentOS 6, 7, 8;
+3. officially support Fedora releases;
+4. OpenSUSE 15, 42.2 and 42.3.
 
 All RPM packages prepared for x86_64 architecture.
 
 Compiled RPM packages located in subdirectories at:
 
--   <https://rpm.kamailio.org>
+- <https://rpm.kamailio.org>
 
 To install kamailio you can use commands on
 
@@ -125,16 +125,16 @@ If you want to install a specific Kamailio version, you have to use:
 
 The RPM packages build using docker images for
 
-1.  RHEL 6, 7, 8;
-2.  CentOS 6, 7, 8;
-3.  officially support Fedora releases;
-4.  OpenSUSE 15, 42.2 and 42.3.
+1. RHEL 6, 7, 8;
+2. CentOS 6, 7, 8;
+3. officially support Fedora releases;
+4. OpenSUSE 15, 42.2 and 42.3.
 
 All RPM packages prepared for x86_64 architecture.
 
 Compiled RPM packages located in subdirectories at:
 
--   <https://rpm.kamailio.org>
+- <https://rpm.kamailio.org>
 
 To install kamailio you can use commands on
 

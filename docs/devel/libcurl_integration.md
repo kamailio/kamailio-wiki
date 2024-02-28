@@ -5,11 +5,11 @@ Kamailio.
 
 There are currently five modules that use the curl library:
 
--   utils
--   xcap_client
--   auth_identity
--   curl
--   async_http (currently on a pull-request)
+- utils
+- xcap_client
+- auth_identity
+- curl
+- async_http (currently on a pull-request)
 
 ### Reason for integration
 
@@ -22,20 +22,20 @@ called can be exported by APIs to other modules.
 
 ### Requirements
 
--   Synchronous queries
--   Asynchronous queries that suspend the transaction and resume on
+- Synchronous queries
+- Asynchronous queries that suspend the transaction and resume on
     completion
--   Asynchronous queries that call an event_route on completion
--   Ability to configure 'named connections' with preset curl options
+- Asynchronous queries that call an event_route on completion
+- Ability to configure 'named connections' with preset curl options
     (keys/certs, verify flags etc)
--   query functions exported via a C API to other modules
+- query functions exported via a C API to other modules
 
 Any more? See also
 [TODO.txt](https://github.com/kamailio/kamailio/blob/master/modules/curl/todo.txt)
 in the curl module
 
--   Ability to pass a list of HTTP header to add
--   Ability to retrieve response headers (e.g. header callback
+- Ability to pass a list of HTTP header to add
+- Ability to retrieve response headers (e.g. header callback
     function) - required for xcap_client module
 
 ### Discussion
@@ -57,21 +57,21 @@ easy to understand by the end user.
 
 Items to discuss:
 
--   Name of modules(s)
--   Definition of API functions and parameters
--   Use of worker pools
+- Name of modules(s)
+- Definition of API functions and parameters
+- Use of worker pools
 
 Names
 
--   The curl module has been renamed to "Http_client"
--   Need new name for the new module
+- The curl module has been renamed to "Http_client"
+- Need new name for the new module
 
 Please add your own comments below (hpw)
 
--   (gv) I think it was mentioned at the meeting in Brussels: it would
+- (gv) I think it was mentioned at the meeting in Brussels: it would
     be nice to have a separate configuration file with the
     "connections", which can be reloaded at run time (like
     <http://kamailio.org/docs/modules/stable/modules/tls.html#tls.r.tls.reload>).
--   (oej) The "curl" prefix needs to go away from the functions,
+- (oej) The "curl" prefix needs to go away from the functions,
     parameters and api in the http_client module. New names discussed on
     sr-dev

@@ -7,8 +7,8 @@ Perl script as package Kamailio.
 
 References:
 
--   **app_perl** module:
+- **app_perl** module:
     [README](http://kamailio.org/docs/modules/4.1.x/modules/app_perl.html)
--   **Perl**: <http://www.perl.org>
+- **Perl**: <http://www.perl.org>
 
 Perl API documentation is part of module README.

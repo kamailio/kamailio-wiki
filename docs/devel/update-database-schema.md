@@ -31,12 +31,12 @@ subfolders of 'utils/kamctl/'
 Changing the structure of an existing database table requires only the
 above steps. Adding a new table requires as well:
 
--   adding the table to be part of a specific group of tables. If the
+- adding the table to be part of a specific group of tables. If the
     table is used by a module that uses other tables, all of them have
     to be in the same group. Tables group definitions are stored in the
     files kamailio-groupname.xml . It is common to use the module name
     as the group name.
--   adding the table to kamctl and kamdbctl tools for creation
+- adding the table to kamctl and kamdbctl tools for creation
 
 For example, the group of the tables used by module domain, domain and
 domain_attrs, is specified in file:
@@ -53,8 +53,8 @@ If you add a new table, you must add the new files related to it to GIT
 repository, before committing the changes. It is recommended to split
 the commit in two parts, because they affect different components:
 
--   one for the XML files (they are part of internal library srdb1)
--   one for DB creation scripts (they are part of kamctl tool)
+- one for the XML files (they are part of internal library srdb1)
+- one for DB creation scripts (they are part of kamctl tool)
 
 This brings the benefit of easy backporting, because the commit to xml
 file is unlikely to create conflicts, changing one file in a group of
@@ -67,5 +67,5 @@ If there is a fix that has to be backported, always do it to master
 branch and then cherry-pick it in the stable branches. With split
 commits, the typical backport procedure is:
 
--   cherry-pick only the commit to xml files
--   regenerated the schema for the stable branch and commit the updates
+- cherry-pick only the commit to xml files
+- regenerated the schema for the stable branch and commit the updates

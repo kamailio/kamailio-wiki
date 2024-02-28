@@ -32,7 +32,7 @@ List the existing collections in the current database:
     > show collections
     system.indexes
     version
-    > 
+    >
 
 #### Version Table Records
 
@@ -72,14 +72,14 @@ You need to load the "db_mongodb" module in the configuration.
 
 The corresponding database URL in kamailio.cfg:
 
--   if MongoDB is on local host and there is no username and password to
+- if MongoDB is on local host and there is no username and password to
     connect to it:
 
 <!-- -->
 
     #!define DBURL "mongodb://localhost/kamailio"
 
--   if MongoDB is on local host and there is a username and password to
+- if MongoDB is on local host and there is a username and password to
     connect to it:
 
 <!-- -->

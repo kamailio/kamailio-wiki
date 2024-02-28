@@ -17,8 +17,8 @@ you checked out branch 3.3, then run following commands:
 All installed files will be located in sub-folders of
 /usr/local/kamailio-3.3, for example:
 
--   binaries in /usr/local/kamailio-3.3/sbin
--   config files in /usr/local/kamailio-3.3/etc
+- binaries in /usr/local/kamailio-3.3/sbin
+- config files in /usr/local/kamailio-3.3/etc
 
 To delete this installation, simply remove /usr/local/kamailio-3.3
 directory.

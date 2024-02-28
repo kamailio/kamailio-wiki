@@ -7,6 +7,6 @@ Python script as package SIPRouter.
 
 References:
 
--   **app_python** module:
+- **app_python** module:
     [README](http://kamailio.org/docs/modules/3.2.x/modules/app_python.html)
--   **Python**: <http://www.python.org>
+- **Python**: <http://www.python.org>

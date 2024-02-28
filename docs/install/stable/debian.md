@@ -104,4 +104,4 @@ Like:
 You can check the list of APT repositories offered by Kamailio project
 for various Debian or Ubuntu versions:
 
--   [DEBS: Debian - Ubuntu](../../packages/debs.md)
+- [DEBS: Debian - Ubuntu](../../packages/debs.md)
