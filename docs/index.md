@@ -75,6 +75,7 @@ available at the **Old Wiki Site**:*
 
 -   [Main Download Page](https://www.kamailio.org/w/download/)
 -   [Download Tarball with Sources of Latest Stable Release](https://www.kamailio.org/pub/kamailio/latest/src/)
+-   [Download Sources of v5.8.x from GIT Repository](download/v5.8.x-from-git.md)
 -   [Download Sources of v5.7.x from GIT Repository](download/v5.7.x-from-git.md)
 -   [Download Sources of v5.6.x from GIT Repository](download/v5.6.x-from-git.md)
 -   [Download Sources of v5.5.x from GIT Repository](download/v5.5.x-from-git.md)
