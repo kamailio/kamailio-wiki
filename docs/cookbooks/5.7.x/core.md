@@ -13,9 +13,9 @@ core to configuration file.
 
 The structure of the kamailio.cfg can be seen as three parts:
 
--   global parameters
--   modules settings
--   routing blocks
+- global parameters
+- modules settings
+- routing blocks
 
 For clarity and making it easy to maintain, it is recommended to keep
 them in this order, although some of them can be mixed.
@@ -152,9 +152,9 @@ Important: be aware of preprocessor directives that start with `#!`
 There are three types of values used for parameters, assignments, arithmetic
 or string expressions:
 
--   integer - numbers of 32bit size
--   boolean - aliases to `1` (`true`, `on`, `yes`) or `0` (`false`, `off`, `no`)
--   string - tokens enclosed in between double or single quotes
+- integer - numbers of 32bit size
+- boolean - aliases to `1` (`true`, `on`, `yes`) or `0` (`false`, `off`, `no`)
+- string - tokens enclosed in between double or single quotes
 
 Example:
 
@@ -301,24 +301,24 @@ faster execution.
 
 Available directives:
 
--   `#!define NAME` - define a keyword
--   `#!define NAME VALUE` - define a keyword with value
--   `#!ifdef NAME` - check if a keyword is defined
--   `#!ifndef` - check if a keyword is not defined
--   `#!ifexp` - check if an expression is true (see corresponding section for more)
--   `#!else` - switch to false branch of `ifdef/ifndef/#!ifexp` region
--   `#!endif` - end `ifdef/ifndef/#!ifexp` region
--   `#!trydef` - add a define if not already defined
--   `#!redefine` - force redefinition even if already defined
+- `#!define NAME` - define a keyword
+- `#!define NAME VALUE` - define a keyword with value
+- `#!ifdef NAME` - check if a keyword is defined
+- `#!ifndef` - check if a keyword is not defined
+- `#!ifexp` - check if an expression is true (see corresponding section for more)
+- `#!else` - switch to false branch of `ifdef/ifndef/#!ifexp` region
+- `#!endif` - end `ifdef/ifndef/#!ifexp` region
+- `#!trydef` - add a define if not already defined
+- `#!redefine` - force redefinition even if already defined
 
 Predefined keywords:
 
--   `KAMAILIO_X[_Y[_Z]]` - Kamailio versions
--   `MOD_X` - when module `X` has been loaded
--   `KAMAILIO_VERSION` - associated with a number representation of Kamailio
+- `KAMAILIO_X[_Y[_Z]]` - Kamailio versions
+- `MOD_X` - when module `X` has been loaded
+- `KAMAILIO_VERSION` - associated with a number representation of Kamailio
      version (e.g., for version `X.Y.Z`, the value is `X00Y00Z`, representing
     `X*1000000 + Y*1000 + z`)
--   `OS_NAME` - associated with a string representing the Operating System name
+- `OS_NAME` - associated with a string representing the Operating System name
 
 Examples:
 
@@ -335,11 +335,11 @@ See `kamctl rpc core.ppdefines_full` for full list.
 
 Among benefits:
 
--   easy way to enable/disable features (e.g., see default cfg --
+- easy way to enable/disable features (e.g., see default cfg --
     controlling support of nat traversal, presence, etc...)
--   switch control for parts where conditional statements were not
+- switch control for parts where conditional statements were not
     possible (e.g., global parameters, module settings)
--   faster by not using conditional statements inside routing blocks
+- faster by not using conditional statements inside routing blocks
     when switching between running environments
 
 Example: how to make config to be used in two environments, say testbed
@@ -392,26 +392,26 @@ request_route {
 ...
 ```
 
--   you can define values for IDs
+- you can define values for IDs
 
 ``` c
 #!define MYINT 123
 #!define MYSTR "xyz"
 ```
 
--   defined IDs are replaced at startup, during config parsing, e.g.,:
+- defined IDs are replaced at startup, during config parsing, e.g.,:
 
 ``` c
 $var(x) = 100 + MYINT;
 ```
 
--   is interpreted as:
+- is interpreted as:
 
 ``` c
 $var(x) = 100 + 123;
 ```
 
--   you can have multi-line defined IDs
+- you can have multi-line defined IDs
 
 ``` c
 #!define IDLOOP $var(i) = 0; \
@@ -421,7 +421,7 @@ $var(x) = 100 + 123;
                 }
 ```
 
--   then in routing block
+- then in routing block
 
 ``` c
 request_route {
@@ -431,16 +431,16 @@ request_route {
 }
 ```
 
--   number of allowed defines is now set to 256
+- number of allowed defines is now set to 256
 
 <!-- -->
 
--   notes:
-    -   multilines defines are reduced to single line, so line counter
+- notes:
+    - multilines defines are reduced to single line, so line counter
         should be fine
-    -   column counter goes inside the define value, but you have to
+    - column counter goes inside the define value, but you have to
         omit the `\` and `CR` for the accurate inside-define position
-    -   text on the same line as the directive will cause problems. Keep
+    - text on the same line as the directive will cause problems. Keep
         the directive lines clean and only comment on a line before or
         after.
 
@@ -674,16 +674,16 @@ quotes to make it convenient to be used as a string token.
 
 ### subst
 
--   perform substitutions inside the strings of config (note that define
+- perform substitutions inside the strings of config (note that define
     is replacing only IDs - alphanumeric tokens not enclosed in quotes)
--   `#!subst` offers an easy way to search and replace inside strings
+- `#!subst` offers an easy way to search and replace inside strings
     before cfg parsing. E.g.,:
 
 ``` c
 #!subst "/regexp/subst/flags"
 ```
 
--   flags is optional and can be: 'i' - ignore case; 'g' - global
+- flags is optional and can be: 'i' - ignore case; 'g' - global
     replacement
 
 Example:
@@ -693,7 +693,7 @@ Example:
 modparam("acc", "db_url", "mysql://user:DBPASSWD@localhost/db")
 ```
 
--   will do the substitution of db password in db_url parameter value
+- will do the substitution of db password in db_url parameter value
 
 ### substdef
 
@@ -1167,12 +1167,12 @@ Prototype:
 
 The attributes are:
 
--   **name** - the group name (used by functions such as
+- **name** - the group name (used by functions such as
     **sworker_task(name)**)
--   **workers** - the number of processes to create for this group
--   **nonblock** - set or not set the non-block flag for internal
+- **workers** - the number of processes to create for this group
+- **nonblock** - set or not set the non-block flag for internal
     communication socket
--   **usleep** - the number of microseconds to sleep before trying to
+- **usleep** - the number of microseconds to sleep before trying to
     receive next task (can be useful if nonblock=1)
 
 Default: "".
@@ -1310,13 +1310,13 @@ Default value: `L_WARN` (`debug=0`)
 
 Examples of usage:
 
--   debug=3: print all log messages. This is only useful for debugging
+- debug=3: print all log messages. This is only useful for debugging
     of problems. Note: this produces a lot of data and therefore should
     not be used on production servers (on a busy server this can easily
     fill up your hard disk with log messages)
--   debug=0: This will only log warning, errors and more critical
+- debug=0: This will only log warning, errors and more critical
     messages.
--   debug=-6: This will disable all log messages.
+- debug=-6: This will disable all log messages.
 
 Value of 'debug' parameter can also be get and set dynamically using the
 'debug' Core MI function or the RPC function, e.g.:
@@ -2148,11 +2148,11 @@ mem_status_mode=1
 Parameter to control printing of memory debugging information displayed
 on `exit` or `SIGUSR1`. The value can be composed by following flags:
 
--   `1` - dump all the pkg used blocks (status)
--   `2` - dump all the shm used blocks (status)
--   `4` - summary of pkg used blocks
--   `8` - summary of shm used blocks
--   `16` - short status
+- `1` - dump all the pkg used blocks (status)
+- `2` - dump all the shm used blocks (status)
+- `4` - summary of pkg used blocks
+- `8` - summary of shm used blocks
+- `16` - short status
 
 If set to `0`, nothing is printed.
 
@@ -2590,9 +2590,9 @@ listen=udp:10.10.10.10:5060 advertise 11.11.11.11:5060 name "s0" virtual
 Number of workers to process SIP traffic per listen socket - typical use
 is before a **listen** global parameter.
 
--   when used before **listen** on UDP or SCTP socket, it overwrites
+- when used before **listen** on UDP or SCTP socket, it overwrites
     **children** or **sctp_children** value for that socket.
--   when used before **listen** on TCP or TLS socket, it adds extra tcp
+- when used before **listen** on TCP or TLS socket, it adds extra tcp
     workers, these handling traffic only on that socket.
 
 The value of **socket_workers** is reset with next **listen** socket
@@ -2612,7 +2612,7 @@ listen=udp:127.0.0.1:5070
 listen=udp:127.0.0.1:5060
 ```
 
--   it will start 2 workers to handle traffic on <udp:127.0.0.1:5080>
+- it will start 2 workers to handle traffic on <udp:127.0.0.1:5080>
     and 4 for each of <udp:127.0.0.1:5070> and <udp:127.0.0.1:5060>. In
     total there are 10 worker processes
 
@@ -2626,7 +2626,7 @@ listen=tcp:127.0.0.1:5070
 listen=tcp:127.0.0.1:5060
 ```
 
--   it will start 2 workers to handle traffic on tcp:127.0.0.1:5080 and
+- it will start 2 workers to handle traffic on tcp:127.0.0.1:5080 and
     4 to handle traffic on both tcp:127.0.0.1:5070 and
     tcp:127.0.0.1:5060. In total there are 6 worker processes
 
@@ -4397,8 +4397,8 @@ called route() block. You can test the value returned by a route using
 
 In logical evaluation expressions:
 
--   Negative is FALSE
--   Positive is TRUE
+- Negative is FALSE
+- Positive is TRUE
 
 If no value is specified, or a route reaches its end without executing a
 return statement, it returns 1. If return is used in the top level route
@@ -4445,7 +4445,7 @@ with the value of the return code. Next example is showing a wrong use:
 
 See also the FAQ for how the function return code is evaluated:
 
--   [Frequently Asked Questions](../tutorials/../../tutorials/faq/main.md#how-is-the-function-return-code-evaluated)
+- [Frequently Asked Questions](../tutorials/../../tutorials/faq/main.md#how-is-the-function-return-code-evaluated)
 
 Note: starting with version `5.7.0-dev`, this behaviour can be changed with
 `return_mode` global parameter.
@@ -4607,27 +4607,27 @@ connection to the destination. It applies only to connection oriented
 protocols like TCP and TLS (TODO: SCTP), for UDP it will be ignored. The
 behavior depends in which route block the function is called:
 
--   normal request route: affects stateless forwards and tm. For tm it
+- normal request route: affects stateless forwards and tm. For tm it
     affects all the branches and the possible retransmissions (in fact
     there are no retransmission for TCP/TLS).
 
 <!-- -->
 
--   `onreply_route[0]` (stateless): equivalent to `set_reply_*()` (it's
+- `onreply_route[0]` (stateless): equivalent to `set_reply_*()` (it's
     better to use `set_reply_*` though)
 
 <!-- -->
 
--   `onreply_route[!=0]` (tm): ignored
+- `onreply_route[!=0]` (tm): ignored
 
 <!-- -->
 
--   branch_route: affects the current branch only (all messages sent on
+- branch_route: affects the current branch only (all messages sent on
     this branch, like possible retransmissions and CANCELs).
 
 <!-- -->
 
--   onsend_route: like branch route
+- onsend_route: like branch route
 
 Example of usage:
 
@@ -4657,24 +4657,24 @@ Like `set_forward_no_connect()`, but for replies to the current message
 (local generated replies and replies forwarded by tm). The behavior
 depends in which route block the function is called:
 
--   normal request route: affects all replies sent back on the
+- normal request route: affects all replies sent back on the
     transaction (either local or forwarded) and all local stateless
     replies (`sl_reply()`).
 
 <!-- -->
 
--   `onreply_route`: affects the current reply (so the send_flags set in
+- `onreply_route`: affects the current reply (so the send_flags set in
     the `onreply_route` will be used if the reply for which they were set
     is the winning final reply or it's a provisional reply that is
     forwarded)
 
 <!-- -->
 
--   branch_route: ignored.
+- branch_route: ignored.
 
 <!-- -->
 
--   onsend_route: ignored
+- onsend_route: ignored
 
 Example of usage:
 
@@ -4742,7 +4742,7 @@ Example of usage:
 
 ### udp_mtu_try_proto(proto)
 
--   proto - `TCP|TLS|SCTP|UDP` - like `udp_mtu_try_proto` global
+- proto - `TCP|TLS|SCTP|UDP` - like `udp_mtu_try_proto` global
     parameter but works on a per packet basis and not globally.
 
 Example:
@@ -4883,9 +4883,9 @@ executed it. The return code can be retrieved via $rc variables.
 
 Evaluation of the return of a subroute is done with following rules:
 
--   negative value is evaluated as false
--   0 - is interpreted as **exit**
--   positive value is evaluated as true
+- negative value is evaluated as false
+- 0 - is interpreted as **exit**
+- positive value is evaluated as true
 
 ``` c
 request_route {
@@ -5063,15 +5063,15 @@ Example:
   }
 ```
 
--   snd_ip, snd_port - behave like src_ip/src_port, but contain the
+- snd_ip, snd_port - behave like src_ip/src_port, but contain the
     ip/port Kamailio will use to send the message
--   to_ip, to_port - like above, but contain the ip/port the message
+- to_ip, to_port - like above, but contain the ip/port the message
     will be sent to (not to be confused with dst_ip/dst_port, which are
     the destination of the original received request: Kamailio's ip and
     port on which the message was received)
--   snd_proto, snd_af - behave like proto/af but contain the
+- snd_proto, snd_af - behave like proto/af but contain the
     protocol/address family that Kamailio will use to send the message
--   msg:len - when used in an onsend_route, msg:len will contain the
+- msg:len - when used in an onsend_route, msg:len will contain the
     length of the message on the wire (after all the changes in the
     script are applied, Vias are added a.s.o) and not the lentgh of the
     original message.
@@ -5082,17 +5082,17 @@ Generic type of route executed when specific events happen.
 
 Prototype: `event_route[groupid:eventid]`
 
--   groupid - should be the name of the module that triggers the event
--   eventid - some meaningful short text describing the event
+- groupid - should be the name of the module that triggers the event
+- eventid - some meaningful short text describing the event
 
 #### Core Event Routes
 
 Implementations:
 
--   `event_route[core:worker-one-init]` - executed by core after the
+- `event_route[core:worker-one-init]` - executed by core after the
     first udp sip worker process executed the child_init() for all
     modules, before starting to process sip traffic
-    -   note that due to forking, other sip workers can get faster to
+    - note that due to forking, other sip workers can get faster to
         listening for sip traffic
 
 ``` c
@@ -5101,14 +5101,14 @@ event_route[core:worker-one-init] {
 }
 ```
 
--   `event_route[core:msg-received]` - executed when a message is
+- `event_route[core:msg-received]` - executed when a message is
     received from the network. It runs with a faked request and makes
     available the $rcv(key) variables to access what was received and
     related attribtues.
-    -   it has to be enabled with received_route_mode global parameter.
+    - it has to be enabled with received_route_mode global parameter.
         For usage via Kemi, set kemi.received_route_callback global
         parameter.
-    -   if drop is executed, the received message is no longer processed
+    - if drop is executed, the received message is no longer processed
 
 ``` c
 event_route[core:msg-received] {
@@ -5119,9 +5119,9 @@ event_route[core:msg-received] {
 }
 ```
 
--   `event_route[core:pre-routing]` - executed by core on receiving
+- `event_route[core:pre-routing]` - executed by core on receiving
     SIP traffic before running request_route or reply_route.
-    -   if drop is used, then the message is not processed further with
+    - if drop is used, then the message is not processed further with
         request_route or reply_route in the same process. This can be
         useful together with sworker module which can delegate the
         processing to another worker.
@@ -5140,9 +5140,9 @@ event_route[core:pre-routing] {
 }
 ```
 
--   `event_route[core:receive-parse-error]` - executed by core
+- `event_route[core:receive-parse-error]` - executed by core
     on receiving a broken SIP message that can not be parsed.
-    -   note that the SIP message is broken in this case, but it gets
+    - note that the SIP message is broken in this case, but it gets
         access to source and local socket addresses (ip, port, proto,
         af) as well as the whole message buffer and its size
 
@@ -5158,7 +5158,7 @@ event_route[core:receive-parse-error] {
 Here are only a few examples, to see if a module exports event_route
 blocks and when they are executed, check the readme of the module.
 
--   `event_route[htable:mod-init]` - executed by **htable** module
+- `event_route[htable:mod-init]` - executed by **htable** module
     after all modules have been initialised. Good for initialising
     values in hash tables.
 
@@ -5191,7 +5191,7 @@ request_route {
 }
 ```
 
--   `event_route[tm:local-request]` - executed on locally generated
+- `event_route[tm:local-request]` - executed on locally generated
     requests.
 
 ``` c
@@ -5201,7 +5201,7 @@ event_route [tm:local-request] { # Handle locally generated requests
 }
 ```
 
--   `event_route[tm:branch-failure]` - executed on all failure
+- `event_route[tm:branch-failure]` - executed on all failure
     responses.
 
 ``` c
@@ -5264,7 +5264,7 @@ Example of usage:
 
 See also the FAQ for how the function return code is evaluated:
 
--   [How is the function code evaluated](../../tutorials/faq/main.md#how-is-the-function-return-code-evaluated)
+- [How is the function code evaluated](../../tutorials/faq/main.md#how-is-the-function-return-code-evaluated)
 
 ### switch
 
@@ -5364,19 +5364,19 @@ directly in configuration file.
 Assignments can be done like in C, via `=` (equal). The following
 pseudo-variables can be used in left side of an assignment:
 
--   Unordered List Item AVPs - to set the value of an AVP
--   script variables `($var(...))` - to set the value of a script variable
--   shared variables (`$shv(...)`)
--   `$ru` - to set R-URI
--   `$rd` - to set domain part of R-URI
--   `$rU` - to set user part of R-URI
--   `$rp` - to set the port of R-URI
--   `$du` - to set dst URI
--   `$fs` - to set send socket
--   `$br` - to set branch
--   `$mf` - to set message flags value
--   `$sf` - to set script flags value
--   `$bf` - to set branch flags value
+- Unordered List Item AVPs - to set the value of an AVP
+- script variables `($var(...))` - to set the value of a script variable
+- shared variables (`$shv(...)`)
+- `$ru` - to set R-URI
+- `$rd` - to set domain part of R-URI
+- `$rU` - to set user part of R-URI
+- `$rp` - to set the port of R-URI
+- `$du` - to set dst URI
+- `$fs` - to set send socket
+- `$br` - to set branch
+- `$mf` - to set message flags value
+- `$sf` - to set script flags value
+- `$bf` - to set branch flags value
 
     $var(a) = 123;
 
@@ -5399,17 +5399,17 @@ For strings, `+` is available to concatenate.
 
 For numbers, one can use:
 
-  -   `+` : plus
-  -   `-` : minus
-  -   `/` : divide
-  -   `*` : multiply
-  -   `mod` : modulo (SER uses `%` instead of `mod`)
-  -   `|` : bitwise OR
-  -   `&` : bitwise AND
-  -   `^` : bitwise XOR
-  -   `~` : bitwise NOT
-  -   `<<` : bitwise left shift
-  -   `>>` : bitwise right shift
+  - `+` : plus
+  - `-` : minus
+  - `/` : divide
+  - `*` : multiply
+  - `mod` : modulo (SER uses `%` instead of `mod`)
+  - `|` : bitwise OR
+  - `&` : bitwise AND
+  - `^` : bitwise XOR
+  - `~` : bitwise NOT
+  - `<<` : bitwise left shift
+  - `>>` : bitwise right shift
 
 Example:
 
@@ -5429,9 +5429,9 @@ Arithmetic expressions can be used in condition expressions.
 
 ## Operators
 
-1.  type casts operators: `(int)`, `(str)`.
-2.  string comparison: `eq`, `ne`
-3.  integer comparison: `ieq`, `ine`
+1. type casts operators: `(int)`, `(str)`.
+2. string comparison: `eq`, `ne`
+3. integer comparison: `ieq`, `ine`
 
 Note: The names are not yet final (use them at your own risk). Future
 version might use `==`/`!=` only for ints (`ieq/ine`) and `eq/ne` for strings
@@ -5450,7 +5450,7 @@ Note: internally `==` and `!=` are converted on startup to `eq/ne/ieq/ine`
 whenever possible (both operand types can be safely determined at start
 time and they are the same).
 
-1.  Kamailio tries to guess what the user wanted when operators that
+1. Kamailio tries to guess what the user wanted when operators that
     support multiple types are used on different typed operands. In
     general convert the right operand to the type of the left operand
     and then perform the operation. Exception: the left operand is
@@ -5463,14 +5463,14 @@ time and they are the same).
        If expr is undef, then undef == undef is true (internally is converted
        to string).
 
-1.  expression evaluation changes: Kamailio will auto-convert to integer
+1. expression evaluation changes: Kamailio will auto-convert to integer
     or string in function of the operators:
 
 
          int(undef)==0,  int("")==0, int("123")==123, int("abc")==0
          str(undef)=="", str(123)=="123".
 
-1.  script operators for dealing with empty/undefined variables
+1. script operators for dealing with empty/undefined variables
 
 
         defined expr - returns true if expr is defined, and false if not.
@@ -5587,23 +5587,23 @@ The value of this parameter can be **--log-engine=name** or
 
 The name of the log engine can be:
 
--   **json** - write logs in structured JSON format
-    -   the **data** for **json** log engine can be a set of character
+- **json** - write logs in structured JSON format
+    - the **data** for **json** log engine can be a set of character
         flags:
-        -   **a** - add log prefix as a special field
-        -   **A** - do not add log prefix
-        -   **c** - add Call-ID (when available) as a dedicated JSON
+        - **a** - add log prefix as a special field
+        - **A** - do not add log prefix
+        - **c** - add Call-ID (when available) as a dedicated JSON
             attribute
-        -   **j** - the log prefix and message fields are printed in
+        - **j** - the log prefix and message fields are printed in
             JSON structure format, detecting if they are enclosed in
             between **{ }** or adding them as a **text** field
-        -   **M** - strip EOL (`\n`) from the value of the log message
+        - **M** - strip EOL (`\n`) from the value of the log message
             field
-        -   **N** - do not add EOL at the end of JSON document
-        -   **p** - the log prefix is printed as it is in the root json
+        - **N** - do not add EOL at the end of JSON document
+        - **p** - the log prefix is printed as it is in the root json
             document, it has to start with comma (**,**) and be a valid
             set of json fields
-        -   **U** - CEE (Common Event Expression) schema format -
+        - **U** - CEE (Common Event Expression) schema format -
             [https://cee.mitre.org/language/1.0-beta1/core-profile.html](https://cee.mitre.org/language/1.0-beta1/core-profile.html)
 
 Example of JSON logs when running Kamailio with `--log-engine=json:M` :

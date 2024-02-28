@@ -2,7 +2,7 @@
 
 Kamailio can execute managed code assemblies via **app_mono** module:
 
--   <http://kamailio.org/docs/modules/4.0.x/modules/app_mono.html>
+- <http://kamailio.org/docs/modules/4.0.x/modules/app_mono.html>
 
 The C# API exported by Kamailio to the embedded Mono interpreter is
 defined in **SR.cs** file located in source tree

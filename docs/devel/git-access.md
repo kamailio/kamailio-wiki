@@ -9,15 +9,15 @@ source code repository hosted at git.sip-router.org .
 Each developer has a user ID for accessing the repository via ssh,
 which allow push operations. Cloning can be done via command:
 
-    git clone ssh://USERID@git.sip-router.org/kamailio 
+    git clone ssh://USERID@git.sip-router.org/kamailio
 
 ## Branches
 
 Kamailio repository branches are categorized in:
 
--   project main branches
--   private developer branches
--   common temporary branches
+- project main branches
+- private developer branches
+- common temporary branches
 
 All of them are accessible in read only mode to everyone.
 
@@ -50,9 +50,9 @@ are allowed.
 
 Typical way of fixing a bug that needs to be backported:
 
--   commit the patch to master branch
--   cherry pick it to last stable branch
--   cherry pick from last stable branch to previous stable branch
+- commit the patch to master branch
+- cherry pick it to last stable branch
+- cherry pick from last stable branch to previous stable branch
 
 ### Private Branches
 
@@ -88,15 +88,15 @@ new code that might not get to **master** branch after all.
 
 ## Commit Recommendations
 
--   whenever there are patches for modules maintained by other
+- whenever there are patches for modules maintained by other
     developers, it is better to discuss them on
     sr-dev@lists.sip-router.org mailing list before pushing them to
     remote repository. The patch can be:
-    -   submitted as attachment to mailing list
-    -   uploaded to the tracker at:
-        -   <http://sip-router.org/tracker>
-    -   pushed first in a private branch
--   patches to own modules can be pushed at any time. However, if you
+    - submitted as attachment to mailing list
+    - uploaded to the tracker at:
+        - <http://sip-router.org/tracker>
+    - pushed first in a private branch
+- patches to own modules can be pushed at any time. However, if you
     want to discuss on sr-dev mailing lists, you are welcome to send an
     email
 
@@ -105,4 +105,4 @@ new code that might not get to **master** branch after all.
 Several tutorials about committing with Git and backporting are
 available at:
 
--   [Guidelines TOC](../index.md#guidelines)
+- [Guidelines TOC](../index.md#guidelines)

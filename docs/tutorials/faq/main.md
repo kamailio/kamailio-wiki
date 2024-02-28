@@ -3,7 +3,7 @@
 This page is open for contributions, you must create a user account via
 registration form:
 
--   <https://www.kamailio.org/wiki/start?do=register>
+- <https://www.kamailio.org/wiki/start?do=register>
 
 If you have a question suitable for FAQ and you don't know the answer,
 add it and set the answer to 'TBA', others can read it and give the
@@ -18,7 +18,7 @@ right answer.
 RFC3261. Its root functionality is routing any kind of SIP packets. On
 top of that, many conceptual features are implemented, see more at:
 
--   [Kamailio Features](http://www.kamailio.org/w/features/)
+- [Kamailio Features](http://www.kamailio.org/w/features/)
 
 ### Is Kamailio a B2BUA?
 
@@ -139,14 +139,14 @@ functions that can be used in configuration file routing blocks.
 
 📃 Inside the source tree, there are three directories:
 
--   modules/
--   modules_k/ - no longer used since version 4.0.0
--   modules_s/ - no longer used since version 4.0.0
+- modules/
+- modules_k/ - no longer used since version 4.0.0
+- modules_s/ - no longer used since version 4.0.0
 
 Each module is located in its own sub-folder. The documentation for
 modules that are bundled in Kamailio packages is available at:
 
--   <http://kamailio.org/docs/modules/stable/>
+- <http://kamailio.org/docs/modules/stable/>
 
 ### Which modules are compiled by default?
 
@@ -172,13 +172,13 @@ libmysqlclient. Use following commands to get in compiled and installed:
 
     make modules include_modules="db_mysql"
 
-    make install include_modules="db_mysql" 
+    make install include_modules="db_mysql"
 
 ### How to compile only one module?
 
 📃 First be sure that the core compiles fine with the command:
 
-    make 
+    make
 
 To compile a single module, use:
 
@@ -198,7 +198,7 @@ reply). Changes done to headers or body are kept as a list of operations
 to be applied before writing to the network. If you want changes to be
 applied immediately, use **msg_apply_changes()** from textopsx module:
 
--   <http://kamailio.org/docs/modules/stable/modules/textopsx.html#textopsx.msg_apply_changes>
+- <http://kamailio.org/docs/modules/stable/modules/textopsx.html#textopsx.msg_apply_changes>
 
 Be careful with it and don't use it after record_route(), because this
 function has to insert a header containing the IP address from the local
@@ -208,7 +208,7 @@ known during configuration file execution.
 For example, considering that X-Hdr does not exist in incoming message,
 here are some cases:
 
--   without applying changes
+- without applying changes
 
 ``` c
 append_hf("X-Hdr: xyz\r\n");
@@ -220,7 +220,7 @@ if(is_present_hf("X-Hdr")) {
 }
 ```
 
--   with applying changes
+- with applying changes
 
 ``` c
 append_hf("X-Hdr: xyz\r\n");
@@ -306,8 +306,8 @@ specific destinations, use branch routes.
 
 Example:
 
--   add X-VBox header only when sending to voicemail server
--   add X-Peer-ID header when sending somewhere else
+- add X-VBox header only when sending to voicemail server
+- add X-Peer-ID header when sending somewhere else
 
 ``` c
 request_route {
@@ -451,7 +451,7 @@ Kamailio is printing at least few debug messages.
 
 📃 No, *however* Kamailio can be configured to proxy media if needed.
 
--   [See rtpengine, rtpproxy, lrkproxy, or mediaproxy](http://www.kamailio.org/docs/modules/stable/)
+- [See rtpengine, rtpproxy, lrkproxy, or mediaproxy](http://www.kamailio.org/docs/modules/stable/)
 
 ### What codecs are supported by Kamailio?
 
@@ -477,7 +477,7 @@ understand Session Initiation Protocol (SIP - RFC3261).
 
 📃 Yes, see:
 
--   <http://www.kamailio.org/wiki/#installation>
+- <http://www.kamailio.org/wiki/#installation>
 
 ## Support
 
@@ -486,7 +486,7 @@ understand Session Initiation Protocol (SIP - RFC3261).
 📃 Yes, there are few of them, each addressing a particular category of
 topics, see the list at:
 
--   <http://www.kamailio.org/w/mailing-lists/>
+- <http://www.kamailio.org/w/mailing-lists/>
 
 ### What are the rules for posting questions about Kamailio?
 
@@ -500,36 +500,36 @@ something related to Kamailio.
 If the question is related to a stable version of Kamailio, then email
 to:
 
--   sr-users \[at\] lists.sip-router.org
--   mailing list web page:
-    -   <http://lists.sip-router.org/cgi-bin/mailman/listinfo/sr-users>
+- sr-users \[at\] lists.sip-router.org
+- mailing list web page:
+    - <http://lists.sip-router.org/cgi-bin/mailman/listinfo/sr-users>
 
 If the question is related to development version of Kamailio, then
 email to:
 
--   sr-dev \[at\] lists.sip-router.org
--   mailing list web page:
-    -   <http://lists.sip-router.org/cgi-bin/mailman/listinfo/sr-dev>
+- sr-dev \[at\] lists.sip-router.org
+- mailing list web page:
+    - <http://lists.sip-router.org/cgi-bin/mailman/listinfo/sr-dev>
 
 If the question is related to commercial aspects of Kamailio, then email
 to:
 
--   business \[at\] lists.kamailio.org
--   mailing list web page:
-    -   <https://lists.kamailio.org/mailman3/postorius/lists/business.lists.kamailio.org/>
+- business \[at\] lists.kamailio.org
+- mailing list web page:
+    - <https://lists.kamailio.org/mailman3/postorius/lists/business.lists.kamailio.org/>
 
 ### Where I can report an issue?
 
 📃 Use the bug tracker available at:
 
--   <https://github.com/kamailio/kamailio/issues>
+- <https://github.com/kamailio/kamailio/issues>
 
 ### Where can I buy commercial support?
 
 📃 See details posted at:
 
--   <http://www.kamailio.org/w/business-directory/>
--   <http://www.kamailio.org/w/business/>
+- <http://www.kamailio.org/w/business-directory/>
+- <http://www.kamailio.org/w/business/>
 
 ## DNS
 
@@ -669,7 +669,7 @@ part of a SIP message or other variables from system.
 
 For more see:
 
--   <http://www.kamailio.org/wiki/cookbooks/devel/pseudovariables>
+- <http://www.kamailio.org/wiki/cookbooks/devel/pseudovariables>
 
 ### How to iterate through the items in a comma separated string?
 
@@ -695,9 +695,9 @@ while( $var(i) <= $var(n) ) {
 📃 Configuration file interpreter evaluates the return code of a
 function as follow:
 
--   `<0` (negative value) - it is evaluated to false
--   `>0` (positive value) - it is evaluated to true
--   `=0` (zero) - it is evaluated as exit (stop execution of configuration
+- `<0` (negative value) - it is evaluated to false
+- `>0` (positive value) - it is evaluated to true
+- `=0` (zero) - it is evaluated as exit (stop execution of configuration
     file)
 
 Example:
@@ -853,17 +853,17 @@ configured size.
 
 There are two memory pools used by Kamailio:
 
--   shared memory - shm - common at application level, where most of the
+- shared memory - shm - common at application level, where most of the
     data needed for long time is stored (such as location records, least
     cost routing records, transactions, etc.). The default size is 32MB.
--   private memory - pkg - allocated per process, used for local storage
+- private memory - pkg - allocated per process, used for local storage
     and temporary operations. The default size is 4MB.
 
 To increase the sizes for memory pools you have to give following
 command line parameters:
 
--   **-m SIZE** - specify the shared memory size in MB
--   **-M SIZE** - specify the private memory size in MB
+- **-m SIZE** - specify the shared memory size in MB
+- **-M SIZE** - specify the private memory size in MB
 
 For example, start Kamailio with 512MB of shared memory and 8MB of
 private memory:

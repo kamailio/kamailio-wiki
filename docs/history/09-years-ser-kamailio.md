@@ -14,12 +14,12 @@ communications over IP.
 
 Initial project web site was:
 
--   <http://iptel.org/ser>
+- <http://iptel.org/ser>
 
 Now the web sites are:
 
--   <http://sip-router.org> (historical)
--   <http://www.kamailio.org>
+- <http://sip-router.org> (historical)
+- <http://www.kamailio.org>
 
 It is the oldest and most robust open source SIP server, routing
 **billions of VoIP minutes every month world wide**, being used from
@@ -43,22 +43,22 @@ development: **over 8 000 000 USD**.
 
 ## Summary of Evolution
 
--   **September 2001** - initial commit, SER was then developed for
+- **September 2001** - initial commit, SER was then developed for
     about one year internally at FhG FOKUS Institute, Berlin, Germany
--   **Autumn 2002** - SER was released as GPL, code published on
+- **Autumn 2002** - SER was released as GPL, code published on
     BerliOS: <http://developer.berlios.de/projects/ser/>
--   **June 2005** - [OpenSER](http://www.openser-project.org) forked
+- **June 2005** - [OpenSER](http://www.openser-project.org) forked
     from SER, code hosted by Source Forge:
     <http://sourceforge.net/projects/openser/>
--   **July 2008** - OpenSER was renamed to
+- **July 2008** - OpenSER was renamed to
     [Kamailio](http://www.kamailio.org)
--   **November 2008** - SER and Kamailio teams decide to join
+- **November 2008** - SER and Kamailio teams decide to join
     development efforts and merge the source code trees of the two
     applications
-    -   development portal for both changed to: <http://sip-router.org>
--   **January 2010** - version 3.0.0 is released, from a source code
+    - development portal for both changed to: <http://sip-router.org>
+- **January 2010** - version 3.0.0 is released, from a source code
     tree containing both SER and Kamailio
--   **September 2010** - expect next major release, version 3.1.0
+- **September 2010** - expect next major release, version 3.1.0
 
 <img src="http://sip-router.org/pub/img/sip-router-evolution.png" class="align-center" alt="http://sip-router.org/pub/img/sip-router-evolution.png" />
 
@@ -88,31 +88,31 @@ overlapping, counted once), internal VCS branching representations were:
 
 #### SER Only Versions
 
--   ﻿﻿2002-09-25: SER 0.8.x
--   2005-07-04: SER 0.9.x
--   2008-08-06: SER 2.0.x
--   2009-02-28: SER 2.1.x
+- ﻿﻿2002-09-25: SER 0.8.x
+- 2005-07-04: SER 0.9.x
+- 2008-08-06: SER 2.0.x
+- 2009-02-28: SER 2.1.x
 
 #### Kamailio (OpenSER) Only Versions
 
--   2005-06-14: Kamailio (OpenSER) 0.9.x - release built mainly out of
+- 2005-06-14: Kamailio (OpenSER) 0.9.x - release built mainly out of
     SER 0.9.x
--   2005-10-25: Kamailio (OpenSER) 1.0.x
--   2006-07-10: Kamailio (OpenSER) 1.1.x
--   2007-03-12: Kamailio (OpenSER) 1.2.x
--   2007-12-13: Kamailio (OpenSER) 1.3.x - [See what was added in 1.3.x](http://www.kamailio.org/dokuwiki/doku.php/features:new-in-1.3.x)
--   2008-08-07: Kamailio (OpenSER) 1.4.x - [See what was added in 1.4.x](http://www.kamailio.org/dokuwiki/doku.php/features:new-in-1.4.x)
--   2009-03-02: Kamailio (OpenSER) 1.5.x - [See what was added in 1.5.x](http://www.kamailio.org/dokuwiki/doku.php/features:new-in-1.5.x)
+- 2005-10-25: Kamailio (OpenSER) 1.0.x
+- 2006-07-10: Kamailio (OpenSER) 1.1.x
+- 2007-03-12: Kamailio (OpenSER) 1.2.x
+- 2007-12-13: Kamailio (OpenSER) 1.3.x - [See what was added in 1.3.x](http://www.kamailio.org/dokuwiki/doku.php/features:new-in-1.3.x)
+- 2008-08-07: Kamailio (OpenSER) 1.4.x - [See what was added in 1.4.x](http://www.kamailio.org/dokuwiki/doku.php/features:new-in-1.4.x)
+- 2009-03-02: Kamailio (OpenSER) 1.5.x - [See what was added in 1.5.x](http://www.kamailio.org/dokuwiki/doku.php/features:new-in-1.5.x)
 
 #### Combined Versions
 
--   2010-01-11: SER and Kamailio (OpenSER) 3.0.x
-    -   [See what was added in 3.0.x](http://www.kamailio.org/dokuwiki/doku.php/features:new-in-3.0.x)
+- 2010-01-11: SER and Kamailio (OpenSER) 3.0.x
+    - [See what was added in 3.0.x](http://www.kamailio.org/dokuwiki/doku.php/features:new-in-3.0.x)
 
 #### Next Combined Version
 
--   3.1.x-devel - scheduled for September 2010
-    -   see what is coming with it at:
+- 3.1.x-devel - scheduled for September 2010
+    - see what is coming with it at:
         <http://sip-router.org/wiki/features/new-in-devel>
 
 ### SER Arguments
@@ -130,7 +130,7 @@ today):
     Options:
         -f file      Configuration file (default /usr/local/etc/ser/ser.cfg)
         -p port      Listen on the specified port (default: 5060)
-                     applies to the last address in -l and to all 
+                     applies to the last address in -l and to all
                      following that do not have a corespponding -p
         -l address   Listen on the specified address (multiple -l mean
                      listening on more addresses). The default behaviour
@@ -155,10 +155,10 @@ today):
         -m nr        Size of shared memory allocated in Megabytes
         -w  dir      change the working directory to "dir" (default "/")
         -t  dir      chroot to "dir"
-        -u uid       change uid 
-        -g gid       change gid 
+        -u uid       change uid
+        -g gid       change gid
         -P file      create a pid file
-        -i fifo_path create a fifo (useful for monitoring ser) 
+        -i fifo_path create a fifo (useful for monitoring ser)
 
 
     # ser -V
@@ -179,9 +179,9 @@ Output of **ser -h** and **ser -V** nowadays:
         -c           Check configuration file for errors
         -l address   Listen on the specified address/interface (multiple -l
                       mean listening on more addresses).  The address format is
-                      [proto:]addr_lst[:port], where proto=udp|tcp|tls|sctp, 
-                      addr_lst= addr|(addr, addr_lst) and 
-                      addr= host|ip_address|interface_name. 
+                      [proto:]addr_lst[:port], where proto=udp|tcp|tls|sctp,
+                      addr_lst= addr|(addr, addr_lst) and
+                      addr= host|ip_address|interface_name.
                       E.g: -l locahost, -l udp:127.0.0.1:5080, -l eth0:5062,
                       -l "sctp:(eth0)", -l "(eth0, eth1, 127.0.0.1):5065".
                       The default behaviour is to listen on all the interfaces.
@@ -207,8 +207,8 @@ Output of **ser -h** and **ser -V** nowadays:
         -m nr        Size of shared memory allocated in Megabytes
         -w dir       Change the working directory to "dir" (default: "/")
         -t dir       Chroot to "dir"
-        -u uid       Change uid 
-        -g gid       Change gid 
+        -u uid       Change uid
+        -g gid       Change gid
         -P file      Create a pid file
         -G file      Create a pgid file
         -O nr        Script optimization level (debugging option)
@@ -223,7 +223,7 @@ Output of **ser -h** and **ser -V** nowadays:
     USE_FUTEX, FAST_LOCK-ADAPTIVE_WAIT, USE_DNS_CACHE, USE_DNS_FAILOVER, USE_NAPTR, USE_DST_BLACKLIST, HAVE_RESOLV_RES
     ADAPTIVE_WAIT_LOOPS=1024, MAX_RECV_BUFFER_SIZE 262144, MAX_LISTEN 16, MAX_URI_SIZE 1024, BUF_SIZE 65535, PKG_SIZE 4MB
     poll method support: poll, epoll_lt, epoll_et, sigio_rt, select.
-    id: b72876 
+    id: b72876
     compiled on 17:16:21 Sep  3 2010 with gcc 4.4.3
 
 ## Source Code Repository Statistics
@@ -349,7 +349,7 @@ commits:**
 
 Many other statistics can be found at:
 
--   <http://www.ohloh.net/p/sip-router>
+- <http://www.ohloh.net/p/sip-router>
 
 For example, estimated cost to develop the project from scratch is over
 **8 millions USD**:
@@ -375,7 +375,7 @@ it is:
 #  method_re   sip_uri_re      dest_host
 # (warning: re cannot contain space)
 
-^R.*        ^sip:.*@dorian.*   ekina.fokus.gmd.de        
+^R.*        ^sip:.*@dorian.*   ekina.fokus.gmd.de
 ^INVITE     .*                 ape             # my laptop
 .           .                  192.168.46.55
 .*          .*andrei           helios.fokus.gmd.de
@@ -384,7 +384,7 @@ it is:
 # end
 ```
 
--   reference:
+- reference:
     <http://cvs.berlios.de/viewvc/ser/sip_router/sip_router.cfg?revision=1.1&pathrev=start>
 
 Probably didn't make it in any production system with this format. The
@@ -439,7 +439,7 @@ loadmodule "/usr/lib/ser/modules/registrar.so"
 
 modparam("usrloc", "db_mode",   0)
 
-# Uncomment this if you want to use SQL database 
+# Uncomment this if you want to use SQL database
 # for persistent storage and comment the previous line
 #modparam("usrloc", "db_mode", 2)
 
@@ -449,7 +449,7 @@ modparam("usrloc", "db_mode",   0)
 #modparam("auth", "secret", "alsdkhglaksdhfkloiwr")
 #modparam("auth", "calculate_ha1", yes)
 #
-# If you set "calculate_ha1" parameter to yes (which true in this config), 
+# If you set "calculate_ha1" parameter to yes (which true in this config),
 # uncomment also the following parameter)
 #
 #modparam("auth", "password_column", "password")
@@ -515,21 +515,21 @@ and **SER**.
 Next sections show the latest versions of default config files. If you
 want to see the evolution for each major version, then follow the links:
 
--   [Default config for SER 0.8.x](http://sip-router.org/pub/configs/ser-0.8.x.cfg)
--   [Default config for SER 0.9.x](http://sip-router.org/pub/configs/ser-0.9.x.cfg)
--   [Default config for SER 2.0.x](http://sip-router.org/pub/configs/ser-2.0.x.cfg)
--   [Default config for SER 2.1.x](http://sip-router.org/pub/configs/ser-2.1.x.cfg)
--   [Default config for SER 3.0.x](http://sip-router.org/pub/configs/ser-3.0.x.cfg)
--   [Default config for SER 3.1.x-devel](http://sip-router.org/pub/configs/ser-3.1.x.cfg)
--   [Default config for Kamailio (OpenSER) 0.9.x](http://sip-router.org/pub/configs/kamailio-0.9.x.cfg)
--   [Default config for Kamailio (OpenSER) 1.0.x](http://sip-router.org/pub/configs/kamailio-1.0.x.cfg)
--   [Default config for Kamailio (OpenSER) 1.1.x](http://sip-router.org/pub/configs/kamailio-1.1.x.cfg)
--   [Default config for Kamailio (OpenSER) 1.2.x](http://sip-router.org/pub/configs/kamailio-1.2.x.cfg)
--   [Default config for Kamailio (OpenSER) 1.3.x](http://sip-router.org/pub/configs/kamailio-1.3.x.cfg)
--   [Default config for Kamailio (OpenSER) 1.4.x](http://sip-router.org/pub/configs/kamailio-1.4.x.cfg)
--   [Default config for Kamailio (OpenSER) 1.5.x](http://sip-router.org/pub/configs/kamailio-1.5.x.cfg)
--   [Default config for Kamailio (OpenSER) 3.0.x](http://sip-router.org/pub/configs/kamailio-3.0.x.cfg)
--   [Default config for Kamailio (OpenSER) 3.1.x-devel](http://sip-router.org/pub/configs/kamailio-3.1.x.cfg)
+- [Default config for SER 0.8.x](http://sip-router.org/pub/configs/ser-0.8.x.cfg)
+- [Default config for SER 0.9.x](http://sip-router.org/pub/configs/ser-0.9.x.cfg)
+- [Default config for SER 2.0.x](http://sip-router.org/pub/configs/ser-2.0.x.cfg)
+- [Default config for SER 2.1.x](http://sip-router.org/pub/configs/ser-2.1.x.cfg)
+- [Default config for SER 3.0.x](http://sip-router.org/pub/configs/ser-3.0.x.cfg)
+- [Default config for SER 3.1.x-devel](http://sip-router.org/pub/configs/ser-3.1.x.cfg)
+- [Default config for Kamailio (OpenSER) 0.9.x](http://sip-router.org/pub/configs/kamailio-0.9.x.cfg)
+- [Default config for Kamailio (OpenSER) 1.0.x](http://sip-router.org/pub/configs/kamailio-1.0.x.cfg)
+- [Default config for Kamailio (OpenSER) 1.1.x](http://sip-router.org/pub/configs/kamailio-1.1.x.cfg)
+- [Default config for Kamailio (OpenSER) 1.2.x](http://sip-router.org/pub/configs/kamailio-1.2.x.cfg)
+- [Default config for Kamailio (OpenSER) 1.3.x](http://sip-router.org/pub/configs/kamailio-1.3.x.cfg)
+- [Default config for Kamailio (OpenSER) 1.4.x](http://sip-router.org/pub/configs/kamailio-1.4.x.cfg)
+- [Default config for Kamailio (OpenSER) 1.5.x](http://sip-router.org/pub/configs/kamailio-1.5.x.cfg)
+- [Default config for Kamailio (OpenSER) 3.0.x](http://sip-router.org/pub/configs/kamailio-3.0.x.cfg)
+- [Default config for Kamailio (OpenSER) 3.1.x-devel](http://sip-router.org/pub/configs/kamailio-3.1.x.cfg)
 
 ### The Configs Today
 
@@ -571,7 +571,7 @@ debug=2         # debug level (cmd line: -dddddddddd)
 #memlog=10 # memory statistics log level
 #log_facility=LOG_LOCAL0 # sets the facility used for logging (see syslog(3))
 
-/* Uncomment these lines to enter debugging mode 
+/* Uncomment these lines to enter debugging mode
 fork=no
 log_stderror=yes
 */
@@ -586,7 +586,7 @@ rev_dns=no      # (cmd. line: -R)
 #disable_core=yes #disables core dumping
 #open_fd_limit=1024 # sets the open file descriptors limit
 #mhomed=yes  # useful for multihomed hosts, small performance penalty
-#disable_tcp=yes 
+#disable_tcp=yes
 #tcp_accept_aliases=yes # accepts the tcp alias via option (see NEWS)
 enable_tls=yes
 
@@ -694,7 +694,7 @@ modparam("xmlrpc", "route", "RPC");
 # main routing logic
 
 route{
-    # if you have a PSTN gateway just un-comment the follwoing line and 
+    # if you have a PSTN gateway just un-comment the follwoing line and
     # specify the IP address of it to route calls to it
     #$gw_ip = "1.2.3.4"
 
@@ -805,7 +805,7 @@ route[RR]
     # path determined by record-routing
     if (loose_route()) {
         # mark routing logic in request
-        append_hf("P-hint: rr-enforced\r\n"); 
+        append_hf("P-hint: rr-enforced\r\n");
 
         # if the Route contained the accounting AVP cookie we
         # set the accounting flag for the acc_db module.
@@ -1113,10 +1113,10 @@ traversal with RTPProxy or presence server.
 #
 # Several features can be enabled using '#!define WITH_FEATURE' directives:
 #
-# *** To run in debug mode: 
+# *** To run in debug mode:
 #     - define WITH_DEBUG
 #
-# *** To enable mysql: 
+# *** To enable mysql:
 #     - define WITH_MYSQL
 #
 # *** To enable authentication execute:
@@ -1203,7 +1203,7 @@ children=4
 
 port=5060
 
-/* uncomment and configure the following line if you want Kamailio to 
+/* uncomment and configure the following line if you want Kamailio to
    bind on a specific interface/port/proto (default bind on all available) */
 #listen=udp:10.0.0.10:5060
 
@@ -1330,7 +1330,7 @@ modparam("acc", "detect_direction", 0)
 modparam("acc", "failed_transaction_flag", 3)
 modparam("acc", "log_flag", 1)
 modparam("acc", "log_missed_flag", 2)
-modparam("acc", "log_extra", 
+modparam("acc", "log_extra",
     "src_user=$fU;src_domain=$fd;dst_ouser=$tU;dst_user=$rU;dst_domain=$rd")
 /* enhanced DB accounting */
 #!ifdef WITH_ACCDB
@@ -1550,7 +1550,7 @@ route[REGISTRAR] {
         if(isflagset(5))
         {
             setbflag("6");
-            # uncomment next line to do SIP NAT pinging 
+            # uncomment next line to do SIP NAT pinging
             ## setbflag("7");
         }
         if (!save("location"))
@@ -1610,7 +1610,7 @@ route[PRESENCE] {
     }
     exit;
 #!endif
-    
+
     # if presence enabled, this part will not be executed
     if (is_method("PUBLISH") || $rU==$null)
     {
@@ -1784,14 +1784,14 @@ failure_route[FAIL_ONE] {
         exit;
     }
 
-    # uncomment the following lines if you want to block client 
+    # uncomment the following lines if you want to block client
     # redirect based on 3xx replies.
     ##if (t_check_status("3[0-9][0-9]")) {
     ##t_reply("404","Not found");
     ##  exit;
     ##}
 
-    # uncomment the following lines if you want to redirect the failed 
+    # uncomment the following lines if you want to redirect the failed
     # calls to a different new destination
     ##if (t_check_status("486|408")) {
     ##  sethostport("192.168.2.100:5060");

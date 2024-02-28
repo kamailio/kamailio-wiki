@@ -11,34 +11,34 @@ upgrade database and configuration file from v5.6.x to run with Kamailio
 If you look for the guidelines to upgrade to previous stable release,
 see:
 
--   [Upgrade Kamailio v5.7.x to v5.8.0](5.7.x-to-5.8.0.md)
+- [Upgrade Kamailio v5.7.x to v5.8.0](5.7.x-to-5.8.0.md)
 
 ## Remarks
 
 Following tokens are used to mark the changes:
 
--   INF - the change doesn't really have any direct impact - no action
+- INF - the change doesn't really have any direct impact - no action
     required in old config
--   CPM - the change was used with the new value via explicit parameter
+- CPM - the change was used with the new value via explicit parameter
     in default config file from old releases
--   RCM - the change is recommended to be done if you had an explicit
+- RCM - the change is recommended to be done if you had an explicit
     different or lower value for this parameter in old config
--   UPG - the change has to be done, older config does not work any
+- UPG - the change has to be done, older config does not work any
     longer
 
 ## Modules
 
 ### Upgraded Modules
 
--   none
+- none
 
 ### Removed Modules
 
--   none
+- none
 
 ### Renamed Modules
 
--   none
+- none
 
 ## Internal Libraries
 

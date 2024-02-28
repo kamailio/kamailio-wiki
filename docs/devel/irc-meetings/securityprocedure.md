@@ -16,7 +16,7 @@ If you believe there's a security vulnerability, please don't use the
 public forums. Send e-mail to security@kamailio.org and the issue will
 be handled properly.
 
-1.  Send an e-mail to security@kamailio.org and include the following
+1. Send an e-mail to security@kamailio.org and include the following
     information
 
 <!-- -->

@@ -7,9 +7,9 @@ Starting with v5.0.0, the routing blocks can be written in some other
 (well known) scripting languages and run via their embedded interpreters
 inside Kamailio. Known to work:
 
--   JavaScript - implemented by app_jsdt module, as "jsdt" config engine
--   Lua - implemented by app_lua module, as "lua" config engine
--   Python - implemented by app_python module, as "python" config engine
+- JavaScript - implemented by app_jsdt module, as "jsdt" config engine
+- Lua - implemented by app_lua module, as "lua" config engine
+- Python - implemented by app_python module, as "python" config engine
 
 Setting a configuration engine can be done with the global setting:
 
@@ -39,14 +39,14 @@ kamailio.cfg.
 
 Among benefits of using different scripting languages:
 
--   ability to benefit from what a well established language already
+- ability to benefit from what a well established language already
     provides:
-    -   more people are expected to be familiar with
-    -   an extended set of data types, expressions and statements
+    - more people are expected to be familiar with
+    - an extended set of data types, expressions and statements
         already available
-    -   a large set of extensions and libraries already available
-    -   good documentation about language itself and its extensions
--   reload the SIP routing logic without restarting Kamailio
+    - a large set of extensions and libraries already available
+    - good documentation about language itself and its extensions
+- reload the SIP routing logic without restarting Kamailio
     (implemented for Lua)
 
 Internally, the support for implementing routing logic in an embedded
@@ -75,8 +75,8 @@ language, as they have native alternative in the embedded language.
 Each existing component of Kamailio (e.g., module), can export new
 functions to KEMI in the following way:
 
--   declare an array of type sr_kemi_t
--   register it to KEMI in mod_register() function (or at startup for
+- declare an array of type sr_kemi_t
+- register it to KEMI in mod_register() function (or at startup for
     core components) using sr_kemi_modules_add()
 
 The structure sr_kemi_t is declared in Kamailio core, the file kemi.h:
@@ -96,8 +96,8 @@ typedef struct sr_kemi {
 
 Next C code snippet shows how **sl** module exports two functions:
 
--   C function sl_send_reply_str(...) is exported as sl.sreply(...)
--   C function send_reply(...) is exported as sl.freply(...)
+- C function sl_send_reply_str(...) is exported as sl.sreply(...)
+- C function send_reply(...) is exported as sl.freply(...)
 
 ``` c
 static sr_kemi_t sl_kemi_exports[] = {
@@ -138,14 +138,14 @@ The functions exported by Kamailio core are listed inside the array
 Not all combinations of extra (after sip_msg_t\*) parameters types are
 supported right now - currently the are:
 
--   1 param - can be int of str\*
--   2 params - any combination of int or str\*
--   3 params - any combination of int or str\*
--   4 params - all have to be str\* (other combinations to be added as
+- 1 param - can be int of str\*
+- 2 params - any combination of int or str\*
+- 3 params - any combination of int or str\*
+- 4 params - all have to be str\* (other combinations to be added as
     needed)
--   5 params - all have to be str\* (other combinations to be added as
+- 5 params - all have to be str\* (other combinations to be added as
     needed)
--   6 params - all have to be str\* (other combinations to be added as
+- 6 params - all have to be str\* (other combinations to be added as
     needed)
 
 ## Lua Config KEMI Engine
@@ -155,40 +155,40 @@ logic must be set to its **load** parameter.
 
 Inside the Lua script, following functions are relevant:
 
--   **ksr_request_route()** - is executed by Kamailio core every time a
+- **ksr_request_route()** - is executed by Kamailio core every time a
     SIP request is received. If this function is not defined, then
     Kamailio will write error messages. This is equivalent of
     request_route {} from kamailio.cfg.
--   **ksr_reply_route()** - is executed by Kamailio core every time a
+- **ksr_reply_route()** - is executed by Kamailio core every time a
     SIP Response (reply) is received. If this function is not defined,
     then Kamailio will not write error messages. This is equivalent of
     reply_route {} from kamailio.cfg.
--   **ksr_onsend_route()** - is executed by Kamailio core every time a
+- **ksr_onsend_route()** - is executed by Kamailio core every time a
     SIP request (and optionally for a response) is sent out. If this
     function is not defined, then Kamailio will not write error
     messages. This is equivalent of onsend_route {} from kamailio.cfg.
--   branch route callback - the name of the Lua function to be executed
+- branch route callback - the name of the Lua function to be executed
     instead of a branch route has to be provided as parameter to
     KSR.tm.t_on_branch(...)
--   onreply route callback - the name of the Lua function to be executed
+- onreply route callback - the name of the Lua function to be executed
     instead of an onreply route has to be provided as parameter to
     KSR.tm.t_on_reply(...)
--   failure route callback - the name of the Lua function to be executed
+- failure route callback - the name of the Lua function to be executed
     instead of a failure route has to be provided as parameter to
     KSR.tm.t_on_failure(...)
--   branch failure route callback - the name of the Lua function to be
+- branch failure route callback - the name of the Lua function to be
     executed instead of an event route for branch failure has to be
     provided as parameter to KSR.tm.t_on_branch_failure(...)
--   TBD: the options for specific event_route blocks. Meanwhile, should
+- TBD: the options for specific event_route blocks. Meanwhile, should
     work using hybrid configuration with request_route/reply_route/...
     in embedded interpreter and the other routing blocks in native
     kamailio.cfg.
 
 The following objects are available inside the Lua script:
 
--   **sr** - provided by the old way of exporting functions to Lua
+- **sr** - provided by the old way of exporting functions to Lua
     (<https://www.kamailio.org/wiki/embeddedapi/devel/lua>)
--   **KSR** - provided via KEMI interface. The functions exported to
+- **KSR** - provided via KEMI interface. The functions exported to
     KEMI are accessible as KSR.submodule.function(...). If submodule
     name is empty (reserved for core functions), then they are available
     as KSR.function(...).
@@ -323,40 +323,40 @@ executed by Kamailio.
 
 Inside the new class, the following methods are relevant:
 
--   **ksr_request_route(self, msg)** - is executed by Kamailio core
+- **ksr_request_route(self, msg)** - is executed by Kamailio core
     every time a SIP request is received. If this function is not
     defined, then Kamailio will write error messages. This is equivalent
     of request_route {} from kamailio.cfg.
--   **ksr_reply_route(self, msg)** - is executed by Kamailio core every
+- **ksr_reply_route(self, msg)** - is executed by Kamailio core every
     time a SIP Response (reply) is received. If this function is not
     defined, then Kamailio will not write error messages. This is
     equivalent of reply_route {} from kamailio.cfg.
--   **ksr_onsend_route(self, msg)** - is executed by Kamailio core every
+- **ksr_onsend_route(self, msg)** - is executed by Kamailio core every
     time a SIP request (and optionally for a response) is sent out. If
     this function is not defined, then Kamailio will not write error
     messages. This is equivalent of onsend_route {} from kamailio.cfg.
--   branch route callback - the name of the Python function to be
+- branch route callback - the name of the Python function to be
     executed instead of a branch route has to be provided as parameter
     to KSR.tm.t_on_branch(...)
--   onreply route callback - the name of the Python function to be
+- onreply route callback - the name of the Python function to be
     executed instead of an onreply route has to be provided as parameter
     to KSR.tm.t_on_reply(...)
--   failure route callback - the name of the Python function to be
+- failure route callback - the name of the Python function to be
     executed instead of a failure route has to be provided as parameter
     to KSR.tm.t_on_failure(...)
--   branch failure route callback - the name of the Python function to
+- branch failure route callback - the name of the Python function to
     be executed instead of an event route for branch failure has to be
     provided as parameter to KSR.tm.t_on_branch_failure(...)
--   TBD: the options for specific event_route blocks. Meanwhile, should
+- TBD: the options for specific event_route blocks. Meanwhile, should
     work using hybrid configuration with request_route/reply_route/...
     in embedded interpreter and the other routing blocks in native
     kamailio.cfg.
 
 The following objects are available inside the Python script:
 
--   **Router** - provided by the old way of exporting functions to
+- **Router** - provided by the old way of exporting functions to
     Python (<https://www.kamailio.org/wiki/embeddedapi/devel/python>)
--   **KSR** - provided via KEMI. The functions exported to KEMI are
+- **KSR** - provided via KEMI. The functions exported to KEMI are
     accessible as KSR.submodule.function(...). If submodule name is
     empty (reserved for core functions), then they are available as
     KSR.function(...).
@@ -485,38 +485,38 @@ routing logic must be set to its **load** parameter.
 
 Inside the JavaScript script, following functions are relevant:
 
--   **ksr_request_route()** - is executed by Kamailio core every time a
+- **ksr_request_route()** - is executed by Kamailio core every time a
     SIP request is received. If this function is not defined, then
     Kamailio will write error messages. This is equivalent of
     request_route {} from kamailio.cfg.
--   **ksr_reply_route()** - is executed by Kamailio core every time a
+- **ksr_reply_route()** - is executed by Kamailio core every time a
     SIP Response (reply) is received. If this function is not defined,
     then Kamailio will not write error messages. This is equivalent of
     reply_route {} from kamailio.cfg.
--   **ksr_onsend_route()** - is executed by Kamailio core every time a
+- **ksr_onsend_route()** - is executed by Kamailio core every time a
     SIP request (and optionally for a response) is sent out. If this
     function is not defined, then Kamailio will not write error
     messages. This is equivalent of onsend_route {} from kamailio.cfg.
--   branch route callback - the name of the Lua function to be executed
+- branch route callback - the name of the Lua function to be executed
     instead of a branch route has to be provided as parameter to
     KSR.tm.t_on_branch(...)
--   onreply route callback - the name of the Lua function to be executed
+- onreply route callback - the name of the Lua function to be executed
     instead of an onreply route has to be provided as parameter to
     KSR.tm.t_on_reply(...)
--   failure route callback - the name of the Lua function to be executed
+- failure route callback - the name of the Lua function to be executed
     instead of a failure route has to be provided as parameter to
     KSR.tm.t_on_failure(...)
--   branch failure route callback - the name of the Lua function to be
+- branch failure route callback - the name of the Lua function to be
     executed instead of an event route for branch failure has to be
     provided as parameter to KSR.tm.t_on_branch_failure(...)
--   TBD: the options for specific event_route blocks. Meanwhile, should
+- TBD: the options for specific event_route blocks. Meanwhile, should
     work using hybrid configuration with request_route/reply_route/...
     in embedded interpreter and the other routing blocks in native
     kamailio.cfg.
 
 The following objects are available inside the Lua script:
 
--   **KSR** - provided via KEMI interface. The functions exported to
+- **KSR** - provided via KEMI interface. The functions exported to
     KEMI are accessible as KSR.submodule.function(...). If submodule
     name is empty (reserved for core functions), then they are available
     as KSR.function(...).
@@ -527,11 +527,11 @@ Some examples of configuration files using the native, Lua or Python
 interpreter are available in Kamailio source tree inside the
 **examples/kemi** folder - online at github:
 
--   <https://github.com/kamailio/kamailio/tree/master/misc/examples/kemi>
+- <https://github.com/kamailio/kamailio/tree/master/misc/examples/kemi>
 
 The configuration file to start with is **kamailio-basic-kemi.cfg**:
 
--   <https://github.com/kamailio/kamailio/blob/master/misc/examples/kemi/kamailio-basic-kemi.cfg>
+- <https://github.com/kamailio/kamailio/blob/master/misc/examples/kemi/kamailio-basic-kemi.cfg>
 
 You can either rename it to kamailio.cfg or use **-f** command line
 option to point to it.
@@ -540,28 +540,28 @@ If started without any change and no define in command line, then
 Kamailio will continue to load the routing blocks in the native
 language, stored in the file **kamailio-basic-kemi-native.cfg**:
 
--   <https://github.com/kamailio/kamailio/blob/master/misc/examples/kemi/kamailio-basic-kemi-native.cfg>
+- <https://github.com/kamailio/kamailio/blob/master/misc/examples/kemi/kamailio-basic-kemi-native.cfg>
 
 If you define WITH_CFGLUA inside **kamailio-basic-kemi.cfg** or provide
 the command line parameter **-A WITH_CFGLUA**, then Kamailio will load
 the routing blocks in the Lua language, stored in the file
 **kamailio-basic-kemi-lua.lua**:
 
--   <https://github.com/kamailio/kamailio/blob/master/misc/examples/kemi/kamailio-basic-kemi-lua.lua>
+- <https://github.com/kamailio/kamailio/blob/master/misc/examples/kemi/kamailio-basic-kemi-lua.lua>
 
 If you define WITH_CFGJSDT inside **kamailio-basic-kemi.cfg** or provide
 the command line parameter **-A WITH_CFGJSDT**, then Kamailio will load
 the routing blocks in the JavaScript language, stored in the file
 **kamailio-basic-kemi-jsdt.js**:
 
--   <https://github.com/kamailio/kamailio/blob/master/misc/examples/kemi/kamailio-basic-kemi-jsdt.js>
+- <https://github.com/kamailio/kamailio/blob/master/misc/examples/kemi/kamailio-basic-kemi-jsdt.js>
 
 If you define WITH_CFGPYTHON inside **kamailio-basic-kemi.cfg** or
 provide the command line parameter **-A WITH_CFGPYTHON**, then Kamailio
 will load the routing blocks in the Python language, stored in the file
 **kamailio-basic-kemi-python.py**:
 
--   <https://github.com/kamailio/kamailio/blob/master/misc/examples/kemi/kamailio-basic-kemi-python.py>
+- <https://github.com/kamailio/kamailio/blob/master/misc/examples/kemi/kamailio-basic-kemi-python.py>
 
 Combining **kamailio-basic-kemi.cfg** with
 **kamailio-basic-kemi-native.cfg** results more or less in the
@@ -617,10 +617,10 @@ to the terminal, they look like:
 Depending on the scripting language used for routing blocks, the log
 messages start with:
 
--   NAT - for native interpreter
--   LUA - for LUA
--   JSC - for JavaScript
--   PYT - for Python
+- NAT - for native interpreter
+- LUA - for LUA
+- JSC - for JavaScript
+- PYT - for Python
 
 Again, these are specific to the config options in the
 kamailio-basic-kemi.cfg file -- look for log_prefix inside it for more
@@ -655,7 +655,7 @@ equivalent of).
 
 The results were:
 
-    INTERPRETER - AVERAGE - MIN - MAX 
+    INTERPRETER - AVERAGE - MIN - MAX
 
     NATIVE      - 302.275 - 6  - 3824
 
@@ -665,20 +665,20 @@ The results were:
 
 Remarks:
 
--   the average was between 300 and 400 micro-seconds, resulting in a
+- the average was between 300 and 400 micro-seconds, resulting in a
     capacity of 2500 to over 3000 REGISTERs/second. CPU usage per
     Kamailio SIP worker process was around 1%. Again, not targeting to
     measure the capacity, the config runs with 4 SIP workers, increasing
     that will increase the capacity as database operations were involved
     to fetch the username and password via **auth_db** module.
--   the test was run many times, the Native and Lua execution were close
+- the test was run many times, the Native and Lua execution were close
     to each other, many times Lua being faster, but again, at small
     difference
--   no big surprise as Lua is calling directly the C bindings and its
+- no big surprise as Lua is calling directly the C bindings and its
     interpreter is written also in C. With the config used in the tests,
     the Lua script doesn't do much of specific Lua operations, it mainly
     executes the functions exported by Kamailio
--   Python is slower comparing to Native and Lua, but not that much as
+- Python is slower comparing to Native and Lua, but not that much as
     one may expect. It can still deal with 2500 REGISTERs/second. Even
     more, some of its latency comes from the way **app_modules** is
     designed, to create a Python object from Kamailio's SIP message
@@ -688,7 +688,7 @@ Remarks:
     overhead. Same approach should be possible for **app_python**,
     current approach is more object-oriented at expense of using more
     resources.
--   in some tests, the maximum execution time was between 5000 and 10000
+- in some tests, the maximum execution time was between 5000 and 10000
     micro-second, but for all interpreters, suspecting to be related to
     other tasks done by guest OS (which was running a web browser as
     well). The average didn't result in big differences, even in such
@@ -696,10 +696,10 @@ Remarks:
 
 ## To-Do
 
--   see if same dynamic object mechanism can be implemented for Perl,
+- see if same dynamic object mechanism can be implemented for Perl,
     Mono, Java, etc.
--   discuss and decide the way to generate documentation of available
+- discuss and decide the way to generate documentation of available
     functions via KEMI
--   analyze if worth using a declarative language for specifying the
+- analyze if worth using a declarative language for specifying the
     exported functions and then generate necessary C code from them
     (could be useful for generating docs as well)

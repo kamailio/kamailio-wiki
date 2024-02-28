@@ -14,13 +14,13 @@
 
 ## Clean Source Tree
 
--   clean object files
+- clean object files
 
 <!-- -->
 
     make clean
 
--   clean all generated files
+- clean all generated files
 
 <!-- -->
 
@@ -34,21 +34,21 @@
 
     make cfg
 
--   add extra defines in makefile config
+- add extra defines in makefile config
 
 <!-- -->
 
     make EXTRA_DEFS="-DSTATISTICS" cfg
 
--   cfg for Makefile is config.mak
--   you can edit it and tune as you wish before compilation
+- cfg for Makefile is config.mak
+- you can edit it and tune as you wish before compilation
 
 ## Enable Module
 
 If the module is not compiled by default:
 
--   edit **modules.lst**
--   remove the name of the module from **exclude_modules** variable
+- edit **modules.lst**
+- remove the name of the module from **exclude_modules** variable
 
 or type: `make modules-cfg include_modules=<name_of_the_module>` .
 
@@ -83,13 +83,13 @@ make cfg prefix=/opt/kamailio \
 
 ## Generate README For Modules
 
--   all READMEs for modules located in directory **modules**
+- all READMEs for modules located in directory **modules**
 
 <!-- -->
 
     make modules-readme
 
--   README for one module. Example for **modules/dispatcher**:
+- README for one module. Example for **modules/dispatcher**:
 
 <!-- -->
 

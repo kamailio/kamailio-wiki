@@ -9,7 +9,7 @@ run the command:
 
 Examples:
 
--   regenerate the readme for modules/tm module
+- regenerate the readme for modules/tm module
 
 <!-- -->
 

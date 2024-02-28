@@ -34,9 +34,9 @@ and restart Kamailio:
 Then point your browser to Kamailio and check if the configuration
 works:
 
-1.  Try plain TCP (HTTP) connections:
+1. Try plain TCP (HTTP) connections:
     <http://ip.address.ofyour.sipproxy:5060/>
-2.  If TCP works, try TLS (HTTPS) connections:
+2. If TCP works, try TLS (HTTPS) connections:
     <https://ip.address.ofyour.sipproxy:5061/>
 
 If the browser complains about invalid certificates, but after accepting
@@ -145,28 +145,28 @@ provided the proper server certificate and intermediate certificates.
 Wireshark can be used to decode SSL/TLS sessions. To decode SSL/TLS
 connections, the following requirements must be fulfilled:
 
--   The private key of the TLS server is known (maybe both keys are
+- The private key of the TLS server is known (maybe both keys are
     needed if mutual TLS (=client certificate) is used?)
--   The TLS connections does not use a Diffie-Hellman cipher
--   Wireshark captures the TLS session from the beginning (including the
+- The TLS connections does not use a Diffie-Hellman cipher
+- Wireshark captures the TLS session from the beginning (including the
     TLS handshake)
 
 To decode TLS connections configure Wireshark and Kamailio:
 
--   Copy the server's private key to the PC running Wireshark. Then
+- Copy the server's private key to the PC running Wireshark. Then
     configure Wireshark to use this key:
-    -   Edit → Preferences → Protocols → SSL → RSA Keys List: e.g.:
+    - Edit → Preferences → Protocols → SSL → RSA Keys List: e.g.:
         *ip.address.of.server,5061,sip,c:\\key.pem*
--   If the server uses Diffie-Hellman (DH) Ciphers (depends on default
+- If the server uses Diffie-Hellman (DH) Ciphers (depends on default
     compile time settings of libssl) you have to configure Kamailio to
     use other ciphers. See:
-    -   <http://kamailio.org/docs/modules/3.3.x/modules/tls.html#cipher_list>
+    - <http://kamailio.org/docs/modules/3.3.x/modules/tls.html#cipher_list>
         and
-    -   <http://www.openssl.org/docs/apps/ciphers.html>
--   To make sure you capture the TLS handshake
-    -   Close the SIP client
-    -   Start Wireshark and start capturing
-    -   Start the SIP client.
+    - <http://www.openssl.org/docs/apps/ciphers.html>
+- To make sure you capture the TLS handshake
+    - Close the SIP client
+    - Start Wireshark and start capturing
+    - Start the SIP client.
 
 If you have problems decoding the TLS session you should enable
 debugging in Wireshark: Edit -> Preferences -> Protocols -> SSL -> SSL
@@ -191,12 +191,12 @@ Unfortunately this is hardly supported by SIP clients.
 Following a list of TLS clients and the certificate store they use
 (please extend):
 
--   Eyebeam Windows: Windows certificate store
--   QjSimple: select CA file in configuration dialog
--   Internet Explorer: Windows certificate store
--   Chrome: Windows certificate store
--   Firefox: Dedicated Firefox certificate store
--   Asterisk: Configured in sip.conf
+- Eyebeam Windows: Windows certificate store
+- QjSimple: select CA file in configuration dialog
+- Internet Explorer: Windows certificate store
+- Chrome: Windows certificate store
+- Firefox: Dedicated Firefox certificate store
+- Asterisk: Configured in sip.conf
 
 ## SIP Clients with TLS Client Certificate Support
 
@@ -204,9 +204,9 @@ Following a list of SIP clients that support TLS user certificates
 (needed for incoming TLS connections, of if the TLS server requires
 mutual TLS (MTLS))
 
--   QjSimple: select private key and certificate file in configuration
+- QjSimple: select private key and certificate file in configuration
     dialog
--   Jitis: Settings -> Advanced -> TLS
+- Jitis: Settings -> Advanced -> TLS
 
 ### Trunking with Microsoft Lync
 
@@ -216,5 +216,5 @@ as the PSTN trunk. Other names may be in the SubjectAltName fields. Lync
 by default asks for a TLS client certificate when connecting to it using
 TLS. MS calls this MTLS - Mutual TLS.
 
--   Microsoft: TLS and MTLS in Lync
+- Microsoft: TLS and MTLS in Lync
     <http://technet.microsoft.com/en-us/library/gg195752(v=ocs.14>).aspx

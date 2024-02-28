@@ -70,7 +70,7 @@ Return entire or parts of Via header.
 
 Example:
 
--   return the IP of top most Via header
+- return the IP of top most Via header
 
 ``` c
 @via[1].host

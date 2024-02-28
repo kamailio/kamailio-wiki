@@ -12,5 +12,5 @@ to create smaller and secure docker images.
 
 Kamailio images can be seen at:
 
--   <https://github.com/kamailio/kamailio-docker/pkgs/container/kamailio/versions>
--   <https://github.com/kamailio/kamailio-ci/pkgs/container/kamailio-ci/versions>
+- <https://github.com/kamailio/kamailio-docker/pkgs/container/kamailio/versions>
+- <https://github.com/kamailio/kamailio-ci/pkgs/container/kamailio-ci/versions>

@@ -23,7 +23,7 @@ depending on the Kamailio version of your choice:
 The list of APT repositories and associated operating systems is
 available at:
 
--   **<https://deb.kamailio.org>**
+- **<https://deb.kamailio.org>**
 
 ## Using OBS Repository
 
@@ -34,32 +34,32 @@ older versions of Kamailio!!!**
 
 OBS Project:
 
--   <https://build.opensuse.org/project/show/home:kamailio:telephony-debs>
+- <https://build.opensuse.org/project/show/home:kamailio:telephony-debs>
 
 Download Repositories:
 
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony-debs/Debian_7.0/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony-debs/Debian_6.0/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony-debs/Debian_5.0/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony-debs/xUbuntu_12.04/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony-debs/xUbuntu_10.04/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony-debs/Debian_7.0/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony-debs/Debian_6.0/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony-debs/Debian_5.0/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony-debs/xUbuntu_12.04/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony-debs/xUbuntu_10.04/>
 
 #### Overview
 
--   No source packages
--   No nightly builds
+- No source packages
+- No nightly builds
 
 #### Kamailio v4.1.x
 
--   Distributions: `Debian 6.0 Squeeze`, `Debian 7.0 Wheezy`,
+- Distributions: `Debian 6.0 Squeeze`, `Debian 7.0 Wheezy`,
     `Ubuntu 12.04 Precise`
--   Archs supported: `amd64`, `i386`
+- Archs supported: `amd64`, `i386`
 
 #### Kamailio v3.2.x
 
--   Distributions: `Debian 5.0 Lenny`, `Debian 6.0 Squeeze`,
+- Distributions: `Debian 5.0 Lenny`, `Debian 6.0 Squeeze`,
     `Ubuntu 10.04 Lucid`
--   Archs supported: `amd64`, `i386`
+- Archs supported: `amd64`, `i386`
 
 ### APT Key
 
@@ -105,15 +105,15 @@ version and Operating System and add to your `/etc/apt/sources.list`.
 can return 302 reply to redirect to a mirror. You have to update the URL
 in **sources.list** to use directly a mirror server. For that:
 
--   find a mirror - based on your OS, browse:
-    -   <http://download.opensuse.org/repositories/home://kamailio://telephony-debs/Debian_5.0/Packages?mirrorlist>
-    -   <http://download.opensuse.org/repositories/home://kamailio://telephony-debs/Debian_6.0/Packages?mirrorlist>
-    -   <http://download.opensuse.org/repositories/home://kamailio://telephony-debs/Debian_7.0/Packages?mirrorlist>
-    -   <http://download.opensuse.org/repositories/home://kamailio://telephony-debs/xUbuntu_10.04/Packages?mirrorlist>
-    -   <http://download.opensuse.org/repositories/home://kamailio://telephony-debs/xUbuntu_12.04/Packages?mirrorlist>
--   pick one of the mirrors listed in the browsed page, for example
+- find a mirror - based on your OS, browse:
+    - <http://download.opensuse.org/repositories/home://kamailio://telephony-debs/Debian_5.0/Packages?mirrorlist>
+    - <http://download.opensuse.org/repositories/home://kamailio://telephony-debs/Debian_6.0/Packages?mirrorlist>
+    - <http://download.opensuse.org/repositories/home://kamailio://telephony-debs/Debian_7.0/Packages?mirrorlist>
+    - <http://download.opensuse.org/repositories/home://kamailio://telephony-debs/xUbuntu_10.04/Packages?mirrorlist>
+    - <http://download.opensuse.org/repositories/home://kamailio://telephony-debs/xUbuntu_12.04/Packages?mirrorlist>
+- pick one of the mirrors listed in the browsed page, for example
     **widehat.opensuse.org**, select its listed URL and add to
     **sources.list** the URL without the last "/Packages", resulting in:
-    -   <http://widehat.opensuse.org/repositories/home:/kamailio:/telephony-debs/Debian_5.0>
-    -   <http://widehat.opensuse.org/repositories/home:/kamailio:/telephony-debs/Debian_6.0>
-    -   <http://widehat.opensuse.org/repositories/home:/kamailio:/telephony-debs/xUbuntu_10.04>
+    - <http://widehat.opensuse.org/repositories/home:/kamailio:/telephony-debs/Debian_5.0>
+    - <http://widehat.opensuse.org/repositories/home:/kamailio:/telephony-debs/Debian_6.0>
+    - <http://widehat.opensuse.org/repositories/home:/kamailio:/telephony-debs/xUbuntu_10.04>

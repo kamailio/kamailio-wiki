@@ -20,7 +20,7 @@ most recent version released at some point in time that starts with 4.4.
 Note that Kamailio provides APT repositories for several Debian/Ubuntu
 releases, you can use them to do the install from .deb packages, see:
 
--   <http://www.kamailio.org/wiki/packages/debs>
+- <http://www.kamailio.org/wiki/packages/debs>
 
 ### Notes on Kamailio vs SER
 
@@ -38,20 +38,20 @@ access.
 
 The following packages are required before proceeding to the next steps.
 
--   <u>git</u> client: apt-get install git - it is recommended to have a
+- <u>git</u> client: apt-get install git - it is recommended to have a
     recent version, if your Linux distro has an old version, you can
     download newer one from: <http://git-scm.com/>
--   <u>gcc</u> compiler: apt-get install gcc
--   <u>flex</u> - apt-get install flex
--   <u>bison</u> - apt-get install bison
--   <u>libmysqlclient-dev</u> - apt-get install libmysqlclient-dev
--   <u>make</u> - apt-get install make
--   if you want to enable more modules, some of them require extra
+- <u>gcc</u> compiler: apt-get install gcc
+- <u>flex</u> - apt-get install flex
+- <u>bison</u> - apt-get install bison
+- <u>libmysqlclient-dev</u> - apt-get install libmysqlclient-dev
+- <u>make</u> - apt-get install make
+- if you want to enable more modules, some of them require extra
     libraries:
-    -   <u>libssl</u> - apt-get install libssl-dev
-    -   <u>libcurl</u> - apt-get install libcurl4-openssl-dev
-    -   <u>libxml2</u> - apt-get install libxml2-dev
-    -   <u>libpcre3</u> - apt-get install libpcre3-dev
+    - <u>libssl</u> - apt-get install libssl-dev
+    - <u>libcurl</u> - apt-get install libcurl4-openssl-dev
+    - <u>libxml2</u> - apt-get install libxml2-dev
+    - <u>libpcre3</u> - apt-get install libpcre3-dev
 
 **Important Note**: starting with version 4.3.0, Kamailio uses the
 directory **/var/run/kamailio/** for creating FIFO and UnixSocket
@@ -110,7 +110,7 @@ set PREFIX variable to the install path in 'make cfg ...' command:
 
 More hints about Makefile system at:
 
--   <https://www.kamailio.org/wiki/devel/makefile-system>
+- <https://www.kamailio.org/wiki/devel/makefile-system>
 
 **NOTE**: Previous release series 3.x.x used FLAVOUR mechanism to set
 the name of the application to **kamailio**. Starting with 4.0.0, the
@@ -144,10 +144,10 @@ The binaries and executable scripts were installed in:
 
 These are:
 
--   <u>kamailio</u> - Kamailio SIP server
--   <u>kamdbctl</u> - script to create and manage the Databases
--   <u>kamctl</u> - script to manage and control Kamailio SIP server
--   <u>kamcmd</u> - CLI - command line tool to interface with Kamailio
+- <u>kamailio</u> - Kamailio SIP server
+- <u>kamdbctl</u> - script to create and manage the Databases
+- <u>kamctl</u> - script to manage and control Kamailio SIP server
+- <u>kamcmd</u> - CLI - command line tool to interface with Kamailio
     SIP server
 
 To be able to use the binaries from command line, make sure that
@@ -253,7 +253,7 @@ Just copy the init file into the /etc/init.d/kamailio. Then change the
 permissions:
 
       cp /usr/local/src/kamailio-4.4/kamailio/pkg/kamailio/deb/debian/kamailio.init /etc/init.d/kamailio
-      chmod 755 /etc/init.d/kamailio 
+      chmod 755 /etc/init.d/kamailio
 
 then edit the file updating the $DAEMON and $CFGFILE values:
 

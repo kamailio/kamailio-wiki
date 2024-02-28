@@ -33,7 +33,7 @@ rules.
 Session Initiation Protocol (SIP) is specified by IETF (www.ietf.org),
 with the core specification in the RFC 3261:
 
--   [https://tools.ietf.org/html/rfc3261](https://tools.ietf.org/html/rfc3261)
+- [https://tools.ietf.org/html/rfc3261](https://tools.ietf.org/html/rfc3261)
 
 Many other RFCs add to the core specifications, look at what is
 published by the IETF Working Groups for SIP and SIMPLE.
@@ -49,20 +49,20 @@ some time ago. It is available inside source tree of Kamailio, in the
 folder doc/sip/. It is docbook xml format, the html version can be read
 online at:
 
--   [https://www.kamailio.org/docs/tutorials/sip-introduction/](https://www.kamailio.org/docs/tutorials/sip-introduction/)
+- [https://www.kamailio.org/docs/tutorials/sip-introduction/](https://www.kamailio.org/docs/tutorials/sip-introduction/)
 
 Other online SIP learning resources:
 
--   [siptutorial.net](http://www.siptutorial.net)
--   [tutorialspoint.com](http://www.tutorialspoint.com/session_initiation_protocol/index.htm)
--   [voip-info.org](http://www.voip-info.org/wiki/view/sip)
+- [siptutorial.net](http://www.siptutorial.net)
+- [tutorialspoint.com](http://www.tutorialspoint.com/session_initiation_protocol/index.htm)
+- [voip-info.org](http://www.voip-info.org/wiki/view/sip)
 
 SIP Books:
 
--   [SIP Beyond VoIP](http://www.amazon.com/SIP-Beyond-VoIP-Communications-Revolution/dp/0974813001)
--   [Understanding the Session Initiation Protocol](http://www.amazon.com/Understanding-Session-Initiation-Protocol-Telecommunications-ebook/dp/B003E2UQ8M/)
--   [SIP Demystified](http://www.amazon.com/SIP-Demystified-Gonzalo-Camarillo-ebook/dp/B000T8OAHC/)
--   [Internet Communications Using SIP](http://www.amazon.com/Internet-Communications-Using-SIP-Delivering-ebook/dp/B008O5JR20/)
+- [SIP Beyond VoIP](http://www.amazon.com/SIP-Beyond-VoIP-Communications-Revolution/dp/0974813001)
+- [Understanding the Session Initiation Protocol](http://www.amazon.com/Understanding-Session-Initiation-Protocol-Telecommunications-ebook/dp/B003E2UQ8M/)
+- [SIP Demystified](http://www.amazon.com/SIP-Demystified-Gonzalo-Camarillo-ebook/dp/B000T8OAHC/)
+- [Internet Communications Using SIP](http://www.amazon.com/Internet-Communications-Using-SIP-Delivering-ebook/dp/B008O5JR20/)
 
 ### Logical Programming
 
@@ -105,16 +105,16 @@ remote, is quite obvious (e.g., vim, joe, nano, pico, emacs, etc.).
 
 Install current stable version:
 
--   [Install Kamailio v4.3.x From GIT](../../install/4.3.x/git.md)
+- [Install Kamailio v4.3.x From GIT](../../install/4.3.x/git.md)
 
 Install development version (master branch):
 
--   [Install Kamailio Devel Version From GIT](../../install/devel/git.md)
+- [Install Kamailio Devel Version From GIT](../../install/devel/git.md)
 
 When installing from sources:
 
--   configuration files are deployed in: `/usr/local/etc/kamailio`
--   binary files are deployed in: `/usr/local/sbin/`
+- configuration files are deployed in: `/usr/local/etc/kamailio`
+- binary files are deployed in: `/usr/local/sbin/`
 ### Debian
 
 Kamailio is part of latest official stable Debian distributions (and its
@@ -123,7 +123,7 @@ Ubuntu cousin), but might be an older version.
 To use most recent Kamailio release, you can use the APT repositories
 hosted by Kamailio project, see details at:
 
--   [KAMAILIO DEBS Repositories](../../packages/debs.md)
+- [KAMAILIO DEBS Repositories](../../packages/debs.md)
 
 Then, the typical way of installing packages can be used:
 
@@ -142,15 +142,15 @@ tls modules -- they can be installed with:
 
 When installing from deb packages:
 
--   configuration files are deployed in: /etc/kamailio/
--   binary files are deployed in: /usr/sbin/
+- configuration files are deployed in: /etc/kamailio/
+- binary files are deployed in: /usr/sbin/
 
 ### CentoOS
 
 Kamailio RPMs are available for several distributions, such as RedHat
 Enterprise, CentOS, OpenSuse and Fedora. For more details, see:
 
--   [KAMAILIO RPMS Repositories](../../packages/rpms.md)
+- [KAMAILIO RPMS Repositories](../../packages/rpms.md)
 
 You can add them to YUM configuration and then install Kamailio with
 usual yum commands:
@@ -161,8 +161,8 @@ usual yum commands:
 
 When installing from rpm packages:
 
--   configuration files are deployed in: /etc/kamailio/
--   binary files are deployed in: /usr/sbin/
+- configuration files are deployed in: /etc/kamailio/
+- binary files are deployed in: /usr/sbin/
 
 ## Configuration File
 
@@ -171,39 +171,39 @@ When installing from rpm packages:
 If you installed from sources, then the configuration file is located
 at:
 
--   /usr/local/etc/kamailio/kamailio.cfg
+- /usr/local/etc/kamailio/kamailio.cfg
 
 If you installed from packages, then the configuration file is located
 at:
 
--   /etc/kamailio/kamailio.cfg
+- /etc/kamailio/kamailio.cfg
 
 ### Configuration Scripting Language
 
 Kamailio uses its own configuration file language. Its structure is
 described in the Core Cookbook:
 
--   [Devel Core Cookbook](../../cookbooks/devel/core.md)
+- [Devel Core Cookbook](../../cookbooks/devel/core.md)
 
 ### Default Configuration File
 
 The default configuration file is trying to provide the features for a
 simple VoIP (telephony) provider.
 
--   user authentication
--   IP authorization
--   accounting
--   registrar and location services
--   attacks detection and blocking (anti-flood protection)
--   NAT traversal
--   short dialing on server
--   multiple identities (aliases) for subscribers
--   multi-domain support
--   routing to a PSTN gateway
--   routing to a voicemail server
--   TLS encryption
--   instant messaging (pager mode with MESSAGE requests)
--   presence services
+- user authentication
+- IP authorization
+- accounting
+- registrar and location services
+- attacks detection and blocking (anti-flood protection)
+- NAT traversal
+- short dialing on server
+- multiple identities (aliases) for subscribers
+- multi-domain support
+- routing to a PSTN gateway
+- routing to a voicemail server
+- TLS encryption
+- instant messaging (pager mode with MESSAGE requests)
+- presence services
 
 Not all the above features are enabled by default -- read the comments
 at the top of **kamailio.cfg** in order to find what tokens must be
@@ -305,7 +305,7 @@ command line. It requires that the **ctl** module is loaded by Kamailio.
 It is a web management interface for Kamailio, written in PHP -- more
 at:
 
--   [http://www.siremis.org](http://www.siremis.org)
+- [http://www.siremis.org](http://www.siremis.org)
 
 ### kamcli
 
@@ -315,7 +315,7 @@ extend it by writing new plugins.
 
 See more at:
 
--   [https://github.com/kamailio/kamcli](https://github.com/kamailio/kamcli)
+- [https://github.com/kamailio/kamcli](https://github.com/kamailio/kamcli)
 
 ## Typical Use Cases
 
@@ -329,22 +329,22 @@ configuration file for more details.
 
 See dispatcher module:
 
--   [https://kamailio.org/docs/modules/stable/modules/dispatcher.html](https://kamailio.org/docs/modules/stable/modules/dispatcher.html)
+- [https://kamailio.org/docs/modules/stable/modules/dispatcher.html](https://kamailio.org/docs/modules/stable/modules/dispatcher.html)
 
 ### Least Cost Routing
 
 See the modules:
 
--   [https://kamailio.org/docs/modules/stable/modules/lcr.html](https://kamailio.org/docs/modules/stable/modules/lcr.html)
--   [https://kamailio.org/docs/modules/stable/modules/carrierroute.html](https://kamailio.org/docs/modules/stable/modules/carrierroute.html)
--   [https://kamailio.org/docs/modules/stable/modules/drouting.html](https://kamailio.org/docs/modules/stable/modules/drouting.html)
+- [https://kamailio.org/docs/modules/stable/modules/lcr.html](https://kamailio.org/docs/modules/stable/modules/lcr.html)
+- [https://kamailio.org/docs/modules/stable/modules/carrierroute.html](https://kamailio.org/docs/modules/stable/modules/carrierroute.html)
+- [https://kamailio.org/docs/modules/stable/modules/drouting.html](https://kamailio.org/docs/modules/stable/modules/drouting.html)
 
 ### IMS/VoLTE
 
 Look at the modules that have the name prefixed with **ims\_** or
 starting with **cdp** (the later are for Diameter):
 
--   [https://kamailio.org/docs/modules/stable/](http://kamailio.org/docs/modules/stable/)
+- [https://kamailio.org/docs/modules/stable/](http://kamailio.org/docs/modules/stable/)
 
 Example of configuration files for different IMS roles (eg., ICSCF,
 PCSCF, SCSCF) are available in the source tree, look inside the
@@ -355,31 +355,31 @@ sub-directory **examples/**.
 Look at the modules that have the name prefixed with **presence**
 (presence server) or **pua** (presence user agent):
 
--   [http://kamailio.org/docs/modules/stable/](http://kamailio.org/docs/modules/stable/)
+- [http://kamailio.org/docs/modules/stable/](http://kamailio.org/docs/modules/stable/)
 
 ### WebRTC
 
 See the module:
 
--   [http://kamailio.org/docs/modules/stable/modules/websocket.html](http://kamailio.org/docs/modules/stable/modules/websocket.html)
+- [http://kamailio.org/docs/modules/stable/modules/websocket.html](http://kamailio.org/docs/modules/stable/modules/websocket.html)
 
 ## Useful Resources
 
 ### Kamailio Books
 
--   [SIP Routing with Kamailio](http://www.asipto.com/sw/kamailio-admin-book/)
+- [SIP Routing with Kamailio](http://www.asipto.com/sw/kamailio-admin-book/)
 
 ### Kamailio Online Tutorials
 
--   [Kamailio Devel Tutorial](http://www.asipto.com/pub/kamailio-devel-guide/)
--   [SER Getting Started](http://kamailio.org/docs/ser-getting-started/SER-GettingStarted.pdf)
+- [Kamailio Devel Tutorial](http://www.asipto.com/pub/kamailio-devel-guide/)
+- [SER Getting Started](http://kamailio.org/docs/ser-getting-started/SER-GettingStarted.pdf)
 
 ### Related Open Source Projects
 
 Open source projects embedding Kamailio that can help rolling out
 specific use cases.
 
--   [sip:provider CE](https://www.sipwise.org/products/spce/) -
+- [sip:provider CE](https://www.sipwise.org/products/spce/) -
     telephony operator platform
--   [kazoo](https://github.com/2600hz/kazoo) - cloud PBX platform
--   [Elastix MT](http://www.elastix.org/) - multi-tenant PBX system
+- [kazoo](https://github.com/2600hz/kazoo) - cloud PBX platform
+- [Elastix MT](http://www.elastix.org/) - multi-tenant PBX system

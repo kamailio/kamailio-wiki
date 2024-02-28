@@ -32,18 +32,18 @@ and x86_64 architectures.
 
 The OpenSuse build service project is available at:
 
--   <https://build.opensuse.org/project/show/home:kamailio:v5.3.x-rpms>
+- <https://build.opensuse.org/project/show/home:kamailio:v5.3.x-rpms>
 
 Download links specific per distribution are:
 
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.3.x-rpms/CentOS_6/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.3.x-rpms/CentOS_7/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.3.x-rpms/Fedora_29/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.3.x-rpms/Fedora_30/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.3.x-rpms/RHEL_6/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.3.x-rpms/RHEL_7/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.3.x-rpms/openSUSE_Leap_42.2/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.3.x-rpms/openSUSE_Leap_42.3/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.3.x-rpms/CentOS_6/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.3.x-rpms/CentOS_7/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.3.x-rpms/Fedora_29/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.3.x-rpms/Fedora_30/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.3.x-rpms/RHEL_6/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.3.x-rpms/RHEL_7/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.3.x-rpms/openSUSE_Leap_42.2/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.3.x-rpms/openSUSE_Leap_42.3/>
 
 ## Kamailio 5.2.x
 
@@ -53,19 +53,19 @@ and x86_64 architectures.
 
 The OpenSuse build service project is available at:
 
--   <https://build.opensuse.org/project/show/home:kamailio:v5.2.x-rpms>
+- <https://build.opensuse.org/project/show/home:kamailio:v5.2.x-rpms>
 
 Download links specific per distribution are:
 
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/CentOS_6/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/CentOS_7/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/Fedora_27/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/Fedora_28/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/Fedora_29/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/RHEL_6/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/RHEL_7/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/openSUSE_Leap_42.2/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/openSUSE_Leap_42.3/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/CentOS_6/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/CentOS_7/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/Fedora_27/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/Fedora_28/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/Fedora_29/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/RHEL_6/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/RHEL_7/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/openSUSE_Leap_42.2/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.2.x-rpms/openSUSE_Leap_42.3/>
 
 ## Kamailio 5.1.x
 
@@ -75,19 +75,19 @@ and x86_64 architectures.
 
 The OpenSuse build service project is available at:
 
--   <https://build.opensuse.org/project/show/home:kamailio:v5.1.x-rpms>
+- <https://build.opensuse.org/project/show/home:kamailio:v5.1.x-rpms>
 
 Download links specific per distribution are:
 
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/CentOS_6/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/CentOS_7/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/Fedora_25/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/Fedora_26/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/Fedora_27/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/RHEL_6/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/RHEL_7/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/openSUSE_Leap_42.2/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/openSUSE_Leap_42.3/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/CentOS_6/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/CentOS_7/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/Fedora_25/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/Fedora_26/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/Fedora_27/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/RHEL_6/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/RHEL_7/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/openSUSE_Leap_42.2/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.1.x-rpms/openSUSE_Leap_42.3/>
 
 ## Kamailio 5.0.x
 
@@ -97,18 +97,18 @@ x86_64 architectures.
 
 The OpenSuse build service project is available at:
 
--   <https://build.opensuse.org/project/show/home:kamailio:v5.0.x-rpms>
+- <https://build.opensuse.org/project/show/home:kamailio:v5.0.x-rpms>
 
 Download links specific per distribution are:
 
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.0.x-rpms/CentOS_6/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.0.x-rpms/CentOS_7/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.0.x-rpms/Fedora_25/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.0.x-rpms/Fedora_26/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.0.x-rpms/RHEL_6/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.0.x-rpms/RHEL_7/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.0.x-rpms/openSUSE_Leap_42.2/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v5.0.x-rpms/openSUSE_Leap_42.3/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.0.x-rpms/CentOS_6/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.0.x-rpms/CentOS_7/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.0.x-rpms/Fedora_25/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.0.x-rpms/Fedora_26/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.0.x-rpms/RHEL_6/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.0.x-rpms/RHEL_7/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.0.x-rpms/openSUSE_Leap_42.2/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v5.0.x-rpms/openSUSE_Leap_42.3/>
 
 ## Kamailio 4.4.x
 
@@ -118,24 +118,24 @@ and x86_64 architectures.
 
 A mirror (not in real time) of the packages is hosted by:
 
--   <http://rpm.kamailio.org>
+- <http://rpm.kamailio.org>
 
 The OpenSuse build service project is available at:
 
--   <https://build.opensuse.org/project/show/home:kamailio:v4.4.x-rpms>
+- <https://build.opensuse.org/project/show/home:kamailio:v4.4.x-rpms>
 
 Download links specific per distribution are:
 
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.4.x-rpms/CentOS_5/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.4.x-rpms/CentOS_6/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.4.x-rpms/CentOS_7/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.4.x-rpms/Fedora_22/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.4.x-rpms/Fedora_23/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.4.x-rpms/RHEL_5/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.4.x-rpms/RHEL_6/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.4.x-rpms/RHEL_7/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.4.x-rpms/openSUSE_13.1/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.4.x-rpms/openSUSE_13.2/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.4.x-rpms/CentOS_5/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.4.x-rpms/CentOS_6/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.4.x-rpms/CentOS_7/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.4.x-rpms/Fedora_22/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.4.x-rpms/Fedora_23/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.4.x-rpms/RHEL_5/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.4.x-rpms/RHEL_6/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.4.x-rpms/RHEL_7/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.4.x-rpms/openSUSE_13.1/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.4.x-rpms/openSUSE_13.2/>
 
 ## Kamailio 4.3.x
 
@@ -145,24 +145,24 @@ and x86_64 architectures.
 
 A mirror (not in real time) of the packages is hosted by:
 
--   <http://rpm.kamailio.org>
+- <http://rpm.kamailio.org>
 
 The OpenSuse build service project is available at:
 
--   <https://build.opensuse.org/project/show/home:kamailio:v4.3.x-rpms>
+- <https://build.opensuse.org/project/show/home:kamailio:v4.3.x-rpms>
 
 Download links specific per distribution are:
 
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.3.x-rpms/CentOS_5/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.3.x-rpms/CentOS_6/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.3.x-rpms/CentOS_7/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.3.x-rpms/Fedora_20/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.3.x-rpms/Fedora_21/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.3.x-rpms/RHEL_5/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.3.x-rpms/RHEL_6/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.3.x-rpms/RHEL_7/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.3.x-rpms/openSUSE_13.1/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.3.x-rpms/openSUSE_13.2/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.3.x-rpms/CentOS_5/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.3.x-rpms/CentOS_6/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.3.x-rpms/CentOS_7/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.3.x-rpms/Fedora_20/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.3.x-rpms/Fedora_21/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.3.x-rpms/RHEL_5/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.3.x-rpms/RHEL_6/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.3.x-rpms/RHEL_7/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.3.x-rpms/openSUSE_13.1/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.3.x-rpms/openSUSE_13.2/>
 
 ## Kamailio 4.2.x
 
@@ -172,24 +172,24 @@ and x86_64 architectures.
 
 A mirror (not in real time) of the packages is hosted by:
 
--   <http://rpm.kamailio.org>
+- <http://rpm.kamailio.org>
 
 The OpenSuse build service project is available at:
 
--   <https://build.opensuse.org/project/show/home:kamailio:v4.2.x-rpms>
+- <https://build.opensuse.org/project/show/home:kamailio:v4.2.x-rpms>
 
 Download links specific per distribution are:
 
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/CentOS_5/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/CentOS_6/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/CentOS_7/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/Fedora_20/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/Fedora_21/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/RHEL_5/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/RHEL_6/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/RHEL_7/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/openSUSE_13.1/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/openSUSE_13.2/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/CentOS_5/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/CentOS_6/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/CentOS_7/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/Fedora_20/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/Fedora_21/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/RHEL_5/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/RHEL_6/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/RHEL_7/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/openSUSE_13.1/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/v4.2.x-rpms/openSUSE_13.2/>
 
 ## Kamailio 4.0.x and 4.1.x
 
@@ -199,27 +199,27 @@ and 13.1, on i586 and x86_64 architectures.
 
 A mirror of the packages is hosted by:
 
--   <http://rpm.kamailio.org>
+- <http://rpm.kamailio.org>
 
 The OpenSuse build service project is available at:
 
--   <https://build.opensuse.org/project/show/home:kamailio:telephony>
+- <https://build.opensuse.org/project/show/home:kamailio:telephony>
 
 Download links specific per distribution are:
 
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/CentOS_CentOS-5/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/CentOS_CentOS-6/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/RedHat_RHEL-5/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/RedHat_RHEL-6/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/Fedora_16/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/Fedora_17/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/Fedora_18/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/Fedora_19/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_11.4/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_12.1/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_12.2/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_12.3/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_13.1/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/CentOS_CentOS-5/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/CentOS_CentOS-6/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/RedHat_RHEL-5/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/RedHat_RHEL-6/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/Fedora_16/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/Fedora_17/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/Fedora_18/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/Fedora_19/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_11.4/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_12.1/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_12.2/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_12.3/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_13.1/>
 
 ### Peter Dunkley's YUM Repository
 
@@ -229,7 +229,7 @@ Pi), i386, x86_64.
 
 See details at:
 
--   <http://dl.dropbox.com/u/9300853/yum/index.html>
+- <http://dl.dropbox.com/u/9300853/yum/index.html>
 
 ## Kamailio 3.3.x
 
@@ -239,19 +239,19 @@ Centos 6, RedHat 5, RedHat 6, Fedora 15, Fedora 16, Fedora 17, OpenSuse
 
 The build service project is available at:
 
--   <https://build.opensuse.org/package/show?package=kamailio33&project=home%3Akamailio%3Atelephony>
+- <https://build.opensuse.org/package/show?package=kamailio33&project=home%3Akamailio%3Atelephony>
 
 Download links specific per distribution are:
 
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/CentOS_CentOS-5/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/CentOS_CentOS-6/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/RedHat_RHEL-5/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/RedHat_RHEL-6/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/Fedora_15/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/Fedora_16/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/Fedora_17/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_11.4/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_12.1/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/CentOS_CentOS-5/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/CentOS_CentOS-6/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/RedHat_RHEL-5/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/RedHat_RHEL-6/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/Fedora_15/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/Fedora_16/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/Fedora_17/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_11.4/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_12.1/>
 
 ## Kamailio 3.2.x
 
@@ -261,15 +261,15 @@ OpenSuse 12.1, on i586 and x86_64 architectures.
 
 The build service project is available at:
 
--   <https://build.opensuse.org/package/show?package=kamailio32&project=home%3Akamailio%3Atelephony>
+- <https://build.opensuse.org/package/show?package=kamailio32&project=home%3Akamailio%3Atelephony>
 
 Download links specific per distribution are:
 
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/CentOS_CentOS-5/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/CentOS_CentOS-6/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/RedHat_RHEL-5/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/RedHat_RHEL-6/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/Fedora_15/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/Fedora_16/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_11.4/>
--   <http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_12.1/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/CentOS_CentOS-5/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/CentOS_CentOS-6/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/RedHat_RHEL-5/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/RedHat_RHEL-6/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/Fedora_15/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/Fedora_16/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_11.4/>
+- <http://download.opensuse.org/repositories/home:/kamailio:/telephony/openSUSE_12.1/>

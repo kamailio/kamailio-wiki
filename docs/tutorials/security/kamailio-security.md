@@ -26,11 +26,11 @@ In Kamailio there is a great module called topoh, read Daniels post
 
 It helps you to hide details, typical use cases being:
 
--   protect the addresses of your PSTN gateways - will protect you
+- protect the addresses of your PSTN gateways - will protect you
     against people trying to attack them to get free calls
--   protect your internal network topology - when having a big platform
+- protect your internal network topology - when having a big platform
     with many servers, you do not disclose their addresses
--   interconnection provider - to keep the details of connected parties
+- interconnection provider - to keep the details of connected parties
     secret to the other, to prevent a bypass of its service in the
     future
 
@@ -63,49 +63,49 @@ useless
     :PRIVATE - [0:0]
     :PSD - [0:0]
     :SERVICES - [0:0]
-    -A INPUT -i lo -j ACCEPT 
-    -A INPUT -i eth0 -p ipv6 -j ACCEPT 
-    -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT 
-    -A INPUT -j SERVICES 
-    -A OUTPUT -o lo -j ACCEPT 
-    -A OUTPUT -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT 
-    -A CHECK_TCP -p tcp -m tcp ! --tcp-flags SYN,RST,ACK SYN -m state --state NEW -j DROP 
-    -A CHECK_TCP -p tcp -m tcp --tcp-flags FIN,SYN,RST,PSH,ACK,URG FIN,SYN,RST,ACK -j DROP 
-    -A CHECK_TCP -p tcp -m tcp --tcp-flags FIN,SYN,RST,PSH,ACK,URG FIN,PSH,URG -j DROP 
-    -A CHECK_TCP -p tcp -m tcp --tcp-flags FIN,ACK FIN -m state --state INVALID,NEW,RELATED -j DROP 
-    -A CHECK_TCP -p tcp -m tcp --tcp-flags FIN,SYN,RST,PSH,ACK,URG FIN,SYN -j DROP 
-    -A CHECK_TCP -p tcp -m tcp --tcp-flags FIN,SYN FIN,SYN -j DROP 
-    -A CHECK_TCP -p tcp -m tcp --tcp-flags SYN,RST SYN,RST -j DROP 
-    -A CHECK_TCP -p tcp -m tcp --tcp-flags FIN,RST FIN,RST -j DROP 
-    -A CHECK_TCP -p tcp -m tcp --tcp-flags PSH,ACK PSH -j DROP 
-    -A CHECK_TCP -p tcp -m tcp --tcp-flags ACK,URG URG -j DROP 
-    -A CHECK_TCP -p tcp -m tcp --tcp-flags FIN,SYN,RST,PSH,ACK,URG NONE -j DROP 
-    -A CHECK_TCP -p tcp -m tcp --tcp-flags FIN,SYN,RST,PSH,ACK,URG FIN,SYN,RST,PSH,ACK,URG -j DROP 
-    -A CHECK_TCP -p tcp -m tcp --tcp-option 64 -j DROP 
-    -A CHECK_TCP -p tcp -m tcp --tcp-option 128 -j DROP 
-    -A ICMP -p icmp -m icmp --icmp-type 11/1 -m limit --limit 5/sec -m state --state NEW -j ACCEPT 
-    -A ICMP -p icmp -m icmp --icmp-type 11/0 -m limit --limit 5/sec -m state --state NEW -j ACCEPT 
-    -A ICMP -p icmp -m icmp --icmp-type 3 -m limit --limit 10/sec -m state --state NEW -j ACCEPT 
-    -A ICMP -p icmp -m icmp --icmp-type 8 -m limit --limit 10/sec --limit-burst 10 -m state --state NEW -j ACCEPT 
-    -A ICMP -p icmp -j DROP 
-    -A PRIVATE -d 192.168.0.0/16 -j DROP 
-    -A PRIVATE -d 172.16.0.0/12 -j DROP 
-    -A PRIVATE -d 10.0.0.0/8 -j DROP 
-    -A PRIVATE -j RETURN 
-    -A PSD -p tcp -m statistic --mode random --probability 0.050000 -j REJECT --reject-with icmp-port-unreachable 
-    -A PSD -p tcp -m statistic --mode random --probability 0.050000 -j TARPIT  --reset 
-    -A PSD -p tcp -m statistic --mode random --probability 0.500000 -j TARPIT  --tarpit 
-    -A PSD -p udp -m statistic --mode random --probability 0.050000 -j REJECT --reject-with icmp-port-unreachable 
-    -A PSD -m statistic --mode random --probability 0.050000 -j REJECT --reject-with icmp-host-unreachable  
-    -A SERVICES -p icmp -m state --state INVALID -j DROP 
-    -A SERVICES -p icmp -j ICMP 
-    -A SERVICES -p tcp -j CHECK_TCP 
-    -A SERVICES -p udp -m udp --dport 123 -m state --state NEW -j ACCEPT 
-    -A SERVICES -p udp -m udp --dport 53 -m state --state NEW -j ACCEPT 
-    -A SERVICES -p tcp -m tcp --dport 53 -m state --state NEW -j ACCEPT 
-    -A SERVICES -p tcp -m udp -m multiport --dports 5060 -m state --state NEW -j ACCEPT 
-    -A SERVICES -p tcp -m udp -m multiport --dports 5061 -m state --state NEW -j ACCEPT 
-    -A SERVICES -i eth0 -j PSD 
+    -A INPUT -i lo -j ACCEPT
+    -A INPUT -i eth0 -p ipv6 -j ACCEPT
+    -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+    -A INPUT -j SERVICES
+    -A OUTPUT -o lo -j ACCEPT
+    -A OUTPUT -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
+    -A CHECK_TCP -p tcp -m tcp ! --tcp-flags SYN,RST,ACK SYN -m state --state NEW -j DROP
+    -A CHECK_TCP -p tcp -m tcp --tcp-flags FIN,SYN,RST,PSH,ACK,URG FIN,SYN,RST,ACK -j DROP
+    -A CHECK_TCP -p tcp -m tcp --tcp-flags FIN,SYN,RST,PSH,ACK,URG FIN,PSH,URG -j DROP
+    -A CHECK_TCP -p tcp -m tcp --tcp-flags FIN,ACK FIN -m state --state INVALID,NEW,RELATED -j DROP
+    -A CHECK_TCP -p tcp -m tcp --tcp-flags FIN,SYN,RST,PSH,ACK,URG FIN,SYN -j DROP
+    -A CHECK_TCP -p tcp -m tcp --tcp-flags FIN,SYN FIN,SYN -j DROP
+    -A CHECK_TCP -p tcp -m tcp --tcp-flags SYN,RST SYN,RST -j DROP
+    -A CHECK_TCP -p tcp -m tcp --tcp-flags FIN,RST FIN,RST -j DROP
+    -A CHECK_TCP -p tcp -m tcp --tcp-flags PSH,ACK PSH -j DROP
+    -A CHECK_TCP -p tcp -m tcp --tcp-flags ACK,URG URG -j DROP
+    -A CHECK_TCP -p tcp -m tcp --tcp-flags FIN,SYN,RST,PSH,ACK,URG NONE -j DROP
+    -A CHECK_TCP -p tcp -m tcp --tcp-flags FIN,SYN,RST,PSH,ACK,URG FIN,SYN,RST,PSH,ACK,URG -j DROP
+    -A CHECK_TCP -p tcp -m tcp --tcp-option 64 -j DROP
+    -A CHECK_TCP -p tcp -m tcp --tcp-option 128 -j DROP
+    -A ICMP -p icmp -m icmp --icmp-type 11/1 -m limit --limit 5/sec -m state --state NEW -j ACCEPT
+    -A ICMP -p icmp -m icmp --icmp-type 11/0 -m limit --limit 5/sec -m state --state NEW -j ACCEPT
+    -A ICMP -p icmp -m icmp --icmp-type 3 -m limit --limit 10/sec -m state --state NEW -j ACCEPT
+    -A ICMP -p icmp -m icmp --icmp-type 8 -m limit --limit 10/sec --limit-burst 10 -m state --state NEW -j ACCEPT
+    -A ICMP -p icmp -j DROP
+    -A PRIVATE -d 192.168.0.0/16 -j DROP
+    -A PRIVATE -d 172.16.0.0/12 -j DROP
+    -A PRIVATE -d 10.0.0.0/8 -j DROP
+    -A PRIVATE -j RETURN
+    -A PSD -p tcp -m statistic --mode random --probability 0.050000 -j REJECT --reject-with icmp-port-unreachable
+    -A PSD -p tcp -m statistic --mode random --probability 0.050000 -j TARPIT  --reset
+    -A PSD -p tcp -m statistic --mode random --probability 0.500000 -j TARPIT  --tarpit
+    -A PSD -p udp -m statistic --mode random --probability 0.050000 -j REJECT --reject-with icmp-port-unreachable
+    -A PSD -m statistic --mode random --probability 0.050000 -j REJECT --reject-with icmp-host-unreachable
+    -A SERVICES -p icmp -m state --state INVALID -j DROP
+    -A SERVICES -p icmp -j ICMP
+    -A SERVICES -p tcp -j CHECK_TCP
+    -A SERVICES -p udp -m udp --dport 123 -m state --state NEW -j ACCEPT
+    -A SERVICES -p udp -m udp --dport 53 -m state --state NEW -j ACCEPT
+    -A SERVICES -p tcp -m tcp --dport 53 -m state --state NEW -j ACCEPT
+    -A SERVICES -p tcp -m udp -m multiport --dports 5060 -m state --state NEW -j ACCEPT
+    -A SERVICES -p tcp -m udp -m multiport --dports 5061 -m state --state NEW -j ACCEPT
+    -A SERVICES -i eth0 -j PSD
     COMMIT
 
 ### Change the server and user agent header
@@ -173,16 +173,16 @@ The pike module tracks the number of SIP messages per source IP address,
 per period. Pike is very easy to add to your config:
 
     loadmodule "pike.so"
-     
+
     ...
-     
+
     # ----- pike params -----
     modparam("pike", "sampling_time_unit", 2)
     modparam("pike", "reqs_density_per_unit", 20)
     modparam("pike", "remove_latency", 4)
-     
+
     ...
-     
+
     route {
       if (!pike_check_req()) {
         xlog("L_ALERT","ALERT: pike block $rm from $fu (IP:$si:$sp)\n");
@@ -204,9 +204,9 @@ for htable definition):
     loadmodule "htable.so"
     ...
     modparam("htable", "htable", "ipban=>size=8;autoexpire=300;")
-     
+
     ...
-     
+
     route {
       if($sht(ipban=>$si)!=$null)
       {
@@ -359,12 +359,12 @@ Secfilter is a module that has been designed to offer an additional
 layer of security over our communications. To achieve this, the
 following features are available:
 
--   Blacklist to block user agents, IP addresses, countries, domains and
+- Blacklist to block user agents, IP addresses, countries, domains and
     users.
--   Whitelist to allow user agents, IP addresses, countries, domains and
+- Whitelist to allow user agents, IP addresses, countries, domains and
     users.
--   Blacklist of destinations where the called number is not allowed.
--   SQL injection attacks prevention.
+- Blacklist of destinations where the called number is not allowed.
+- SQL injection attacks prevention.
 
 For example, to block IP addresses we have to use a database because it
 is very common to update the blacklist, since every day we receive many
@@ -414,7 +414,7 @@ Example of use:
                     xalert("$rm from $si blocked because UserAgent '$ua' is blacklisted");
                     exit;
             }
-     
+
             secf_check_from_hdr();
             # return values ...
             #  4 = name whitelisted
@@ -559,7 +559,7 @@ generally based on MD5 ;)
 
 A SIP digest looks like:
 
-    Authorization: Digest username="replayuser", realm="mslync.com", nonce="Uu+v01LvrXvRLxDlRFmj8f+x1sDLIA2ERmialM3+jEm2cBJ0R33hCxp8zyeA", 
+    Authorization: Digest username="replayuser", realm="mslync.com", nonce="Uu+v01LvrXvRLxDlRFmj8f+x1sDLIA2ERmialM3+jEm2cBJ0R33hCxp8zyeA",
     uri="sip:lync.com", response="c9295a60ag08554d26a7e17b7aac780b"
 
 Nonce == the challenge the server sends Response == the Nonce + a

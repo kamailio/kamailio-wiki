@@ -3,7 +3,7 @@
 📘 **Previous version was 5.6.x (released on May 2022), see
 what was new in that release at**:
 
-  -  [New In v5.6.x](new-in-5.6.x.md)
+  - [New In v5.6.x](new-in-5.6.x.md)
 
 📘 *This is a draft of new features added in this version,
 manually updated, thus not always synchronized with what is new in
@@ -247,7 +247,7 @@ source code repository.*
 ### topos ###
 
   * skip adding contact header for BYE, CANCEL, PRACK
-  *  added methods_nocontact parameter
+  * added methods_nocontact parameter
   * skip inserting contact header for 4xx replies
   * new parameter to allow specifying initial request methods to skip topos
   * option to disable multiple comma separated values in One Single Via, Record-Route or Route header

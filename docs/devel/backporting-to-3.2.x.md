@@ -78,7 +78,7 @@ To see the version, go in each directory and run **kamailio -V**:
     flags: STATS: Off, USE_IPV6, USE_TCP, USE_TLS, TLS_HOOKS, DISABLE_NAGLE, USE_MCAST, DNS_IP_HACK, SHM_MEM, SHM_MMAP, PKG_MALLOC, DBG_QM_MALLOC, FAST_LOCK-ADAPTIVE_WAIT, USE_DNS_CACHE, USE_DNS_FAILOVER, USE_NAPTR, USE_DST_BLACKLIST, HAVE_RESOLV_RES
     ADAPTIVE_WAIT_LOOPS=1024, MAX_RECV_BUFFER_SIZE 262144, MAX_LISTEN 16, MAX_URI_SIZE 1024, BUF_SIZE 65535, DEFAULT PKG_SIZE 4MB
     poll method support: poll, select, kqueue.
-    id: 5bdef8 
+    id: 5bdef8
     compiled on 08:15:37 Nov 21 2011 with gcc 4.2.1
 
     # cd ~/kamailio/kamailio-3.2
@@ -114,7 +114,7 @@ Once you saved your changes, you can see them with:
      #
     +# This is added just for example.
     +#
-     # *** To run in debug mode: 
+     # *** To run in debug mode:
      #     - define WITH_DEBUG
      #
 
@@ -217,7 +217,7 @@ can see the commit in the notification email set to **sr-dev \[at\]
 lists.sip-router.org**, or you can see it by browsing the GIT repository
 via web at:
 
--   <http://git.sip-router.org/cgi-bin/gitweb.cgi?p=sip-router;a=shortlog;h=refs/heads/master>
+- <http://git.sip-router.org/cgi-bin/gitweb.cgi?p=sip-router;a=shortlog;h=refs/heads/master>
 
 If you click on **commit**, you will see the summary of the commit, with
 the id on a line like:
@@ -240,7 +240,7 @@ This will list all the commits, the output should be like:
     Date:   Mon Nov 21 09:51:25 2011 +0100
 
         kamailio.cfg: small change to make an example
-        
+
         - this change is not going to be pushed to remote git repository,
         it is made just to make an example of commit
 

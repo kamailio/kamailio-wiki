@@ -2,8 +2,8 @@
 
 References:
 
--   [Asterisk security process](https://wiki.asterisk.org/wiki/display/AST/Asterisk+Security+Vulnerabilities)
--   [Wikipedia reference for vulnerabilities](https://en.wikipedia.org/wiki/Vulnerability_(computing))
+- [Asterisk security process](https://wiki.asterisk.org/wiki/display/AST/Asterisk+Security+Vulnerabilities)
+- [Wikipedia reference for vulnerabilities](https://en.wikipedia.org/wiki/Vulnerability_(computing))
 
 #### Definition
 
@@ -17,7 +17,7 @@ If you believe there's a security vulnerability, please don't use the
 public forums. Send an e-mail to the security team and the issue will be
 handled properly.
 
-1.  Send an e-mail to **security at kamailio dot org** and include the
+1. Send an e-mail to **security at kamailio dot org** and include the
     following information
 
 <!-- -->
@@ -49,13 +49,13 @@ vulnerability.
 
 #### Timeline of the security process
 
-1.  Initial acknowledge time to the reporting party for a report about a
+1. Initial acknowledge time to the reporting party for a report about a
     new security issue for a new report: 3 working days
-2.  Time for verification and bug fix from Kamailio development: 5
+2. Time for verification and bug fix from Kamailio development: 5
     working days (could be extended e.g. in vacation period)
-3.  Waiting time for public announcement after the fix is in an official
+3. Waiting time for public announcement after the fix is in an official
     release: 2 months
-4.  Project preparation time for kamailio.org announcement: 3 working
+4. Project preparation time for kamailio.org announcement: 3 working
     days
 
 #### Kamailio Security Team
