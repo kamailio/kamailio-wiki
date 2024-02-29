@@ -25,13 +25,32 @@ source code repository.*
 
 ## New in existing Modules
 
-### permissions
+### p_usrloc ###
+
+  - added `use_domain_crc32` modparam
+
+### permissions ###
 
 - RPC reload limit controlled via **reload_delta** module parameter
 
-### registrar
+### registrar ###
 
-## New in Core
+  - added `tcpconn_id` to `xavp_cfg`
+
+### siptrace ###
+
+  - added `sip_trace_msg(dst, corlid, vmsg)`
+
+### tls ###
+
+  - added rpc function to kill session by id
+
+### topos ###
+
+  - handle early-dialog b-side UPDATE requests routing
+  - added support for Call-ID masking when sending to downstream
+
+## New in Core ##
 
 ### Command line arguments
 
@@ -58,3 +77,7 @@ source code repository.*
 ### kamdbctl
 
 ### kamcli
+
+### others
+
+  - `route_graph.py` script updated to python version 3.x
