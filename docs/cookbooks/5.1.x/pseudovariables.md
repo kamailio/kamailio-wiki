@@ -1510,8 +1510,8 @@ The “key” can be:
 
 - name - id to refer the documet
 - spec - specifier:
-    - doc - set/get the document as text
-    - xpath:xpath-expression - evaluate xpath expression
+  - doc - set/get the document as text
+  - xpath:xpath-expression - evaluate xpath expression
 
 Example:
 
@@ -2295,12 +2295,12 @@ dns_query(hostname, pvid) function from ipops module.
 
 - pvid can be any string
 - key can be:
-    - count - number of addresses
-    - ipv4 - set to 1 if at least one ipv4 address (otherwise 0)
-    - ipv6 - set to 1 if at least one ipv6 address (otherwise 0)
-    - addr\[index\] - the address as string from position index in the
+  - count - number of addresses
+  - ipv4 - set to 1 if at least one ipv4 address (otherwise 0)
+  - ipv6 - set to 1 if at least one ipv6 address (otherwise 0)
+  - addr\[index\] - the address as string from position index in the
         list (0 based indexing)
-    - type\[index\] - the type of address from position index in the
+  - type\[index\] - the type of address from position index in the
         list (0 based indexing), the value is 4 for ipv4 and 6 for ipv6
 
 The index can be an integer or a variable with integer value. First

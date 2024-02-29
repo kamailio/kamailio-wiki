@@ -18,13 +18,13 @@ inside the zone.
 There are two types of memory used by Kamailio:
 
 - private memory - allocated for each Kamailio process
-    - one zone per child - no syncronization needed to access it
-    - referred also as pkg (the operations in the code are done with
+  - one zone per child - no syncronization needed to access it
+  - referred also as pkg (the operations in the code are done with
         pkg_malloc()/pkg_free()/...)
 - shared memory - allocated for entire Kamailio instances
-    - all processes use the same zone - syncronization (mutex)
+  - all processes use the same zone - syncronization (mutex)
         required to access it
-    - referred also as shm (the operations in the code are done with
+  - referred also as shm (the operations in the code are done with
         shm_malloc()/shm_free()/...)
 
 As of v4.2.0, default size for private memory is 8MB and for shared
@@ -136,7 +136,7 @@ To get the list of chunks from memory manager, there are two ways:
 - stop kamailio - the log messages at kamailio shutdown will contain
     them
 - send a rpc command during runtime
-    - for PKG memory:
+  - for PKG memory:
 
 <!-- -->
 

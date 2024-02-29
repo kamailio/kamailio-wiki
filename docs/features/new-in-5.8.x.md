@@ -3,7 +3,7 @@
 📘 **Previous version was 5.8.x (released on May 2023), see
 what was new in that release at**:
 
-  - [New In v5.7.x](new-in-5.7.x.md)
+- [New In v5.7.x](new-in-5.7.x.md)
 
 📘 *This is a draft of new features added in this version,
 manually updated, thus not always synchronized with what is new in
@@ -27,7 +27,7 @@ source code repository.*
 
 ### permissions
 
-  - RPC reload limit controlled via **reload_delta** module parameter
+- RPC reload limit controlled via **reload_delta** module parameter
 
 ### registrar
 
@@ -43,7 +43,7 @@ source code repository.*
 
 ### Memory Managers
 
-  - alignment to 16 bytes for `q_malloc (qm)` and `f_malloc (fm)`
+- alignment to 16 bytes for `q_malloc (qm)` and `f_malloc (fm)`
 
 ### Architecture
 

@@ -704,9 +704,9 @@ The prototype is:
 - replacement_expression - substitution expression with back
     references to matched tokes: \\1, \\2, ..., \\9
 - flags:
-    - i - match ignore case
-    - s - match within multi-lines strings
-    - g - replace all matches
+  - i - match ignore case
+  - s - match within multi-lines strings
+  - g - replace all matches
 
 ## SQL Transformations
 
@@ -727,7 +727,7 @@ This transformation outputs valid SQL values for various PV values:
     $avp(str) = "String with \ illegal \\characters";
     $avp(nr) = 12345;
     $avp(strnr) = "12345";
-    
+
     xlog("$$rm = $rm = $(rm{sql.val})");
     xlog("$$var(null) = $var(null) = $(var(null){sql.val})");
     xlog("$$avp(null) = $avp(null) = $(avp(null){sql.val})");

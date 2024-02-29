@@ -98,28 +98,28 @@ repository.*
 ### db_unixodbc
 
 - new config variable replace_query
-    - Tells if the ODBC replace query is supported by the DB odbc
+  - Tells if the ODBC replace query is supported by the DB odbc
         driver
-    - Just like insert, but update the row if it exists otherwise
+  - Just like insert, but update the row if it exists otherwise
         insert
 - added new parameter - quote_char
-    - specify the character to be used for quoting column and table
+  - specify the character to be used for quoting column and table
         names in database query
 
 ### dialog
 
 - new rpc function: dlg.terminate_dlg
-    - terminates a single dialog, identified by a Call-ID.
-    - terminates an ongoing dialog by sending BYE in both directions
+  - terminates a single dialog, identified by a Call-ID.
+  - terminates an ongoing dialog by sending BYE in both directions
 - option to set the limit for failed keepalive to end the dialog
-    - new parameter ka_failed_limit, default value is 1
+  - new parameter ka_failed_limit, default value is 1
 - support for dialog replication via DMQ
 - from-tag optional on `dlg.dlg_list/_ctx` RPC commands
 
 ### dispatcher
 
 - new function `ds_select(setid, alg, [limit])`
-    - puts the addresses from destination set in the internal avps
+  - puts the addresses from destination set in the internal avps
         lists, without updating dst-uri or r-uri
 - added new function ds_reload()
 - use avl indexing
@@ -131,17 +131,17 @@ repository.*
 ### enum
 
 - single digit is now valid in function enum_query
-    - is_e164() returns true for a single digit (previously two
+  - is_e164() returns true for a single digit (previously two
         digits)
 
 ### evapi
 
 - support for tagging connections and select for sending based on tag
-    - evapi_set_tag(tname)
-    - evapi_multicast(data, tag)
-    - evapi_async_multicast(data, tag)
-    - evapi_unicast(data, tag)
-    - evapi_async_unicast(data, tag)
+  - evapi_set_tag(tname)
+  - evapi_multicast(data, tag)
+  - evapi_async_multicast(data, tag)
+  - evapi_unicast(data, tag)
+  - evapi_async_unicast(data, tag)
 
 ### htable
 
@@ -205,35 +205,35 @@ repository.*
 ### kex
 
 - new core stats
-    - RPC request: stats.get_statistics all
-    - requests by method
-        - core:rcv_requests_invite
-        - core:rcv_requests_cancel
-        - core:rcv_requests_ack
-        - core:rcv_requests_bye
-        - core:rcv_requests_info
-        - core:rcv_requests_register
-        - core:rcv_requests_subscribe
-        - core:rcv_requests_notify
-        - core:rcv_requests_message
-        - core:rcv_requests_options
-        - core:rcv_requests_prack
-        - core:rcv_requests_update
-        - core:rcv_requests_refer
-        - core:rcv_requests_publish
-    - replies by status code
-        - core:rcv_replies_1xx
-        - core:rcv_replies_18x
-        - core:rcv_replies_2xx
-        - core:rcv_replies_3xx
-        - core:rcv_replies_4xx
-        - core:rcv_replies_401
-        - core:rcv_replies_404
-        - core:rcv_replies_407
-        - core:rcv_replies_480
-        - core:rcv_replies_486
-        - core:rcv_replies_5xx
-        - core:rcv_replies_6xx
+  - RPC request: stats.get_statistics all
+  - requests by method
+    - core:rcv_requests_invite
+    - core:rcv_requests_cancel
+    - core:rcv_requests_ack
+    - core:rcv_requests_bye
+    - core:rcv_requests_info
+    - core:rcv_requests_register
+    - core:rcv_requests_subscribe
+    - core:rcv_requests_notify
+    - core:rcv_requests_message
+    - core:rcv_requests_options
+    - core:rcv_requests_prack
+    - core:rcv_requests_update
+    - core:rcv_requests_refer
+    - core:rcv_requests_publish
+  - replies by status code
+    - core:rcv_replies_1xx
+    - core:rcv_replies_18x
+    - core:rcv_replies_2xx
+    - core:rcv_replies_3xx
+    - core:rcv_replies_4xx
+    - core:rcv_replies_401
+    - core:rcv_replies_404
+    - core:rcv_replies_407
+    - core:rcv_replies_480
+    - core:rcv_replies_486
+    - core:rcv_replies_5xx
+    - core:rcv_replies_6xx
 
 ### log_systemd
 
@@ -255,21 +255,21 @@ repository.*
 ### ndb_redis
 
 - added parameters to control connect and command timeouts
-    - connect_timeout (int)
-    - cmd_timeout (int)
+  - connect_timeout (int)
+  - cmd_timeout (int)
 
 ### presence
 
 - new module parameter `force_delete`
-    - disabled by default
-    - enabling this parameter will delete expired presentity records
+  - disabled by default
+  - enabling this parameter will delete expired presentity records
         without updating watchers (no NOTIFY)
 
 <!-- -->
 
 - new module parameter `retrieve_order_by`
-    - default value is "priority"
-    - Used to set the order-by of the db query for fetching the
+  - default value is "priority"
+  - Used to set the order-by of the db query for fetching the
         presence records
 - added local_log_facility configuration parameter
 - added parameter startup_mode
@@ -282,18 +282,18 @@ repository.*
 ### pv
 
 - new function `pv_evalx(dst, fmt)`
-    - The fmt string is evaluated twice for exiting variables, the
+  - The fmt string is evaluated twice for exiting variables, the
         result is stored in dst variable.
 - new class of pseudo-variable - $msg(attr) - return attributes of sip
     message
-    - $msg(len) - sip message length
-    - $msg(buf) - sip message buffer
-    - $msg(body) - sip message body
-    - $msg(body_len) - sip message body length
-    - $msg(hdrs) - sip message headers
-    - $msg(fline) - sip message first line
+  - $msg(len) - sip message length
+  - $msg(buf) - sip message buffer
+  - $msg(body) - sip message body
+  - $msg(body_len) - sip message body length
+  - $msg(hdrs) - sip message headers
+  - $msg(fline) - sip message first line
 - add s.escape.csv transformation
-    - escapes a string to use as a CSV field, as specified in RFC4180
+  - escapes a string to use as a CSV field, as specified in RFC4180
 
 ### regex
 
@@ -302,7 +302,7 @@ repository.*
 ### registrar
 
 - added expiry value to the xavp.
-    - handy if Kamailio for some reason changes the expiry value (min,
+  - handy if Kamailio for some reason changes the expiry value (min,
         max or variations caused by `expiry_range`)
 - added parameter `contact_max_size` to make max contact size
     configurable
@@ -318,9 +318,9 @@ repository.*
 ### rtpengine
 
 - new 'unidirectional' flag in Sipwise rtpengine
-    - allows kernelization of one-way streams
+  - allows kernelization of one-way streams
 - parameters configurable via cfg framework
-    - rtpengine_disable_tout, `rtpengine_tout_ms`, queried_nodes_limit,
+  - rtpengine_disable_tout, `rtpengine_tout_ms`, queried_nodes_limit,
         `rtpengine_retr` are now configurable via kamcmd commands
 - implemented rpc command rtpengine.reload
 
@@ -331,12 +331,12 @@ repository.*
 ### sca
 
 - new module parameters:
-    - **onhold_bflag**, if bflag is set skips parsing SDP and sets
+  - **onhold_bflag**, if bflag is set skips parsing SDP and sets
         onhold
-    - **server_address**, force Contact header address in replies
+  - **server_address**, force Contact header address in replies
 
 - `sca_call_info_update()`: new `To/From` URI parameters
-    - skips parsing message for `To/From` header values and uses URI
+  - skips parsing message for `To/From` header values and uses URI
         values from parameters
 
 ### sdpops
@@ -371,9 +371,9 @@ repository.*
 ### tcpops
 
 - use dedicated routes for tcp close events
-    - tcp:closed for "normal" close by the other side
-    - tcp:timeout for timeouts
-    - tcp:reset for connections closed with RST
+  - tcp:closed for "normal" close by the other side
+  - tcp:timeout for timeouts
+  - tcp:reset for connections closed with RST
 
 ### tm
 
@@ -381,13 +381,13 @@ repository.*
 - uac: added support for onsend route on local requests
 - tm: implemented rpc command tm.reply_callid
 - added t_uac_send(method, ruri, nexthop, socket, headers, body)
-    - can be used in config to send new requests (initial or within
+  - can be used in config to send new requests (initial or within
         dialog)
 
 ### uac
 
 - uac_reg: add uac_reg_status() function
-    - new function to obtain registration status from within
+  - new function to obtain registration status from within
         configuration script
 - uac_reg: added function to remove registration
 - uac_reg: added RPC function to remove a registration
@@ -416,7 +416,7 @@ repository.*
 ### websocket
 
 - added `$ws_conid` pseudo variable
-    - gives id of closed connection in websocket:closed event route
+  - gives id of closed connection in websocket:closed event route
 - implemented ws.ping and ws.pong rpc commands
 - implemented ws.dump rpc command
 - implemented ws.enable and ws.disable rpc commands
@@ -425,15 +425,15 @@ repository.*
 
 - print tos value if socket option for it cannot be set
 - skip unusable network interfaces
-    - no IP addr associated
-    - address family AF_PACKET
+  - no IP addr associated
+  - address family AF_PACKET
 - skip address family AF_PACKET on -l iface_name
 - mem_status_all - allow selecting of dumping memory status also for
     used fragments
 - mem_status_mode parameter - if set to 1, qm allocator dumps used
     fragments in memory status
 - new command line option '-Y dir'
-    - set the runtime directory (used to create fifo, ctl socket,
+  - set the runtime directory (used to create fifo, ctl socket,
         etc...)
 
 ### Interpreter
@@ -451,22 +451,22 @@ New global parameter to specify the config engine:
 ### Parameters
 
 - log_prefix_mode
-    - If set to 1, then the log prefix is evaluated before/after each
+  - If set to 1, then the log prefix is evaluated before/after each
         config action
-    - needs to be set when the log_prefix has variables that are
+  - needs to be set when the log_prefix has variables that are
         different based on the context of config execution
-        - e.g., $cfg(line))
+    - e.g., $cfg(line))
 
 <!-- -->
 
 - latency_cfg_log
-    - Log message with the duration of executing request route or
+  - Log message with the duration of executing request route or
         reply route is printed to syslog
 
 <!-- -->
 
 - mcast
-    - Specify interface to join multicast group for multicast listen
+  - Specify interface to join multicast group for multicast listen
         address
 
 ### Functions
@@ -509,19 +509,19 @@ New global parameter to specify the config engine:
 ### kamctl
 
 - now interacts with Kamailio via a fifo file using jsonrpcs module
-    - CTLENGINE is RPCFIFO by default
-    - RPCFIFOPATH has to be set to the fifo file created by jsonrpcs
+  - CTLENGINE is RPCFIFO by default
+  - RPCFIFOPATH has to be set to the fifo file created by jsonrpcs
         module
 
 <!-- -->
 
 - kamctl rpc command is available for sending raw jsonrpc commands
-    - see
+  - see
         [documentation](https://www.kamailio.org/docs/docbooks/5.0.x/rpc_list/rpc_list.html)
         for all RPC methods
-    - the prefix s: or i: can be used to enforce type string or int
+  - the prefix s: or i: can be used to enforce type string or int
         for parameters
-        - by default forwards number cli parameters as number type in
+    - by default forwards number cli parameters as number type in
             jsonrpc commands
 
 <!-- -->

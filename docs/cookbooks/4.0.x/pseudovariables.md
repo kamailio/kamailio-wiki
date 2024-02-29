@@ -1064,8 +1064,8 @@ The “key” can be:
 
 - name - id to refer the documet
 - spec - specifier:
-    - doc - set/get the document as text
-    - xpath:xpath-expression - evaluate xpath expression
+  - doc - set/get the document as text
+  - xpath:xpath-expression - evaluate xpath expression
 
 Example:
 

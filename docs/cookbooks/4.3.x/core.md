@@ -174,11 +174,11 @@ route {
 <!-- -->
 
 - notes:
-    - multilines defines are reduced to single line, so line counter
+  - multilines defines are reduced to single line, so line counter
         should be fine
-    - column counter goes inside the define value, but you have to
+  - column counter goes inside the define value, but you have to
         omit the '\\' and CR for the accurate inside-define position
-    - text on the same line as the directive will cause problems. Keep
+  - text on the same line as the directive will cause problems. Keep
         the directive lines clean and only comment on a line before or
         after.
 

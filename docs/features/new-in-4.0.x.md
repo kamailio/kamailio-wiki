@@ -89,8 +89,8 @@ repository.*\</fc>
 ### websocket
 
 - new module providing a WebSocket (RFC 6455) server for:
-    - SIP over WebSocket (draft-ietf-sipcore-sip-websocket)
-    - MSRP over WebSocket (draft-pd-dispatch-msrp-websocket)
+  - SIP over WebSocket (draft-ietf-sipcore-sip-websocket)
+  - MSRP over WebSocket (draft-pd-dispatch-msrp-websocket)
 - <http://kamailio.org/docs/modules/4.0.x/modules/websocket.html>
 
 ### xhttp_pi
@@ -194,10 +194,10 @@ the past).
 - new function has_credentials(realm) - returns true if an
     authorization header matching the realm is found
 - new function pv_auth_check(...)
-    - equivalent of auth_check(...) from auth_db, but taking the
+  - equivalent of auth_check(...) from auth_db, but taking the
         password from a PV -- combines pv_proxy_authenticate() and
         pv_www_authenticate()
-    - new module parameter use_domain that controls whether the domain
+  - new module parameter use_domain that controls whether the domain
         part of URIs should be used or not to make the identity checks
         upon authentication with pv_auth_check(...)
 
@@ -206,7 +206,7 @@ the past).
 - added new variant of www_authenticate() which takes method as a
     parameter
 - new function is_subscriber(uri, dbtable, flags)
-    - check if URI corresponds to a subscriber record in dbtable and
+  - check if URI corresponds to a subscriber record in dbtable and
         load credentials for it
 
 ### ctl
@@ -235,7 +235,7 @@ the past).
 ### dialog
 
 - added dlg_set_timeout_by_profile() route script function
-    - this function allows the same dialog timeout to be set across
+  - this function allows the same dialog timeout to be set across
         all the dialogs in a profile (with or without values).
 - add contact header in REFER for dlg_bridge()
 - bridge contact address can be set via parameter
@@ -361,30 +361,30 @@ the past).
 - added support for websocket transport layer
 - new pv class - $version(key) - return attributes of the software
     version
-    - key can be:
-        - num - return version number
-        - full - return all version string
-        - hash - return git hash code and status
+  - key can be:
+    - num - return version number
+    - full - return all version string
+    - hash - return git hash code and status
 - new pv class - $af(key) - return address family for received message
-    - key can be:
-        - id: return integer representation for IPv4 or IPv6 (value of
+  - key can be:
+    - id: return integer representation for IPv4 or IPv6 (value of
             AF_INET and AF_INET6)
-        - name: return "IPv4" or "IPv6"
+    - name: return "IPv4" or "IPv6"
 - new pv class - $K(key) - return the value for internal constant
     keywords
-    - key can be:
-        - IPv4 - returns AF_INET
-        - IPv6 - returns AF_INET6
-        - UDP - return PROTO_UDP
-        - TCP - return PROTO_TCP
-        - TLS - return PROTO_TLS
-        - SCTP - return PROTO_SCTP
-    - it can be used to compare the values from other pvs, such as
+  - key can be:
+    - IPv4 - returns AF_INET
+    - IPv6 - returns AF_INET6
+    - UDP - return PROTO_UDP
+    - TCP - return PROTO_TCP
+    - TLS - return PROTO_TLS
+    - SCTP - return PROTO_SCTP
+  - it can be used to compare the values from other pvs, such as
         $af(id), $snd(af), $snd(proto)
 - new transformation {s.stripto,c} - remove the prefix until meeting
     'c'
-    - "abcdef"{s.stripto,d} => "def"
-    - the char can be given in a pv
+  - "abcdef"{s.stripto,d} => "def"
+  - the char can be given in a pv
 - new function: typeof(pvar, vtype) - test the type of the
     pseudo-variable
 - new function: not_empty(pvar) - test if the type is string and the
@@ -437,7 +437,7 @@ the past).
 ### sdpops
 
 - new function: sdp_remove_line_by_prefix(string)
-    - removes lines from SDP body that matches given prefix
+  - removes lines from SDP body that matches given prefix
 - added sdp_content() - return true of there is a sdp part in the body
     of sip message
 
@@ -463,10 +463,10 @@ the past).
 ### sl
 
 - new function sl_forward_reply(...)
-    - forward the received reply fron configuration, before it would
+  - forward the received reply fron configuration, before it would
         be done by the core. It has the option to change the status code
         and reason phrase
-    - the forwarding is statelessy, not affecting the tm states
+  - the forwarding is statelessy, not affecting the tm states
 
 ### snmpstats
 
@@ -512,9 +512,9 @@ the past).
     restore From/To - in this mode the URIs are stored as dialog
     variables
 - new paramter restore_dlg
-    - if set to 1, then the module uses dialog variables to store the
+  - if set to 1, then the module uses dialog variables to store the
         initial and new values for From/To headers
-    - default set to 0 - otherwise all calls that have changes to
+  - default set to 0 - otherwise all calls that have changes to
         From/To headers must be tracked by dialog
 - added reg_db_table parameter to specify table name for registrations
 - skip realm matching when realm pv for uac_auth() is empty or null
@@ -532,10 +532,10 @@ the past).
 - keep time of the last keepalive for natted UDP contacts
 - added +sip.instance and reg-id to mi_usrloc_show_contact
 - option to store xavp per contact
-    - the xavp can contain a list of xavps
-    - new config parameter to specify the name of xavp
+  - the xavp can contain a list of xavps
+  - new config parameter to specify the name of xavp
 - store per-contact attributes in database
-    - attributes table is the name of table used for save/lookup plus
+  - attributes table is the name of table used for save/lookup plus
         suffix '\_attrs' (e.g., location_attrs)
 - added RPC command for AOR lookup
 
@@ -573,10 +573,10 @@ the past).
 - update printing of socket lists to show the advertised address if
     set for the socket
 - added DNSSEC support for DNS queries
-    - this is available by setting the USE_DNSSEC compile flag. It
+  - this is available by setting the USE_DNSSEC compile flag. It
         requires libval-threads and libres (part of dnssec-tools
         dnssec-tools.org)
-    - the custom resolvers were replaced by val_gethostbyname,
+  - the custom resolvers were replaced by val_gethostbyname,
         val_gethostbyname and val_res_query (for SRV)
 - added instance and reg_id fields to sip_msg_t - also added
     set_instance and reset_instance functions
@@ -601,34 +601,34 @@ the past).
 
 - sercmd is installed as kamcmd
 - kamctl
-    - stats command can print a single group of statistics - groupid
+  - stats command can print a single group of statistics - groupid
         can be given as command parameter
-    - new command 'db showg' - uses \\G at end of sql query, resulting
+  - new command 'db showg' - uses \\G at end of sql query, resulting
         in line-formatted output (at least for mysql)
-    - added definition of tables for uid modules
-    - added option to grant sql access from a remote host - set
+  - added definition of tables for uid modules
+  - added option to grant sql access from a remote host - set
         DBACCESSHOST in kamctlrc
 - kamdbctl
-    - new command - kamdbctl pframework create - creates a
+  - new command - kamdbctl pframework create - creates a
         provisioning framework for the installed db tables
 - Makefile
-    - added new target 'printvar' - prints the value of a Makefile
+  - added new target 'printvar' - prints the value of a Makefile
         variable whose name is provided in variable 'v', e.g.,: make
         printvar v=exclude_modules
-    - added uninstall target - it prints hints and commands to perform
+  - added uninstall target - it prints hints and commands to perform
         uninstall when installation is done from sources
-    - split module groups definitions in Makefile.groups
+  - split module groups definitions in Makefile.groups
 - Makefile.defs
-    - added MEMMNG to allow selection of memory manager
-        - MEMMNG=0 => fast malloc is used (f_malloc)
-        - MEMMNG=1 => quick malloc is used (q_malloc)
-        - MEMDBG is used now to set the debug mode for each of the
+  - added MEMMNG to allow selection of memory manager
+    - MEMMNG=0 => fast malloc is used (f_malloc)
+    - MEMMNG=1 => quick malloc is used (q_malloc)
+    - MEMDBG is used now to set the debug mode for each of the
             managers
-            - 0 - no debug info
-            - 1 - debug info enabled
-    - default memory manager set to q_malloc
-        - debug option is left unset (no DBG_QM_MALLOC)
-        - lower memory chunk overhead with faster join
+      - 0 - no debug info
+      - 1 - debug info enabled
+  - default memory manager set to q_malloc
+    - debug option is left unset (no DBG_QM_MALLOC)
+    - lower memory chunk overhead with faster join
 
 ## kamailio.cfg
 

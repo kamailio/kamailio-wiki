@@ -134,15 +134,15 @@ Squirrel scripting.
 
 - $dlg_ctx(timeout_route) returns route block name
 - new parameters - early_timeout and noack_timeout
-    - early_timeout - set the interval in seconds after which the
+  - early_timeout - set the interval in seconds after which the
         dialogs in early state (not answered yet) are destroyed. Default
         value is 300.
-    - noack_timeout - set the interval in seconds after which the
+  - noack_timeout - set the interval in seconds after which the
         dialogs that were answered with 200ok but didn't receive the ACK
         are marked for termination (lifetime set to 10 more seconds).
         Default value 60.
 - added dlg_set_ruri()
-    - sets the r-uri of requests within dialog with the corresponding
+  - sets the r-uri of requests within dialog with the corresponding
         contact address stored in dialog structure
 
 ### dispatcher
@@ -237,15 +237,15 @@ Squirrel scripting.
 ### path
 
 - option to add two path headers and use alias like received value
-    - enable_r2 - add two path headers, one for incoming socket and
+  - enable_r2 - add two path headers, one for incoming socket and
         one for outgoing socket
-    - received_format - parameter to control if received value should
+  - received_format - parameter to control if received value should
         be in sip uri (as so far) or in contact-alias param format
 
 ### permissions
 
 - new parameter load_backends
-    - control what backends should be loaded (1 - address table; 2 -
+  - control what backends should be loaded (1 - address table; 2 -
         trusted table; 4 - allow file; 8 - deny file)
 
 ### pipelimit
@@ -322,16 +322,16 @@ Squirrel scripting.
 ### siputils
 
 - added is_alphanum(v) function
-    - check if a string value contains only digits or alphabetic
+  - check if a string value contains only digits or alphabetic
         characters
 - added is_alphanumex(tval, eset) function
-    - check if tval contains only alphanumeric characters or those
+  - check if tval contains only alphanumeric characters or those
         from the eset parameter
 
 ### textops
 
 - new function remove_hf_exp(match, skip)
-    - remove header fields that do not match regex 'skip', but match
+  - remove header fields that do not match regex 'skip', but match
         regex 'match'
 
 ### tls
@@ -339,14 +339,14 @@ Squirrel scripting.
 - basic level of libressl compatibility (for openssl v1.0.x)
 - `event_route[tls:connection-out]` - executed after the connect to
     destination is done
-    - using drop() in the event route marks connection for no-send
+  - using drop() in the event route marks connection for no-send
         data, so nothing is sent over it, being also closed
 
 ### topoh
 
 - execute `event_route[topoh:msg-outgoing]` - executed when a message
     is going to be sent out
-    - if drop is used, then the message is no longer processed with
+  - if drop is used, then the message is no longer processed with
         topoh
 - option to disable uri prefix checks (uri_prefix_checks parameter)
 
@@ -354,7 +354,7 @@ Squirrel scripting.
 
 - execute `event_route[topos:msg-outgoing]` - executed when a message
     is going to be sent out
-    - if drop is used, then the message is no longer processed with
+  - if drop is used, then the message is no longer processed with
         topos
 
 ### tm
@@ -368,7 +368,7 @@ Squirrel scripting.
 ### tmx
 
 - new vars - $T(id_index_n) and $T(id_label_n)
-    - similar to $T(id_index) and $T(id_label), but if transaction
+  - similar to $T(id_index) and $T(id_label), but if transaction
         doesn't exist yet, it is created
 
 ### topos
@@ -422,19 +422,19 @@ Squirrel scripting.
 - if MEMDBGSYS=1, the use a debug variant for system malloc
 - support for base58 encoding and decoding
 - mem - new functions for pkg/shm - mallocxz() and reallocxf()
-    - pkg_mallocxz(size) / shm_mallocxz(size) - same as the
+  - pkg_mallocxz(size) / shm_mallocxz(size) - same as the
         corresponding malloc function, but the allocated buffer is
         filled with 0. It is equivalent of { p=malloc(size); if(p)
         memset(p, 0, size); }
-    - pkg_reallocxf(p, size)/shm_reallocxf(p, size) - same as the
+  - pkg_reallocxf(p, size)/shm_reallocxf(p, size) - same as the
         corresponding realloc functions, but the old pointer is always
         freed, even if the realloc operation fails. The BSDs have
         reallocf()
 - added rpc command core.ppdefines - list preprocessor defines enabled
     in config
 - tcp - new flag F_CONN_NOSEND (mark connection for no-send data)
-    - if flag set, the data is not sent over the connection
-    - can be set by drop() inside `event_route[tls:connection-out]`
+  - if flag set, the data is not sent over the connection
+  - can be set by drop() inside `event_route[tls:connection-out]`
 - added rpc command core.modules - list the names of loaded modules
 - handle hep3 over tcp/tls and print first characters if matching hep3
     header fails
@@ -457,7 +457,7 @@ Squirrel scripting.
 ### kamctl
 
 - added srv command
-    - shortcuts to RPC commands to print sockets, aliases and
+  - shortcuts to RPC commands to print sockets, aliases and
         available RPC commands
 - added db subcommand to mange records in version table
 

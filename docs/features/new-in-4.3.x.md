@@ -74,9 +74,9 @@ source code repository.*\</fc>
 ### app_lua
 
 - exported additional tm functions
-    - sr.tm.t_load_contacts
-    - sr.tm.t_next_contacts
-    - sr.tm.t_on_branch_failure
+  - sr.tm.t_load_contacts
+  - sr.tm.t_next_contacts
+  - sr.tm.t_on_branch_failure
 - exported the APIs from uac and ndb_mongodb modules
 
 ### auth_radius
@@ -114,7 +114,7 @@ source code repository.*\</fc>
 ### db_mysql
 
 - added parameter to change affected rows value for UPDATE queries
-    - when enabled will return the number of matched/foudn rows as
+  - when enabled will return the number of matched/foudn rows as
         opposed to the number of updated rows
 - set back tick as quoting char for table and column names
 
@@ -140,14 +140,14 @@ source code repository.*\</fc>
 ### dialplan
 
 - new RPC command: dialplan.dump
-    - list all entries in the dialplan
+  - list all entries in the dialplan
 
 <!-- -->
 
 - support $(avp("key")\[+\]) notation on dynamic match/subst rules:
-    - ^(00\|\\+)?$(avp(s:pbx_cli)\[+\])(\[0-9\]{3})$ will check every
+  - ^(00\|\\+)?$(avp(s:pbx_cli)\[+\])(\[0-9\]{3})$ will check every
         value of $(avp(s:pbx_cli) in the match one by one.
-    - See <https://github.com/kamailio/kamailio/issues/5> for more
+  - See <https://github.com/kamailio/kamailio/issues/5> for more
         details
 - option to allow variables in match and substitution expressions -
     new parameter: match_dynamic to enable this feature
@@ -161,8 +161,8 @@ source code repository.*\</fc>
 
 - resolve multiple IPv4/IPv6 addresses for a single notification
     address
-    - optionally enabled by new parameter "multi_notify"
-    - includes addresses from DNS SRV records, A and AAAA records
+  - optionally enabled by new parameter "multi_notify"
+  - includes addresses from DNS SRV records, A and AAAA records
 
 ### geoip
 
@@ -226,7 +226,7 @@ source code repository.*\</fc>
 ### jsonrpc-s
 
 - support to receive RPC commands via FIFO file
-    - JSON-RPC commands can be sent now via a FIFO file, as
+  - JSON-RPC commands can be sent now via a FIFO file, as
         alternative to (or together with) HTTP/S
 
 ### mi_fifo
@@ -236,7 +236,7 @@ source code repository.*\</fc>
 ### msilo
 
 - new parameter skip_notification_flag
-    - set to a flag value to be used to mark when the notification
+  - set to a flag value to be used to mark when the notification
         back to sender shouldn't be sent
 
 ### nathelper
@@ -248,14 +248,14 @@ source code repository.*\</fc>
 ### ndb_mongodb
 
 - added mongodb_find_one()
-    - find first matching document and return it
-    - faster when knowing it is supposed to be only one, or needing
+  - find first matching document and return it
+  - faster when knowing it is supposed to be only one, or needing
         only one
 
 ### ndb_redis
 
 - Redis authentication is now supported:
-    - modparam("ndb_redis", "server",
+  - modparam("ndb_redis", "server",
         "name=srvX;addr=127.0.0.2;port=6379;db=4;pass=mypassword")
 - optionally allow starting without a connection to Redis server
 
@@ -269,26 +269,26 @@ source code repository.*\</fc>
 - added min_expires parameter
 - added min_expires_action parameter - action to take when
     min_expires > 0, possible values are:
-    - 1 - RC compliant, return "423 Interval Too Brief"
-    - 2 - force min_expires in the subscription
+  - 1 - RC compliant, return "423 Interval Too Brief"
+  - 2 - force min_expires in the subscription
 - option to set priority for presentity documents
-    - xavp_cfg - new parameter to specify the name of xavp use to
+  - xavp_cfg - new parameter to specify the name of xavp use to
         store attributes for publish processing
-    - priority can be set inside xavp_cfg with
+  - priority can be set inside xavp_cfg with
         $xavp(xavp_cfg=>priority)
-    - priority is stored in a new column inside database table
+  - priority is stored in a new column inside database table
         presentity for each publish that has the xavp set
-    - retrieve_order - new parameter to specify the order to retrieve
+  - retrieve_order - new parameter to specify the order to retrieve
         the records from database. Default value is 0 (retrieve by
         received_time like so far). If set to 1, retrieve by priority
         value
-    - if xavp_cfg parameter is set but priority field inside it is
+  - if xavp_cfg parameter is set but priority field inside it is
         not, then inside the database is stored a value based on
         timestamp so the newest records will have a higher value,
         preserving the old behaviour even the retrieve_order=1
 - added sip_uri_match module parameter
-    - 0 - case sensitive (default)
-    - 1 - case insensitive
+  - 0 - case sensitive (default)
+  - 1 - case insensitive
 - added $subs(uri) - retrieve subscription uri, useful when handling
     subscribe updates
 
@@ -307,8 +307,8 @@ source code repository.*\</fc>
 
 - new variable type: $vn() that can hold a $NULL value. The existing
     $var() can not have a $NULL value.
-    - similar to $var(name) and able to hold $null
-    - default value is $null
+  - similar to $var(name) and able to hold $null
+  - default value is $null
 
 <!-- -->
 
@@ -327,42 +327,42 @@ source code repository.*\</fc>
 ```
 
 - new config var - $sbranch(key)
-    - a static branch structure that can be used for config operations
-    - the key can be like for $branch(key)
-    - the static branch is not used for outbound routing, it is just a
+  - a static branch structure that can be used for config operations
+  - the key can be like for $branch(key)
+  - the static branch is not used for outbound routing, it is just a
         local container
 - functions to manage ruri and branches using $sbranch(key)
-    - sbranch_set_ruri() -- use the $sbranch(key) attributes to update
+  - sbranch_set_ruri() -- use the $sbranch(key) attributes to update
         first branch fields (corresponding to r-uri)
-    - sbranch_append() -- use the $sbranch(key) attributes to append a
+  - sbranch_append() -- use the $sbranch(key) attributes to append a
         branch (alternative to append_branch() which is not affecting
         r-uri branch)
-    - sbranch_reset() -- reset the attributes of $sbranch(key)
+  - sbranch_reset() -- reset the attributes of $sbranch(key)
 
 ### registrar
 
 - add optional check for local path during lookup()
-    - when performing a lookup the Path (if present) is evaluated and
+  - when performing a lookup the Path (if present) is evaluated and
         if the first hop is local we skip it to avoid looping
 - add optional params to registered function
-    - 3rd parameter as flag is used to optionally restrict contacts
+  - 3rd parameter as flag is used to optionally restrict contacts
         when searching values are:
-        - 1 - match_callid
-        - 2 - match_received
-        - 3 - match_contact
-    - 4th parameter as flag to optionally perform action on positive
+    - 1 - match_callid
+    - 2 - match_received
+    - 3 - match_contact
+  - 4th parameter as flag to optionally perform action on positive
         match values are:
-        - 1 - set xavp_rcd with value from matched contact
+    - 1 - set xavp_rcd with value from matched contact
 
 ### rr
 
 - new variable class $rdir(key)
-    - return the direction of the request within dialog
-    - $rdir(id) - returns integer 1 for downstream and 2 for upstream
-    - $rdir(name) - returns the strings 'downstream' or 'upstream'
+  - return the direction of the request within dialog
+  - $rdir(id) - returns integer 1 for downstream and 2 for upstream
+  - $rdir(name) - returns the strings 'downstream' or 'upstream'
 - new config variables $fti and $tti
-    - $fti - from tag as in initial INVITE
-    - $tti - to tag as in the response to the initial INVITE
+  - $fti - from tag as in initial INVITE
+  - $tti - to tag as in the response to the initial INVITE
 
 ### rtpengine
 
@@ -377,29 +377,29 @@ source code repository.*\</fc>
 ### sdpops
 
 - new function sdp_with_active_media
-    - return true of the SDP has 'media=type ...' line and the media
+  - return true of the SDP has 'media=type ...' line and the media
         is active.
-    - active media means the port is non-zero and the direction is not
+  - active media means the port is non-zero and the direction is not
         "inactive"
 
 ### siputils
 
 - new function is_tel_number(val)
-    - returns true if the parameter is a telephone number (optional
+  - returns true if the parameter is a telephone number (optional
         leading + followed by digits)
 - new function is_numeric(val)
 
 ### tls
 
 - options to set TLS versions lower limit
-    - example: if method is set to TLSv1.1+, then the connection must
+  - example: if method is set to TLSv1.1+, then the connection must
         be TLSv1.1 or newer
 - reintroduced server side SNI support
 - added server_name to module parameter
 - set SNI for outbound connections via xavp
 - new parameter: xavp_cfg to set the name of the xavp that holds
     attributes for tls connections
-    - server_name attribute can be used to specify SNI for outbound
+  - server_name attribute can be used to specify SNI for outbound
         connections
 
 ### tm
@@ -422,32 +422,32 @@ source code repository.*\</fc>
 
 - counters for active, disabled and total number of registrations
 - new fields in $uac_req() to allow execution of event route on reply
-    - attributes:
-        - evroute - set to 1 to enable execution of event route
-        - evparam - generic string value that will be available in
+  - attributes:
+    - evroute - set to 1 to enable execution of event route
+    - evparam - generic string value that will be available in
             event route
-        - evcode - sip reply code, available in event route
-        - evtype - type of the reply - received or local generated
+    - evcode - sip reply code, available in event route
+    - evtype - type of the reply - received or local generated
             (e.g., timeout)
 - option to execute event_route\[uac:reply\] for uac_req_send()
     replies
-    - $uac(evroute) has to be set to 1 and event_route\[uac:reply\]
+  - $uac(evroute) has to be set to 1 and event_route\[uac:reply\]
         defined
-        - inside event_route\[uac_reply\] the $uac_req(...) variable
+    - inside event_route\[uac_reply\] the $uac_req(...) variable
             is restored back as before uac_req_send(), having the values
             from that time, excepting:
-            - $uac_req(evcode) is set to the reply code
-            - $uac_req(evtype) is set to 1 if the reply was received
+      - $uac_req(evcode) is set to the reply code
+      - $uac_req(evtype) is set to 1 if the reply was received
                 or to 2 if the reply was self generated (e.g., case of
                 transmission timeout)
-    - if $uac_req(evtype)==1, the message processed inside the event
+  - if $uac_req(evtype)==1, the message processed inside the event
         route is the received reply, otherwise is a faked request with
         no relation to the request sent out by uac_req_send()
 
 ### userblacklist
 
 - adding new fifo commands
-    - dump_blacklist, check_blacklist, check_whitelist,
+  - dump_blacklist, check_blacklist, check_whitelist,
         check_userblacklist, check_userwhitelist commands
 
 ### usrloc
@@ -462,7 +462,7 @@ source code repository.*\</fc>
 ### xlog
 
 - xlog: new log function xlogm(...) - logs with method filtering
-    - same as xlog(level, message), fitering on methods
+  - same as xlog(level, message), fitering on methods
 - new parameter methods_filter - a bitmask with internal sip method
     ids to be skipped from printing logs. Default -1 (skip all)
 - parameter can be set at runtime via cfg reload framework kamcmd
@@ -473,15 +473,15 @@ source code repository.*\</fc>
 ### Code
 
 - execute onsend_route for replies before sending out
-    - control execution of onsend_route block for replies via
+  - control execution of onsend_route block for replies via
         parameter onsend_route_reply
 - default tcp read buffer size set to 16kB
 - pv print default buffer size set to 8kB
 - default size for shared memory is 64MB
 - new parameter - max_branches
-    - the maximum number of uac branches can be set via config
-    - default value is 12 (old static value for MAX_BRNACHES)
-    - the upper limit is 31, it has to be at least 1
+  - the maximum number of uac branches can be set via config
+  - default value is 12 (old static value for MAX_BRNACHES)
+  - the upper limit is 31, it has to be at least 1
 - preprocessor subst rules are applied to pv names
 - add support for per-TCP connection lifetime
 - libsrdb1: mechanism to be able to quote table and column names
@@ -489,7 +489,7 @@ source code repository.*\</fc>
 #### TLSF Memory Manager
 
 - Two Level Segregated Fit memory allocator
-    - <http://tlsf.baisoku.org>
+  - <http://tlsf.baisoku.org>
 - bounded-time performance memory manager
 - malloc and free operations always done in O(1)
 - build with `MEMMNG=2` option to activate TLSF
@@ -504,9 +504,9 @@ source code repository.*\</fc>
 ### Kamctl
 
 - support of fnmatch operator for dialplan
-    - do not reload rules in memory after each change in database to
+  - do not reload rules in memory after each change in database to
         allow batch updates. Reload command has to be done explicitely
-    - parameters of addrule after match expression are optional
+  - parameters of addrule after match expression are optional
 
 ## Build Process
 

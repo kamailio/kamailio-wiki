@@ -502,21 +502,21 @@ to:
 
 - sr-users \[at\] lists.sip-router.org
 - mailing list web page:
-    - <http://lists.sip-router.org/cgi-bin/mailman/listinfo/sr-users>
+  - <http://lists.sip-router.org/cgi-bin/mailman/listinfo/sr-users>
 
 If the question is related to development version of Kamailio, then
 email to:
 
 - sr-dev \[at\] lists.sip-router.org
 - mailing list web page:
-    - <http://lists.sip-router.org/cgi-bin/mailman/listinfo/sr-dev>
+  - <http://lists.sip-router.org/cgi-bin/mailman/listinfo/sr-dev>
 
 If the question is related to commercial aspects of Kamailio, then email
 to:
 
 - business \[at\] lists.kamailio.org
 - mailing list web page:
-    - <https://lists.kamailio.org/mailman3/postorius/lists/business.lists.kamailio.org/>
+  - <https://lists.kamailio.org/mailman3/postorius/lists/business.lists.kamailio.org/>
 
 ### Where I can report an issue?
 

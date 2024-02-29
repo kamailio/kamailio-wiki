@@ -17,9 +17,9 @@ provided by default configuration file in the comments located at the
 top of it. Shortly about the enhancements in 3.2.0:
 
 - refactored NAT traversal logic
-    - use of rtpproxy_manage() to handle properly cases when 200ok and
+  - use of rtpproxy_manage() to handle properly cases when 200ok and
         ACK have the SDP
-    - enable RTP relaying in branch_route to optimize handling of
+  - enable RTP relaying in branch_route to optimize handling of
         parallel forking to natted and non-natted branches for the same
         call
 - speed dial support - enabled when adding **#!define WITH_SPEEDDIAL**
@@ -68,7 +68,7 @@ top of it. Shortly about the enhancements in 3.2.0:
 ### ipops
 
 - IPv4 and IPv6 related functions for config file
-    - among implemented functions: is_ipv4(ip), is_ipv6(ip),
+  - among implemented functions: is_ipv4(ip), is_ipv6(ip),
         compare_ips(ip1, ip2), ip_type(ip)
 - README File:
     <http://kamailio.org/docs/modules/3.2.x/modules/ipops.html>
@@ -76,8 +76,8 @@ top of it. Shortly about the enhancements in 3.2.0:
 ### json
 
 - json parser for configuration file
-    - get the values from a JSON document
-    - example:
+  - get the values from a JSON document
+  - example:
 
 ``` c
 json_get_field("{'foo':'bar'}", "foo", "$var(foo)");
@@ -90,16 +90,16 @@ xlog("foo is $var(foo)");
 ### jsonrpc-c
 
 - JSON-RPC client over tcp/netstrings
-    - send notifications to a JSON-RPC server
-    - invoke execution of a JSON-RPC to a server
+  - send notifications to a JSON-RPC server
+  - invoke execution of a JSON-RPC to a server
 - README File:
     <http://kamailio.org/docs/modules/3.2.x/modules/jsonrpc-c.html>
 
 ### ndb_redis
 
 - connector to Redis no-SQL database engine
-    - uses hiredis library
-    - exports function to send commands to redis and a new
+  - uses hiredis library
+  - exports function to send commands to redis and a new
         pseudo-variable class to access the reply: $redis(key)
 - README File:
     <http://kamailio.org/docs/modules/3.2.x/modules/ndb_redis.html>
@@ -107,8 +107,8 @@ xlog("foo is $var(foo)");
 ### presence_reginfo
 
 - Support for RFC 3680 in the presence architecture of Kamailio
-    - handle PUBLISH requests with reg-info content
-    - notify watcher with updates of reg-info records
+  - handle PUBLISH requests with reg-info content
+  - notify watcher with updates of reg-info records
 - README File:
     <http://kamailio.org/docs/modules/3.2.x/modules_k/presence_reginfo.html>
 
@@ -125,10 +125,10 @@ xlog("foo is $var(foo)");
 - partitioned user location service
 - similar to usrloc module, but provides partitioned user location.
     This provides 3 benefits:
-    - Redundancy - if a location db is down, there is a spare running
-    - Load Balancing - the module balances the entries by hashing the
+  - Redundancy - if a location db is down, there is a spare running
+  - Load Balancing - the module balances the entries by hashing the
         username(or username@domain)
-    - Failover- in case of error and recovery, it ensures that no
+  - Failover- in case of error and recovery, it ensures that no
         stale contacts are returned
 - README File:
     <http://kamailio.org/docs/modules/3.2.x/modules_k/p_usrloc.html>
@@ -137,18 +137,18 @@ xlog("foo is $var(foo)");
 
 - module to control the content of the SDP payload from configuration
     file
-    - spd_remove_codecs_by_id(list) - remove the codecs by their
+  - spd_remove_codecs_by_id(list) - remove the codecs by their
         numeric IDs given in a comma separated list as parameter
-    - spd_remove_codecs_by_name(list) - remove the codecs by their
+  - spd_remove_codecs_by_name(list) - remove the codecs by their
         names given in a comma separated list as parameter
-    - spd_keep_codecs_by_id(list) - keep the codecs by their numeric
+  - spd_keep_codecs_by_id(list) - keep the codecs by their numeric
         IDs given in a comma separated list as parameter
-    - spd_keep_codecs_by_name(list) - keep the codecs by their names
+  - spd_keep_codecs_by_name(list) - keep the codecs by their names
         given in a comma separated list as parameter
-    - sdp_print(level) - print the parsed sdp structure to the debug
+  - sdp_print(level) - print the parsed sdp structure to the debug
         'level' (integer representation of log levels). Good for debug
         purposes
-    - sdp_with_media(type) - return true if the sdp has 'media=type'
+  - sdp_with_media(type) - return true if the sdp has 'media=type'
         (e.g., media=video)
 - README File:
     <http://kamailio.org/docs/modules/3.2.x/modules/sdpops.html>
@@ -156,7 +156,7 @@ xlog("foo is $var(foo)");
 ### sipcapture
 
 - SIP traffic capturing server extension for Homer project
-    - save to database mirrored traffic from other SIP server
+  - save to database mirrored traffic from other SIP server
         instances - mirroring can be done by siptrace module
 - README File:
     <http://kamailio.org/docs/modules/3.2.x/modules/sipcapture.html>
@@ -167,7 +167,7 @@ xlog("foo is $var(foo)");
     **not included** in the release of version 3.2.x. However, they can
     be tested using 3.2.x, links to installation guidelines for IM
     extensions are available at:
-    - <http://www.kamailio.org/w/2011/01/ims-extensions-available-for-testing/>
+  - <http://www.kamailio.org/w/2011/01/ims-extensions-available-for-testing/>
 
 ### IMS: CDP / CDP-AVP
 
@@ -253,18 +253,18 @@ modparam("acc", "failed_filter", "401,407")
 ### app_lua
 
 - more modules available in Lua
-    - auth
-    - auth_db
-    - dispatcher
-    - maxfwd
-    - presence
-    - presence_xml
-    - registrar
-    - rr
-    - sdpops
-    - sqlops
-    - tm
-    - xhttp
+  - auth
+  - auth_db
+  - dispatcher
+  - maxfwd
+  - presence
+  - presence_xml
+  - registrar
+  - rr
+  - sdpops
+  - sqlops
+  - tm
+  - xhttp
 
 ### auth
 
@@ -274,9 +274,9 @@ modparam("acc", "failed_filter", "401,407")
 
 - export of inter-module API (available through Lua)
 - option to skip checking version table
-    - new parameter 'version_table' to be able to disable checking for
+  - new parameter 'version_table' to be able to disable checking for
         version table
-    - useful when connecting to a different database to fetch the
+  - useful when connecting to a different database to fetch the
         password
 
 ### auth_radius
@@ -287,8 +287,8 @@ modparam("acc", "failed_filter", "401,407")
 
 - two RPC commands added for deleting a configuration value from a cfg
     framework group instance:
-    - cfg.del group\[id\] var
-    - cfg.del_delayed group\[id\] var
+  - cfg.del group\[id\] var
+  - cfg.del_delayed group\[id\] var
 
 ### cfgutils
 
@@ -311,16 +311,16 @@ modparam("acc", "failed_filter", "401,407")
 - dp_translate() returns -2 (instead of -1) if dp with given id does
     not exist.
 - added rpc commands
-    - dialplan.reload - to reload the records from database
-    - dialplan.translate - to translate a string using a specific
+  - dialplan.reload - to reload the records from database
+  - dialplan.translate - to translate a string using a specific
         dialplan id
 
 ### dispatcher
 
 - export of inter-module API (available through Lua)
 - new event routes that are called when destinations go on/off-line
-    - event_route\[dispatcher:dst-up\]
-    - event_route\[dispatcher:dst-down\]
+  - event_route\[dispatcher:dst-up\]
+  - event_route\[dispatcher:dst-down\]
 - added RPC commands - new RPC commands to replace the MI ones
 
 ### domain
@@ -331,27 +331,27 @@ modparam("acc", "failed_filter", "401,407")
 
 - option to save content of htable to db at shutdown - new 'dbmode'
     attribute for hash table definition
-    - if dbmode=1, the content of hash table will be saved back to
+  - if dbmode=1, the content of hash table will be saved back to
         database table when the sip server is stopped
-    - default value is 0 - no sync back to database table
-        - example:
+  - default value is 0 - no sync back to database table
+    - example:
 
 ``` c
   modparam("htable", "htable", "a=>size=8;dbtable=htable;dbmode=1;")
 ```
 
 - new attribute 'initval' to hash table definition
-    - initval can set init integer value for hash table keys, meaning
+  - initval can set init integer value for hash table keys, meaning
         that if the key is not set, the init value is returned by
         $sht(htable=>key)
-    - useful for hash tables holding counters - the value can default
+  - useful for hash tables holding counters - the value can default
         to 0, avoiding extra check for $null value
 - added two new PVs
-    - $shtinc(htable=>key) - add atomically 1 to the value of the item
-    - $shtdec(htable=>key) - decrement atomically 1 to the value of
+  - $shtinc(htable=>key) - add atomically 1 to the value of the item
+  - $shtdec(htable=>key) - decrement atomically 1 to the value of
         the item
-    - both return the new value of the item
-    - they work only with items having integer values
+  - both return the new value of the item
+  - they work only with items having integer values
 - options to store expires value of items in database
 
 ### kex
@@ -359,11 +359,11 @@ modparam("acc", "failed_filter", "401,407")
 - added new function is_myself(uri) to return true if parameters
     matches 'myself' condition
 - print private memory usage per process via rpc
-    - new rpc command pkg.stats that prints used, free and real_used
+  - new rpc command pkg.stats that prints used, free and real_used
         metrics per process for private memory (pkg)
-    - you can see how much pkg each process is eating and how much is
+  - you can see how much pkg each process is eating and how much is
         still available
-    - should be useful to track pkg memory leaks and/or trigger alerts
+  - should be useful to track pkg memory leaks and/or trigger alerts
         when there is no more pkg available
 - added setdebug(level) - can change the debug level per process
 - added resetdebug() - set back the debug level to the global
@@ -412,17 +412,17 @@ modparam("acc", "failed_filter", "401,407")
 ### presence
 
 - the module can work in three modes
-    - caching
-    - caching with fallback to database
-    - database only
+  - caching
+  - caching with fallback to database
+  - database only
 
 ### presence_xml
 
 - new exported functions to enable the online/offline presentity of a
     subscriber to be checked from the configuration file.
-    - pres_check_basic() enables you to find out whether a users basic
+  - pres_check_basic() enables you to find out whether a users basic
         status matches the string you provide.
-    - pres_check_activities() enables you to find out whether any of
+  - pres_check_activities() enables you to find out whether any of
         user's listed activities matches the string you provide.
 
 ### pua
@@ -432,31 +432,31 @@ modparam("acc", "failed_filter", "401,407")
 ### pv
 
 - new pseudovariables:
-    - $timef(format) - string representation of time formatted
+  - $timef(format) - string representation of time formatted
         according to format
-    - $Tb - epoch of the startup (boottime) of the current process
-    - $sndto(id) points to next hop address
-    - $sndfrom(id) points to local socket to be used for sending
-    - $rmid - request method id
-    - $mt - return sip message type
-        - the value is 1 if the sip message is request
-        - the value is 2 if the sip message is reply
-    - $Tb - startup time available in a pseudo-variable (boottime)
-    - $rz - returns r-uri scheme
-        - possible values: sip, sips, tel and tels
-        - r-uri scheme parsing error should be reflected by value:
+  - $Tb - epoch of the startup (boottime) of the current process
+  - $sndto(id) points to next hop address
+  - $sndfrom(id) points to local socket to be used for sending
+  - $rmid - request method id
+  - $mt - return sip message type
+    - the value is 1 if the sip message is request
+    - the value is 2 if the sip message is reply
+  - $Tb - startup time available in a pseudo-variable (boottime)
+  - $rz - returns r-uri scheme
+    - possible values: sip, sips, tel and tels
+    - r-uri scheme parsing error should be reflected by value:
             none
 
 <!-- -->
 
 - new transformations:
-    - {s.ftime,\<format>} - format the epoch in the pvar according to
+  - {s.ftime,\<format>} - format the epoch in the pvar according to
         \<format>
-    - {s.sql} - output the pvar as valid SQL value. \<null> as NULL,
+  - {s.sql} - output the pvar as valid SQL value. \<null> as NULL,
         integer as bare number, string as quoted and escaped string
-    - {s.replace,\<search>,\<replace>} - replace every occurrence of
+  - {s.replace,\<search>,\<replace>} - replace every occurrence of
         \<search> in the pvar with \<replace>
-    - {s.prefixes\[,\<max>\]}, {s.prefixes.quoted\[,\<max>\]} - create
+  - {s.prefixes\[,\<max>\]}, {s.prefixes.quoted\[,\<max>\]} - create
         a list of (quoted) prefixes of the pvar, with optional maximum
         prefix length:
 
@@ -467,12 +467,12 @@ modparam("acc", "failed_filter", "401,407")
 ```
 
 - new functions:
-    - is_int() checks if pvar argument contains integer value.
+  - is_int() checks if pvar argument contains integer value.
 
 ### regex
 
 - pcre_match_group() allows pseudo-variable in group parameter
-    - example:
+  - example:
 
 ``` c
   pcre_match_group("$rU", "$var(num)");
@@ -508,18 +508,18 @@ modparam("acc", "failed_filter", "401,407")
 - force_rtp_proxy function was removed, you can use rtpproxy_offer()
     and rtpproxy_answer()
 - new function rtpproxy_manage()
-    - auto-pilot function to handle rtp proxy session management
-    - it can take same kind of parameters as rtpproxy_offer()
-    - embeds the functionality of rtpproxy_offer(), rtpproxy_answer()
+  - auto-pilot function to handle rtp proxy session management
+  - it can take same kind of parameters as rtpproxy_offer()
+  - embeds the functionality of rtpproxy_offer(), rtpproxy_answer()
         and unfroce_rtp_proxy():
-        - if INVITE with SDP, then do rtpproxy offer
-        - if INVITE with sdp, when tm is loaded, mark transaction with
+    - if INVITE with SDP, then do rtpproxy offer
+    - if INVITE with sdp, when tm is loaded, mark transaction with
             internal flag FL_SDP_BODY to know that the 1xx and 2xx are
             for rtp answer
-        - if ACK with SDP, then do rtpproxy answer
-        - if BYE or CANCEL, then do unforce rtpproxy
-        - if reply to INVITE with code >= 300 do unfrce rtp proxy
-        - if reply with SDP to INVITE having code 1xx and 2xx, then do
+    - if ACK with SDP, then do rtpproxy answer
+    - if BYE or CANCEL, then do unforce rtpproxy
+    - if reply to INVITE with code >= 300 do unfrce rtp proxy
+    - if reply with SDP to INVITE having code 1xx and 2xx, then do
             rtpproxy answer if the request had SDP or tm is not loaded,
             otherwise do rtpproxy offer
 - aliased rtpproxy_destroy() to unforce_rtp_proxy()
@@ -546,15 +546,15 @@ modparam("acc", "failed_filter", "401,407")
 - Function tel2sip() replaced by tel2sip(uri, hostpart, result).
 - Added is_request() returns true if the SIP message is a request
 - Added is_reply() returns true if the SIP message is a reply
-    - useful to check in sub-routes that can be executed from both
+  - useful to check in sub-routes that can be executed from both
         request and reply routes
 
 ### snmpstats
 
 - control exporting registrar records
-    - exporting of large location database may result in out of shared
+  - exporting of large location database may result in out of shared
         memory, as well as when the records are not pulled
-    - new parameter export_registrar was added to enable/disable
+  - new parameter export_registrar was added to enable/disable
         location records export (off by default)
 
 ### sqlops
@@ -587,21 +587,21 @@ modparam("acc", "failed_filter", "401,407")
 ### tmx
 
 - asynchronous SIP request processing functions for configuration file
-    - t_suspend() - suspend the processing of SIP request transaction
-    - t_continue() - resume the processing of SIP request transaction
+  - t_suspend() - suspend the processing of SIP request transaction
+  - t_continue() - resume the processing of SIP request transaction
 - $T(name) - new class of pseudo-variables for accessing transaction
     attributes:
-    - internal index, label, the branch index, reply code
+  - internal index, label, the branch index, reply code
 - two helper functions to detect route block type
-    - t_is_failure_route() - return true if it is a failure_route
+  - t_is_failure_route() - return true if it is a failure_route
         execution
-    - t_is_branch_route() - return true if it is a branch_route
+  - t_is_branch_route() - return true if it is a branch_route
         execution
-    - useful to check in sub-routes executed from different points of
+  - useful to check in sub-routes executed from different points of
         config
 - added t_reply_callid MI command
 - $T(reply_type) to solve ambiguity of received or local replies
-    - it returns 1 in failure route if the reply was local generated
+  - it returns 1 in failure route if the reply was local generated
         (e.g., timeout), otherwise is 0. If there is no transaction, it
         returns null.
 
@@ -629,9 +629,9 @@ modparam("acc", "failed_filter", "401,407")
 
 - added oma user-profile and pres-content (avatar) support
 - support for extra auids:
-    - org.openmobilealliance.user-profile
-    - org.openmobilealliance.pres-content
-    - org.openmobilealliance.search
+  - org.openmobilealliance.user-profile
+  - org.openmobilealliance.pres-content
+  - org.openmobilealliance.search
 - support for HTTP 1.1 pre-conditions to enable clients to avoid
     having to re-download unchanged documents and to check whether
     documents have changed or not on upload
@@ -640,9 +640,9 @@ modparam("acc", "failed_filter", "401,407")
 ### xlog
 
 - new module parameter log_facility
-    - allow to specify syslog facility for messages printed by xlog
+  - allow to specify syslog facility for messages printed by xlog
         module
-    - xlog messages can be diverted now to special file via syslog
+  - xlog messages can be diverted now to special file via syslog
         conf
 
 ### xhttp
@@ -700,9 +700,9 @@ like **include_file**.
 - @cfg_get supports nested calls - @cfg_get.\<group>.\<variable> makes
     use of the already implemented nested select functions to parse the
     returned value. The following nested calls are supported:
-    - @cfg.get.\<group>.\<variable>.nameaddr...
-    - @cfg.get.\<group>.\<variable>.uri...
-    - @cfg.get.\<group>.\<variable>.params...
+  - @cfg.get.\<group>.\<variable>.nameaddr...
+  - @cfg.get.\<group>.\<variable>.uri...
+  - @cfg.get.\<group>.\<variable>.params...
 
 ### libsrdb1
 
@@ -718,7 +718,7 @@ like **include_file**.
 - core events when pkg usage changes
 - option for short status dumping
 - pkg mem size configurable form the cmd line
-    - The pkg mem size used can be configured by using the "-M"
+  - The pkg mem size used can be configured by using the "-M"
         parameter on the command line. The default remains 4Mb.
 
 ``` c
@@ -728,13 +728,13 @@ like **include_file**.
 ### STUN
 
 - ser_stun update to RFC 5389
-    - Removing checking/adding of FINGERPRINT attribute
-    - Update some attribute values according to new spec
+  - Removing checking/adding of FINGERPRINT attribute
+  - Update some attribute values according to new spec
 
 ### RPC Commands
 
 - added rpc command core.psx
-    - similar to core.ps but prints the details in RPC structure along
+  - similar to core.ps but prints the details in RPC structure along
         with process index, like:
 
 ``` c

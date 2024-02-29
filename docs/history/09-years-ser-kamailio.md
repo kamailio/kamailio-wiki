@@ -55,7 +55,7 @@ development: **over 8 000 000 USD**.
 - **November 2008** - SER and Kamailio teams decide to join
     development efforts and merge the source code trees of the two
     applications
-    - development portal for both changed to: <http://sip-router.org>
+  - development portal for both changed to: <http://sip-router.org>
 - **January 2010** - version 3.0.0 is released, from a source code
     tree containing both SER and Kamailio
 - **September 2010** - expect next major release, version 3.1.0
@@ -107,12 +107,12 @@ overlapping, counted once), internal VCS branching representations were:
 #### Combined Versions
 
 - 2010-01-11: SER and Kamailio (OpenSER) 3.0.x
-    - [See what was added in 3.0.x](http://www.kamailio.org/dokuwiki/doku.php/features:new-in-3.0.x)
+  - [See what was added in 3.0.x](http://www.kamailio.org/dokuwiki/doku.php/features:new-in-3.0.x)
 
 #### Next Combined Version
 
 - 3.1.x-devel - scheduled for September 2010
-    - see what is coming with it at:
+  - see what is coming with it at:
         <http://sip-router.org/wiki/features/new-in-devel>
 
 ### SER Arguments

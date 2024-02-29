@@ -41,11 +41,11 @@ Among benefits of using different scripting languages:
 
 - ability to benefit from what a well established language already
     provides:
-    - more people are expected to be familiar with
-    - an extended set of data types, expressions and statements
+  - more people are expected to be familiar with
+  - an extended set of data types, expressions and statements
         already available
-    - a large set of extensions and libraries already available
-    - good documentation about language itself and its extensions
+  - a large set of extensions and libraries already available
+  - good documentation about language itself and its extensions
 - reload the SIP routing logic without restarting Kamailio
     (implemented for Lua)
 

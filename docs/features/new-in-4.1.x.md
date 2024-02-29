@@ -78,27 +78,27 @@ source code repository.*\</fc>
 ### acc
 
 - new parameter time_mode
-    - store additional time values in time_attr and time_exten
+  - store additional time values in time_attr and time_exten
         attributes/db columns
-    - if time_mode==1, save timestamp in time_attr and microsecs in
+  - if time_mode==1, save timestamp in time_attr and microsecs in
         time_exten
-    - if time_mode==2, then time_attr store the seconds.miliseconds
-    - if time_mode==0 (default), then it is like now, only timestamp
+  - if time_mode==2, then time_attr store the seconds.miliseconds
+  - if time_mode==0 (default), then it is like now, only timestamp
         stored
-    - time_attr value can be set via parameter with same name - it
+  - time_attr value can be set via parameter with same name - it
         represents syslog value or db table column
-    - for db accounting, when time_mode==1, the type of column has to
+  - for db accounting, when time_mode==1, the type of column has to
         be int, and for time_mode==2, the type of column has to be
         double
-    - features implemented only for syslog and db accounting
-    - new parameter acc_time_format - specify the format to print time
+  - features implemented only for syslog and db accounting
+  - new parameter acc_time_format - specify the format to print time
         as string for acc_time_mode=3 (using localtime) and
         acc_time_mode=4 (using gmtime)
-        - default value is "%Y-%m-%d %H:%M:%S"
+    - default value is "%Y-%m-%d %H:%M:%S"
 - option to write dialog-based cdrs to database
-    - new module parameter cdrs_table has to be set and classic db
+  - new module parameter cdrs_table has to be set and classic db
         accounting enabled at compile time and db_url set
-    - cdr_log_enable - new parameter to turn off writing cdrs to
+  - cdr_log_enable - new parameter to turn off writing cdrs to
         syslog, cdr_enable being now used as top level control flag for
         both cdrs to syslog or db
 
@@ -125,17 +125,17 @@ source code repository.*\</fc>
 ### cfgutils
 
 - new functions
-    - route_if_exists() calls a routing block only if it exists in the
+  - route_if_exists() calls a routing block only if it exists in the
         configuration script
-    - check_route_exists() checks if a routing block exists in the
+  - check_route_exists() checks if a routing block exists in the
         script.
 
 ### corex
 
 - new pv $cfg(key) - return attributes for config file
-    - $cfg(line) - the line of the current action.
-    - $cfg(name) - the name of the current conf file
-    - example: append_to_reply("P-Cfg-Line: $cfg(line)\\r\\n");
+  - $cfg(line) - the line of the current action.
+  - $cfg(name) - the name of the current conf file
+  - example: append_to_reply("P-Cfg-Line: $cfg(line)\\r\\n");
 
 ### db_mysql
 
@@ -151,17 +151,17 @@ source code repository.*\</fc>
 ### debugger
 
 - new parametes:
-    - per module debug level
-    - log_assign. Enables the log of every single assign action on
+  - per module debug level
+  - log_assign. Enables the log of every single assign action on
         config
-    - reset_msgid. Enables the ability to reset the msgid ( $mi )
+  - reset_msgid. Enables the ability to reset the msgid ( $mi )
         through the RPC command.
 - new functions:
-    - dbg_pv_dump() dumps the pv_cache content in json format.
+  - dbg_pv_dump() dumps the pv_cache content in json format.
 - new RPC commands:
-    - options to enable/disable per module log level as well as set
+  - options to enable/disable per module log level as well as set
         per module log level at runtime.
-    - dbg.reset_msg: resets the msgid ( $mi ).
+  - dbg.reset_msg: resets the msgid ( $mi ).
 - new parameter cfgpkgcheck to do pkg memory check before each action
 
 ### dialog
@@ -176,7 +176,7 @@ source code repository.*\</fc>
 
 - new parameter to specify the pv where to store attrs for matched
     address in ds_is_from_list()
-    - attrs_pvname can be set to get attributes of matched address in
+  - attrs_pvname can be set to get attributes of matched address in
         config file
 - allow pv in ds_is_from_list(setid) parameter
 
@@ -186,8 +186,8 @@ source code repository.*\</fc>
 - new htable.reload rpc command
 - cross-server replication via DMQ module integration
 - two new functions to lock htable slots based on item name
-    - sht_lock("htable=>key") and sht_unlock("htable=>key")
-    - useful to update existing items without additional locks
+  - sht_lock("htable=>key") and sht_unlock("htable=>key")
+  - useful to update existing items without additional locks
 - lifted the limit for max number of slots, now is 2^31
 - added rpc command htable.stats - print stats about htables: name,
     number of slots, number of items, max number of items per slot, min
@@ -203,19 +203,19 @@ source code repository.*\</fc>
     'scr_ip=="hostname"')
 - new function dns_query(hostname, pvid) - store the result of dns
     query in a variable $dns(pvid=>key)
-    - dns query is using getaddrinfo()
-    - $dns(pvid=>key) - new pv allowing to navigate through the result
+  - dns query is using getaddrinfo()
+  - $dns(pvid=>key) - new pv allowing to navigate through the result
         of a dns query
-    - key can be:
-        - count - number of addresses
-        - ipv4 - set to 1 if at least one ipv4 address (otherwise 0)
-        - ipv6 - set to 1 if at least one ipv6 address (otherwise 0)
-        - addr\[index\] - the address as string from position index in
+  - key can be:
+    - count - number of addresses
+    - ipv4 - set to 1 if at least one ipv4 address (otherwise 0)
+    - ipv6 - set to 1 if at least one ipv6 address (otherwise 0)
+    - addr\[index\] - the address as string from position index in
             the list (0 based indexing)
-        - type\[index\] - the type of address from position index in
+    - type\[index\] - the type of address from position index in
             the list (0 based indexing), the value is 4 for ipv4 and 6
             for ipv6
-        - example:
+    - example:
 
 ``` c
         if(dns_query("test.com", "xyz"))
@@ -254,7 +254,7 @@ source code repository.*\</fc>
 - removed natping_proceses limit
 - set_contact_alias() new function for adding alias parameter to
     contact uri
-    - similar to add_contact_alias(), but this works like
+  - similar to add_contact_alias(), but this works like
         fix_nated_contact(), in the way that new contact uri is
         immediately visible to other modules (e.g., dialog, presence)
 - udpping_from_path - enable sending UDP pings with raw sockets from
@@ -322,9 +322,9 @@ source code repository.*\</fc>
 ### rtpproxy
 
 - database support to rtpproxy
-    - if db_url modparam is set rtpproxy sets will be loaded from
+  - if db_url modparam is set rtpproxy sets will be loaded from
         database
-    - if the instance is marked as disabled in database it will be
+  - if the instance is marked as disabled in database it will be
         loaded as disabled
 
 ### sca
@@ -334,11 +334,11 @@ source code repository.*\</fc>
 ### sdpops
 
 - new functions:
-    - sdp_with_transport(string) - hecks if is a media with the
+  - sdp_with_transport(string) - hecks if is a media with the
         transport string.
-    - sdp_remove_transport(string) - emoves the media info from the
+  - sdp_remove_transport(string) - emoves the media info from the
         SDP that matches string transport.
-    - sdp_get_line_startswith(avpvar, string)
+  - sdp_get_line_startswith(avpvar, string)
 
 ### sipcapture
 
@@ -349,9 +349,9 @@ source code repository.*\</fc>
 ### siputils
 
 - new functions:
-    - is_supported(option) that can be used to check if request has a
+  - is_supported(option) that can be used to check if request has a
         Supported header listing the given option.
-    - is_first_hop() - detect if it is first hop after original sender
+  - is_first_hop() - detect if it is first hop after original sender
 
 ### snmpstats
 
@@ -373,27 +373,27 @@ source code repository.*\</fc>
 ### tm
 
 - new event route to be executed for each branch failure
-    - branch failure routes must be named with the format:
-        - event_route\[tm:branch-failure:myroute\]
-        - and enabled with the function:
+  - branch failure routes must be named with the format:
+    - event_route\[tm:branch-failure:myroute\]
+    - and enabled with the function:
             t_on_branch_failure("myroute")
 - asynchronous processing of SIP responses in configuration file
 - use angle brackets around From/To URI for local generated requests
 - new parameter - failure_exec_mode
-    - specify whether to consider or not execution of failure routing
+  - specify whether to consider or not execution of failure routing
         blocks for branches that had local delivery error (e.g., no open
         tcp connection and set_forward_no_connect() used in config)
 - new module parameter - dns_reuse_rcv_socket
-    - control reuse of the receive socket for additional branches
+  - control reuse of the receive socket for additional branches
         added by dns failover
-    - if 1, the rcv socket is used, if not it depends on mhomed - when
+  - if 1, the rcv socket is used, if not it depends on mhomed - when
         that is 0, the first socket is used, otherwise will be selected
         based on routing table
-    - default is 0
+  - default is 0
 - new function t_set_disable_internal_reply(0\|1) to disable\|enable
     internal reply option per transaction
 - new function t_use_uac_headers()
-    - set internal flags to tell tm to use UAC side for building
+  - set internal flags to tell tm to use UAC side for building
         headers for local generated requests (ACK, CANCEL) - useful when
         changing From/To headers using other functions than
         uac_replace\_\[from\|to\]()
@@ -405,39 +405,39 @@ source code repository.*\</fc>
 ### uac
 
 - added possibility to authenticate generated requests
-    - $uac_req(auser) - specify the authentication username
-    - $uac_req(apasswd) - specify the authentication password
-    - if both attributes above are set and the request is challenged
+  - $uac_req(auser) - specify the authentication username
+  - $uac_req(apasswd) - specify the authentication password
+  - if both attributes above are set and the request is challenged
         with 401/407, then the request is resent with auth header
 - ability to set Call-Id through $uac_req(callid)
 - $uac_req(sock) - new attribute to set local send socket for
     generated requests
-    - $uac_req(sock) = "<udp:127.0.0.1:5060>";
+  - $uac_req(sock) = "<udp:127.0.0.1:5060>";
 
 ### usrloc
 
 - new RPC commands:
-    - ul.rm
-    - ul.rm_contact
-    - ul.flush
-    - ul.add
+  - ul.rm
+  - ul.rm_contact
+  - ul.flush
+  - ul.add
 - ul.add RPC and ul_add MI commands modified to be able to set the
     contact path
 - new option for db_mode - DB_READONLY (4)
-    - location records are loaded only at startup
-    - no write back to database, not even at shutdown
-    - useful when registrations are replicated to another node that
+  - location records are loaded only at startup
+  - no write back to database, not even at shutdown
+  - useful when registrations are replicated to another node that
         does the db storage at runtime
 - new parameter db_obs_ruid - if set to 1, db update/delete operations
     are done using ruid value
-    - if paramter set to 0 (default) the old style using aor, contact
+  - if paramter set to 0 (default) the old style using aor, contact
         and call-id is done
 - added two new rpc commands ul.db_users and ul.db_contacts - for
     accessing number of different AoRs and contacts in a location table
 - new command ul.db_expired_contacts tells number of expired contacts
 - detect lost tcp connections on timer and set associated contact as
     expired
-    - new module parameter to control this feature: handle_lost_tcp
+  - new module parameter to control this feature: handle_lost_tcp
 
 ### utils
 
@@ -463,9 +463,9 @@ source code repository.*\</fc>
 - the syn_branch parameter has been removed from the core, as Kamailio
     was not fully standard compliant if this was activated.
 - auto-define cfg directive MOD_modname for each loaded module
-    - example: if acc module is loaded, MOD_acc is defined in cfg
+  - example: if acc module is loaded, MOD_acc is defined in cfg
 - new parameters:
-    - modinit_delay - specify microseconds to sleep after initializing
+  - modinit_delay - specify microseconds to sleep after initializing
         a module in order to cope with systems having rate limits on new
         connections to db or other servers
 - removed syn_branch functionality for calculating Via branch
@@ -481,9 +481,9 @@ source code repository.*\</fc>
     retrieved by module to access name of config file and the line
 - handle pv comparison with $null as when 'defined' is used
 - respect order field in NAPTR, as required by RFC 2915
-    - the beaviour is controlled by core parameter
+  - the beaviour is controlled by core parameter
         dns_naptr_ignore_rfc
-    - default is 1, preserving current behaviouf to ignore rfc
+  - default is 1, preserving current behaviouf to ignore rfc
         requirements (for backward compatibility)
 
 ### Components
@@ -512,17 +512,17 @@ source code repository.*\</fc>
 - command for dialog module management
 - added show command to display user attributes in subscriber table
 - new commands can be defined in separate files
-    - write new kamctl commands either in CFGDIR/kamctl.newcmd.ext or
+  - write new kamctl commands either in CFGDIR/kamctl.newcmd.ext or
         \~/.kamctl/kamctl.newcmd.ext
-    - 'newcmd' has to be replaced with the name of the command
-    - the file must include cmd_newcmd() function which is executed
+  - 'newcmd' has to be replaced with the name of the command
+  - the file must include cmd_newcmd() function which is executed
         with the parameters after the command name
 - shortcut command to do q query to a database based on key and value
-    - kamctl db smatch table key value - return the record from table
+  - kamctl db smatch table key value - return the record from table
         that has column key matching the value as string (quoted value)
-    - kamctl db nmatch table key value - return the record from table
+  - kamctl db nmatch table key value - return the record from table
         that has column key matching the value as non-quoted
-    - examples:
+  - examples:
 
 <!-- -->
 
@@ -530,16 +530,16 @@ source code repository.*\</fc>
         kamctl db nmatch subscriber id 123
 
 - added commands to set extra columns in subscriber table
-    - useful to deal with columns added for load_credentials of
+  - useful to deal with columns added for load_credentials of
         auth_db module
-        - 'sets' - sets a column with string value
-        - 'setn' - sets a column with numeric value
+    - 'sets' - sets a column with string value
+    - 'setn' - sets a column with numeric value
 
 ### kamdbctl
 
 - new command add-tables
-    - creates only tables that are groupped under same id, thus have
+  - creates only tables that are groupped under same id, thus have
         the sql script in a file
-    - syntax: kamdbctl add-tables \<gid>
-    - there has to be a \<gid>-create.sql script, eg: kamdbctl
+  - syntax: kamdbctl add-tables \<gid>
+  - there has to be a \<gid>-create.sql script, eg: kamdbctl
         add-tables lcr
