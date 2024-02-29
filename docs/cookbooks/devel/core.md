@@ -1086,7 +1086,7 @@ is recommended to set **advertise** option for **listen** parameter.
 
 ### alias
 
-**Alias name: domain**
+**Alias name:** **domain**
 
 Parameter to set alias hostnames for the server. It can be set many
 times, each value being added in a list to match the hostname when
@@ -1190,7 +1190,7 @@ See also **event_route\[core:pre-routing\]** and **sworker** module.
 
 ### auto_aliases
 
-**Alias name: auto_domains**
+**Alias name:** **auto_domains**
 
 Kamailio by default discovers all IPv4 addresses on all interfaces and
 does a reverse DNS lookup on these addresses to find host names.
@@ -1341,7 +1341,7 @@ Further information can also be found at:
 
 ### description
 
-**Alias name: descr desc**
+**Alias name:** **descr desc**
 
 ### disable_core_dump
 
@@ -1359,7 +1359,7 @@ disable_core_dump=yes
 
 ### disable_tls
 
-**Alias name: tls_disable**
+**Alias name:** **tls_disable**
 
 Global parameter to disable TLS support in the SIP server. Default value
 is 'yes'.
@@ -1378,7 +1378,7 @@ TLS module: <http://kamailio.org/docs/modules/devel/modules/tls.html>
 
 ### enable_tls
 
-**Alias name: tls_enable**
+**Alias name:** **tls_enable**
 
 Reverse Meaning of the disable_tls parameter. See disable_tls parameter.
 
@@ -1388,7 +1388,7 @@ enable_tls=yes # enable tls support in core
 
 ### exit_timeout
 
-**Alias name: ser_kill_timeout**
+**Alias name:** **ser_kill_timeout**
 
 How much time Kamailio will wait for all the shutdown procedures to
 complete. If this time is exceeded, all the remaining processes are
@@ -1461,7 +1461,7 @@ fork_delay=5000
 
 ### group
 
-**Alias name: gid**
+**Alias name:** **gid**
 
 The group id to run Kamailio.
 
@@ -2788,7 +2788,7 @@ uri_host_extra_chars = "_"
 
 ### user
 
-**Alias name: uid**
+**Alias name:** **uid**
 
 The user id to run Kamailio (Kamailio will suid to it).
 
@@ -2875,7 +2875,7 @@ wait_worker1_usleep = 50000
 
 ### workdir
 
-**Alias name: wdir**
+**Alias name:** **wdir**
 
 The working directory used by Kamailio at runtime. You might find it
 useful when it comes to generating core files :)
@@ -3017,7 +3017,7 @@ Default is `no`.
 
 ### rev_dns
 
-**Alias Name: dns_rev_via**
+**Alias name:** **dns_rev_via**
 
 This parameter controls if the SIP server will try doing a reverse DNS
 lookup on the source IP of a sip request to decide if adding a
@@ -3033,7 +3033,7 @@ Default is `no`.
 
 ### dns_cache_del_nonexp
 
-**Alias name: dns_cache_delete_nonexpired**
+**Alias name:** **dns_cache_delete_nonexpired**
 
 ``` c
 dns_cache_del_nonexp = yes | no (default: no)
@@ -3167,7 +3167,7 @@ dns_servers_no=2
 
 ### dns_srv_lb
 
-**Alias name: dns_srv_loadbalancing**
+**Alias name:** **dns_srv_loadbalancing**
 
 Enable dns srv weight based load balancing (see doc/tutorials/dns.txt)
 
@@ -3203,7 +3203,7 @@ dns_try_naptr = yes | no (default no)
 
 ### dns_sctp_pref, dns_tcp_pref, dns_tls_pref, dns_udp_pref
 
-**Alias name: dns_sctp_preference, dns_tcp_preference,
+**Alias name:** **dns_sctp_preference, dns_tcp_preference,
 dns_tls_preference, dns_udp_preference**
 
 Set preference for each protocol when doing naptr lookups. By default
@@ -3237,7 +3237,7 @@ dns_use_search_list=no
 
 ### use_dns_cache
 
-**Alias name: dns_use_cache**
+**Alias name:** **dns_use_cache**
 
 Tells if DNS responses are cached - this means that the internal DNS
 resolver (instead of the system's stub resolver) will be used. If set to
@@ -3247,7 +3247,7 @@ failover. Default is "on". Settings can be changed also during runtime
 
 ### use_dns_failover
 
-**Alias name: dns_use_failover**
+**Alias name:** **dns_use_failover**
 
 ``` c
 use_dns_failover = on | off (default off)
@@ -3372,7 +3372,7 @@ tcp_accept_unique = 1
 
 ### tcp_async
 
-**Alias name: tcp_buf_write**
+**Alias name:** **tcp_buf_write**
 
 If enabled, all the tcp writes that would block / wait for connect to
 finish, will be queued and attempted latter (see also `tcp_conn_wq_max`
@@ -3793,7 +3793,7 @@ sctp_children = number
 
 Size for the sctp socket receive buffer
 
-**Alias name: sctp_socket_receive_buffer**
+**Alias name:** **sctp_socket_receive_buffer**
 
 ``` c
 sctp_socket_rcvbuf = number
@@ -3803,7 +3803,7 @@ sctp_socket_rcvbuf = number
 
 Size for the sctp socket send buffer
 
-**Alias name: sctp_socket_send_buffer**
+**Alias name:** **sctp_socket_send_buffer**
 
 ``` c
 sctp_socket_sndbuf = number
@@ -4107,7 +4107,7 @@ The parameter can be set at runtime (`core.udp4_raw_ttl`).
 
 ### dst_blocklist_expire
 
-**Alias name: dst_blocklist_ttl**
+**Alias name:** **dst_blocklist_ttl**
 
 How much time a blocklisted destination will be kept in the blocklist
 (w/o any update).
@@ -4196,7 +4196,7 @@ rt_prio = <int> (default 0)
 
 ### rt_timer1_policy
 
-**Alias name: rt_ftimer_policy**
+**Alias name:** **rt_ftimer_policy**
 
 Like `rt_policy` but for the "fast" timer.
 
@@ -4206,7 +4206,7 @@ rt_timer1_policy=<0..3> (default 0)
 
 ### rt_timer1_prio
 
-**Alias name: rt_fast_timer_prio, rt_ftimer_prio**
+**Alias name:** **rt_fast_timer_prio, rt_ftimer_prio**
 
 Like `rt_prio` but for the "fast" timer process (if `real_time & 1`).
 
@@ -4216,7 +4216,7 @@ rt_timer1_prio=<int> (default 0)
 
 ### rt_timer2_policy
 
-**Alias name: rt_stimer_policy**
+**Alias name:** **rt_stimer_policy**
 
 Like `rt_policy` but for the "slow" timer.
 
@@ -4226,7 +4226,7 @@ rt_timer2_policy=<0..3> (default 0)
 
 ### rt_timer2_prio
 
-**Alias name: rt_stimer_prio**
+**Alias name:** **rt_stimer_prio**
 
 Like `rt_prio` but for the "slow" timer.
 
@@ -4376,7 +4376,7 @@ force_send_socket(udp:10.10.10.10:5060);
 
 ### force_tcp_alias
 
-**Alias name: add_tcp_alias**
+**Alias name:** **add_tcp_alias**
 
 `force_tcp_alias(port)`
 
@@ -4559,7 +4559,7 @@ Example of usage:
 
 ### rewritehostport
 
-**Alias name: sethostport, sethp**
+**Alias name:** **sethostport, sethp**
 
 Rewrite the domain part and port of the R-URI with the value of
 function's parameter. Other parts of the R-URI like username and URI
@@ -4571,7 +4571,7 @@ Example of usage:
 
 ### rewritehostporttrans
 
-**Alias name: sethostporttrans, sethpt**
+**Alias name:** **sethostporttrans, sethpt**
 
 Rewrite the domain part and port of the R-URI with the value of
 function's parameter. Also allows to specify the transport parameter.
@@ -4584,7 +4584,7 @@ Example of usage:
 
 ### rewritehost
 
-**Alias name: sethost, seth**
+**Alias name:** **sethost, seth**
 
 Rewrite the domain part of the R-URI with the value of function's
 parameter. Other parts of the R-URI like username, port and URI
@@ -4596,7 +4596,7 @@ Example of usage:
 
 ### rewriteport
 
-**Alias name: setport, setp**
+**Alias name:** **setport, setp**
 
 Rewrites/sets the port part of the R-URI with the value of function's
 parameter.
@@ -4607,7 +4607,7 @@ Example of usage:
 
 ### rewriteuri
 
-**Alias name: seturi**
+**Alias name:** **seturi**
 
 Rewrite the request URI.
 
@@ -4617,7 +4617,7 @@ Example of usage:
 
 ### rewriteuserpass
 
-**Alias name: setuserpass, setup**
+**Alias name:** **setuserpass, setup**
 
 Rewrite the password part of the R-URI with the value of function's
 parameter.
@@ -4628,7 +4628,7 @@ Example of usage:
 
 ### rewriteuser
 
-**Alias name: setuser, setu**
+**Alias name:** **setuser, setu**
 
 Rewrite the user part of the R-URI with the value of function's
 parameter.
