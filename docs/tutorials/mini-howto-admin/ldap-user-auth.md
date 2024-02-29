@@ -8,9 +8,9 @@ system.
 - install OpenLDAP library (libldap) v2.1 or greater, libldap header
     files (libldap-dev) are needed for compilation
 - read the documentation of auth module:
-    - <http://kamailio.org/docs/modules/stable/modules/auth.html>
+  - <http://kamailio.org/docs/modules/stable/modules/auth.html>
 - read the documentation of ldap module:
-    - <http://kamailio.org/docs/modules/stable/modules/ldap.html>
+  - <http://kamailio.org/docs/modules/stable/modules/ldap.html>
 
 ## LDAP Tree
 

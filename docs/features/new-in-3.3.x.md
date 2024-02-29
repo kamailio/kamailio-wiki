@@ -57,38 +57,38 @@ repository.*
 
 - more SIP server internal functions exported as native Lua functions,
     among them, functions from modules such as:
-    - cfgutils (lock, unlock)
-    - sqlops (sql_xquery)
-    - msilo
-    - siputils
-    - textops
-    - pua_usrloc
-    - rls
-    - alias_db
-    - uac
-    - mqueue
-    - tmx
+  - cfgutils (lock, unlock)
+  - sqlops (sql_xquery)
+  - msilo
+  - siputils
+  - textops
+  - pua_usrloc
+  - rls
+  - alias_db
+  - uac
+  - mqueue
+  - tmx
 - speed up by using a cache to lookup PVs
 
 ### auth
 
 - new function auth_challenge()
-    - combines www_challenge() and proxy_challenge() by calling the
+  - combines www_challenge() and proxy_challenge() by calling the
         first for REGISTER and the second for the rest of request types
 - new function to return WWW-Authenticate hdr in a PV
 
 ### auth_db
 
 - new function auth_check()
-    - offers www/proxy_authenticate() behavior by using first for
+  - offers www/proxy_authenticate() behavior by using first for
         REGISTER and the second for the other requests
-    - it can do extra security checks based on parameters (e.g., check
+  - it can do extra security checks based on parameters (e.g., check
         auth user against from/to user)
 
 ### ctl
 
 - compile time option to use system memory allocator
-    - flag in module Makefile: -DCTL_SYSTEM_MALLOC
+  - flag in module Makefile: -DCTL_SYSTEM_MALLOC
 
 ### db_postgres
 
@@ -97,15 +97,15 @@ repository.*
 ### dialog
 
 - new event routes
-    - event_route\[dialog:start\] - executed when dialog starts (200
+  - event_route\[dialog:start\] - executed when dialog starts (200
         ok for initial INVITE)
-    - event_route\[dialog:end\] - executed when dialog is ended (BYE
+  - event_route\[dialog:end\] - executed when dialog is ended (BYE
         or dialog timeout)
-    - event_route\[dialog:failed\] - executed when initial INVITE
+  - event_route\[dialog:failed\] - executed when initial INVITE
         fails (>300 reply)
 - new parameters
-    - send_bye - set sending BYE flag for all dialogs automatically
-    - wait_ack - wait for ACK to be sent after a negative reply for
+  - send_bye - set sending BYE flag for all dialogs automatically
+  - wait_ack - wait for ACK to be sent after a negative reply for
         initial INVITE
 - dialog profiles and internal flags are stored to db and loaded upon
     restart
@@ -117,20 +117,20 @@ repository.*
 - new function to set dialog timeout by internal id -
     dlg_set_timeout(timeout , h_entry, h_id)
 - possibility to send keep alives for dialogs
-    - keepalives are OPTIONS requests
-    - if keepalive request get 408 ot 481, dialog is timed out after
+  - keepalives are OPTIONS requests
+  - if keepalive request get 408 ot 481, dialog is timed out after
         10 secs
 
 ### dialplan
 
 - new matching operator - fnmatch (match_op=2)
-    - match using shell-like patterns
+  - match using shell-like patterns
 
 ### dispatcher
 
 - refactored dispatcher destination states
-    - states: active, trying, inactive, disabled
-    - probing is a mode that can be set for active and inactive states
+  - states: active, trying, inactive, disabled
+  - probing is a mode that can be set for active and inactive states
 - added outbound_proxy modparam for use with dispatcher pings
 - MI/RPC ds_reload command can be executed even when using call load
     distribution
@@ -155,10 +155,10 @@ repository.*
 ### htable
 
 - added 'updateexpire' parameter to the definition of an htable
-    - it permits one to change whether updating a value stored in the
+  - it permits one to change whether updating a value stored in the
         htable resets its time until expiration
-    - its default value is 1, to preserve existing behaviour
-    - however, if set to 0, updating a value will have no effect on
+  - its default value is 1, to preserve existing behaviour
+  - however, if set to 0, updating a value will have no effect on
         how soon it will expire
 - implemented "delete" mi/rpc function - delete specific keys from an
     htable via the MI or RPC interface
@@ -170,8 +170,8 @@ repository.*
 - added 'lcr.defunct_gw' rpc command
 - IPv6 addresses are supported
 - support for R-URI matching
-    - an additional request_uri column has been introduced
-    - if other than NULL, it also needs to match beside prefix and
+  - an additional request_uri column has been introduced
+  - if other than NULL, it also needs to match beside prefix and
         from_uri in order for the rule to be selected
 
 ### kex
@@ -186,14 +186,14 @@ repository.*
 ### mi_rpc
 
 - added MI command to run RPC commands
-    - all RPC commands can be executed via MI
+  - all RPC commands can be executed via MI
 
 ### mqueue
 
 - queue names can now be in pseudo variables
-    - mq_add()/mq_fetch() can use pseudo variables (as well as
+  - mq_add()/mq_fetch() can use pseudo variables (as well as
         strings) for queue names.
-    - $mqk()/$mqv() can use pseudo variables (as well as strings) for
+  - $mqk()/$mqv() can use pseudo variables (as well as strings) for
         queue names
 
 ### msilo
@@ -213,9 +213,9 @@ repository.*
 ### pdt
 
 - new functions:
-    - pd_translate(sdomain, rmode)
+  - pd_translate(sdomain, rmode)
 - new rpc commands:
-    - pdt.reload - reload database records in cache
+  - pdt.reload - reload database records in cache
 
 ### permissions
 
@@ -233,7 +233,7 @@ repository.*
 - handle_subscribe() has a new optional parameter that can be used to
     specify watcher URI
 - dedicated notifier processes
-    - new "notifier_processes" modparam - if set to 0, dedicated
+  - new "notifier_processes" modparam - if set to 0, dedicated
         processes feature is disabled
 
 ### pua
@@ -247,27 +247,27 @@ repository.*
 ### pua_usrloc
 
 - added branch_flag parameter
-    - mark the contact for sending PUBLISH via setbflag(branch_flag)
+  - mark the contact for sending PUBLISH via setbflag(branch_flag)
 
 ### pv
 
 - new transformation class **line**
-    - {line.count}
-    - {line.at,pos}
-    - {line.sw,match}
+  - {line.count}
+  - {line.at,pos}
+  - {line.sw,match}
 - new string tranformations
-    - {s.trim}
-    - {s.ltrim}
-    - {s.rtrim}
-    - {s.rm,match}
+  - {s.trim}
+  - {s.ltrim}
+  - {s.rtrim}
+  - {s.rm,match}
 - support of URN parsing (e.g.: <urn:service:sos.fire>)
-    - $ru= "<urn:service:sos.fire>"
-    - $rz= "urn" (scheme)
-    - $rU= "service"
-    - $rd= "sos.fire"
+  - $ru= "<urn:service:sos.fire>"
+  - $rz= "urn" (scheme)
+  - $rU= "service"
+  - $rd= "sos.fire"
 - new pseudo variables
-    - $dic = Diversion header "counter" parameter value
-    - $sid = server_id value - server_id can be set via global
+  - $dic = Diversion header "counter" parameter value
+  - $sid = server_id value - server_id can be set via global
         parameter with same name
 
 ### registrar
@@ -275,15 +275,15 @@ repository.*
 - new parameter xavp_cfg - defines the name of an XAVP container to
     hold per-REGISTER parameters
 - new parameter xavp_rcd - store details of UL record
-    - if set, the internal ruid field will be returned as inner xavp
+  - if set, the internal ruid field will be returned as inner xavp
         to it
 - option to set max contact per REGISTER (via xavp)
 - handle GRUU extension (RFC5627)
 - added new parameter gruu_enabled - makes possible to turn off GRUU
     handling for REGISTER
 - optional uri parameter
-    - removed aor_avp as it conflicted with unregister uri param
-    - save(), lookup() and register() can take an extra optional
+  - removed aor_avp as it conflicted with unregister uri param
+  - save(), lookup() and register() can take an extra optional
         parameter to specify the URI for which to do the operation. It
         provides the same functionality as it was with aor_avp
 
@@ -319,15 +319,15 @@ repository.*
 ### rtpproxy
 
 - send Via branch to rtpproxy
-    - introduce force/unforce options "1" and "2" to optionally send
+  - introduce force/unforce options "1" and "2" to optionally send
         first or second Via branch to rtpproxy.
-    - this can be used to stop only a specific branch in the rtp
+  - this can be used to stop only a specific branch in the rtp
         proxy, which is needed for complex serial looping scenarios
         where in a race condition a new branch is processed before a
         previous branch is cancelled, where the cancel would whipe the
         whole call from the rtp proxy instead of just the old branch,
         causing the subsequent rtp proxy lookup to fail.
-    - handle UPDATE requests in rtpproxy_manage()
+  - handle UPDATE requests in rtpproxy_manage()
 
 ### sanity
 
@@ -358,11 +358,11 @@ repository.*
 ### sdpops
 
 - new functions
-    - sdp_with_codecs_by_id("codecs")
-    - sdp_with_codecs_by_name("codecs")
-    - sdp_remove_media("type")
+  - sdp_with_codecs_by_id("codecs")
+  - sdp_with_codecs_by_name("codecs")
+  - sdp_remove_media("type")
 - old functions
-    - functions for keeping only a set of codecs can take a second
+  - functions for keeping only a set of codecs can take a second
         parameter to filter the matching on certain media type
 - support for codecs with same name and many different ids
 - added new exported function get_sdp(...) to return the raw SDP to an
@@ -383,21 +383,21 @@ repository.*
 
 - new function: in_list(subject, list, separator)
 - two functions to search and subst inside header fields
-    - search_hf(hf, re, flags) - search inside header field body
-    - subst_hf(hf, subst, flags) - perl-like substitution inside
+  - search_hf(hf, re, flags) - search inside header field body
+  - subst_hf(hf, subst, flags) - perl-like substitution inside
         header field body
 
 ### textopsx
 
 - new function: keep_hf(expr)
-    - remove all the non-mandatory headers that don't match **expr**
+  - remove all the non-mandatory headers that don't match **expr**
 - new function: fnmatch(value, match, flags)
-    - match using shell-like patters based on C fnmatch(...)
+  - match using shell-like patters based on C fnmatch(...)
 
 ### tls
 
 - new parameters:
-    - renegotiation - enable/disable TLS cipher renegotiation
+  - renegotiation - enable/disable TLS cipher renegotiation
 - TLS pre-init operations done at the time of loading module to allow
     other modules using SSL lib in parallel
 - rpc tls.info prints the limit and opened tls connections
@@ -422,26 +422,26 @@ repository.*
 - handle +sip.instance parameter from GRUU extension (rfc 5627)
 - handle reg-id Contact parameter defined by RFC5626
 - option to start own timer processes
-    - new parameter timer_procs
-    - default is 0, meaning the core timer process is used (like so
+  - new parameter timer_procs
+  - default is 0, meaning the core timer process is used (like so
         far)
-    - if >0, a number of basic sync timers are started
-    - each own timer will take care of synchronizing the usrloc
+  - if >0, a number of basic sync timers are started
+  - each own timer will take care of synchronizing the usrloc
         records, selecting specific slots in the internal hash table
         (load balancing mechanism) - this mode is useful for handling
         lot of usrloc records
 - option to check if contact DB UPDATE was successful
-    - use DB API affected_rows() when available to detect if the DB
+  - use DB API affected_rows() when available to detect if the DB
         UPDATE operation for a contact was successful, if not, do an
         INSERT instead
-    - behaviour controlled by parameter db_check_update, default is 0
+  - behaviour controlled by parameter db_check_update, default is 0
         (no check for affected rows and no insert -- backward
         compatible)
 
 ### xcap_server
 
 - added $xcapuri(u=>uri_adoc) pvar
-    - this gives access to the adoc field in the internal xuri
+  - this gives access to the adoc field in the internal xuri
         data-structure (the xuri without xpath)
 
 ### xlog
@@ -456,17 +456,17 @@ repository.*
 ### xmpp
 
 - new parameter gwmap for sip-xmpp domain translation
-    - gwmap can get a valus as a list of
+  - gwmap can get a valus as a list of
         'sipdomain1=xmppdomain1;...;sipdomainN=xmppdomainN'
-    - whenever a sip-to-xmpp message is sent, any matching sipdomain
+  - whenever a sip-to-xmpp message is sent, any matching sipdomain
         in src or dst address is translated to appropiate xmppdomain
-    - the other way around, when a xmpp-to-sip message is sent, then
+  - the other way around, when a xmpp-to-sip message is sent, then
         any matching xmpp domain in src or dst address is translated to
         appropriate sip domain
-    - this allow getting rid of the URI encoding with delimiter
-    - if a domain is not found, the src/dst domains are preserved as
+  - this allow getting rid of the URI encoding with delimiter
+  - if a domain is not found, the src/dst domains are preserved as
         they are in SIP to XMPP and vice verse
-    - if the xmppdomain is not provided explicitly, sipdomain is
+  - if the xmppdomain is not provided explicitly, sipdomain is
         considered to be also the xmpp domain
 
 ## New in Core
@@ -480,16 +480,16 @@ repository.*
 - setting max_while_loops to zero now allows infinite loops
 - option to use name IDs for TOS setting
 - option to set advertised address and port per socket
-    - listen parameter can be like: 'listen=proto:ip:port advertise
+  - listen parameter can be like: 'listen=proto:ip:port advertise
         ip1:port1'
-    - ip1 and port1 will be used to build Via and Route headers for
+  - ip1 and port1 will be used to build Via and Route headers for
         messages using the socket
 - allow send() without parameters - will use r-uri/dst-uri to send the
     msg buffer
 - added timeval field inside sip message structure
 - added pid field inside sip message structure
 - added support for basic timer + interval sync
-    - new functions to start basic timers that will sync the interval
+  - new functions to start basic timers that will sync the interval
         after executing the task. Useful if the task is taking long, the
         process will skip the delay in the sleep value
 
@@ -497,31 +497,31 @@ repository.*
 
 - new internal library to collect useful code to be shared by modules
 - includes:
-    - JSON parser
-    - UUID generator
-    - time recurrence matching functions
+  - JSON parser
+  - UUID generator
+  - time recurrence matching functions
 
 #### parser/uri
 
 - support for URN
-    - uri parser has support for URNs (e.g. <urn:service:sos.fire>)
-    - t_relay() does not break on RURI with URNs
-    - PVs are set as follows:
-        - $ru= "<urn:service:sos.fire>"
-        - $rz= "urn"
-        - $rU= "service"
-        - $rd= "sos.fire"
-    - refer to
+  - uri parser has support for URNs (e.g. <urn:service:sos.fire>)
+  - t_relay() does not break on RURI with URNs
+  - PVs are set as follows:
+    - $ru= "<urn:service:sos.fire>"
+    - $rz= "urn"
+    - $rU= "service"
+    - $rd= "sos.fire"
+  - refer to
         <http://tools.ietf.org/html/draft-ietf-ecrit-framework-13#page-29>
         for SIP signaling requirements for SIP proxy servers
-    - support for GRUU specified by RFC5627
+  - support for GRUU specified by RFC5627
 
 ### Database Enhancements
 
 - bitwise AND operation added to DB queries
 - ability to specify DB connections as non-pooled in DB URLs
 - updated DB API prototype for replace
-    - replace method takes two more parameters to allow implementation
+  - replace method takes two more parameters to allow implementation
         of replace functionality inside the db connector module, via
         update, affected rows and insert
 - DB transaction support - added db_begin()/db_commit()/db_rollback()

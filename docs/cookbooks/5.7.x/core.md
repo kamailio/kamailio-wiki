@@ -134,9 +134,9 @@ Example:
 
 ```
       # this is a line comment
-      
+
       // this is another line comment
-      
+
       /* this
          is
          a
@@ -436,11 +436,11 @@ request_route {
 <!-- -->
 
 - notes:
-    - multilines defines are reduced to single line, so line counter
+  - multilines defines are reduced to single line, so line counter
         should be fine
-    - column counter goes inside the define value, but you have to
+  - column counter goes inside the define value, but you have to
         omit the `\` and `CR` for the accurate inside-define position
-    - text on the same line as the directive will cause problems. Keep
+  - text on the same line as the directive will cause problems. Keep
         the directive lines clean and only comment on a line before or
         after.
 
@@ -502,42 +502,42 @@ Examples:
 
 Arithmetic operations:
 
-  - `+` - addition
-  - `-` - subtraction
-  - `*` - multiplication
-  - `/` - division
-  - `%` - modulus (remainder)
-  - `**` - power
+- `+` - addition
+- `-` - subtraction
+- `*` - multiplication
+- `/` - division
+- `%` - modulus (remainder)
+- `**` - power
 
 Bitwise operations
 
-  - `<<` - shift left
-  - `>>` - shift right
-  - `&` - and
-  - `|` - or
-  - `^` - xor (unary bitwise negation)
+- `<<` - shift left
+- `>>` - shift right
+- `&` - and
+- `|` - or
+- `^` - xor (unary bitwise negation)
 
 Logical operations:
 
-  - `==` - equal
-  - `!=` - not equal (different)
-  - `<` - less than
-  - `>` - greater than
-  - `<=` - less than or equal to
-  - `>=` - greater than or equal to
-  - `&&` - and
-  - `||` - or
-  - `!` - unary not
+- `==` - equal
+- `!=` - not equal (different)
+- `<` - less than
+- `>` - greater than
+- `<=` - less than or equal to
+- `>=` - greater than or equal to
+- `&&` - and
+- `||` - or
+- `!` - unary not
 
 String operations:
 
-  - `+` - concatenation
+- `+` - concatenation
 
 Other operations:
 
-  - `=` - assignment
-  - `( ... )` - parenthesis to group parts of the expression
-  - `,` - comma (separates expressions or function parameters)
+- `=` - assignment
+- `( ... )` - parenthesis to group parts of the expression
+- `,` - comma (separates expressions or function parameters)
 
 #### ifexp examples
 
@@ -1055,7 +1055,7 @@ It can be an IP address or string and represents the address advertised
 in Via header. If empty or not set (default value) the socket address
 from where the request will be sent is used.
 
-    WARNING: 
+    WARNING:
     - don't set it unless you know what you are doing (e.g. nat traversal)
     - you can set anything here, no check is made (e.g. foo.bar will be accepted even if foo.bar doesn't exist)
 
@@ -1236,7 +1236,7 @@ is 0 (check disabled).
 Example of usage:
 
 ```
-      check_via=1 
+      check_via=1
 ```
 
 ### children
@@ -1295,10 +1295,10 @@ The following log levels are defined:
      L_CRIT2     -3
      L_CRIT      -2
      L_ERR       -1
-     L_WARN       0 
-     L_NOTICE     1 
-     L_INFO       2 
-     L_DBG        3 
+     L_WARN       0
+     L_NOTICE     1
+     L_INFO       2
+     L_DBG        3
 ```
 
 A log message will be logged if its log-level is lower than the defined
@@ -1337,7 +1337,7 @@ For configuration of logging of the memory manager see the parameters
 
 Further information can also be found at:
 
-  - [https://www.kamailio.org/wiki/tutorials/3.2.x/syslog](https://www.kamailio.org/wiki/tutorials/3.2.x/syslog)
+- [https://www.kamailio.org/wiki/tutorials/3.2.x/syslog](https://www.kamailio.org/wiki/tutorials/3.2.x/syslog)
 
 ### description
 
@@ -1744,9 +1744,9 @@ is searched in the path specified by `loadpath` (or `mpath`).
 
 Prototypes:
 
-  - `loadmodule "modulepath"`
-  - `loadmodule("modulepath")`
-  - `loadmodule("modulepath", "opts")`
+- `loadmodule "modulepath"`
+- `loadmodule("modulepath")`
+- `loadmodule("modulepath", "opts")`
 
 If `modulepath` is only `modulename` or `modulename.so`, then Kamailio will
 try to search also for `modulename/modulename.so`, very useful when
@@ -1755,7 +1755,7 @@ using directly the version compiled in the source tree.
 The `opts` parameter is a list of characters that can specify loading options.
 They can be:
 
-  - `g` (or `G`) - open the module shared object file with `RTLD_GLOBAL` set,
+- `g` (or `G`) - open the module shared object file with `RTLD_GLOBAL` set,
   which can be used for modules related to external scripting languages to avoid
   reloading.
 
@@ -1918,7 +1918,7 @@ Default value is `no`.
 
 For more see:
 
- - [https://www.kamailio.org/dokuwiki/doku.php/tutorials:debug-syslog-messages](https://www.kamailio.org/dokuwiki/doku.php/tutorials:debug-syslog-messages)
+- [https://www.kamailio.org/dokuwiki/doku.php/tutorials:debug-syslog-messages](https://www.kamailio.org/dokuwiki/doku.php/tutorials:debug-syslog-messages)
 
 Example of usage:
 
@@ -2060,10 +2060,10 @@ For example, memdbg=2 means that memory debugging is activated if the
 debug level is 2 or higher.
 
 ```
-    debug=3    # no memory debugging as debug level 
+    debug=3    # no memory debugging as debug level
     memdbg=4   # is lower than memdbg
 
-    debug=3    # memory debugging is active as the debug level 
+    debug=3    # memory debugging is active as the debug level
     memdbg=2   # is higher or equal memdbg
 ```
 
@@ -2084,10 +2084,10 @@ For example, memlog=2 means that memory statistics dumping is activated
 if the debug level is 2 or higher.
 
 ```
-    debug=3    # no memory statistics as debug level 
+    debug=3    # no memory statistics as debug level
     memlog=4   # is lower than memlog
 
-    debug=3    # dumping of memory statistics is active as the 
+    debug=3    # dumping of memory statistics is active as the
     memlog=2   # debug level is higher or equal memlog
 ```
 
@@ -2561,10 +2561,10 @@ socket = {
 
 The attributes are:
 
-  - `bind` - the address to listen on in format `[proto:]address[:port]`
-  - `advertise` - the address to advertise in SIP headers in format `address[:port]`
-  - `name` - name of the socket to be referenced in configuration file
-  - `virtual` - set to `yes/no` to indicate if the IP has to be considered virtual or not
+- `bind` - the address to listen on in format `[proto:]address[:port]`
+- `advertise` - the address to advertise in SIP headers in format `address[:port]`
+- `name` - name of the socket to be referenced in configuration file
+- `virtual` - set to `yes/no` to indicate if the IP has to be considered virtual or not
 
 The attribute `bind` is mandatory and has to provide at list the address to listen on.
 
@@ -3007,7 +3007,7 @@ Default is `no`.
       dns cache specific resolver flags, used for overriding the default behaviour (low level).
       Possible values:
         1 - ipv4 only: only DNS A requests are performed, even if Kamailio also listens on ipv6 addresses.
-        2 - ipv6 only: only DNS AAAA requests are performed. Ignored if dns_try_ipv6 is off or Kamailio 
+        2 - ipv6 only: only DNS AAAA requests are performed. Ignored if dns_try_ipv6 is off or Kamailio
             doesn't listen on any ipv6 address.
         4 - prefer ipv6: try first to resolve a host name to an ipv6 address (DNS AAAA request) and only
             if this fails try an ipv4 address (DNS A request). By default the ipv4 addresses are preferred.
@@ -3254,7 +3254,7 @@ connection that does not conform to the PROXY-protocol spec.
 
 For reference - the PROXY protocol:
 
-  - [https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt](https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt)
+- [https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt](https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt)
 
 Default value is **no**.
 
@@ -3687,7 +3687,7 @@ Example of usage:
 ### enable_sctp
 
 ```
-    enable_sctp = 0/1/2  - SCTP disabled (0)/ SCTP enabled (1)/auto (2), 
+    enable_sctp = 0/1/2  - SCTP disabled (0)/ SCTP enabled (1)/auto (2),
                            default auto (2)
 ```
 
@@ -3696,7 +3696,7 @@ Example of usage:
 sctp children no (similar to udp children)
 
 ```
-    sctp_children = number 
+    sctp_children = number
 ```
 
 ### sctp_socket_rcvbuf
@@ -3706,7 +3706,7 @@ Size for the sctp socket receive buffer
 **Alias name: sctp_socket_receive_buffer**
 
 ```
-    sctp_socket_rcvbuf = number 
+    sctp_socket_rcvbuf = number
 ```
 
 ### sctp_socket_sndbuf
@@ -4364,7 +4364,7 @@ variables, look at `xlog` module.
 
 For more see:
 
-  - [https://www.kamailio.org/dokuwiki/doku.php/tutorials:debug-syslog-messages](https://www.kamailio.org/dokuwiki/doku.php/tutorials:debug-syslog-messages)
+- [https://www.kamailio.org/dokuwiki/doku.php/tutorials:debug-syslog-messages](https://www.kamailio.org/dokuwiki/doku.php/tutorials:debug-syslog-messages)
 
 Example of usage:
 
@@ -4454,8 +4454,8 @@ Note: starting with version `5.7.0-dev`, this behaviour can be changed with
 
 Control the return code evaluation mode:
 
-  - 0 (default) - evaluation is like so far (negative is false, positive is true)
-  - 1 - propagate return value and evaluation has to be done with `>0` or `<0`, otherwise
+- 0 (default) - evaluation is like so far (negative is false, positive is true)
+- 1 - propagate return value and evaluation has to be done with `>0` or `<0`, otherwise
   `value!=0` is evaluated to true no matter is negative or positive
 
 ### revert_uri
@@ -4635,7 +4635,7 @@ Example of usage:
         ...
         if (lookup()) {
           //requests to local users. They are usually behind NAT so it does not make sense to try
-          //to establish a new TCP connection 
+          //to establish a new TCP connection
           set_forward_no_connect();
           t_relay();
         }
@@ -5092,7 +5092,7 @@ Implementations:
 - `event_route[core:worker-one-init]` - executed by core after the
     first udp sip worker process executed the child_init() for all
     modules, before starting to process sip traffic
-    - note that due to forking, other sip workers can get faster to
+  - note that due to forking, other sip workers can get faster to
         listening for sip traffic
 
 ``` c
@@ -5105,10 +5105,10 @@ event_route[core:worker-one-init] {
     received from the network. It runs with a faked request and makes
     available the $rcv(key) variables to access what was received and
     related attribtues.
-    - it has to be enabled with received_route_mode global parameter.
+  - it has to be enabled with received_route_mode global parameter.
         For usage via Kemi, set kemi.received_route_callback global
         parameter.
-    - if drop is executed, the received message is no longer processed
+  - if drop is executed, the received message is no longer processed
 
 ``` c
 event_route[core:msg-received] {
@@ -5121,7 +5121,7 @@ event_route[core:msg-received] {
 
 - `event_route[core:pre-routing]` - executed by core on receiving
     SIP traffic before running request_route or reply_route.
-    - if drop is used, then the message is not processed further with
+  - if drop is used, then the message is not processed further with
         request_route or reply_route in the same process. This can be
         useful together with sworker module which can delegate the
         processing to another worker.
@@ -5142,7 +5142,7 @@ event_route[core:pre-routing] {
 
 - `event_route[core:receive-parse-error]` - executed by core
     on receiving a broken SIP message that can not be parsed.
-    - note that the SIP message is broken in this case, but it gets
+  - note that the SIP message is broken in this case, but it gets
         access to source and local socket addresses (ip, port, proto,
         af) as well as the whole message buffer and its size
 
@@ -5399,17 +5399,17 @@ For strings, `+` is available to concatenate.
 
 For numbers, one can use:
 
-  - `+` : plus
-  - `-` : minus
-  - `/` : divide
-  - `*` : multiply
-  - `mod` : modulo (SER uses `%` instead of `mod`)
-  - `|` : bitwise OR
-  - `&` : bitwise AND
-  - `^` : bitwise XOR
-  - `~` : bitwise NOT
-  - `<<` : bitwise left shift
-  - `>>` : bitwise right shift
+- `+` : plus
+- `-` : minus
+- `/` : divide
+- `*` : multiply
+- `mod` : modulo (SER uses `%` instead of `mod`)
+- `|` : bitwise OR
+- `&` : bitwise AND
+- `^` : bitwise XOR
+- `~` : bitwise NOT
+- `<<` : bitwise left shift
+- `>>` : bitwise right shift
 
 Example:
 
@@ -5588,22 +5588,22 @@ The value of this parameter can be **--log-engine=name** or
 The name of the log engine can be:
 
 - **json** - write logs in structured JSON format
-    - the **data** for **json** log engine can be a set of character
+  - the **data** for **json** log engine can be a set of character
         flags:
-        - **a** - add log prefix as a special field
-        - **A** - do not add log prefix
-        - **c** - add Call-ID (when available) as a dedicated JSON
+    - **a** - add log prefix as a special field
+    - **A** - do not add log prefix
+    - **c** - add Call-ID (when available) as a dedicated JSON
             attribute
-        - **j** - the log prefix and message fields are printed in
+    - **j** - the log prefix and message fields are printed in
             JSON structure format, detecting if they are enclosed in
             between **{ }** or adding them as a **text** field
-        - **M** - strip EOL (`\n`) from the value of the log message
+    - **M** - strip EOL (`\n`) from the value of the log message
             field
-        - **N** - do not add EOL at the end of JSON document
-        - **p** - the log prefix is printed as it is in the root json
+    - **N** - do not add EOL at the end of JSON document
+    - **p** - the log prefix is printed as it is in the root json
             document, it has to start with comma (**,**) and be a valid
             set of json fields
-        - **U** - CEE (Common Event Expression) schema format -
+    - **U** - CEE (Common Event Expression) schema format -
             [https://cee.mitre.org/language/1.0-beta1/core-profile.html](https://cee.mitre.org/language/1.0-beta1/core-profile.html)
 
 Example of JSON logs when running Kamailio with `--log-engine=json:M` :
@@ -5626,4 +5626,3 @@ Example config for printing log messages with `p` flag:
 ```
     log_prefix=", \"src_ip\": \"$si\", \"tv\": $TV(Sn), \"mt\": $mt, \"ua\": \"$(ua{s.escape.common})\", \"cseq\": \"$hdr(CSeq)\""
 ```
-

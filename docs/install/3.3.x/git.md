@@ -55,10 +55,10 @@ The following packages are required before proceeding to the next steps.
 - <u>make</u> - apt-get install make
 - if you want to enable more modules, some of them require extra
     libraries:
-    - <u>libssl</u> - apt-get install libssl-dev
-    - <u>libcurl</u> - apt-get install libcurl4-openssl-dev
-    - <u>libxml2</u> - apt-get install libxml2-dev
-    - <u>libpcre3</u> - apt-get install libpcre3-dev
+  - <u>libssl</u> - apt-get install libssl-dev
+  - <u>libcurl</u> - apt-get install libcurl4-openssl-dev
+  - <u>libxml2</u> - apt-get install libxml2-dev
+  - <u>libpcre3</u> - apt-get install libpcre3-dev
 
 ## 2. Getting sources from GIT
 

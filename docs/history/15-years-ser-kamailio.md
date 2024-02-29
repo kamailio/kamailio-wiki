@@ -59,7 +59,7 @@ contributors, estimated cost of development: **over 18 000 000 USD**
 - **November 2008** - SER and Kamailio teams decide to join
     development efforts and merge the source code trees of the two
     applications
-    - development portal for both changed to: <http://sip-router.org>
+  - development portal for both changed to: <http://sip-router.org>
 - **January 2010** - version 3.0.0 is released, from a source code
     tree containing both SER and Kamailio
 - **Septeber 2011** - the project celebrates 10 years of development

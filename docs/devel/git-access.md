@@ -92,10 +92,10 @@ new code that might not get to **master** branch after all.
     developers, it is better to discuss them on
     sr-dev@lists.sip-router.org mailing list before pushing them to
     remote repository. The patch can be:
-    - submitted as attachment to mailing list
-    - uploaded to the tracker at:
-        - <http://sip-router.org/tracker>
-    - pushed first in a private branch
+  - submitted as attachment to mailing list
+  - uploaded to the tracker at:
+    - <http://sip-router.org/tracker>
+  - pushed first in a private branch
 - patches to own modules can be pushed at any time. However, if you
     want to discuss on sr-dev mailing lists, you are welcome to send an
     email

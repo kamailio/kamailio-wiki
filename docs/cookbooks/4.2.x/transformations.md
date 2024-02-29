@@ -553,9 +553,9 @@ The prototype is:
 - replacement_expression - substitution expression with back
     references to matched tokes: \\1, \\2, ..., \\9
 - flags:
-    - i - match ignore case
-    - s - match within multi-lines strings
-    - g - replace all matches
+  - i - match ignore case
+  - s - match within multi-lines strings
+  - g - replace all matches
 
 ## SQL Transformations
 

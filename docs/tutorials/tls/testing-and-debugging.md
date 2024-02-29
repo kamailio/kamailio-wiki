@@ -155,18 +155,18 @@ To decode TLS connections configure Wireshark and Kamailio:
 
 - Copy the server's private key to the PC running Wireshark. Then
     configure Wireshark to use this key:
-    - Edit → Preferences → Protocols → SSL → RSA Keys List: e.g.:
+  - Edit → Preferences → Protocols → SSL → RSA Keys List: e.g.:
         *ip.address.of.server,5061,sip,c:\\key.pem*
 - If the server uses Diffie-Hellman (DH) Ciphers (depends on default
     compile time settings of libssl) you have to configure Kamailio to
     use other ciphers. See:
-    - <http://kamailio.org/docs/modules/3.3.x/modules/tls.html#cipher_list>
+  - <http://kamailio.org/docs/modules/3.3.x/modules/tls.html#cipher_list>
         and
-    - <http://www.openssl.org/docs/apps/ciphers.html>
+  - <http://www.openssl.org/docs/apps/ciphers.html>
 - To make sure you capture the TLS handshake
-    - Close the SIP client
-    - Start Wireshark and start capturing
-    - Start the SIP client.
+  - Close the SIP client
+  - Start Wireshark and start capturing
+  - Start the SIP client.
 
 If you have problems decoding the TLS session you should enable
 debugging in Wireshark: Edit -> Preferences -> Protocols -> SSL -> SSL

@@ -15,28 +15,28 @@ scripts and info to reproduce this system is kept public at
 
 - nightly builds are been built if a change is detected in the branch,
     once by night.
-    - kamailiodev-nightly
+  - kamailiodev-nightly
         branch: 'master'
         distributions: jessie, wheezy, squeeze, precise
-    - kamailio41-nightly
+  - kamailio41-nightly
         branch: '4.1'
         distributions: jessie, wheezy, squeeze, precise
-    - kamailio40-nightly
+  - kamailio40-nightly
         branch: '4.0'
         distributions: lenny, squeeze, wheezy, lucid, precise
-    - kamailio33-nightly
+  - kamailio33-nightly
         branch: '3.3'
         distributions: lenny, squeeze, wheezy, lucid, precise
 
 <!-- -->
 
 - tags are been built if a new tag is detected once by night.
-    - kamailio41
+  - kamailio41
         branch: '\*/tags/4.1\*'
         distributions: jessie, wheezy, squeeze, precise
-    - kamailio40
+  - kamailio40
         branch: '\*/tags/4.0\*'
         distributions: lenny, squeeze, wheezy, lucid, precise
-    - kamailio33
+  - kamailio33
         branch: '\*/tags/3.3\*'
         distributions: lenny, squeeze, wheezy, lucid, precise

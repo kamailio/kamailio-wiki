@@ -402,11 +402,11 @@ route {
 <!-- -->
 
 - notes:
-    - multilines defines are reduced to single line, so line counter
+  - multilines defines are reduced to single line, so line counter
         should be fine
-    - column counter goes inside the define value, but you have to
+  - column counter goes inside the define value, but you have to
         omit the '\\' and CR for the accurate inside-define position
-    - text on the same line as the directive will cause problems. Keep
+  - text on the same line as the directive will cause problems. Keep
         the directive lines clean and only comment on a line before or
         after.
 
@@ -4285,7 +4285,7 @@ Implementations:
 - **event_route\[core:worker-one-init\]** - executed by core after the
     first udp sip worker process executed the child_init() for all
     modules, before starting to process sip traffic
-    - note that due to forking, other sip workers can get faster to
+  - note that due to forking, other sip workers can get faster to
         listening for sip traffic
 
 ``` c
@@ -4298,10 +4298,10 @@ event_route[core:worker-one-init] {
     received from the network. It runs with a faked request and makes
     available the $rcv(key) variables to access what was received and
     related attribtues.
-    - it has to be enabled with received_route_mode global parameter.
+  - it has to be enabled with received_route_mode global parameter.
         For usage via Kemi, set kemi.received_route_callback global
         parameter.
-    - if drop is executed, the received message is no longer processed
+  - if drop is executed, the received message is no longer processed
 
 ``` c
 event_route[core:msg-received] {
@@ -4314,7 +4314,7 @@ event_route[core:msg-received] {
 
 - **event_route\[core:pre-routing\]** - executed by core on receiving
     SIP traffic before running request_route or reply_route.
-    - if drop is used, then the message is not processed further with
+  - if drop is used, then the message is not processed further with
         request_route or reply_route in the same process. This can be
         useful together with sworker module which can delegate the
         processing to another worker.
@@ -4335,7 +4335,7 @@ event_route[core:pre-routing] {
 
 - \*\* event_route\[core:receive-parse-error\]\*\* - executed by core
     on receiving a broken SIP message that can not be parsed.
-    - note that the SIP message is broken in this case, but it gets
+  - note that the SIP message is broken in this case, but it gets
         access to source and local socket addresses (ip, port, proto,
         af) as well as the whole message buffer and its size
 
@@ -4768,15 +4768,15 @@ The value of this parameter can be **--log-engine=name** or
 The name of the log engine can be:
 
 - **json** - write logs in structured JSON format
-    - the **data** for **json** log engine can be a set of character
+  - the **data** for **json** log engine can be a set of character
         flags:
-        - **a** - add log prefix as a special field
-        - **A** - do not add log prefix
-        - **c** - add Call-ID (when available) as a dedicated JSON
+    - **a** - add log prefix as a special field
+    - **A** - do not add log prefix
+    - **c** - add Call-ID (when available) as a dedicated JSON
             attribute
-        - **M** - strip EOL ('\\n') from the value of the log message
+    - **M** - strip EOL ('\\n') from the value of the log message
             field
-        - **N** - do not add EOL at the end of JSON document
+    - **N** - do not add EOL at the end of JSON document
 
 Example of JSON logs when running Kamailio with
 "**--log-engine=json:M**" :

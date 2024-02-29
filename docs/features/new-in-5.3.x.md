@@ -101,14 +101,14 @@ with a proper Record-Route header, including any parameters.
 
 - Add new rpc functions, to add and remove destinations to the
     in-memory dispatcher list.
-    - [https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#dispatcher.r.add](https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#dispatcher.r.add)
-    - [https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#dispatcher.r.remove](https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#dispatcher.r.remove)
+  - [https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#dispatcher.r.add](https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#dispatcher.r.add)
+  - [https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#dispatcher.r.remove](https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#dispatcher.r.remove)
 - Add a new flag 16 (1\<\<4) to the cfg syntax for destinations with
     host not having A/AAAA record.
-    - [https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#idm1021190300](https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#idm1021190300)
+  - [https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#idm1021190300](https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#idm1021190300)
 - Add a new parameter reload_delta to limit the frequency of rpc
     reload commands to try to avoid races of parallel reload operations.
-    - [https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#dispatcher.p.reload_delta](https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#dispatcher.p.reload_delta)
+  - [https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#dispatcher.p.reload_delta](https://www.kamailio.org/docs/modules/devel/modules/dispatcher.html#dispatcher.p.reload_delta)
 
 ### dialplan
 
@@ -130,10 +130,10 @@ data that becomes available inside the event route via $evr(data).
 
 - New param query_result, control if the http_client_query() returns
     only the first line or the entire result.
-    - [https://kamailio.org/docs/modules/devel/modules/http_client.html#http_client.p.query_result](https://kamailio.org/docs/modules/devel/modules/http_client.html#http_client.p.query_result)
+  - [https://kamailio.org/docs/modules/devel/modules/http_client.html#http_client.p.query_result](https://kamailio.org/docs/modules/devel/modules/http_client.html#http_client.p.query_result)
 - New param query_maxdatasize, set the maximum size to be downloaded
     for http_client_query() result
-    - [https://kamailio.org/docs/modules/devel/modules/http_client.html#http_client.p.query_maxdatasize](https://kamailio.org/docs/modules/devel/modules/http_client.html#http_client.p.query_maxdatasize)
+  - [https://kamailio.org/docs/modules/devel/modules/http_client.html#http_client.p.query_maxdatasize](https://kamailio.org/docs/modules/devel/modules/http_client.html#http_client.p.query_maxdatasize)
 
 ### imc
 
@@ -150,7 +150,7 @@ this module.
     and sha1, the default algorithm is sha1.
 - Additional initial TCP support and support for multiple TCP
     connections were added.
-    - [https://www.kamailio.org/docs/modules/devel/modules/ims_ipsec_pcscf.html](https://www.kamailio.org/docs/modules/devel/modules/ims_ipsec_pcscf.html)
+  - [https://www.kamailio.org/docs/modules/devel/modules/ims_ipsec_pcscf.html](https://www.kamailio.org/docs/modules/devel/modules/ims_ipsec_pcscf.html)
 
 ### ims_registrar_pcscf
 
@@ -214,13 +214,13 @@ IP.
 - New pseudo-variable $rcv(key), available inside
     `event_route[core:msg-received]` to get details of the received
     message.
-    - [https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#received_data_attributes](https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#received_data_attributes)
+  - [https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#received_data_attributes](https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#received_data_attributes)
 - New pseudo-variable $TV(Fn) - formatted time with microseconds
     YYYY-MM-DD HH:MM:SS.UUUUUU. Current time in human readable format
     with microseconds precission.
-    - [https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#tv_name](https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#tv_name)
+  - [https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#tv_name](https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#tv_name)
 - added {s.count,c} transformation
-    - [https://www.kamailio.org/wiki/cookbooks/devel/transformations#scount_c](https://www.kamailio.org/wiki/cookbooks/devel/transformations#scount_c)
+  - [https://www.kamailio.org/wiki/cookbooks/devel/transformations#scount_c](https://www.kamailio.org/wiki/cookbooks/devel/transformations#scount_c)
 - Increase the internal buffer size for variables and transformations
 
 ### janssonrpcc
@@ -275,16 +275,16 @@ Add a new rpc command rls.update_subs.
 
 - Introduce additional hashing algorithm SHA1 over callid for better
     distribution among nodes.
-    - [https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.p.hash_algo](https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.p.hash_algo)
+  - [https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.p.hash_algo](https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.p.hash_algo)
 - Add play_media() and stop_media() functions, also includes addition
     of the $media_duration pseudo-variable, as well as several code
     cleanups and simplifications.
-    - [https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.f.play_media](https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.f.play_media)
-    - [https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.f.stop_media](https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.f.stop_media)
-    - [https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.p.media_duration](https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.p.media_duration)
+  - [https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.f.play_media](https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.f.play_media)
+  - [https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.f.stop_media](https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.f.stop_media)
+  - [https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.p.media_duration](https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.p.media_duration)
 - Add start_forwarding() and stop_forwarding() functions.
-    - [https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.f.start_forwarding](https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.f.start_forwarding)
-    - [https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.f.stop_forwarding](https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.f.stop_forwarding)
+  - [https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.f.start_forwarding](https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.f.start_forwarding)
+  - [https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.f.stop_forwarding](https://www.kamailio.org/docs/modules/devel/modules/rtpengine.html#rtpengine.f.stop_forwarding)
 - Add support for trickle ICE SDP fragments, add support for explicit
     load balancing options and add support for via-branch=extra option.
 
@@ -306,16 +306,16 @@ sip_trace
 
 - Add new pseudo-variables: `$ltt(key)` - return local generated to tag
     when Kamailio sends a reply.
-    - [https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#ltt_key_-_local_to-tag](https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#ltt_key_-_local_to-tag)
+  - [https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#ltt_key_-_local_to-tag](https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#ltt_key_-_local_to-tag)
 - Add configuration parameter to add path and flags to redirected
     contacts.
-    - [https://www.kamailio.org/docs/modules/devel/modules/sl.html#rich_redirect](https://www.kamailio.org/docs/modules/devel/modules/sl.html#rich_redirect)
+  - [https://www.kamailio.org/docs/modules/devel/modules/sl.html#rich_redirect](https://www.kamailio.org/docs/modules/devel/modules/sl.html#rich_redirect)
 
 ### sqlops
 
 - Add a new parameter connect_mode, option to start even when
     connecting to db fails.
-    - [https://www.kamailio.org/docs/modules/devel/modules/sqlops.html#sqlops.p.connect_mode](https://www.kamailio.org/docs/modules/devel/modules/sqlops.html#sqlops.p.connect_mode)
+  - [https://www.kamailio.org/docs/modules/devel/modules/sqlops.html#sqlops.p.connect_mode](https://www.kamailio.org/docs/modules/devel/modules/sqlops.html#sqlops.p.connect_mode)
 - Add a limit of maximum 32 result containers to prevent using too
     much memory
 
@@ -332,8 +332,8 @@ the index of matched token.
 - Add support for unique identifier PVs and select:
     $tls_peer_subject_uid and $tls_my_subject_uid, new selects: uid,
     uniqueIdentifier and unique_identifier.
-    - [https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#tls_peer_subject_uid](https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#tls_peer_subject_uid)
-    - [https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#tls_my_subject_uid](https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#tls_my_subject_uid)
+  - [https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#tls_peer_subject_uid](https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#tls_peer_subject_uid)
+  - [https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#tls_my_subject_uid](https://www.kamailio.org/wiki/cookbooks/devel/pseudovariables#tls_my_subject_uid)
 - Add workaround for new OpenSSL 1.1, preloaded library. This is a
     workaround for OpenSSL >= 1.1 which uses internal locking and
     doesn't support locks in memory shared across multiple processes.
@@ -342,10 +342,10 @@ the index of matched token.
 
 - Added t_get_status_code() function to return the status code of the
     transaction - the sip response code.
-    - [https://www.kamailio.org/docs/modules/devel/modules/tm.html#tm.f.t_get_status_code](https://www.kamailio.org/docs/modules/devel/modules/tm.html#tm.f.t_get_status_code)
+  - [https://www.kamailio.org/docs/modules/devel/modules/tm.html#tm.f.t_get_status_code](https://www.kamailio.org/docs/modules/devel/modules/tm.html#tm.f.t_get_status_code)
 - Add configuration parameter to add path and flags to redirected
     contacts.
-    - [https://www.kamailio.org/docs/modules/devel/modules/tm.html#tm.p.rich_redirect](https://www.kamailio.org/docs/modules/devel/modules/tm.html#tm.p.rich_redirect)
+  - [https://www.kamailio.org/docs/modules/devel/modules/tm.html#tm.p.rich_redirect](https://www.kamailio.org/docs/modules/devel/modules/tm.html#tm.p.rich_redirect)
 - Removal of obselete delete_timer parameter - it was not used since a
     long time
 - Improve from-tags to include more randomness and use the recommended
@@ -362,12 +362,12 @@ Add a new function t_drop(\[rcode\])
 
 - New modparam reg_gc_interval, to define a value for garbage
     collection interval
-    - [https://www.kamailio.org/docs/modules/devel/modules/uac.html#uac.p.reg_gc_interval](https://www.kamailio.org/docs/modules/devel/modules/uac.html#uac.p.reg_gc_interval)
+  - [https://www.kamailio.org/docs/modules/devel/modules/uac.html#uac.p.reg_gc_interval](https://www.kamailio.org/docs/modules/devel/modules/uac.html#uac.p.reg_gc_interval)
 - New modparam default_socket, to define a default socket for sending
     registrations and requests out
-    - [https://www.kamailio.org/docs/modules/devel/modules/uac.html#uac.p.default_socket](https://www.kamailio.org/docs/modules/devel/modules/uac.html#uac.p.default_socket)
+  - [https://www.kamailio.org/docs/modules/devel/modules/uac.html#uac.p.default_socket](https://www.kamailio.org/docs/modules/devel/modules/uac.html#uac.p.default_socket)
 - Extension in uacreg table, to specify a socket per table entry
-    - [https://www.kamailio.org/docs/modules/devel/modules/uac.html#idm574](https://www.kamailio.org/docs/modules/devel/modules/uac.html#idm574)
+  - [https://www.kamailio.org/docs/modules/devel/modules/uac.html#idm574](https://www.kamailio.org/docs/modules/devel/modules/uac.html#idm574)
 - The uac_replace_from/uac_replace_to function (with dialog storage
     option) will now also work properly after a restart from Kamailio,
     if dialog data is stored in a database.
@@ -375,9 +375,9 @@ Add a new function t_drop(\[rcode\])
     store and restore the Display Name with the dialog storage option.
 - New functionality to force a default socket for register and request
     sending
-    - [https://kamailio.org/docs/modules/devel/modules/uac.html#uac.p.default_socket](https://kamailio.org/docs/modules/devel/modules/uac.html#uac.p.default_socket)
+  - [https://kamailio.org/docs/modules/devel/modules/uac.html#uac.p.default_socket](https://kamailio.org/docs/modules/devel/modules/uac.html#uac.p.default_socket)
 - New functionality to force a custom socket for register requests
-    - [https://kamailio.org/docs/modules/devel/modules/uac.html#idm612](https://kamailio.org/docs/modules/devel/modules/uac.html#idm612)
+  - [https://kamailio.org/docs/modules/devel/modules/uac.html#idm612](https://kamailio.org/docs/modules/devel/modules/uac.html#idm612)
 - Use auth_ha1 field if set for remote registrations, to allow
     registration without plain-text password in database
 
@@ -418,21 +418,21 @@ modules were added.
     also IPv6 link local addresses by discovering the scope of the
     interface. This apply for UDP socket for now, to be added for the
     other protocols.
-    - [https://www.kamailio.org/wiki/cookbooks/devel/core#bind_ipv6_link_local](https://www.kamailio.org/wiki/cookbooks/devel/core#bind_ipv6_link_local)
+  - [https://www.kamailio.org/wiki/cookbooks/devel/core#bind_ipv6_link_local](https://www.kamailio.org/wiki/cookbooks/devel/core#bind_ipv6_link_local)
 - Introduce new configuration parameter tcp_accept_haproxy parameter.
     When active, inbound TCP connections are expected to behave
     according to the HAProxy protocol. Both the v1 (human-readable) and
     v2 (binary) versions of the protocol are supported.
-    - [https://www.kamailio.org/wiki/cookbooks/devel/core#tcp_accept_haproxy](https://www.kamailio.org/wiki/cookbooks/devel/core#tcp_accept_haproxy)
+  - [https://www.kamailio.org/wiki/cookbooks/devel/core#tcp_accept_haproxy](https://www.kamailio.org/wiki/cookbooks/devel/core#tcp_accept_haproxy)
 - Added latency_limit_cfg global parameter to print execution time for
     configuration script only if it exceeds this value. It is printed to
     latency_cfg_log level, another added parameter.
-    - [https://www.kamailio.org/wiki/cookbooks/devel/core#latency_limit_action](https://www.kamailio.org/wiki/cookbooks/devel/core#latency_limit_action)
-    - [https://www.kamailio.org/wiki/cookbooks/devel/core#latency_cfg_log](https://www.kamailio.org/wiki/cookbooks/devel/core#latency_cfg_log)
+  - [https://www.kamailio.org/wiki/cookbooks/devel/core#latency_limit_action](https://www.kamailio.org/wiki/cookbooks/devel/core#latency_limit_action)
+  - [https://www.kamailio.org/wiki/cookbooks/devel/core#latency_cfg_log](https://www.kamailio.org/wiki/cookbooks/devel/core#latency_cfg_log)
 - New core parameter tcp_accept_unique
-    - [https://www.kamailio.org/wiki/cookbooks/devel/core#tcp_accept_unique](https://www.kamailio.org/wiki/cookbooks/devel/core#tcp_accept_unique)
+  - [https://www.kamailio.org/wiki/cookbooks/devel/core#tcp_accept_unique](https://www.kamailio.org/wiki/cookbooks/devel/core#tcp_accept_unique)
 - New core parameter tcp_connection_match
-    - [https://www.kamailio.org/wiki/cookbooks/devel/core#tcp_connection_match](https://www.kamailio.org/wiki/cookbooks/devel/core#tcp_connection_match)
+  - [https://www.kamailio.org/wiki/cookbooks/devel/core#tcp_connection_match](https://www.kamailio.org/wiki/cookbooks/devel/core#tcp_connection_match)
 
 ### Functions
 

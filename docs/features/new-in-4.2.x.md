@@ -77,7 +77,7 @@ code repository.*\</fc>
     header
 - added the cdr_expired_dlg_enable module parameter to toggle on/off
     the cdr writing feature (default is off=0)
-    - if enabled, only the dlg_vars in the cdr_extra will get printed
+  - if enabled, only the dlg_vars in the cdr_extra will get printed
         on dialog expiry; the other parameters' values in the cdr extra
         will be left empty
 
@@ -105,7 +105,7 @@ code repository.*\</fc>
 
 - new flag for auth_check() to skip caller id check for forwarding
     requests
-    - caller id check is skipped for INVITE, BYE, PRACK, UPDATE,
+  - caller id check is skipped for INVITE, BYE, PRACK, UPDATE,
         MESSAGE -- these requests can come with an anonymous caller id
 - load_credentials defaults now to empty list (null value)
 
@@ -125,15 +125,15 @@ code repository.*\</fc>
 
 - corex.shm_status and corex.shm_summary rpc commands
 - new function send_data(uri, data)
-    - send arbitrary formatted data to uri
-    - uri param has to be a valid sip uri
-    - both parameters can include pseudo-variables
+  - send arbitrary formatted data to uri
+  - uri param has to be a valid sip uri
+  - both parameters can include pseudo-variables
 - functions for management of msg internal flags
-    - msg_iflag_set("flagname")
-    - msg_iflag_reset("flagname")
-    - msg_iflag_is_set("flagname")
-    - flagname can be: USE_UAC_FROM, USE_UAC_TO or UAC_AUTH
-    - these functions should not be used in configuration file for
+  - msg_iflag_set("flagname")
+  - msg_iflag_reset("flagname")
+  - msg_iflag_is_set("flagname")
+  - flagname can be: USE_UAC_FROM, USE_UAC_TO or UAC_AUTH
+  - these functions should not be used in configuration file for
         (re)setting the flags, those are done by various functions
         internally, however, in very particular cases they might be
         useful (e.g., changing From/To via textops functions)
@@ -172,7 +172,7 @@ code repository.*\</fc>
 
 - added parameter and dialog property to disable timeout reset
 - option to run dialog main timer tasks via dedicated process
-    - timer_procs - new parameter, if set to 1, a dedicated timer
+  - timer_procs - new parameter, if set to 1, a dedicated timer
         process is used, if set to 0 (default), the core timer is used
         (existing behavior)
 - if ACK for 200ok is not coming in 60sec, dialog lifetime is
@@ -186,19 +186,19 @@ code repository.*\</fc>
 - added cleanup of expired remote profiles via internal timer
 - new config function - dlg_remote_profile - dlg_remote_profile(cmd,
     profile, value, uid, expires
-    - manage non-local profiles from configuration file
-    - cmd can be add (insert a remote profile) and rm (remove a remote
+  - manage non-local profiles from configuration file
+  - cmd can be add (insert a remote profile) and rm (remove a remote
         profile)
 - allow '\_' in dlg profile names
 - replicate profiles to other nodes via dmq module
 - add option to increment cseq upon local authentication to next hop
-    - feature has to be enabled via module parameter
+  - feature has to be enabled via module parameter
         track_cseq_updates
-    - it does it only for downstream direction (requests from caller
+  - it does it only for downstream direction (requests from caller
         and callee, as it is the typical use case of calling via a
         provider, after authenticating the caller locally, provider asks
         for another 'trunk' authentication
-    - diff of cseq value is stored in dialog var named 'cseq_diff',
+  - diff of cseq value is stored in dialog var named 'cseq_diff',
         therefore be sure it is not overwritten from config
 
 ### dialog_ng
@@ -211,16 +211,16 @@ code repository.*\</fc>
 - ds_select_dst/domain can take args as string (not only int) -
     internal conversion of string->int (if possible)
 - new variant - ds_is_from_list(groupid, mode, uri)
-    - can match against records in dispatcher groups
-    - if groupid==1 - will match against all groups
-    - if uri is empty, then will match against source address (ip,
+  - can match against records in dispatcher groups
+  - if groupid==1 - will match against all groups
+  - if uri is empty, then will match against source address (ip,
         port, proto). Otherwise it has to be a full SIP URI value. The
         matching is not taking in consideration any parameter apart of
         transport
-        - mode is a bitmask to tell the matching rules
-            - if it is 0, will match everything: ip, port and protocol
-            - if bit one is set, will skip matching the port
-            - if bit two is set, will skip matching the protocol
+    - mode is a bitmask to tell the matching rules
+      - if it is 0, will match everything: ip, port and protocol
+      - if bit one is set, will skip matching the port
+      - if bit two is set, will skip matching the protocol
 
 ### dmq
 
@@ -235,20 +235,20 @@ code repository.*\</fc>
 ### htable
 
 - add event route when htable entries expire
-    - event_route\[htable:expired:\<table>\] called when an entry
+  - event_route\[htable:expired:\<table>\] called when an entry
         expires
-    - pseudo-vars $shtrecord(key) and $shtrecord(value) access the
+  - pseudo-vars $shtrecord(key) and $shtrecord(value) access the
         expired content
 - new config function sht_reset("tname") - remove all items in the
     hash table
 - iterator implementation for hash tables
-    - new functions:
-        - sht_iterator_start(iname, hname)
-        - sht_iterator_next(iname)
-        - sht_iterator_end(iname)
-    - the current item in the iterator is accessible via:
-        - $shtitkey(iname)
-        - $shtitval(iname)
+  - new functions:
+    - sht_iterator_start(iname, hname)
+    - sht_iterator_next(iname)
+    - sht_iterator_end(iname)
+  - the current item in the iterator is accessible via:
+    - $shtitkey(iname)
+    - $shtitval(iname)
 
 ### ims_auth
 
@@ -266,7 +266,7 @@ code repository.*\</fc>
 - new modparam hashing_type - hash storage based on IP:PORT
 - new exported function pcscf_assert_called_identity() - used to
     assert the identity for SIP responses
-    - function retrieves Called-Party-ID AVP from SIP request and adds
+  - function retrieves Called-Party-ID AVP from SIP request and adds
         to SIP response as P-Asserted-Identity as per TS 24.229 section
         5.2.6.4.4
 - new param ue_unsubscribe_on_dereg: for UEs that do no send
@@ -312,11 +312,11 @@ code repository.*\</fc>
 ### ipops
 
 - new pv to get hostname details:
-    - $HN(n) - hostname
-    - $HN(d) - domain
-    - $HN(f) - fullname
-    - $HN(i) - ip address
-    - based on gethsontname and resolving it
+  - $HN(n) - hostname
+  - $HN(d) - domain
+  - $HN(f) - fullname
+  - $HN(i) - ip address
+  - based on gethsontname and resolving it
 
 ### kex
 
@@ -345,7 +345,7 @@ code repository.*\</fc>
 ### mtree
 
 - added 'multi' param to mtree definition
-    - new 'multi' param makes it possible to store both integer and
+  - new 'multi' param makes it possible to store both integer and
         string typed mtrees into single db table
 - added mi/rpc command to match against records in memory trees
 - store reload count and timestamp for trees - print these details via
@@ -364,14 +364,14 @@ code repository.*\</fc>
 
 - run timer at 1000ms - proper execution on timer_interval
 - added pl_check(pipeid, alg, limit)
-    - when alg and limit parameters are given, pl_check() creates the
+  - when alg and limit parameters are given, pl_check() creates the
         pipe if it doesn't exists
-    - if exists, then no change is done to existing pipe (alg and
+  - if exists, then no change is done to existing pipe (alg and
         limit are not changed)
 - added hash_size parameter
-    - can be used to set the number of slots for the internal hash
+  - can be used to set the number of slots for the internal hash
         table, which is computed as 2^hash_size (aka 1\<\<hash_size)
-    - default is 6 (2^6 = 64 slots)
+  - default is 6 (2^6 = 64 slots)
 - option disable database loading - if db url or table name are empty,
     skip loading pipes from db
 
@@ -393,14 +393,14 @@ code repository.*\</fc>
 
 - added sha256, sha384 and sha512 string transformations
 - new variables - $expires(min) and $expires(max)
-    - return the min and max of expires value for sip message
-    - contact headers are checked with higher priority, if no expires
+  - return the min and max of expires value for sip message
+  - contact headers are checked with higher priority, if no expires
         parameter there, then Expires header is used
-    - if none is found, $null is returned
+  - if none is found, $null is returned
 - added pseudo-variable ($aa) for access to algorithm in authorization
     header
 - new variable $su to return source address in uri format
-    - $su is expanded "<sip:$si:$sp;transport=$pr>" - example:
+  - $su is expanded "<sip:$si:$sp;transport=$pr>" - example:
         "<sip:127.0.0.1:5060;transport=udp>"
 
 ### registrar
@@ -449,7 +449,7 @@ code repository.*\</fc>
 ### siptrace
 
 - adds optional addr param to sip_trace()
-    - address is a SIP uri which specifies the address of the
+  - address is a SIP uri which specifies the address of the
         capturing server. This parameter trumps duplicate_uri and allows
         tracing to more than one server.
 - added force_send_sock parameter - the local interface in form of SIP
@@ -458,9 +458,9 @@ code repository.*\</fc>
 ### sqlops
 
 - new cfg function - sql_query_asycn(con, sql)
-    - execute sql statement via async raw query, if implemented by db
+  - execute sql statement via async raw query, if implemented by db
         driver module (e.g., db_mysql
-    - the query is executed in another process and result is not
+  - the query is executed in another process and result is not
         available back to config, thus it should be used only for sql
         statements that don't return values (e.g., insert, delete,
         update...)
@@ -468,9 +468,9 @@ code repository.*\</fc>
 ### textops
 
 - new functions to manage multipart bodies:
-    - set_body_multipart(\[txt,content_type\]\[,boundary\])
-    - append_body_part(txt,content_type\[, content_disposition\])
-    - remove_body_part(content_type)
+  - set_body_multipart(\[txt,content_type\]\[,boundary\])
+  - append_body_part(txt,content_type\[, content_disposition\])
+  - remove_body_part(content_type)
 
 ### textopsx
 
@@ -512,16 +512,16 @@ code repository.*\</fc>
 ### uac
 
 - enhancements to remote registration
-    - new rpc commands:
-        - reload records from database
-        - enable/disable a record for remote registration
-        - refresh details of a record from database or add a new one
+  - new rpc commands:
+    - reload records from database
+    - enable/disable a record for remote registration
+    - refresh details of a record from database or add a new one
 - mark request with FL_UAC_AUTH upon using uac_auth()
 
 ### userblacklist
 
 - added check_whitelist function
-    - check_whitelist(string table) finds the longest prefix that
+  - check_whitelist(string table) finds the longest prefix that
         matches the request URI for the given table and returns true if
         the match is set to whitelist
 
@@ -530,12 +530,12 @@ code repository.*\</fc>
 - generate callid at startup and increase cseq for records added via
     mi/rpc commands
 - option to set datetime columns as bigint
-    - should handle better daylight shifting
-    - new parameter expires_type - if set to 1, it expects expires and
+  - should handle better daylight shifting
+  - new parameter expires_type - if set to 1, it expects expires and
         last modified columns to be bigint
-    - the change to the type of columns has to be done manually to the
+  - the change to the type of columns has to be done manually to the
         database server
-    - default values is 0, expecting to work with datetime columns
+  - default values is 0, expecting to work with datetime columns
         (existing behavior)
 - new parameter db_raw_fetch_type - specify what type of query should
     be used in DB-only mode for retrieving contacts for specific needs
@@ -563,28 +563,28 @@ code repository.*\</fc>
 - dns_naptr_ignore_rfc - new parameter to control the order field in
     NAPTR, as required by RFC 2915
 - -f parameter can take the value '-' to read config from stdin
-    - allows piping the config from various sources (e.g., downloading
+  - allows piping the config from various sources (e.g., downloading
         from web)
-    - example: cat /etc/kamailio/kamailio.cfg \| /usr/sbin/kamailio
+  - example: cat /etc/kamailio/kamailio.cfg \| /usr/sbin/kamailio
         -f -
 - L_NPRL aliased to L_ALERT-1 to allow printing messages without
     level name
-    - new defines LM_NPRL() and NPRL() are using it
+  - new defines LM_NPRL() and NPRL() are using it
 - new maro LOG\_\_(...) to allow overwriting default name for log
     level
 - LOG_LN() new macro to print log messages overwriting log level name
 - new global parameter max_recursive_level
-    - replace define ROUTE_MAX_REC_LEV with config paramter
-    - number of allowed recursive levels can be set in config no
-    - it affects calls of route blocks and chained if { ... } else if
+  - replace define ROUTE_MAX_REC_LEV with config paramter
+  - number of allowed recursive levels can be set in config no
+  - it affects calls of route blocks and chained if { ... } else if
         { ... } else ...
 - framework for creating asynchronous pool of workers
-    - dedicated group of processes that can get tasks from other
+  - dedicated group of processes that can get tasks from other
         processes via memory pipe
-    - react immediately, no time based polling
+  - react immediately, no time based polling
 - async_workers - new core parameter
-    - specify how many processes to create for async framework
-    - default is 0 (asyn framework disabled)
+  - specify how many processes to create for async framework
+  - default is 0 (asyn framework disabled)
 - DBG_SYS_MALLOC can be set to get verbose mem ops with system
     allocator - PKG_MEMORY has to be undefined in Makefile.defs
 - mem/f_malloc: link previous free fragment to speed up join/defrag
@@ -599,7 +599,7 @@ code repository.*\</fc>
     sruid was initialized by same process and if not, triggers a
     reinit - pid is stored inside the sruid struct
 - call onsend_route for replies
-    - onsend_route_reply - parameter to control if onsend_route is
+  - onsend_route_reply - parameter to control if onsend_route is
         executed for forwarded replies
 - return OK as string for a successful dns.delete rpc command
 - new internal msg flag - FL_UAC_AUTH - to mark requests that had
@@ -608,10 +608,10 @@ code repository.*\</fc>
 - allow up to three callback functions for net_data_in and
     net_data_out
 - new parameter - log_prefix
-    - can be used to set what prefix to be printed for each log
+  - can be used to set what prefix to be printed for each log
         message while processing a SIP message
-    - can contain variables
-    - example: log_prefix="\[$mt $hdr(CSeq) $ci\]"
+  - can contain variables
+  - example: log_prefix="\[$mt $hdr(CSeq) $ci\]"
 - add received parameter to via if rport parameter is present -
     required by RFC3581, section 4
 

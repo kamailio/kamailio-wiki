@@ -87,7 +87,7 @@ see what was new in that release at:** \</fc>
 ### carrierroute
 
 - addind db_load_description parameter
-    - toggle on/off loading in memory the description column in the
+  - toggle on/off loading in memory the description column in the
         carrierroute/carrierfailureroute database tables. This reduces
         the shared memory used by the module
 
@@ -110,12 +110,12 @@ see what was new in that release at:** \</fc>
 ### corex
 
 - added file_read() and file_write() functions
-    - file_read(fpath, var) - read content of a text file into a
+  - file_read(fpath, var) - read content of a text file into a
         variable
-    - file_write(fpat, content) - write content of parameter to a text
+  - file_write(fpat, content) - write content of parameter to a text
         file
 - added corex.pkg_summary command
-    - dump pkg usage summary to syslog for a specific pid or process
+  - dump pkg usage summary to syslog for a specific pid or process
         index
 
 <!-- -->
@@ -126,8 +126,8 @@ see what was new in that release at:** \</fc>
 ### ctl
 
 - increased default buffers size for rpc responses
-    - binrpc_max_body_size = 32
-    - binrpc_struct_max_body_size = 8
+  - binrpc_max_body_size = 32
+  - binrpc_struct_max_body_size = 8
 - support for u specifier (unsigned int)
 
 ### db_text
@@ -167,23 +167,23 @@ see what was new in that release at:** \</fc>
     rweight is in the integer range from 1 to 100
 - added new probing_mode=3 to always probe flagged gateways
 - ds_timer_mode - new param to specify the timer proc
-    - if set to 0 (default), main timer is used
-    - if set to 1, secondary timer is used
+  - if set to 0 (default), main timer is used
+  - if set to 1, secondary timer is used
 - rpc command dispatcher.ping_active
-    - manage global pinging state (send or not the keepalive to
+  - manage global pinging state (send or not the keepalive to
         destinations)
-    - kamcmd dispatcher.ping_active 0 - don't send keepalive requests
-    - kamcmd dispatcher.ping_active 1 - send keepalive requests
-    - default value is 1
+  - kamcmd dispatcher.ping_active 0 - don't send keepalive requests
+  - kamcmd dispatcher.ping_active 1 - send keepalive requests
+  - default value is 1
 
 ### dmq_usrloc
 
 - implement deleted contact replication
 - new param sync - control sync'ing all contacts at startup
-    - default 1 - require sync'ing of all contacts at startup, set to
+  - default 1 - require sync'ing of all contacts at startup, set to
         0 to disable
 - support for throttling sync of all usrloc records
-    - batch_size and batch_usleep parameters can control how many
+  - batch_size and batch_usleep parameters can control how many
         records can be sent out at once, after that sleep for
         batch_usleep microseconds before sending the next batch
 
@@ -199,7 +199,7 @@ see what was new in that release at:** \</fc>
 ### enum
 
 - single digit is now valid in function enum_query
-    - is_e164() returns true for a single digit (previously two
+  - is_e164() returns true for a single digit (previously two
         digits)
 
 ### evapi
@@ -211,14 +211,14 @@ see what was new in that release at:** \</fc>
 - improved error message when loading from database
 - htable.dump - added the type of the value to the result
 - allow specifying column names per hash table
-    - at least two columns must be specified, first is the one
+  - at least two columns must be specified, first is the one
         corresponding to key_name
-    - the values of following columns are concatenated with a comma
+  - the values of following columns are concatenated with a comma
         delimiter
-    - columns can be specified with cols attribute in htable
+  - columns can be specified with cols attribute in htable
         definition and they must be enclosed in quotes in order to be a
         valid sip parameter value and be separated by comma
-    - don't sync back to db when cols per htable is set
+  - don't sync back to db when cols per htable is set
 
 <!-- -->
 
@@ -286,7 +286,7 @@ see what was new in that release at:** \</fc>
 
 - support VERSION_NODATE and VERSION_DATE for reproducible builds
 - per module memory statistics when in debugging mode
-    - return details about memory used by each module via rpc commands
+  - return details about memory used by each module via rpc commands
 
 ### lcr
 
@@ -302,11 +302,11 @@ see what was new in that release at:** \</fc>
 - allow for larger (max 64) prefix values to be used (e.g., case of
     uuid, ipv6)
 - allow specifying column names per tree
-    - at least two columns must be specified, first is the one
+  - at least two columns must be specified, first is the one
         corresponding to tprefix
-    - if more than two, then the values of those columns are
+  - if more than two, then the values of those columns are
         concatenated with a comma delimiter
-    - columns can be specified with cols attribute in mtree definition
+  - columns can be specified with cols attribute in mtree definition
         and they must be enclosed in quotes in order to be a valid sip
         parameter value and be separated by comma
 
@@ -330,12 +330,12 @@ see what was new in that release at:** \</fc>
 ### permissions
 
 - match trusted rules considering priority and regexp over r-uri
-    - two new columns to set priority of the rule as well as regular
+  - two new columns to set priority of the rule as well as regular
         expression matching over r-uri
 - max_subnets - new parameter
-    - specify the max size for address subnets array, default value:
+  - specify the max size for address subnets array, default value:
         512
-    - if there are more subnet records in address tables than the
+  - if there are more subnet records in address tables than the
         value of max_subnets, increase it
 
 ### presence
@@ -349,13 +349,13 @@ see what was new in that release at:** \</fc>
 ### presence_xml
 
 - added optional param force_dummy_presence
-    - module parameter to send empty presence notify body when there
+  - module parameter to send empty presence notify body when there
         isn't any record in presentity
 
 ### pua_dialoginfo
 
 - support for sending "Trying" state for callee
-    - implemented callee_trying parameter in pua_dialoginfo which
+  - implemented callee_trying parameter in pua_dialoginfo which
         causes a "Trying" state to be sent for both the caller and
         callee when a new dialog is created
 
@@ -369,14 +369,14 @@ see what was new in that release at:** \</fc>
 - **pv_var_to_xavp** script function to copy $var values to $xavp
 - transformation to remove all non-numeric parts of a string
 - add auth digest pseudo variables
-    - $adn - auth nonce
-    - $adc - auth cnonce
-    - $adr - auth response
-    - $ado - auth opaque
+  - $adn - auth nonce
+  - $adc - auth cnonce
+  - $adr - auth response
+  - $ado - auth opaque
 - pv_var_to_xavp() - copy script variables values to xavps
 - added $utime and $utimef pv's to retrieve time in UTC
-    - $utime is the UTC equivalent to $time for localtime
-    - $utimef is the UTC equivalent to $timef for localtime
+  - $utime is the UTC equivalent to $time for localtime
+  - $utimef is the UTC equivalent to $timef for localtime
 - $snd(sproto) returns sending protocol as string
 
 ### registrar
@@ -408,9 +408,9 @@ see what was new in that release at:** \</fc>
     deactivated rtpengine nodes via kamctl i.e. "disabled(permanent)"
     nodes
 - added setid_default modparam - option to change the default set id.
-    - if setid_avp is configured, the active set used is the avp
+  - if setid_avp is configured, the active set used is the avp
         value.
-    - if setid_avp is not configured, the active set used is
+  - if setid_avp is not configured, the active set used is
         setid_default value
 - added kamctl nh_reload_rtpp - mi command to allow reload from
     database node table
@@ -429,7 +429,7 @@ see what was new in that release at:** \</fc>
 ### siptrace
 
 - new parameter trace_mode
-    - if set to 1, is using the SREV_NET_DATA_SEND event for sending
+  - if set to 1, is using the SREV_NET_DATA_SEND event for sending
         HEP packets to sipcapture server for packets sent to the network
 
 ### sipt
@@ -440,9 +440,9 @@ see what was new in that release at:** \</fc>
 
 - exported $pcv(name) variable for P-Charging-Vector header and
     sip_p\_charging_vector() function
-    - $pcv(all) = whole field
-    - $pcv(value) = icid-value field (see RFC3455 section 5.6)
-    - $pcv(genaddr) = icid-generated-at field (see RFC3455 section
+  - $pcv(all) = whole field
+  - $pcv(value) = icid-value field (see RFC3455 section 5.6)
+  - $pcv(genaddr) = icid-generated-at field (see RFC3455 section
         5.6)
 
 ### sst
@@ -466,8 +466,8 @@ see what was new in that release at:** \</fc>
 ### textops
 
 - new functions to get part of a multipart body
-    - get_body_part() - return only the body part content
-    - get_body_part_raw() - get body part with headers and boundary
+  - get_body_part() - return only the body part content
+  - get_body_part_raw() - get body part with headers and boundary
 
 ### textopsx
 
@@ -477,12 +477,12 @@ see what was new in that release at:** \</fc>
 ### tls
 
 - option to match TLS client config profile based on server_id
-    - server_id can be any string that uniquely identifies a client
+  - server_id can be any string that uniquely identifies a client
         config profile, overriding the attempt to match on ip:port
         (+sni). This makes it easier to select the desired config
         profile, because the port is hard to guess for stream
         connections
-    - prameter xavp_cfg has to be enabled and inner xavp 'server_id'
+  - prameter xavp_cfg has to be enabled and inner xavp 'server_id'
         has to be set before relaying the sip message (before opening
         the client connection)
 
@@ -515,8 +515,8 @@ see what was new in that release at:** \</fc>
 
 - uac.reg_dump returns an array rpc result
 - uacreg table has two new columns - flags, reg_delay
-    - store the flags for runtime behavior
-    - delay intial registration (allow to spread registrations over an
+  - store the flags for runtime behavior
+  - delay intial registration (allow to spread registrations over an
         interval of time, not to flood the registrar at the same time)
 
 ### usrloc
@@ -528,7 +528,7 @@ see what was new in that release at:** \</fc>
     skip record if socket value doesn't in listening socket list when
     loading record from database
 - option to clean up database on write back/through modes
-    - enabled by db_timer_clean parameter
+  - enabled by db_timer_clean parameter
 
 ### utils
 
@@ -538,21 +538,21 @@ see what was new in that release at:** \</fc>
     trim (backward compatible); set to 1 for enabling trimming
 - new parameter http_response_mode to control what response part is
     returned
-    - if http_response_mode=0, only the first line is returned
-    - if http_response_mode=1, all the response is returned
+  - if http_response_mode=0, only the first line is returned
+  - if http_response_mode=1, all the response is returned
 
 ### websocket
 
 - added support for SIP message fragmentation
-    - websocket connections are created with a BUF_SIZE (64K) buffer
+  - websocket connections are created with a BUF_SIZE (64K) buffer
         used for concatenating frames
-    - continuation frames (fragments) are supported for the SIP
+  - continuation frames (fragments) are supported for the SIP
         sub-protocol
 
 ### xlog
 
 - convenience functions for various log levels
-    - xinfo(), xnotice(), xwarn(), xerr(), xbug(), xcrit(), xalert()
+  - xinfo(), xnotice(), xwarn(), xerr(), xbug(), xcrit(), xalert()
 
 ## New in Core
 
@@ -569,9 +569,9 @@ see what was new in that release at:** \</fc>
 - name of the structure exported by a module can be prefixed with
     module name
 - added framework to allow replacing logging to syslog
-    - this enables a module to replace all logging to syslog with
+  - this enables a module to replace all logging to syslog with
         another logging mechanism
-    - it is not enabled when log_stderror=yes or the system is
+  - it is not enabled when log_stderror=yes or the system is
         detected as \_\_SUNPRO_C
 - trigger event_route execution for unexpectedly-closed and
     client-closed tcp connections
@@ -580,12 +580,12 @@ see what was new in that release at:** \</fc>
 
 - new parameter async_usleep - add option to do usleep() before
     processing async tasks
-    - could help saving cpu usage on vms with immediate interruptions
+  - could help saving cpu usage on vms with immediate interruptions
         triggered to recvfrom()
 - added parameters log_engine_type and log_engine_data
-    - can be used to specify what logging engine to be used and its
+  - can be used to specify what logging engine to be used and its
         initialization data
-    - see readme of log_custom module for a same of usage
+  - see readme of log_custom module for a same of usage
 
 ### Functions
 
@@ -601,15 +601,15 @@ see what was new in that release at:** \</fc>
 ### Architecture
 
 - wheel timer implementation
-    - shared by modules needing to execute timer tasks, don't want to
+  - shared by modules needing to execute timer tasks, don't want to
         interfere with main core timers, but don't do lots of operations
         to create own timer
-    - wheel timer is advertised as secondary timer
+  - wheel timer is advertised as secondary timer
 
 ### kamailio.cfg
 
 - use flag 'r' for rtpproxy if ip in sdp is not private
-    - skip learning mode, advertised media ip is routable
+  - skip learning mode, advertised media ip is routable
 
 ## Tools
 
@@ -620,6 +620,6 @@ see what was new in that release at:** \</fc>
 ### kamctl
 
 - added mongodb schema files
-    - custom json format specifying structure of collections/tables
-    - version-create.mongo - a script with mongo commands to fill the
+  - custom json format specifying structure of collections/tables
+  - version-create.mongo - a script with mongo commands to fill the
         version collection/table

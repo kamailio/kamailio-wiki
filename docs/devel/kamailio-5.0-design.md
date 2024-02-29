@@ -29,8 +29,8 @@ Goals:
     interpreter targeting high performance SIP routing deployments
 - have at least one option of a more flexible configuration language
     that allows:
-    - extended language syntax
-    - reloading routing rules at runtime
+  - extended language syntax
+  - reloading routing rules at runtime
 
 Ongoing implementation that enables writing routing blocks in Lua and
 Python as alternative to native language is documented at:
