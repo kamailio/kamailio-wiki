@@ -16,6 +16,12 @@ jobs:
       contents: read # to fetch code (actions/checkout)
     steps:
       - uses: actions/checkout@v4
+      - uses: DavidAnson/markdownlint-cli2-action@v15
+        with:
+          globs: |
+            README.md
+            docs/**/*.md
+            !fmt/
       - name: Build
         uses: Tiryoh/actions-mkdocs@v0
         with:
