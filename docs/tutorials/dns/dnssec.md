@@ -307,7 +307,7 @@ the web. Among them:
 One way to test is to setup two instances of Kamailio, one serving
 `domainA.com` and the second `domainB.com`.
 
-Then alice@domainA.com can call `bob@domainB.com`. Kamailio instance
+Then <alice@domainA.com> can call `bob@domainB.com`. Kamailio instance
 serving `domainA.com` will do DNS lookup do discover the IP address of
 `domainB.com`
 
@@ -326,7 +326,7 @@ Launch Kamailio with DNSSEC module enabled and try to send a SIP package
 to the domain `www.dnssec-failed.org`. DNS resolving for this domain
 should fail, as it is a test domain which provides an incorrect
 signature. Kamailio should report: "0(70805) INFO: dnssec
-\[dnssec_func.c:145\]: invalid domain www.dnssec-failed.org reason
+\[dnssec_func.c:145\]: invalid domain <www.dnssec-failed.org> reason
 VAL_UNTRUSTED_ANSWER"
 
 ## Remarks

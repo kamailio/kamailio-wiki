@@ -864,17 +864,17 @@
 
 | Name                                     | Module Path   | Module Name                                                                                                   |
 |------------------------------------------|---------------|---------------------------------------------------------------------------------------------------------------|
-| **uac_auth()**                           | *src/modules* | [uac](http://www.kamailio.org/docs/modules/5.0.x/src/modules/uac.html#uac.f.uac_auth())                       |
-| **uac_reg_lookup(uuid, dst)**            | *src/modules* | [uac](http://www.kamailio.org/docs/modules/5.0.x/src/modules/uac.html#uac.f.uac_reg_lookup(uuid, dst))        |
-| **uac_reg_request_to(user, mode)**       | *src/modules* | [uac](http://www.kamailio.org/docs/modules/5.0.x/src/modules/uac.html#uac.f.uac_reg_request_to(user, mode))   |
-| **uac_reg_status(uuid)**                 | *src/modules* | [uac](http://www.kamailio.org/docs/modules/5.0.x/src/modules/uac.html#uac.f.uac_reg_status(uuid))             |
+| **uac_auth()**                           | *src/modules* | [uac](http://www.kamailio.org/docs/modules/5.0.x/src/modules/uac.html#uac.f.uac_auth)                       |
+| **uac_reg_lookup(uuid, dst)**            | *src/modules* | [uac](<http://www.kamailio.org/docs/modules/5.0.x/src/modules/uac.html#uac.f.uac_reg_lookup>)        |
+| **uac_reg_request_to(user, mode)**       | *src/modules* | [uac](<http://www.kamailio.org/docs/modules/5.0.x/src/modules/uac.html#uac.f.uac_reg_request_to>)   |
+| **uac_reg_status(uuid)**                 | *src/modules* | [uac](http://www.kamailio.org/docs/modules/5.0.x/src/modules/uac.html#uac.f.uac_reg_status)             |
 | **uac_replace_from(display,uri)**        | *src/modules* | [uac](http://www.kamailio.org/docs/modules/5.0.x/src/modules/uac.html#uac.f.uac_replace_from)                 |
-| **uac_replace_from(uri)**                | *src/modules* | [uac](http://www.kamailio.org/docs/modules/5.0.x/src/modules/uac.html#uac.f.uac_replace_from(uri))            |
-| **uac_replace_to(display,uri)**          | *src/modules* | [uac](http://www.kamailio.org/docs/modules/5.0.x/src/modules/uac.html#uac.f.uac_replace_to(display,uri))      |
-| **uac_replace_to(uri)**                  | *src/modules* | [uac](http://www.kamailio.org/docs/modules/5.0.x/src/modules/uac.html#uac.f.uac_replace_to(uri))              |
-| **uac_req_send()**                       | *src/modules* | [uac](http://www.kamailio.org/docs/modules/5.0.x/src/modules/uac.html#uac.f.uac_req_send())                   |
-| **uac_restore_from()**                   | *src/modules* | [uac](http://www.kamailio.org/docs/modules/5.0.x/src/modules/uac.html#uac.f.uac_restore_from())               |
-| **uac_restore_to()**                     | *src/modules* | [uac](http://www.kamailio.org/docs/modules/5.0.x/src/modules/uac.html#uac.f.uac_restore_to())                 |
+| **uac_replace_from(uri)**                | *src/modules* | [uac](http://www.kamailio.org/docs/modules/5.0.x/src/modules/uac.html#uac.f.uac_replace_from)            |
+| **uac_replace_to(display,uri)**          | *src/modules* | [uac](http://www.kamailio.org/docs/modules/5.0.x/src/modules/uac.html#uac.f.uac_replace_to)      |
+| **uac_replace_to(uri)**                  | *src/modules* | [uac](http://www.kamailio.org/docs/modules/5.0.x/src/modules/uac.html#uac.f.uac_replace_to)              |
+| **uac_req_send()**                       | *src/modules* | [uac](http://www.kamailio.org/docs/modules/5.0.x/src/modules/uac.html#uac.f.uac_req_send)                   |
+| **uac_restore_from()**                   | *src/modules* | [uac](http://www.kamailio.org/docs/modules/5.0.x/src/modules/uac.html#uac.f.uac_restore_from)               |
+| **uac_restore_to()**                     | *src/modules* | [uac](http://www.kamailio.org/docs/modules/5.0.x/src/modules/uac.html#uac.f.uac_restore_to)                 |
 | **unforce_rtp_proxy()**                  | *src/modules* | [rtpproxy](http://www.kamailio.org/docs/modules/5.0.x/src/modules/rtpproxy.html#rtpproxy.f.unforce_rtp_proxy) |
 | **unlock(key)**                          | *src/modules* | [cfgutils](http://www.kamailio.org/docs/modules/5.0.x/src/modules/cfgutils.html#cfgutils.f.unlock)            |
 | **unlock_extra_attrs (group_id, id)**    | *src/modules* | [uid_avp_db](http://www.kamailio.org/docs/modules/5.0.x/src/modules/uid_avp_db.html)                          |
