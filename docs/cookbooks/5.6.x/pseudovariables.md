@@ -2008,12 +2008,12 @@ parameters before sending a HTTP query.
     to discover server-supported authentication methods. You may want to
     use a specific value. Valid values are:
 
-  * 1 - BASIC authentication
-  * 2 - HTTP Digest authentication
-  * 4 - GSS-Negotiate authentication
-  * 8 - NTLM authentication
-  * 16 - HTTP Digest with IE flavour.
-  * (Default value is 3 - BASIC and Digest authentication.)
+  - 1 - BASIC authentication
+  - 2 - HTTP Digest authentication
+  - 4 - GSS-Negotiate authentication
+  - 8 - NTLM authentication
+  - 16 - HTTP Digest with IE flavour.
+  - (Default value is 3 - BASIC and Digest authentication.)
 - username: sets the username to use for authenticated requests
 - password: sets the password to use for authenticated requests
 - suspend: if set to 0 it doesn't suspend the current transaction before performing the query
