@@ -44,7 +44,7 @@ DNSSEC module, are available at:
 The dnssec-tools package should be available on recent Debian/Ubuntu, to
 install it us:
 
-```
+``` shell
 apt-get install dnssec-tools
 ```
 
@@ -57,12 +57,12 @@ module. You can download the libraries from:
 
 The files are:
 
-```
-    dns-validator_2.0-1_i386.deb
-    libval-threads_2.0-1_i386.deb
-    libval-threads-dev_2.0-1_i386.deb
-    libsres_2.0-1_i386.deb
-    libsres-dev_2.0-1_i386.deb
+``` shell
+dns-validator_2.0-1_i386.deb
+libval-threads_2.0-1_i386.deb
+libval-threads-dev_2.0-1_i386.deb
+libsres_2.0-1_i386.deb
+libsres-dev_2.0-1_i386.deb
 ```
 
 Once you download the deb files, install them with **dpkg -i ...**
@@ -78,9 +78,9 @@ repository. If you look for a more detailed tutorial, check:
 
 Install the packages needed to build Kamailio:
 
-```
-    apt-get install make autoconf gcc flex bison git-core
-    apt-get install libmysqlclient-dev libssl-dev
+``` shell
+apt-get install make autoconf gcc flex bison git-core
+apt-get install libmysqlclient-dev libssl-dev
 ```
 
 ### Fetch Sources from GIT Repository
@@ -88,35 +88,35 @@ Install the packages needed to build Kamailio:
 First of all, you have to create a directory on the file system where
 the sources will be stored.
 
-```
-      mkdir -p /usr/local/src/kamailio-devel
-      cd /usr/local/src/kamailio-devel
+``` shell
+mkdir -p /usr/local/src/kamailio-devel
+cd /usr/local/src/kamailio-devel
 ```
 
 Download the sources from GIT using the following commands.
 
-```
-      git clone --depth 1 git://git.sip-router.org/sip-router kamailio
-      cd kamailio
+``` shell
+git clone --depth 1 git://git.sip-router.org/sip-router kamailio
+cd kamailio
 ```
 
 ### Compile and Install
 
 Run next set of commands:
 
-```
-      cd /usr/local/src/kamailio-devel/kamailio
-      make cfg include_modules="db_mysql dnssec"
-      make all
-      make install
+``` shell
+cd /usr/local/src/kamailio-devel/kamailio
+make cfg include_modules="db_mysql dnssec"
+make all
+make install
 ```
 
 ### Installation Details
 
 The binaries and executable scripts were installed in:
 
-```
-      /usr/local/sbin
+``` shell
+/usr/local/sbin
 ```
 
 These are:
@@ -132,36 +132,36 @@ To be able to use the binaries from command line, make sure that
 that with `echo $PATH`. If not and you are using `bash`, open
 `/root/.bash_profile` and at the end add:
 
-```
-      PATH=$PATH:/usr/local/sbin
-      export PATH
+``` shell
+PATH=$PATH:/usr/local/sbin
+export PATH
 ```
 
 Kamailio modules are installed in:
 
-```
-      /usr/local/lib/kamailio/modules/
+``` shell
+/usr/local/lib/kamailio/modules/
 ```
 
 Note: On 64 bit systems, /usr/local/lib64 may be used.
 
 The documentation and readme files are installed in:
 
-```
-      /usr/local/share/doc/kamailio/
+``` shell
+/usr/local/share/doc/kamailio/
 ```
 
 The man pages are installed in:
 
-```
-      /usr/local/share/man/man5/
-      /usr/local/share/man/man8/
+``` shell
+/usr/local/share/man/man5/
+/usr/local/share/man/man8/
 ```
 
 The configuration file was installed in:
 
-```
-      /usr/local/etc/kamailio/kamailio.cfg
+``` shell
+/usr/local/etc/kamailio/kamailio.cfg
 ```
 
 ### Kamctl Setup
@@ -172,8 +172,8 @@ remove SIP user profiles.
 Edit **/usr/local/etc/kamailio/kamctlrc**, locate `DBENGINE` variable and
 set it to `MYSQL`:
 
-```
-    DBENGINE=MYSQL
+``` c
+DBENGINE=MYSQL
 ```
 
 Also, you can set **SIP_DOMAIN** to you server hostname or IP address.
@@ -187,8 +187,8 @@ to connect to database.
 Once you are done updating **kamctlrc** file, run the script to create
 the database used by Kamailio:
 
-```
-      /usr/local/sbin/kamdbctl create
+``` shell
+/usr/local/sbin/kamdbctl create
 ```
 
 You can call this script without any parameter to get some help for the
@@ -213,8 +213,8 @@ has read-only access rights to `kamailio` database
 Kamctl can be used for adding users, for example adding user **test**
 with password **testpasswd**:
 
-```
-    kamctl add test testpasswd
+``` shell
+kamctl add test testpasswd
 ```
 
 ### Init.d Script
@@ -222,20 +222,20 @@ with password **testpasswd**:
 The init.d script can be used to start/stop the Kamailio server in a
 nicer way. A sample of init.d script for Kamailio is provided at:
 
-```
-      /usr/local/src/kamailio-devel/kamailio/pkg/kamailio/deb/debian/kamailio.init
+``` shell
+/usr/local/src/kamailio-devel/kamailio/pkg/kamailio/deb/debian/kamailio.init
 ```
 
 The default file for init.d script is provided at:
 
-```
-      /usr/local/src/kamailio-devel/kamailio/pkg/kamailio/debian/kamailio.default
+``` shell
+/usr/local/src/kamailio-devel/kamailio/pkg/kamailio/debian/kamailio.default
 ```
 
 Run next command to deploy the init.d scripts:
 
-```
-      make install-initd-debian
+``` shell
+make install-initd-debian
 ```
 
 It will create also user and group **kamailio**, plus runtime directory
@@ -243,9 +243,9 @@ It will create also user and group **kamailio**, plus runtime directory
 
 Now Kamailio can be started or stopped with:
 
-```
-      /etc/init.d/kamailio start
-      /etc/init.d/kamailio stop
+``` shell
+/etc/init.d/kamailio start
+/etc/init.d/kamailio stop
 ```
 
 ## Update Kamailio Config File
@@ -253,18 +253,18 @@ Now Kamailio can be started or stopped with:
 Next step is to enable user authentication, persistent location service
 and add dnssec module. You have to edit the configuration file.
 
-```
-      /usr/local/etc/kamailio/kamailio.cfg
+``` shell
+/usr/local/etc/kamailio/kamailio.cfg
 ```
 
 Follow the instruction in the comments to enable usage of MySQL.
 Basically you have to add several lines at the top of config file (but
 after the first line), like:
 
-```
-    #!define WITH_MYSQL
-    #!define WITH_AUTH
-    #!define WITH_USRLOCDB
+``` c
+#!define WITH_MYSQL
+#!define WITH_AUTH
+#!define WITH_USRLOCDB
 ```
 
 If you changed the password for the 'kamailio' user of MySQL, you have
@@ -278,8 +278,8 @@ The README of DNSSEC module is available at:
 
 You have to load dnssec module in kamailio.cfg:
 
-```
-    loadmodule "dnssec.so"
+``` c
+loadmodule "dnssec.so"
 ```
 
 Add the above line somewhere before the first line starting with **modparam**.
@@ -289,8 +289,8 @@ configuration file now.
 
 Start Kamailio with:
 
-```
-    /etc/init.d/kamailio start
+``` shell
+/etc/init.d/kamailio start
 ```
 
 ## DNS Server DNSSEC Enabled
@@ -318,7 +318,7 @@ DNS). As per the FAQ, DNSSEC support is enabled
 
 Edit `/etc/resolv.conf` and modify your `nameserver` definition to have:
 
-```
+``` c
 nameserver 8.8.8.8
 ```
 

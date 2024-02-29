@@ -797,7 +797,7 @@ IMPORTANT: do not compare the execution of a function with the value of the
 return code, it is not matching as expected - the next example shows such a
 wrong usage:
 
-```
+``` c
 if(function_returns_two() == 2) {
    # it does not go here
 } else {
@@ -894,10 +894,10 @@ fifo name.
 
 Example for the configuration syntax:
 
-```
-    loadmodule "mi_fifo.so"
+``` c
+loadmodule "mi_fifo.so"
 
-    modparam("mi_fifo", "fifo_name", "/tmp/kamailio_fifo")
+modparam("mi_fifo", "fifo_name", "/tmp/kamailio_fifo")
 ```
 
 Check also the access privileges of the FIFO file in order to be sure
