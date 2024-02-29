@@ -2417,7 +2417,7 @@ Example of usage:
 
 The return() function allows you to return any integer value from a
 called route() block. You can test the value returned by a route using
-[$retcode](#retcode) or $? variable.
+[$retcode](pseudovariables.md#$returned_code) or $? variable.
 
 return(0) is same as [exit()](#exit);
 

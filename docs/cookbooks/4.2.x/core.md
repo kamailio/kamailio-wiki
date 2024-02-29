@@ -549,7 +549,7 @@ in Via header and other destination lumps (e.g RR header). If empty or
 not set (default value) the socket address from where the request will
 be sent is used.
 
-    WARNING: 
+    WARNING:
     - don't set it unless you know what you are doing (e.g. nat traversal)
     - you can set anything here, no check is made (e.g. foo.bar will be accepted even if foo.bar doesn't exist)
 
@@ -626,7 +626,7 @@ is 0 (check disabled).
 
 Example of usage:
 
-      check_via=1 
+      check_via=1
 
 ### children
 
@@ -677,10 +677,10 @@ The following log levels are defined:
      L_CRIT2     -3
      L_CRIT      -2
      L_ERR       -1
-     L_WARN       0 
-     L_NOTICE     1 
-     L_INFO       2 
-     L_DBG        3 
+     L_WARN       0
+     L_NOTICE     1
+     L_INFO       2
+     L_DBG        3
 
 A log message will be logged if its log-level is lower than the defined
 debug level. Log messages are either produced by the the code, or
@@ -1024,7 +1024,7 @@ Default value is 262144.
 Example of usage:
 
       maxbuffer=65536
-      
+
 
 ### sql_buffer_size
 
@@ -1091,10 +1091,10 @@ Default value: L_DBG (memdbg=3)
 For example, memdbg=2 means that memory debugging is activated if the
 debug level is 2 or higher.
 
-    debug=3    # no memory debugging as debug level 
+    debug=3    # no memory debugging as debug level
     memdbg=4   # is lower than memdbg
 
-    debug=3    # memory debugging is active as the debug level 
+    debug=3    # memory debugging is active as the debug level
     memdbg=2   # is higher or equal memdbg
 
 Please see also [#memlog](#memlog) and [#debug](#debug).
@@ -1113,10 +1113,10 @@ Default value: L_DBG (memlog=3)
 For example, memlog=2 means that memory statistics dumping is activated
 if the debug level is 2 or higher.
 
-    debug=3    # no memory statistics as debug level 
+    debug=3    # no memory statistics as debug level
     memlog=4   # is lower than memlog
 
-    debug=3    # dumping of memory statistics is active as the 
+    debug=3    # dumping of memory statistics is active as the
     memlog=2   # debug level is higher or equal memlog
 
 Please see also [#memdbg](#memdbg) and [#debug](#debug).
@@ -1578,17 +1578,17 @@ Default is no.
 
 **Alias name: dns_cache_delete_nonexpired**
 
-    dns_cache_del_nonexp = yes | no (default: no) 
+    dns_cache_del_nonexp = yes | no (default: no)
       allow deletion of non-expired records from the cache when there is no more space
       left for new ones. The last-recently used entries are deleted first.
 
 ### dns_cache_flags
 
-    dns_cache_flags = number (default 0) - 
+    dns_cache_flags = number (default 0) -
       dns cache specific resolver flags, used for overriding the default behaviour (low level).
       Possible values:
         1 - ipv4 only: only DNS A requests are performed, even if Kamailio also listens on ipv6 addresses.
-        2 - ipv6 only: only DNS AAAA requests are performed. Ignored if dns_try_ipv6 is off or Kamailio 
+        2 - ipv6 only: only DNS AAAA requests are performed. Ignored if dns_try_ipv6 is off or Kamailio
             doesn't listen on any ipv6 address.
         4 - prefer ipv6: try first to resolve a host name to an ipv6 address (DNS AAAA request) and only
             if this fails try an ipv4 address (DNS A request). By default the ipv4 addresses are preferred.
@@ -2062,14 +2062,14 @@ Example of usage:
 
 ### enable_sctp
 
-    enable_sctp = 0/1/2  - SCTP disabled (0)/ SCTP enabled (1)/auto (2), 
+    enable_sctp = 0/1/2  - SCTP disabled (0)/ SCTP enabled (1)/auto (2),
                            default auto (2)
 
 ### sctp_children
 
 sctp children no (similar to udp children)
 
-    sctp_children = number 
+    sctp_children = number
 
 ### sctp_socket_rcvbuf
 
@@ -2077,7 +2077,7 @@ Size for the sctp socket receive buffer
 
 **Alias name: sctp_socket_receive_buffer**
 
-    sctp_socket_rcvbuf = number 
+    sctp_socket_rcvbuf = number
 
 ### sctp_socket_sndbuf
 
@@ -2613,7 +2613,7 @@ Example:
                 if (isflagset(a)){ # equiv. to isflagset(1)
                   ....
                 }
-                resetflag(b);  # equiv. to resetflag(2) 
+                resetflag(b);  # equiv. to resetflag(2)
 
 ### is_int
 
@@ -2651,7 +2651,7 @@ Example of usage:
 
 The return() function allows you to return any integer value from a
 called route() block. You can test the value returned by a route using
-[$retcode](#retcode) or $? variable.
+[$retcode](pseudovariables.md#$rc) or $? variable.
 
 return(0) is same as [exit()](#exit);
 
@@ -2836,7 +2836,7 @@ Example of usage:
         ...
         if (lookup()) {
           //requests to local users. They are usually behind NAT so it does not make sense to try
-          //to establish a new TCP connection 
+          //to establish a new TCP connection
           set_forward_no_connect();
           t_relay();
         }
