@@ -30,7 +30,7 @@ Given the above, a good understanding of SIP is critical to get faster
 familiar with Kamailio, especially with its configuration file routing
 rules.
 
-Session Initiation Protocol (SIP) is specified by IETF (www.ietf.org),
+Session Initiation Protocol (SIP) is specified by IETF (<www.ietf.org>),
 with the core specification in the RFC 3261:
 
 - [https://tools.ietf.org/html/rfc3261](https://tools.ietf.org/html/rfc3261)

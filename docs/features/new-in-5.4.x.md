@@ -118,8 +118,8 @@ statistics
 
 Added new **cfgt.list** and **cfgt.clean** RPC commands
 
-- https://www.kamailio.org/docs/modules/5.4.x/modules/cfgt.html#cfgt.r.list
-- https://www.kamailio.org/docs/modules/5.4.x/modules/cfgt.html#cfgt.r.clean
+- <https://www.kamailio.org/docs/modules/5.4.x/modules/cfgt.html#cfgt.r.list>
+- <https://www.kamailio.org/docs/modules/5.4.x/modules/cfgt.html#cfgt.r.clean>
 - switch from deprecated /var/run to /run
 
 ### corex
@@ -310,11 +310,11 @@ Add new pseudo-variables:
 
 Add **path** value to xavp_rcd location record
 
-- https://www.kamailio.org/docs/modules/5.4.x/modules/registrar.html#registrar.p.xavp_rcd
+- <https://www.kamailio.org/docs/modules/5.4.x/modules/registrar.html#registrar.p.xavp_rcd>
 
 Add **xavp_rcd_mask** parameter to control what values to skip
 
-- https://www.kamailio.org/docs/modules/5.4.x/modules/registrar.html#registrar.p.xavp_rcd_mask
+- <https://www.kamailio.org/docs/modules/5.4.x/modules/registrar.html#registrar.p.xavp_rcd_mask>
 - control what values to add to xavp_rcd via xavp_rcd_mask parameter
 - option to send 423 when expires less than min_expires with the
     min_expires_mode parameter

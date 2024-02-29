@@ -90,7 +90,7 @@ new code that might not get to **master** branch after all.
 
 - whenever there are patches for modules maintained by other
     developers, it is better to discuss them on
-    sr-dev@lists.sip-router.org mailing list before pushing them to
+    <sr-dev@lists.sip-router.org> mailing list before pushing them to
     remote repository. The patch can be:
   - submitted as attachment to mailing list
   - uploaded to the tracker at:

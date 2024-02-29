@@ -8,13 +8,13 @@
 
 Initial content was converted from the Dokuwiki at:
 
-- https://www.kamailio.org/wiki/
+- <https://www.kamailio.org/wiki/>
 
 ## Support ##
 
 To update the content, make a pull request at:
 
-- https://github.com/kamailio/kamailio-wiki
+- <https://github.com/kamailio/kamailio-wiki>
 
 The wiki pages are inside the **[docs/](docs/)** folder.
 

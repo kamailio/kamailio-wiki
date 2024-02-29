@@ -5,7 +5,7 @@ released in late 2024 or early 2025**.
 
 **Previous devel, current stable, version was 5.8.x (released during the spring of 2024), see what was new in that release at:**
 
-- https://www.kamailio.org/wikidocs/features/new-in-5.8.x/
+- <https://www.kamailio.org/wikidocs/features/new-in-5.8.x/>
 
 *This is a draft of new features added in devel version,
 manually updated, thus not always synchronized with what is new in

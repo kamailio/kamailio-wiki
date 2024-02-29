@@ -320,7 +320,7 @@ Now you have the latest Kamailio (OpenSER) devel running on your system.
 ## 12. Time for maintenance service
 
 Notification about GIT commits are sent to the mailing list:
-**sr-dev@lists.sip-router.org**. Each commit notification contains the
+**<sr-dev@lists.sip-router.org>**. Each commit notification contains the
 reference to the branch where the commit has been done. If the commit
 message contains the lines:
 

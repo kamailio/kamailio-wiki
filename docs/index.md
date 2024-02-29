@@ -258,6 +258,6 @@ Old Exports APIs:
 
 📓 The initial content was migrated to github.com from an open wiki portal, where people could contribute
 without any restrictions. Should anyone notice any *illegal* content please email to
-*sr-dev@lists.kamailio.org* or open an issue. **kamailio.org** organization is not responsible
+*<sr-dev@lists.kamailio.org>* or open an issue. **kamailio.org** organization is not responsible
 for the content contributed by external people and commits to react in a reasonable time when
 such content is reported.
