@@ -148,18 +148,10 @@ that with 'echo $PATH'. If not and you are using 'bash', open
 
 Kamailio (OpenSER) modules are installed in:
 
-**32-Bit**
-
       /usr/local/lib/kamailio/modules/
       /usr/local/lib/kamailio/modules_k/
 
-**64-Bit**
-
-      /usr/local/lib64/kamailio/modules/
-      /usr/local/lib64/kamailio/modules_k/
-
-Replace **.../lib/...** with **../lib64/...** in most of 64b
-architectures.
+Note: On 64 bit systems, /usr/local/lib64 may be used.
 
 The documentation and readme files are installed in:
 

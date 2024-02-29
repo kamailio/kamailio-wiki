@@ -920,7 +920,7 @@ Further information can also be bound at:
 
 ### description
 
-**Alias name: descr desc**
+**Alias name:** **descr desc**
 
 ### disable_core_dump
 
@@ -936,7 +936,7 @@ Example of usage:
 
 ### disable_tls
 
-**Alias name: tls_disable**
+**Alias name:** **tls_disable**
 
 Global parameter to disable TLS support in the SIP server. Default value
 is 'no'.
@@ -953,7 +953,7 @@ TLS module: <http://kamailio.org/docs/modules/devel/modules/tls.html>
 
 ### enable_tls
 
-**Alias name: tls_enable**
+**Alias name:** **tls_enable**
 
 Reverse Meaning of the disable_tls parameter. See disable_tls parameter.
 
@@ -961,7 +961,7 @@ Reverse Meaning of the disable_tls parameter. See disable_tls parameter.
 
 ### exit_timeout
 
-**Alias name: ser_kill_timeout**
+**Alias name:** **ser_kill_timeout**
 
 How much time Kamailio will wait for all the shutdown procedures to
 complete. If this time is exceeded, all the remaining processes are
@@ -974,7 +974,7 @@ Default: 60 s. Use 0 to disable.
 
 ### flags
 
-**Alias name: bool**
+**Alias name:** **bool**
 
 ### force_rport
 
@@ -1012,7 +1012,7 @@ fork_delay=5000
 
 ### group
 
-**Alias name: gid**
+**Alias name:** **gid**
 
 The group id to run Kamailio.
 
@@ -1139,7 +1139,7 @@ Example of usage:
 
 ### loadpath
 
-**Alias name: mpath**
+**Alias name:** **mpath**
 
 Set the module search path. loadpath takes a list of directories
 separated by ':'. The list is searched in-order. For each directory d,
@@ -1307,7 +1307,7 @@ Example of usage:
 
 ### memdbg
 
-**Alias name: mem_dbg**
+**Alias name:** **mem_dbg**
 
 This parameter specifies on which log level the memory debugger messages
 will be logged. If memdbg is active, every request (alloc, free) to the
@@ -1329,7 +1329,7 @@ Please see also [#memlog](#memlog) and [#debug](#debug).
 
 ### memlog
 
-**Alias name: mem_log**
+**Alias name:** **mem_log**
 
 This parameter specifies on which log level the memory statistics will
 be logged. If memlog is active, Kamailio will log memory statistics on
@@ -1655,7 +1655,7 @@ the $stat() pseudo variable (read-only), or via MI commands.
 
 Following are some examples how to access statistics variables:
 
-**script**
+**script:**
 
     modparam("statistics", "variable", "NOTIFY")
 
@@ -1665,7 +1665,7 @@ Following are some examples how to access statistics variables:
 
     xlog("Number of received NOTIFYs: $stat(NOTIFY)");
 
-**MI**
+**MI:**
 
     # get counter value
     kamctl fifo get_statistics NOTIFY
@@ -1718,7 +1718,7 @@ Default: UDP (off). Recommended: TCP.
 
 ### user
 
-**Alias name: uid**
+**Alias name:** **uid**
 
 The user id to run Kamailio (Kamailio will suid to it).
 
@@ -1739,7 +1739,7 @@ user_agent_header="User-Agent: My Super SIP Server"
 
 ### workdir
 
-**Alias name: wdir**
+**Alias name:** **wdir**
 
 The working directory used by Kamailio at runtime. You might find it
 useful when it comes to generating core files :)
@@ -1829,7 +1829,7 @@ Default is no.
 
 ### dns_cache_del_nonexp
 
-**Alias name: dns_cache_delete_nonexpired**
+**Alias name:** **dns_cache_delete_nonexpired**
 
     dns_cache_del_nonexp = yes | no (default: no)
       allow deletion of non-expired records from the cache when there is no more space
@@ -1934,7 +1934,7 @@ Example of usage:
 
 ### dns_srv_lb
 
-**Alias name: dns_srv_loadbalancing**
+**Alias name:** **dns_srv_loadbalancing**
 
 Enable dns srv weight based load balancing (see doc/dns.txt)
 
@@ -1964,7 +1964,7 @@ info)
 
 ### dns_sctp_pref, dns_tcp_pref, dns_tls_pref, dns_udp_pref
 
-**Alias name: dns_sctp_preference, dns_tcp_preference,
+**Alias name:** **dns_sctp_preference, dns_tcp_preference,
 dns_tls_preference, dns_udp_preference**
 
 Set preference for each protocol when doing naptr lookups. By default
@@ -2053,7 +2053,7 @@ tcp_accept_no_cl=yes
 
 ### tcp_async
 
-**Alias name: tcp_buf_write**
+**Alias name:** **tcp_buf_write**
 
 If enabled, all the tcp writes that would block / wait for connect to
 finish, will be queued and attempted latter (see also tcp_conn_wq_max
@@ -2339,7 +2339,7 @@ sctp children no (similar to udp children)
 
 Size for the sctp socket receive buffer
 
-**Alias name: sctp_socket_receive_buffer**
+**Alias name:** **sctp_socket_receive_buffer**
 
     sctp_socket_rcvbuf = number
 
@@ -2347,7 +2347,7 @@ Size for the sctp socket receive buffer
 
 Size for the sctp socket send buffer
 
-**Alias name: sctp_socket_send_buffer**
+**Alias name:** **sctp_socket_send_buffer**
 
     sctp_socket_sndbuf = number
 
@@ -2609,7 +2609,7 @@ The parameter can be set at runtime (core.udp4_raw_ttl).
 
 ### dst_blacklist_expire
 
-**Alias name: dst_blacklist_ttl**
+**Alias name:** **dst_blacklist_ttl**
 
 How much time a blacklisted destination will be kept in the blacklist
 (w/o any update).
@@ -2681,7 +2681,7 @@ is enabled.
 
 ### rt_timer1_policy
 
-**Alias name: rt_ftimer_policy**
+**Alias name:** **rt_ftimer_policy**
 
 Like rt_policy but for the "fast" timer.
 
@@ -2689,7 +2689,7 @@ Like rt_policy but for the "fast" timer.
 
 ### rt_timer1_prio
 
-**Alias name: rt_fast_timer_prio, rt_ftimer_prio**
+**Alias name:** **rt_fast_timer_prio, rt_ftimer_prio**
 
 Like rt_prio but for the "fast" timer process (if real_time & 1).
 
@@ -2697,7 +2697,7 @@ Like rt_prio but for the "fast" timer process (if real_time & 1).
 
 ### rt_timer2_policy
 
-**Alias name: rt_stimer_policy**
+**Alias name:** **rt_stimer_policy**
 
 Like rt_policy but for the "slow" timer.
 
@@ -2705,7 +2705,7 @@ Like rt_policy but for the "slow" timer.
 
 ### rt_timer2_prio
 
-**Alias name: rt_stimer_prio**
+**Alias name:** **rt_stimer_prio**
 
 Like rt_prio but for the "slow" timer.
 
@@ -2829,7 +2829,7 @@ Example of usage:
 
 ### force_tcp_alias
 
-**Alias name: add_tcp_alias**
+**Alias name:** **add_tcp_alias**
 
 force_tcp_alias(port)
 
@@ -2960,7 +2960,7 @@ Example of usage:
 
 ### rewritehostport
 
-**Alias name: sethostport, sethp**
+**Alias name:** **sethostport, sethp**
 
 Rewrite the domain part and port of the R-URI with the value of
 function's parameter. Other parts of the R-URI like username and URI
@@ -2972,7 +2972,7 @@ Example of usage:
 
 ### rewritehostporttrans
 
-**Alias name: sethostporttrans, sethpt**
+**Alias name:** **sethostporttrans, sethpt**
 
 Rewrite the domain part and port of the R-URI with the value of
 function's parameter. Also allows to specify the transport parameter.
@@ -2985,7 +2985,7 @@ Example of usage:
 
 ### rewritehost
 
-**Alias name: sethost, seth**
+**Alias name:** **sethost, seth**
 
 Rewrite the domain part of the R-URI with the value of function's
 parameter. Other parts of the R-URI like username, port and URI
@@ -2997,7 +2997,7 @@ Example of usage:
 
 ### rewriteport
 
-**Alias name: setport, setp**
+**Alias name:** **setport, setp**
 
 Rewrites/sets the port part of the R-URI with the value of function's
 parameter.
@@ -3008,7 +3008,7 @@ Example of usage:
 
 ### rewriteuri
 
-**Alias name: seturi**
+**Alias name:** **seturi**
 
 Rewrite the request URI.
 
@@ -3018,7 +3018,7 @@ Example of usage:
 
 ### rewriteuserpass
 
-**Alias name: setuserpass, setup**
+**Alias name:** **setuserpass, setup**
 
 Rewrite the password part of the R-URI with the value of function's
 parameter.
@@ -3029,7 +3029,7 @@ Example of usage:
 
 ### rewriteuser
 
-**Alias name: setuser, setu**
+**Alias name:** **setuser, setu**
 
 Rewrite the user part of the R-URI with the value of function's
 parameter.
