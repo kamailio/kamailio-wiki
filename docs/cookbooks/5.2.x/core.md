@@ -1712,7 +1712,6 @@ Example of usage:
 
       reply_to_via=0
 
-
 ### route_locks_size
 
 Set the number of mutex locks to be used for synchronizing the execution

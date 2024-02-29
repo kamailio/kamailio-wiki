@@ -9,7 +9,6 @@ If you have a question suitable for FAQ and you don't know the answer,
 add it and set the answer to 'TBA', others can read it and give the
 right answer.
 
-
 ## General
 
 ### What is Kamailio?

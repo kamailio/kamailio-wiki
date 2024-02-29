@@ -39,7 +39,6 @@ List the existing collections in the current database:
 Add the records for the other Kamailio tables you are going to use. Some
 examples:
 
-
     > db.getCollection("version").insert({table_name: "subscriber", table_version: NumberInt(6) })
 
     > db.getCollection("version").insert({table_name: "location", table_version: NumberInt(8) })

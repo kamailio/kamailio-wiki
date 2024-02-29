@@ -757,5 +757,4 @@ module.\</fc>
 You can use the transformation to extract values from the json
 structured pseudo-variables
 
-
     $var(Custom-Data) = $(rb{json.parse,Custom-Data});

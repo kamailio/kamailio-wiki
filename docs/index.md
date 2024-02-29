@@ -91,8 +91,6 @@ available at the **Old Wiki Site**:*
 
 ## Cookbooks
 
-
-
 |         |                               |                                          |                                          |                                  |                                                  |
 |---------|-------------------------------|------------------------------------------|------------------------------------------|----------------------------------|--------------------------------------------------|
 | Version | Core Cookbook                 | Pseudo Variables                         | Transformations                          | Selects                          | Modules                                          |
@@ -104,12 +102,9 @@ available at the **Old Wiki Site**:*
 | 5.3.x   | [link](cookbooks/5.3.x/core.md) | [link](cookbooks/5.3.x/pseudovariables.md) | [link](cookbooks/5.3.x/transformations.md) | [link](cookbooks/5.3.x/selects.md) | [link](https://kamailio.org/docs/modules/5.3.x/) |
 | 5.2.x   | [link](cookbooks/5.2.x/core.md) | [link](cookbooks/5.2.x/pseudovariables.md) | [link](cookbooks/5.2.x/transformations.md) | [link](cookbooks/5.2.x/selects.md) | [link](https://kamailio.org/docs/modules/5.2.x/) |
 
-
 ## Alphabetic Indexes
 
 Alphabetic indexes generated from documentation (modules' readme docs).
-
-
 
 |         |                                           |                                          |                                         |                                           |
 |---------|-------------------------------------------|------------------------------------------|-----------------------------------------|-------------------------------------------|
@@ -122,13 +117,9 @@ Alphabetic indexes generated from documentation (modules' readme docs).
 | 5.3.x   | [link](alphaindexes/5.3.x/modparameters.md) | [link](alphaindexes/5.3.x/modfunctions.md) | [link](alphaindexes/5.3.x/rpccommands.md) | [link](alphaindexes/5.3.x/modstatistics.md) |
 | 5.2.x   | [link](alphaindexes/5.2.x/modparameters.md) | [link](alphaindexes/5.2.x/modfunctions.md) | [link](alphaindexes/5.2.x/rpccommands.md) | [link](alphaindexes/5.2.x/modstatistics.md) |
 
-
-
 ## C Code Export Lists
 
 Lists of exported symbols generated from C code.
-
-
 
 |         |                                                                             |                                                                                     |                                                                                   |                                                                                     |
 |---------|-----------------------------------------------------------------------------|-------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
@@ -214,15 +205,11 @@ See the section about KEMI exports.
 
 Old Exports APIs:
 
-
-
 |         |                                 |                                |                                 |                                 |                                   |
 |---------|---------------------------------|--------------------------------|---------------------------------|---------------------------------|-----------------------------------|
 | Version | \- Java -                       | \- Lua -                       | \- Mono -                       | \- Perl -                       | \- Python -                       |
 | devel   | [link](embeddedapi/devel/java.md) | [link](embeddedapi/devel/lua.md) | [link](embeddedapi/devel/mono.md) | [link](embeddedapi/devel/perl.md) | [link](embeddedapi/devel/python.md) |
 | 4.3.x   | [link](embeddedapi/4.3.x/java.md) | [link](embeddedapi/4.3.x/lua.md) | [link](embeddedapi/4.3.x/mono.md) | [link](embeddedapi/4.3.x/perl.md) | [link](embeddedapi/4.3.x/python.md) |
-
-
 
 ### Guidelines
 
