@@ -947,7 +947,6 @@ Example of usage:
 
       maxbuffer=65536
 
-
 ### sql_buffer_size
 
 The size in bytes of the SQL buffer created for data base queries. For

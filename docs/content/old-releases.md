@@ -48,8 +48,6 @@ This page is indexing the wiki pages related to older Kamailio releases,
 
 ## Cookbooks
 
-
-
 |         |                               |                                          |                                          |                                  |                                                 |
 |---------|-------------------------------|------------------------------------------|------------------------------------------|----------------------------------|-------------------------------------------------|
 | Version | Core Cookbook                 | Pseudo Variables                         | Transformations                          | Selects                          | Modules                                         |
@@ -63,21 +61,15 @@ This page is indexing the wiki pages related to older Kamailio releases,
 | 3.3.x   | [link](../cookbooks/3.3.x/core.md) | [link](../cookbooks/3.3.x/pseudovariables.md) | [link](../cookbooks/3.3.x/transformations.md) | [link](../cookbooks/3.3.x/selects.md) | [link](http://kamailio.org/docs/modules/3.3.x/) |
 | 3.2.x   | [link](../cookbooks/3.2.x/core.md) | [link](../cookbooks/3.2.x/pseudovariables.md) | [link](../cookbooks/3.2.x/transformations.md) | [link](../cookbooks/3.2.x/selects.md) | [link](http://kamailio.org/docs/modules/3.2.x/) |
 
-
 ## Alphabetic Indexes
 
 Alphabetic indexes generated from documentation (modules' readme docs).
-
-
 
 |         |                                           |                                          |                                         |                                           |
 |---------|-------------------------------------------|------------------------------------------|-----------------------------------------|-------------------------------------------|
 | Version | Modules Parameters                        | Modules Functions                        | RPC Commands                            | Statistics                                |
 | 5.1.x   | [link](../alphaindexes/5.1.x/modparameters.md) | [link](../alphaindexes/5.1.x/modfunctions.md) | [link](../alphaindexes/5.1.x/rpccommands.md) | [link](../alphaindexes/5.1.x/modstatistics.md) |
 | 5.0.x   | [link](../alphaindexes/5.0.x/modparameters.md) | [link](../alphaindexes/5.0.x/modfunctions.md) | [link](../alphaindexes/5.0.x/rpccommands.md) | [link](../alphaindexes/5.0.x/modstatistics.md) |
-
-
-
 
 |         |                                           |                                          |                                        |                                           |                                                                            |
 |---------|-------------------------------------------|------------------------------------------|----------------------------------------|-------------------------------------------|----------------------------------------------------------------------------|
@@ -90,8 +82,6 @@ Alphabetic indexes generated from documentation (modules' readme docs).
 | 3.4.x   | [link](../alphaindexes/3.4.x/modparameters.md) | [link](../alphaindexes/3.4.x/modfunctions.md) | [link](../alphaindexes/3.4.x/micommands.md) | [link](../alphaindexes/3.4.x/modstatistics.md) | [link](http://www.kamailio.org/docs/docbooks/3.4.x/rpc_list/rpc_list.html) |
 | 3.3.x   | [link](../alphaindexes/3.3.x/modparameters.md) | [link](../alphaindexes/3.3.x/modfunctions.md) | [link](../alphaindexes/3.3.x/micommands.md) | [link](../alphaindexes/3.3.x/modstatistics.md) | [link](http://www.kamailio.org/docs/docbooks/3.3.x/rpc_list/rpc_list.html) |
 | 3.2.x   | [link](../alphaindexes/3.2.x/modparameters.md) | [link](../alphaindexes/3.2.x/modfunctions.md) | [link](../alphaindexes/3.2.x/micommands.md) | [link](../alphaindexes/3.2.x/modstatistics.md) | [link](http://www.kamailio.org/docs/docbooks/3.2.x/rpc_list/rpc_list.html) |
-
-
 
 ## Features
 
@@ -128,8 +118,6 @@ KEMI Framework APIs:
 - <http://kamailio.org/docs/tutorials/devel/kamailio-kemi-framework/>
 
 Old Exports APIs:
-
-
 
 |         |                                 |                                |                                 |                                 |                                   |
 |---------|---------------------------------|--------------------------------|---------------------------------|---------------------------------|-----------------------------------|

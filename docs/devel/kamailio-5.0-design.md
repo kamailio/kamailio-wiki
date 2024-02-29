@@ -98,7 +98,6 @@ each module:
 
 <!-- -->
 
-
     loadmodule "foo.so"
 
     request_route {

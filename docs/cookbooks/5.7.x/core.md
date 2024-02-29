@@ -5456,7 +5456,6 @@ time and they are the same).
     and then perform the operation. Exception: the left operand is
     undef. This applies to the following operators: `+`, `==` and `!=`.
 
-
        Special case: undef as left operand:
        For +: undef + expr -> undef is converted to string => "" + expr.
        For == and !=:   undef == expr -> undef is converted to type_of expr.
@@ -5466,12 +5465,10 @@ time and they are the same).
 1. expression evaluation changes: Kamailio will auto-convert to integer
     or string in function of the operators:
 
-
          int(undef)==0,  int("")==0, int("123")==123, int("abc")==0
          str(undef)=="", str(123)=="123".
 
 1. script operators for dealing with empty/undefined variables
-
 
         defined expr - returns true if expr is defined, and false if not.
                        Note: only a standalone avp or pvar can be
@@ -5615,7 +5612,6 @@ Example of JSON logs when running Kamailio with `--log-engine=json:M` :
 ```
 
 Example config for printing log message with `j` flag:
-
 
 ``` c
 xinfo("{ \"src_ip\": \"$si\", \"method\": \"$rm\", \"text\": \"request received\" }");

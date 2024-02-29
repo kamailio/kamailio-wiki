@@ -566,7 +566,6 @@ source code repository.*
 - `double/float` values printed without decimals when they are `0`
   - cope better with `long (long)` values stored in double fields
 
-
 ### kamdbctl
 
 - database schema updates
