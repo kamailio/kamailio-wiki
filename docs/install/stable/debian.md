@@ -8,10 +8,10 @@ The focus of this tutorial is to install Kamailio with MySQL backend.
 
 ## APT Install Commands
 
-```
-    apt-get update
-    apt-get install mysql-server
-    apt-get install kamailio kamailio-mysql-modules
+``` bash
+apt-get update
+apt-get install mysql-server
+apt-get install kamailio kamailio-mysql-modules
 ```
 
 ## Config Files
@@ -36,18 +36,18 @@ The **/etc/kamailio/kamailio.cfg** is the configuration file for
 To enable use of MySQL backed, user authentication and persistent user
 location, add after the first line:
 
-```
-    #!define WITH_MYSQL
-    #!define WITH_AUTH
-    #!define WITH_USRLOCDB
+``` c
+#!define WITH_MYSQL
+#!define WITH_AUTH
+#!define WITH_USRLOCDB
 ```
 
 ## Create Database
 
 To create the database structure needed by Kamailio, run:
 
-```
-    kamdbctl create
+``` bash
+kamdbctl create
 ```
 
 ## Startup Scripts
@@ -61,9 +61,9 @@ First you should edit **/etc/default/kamailio** and adjust the setting
 for kamailio startup script, in particular the one that enables kamailio
 to start.
 
-```
-    /etc/init.d/kamailio start
-    /etc/init.d/kamailio stop
+``` bash
+/etc/init.d/kamailio start
+/etc/init.d/kamailio stop
 ```
 
 ### Systemd Scripts
@@ -71,9 +71,9 @@ to start.
 If the default startup system is systemd, then kamailio can be managed
 via systemctl:
 
-```
-    systemctl start kamailio
-    systemctl stop kamailio
+``` bash
+systemctl start kamailio
+systemctl stop kamailio
 ```
 
 First you may also need to edit **/etc/default/kamailio** and adjust the
@@ -89,14 +89,14 @@ overwrite your modified file with the standard one.
 
 To add subscribers (users), you can use the **kamctl** command:
 
-```
-    kamctl add userid password
+``` bash
+kamctl add userid password
 ```
 
 Like:
 
-```
-    kamctl add alice secret
+``` bash
+kamctl add alice secret
 ```
 
 ## Alternative APT Repositories

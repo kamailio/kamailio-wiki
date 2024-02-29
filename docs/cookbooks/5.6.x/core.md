@@ -1917,7 +1917,7 @@ modules.
 
 Prototypes:
 
-```
+``` c
 modparam("modname", "paramname", intval)
 modparam("modname", "paramname", "strval")
 ```
@@ -1944,11 +1944,11 @@ module.
 
 Example:
 
-```
-    modparam("usrloc", "db_mode", 2)
-    modparam("usrloc", "nat_bflag", 6)
-    modparam("auth_db|msilo|usrloc", "db_url",
-        "mysql://kamailio:kamailiorw@localhost/kamailio")
+``` c
+modparam("usrloc", "db_mode", 2)
+modparam("usrloc", "nat_bflag", 6)
+modparam("auth_db|msilo|usrloc", "db_url",
+    "mysql://kamailio:kamailiorw@localhost/kamailio")
 ```
 
 See the documenation of the respective module to find out the available

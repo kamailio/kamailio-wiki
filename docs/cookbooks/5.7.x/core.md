@@ -27,8 +27,8 @@ parameters for the core of kamailio and custom global parameters.
 
 Typically this is formed by directives of the form:
 
-```
-    name=value
+``` c
+name=value
 ```
 
 The name corresponds to a core parameter as listed in one of the next
@@ -132,16 +132,16 @@ by `*/` (asterisk and forward slash) (like in C, C++, Java).
 
 Example:
 
-```
-      # this is a line comment
+``` c
+# this is a line comment
 
-      // this is another line comment
+// this is another line comment
 
-      /* this
-         is
-         a
-         block
-         comment */
+/* this
+    is
+    a
+    block
+    comment */
 ```
 
 Important: be aware of preprocessor directives that start with `#!`
@@ -241,8 +241,8 @@ end-of-line (`\n`) after each one in order to be properly identified
 
 ### include_file
 
-```
-    include_file "path_to_file"
+``` c
+include_file "path_to_file"
 ```
 
 Include the content of the file in config before parsing. path_to_file
@@ -286,8 +286,8 @@ request_route {
 
 ### import_file
 
-```
-    import_file "path_to_file"
+``` c
+import_file "path_to_file"
 ```
 
 Similar to `include_file`, but does not throw error if the included
@@ -322,7 +322,7 @@ Predefined keywords:
 
 Examples:
 
-```
+``` c
 KAMAILIO_5
 KAMAILIO_5_6
 KAMAILIO_5_6_2
@@ -482,19 +482,19 @@ the second value (right operand) to the type of the first value (left operand).
 
 Examples:
 
-```
+``` c
 1 + "20" -> converted to: 1 + 20 (result: 21)
 ```
 
-```
+``` c
 "1" + 20 -> converted to: "1" + "20" (result: "120")
 ```
 
-```
+``` c
 4 > "20" -> converted to: 4 > 20 (result: false)
 ```
 
-```
+``` c
 "4" > 20 -> converted to: "4" > "20" (result: true)
 ```
 
@@ -541,7 +541,7 @@ Other operations:
 
 #### ifexp examples
 
-```
+``` c
 #!ifexp KAMAILIO_VERSION >= 5006000
 ...
 #!else
@@ -581,7 +581,7 @@ operators are supported.
 
 Examples:
 
-```
+``` c
 #!define IPADDR 127.0.0.1
 
 #!defexp SIPURI "sip:" + IPADDR + ":5060"
@@ -1061,9 +1061,9 @@ from where the request will be sent is used.
 
 Example of usage:
 
-```
-      advertised_address="​1.2.3.4"​
-      advertised_address="kamailio.org"
+``` c
+advertised_address="​1.2.3.4"​
+advertised_address="kamailio.org"
 ```
 
 Note: this option may be deprecated and removed in the near future, it
@@ -1077,8 +1077,8 @@ for 'advertised_address'.
 
 Example of usage:
 
-```
-      advertised_port=5080
+``` c
+advertised_port=5080
 ```
 
 Note: this option may be deprecated and removed in the near future, it
@@ -1102,11 +1102,11 @@ requests with pre-loaded route set correctly.
 
 Example of usage:
 
-```
-    alias=other.domain.com:5060
-    alias=another.domain.com:5060
+``` c
+alias=other.domain.com:5060
+alias=another.domain.com:5060
 
-    domain=new.domain.com:5060
+domain=new.domain.com:5060
 ```
 
 Note: the hostname has to be enclosed in between quotes if it has
@@ -1125,8 +1125,8 @@ Default: 0 (asynchronous framework is disabled).
 
 Example:
 
-```
-    async_workers=4
+``` c
+async_workers=4
 ```
 
 ### async_nonblock
@@ -1138,8 +1138,8 @@ Default: `0`
 
 Example:
 
-```
-    async_nonblock=1
+``` c
+async_nonblock=1
 ```
 
 ### async_usleep
@@ -1151,8 +1151,8 @@ Default: `0`
 
 Example:
 
-```
-    async_usleep=100
+``` c
+async_usleep=100
 ```
 
 ### async_workers_group
@@ -1161,8 +1161,8 @@ Define groups of asynchronous worker processes.
 
 Prototype:
 
-```
-    async_workers_group="name=X;workers=N;nonblock=[0|1];usleep=M"
+``` c
+async_workers_group="name=X;workers=N;nonblock=[0|1];usleep=M"
 ```
 
 The attributes are:
@@ -1179,8 +1179,8 @@ Default: "".
 
 Example:
 
-```
-    async_workers_group="name=reg;workers=4;nonblock=0;usleep=0"
+``` c
+async_workers_group="name=reg;workers=4;nonblock=0;usleep=0"
 ```
 
 If the **name** is default, then it overwrites the value set by
@@ -1199,10 +1199,10 @@ condition. To disable host names auto-discovery, turn off auto_aliases.
 
 Example:
 
-```
-    auto_aliases=no
+``` c
+auto_aliases=no
 
-    auto_domains=no
+auto_domains=no
 ```
 
 ### auto_bind_ipv6
@@ -1212,8 +1212,8 @@ When turned on, Kamailio will automatically bind to all IPv6 addresses
 
 Example:
 
-```
-    auto_bind_ipv6=1
+``` c
+auto_bind_ipv6=1
 ```
 
 ### bind_ipv6_link_local
@@ -1224,8 +1224,8 @@ added for the other protocols. Default is 0.
 
 Example:
 
-```
-    bind_ipv6_link_local=1
+``` c
+bind_ipv6_link_local=1
 ```
 
 ### check_via
@@ -1235,8 +1235,8 @@ is 0 (check disabled).
 
 Example of usage:
 
-```
-      check_via=1
+``` c
+check_via=1
 ```
 
 ### children
@@ -1251,8 +1251,8 @@ For configuration of the TCP/TLS worker threads see the option
 
 Example of usage:
 
-```
-    children=16
+``` c
+children=16
 ```
 
 ### chroot
@@ -1262,8 +1262,8 @@ chroot (change root directory) to its value.
 
 Example of usage:
 
-```
-    chroot=/other/fakeroot
+``` c
+chroot=/other/fakeroot
 ```
 
 ### corelog
@@ -1277,8 +1277,8 @@ Default value is `-1` (`L_ERR`).
 
 Example of usage:
 
-```
-    corelog=1
+``` c
+corelog=1
 ```
 
 ### debug
@@ -1289,16 +1289,16 @@ stderr was activated (see [#log_stderror](#log_stderror) parameter).
 
 The following log levels are defined:
 
-```
-     L_ALERT     -5
-     L_BUG       -4
-     L_CRIT2     -3
-     L_CRIT      -2
-     L_ERR       -1
-     L_WARN       0
-     L_NOTICE     1
-     L_INFO       2
-     L_DBG        3
+``` c
+L_ALERT     -5
+L_BUG       -4
+L_CRIT2     -3
+L_CRIT      -2
+L_ERR       -1
+L_WARN       0
+L_NOTICE     1
+L_INFO       2
+L_DBG        3
 ```
 
 A log message will be logged if its log-level is lower than the defined
@@ -1321,10 +1321,10 @@ Examples of usage:
 Value of 'debug' parameter can also be get and set dynamically using the
 'debug' Core MI function or the RPC function, e.g.:
 
-```
-    kamcmd cfg.get core debug
-    kamcmd cfg.set_now_int core debug 2
-    kamcmd cfg.set_now_int core debug -- -1
+``` bash
+kamcmd cfg.get core debug
+kamcmd cfg.set_now_int core debug 2
+kamcmd cfg.set_now_int core debug -- -1
 ```
 
 Note: There is a difference in log-levels between Kamailio 3.x and
@@ -1353,8 +1353,8 @@ Default value is `no`.
 
 Example of usage:
 
-```
-    disable_core_dump=yes
+``` c
+disable_core_dump=yes
 ```
 
 ### disable_tls
@@ -1368,8 +1368,8 @@ Note: Make sure to load the "tls" module to get tls functionality.
 
 Example of usage:
 
-```
-    disable_tls=yes
+``` c
+disable_tls=yes
 ```
 
 In Kamailio TLS is implemented as a module. Thus, the TLS configuration
@@ -1382,8 +1382,8 @@ TLS module: <http://kamailio.org/docs/modules/devel/modules/tls.html>
 
 Reverse Meaning of the disable_tls parameter. See disable_tls parameter.
 
-```
-    enable_tls=yes # enable tls support in core
+``` c
+enable_tls=yes # enable tls support in core
 ```
 
 ### exit_timeout
@@ -1397,8 +1397,8 @@ generate a core dump if the cleanup part takes too long).
 
 Default: 60 s. Use 0 to disable.
 
-```
-     exit_timeout = seconds
+``` c
+exit_timeout = seconds
 ```
 
 ### flags
@@ -1443,8 +1443,8 @@ Default value is 'yes'.
 
 Example of usage:
 
-```
-    fork=no
+``` c
+fork=no
 ```
 
 ### fork_delay
@@ -1467,8 +1467,8 @@ The group id to run Kamailio.
 
 Example of usage:
 
-```
-    group="kamailio"
+``` c
+group="kamailio"
 ```
 
 ### http_reply_parse
@@ -1483,8 +1483,8 @@ Default value is 'no'.
 
 Example of usage:
 
-```
-    http_reply_parse=yes
+``` c
+http_reply_parse=yes
 ```
 
 ### ip_free_bind
@@ -1852,8 +1852,8 @@ Default value is LOG_DAEMON.
 
 Example of usage:
 
-```
-    log_facility=LOG_LOCAL0
+``` c
+log_facility=LOG_LOCAL0
 ```
 
 ### log_name
@@ -1864,8 +1864,8 @@ the application name or full path that printed the log message. This is
 useful to filter log messages when running many instances of Kamailio on
 same server.
 
-```
-    log_name="kamailio-proxy-5080"
+``` c
+log_name="kamailio-proxy-5080"
 ```
 
 ### log_prefix
@@ -1883,8 +1883,8 @@ message structure to work with.
 Example - prefix with message type (1 - request, 2 - response), CSeq and
 Call-ID:
 
-```
-    log_prefix="{$mt $hdr(CSeq) $ci} "
+``` c
+log_prefix="{$mt $hdr(CSeq) $ci} "
 ```
 
 ### log_prefix_mode
@@ -1902,8 +1902,8 @@ different based on the context of config execution, e.g., $cfg(line)).
 
 Example:
 
-```
-    log_prefix_mode=1
+``` c
+log_prefix_mode=1
 ```
 
 ### log_stderror
@@ -1922,8 +1922,8 @@ For more see:
 
 Example of usage:
 
-```
-    log_stderror=yes
+``` c
+log_stderror=yes
 ```
 
 ### cfgengine
@@ -1933,9 +1933,9 @@ inside the configuration file. Default is the native interpreter.
 
 Example of usage:
 
-```
-    cfgengine="name"
-    cfgengine "name"
+``` c
+cfgengine="name"
+cfgengine "name"
 ```
 
 If name is `native` or `default`, it expects to have in native config
@@ -1944,8 +1944,8 @@ interpreter for routing logic.
 The name can be the identifier of an embedded language interpreter, such
 as `lua` which is registered by the `app_lua` module:
 
-```
-    cfgengine "lua"
+``` c
+cfgengine "lua"
 ```
 
 ### maxbuffer
@@ -1956,8 +1956,8 @@ UDP messages (socket option SO_RCVBUF). Default value is 262144.
 
 Example of usage:
 
-```
-    maxbuffer=65536
+``` c
+maxbuffer=65536
 ```
 
 Note: it is not the size of the internal SIP message receive buffer.
@@ -1975,8 +1975,8 @@ Default value: 12
 
 Example of usage:
 
-```
-    max_branches=16
+``` c
+max_branches=16
 ```
 
 ### max_recursive_level
@@ -1987,8 +1987,8 @@ Default is 256.
 
 Example of usage:
 
-```
-    max_recursive_level=500
+``` c
+max_recursive_level=500
 ```
 
 ### max_while_loops
@@ -2001,8 +2001,8 @@ like while(1) {...}).
 
 Example of usage:
 
-```
-    max_while_loops=200
+``` c
+max_while_loops=200
 ```
 
 ### mcast
@@ -2018,9 +2018,9 @@ kernel routing beforehand.
 
 Example of usage:
 
-```
-    mcast="eth1"
-    listen=udp:224.0.1.75:5060
+``` c
+mcast="eth1"
+listen=udp:224.0.1.75:5060
 ```
 
 ### mcast_loopback
@@ -2030,8 +2030,8 @@ over loopback. Default value is 'no'.
 
 Example of usage:
 
-```
-    mcast_loopback=yes
+``` c
+mcast_loopback=yes
 ```
 
 ### mcast_ttl
@@ -2041,8 +2041,8 @@ Set the value for multicast ttl. Default value is OS specific (usually
 
 Example of usage:
 
-```
-    mcast_ttl=32
+``` c
+mcast_ttl=32
 ```
 
 ### memdbg
@@ -2059,12 +2059,12 @@ Default value: L_DBG (memdbg=3)
 For example, memdbg=2 means that memory debugging is activated if the
 debug level is 2 or higher.
 
-```
-    debug=3    # no memory debugging as debug level
-    memdbg=4   # is lower than memdbg
+``` c
+debug=3    # no memory debugging as debug level
+memdbg=4   # is lower than memdbg
 
-    debug=3    # memory debugging is active as the debug level
-    memdbg=2   # is higher or equal memdbg
+debug=3    # memory debugging is active as the debug level
+memdbg=2   # is higher or equal memdbg
 ```
 
 Please see also [#memlog](#memlog) and [#debug](#debug).
@@ -2083,12 +2083,12 @@ Default value: L_DBG (memlog=3)
 For example, memlog=2 means that memory statistics dumping is activated
 if the debug level is 2 or higher.
 
-```
-    debug=3    # no memory statistics as debug level
-    memlog=4   # is lower than memlog
+``` c
+debug=3    # no memory statistics as debug level
+memlog=4   # is lower than memlog
 
-    debug=3    # dumping of memory statistics is active as the
-    memlog=2   # debug level is higher or equal memlog
+debug=3    # dumping of memory statistics is active as the
+memlog=2   # debug level is higher or equal memlog
 ```
 
 Please see also [#memdbg](#memdbg) and [#debug](#debug).
@@ -2109,8 +2109,8 @@ mem_join=1
 To change its value at runtime, **kamcmd** needs to be used and the
 modules **ctl** and **cfg_rpc** loaded. Enabling it can be done with:
 
-```
-    kamctl rpc cfg.set_now_int core mem_join 1
+``` bash
+kamctl rpc cfg.set_now_int core mem_join 1
 ```
 
 To disable, set its value to 0.
@@ -2180,8 +2180,8 @@ IP address in the Via/Record-Route headers)
 
 Example of usage:
 
-```
-    mhomed=1
+``` c
+mhomed=1
 ```
 
 ### mlock_pages
@@ -2189,8 +2189,8 @@ Example of usage:
 Locks all Kamailio pages into memory making it unswappable (in general
 one doesn't want his SIP proxy swapped out :-))
 
-```
-    mlock_pages = yes |no (default no)
+``` c
+mlock_pages = yes |no (default no)
 ```
 
 ### modinit_delay
@@ -2201,8 +2201,8 @@ or other systems.
 
 Default value is 0 (no wait).
 
-```
-    modinit_delay=100000
+``` c
+modinit_delay=100000
 ```
 
 ### modparam
@@ -2212,7 +2212,7 @@ modules.
 
 Prototypes:
 
-```
+``` c
 modparam("modname", "paramname", intval)
 modparam("modname", "paramname", "strval")
 ```
@@ -2239,11 +2239,11 @@ module.
 
 Example:
 
-```
-    modparam("usrloc", "db_mode", 2)
-    modparam("usrloc", "nat_bflag", 6)
-    modparam("auth_db|msilo|usrloc", "db_url",
-        "mysql://kamailio:kamailiorw@localhost/kamailio")
+``` c
+modparam("usrloc", "db_mode", 2)
+modparam("usrloc", "nat_bflag", 6)
+modparam("auth_db|msilo|usrloc", "db_url",
+    "mysql://kamailio:kamailiorw@localhost/kamailio")
 ```
 
 See the documenation of the respective module to find out the available
@@ -2259,8 +2259,8 @@ parameters.
 If set to 1 (yes, on), onsend_route block is executed for received
 replies that are sent out. Default is 0.
 
-```
-    onsend_route_reply=yes
+``` c
+onsend_route_reply=yes
 ```
 
 ### open_files_limit
@@ -2274,8 +2274,8 @@ network sockets, so you need one for every concurrent session
 
 Example of usage:
 
-```
-    open_files_limit=2048
+``` c
+open_files_limit=2048
 ```
 
 ### phone2tel
@@ -2286,8 +2286,8 @@ have to turn it off.
 
 Default value: `1` (enabled)
 
-```
-    phone2tel = 0
+``` c
+phone2tel = 0
 ```
 
 ### pmtu_discovery
@@ -2306,8 +2306,8 @@ per destination host.
 The default is 0, do not set the don't-fragment bit or fragment
 packets for IPv4 and IPv6.
 
-```
-    pmtu_discovery = 0 | 1 | 2 (default 0)
+``` c
+pmtu_discovery = 0 | 1 | 2 (default 0)
 ```
 
 ### port
@@ -2316,8 +2316,8 @@ The port the SIP server listens to. The default value for it is 5060.
 
 Example of usage:
 
-```
-    port=5080
+``` c
+port=5080
 ```
 
 ### pv_buffer_size
@@ -2329,8 +2329,8 @@ set the internal buffer size.
 
 Example of usage:
 
-```
-    pv_buffer_size=2048
+``` c
+pv_buffer_size=2048
 ```
 
 ### pv_buffer_slots
@@ -2340,8 +2340,8 @@ pseudo-variables inside. The default value is 10.
 
 Example of usage:
 
-```
-    pv_buffer_slots=12
+``` c
+pv_buffer_slots=12
 ```
 
 ### pv_cache_limit
@@ -2349,8 +2349,8 @@ Example of usage:
 The limit how many pv declarations in the cache after which an action is
 taken. Default value is 2048.
 
-```
-    pv_cache_limit=1024
+``` c
+pv_cache_limit=1024
 ```
 
 ### pv_cache_action
@@ -2377,7 +2377,7 @@ Default value: `0` (no rate limiting)
 
 Example:
 
-```
+``` c
 rpc_exec_delta=5
 ```
 
@@ -2392,8 +2392,8 @@ Default: `/var/run/kamailio`
 
 Example of usage:
 
-```
-    rundir="/tmp"
+``` c
+rundir="/tmp"
 ```
 
 ### received_route_mode
@@ -2417,8 +2417,8 @@ request was received. Default value is 0 (off).
 
 Example of usage:
 
-```
-    reply_to_via=0
+``` c
+reply_to_via=0
 ```
 
 ### route_locks_size
@@ -2472,15 +2472,15 @@ message.
 
 Example of usage:
 
-```
-    server_signature=no
+``` c
+server_signature=no
 ```
 
 If it is enabled (default=yes) a header is generated as in the following
 example:
 
-```
-    Server: Kamailio (<version> (<arch>/<os>))
+``` c
+Server: Kamailio (<version> (<arch>/<os>))
 ```
 
 ### shm_force_alloc
@@ -2490,7 +2490,7 @@ start time will increase, but combined with mlock_pages will guarantee
 Kamailio will get all its memory from the beginning (no more kswapd slow
 downs)
 
-```
+``` c
 shm_force_alloc = yes | no (default no)
 ```
 
@@ -2498,7 +2498,7 @@ shm_force_alloc = yes | no (default no)
 
 Set shared memory size (in Mb).
 
-```
+``` c
 shm_mem_size = 64 (default 64)
 ```
 
@@ -2540,8 +2540,8 @@ routing.
 
 Example of usage:
 
-```
-    sip_warning=0
+``` c
+sip_warning=0
 ```
 
 ### socket
@@ -2551,7 +2551,7 @@ paramter that allows specifying the attributes using a structure style.
 
 Prototype:
 
-```
+``` c
 socket = {
     attr1 = value1;
     ...
@@ -2570,7 +2570,7 @@ The attribute `bind` is mandatory and has to provide at list the address to list
 
 Example:
 
-```
+``` c
 socket = {
 	bind = udp:10.10.10.10:5060;
 	advertise = 11.11.11.11:5060;
@@ -2581,7 +2581,7 @@ socket = {
 
 The above is the equivalent of:
 
-```
+``` c
 listen=udp:10.10.10.10:5060 advertise 11.11.11.11:5060 name "s0" virtual
 ```
 
@@ -2639,8 +2639,8 @@ value is 65535.
 
 Example of usage:
 
-```
-    sql_buffer_size=131070
+``` c
+sql_buffer_size=131070
 ```
 
 ### statistics
@@ -2660,28 +2660,28 @@ Following are some examples how to access statistics variables:
 
 **script**:
 
-```
-    modparam("statistics", "variable", "NOTIFY")
+``` c
+modparam("statistics", "variable", "NOTIFY")
 
-    (if method == "NOTIFY") {
-      update_stat("NOTIFY", "+1");
-    }
+(if method == "NOTIFY") {
+    update_stat("NOTIFY", "+1");
+}
 
-    xlog("Number of received NOTIFYs: $stat(NOTIFY)");
+xlog("Number of received NOTIFYs: $stat(NOTIFY)");
 ```
 
 **RPC**:
 
-```
-    # get counter value
-    kamctl rpc stats.get_statistics NOTIFY
-    # set counter to zero
-    kamctl rpc stats.reset_statistics NOTIFY
-    # get counter value and then set it to zero
-    kamctl rpc stats.clear_statistics NOTIFY
+``` bash
+# get counter value
+kamctl rpc stats.get_statistics NOTIFY
+# set counter to zero
+kamctl rpc stats.reset_statistics NOTIFY
+# get counter value and then set it to zero
+kamctl rpc stats.clear_statistics NOTIFY
 
-    # or use the kamcmd tool
-    kamcmd stats.get_statistics 1xx_replies
+# or use the kamcmd tool
+kamcmd stats.get_statistics 1xx_replies
 ```
 
 ### stats_name_separator
@@ -2691,8 +2691,8 @@ names. Default value is `_`.
 
 Example of usage:
 
-```
-    stats_name_separator = "-"
+``` c
+stats_name_separator = "-"
 ```
 
 ### tos
@@ -2702,10 +2702,10 @@ and UDP).
 
 Example of usage:
 
-```
-    tos=IPTOS_LOWDELAY
-    tos=0x10
-    tos=IPTOS_RELIABILITY
+``` c
+tos=IPTOS_LOWDELAY
+tos=0x10
+tos=IPTOS_RELIABILITY
 ```
 
 ### udp_mtu
@@ -2716,8 +2716,8 @@ udp_mtu.
 
 RFC 3261 specified size: `1300`. Default: `0` (off).
 
-```
-    udp_mtu = number
+``` c
+udp_mtu = number
 ```
 
 ### udp_mtu_try_proto
@@ -2736,8 +2736,8 @@ See also `udp_mtu_try_proto(proto)` function.
 
 Default: `UDP` (`off`). Recommended: `TCP`.
 
-```
-    udp_mtu_try_proto = TCP|TLS|SCTP|UDP
+``` c
+udp_mtu_try_proto = TCP|TLS|SCTP|UDP
 ```
 
 ### uri_host_extra_chars
@@ -2843,10 +2843,10 @@ useful when it comes to generating core files :)
 
 Example of usage:
 
-```
-    wdir="/usr/local/kamailio"
-    # or
-    wdir=/usr/kamwd
+``` c
+wdir="/usr/local/kamailio"
+# or
+wdir=/usr/kamwd
 ```
 
 ### xavp_via_params
@@ -2862,8 +2862,8 @@ Core flag `FL_ADD_XAVP_VIA_PARAMS` needs to be set¹.
 
 Example:
 
-```
-    xavp_via_params="via"
+``` c
+xavp_via_params="via"
 ```
 
 `[1]` See function `via_add_xavp_params()` from "corex" module.
@@ -2933,19 +2933,19 @@ The maximum time a dns request can take (before failing) is (if
 `dns_try_ipv6` is yes, multiply it again by `2`; if `SRV` and `NAPTR` lookups
 are enabled, it can take even longer!):
 
-```
-    (dns_retr_time*(dns_retr_no+1)*dns_servers_no)*(search_list_domains)
+``` c
+(dns_retr_time*(dns_retr_no+1)*dns_servers_no)*(search_list_domains)
 ```
 
 Note: During DNS lookups, the process which performs the DNS lookup
 blocks. To minimize the blocked time the following parameters can be
 used (max 2s):
 
-```
-    dns_try_ipv6=no
-    dns_retr_time=1
-    dns_retr_no=1
-    dns_use_search_list=no
+``` c
+dns_try_ipv6=no
+dns_retr_time=1
+dns_retr_no=1
+dns_use_search_list=no
 ```
 
 ### dns
@@ -2978,8 +2978,8 @@ Default is `no`.
 
 **Alias name: dns_cache_delete_nonexpired**
 
-```
-    dns_cache_del_nonexp = yes | no (default: no)
+``` c
+dns_cache_del_nonexp = yes | no (default: no)
 ```
 
       allow deletion of non-expired records from the cache when there is no more space
@@ -2987,8 +2987,8 @@ Default is `no`.
 
 ### dns_cache_rec_pref
 
-```
-    dns_cache_rec_pref = number (default 0)
+``` c
+dns_cache_rec_pref = number (default 0)
 ```
 
       dns cache record preference, determines how new DNS records are stored internally in relation to existing entries.
@@ -3000,8 +3000,8 @@ Default is `no`.
 
 ### dns_cache_flags
 
-```
-    dns_cache_flags = number (default 0)
+``` c
+dns_cache_flags = number (default 0)
 ```
 
       dns cache specific resolver flags, used for overriding the default behaviour (low level).
@@ -3017,8 +3017,8 @@ Default is `no`.
 Interval in seconds after which the dns cache is garbage collected
 (default: 120 s)
 
-```
-    dns_cache_gc_interval = number
+``` c
+dns_cache_gc_interval = number
 ```
 
 ### dns_cache_init
@@ -3026,28 +3026,28 @@ Interval in seconds after which the dns cache is garbage collected
 If off, the dns cache is not initialized at startup and cannot be
 enabled at runtime, this saves some memory.
 
-```
-    dns_cache_init = on | off (default on)
+``` c
+dns_cache_init = on | off (default on)
 ```
 
 ### dns_cache_max_ttl
 
-```
-    dns_cache_max_ttl = time in seconds (default MAXINT)
+``` c
+dns_cache_max_ttl = time in seconds (default MAXINT)
 ```
 
 ### dns_cache_mem
 
 Maximum memory used for the dns cache in KB (default 500 K)
 
-```
-    dns_cache_mem = number
+``` c
+dns_cache_mem = number
 ```
 
 ### dns_cache_min_ttl
 
-```
-    dns_cache_min_ttl = time in seconds (default 0)
+``` c
+dns_cache_min_ttl = time in seconds (default 0)
 ```
 
 ### dns_cache_negative_ttl
@@ -3061,8 +3061,8 @@ If the DNS lookup should ignore the remote side's protocol preferences,
 as indicated by the Order field in the NAPTR records and mandated by RFC
 2915.
 
-```
-      dns_naptr_ignore_rfc = yes | no (default yes)
+``` c
+dns_naptr_ignore_rfc = yes | no (default yes)
 ```
 
 ### dns_retr_no
@@ -3072,8 +3072,8 @@ specific, depends also on the '/etc/resolv.conf' content (usually 4).
 
 Example of usage:
 
-```
-    dns_retr_no=3
+``` c
+dns_retr_no=3
 ```
 
 ### dns_retr_time
@@ -3083,8 +3083,8 @@ specific, depends also on the '/etc/resolv.conf' content (usually 5s).
 
 Example of usage:
 
-```
-    dns_retr_time=3
+``` c
+dns_retr_time=3
 ```
 
 ### dns_search_full_match
@@ -3093,8 +3093,8 @@ When name was resolved using dns search list, check the domain added in
 the answer matches with one from the search list (small performance hit,
 but more safe)
 
-```
-    dns_search_full_match = yes | no (default yes)
+``` c
+dns_search_full_match = yes | no (default yes)
 ```
 
 ### dns_servers_no
@@ -3104,8 +3104,8 @@ used. Default value is to use all of them.
 
 Example of usage:
 
-```
-    dns_servers_no=2
+``` c
+dns_servers_no=2
 ```
 
 ### dns_srv_lb
@@ -3114,8 +3114,8 @@ Example of usage:
 
 Enable dns srv weight based load balancing (see doc/tutorials/dns.txt)
 
-```
-    dns_srv_lb = yes | no (default no)
+``` c
+dns_srv_lb = yes | no (default no)
 ```
 
 ### dns_try_ipv6
@@ -3131,8 +3131,8 @@ turned on!
 
 Example of usage:
 
-```
-    dns_try_ipv6=yes
+``` c
+dns_try_ipv6=yes
 ```
 
 ### dns_try_naptr
@@ -3140,8 +3140,8 @@ Example of usage:
 Enable NAPTR support according to RFC 3263 (see doc/tutorials/dns.txt
 for more info)
 
-```
-    dns_try_naptr = yes | no (default no)
+``` c
+dns_try_naptr = yes | no (default no)
 ```
 
 ### dns_sctp_pref, dns_tcp_pref, dns_tls_pref, dns_udp_pref
@@ -3157,8 +3157,8 @@ dns_sctp_pref=1). To completely ignore NAPTR records for a specific
 protocol, set the corresponding protocol preference to -1 (or any other
 negative number). (see doc/tutorials/dns.txt for more info)
 
-```
-    dns_{udp,tcp,tls,sctp}_pref = number
+``` c
+dns_{udp,tcp,tls,sctp}_pref = number
 ```
 
 ### dns_use_search_list
@@ -3174,8 +3174,8 @@ be 2 dns queries, eg. foo+'.' and foo+""+'.')
 
 Example of usage:
 
-```
-    dns_use_search_list=no
+``` c
+dns_use_search_list=no
 ```
 
 ### use_dns_cache
@@ -3192,7 +3192,7 @@ failover. Default is "on". Settings can be changed also during runtime
 
 **Alias name: dns_use_failover**
 
-```
+``` c
 use_dns_failover = on | off (default off)
 ```
 
@@ -3213,8 +3213,8 @@ is `no`.
 
 Example of usage:
 
-```
-    disable_tcp=yes
+``` c
+disable_tcp=yes
 ```
 
 ### tcp_accept_aliases
@@ -3235,8 +3235,8 @@ tcp_accept_aliases but just use nathelper module and
 
 Default is `no` (`off`)
 
-```
-    tcp_accept_aliases= yes|no
+``` c
+tcp_accept_aliases= yes|no
 ```
 
 ### tcp_accept_haproxy
@@ -3280,7 +3280,7 @@ Set limit for accepted connections from the same IP address.
 
 Default 1024.
 
-```
+``` c
 tcp_accept_iplimit=32
 ```
 
@@ -3321,8 +3321,8 @@ and `tcp_wq_max`).
 
 **Note:** It also applies for TLS.
 
-```
-    tcp_async = yes | no (default yes)
+``` c
+tcp_async = yes | no (default yes)
 ```
 
 ### tcp_children
@@ -3333,8 +3333,8 @@ children as UDP children (see "children" parameter) will be used.
 
 Example of usage:
 
-```
-    tcp_children=4
+``` c
+tcp_children=4
 ```
 
 ### tcp_clone_rcvbuf
@@ -3347,8 +3347,8 @@ Default is `0` (don't clone), set it to `1` for cloning.
 
 Example of usage:
 
-```
-    tcp_clone_rcvbuf=1
+``` c
+tcp_clone_rcvbuf=1
 ```
 
 ### tcp_connection_lifetime
@@ -3363,8 +3363,8 @@ not close the TCP connection as it is not capable of opening a new one.
 
 Example of usage:
 
-```
-    tcp_connection_lifetime=3605
+``` c
+tcp_connection_lifetime=3605
 ```
 
 ### tcp_connection_match
@@ -3387,8 +3387,8 @@ connection problems. The default value is 10s.
 
 Example of usage:
 
-```
-    tcp_connect_timeout=5
+``` c
+tcp_connect_timeout=5
 ```
 
 ### tcp_conn_wq_max
@@ -3397,16 +3397,16 @@ Maximum bytes queued for write allowed per connection. Attempting to
 queue more bytes would result in an error and in the connection being
 closed (too slow). If tcp_buf_write is not enabled, it has no effect.
 
-```
-    tcp_conn_wq_max = bytes (default 32 K)
+``` c
+tcp_conn_wq_max = bytes (default 32 K)
 ```
 
 ### tcp_crlf_ping
 
 Enable SIP outbound TCP keep-alive using PING-PONG (CRLFCRLF - CRLF).
 
-```
-    tcp_crlf_ping = yes | no default: yes
+``` c
+tcp_crlf_ping = yes | no default: yes
 ```
 
 ### tcp_defer_accept
@@ -3425,14 +3425,14 @@ be limited => the timeout can be controlled in some way).
 
 On FreeBSD:
 
-```
-    tcp_defer_accept =  yes | no (default no)
+``` c
+tcp_defer_accept =  yes | no (default no)
 ```
 
 On Linux:
 
-```
-    tcp_defer_accept =  number of seconds before timeout (default disabled)
+``` c
+tcp_defer_accept =  number of seconds before timeout (default disabled)
 ```
 
 ### tcp_delayed_ack
@@ -3440,8 +3440,8 @@ On Linux:
 Initial ACK for opened connections will be delayed and sent with the
 first data segment (see linux tcp(7) TCP_QUICKACK). For now linux only.
 
-```
-    tcp_delayed_ack  = yes | no (default yes when supported)
+``` c
+tcp_delayed_ack  = yes | no (default yes when supported)
 ```
 
 ### tcp_fd_cache
@@ -3450,16 +3450,16 @@ If enabled FDs used for sending will be cached inside the process
 calling tcp_send (performance increase for sending over tcp at the cost
 of slightly slower connection closing and extra FDs kept open)
 
-```
-    tcp_fd_cache = yes | no (default yes)
+``` c
+tcp_fd_cache = yes | no (default yes)
 ```
 
 ### tcp_keepalive
 
 Enables keepalive for tcp (sets SO_KEEPALIVE socket option)
 
-```
-    tcp_keepalive = yes | no (default yes)
+``` c
+tcp_keepalive = yes | no (default yes)
 ```
 
 ### tcp_keepcnt
@@ -3467,8 +3467,8 @@ Enables keepalive for tcp (sets SO_KEEPALIVE socket option)
 Number of keepalives sent before dropping the connection (TCP_KEEPCNT
 socket option). Linux only.
 
-```
-    tcp_keepcnt = number (not set by default)
+``` c
+tcp_keepcnt = number (not set by default)
 ```
 
 ### tcp_keepidle
@@ -3476,8 +3476,8 @@ socket option). Linux only.
 Time before starting to send keepalives, if the connection is idle
 (TCP_KEEPIDLE socket option). Linux only.
 
-```
-    tcp_keepidle  = seconds (not set by default)
+``` c
+tcp_keepidle  = seconds (not set by default)
 ```
 
 ### tcp_keepintvl
@@ -3485,8 +3485,8 @@ Time before starting to send keepalives, if the connection is idle
 Time interval between keepalive probes, when the previous probe failed
 (TCP_KEEPINTVL socket option). Linux only.
 
-```
-    tcp_keepintvl = seconds (not set by default)
+``` c
+tcp_keepintvl = seconds (not set by default)
 ```
 
 ### tcp_linger2
@@ -3494,8 +3494,8 @@ Time interval between keepalive probes, when the previous probe failed
 Lifetime of orphaned sockets in FIN_WAIT2 state (overrides
 tcp_fin_timeout on, see linux tcp(7) TCP_LINGER2). Linux only.
 
-```
-    tcp_linger2 = seconds (not set by default)
+``` c
+tcp_linger2 = seconds (not set by default)
 ```
 
 ### tcp_max_connections
@@ -3506,8 +3506,8 @@ DEFAULT_TCP_MAX_CONNECTIONS 2048
 
 Example of usage:
 
-```
-    tcp_max_connections=4096
+``` c
+tcp_max_connections=4096
 ```
 
 ### tcp_no_connect
@@ -3526,8 +3526,8 @@ poll, epoll_lt, epoll_et, sigio_rt, select, kqueue, /dev/poll
 
 Example of usage:
 
-```
-    tcp_poll_method=select
+``` c
+tcp_poll_method=select
 ```
 
 ### tcp_rd_buf_size
@@ -3559,8 +3559,8 @@ compiled in a system implementing SO_REUSEPORT (Linux \> 3.9.0, FreeBSD,
 OpenBSD, NetBSD, MacOSX). This parameter takes effect only if also the
 system on which Kamailio is running on supports SO_REUSEPORT.
 
-```
-    tcp_reuse_port = yes (default no)
+``` c
+tcp_reuse_port = yes (default no)
 ```
 
 ### tcp_script_mode
@@ -3572,8 +3572,8 @@ the processing continues with the connection open.
 
 Default `0` (close connection)
 
-```
-    tcp_script_mode = 1
+``` c
+tcp_script_mode = 1
 ```
 
 ### tcp_send_timeout
@@ -3585,8 +3585,8 @@ connections. The default value is 10s.
 
 Example of usage:
 
-```
-    tcp_send_timeout=3
+``` c
+tcp_send_timeout=3
 ```
 
 ### tcp_source_ipv4, tcp_source_ipv6
@@ -3594,9 +3594,9 @@ Example of usage:
 Set the source IP for all outbound TCP connections. If setting of the IP
 fails, the TCP connection will use the default IP address.
 
-```
-    tcp_source_ipv4 = IPv4 address
-    tcp_source_ipv6 = IPv6 address
+``` c
+tcp_source_ipv4 = IPv4 address
+tcp_source_ipv6 = IPv6 address
 ```
 
 ### tcp_syncnt
@@ -3604,8 +3604,8 @@ fails, the TCP connection will use the default IP address.
 Number of SYN retransmissions before aborting a connect attempt (see
 linux tcp(7) TCP_SYNCNT). Linux only.
 
-```
-    tcp_syncnt = number of syn retr. (default not set)
+``` c
+tcp_syncnt = number of syn retr. (default not set)
 ```
 
 ### tcp_wait_data
@@ -3635,8 +3635,8 @@ Default: `2100` (`~ 2 INVITEs`), can be changed at runtime.
 Maximum bytes queued for write allowed globally. It has no effect if
 tcp_buf_write is not enabled.
 
-```
-    tcp_wq_max = bytes (default 10 Mb)
+``` c
+tcp_wq_max = bytes (default 10 Mb)
 ```
 
 ## TLS Parameters
@@ -3652,8 +3652,8 @@ Default value is `5061`.
 
 Example of usage:
 
-```
-    tls_port_no=6061
+``` c
+tls_port_no=6061
 ```
 
 ### tls_max_connections
@@ -3665,8 +3665,8 @@ Default value is `2048`.
 
 Example of usage:
 
-```
-    tls_max_connections=4096
+``` c
+tls_max_connections=4096
 ```
 
 ## SCTP Parameters
@@ -3680,23 +3680,23 @@ Default value is `auto`.
 
 Example of usage:
 
-```
-    disable_sctp=yes
+``` c
+disable_sctp=yes
 ```
 
 ### enable_sctp
 
-```
-    enable_sctp = 0/1/2  - SCTP disabled (0)/ SCTP enabled (1)/auto (2),
-                           default auto (2)
+``` c
+enable_sctp = 0/1/2  - SCTP disabled (0)/ SCTP enabled (1)/auto (2),
+                        default auto (2)
 ```
 
 ### sctp_children
 
 sctp children no (similar to udp children)
 
-```
-    sctp_children = number
+``` c
+sctp_children = number
 ```
 
 ### sctp_socket_rcvbuf
@@ -3705,8 +3705,8 @@ Size for the sctp socket receive buffer
 
 **Alias name: sctp_socket_receive_buffer**
 
-```
-    sctp_socket_rcvbuf = number
+``` c
+sctp_socket_rcvbuf = number
 ```
 
 ### sctp_socket_sndbuf
@@ -3715,8 +3715,8 @@ Size for the sctp socket send buffer
 
 **Alias name: sctp_socket_send_buffer**
 
-```
-    sctp_socket_sndbuf = number
+``` c
+sctp_socket_sndbuf = number
 ```
 
 ### sctp_autoclose
@@ -3725,12 +3725,12 @@ Number of seconds before autoclosing an idle association (default: `180`
 s). Can be changed at runtime, but it will affect only new associations.
 E.g.:
 
-```
-    $ kamcmd cfg.seti sctp autoclose 120
+``` c
+$ kamcmd cfg.seti sctp autoclose 120
 ```
 
-```
-    sctp_autoclose = seconds
+``` c
+sctp_autoclose = seconds
 ```
 
 ### sctp_send_ttl
@@ -3738,12 +3738,12 @@ E.g.:
 Number of milliseconds before an unsent message/chunk is dropped
 (default: `32000` ms or `32` s). Can be changed at runtime, e.g.:
 
-```
-    $ kamcmd cfg.seti sctp send_ttl 180000
+``` c
+$ kamcmd cfg.seti sctp send_ttl 180000
 ```
 
-```
-    sctp_send_ttl = milliseconds - n
+``` c
+sctp_send_ttl = milliseconds - n
 ```
 
 ### sctp_send_retries
@@ -3756,8 +3756,8 @@ with peers that reboot/restart or fail over to another machine.
 WARNING: use with care and low values (e.g. 1-3) to avoid "multiplying"
 traffic to unresponding hosts (default: 0). Can be changed at runtime.
 
-```
-    sctp_send_retries = 1
+``` c
+sctp_send_retries = 1
 ```
 
 ### sctp_assoc_tracking
@@ -3780,8 +3780,8 @@ associations were tracked.
 Config options depending on `sctp_assoc_tracking` being on:
 `sctp_assoc_reuse`.
 
-```
-    sctp_assoc_tracking = yes/no
+``` c
+sctp_assoc_tracking = yes/no
 ```
 
 ### sctp_assoc_reuse
@@ -3797,8 +3797,8 @@ association will be automatically reused by the sctp stack. Can be
 changed at runtime (sctp assoc_reuse), but it can be turned on only if
 `sctp_assoc_tracking` is on.
 
-```
-    sctp_assoc_reuse = yes/no
+``` c
+sctp_assoc_reuse = yes/no
 ```
 
 ### sctp_max_assocs
@@ -3820,8 +3820,8 @@ association will first be opened and then immediately closed. In general
 this means that the initial sip packet will be sent (as part of the
 4-way handshake).
 
-```
-    sctp_max_assocs = number
+``` c
+sctp_max_assocs = number
 ```
 
 ### sctp_srto_initial
@@ -3832,8 +3832,8 @@ OS specific).
 Can be changed at runtime (sctp `srto_initial`) but it will affect only
 new associations.
 
-```
-    sctp_srto_initial = milliseconds
+``` c
+sctp_srto_initial = milliseconds
 ```
 
 ### sctp_srto_max
@@ -3848,8 +3848,8 @@ details).
 Can be changed at runtime (sctp `srto_max`) but it will affect only new
 associations.
 
-```
-    sctp_srto_max = milliseconds
+``` c
+sctp_srto_max = milliseconds
 ```
 
 ### sctp_srto_min
@@ -3867,8 +3867,8 @@ is 1.
 Can be changed at runtime (sctp `srto_min`) but it will affect only new
 associations.
 
-```
-    sctp_srto_min = milliseconds
+``` c
+sctp_srto_min = milliseconds
 ```
 
 ### sctp_asocmaxrxt
@@ -3879,8 +3879,8 @@ It should be set to `sctp_pathmaxrxt` `*` no. of expected paths.
 Can be changed at runtime (sctp asocmaxrxt) but it will affect only new
 associations.
 
-```
-    sctp_asocmaxrxt   = number
+``` c
+sctp_asocmaxrxt   = number
 ```
 
 ### sctp_init_max_attempts
@@ -3889,8 +3889,8 @@ Maximum INIT retransmission attempts (default: OS specific).
 
 Can be changed at runtime (sctp init_max_attempts).
 
-```
-    sctp_init_max_attempts = number
+``` c
+sctp_init_max_attempts = number
 ```
 
 ### sctp_init_max_timeo
@@ -3900,8 +3900,8 @@ specific.
 
 Can be changed at runtime (sctp init_max_timeo).
 
-```
-    sctp_init_max_timeo = milliseconds
+``` c
+sctp_init_max_timeo = milliseconds
 ```
 
 ### sctp_hbinterval
@@ -3912,8 +3912,8 @@ Default: OS specific.
 Can be changed at runtime (sctp hbinterval) but it will affect only new
 associations.
 
-```
-    sctp_hbinterval = milliseconds
+``` c
+sctp_hbinterval = milliseconds
 ```
 
 ### sctp_pathmaxrxt
@@ -3924,8 +3924,8 @@ Default: OS specific.
 Can be changed at runtime (sctp pathmaxrxt) but it will affect only new
 associations.
 
-```
-    sctp_pathmaxrxt = number
+``` c
+sctp_pathmaxrxt = number
 ```
 
 ### sctp_sack_delay
@@ -3941,8 +3941,8 @@ value should be between 200 and 500 ms.
 Can be changed at runtime (sctp `sack_delay`) but it will affect only new
 associations.
 
-```
-    sctp_sack_delay = milliseconds
+``` c
+sctp_sack_delay = milliseconds
 ```
 
 ### sctp_sack_freq
@@ -3957,8 +3957,8 @@ startup).
 Can be changed at runtime (sctp `sack_freq`) but it will affect only new
 associations.
 
-```
-    sctp_sack_freq = number
+``` c
+sctp_sack_freq = number
 ```
 
 ### sctp_max_burst
@@ -3969,8 +3969,8 @@ OS specific.
 Can be changed at runtime (sctp `max_burst`) but it will affect only new
 associations.
 
-```
-    sctp_max_burst = number
+``` c
+sctp_max_burst = number
 ```
 
 ## UDP Parameters
@@ -3991,8 +3991,8 @@ could be used for sending is smaller than `1500`.
 The parameter can be set at runtime as long as sr was started with
 enough privileges (`core.udp4_raw`).
 
-```
-    udp4_raw = on
+``` c
+udp4_raw = on
 ```
 
 ### udp4_raw_mtu
@@ -4022,8 +4022,8 @@ The parameter can be set at runtime (`core.udp4_raw_ttl`).
 How much time a blocklisted destination will be kept in the blocklist
 (w/o any update).
 
-```
-    dst_blocklist_expire = time in s (default 60 s)
+``` c
+dst_blocklist_expire = time in s (default 60 s)
 ```
 
 ### dst_blocklist_gc_interval
@@ -4031,8 +4031,8 @@ How much time a blocklisted destination will be kept in the blocklist
 How often the garbage collection will run (eliminating old, expired
 entries).
 
-```
-    dst_blocklist_gc_interval = time in s (default 60 s)
+``` c
+dst_blocklist_gc_interval = time in s (default 60 s)
 ```
 
 ### dst_blocklist_init
@@ -4040,8 +4040,8 @@ entries).
 If off, the blocklist is not initialized at startup and cannot be
 enabled at runtime, this saves some memory.
 
-```
-    dst_blocklist_init = on | off (default on)
+``` c
+dst_blocklist_init = on | off (default on)
 ```
 
 ### dst_blocklist_mem
@@ -4049,8 +4049,8 @@ enabled at runtime, this saves some memory.
 Maximum shared memory amount used for keeping the blocklisted
 destinations.
 
-```
-    dst_blocklist_mem = size in Kb (default 250 Kb)
+``` c
+dst_blocklist_mem = size in Kb (default 250 Kb)
 ```
 
 ### use_dst_blocklist
@@ -4064,8 +4064,8 @@ Note: using the blocklist incurs a small performance penalty.
 
 See also `doc/dst_blocklist.txt`.
 
-```
-    use_dst_blocklist = on | off (default off)
+``` c
+use_dst_blocklist = on | off (default off)
 ```
 
 ## Real-Time Parameters
@@ -4082,8 +4082,8 @@ Sets real time priority for all the Kamailio processes, or the timers
 
 Example: `real_time= 7` => everything switched to real time priority.
 
-```
-    real_time = <int> (flags) (default off)
+``` c
+real_time = <int> (flags) (default off)
 ```
 
 ### rt_policy
@@ -4091,8 +4091,8 @@ Example: `real_time= 7` => everything switched to real time priority.
 Real time scheduling policy, `0 = SCHED_OTHER`, `1= SCHED_RR` and
 `2=SCHED_FIFO`
 
-```
-    rt_policy= <0..3> (default 0)
+``` c
+rt_policy= <0..3> (default 0)
 ```
 
 ### rt_prio
@@ -4100,8 +4100,8 @@ Real time scheduling policy, `0 = SCHED_OTHER`, `1= SCHED_RR` and
 Real time priority used for everything except the timers, if `real_time`
 is enabled.
 
-```
-    rt_prio = <int> (default 0)
+``` c
+rt_prio = <int> (default 0)
 ```
 
 ### rt_timer1_policy
@@ -4110,8 +4110,8 @@ is enabled.
 
 Like `rt_policy` but for the "fast" timer.
 
-```
-    rt_timer1_policy=<0..3> (default 0)
+``` c
+rt_timer1_policy=<0..3> (default 0)
 ```
 
 ### rt_timer1_prio
@@ -4120,8 +4120,8 @@ Like `rt_policy` but for the "fast" timer.
 
 Like `rt_prio` but for the "fast" timer process (if `real_time & 1`).
 
-```
-    rt_timer1_prio=<int> (default 0)
+``` c
+rt_timer1_prio=<int> (default 0)
 ```
 
 ### rt_timer2_policy
@@ -4130,8 +4130,8 @@ Like `rt_prio` but for the "fast" timer process (if `real_time & 1`).
 
 Like `rt_policy` but for the "slow" timer.
 
-```
-    rt_timer2_policy=<0..3> (default 0)
+``` c
+rt_timer2_policy=<0..3> (default 0)
 ```
 
 ### rt_timer2_prio
@@ -4140,8 +4140,8 @@ Like `rt_policy` but for the "slow" timer.
 
 Like `rt_prio` but for the "slow" timer.
 
-```
-    rt_timer2_prio=<int> (default 0)
+``` c
+rt_timer2_prio=<int> (default 0)
 ```
 
 ## Core Functions
@@ -4183,18 +4183,18 @@ according to Via header.)
 
 Example of usage:
 
-```
-    onreply_route {
-        if(status=="200") {
-            drop(); # this works
-        }
+``` c
+onreply_route {
+    if(status=="200") {
+        drop(); # this works
     }
+}
 
-    onreply_route[FOOBAR] {
-        if(status=="200") {
-            drop(); # this is ignored
-        }
+onreply_route[FOOBAR] {
+    if(status=="200") {
+        drop(); # this is ignored
     }
+}
 ```
 
 ### exit
@@ -4203,30 +4203,30 @@ Stop the execution of the configuration script -- it has the same
 behaviour as return(0). It does not affect the implicit action to be
 taken after script execution.
 
-```
-    request_route {
-      if (route(ABC)) {
-        xlog("L_NOTICE","method $rm is INVITE\n");
-      } else {
-        xlog("L_NOTICE","method is $rm\n");
-      }
+``` c
+request_route {
+    if (route(ABC)) {
+    xlog("L_NOTICE","method $rm is INVITE\n");
+    } else {
+    xlog("L_NOTICE","method is $rm\n");
     }
+}
 
-    route[ABC] {
-      if (is_method("INVITE")) {
-        return(1);
-      } else if (is_method("REGISTER")) {
-        return(-1);
-      } else if (is_method("MESSAGE")) {
-        sl_send_reply("403","IM not allowed");
-        exit;
-      }
+route[ABC] {
+    if (is_method("INVITE")) {
+    return(1);
+    } else if (is_method("REGISTER")) {
+    return(-1);
+    } else if (is_method("MESSAGE")) {
+    sl_send_reply("403","IM not allowed");
+    exit;
     }
+}
 ```
 
 ### error
 
-```
+``` c
 error("p1", "p2");
 ```
 
@@ -4237,7 +4237,7 @@ Not properly implemented yet - prints a log messages with the two string paramet
 Basic implementation of executing an external application with C `system()`
 function. Look also at the functions exported by `exec` module.
 
-```
+``` c
 exec("/path/to/app");
 ```
 
@@ -4259,8 +4259,8 @@ behavior of the SIP proxy.
 
 Example of usage:
 
-```
-    force_rport();
+``` c
+force_rport();
 ```
 
 ### add_rport
@@ -4279,9 +4279,9 @@ function from the corex module instead.
 
 Example of usage:
 
-```
-    force_send_socket(10.10.10.10:5060);
-    force_send_socket(udp:10.10.10.10:5060);
+``` c
+force_send_socket(10.10.10.10:5060);
+force_send_socket(udp:10.10.10.10:5060);
 ```
 
 ### force_tcp_alias
@@ -4304,9 +4304,9 @@ or `$ru`.
 
 Example of usage:
 
-```
-    $du = "sip:10.0.0.10:5060;transport=tcp";
-    forward();
+``` c
+$du = "sip:10.0.0.10:5060;transport=tcp";
+forward();
 ```
 
 ### isavpflagset
@@ -4321,10 +4321,10 @@ For more see:
 
 Example of usage:
 
-```
-      if(isflagset(3)) {
-          log("flag 3 is set\n");
-      };
+``` c
+if(isflagset(3)) {
+    log("flag 3 is set\n");
+};
 ```
 
 Kamailio also supports named flags. They have to be declared at the
@@ -4334,24 +4334,24 @@ beginning of the config file with:
 
 Example:
 
-```
-    flags test, a:1, b:2 ;
-    request_route {
-        setflag(test);
-        if (isflagset(a)){ # equiv. to isflagset(1)
-            ....
-        }
-        resetflag(b);  # equiv. to resetflag(2)
+``` c
+flags test, a:1, b:2 ;
+request_route {
+    setflag(test);
+    if (isflagset(a)){ # equiv. to isflagset(1)
+        ....
+    }
+    resetflag(b);  # equiv. to resetflag(2)
 ```
 
 ### is_int
 
 Checks if a pseudo variable argument contains integer value.
 
-```
-    if(is_int("$avp(foobar)")) {
-      log("foobar contains an integer\n");
-    }
+``` c
+if(is_int("$avp(foobar)")) {
+    log("foobar contains an integer\n");
+}
 ```
 
 ### log
@@ -4368,9 +4368,9 @@ For more see:
 
 Example of usage:
 
-```
-      log("just some text message\n");
-      log(1, "another text message\n");
+``` c
+log("just some text message\n");
+log(1, "another text message\n");
 ```
 
 ### prefix
@@ -4379,8 +4379,8 @@ Add the string parameter in front of username in R-URI.
 
 Example of usage:
 
-```
-      prefix("00");
+``` c
+prefix("00");
 ```
 
 ### resetavpflag
@@ -4406,41 +4406,41 @@ is equivalent with exit `[val]`.
 
 Example usage:
 
-```
-    request_route {
-      if (route(RET)) {
-        xlog("L_NOTICE","method $rm is INVITE\n");
-      } else {
-        xlog("L_NOTICE","method $rm is REGISTER\n");
-      };
-    }
+``` c
+request_route {
+    if (route(RET)) {
+    xlog("L_NOTICE","method $rm is INVITE\n");
+    } else {
+    xlog("L_NOTICE","method $rm is REGISTER\n");
+    };
+}
 
-    route[RET] {
-      if (is_method("INVITE")) {
-        return(1);
-      } else if (is_method("REGISTER")) {
-        return(-1);
-      } else {
-        return(0);
-      };
-    }
+route[RET] {
+    if (is_method("INVITE")) {
+    return(1);
+    } else if (is_method("REGISTER")) {
+    return(-1);
+    } else {
+    return(0);
+    };
+}
 ```
 
 IMPORTANT: do not compare route block or module function execution in a condition
 with the value of the return code. Next example is showing a wrong use:
 
-```
-    request_route {
-      if (route(RET) == -2) {
-        xinfo("return is -2\n");
-      } else {
-        xinfo("return is not -2\n"); ### THIS IS GOING TO BE EXECUTED
-      }
+``` c
+request_route {
+    if (route(RET) == -2) {
+    xinfo("return is -2\n");
+    } else {
+    xinfo("return is not -2\n"); ### THIS IS GOING TO BE EXECUTED
     }
+}
 
-    route[RET] {
-      return -2;
-    }
+route[RET] {
+    return -2;
+}
 ```
 
 See also the FAQ for how the function return code is evaluated:
@@ -5413,8 +5413,8 @@ For numbers, one can use:
 
 Example:
 
-```
-    $var(a) = 4 + ( 7 & ( ~2 ) );
+``` c
+$var(a) = 4 + ( 7 & ( ~2 ) );
 ```
 
 NOTE: to ensure the priority of operands in expression evaluations do
@@ -5422,9 +5422,9 @@ use **parenthesis**.
 
 Arithmetic expressions can be used in condition expressions.
 
-```
-    if( $var(a) & 4 )
-        log("var a has third bit set\n");
+``` c
+if( $var(a) & 4 )
+    log("var a has third bit set\n");
 ```
 
 ## Operators
@@ -5489,7 +5489,7 @@ be quite useful when running on containerised environments.
 
 To see the the available command line parameters, run **kamailio -h**:
 
-```
+``` c
     # kamailio -h
 
 version: kamailio 5.7.0-dev1 (x86_64/darwin) 353aa1
@@ -5608,7 +5608,7 @@ The name of the log engine can be:
 
 Example of JSON logs when running Kamailio with `--log-engine=json:M` :
 
-```
+``` c
     { "idx": 1, "pid": 18239, "level": "DEBUG", "module": "maxfwd", "file": "mf_funcs.c", "line": 74, "function": "is_maxfwd_present", "logprefix": "{1 1 OPTIONS 715678756@192.168.188.20} ", "message": "value = 70 " }
 
     { "idx": 1, "pid": 18239, "level": "DEBUG", "module": "core", "file": "core/socket_info.c", "line": 644, "function": "grep_sock_info", "logprefix": "{1 1 OPTIONS 715678756@192.168.188.20} ", "message": "checking if host==us: 9==9 && [127.0.0.1] == [127.0.0.1]" }
@@ -5617,12 +5617,12 @@ Example of JSON logs when running Kamailio with `--log-engine=json:M` :
 Example config for printing log message with `j` flag:
 
 
-```
-    xinfo("{ \"src_ip\": \"$si\", \"method\": \"$rm\", \"text\": \"request received\" }");
+``` c
+xinfo("{ \"src_ip\": \"$si\", \"method\": \"$rm\", \"text\": \"request received\" }");
 ```
 
 Example config for printing log messages with `p` flag:
 
-```
-    log_prefix=", \"src_ip\": \"$si\", \"tv\": $TV(Sn), \"mt\": $mt, \"ua\": \"$(ua{s.escape.common})\", \"cseq\": \"$hdr(CSeq)\""
+``` c
+log_prefix=", \"src_ip\": \"$si\", \"tv\": $TV(Sn), \"mt\": $mt, \"ua\": \"$(ua{s.escape.common})\", \"cseq\": \"$hdr(CSeq)\""
 ```
