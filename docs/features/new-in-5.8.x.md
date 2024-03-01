@@ -11,46 +11,46 @@ source code repository.*
 
 ## New Modules
 
-### file_out ###
+### file_out
 
-### influxdbc ###
+### influxdbc
 
-### microhttpd ###
+### microhttpd
 
-## Archived Modules ##
+## Archived Modules
 
-### app_sqlang ###
+### app_sqlang
 
-### auth_identity ###
+### auth_identity
 
 ## New in existing Modules
 
-### p_usrloc ###
+### p_usrloc
 
-  - added `use_domain_crc32` modparam
+- added `use_domain_crc32` modparam
 
-### permissions ###
+### permissions
 
 - RPC reload limit controlled via **reload_delta** module parameter
 
-### registrar ###
+### registrar
 
-  - added `tcpconn_id` to `xavp_cfg`
+- added `tcpconn_id` to `xavp_cfg`
 
-### siptrace ###
+### siptrace
 
-  - added `sip_trace_msg(dst, corlid, vmsg)`
+- added `sip_trace_msg(dst, corlid, vmsg)`
 
-### tls ###
+### tls
 
-  - added rpc function to kill session by id
+- added rpc function to kill session by id
 
-### topos ###
+### topos
 
-  - handle early-dialog b-side UPDATE requests routing
-  - added support for Call-ID masking when sending to downstream
+- handle early-dialog b-side UPDATE requests routing
+- added support for Call-ID masking when sending to downstream
 
-## New in Core ##
+## New in Core
 
 ### Command line arguments
 
@@ -80,4 +80,4 @@ source code repository.*
 
 ### others
 
-  - `route_graph.py` script updated to python version 3.x
+- `route_graph.py` script updated to python version 3.x
