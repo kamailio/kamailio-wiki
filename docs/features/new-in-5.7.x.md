@@ -11,69 +11,69 @@ source code repository.*
 
 ## New Modules
 
-### app_python3s ###
+### app_python3s
 
 - kemi python3 interpreter with statically exported KSR object
 - [https://www.kamailio.org/docs/modules/devel/modules/app_python3.html](https://www.kamailio.org/docs/modules/devel/modules/app_python3.html)
 
-### app_ruby_proc ###
+### app_ruby_proc
 
 - per-process kemi ruby API
 - [https://www.kamailio.org/docs/modules/devel/modules/app_ruby_proc.html](https://www.kamailio.org/docs/modules/devel/modules/app_ruby_proc.html)
 
-### math ###
+### math
 
 - extensions for math operations
 - [https://www.kamailio.org/docs/modules/devel/modules/math.html](https://www.kamailio.org/docs/modules/devel/modules/math.html)
 
-### tls_wolfssl ###
+### tls_wolfssl
 
 - tls module using wolfssl project
 - [https://www.kamailio.org/docs/modules/devel/modules/tls_wolfssl.html](https://www.kamailio.org/docs/modules/devel/modules/tls_wolfssl.html)
 
 ## New in existing Modules
 
-### app_jsdt ###
+### app_jsdt
 
 - updated duktape interpreter
 
-### app_perl ###
+### app_perl
 
 - added modparam to control behaviour on perl_parse() code
 - new parameter to set warn flag for perl parse
 
-### app_sqlang ###
+### app_sqlang
 
 - updated squirrel interpreter
 
-### async ###
+### async
 
 - catch up on possible skipped slots due to slow tasks
 
-### auth ###
+### auth
 
 - added flag for not invalidating nc on auth failure
 - exported proxy_challenge() to kemi
 - exported www_challenge() to kemi
 - exported auth_get_www_authenticate() to kemi
 
-### auth_db ###
+### auth_db
 
 - exported www_authenticate_method() to kemi
 
-### carrierroute ###
+### carrierroute
 
 - exported cr_load_next_domain(), cr_route() and cr_nofallback_route() to kemi
 
-### cdp ###
+### cdp
 
 - added SCTP support
 
-### ctl ###
+### ctl
 
 - support for rpc commands that have execution limit with delta interval
 
-### dialog ###
+### dialog
 
 - added dlg_get_var(ci, ft, tt, key, dst_var) function
 - added dlg_set_var(callid, ft, tt, key, value) function
@@ -81,11 +81,11 @@ source code repository.*
 - api function to get the status if dlg var is set or not
 - dlg_get_var() support early dialogs
 
-### dmq_usrloc ###
+### dmq_usrloc
 
 - added option to replicate socket via its name
 
-### evapi ###
+### evapi
 
 - wait when idle made a modparam
 - use internal workers to handle client messages
@@ -93,17 +93,17 @@ source code repository.*
 - wait increase limit made modparam
 - if workers is 0, execute callback by evapi receiver
 
-### geoip2 ###
+### geoip2
 
 - new parameter to register result id to get pv work in kemi
 
-### imc ###
+### imc
 
 - added support to modify member role
 - added db_mode support (memory or database records)
 - propagate content-type header
 
-### ims_ipsec_pcscf ###
+### ims_ipsec_pcscf
 
 - option to use dst address for tunnel search
 - option to search ipsec tunnel by new r-uri
@@ -112,70 +112,70 @@ source code repository.*
 - ipsec_forward() option to use UE client port for requests over TCP
 - option for ipsec_forward() to set trasport for tcp dst uri
 
-### ims_usrloc_pcscf ###
+### ims_usrloc_pcscf
 
 - expires_grace parameter
 - implementation of db_mode DB_ONLY
 
-### ipops ###
+### ipops
 
 - create dns container also for dns_update_pv()
 
-### jansson ###
+### jansson
 
 - added jansson_pv_get(...)
 
-### jsonrpcs ###
+### jsonrpcs
 
 - support for rpc commands that have execution limit with delta interval
 - protocol extended to allow storing response in a file
 - support for tcp transport
 - added tcp_socket parameter
 
-### jwt ###
+### jwt
 
 - added function to verify with key value given as parameter
 
-### lost ###
+### lost
 
 - URI list support in LoST response (filter for sip/sips scheme)
 - additions to via path element
 
-### lrkproxy ###
+### lrkproxy
 
 - TURN support, behind_nat support, subset of range ports
 
-### mqtt ###
+### mqtt
 
 - added tls_alpn module option
 
-### nats ###
+### nats
 
 - nats:connected event_route triggered on a successful connect
 - added KEMI publish function and event_callback param
 - add a reply param to nats_publish()
 - expose nats_publish_request() to KEMI
 
-### pipelimit ###
+### pipelimit
 
 - added rpc command pl.rm_pipe
 - new rpc command pl.reset_pipe - reset associated values
 
-### presence ###
+### presence
 
 - added rpc command presence.presentity_show
 - added presence.watcher_list rpc command
 
-### presence_reginfo ###
+### presence_reginfo
 
 - added option for aggregating presentities
 
-### pua_dialoginfo ###
+### pua_dialoginfo
 
 - added refresh_pubruri_avps_flag parameter
 - added local_identity_dlg_var parameter
 
-### pv ###
+### pv
 
 - config function to shift xavps to left with rotation
 - added $shvinc(name) - return incremented value of $shv(inc)
@@ -183,53 +183,53 @@ source code repository.*
 - added xavp_push_dst(xname) function
 - added monotonic clock to TimeVal pseudovariable
 
-### registrar ###
+### registrar
 
 - kemi functions to get $ulc(...) attributes
 - added lookup_xavp("ultable", "uri", "rxname", "cxname")
 - added reg_from_user(ultable, uri, mode) function
 
-### rtpengine ###
+### rtpengine
 
 - added receive-from option
 - allow to-tag usage for all commands
 - SDES-nonew and SDES-pad flags
 
-### secfilter ###
+### secfilter
 
 - new parameter reload_delta
 - new parameter cleanup_interval
 
-### secsipid ###
+### secsipid
 
 - support for multiple Identity headers
 
-### sipt ###
+### sipt
 
 - isup generic_number and generic_number_nai decoding
 
-### siptrace ###
+### siptrace
 
 - trace in-dialog ACK and dialog spirals
 - option to use socket name for hep mirroring
 
-### siputils ###
+### siputils
 
 - added e164_max_len modparam
 
-### stats ###
+### stats
 
 - use unsigned long long (J) for printing timestamp to rpc result
 
-### stirshaken ###
+### stirshaken
 
 - handle intermediary/chain certificates when caching certificates
 
-### textops ###
+### textops
 
 - new function to check if a character in a list is found in string
 
-### tls ###
+### tls
 
 - support serial numbers that exceed uint64
 - add timestamp and sni info for a session
@@ -238,13 +238,13 @@ source code repository.*
 - new init_mode parameter
 - option to use openssl api for fork prepare
 
-### topoh ###
+### topoh
 
 - modparam to control header masking
 - added inter-module api function for masking call-id
 - added module parameter use_mode to allow library-style use
 
-### topos ###
+### topos
 
 - skip adding contact header for BYE, CANCEL, PRACK
 - added methods_nocontact parameter
@@ -255,25 +255,25 @@ source code repository.*
 - handle initial dialog UPDATE requests from downstream
 - option to mask call-id via topoh
 
-### topos_redis ###
+### topos_redis
 
 - use tag based on direction for early dialog transaction record loading
 - new param to control the verbosity of some log messages
 
-### tm ###
+### tm
 
 - new param to specify reply codes for dns srv failover
 - new function t_exists()
 
-### uac ###
+### uac
 
 - check new callid value for setting $uac_req() field
 
-### userblocklist ###
+### userblocklist
 
 - added RPC commands
 
-### xmlrpc ###
+### xmlrpc
 
 - support for rpc commands that have execution limit with delta interval
 
