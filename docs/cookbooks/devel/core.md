@@ -2610,9 +2610,9 @@ Example:
 
 ``` c
 socket = {
-	bind = udp:10.10.10.10:5060;
-	advertise = 11.11.11.11:5060;
-	name = "s0";
+    bind = udp:10.10.10.10:5060;
+    advertise = 11.11.11.11:5060;
+    name = "s0";
     virtual = yes;
 }
 ```
