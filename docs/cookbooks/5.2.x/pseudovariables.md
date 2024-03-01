@@ -1,6 +1,6 @@
-<img src="/cookbooks/devel/pseudovariables.png" class="align-right" width="200" />
-
 # Kamailio SIP Server v5.2.x (stable): Pseudo-Variables
+
+<img src="pseudovariables.png" class="align-right" width="200" />
 
 ## Introduction
 

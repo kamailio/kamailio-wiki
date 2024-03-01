@@ -1,5 +1,6 @@
-\*\*Note: This document is now (2021) outdated, as the IMS packages have
-been integrated into the common Kamailio repository \*\*
+# IMS
+
+**Note: This document is now (2021) outdated, as the IMS packages have been integrated into the common Kamailio repository**
 
 **Note: This document is work in progress and yet unfinished!**
 

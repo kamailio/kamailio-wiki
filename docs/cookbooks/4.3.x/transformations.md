@@ -1,6 +1,6 @@
-<img src="/cookbooks/4.3.x/transformations.png" class="align-right" width="200" alt="Transformations" />
-
 # Kamailio SIP Server v4.3.x (stable): Transformations
+
+<img src="transformations.png" class="align-right" width="200" alt="Transformations" />
 
     Main author:
        Daniel-Constantin Mierla <miconda (at) gmail.com>

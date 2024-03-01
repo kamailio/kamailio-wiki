@@ -1,6 +1,6 @@
-### Continuous Integration on Kamailio Project
+# Continuous Integration on Kamailio Project
 
-#### Automated Debian/Ubuntu package building
+## Automated Debian/Ubuntu package building
 
 The build system for Debian and Ubuntu packages service is kindly
 sponsored by [Sipwise](http://www.sipwise.com). Sipwise is providing the

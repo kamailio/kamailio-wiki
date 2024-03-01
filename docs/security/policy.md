@@ -1,17 +1,17 @@
-### Security Vulnerability Policy
+# Security Vulnerability Policy
 
 References:
 
 - [Asterisk security process](https://wiki.asterisk.org/wiki/display/AST/Asterisk+Security+Vulnerabilities)
 - [Wikipedia reference for vulnerabilities](https://en.wikipedia.org/wiki/Vulnerability_(computing))
 
-#### Definition
+## Definition
 
 A security vulnerability is (for example) when a user of Kamailio can
 cause Kamailio to crash or lock up by sending messages to the server
 process.
 
-#### Reporting a security Vulnerability
+## Reporting a security Vulnerability
 
 If you believe there's a security vulnerability, please don't use the
 public forums. Send an e-mail to the security team and the issue will be
@@ -28,7 +28,7 @@ handled properly.
     - The kamailio developer team will work to solve the issue.
     - When there is a patch for the issue, it should NOT be committed directly without clarification with the security team. In many cases this should be coordinated with the release of a security release as well as the publication of a Kamailio project security vulnerability report.
 
-#### Publishing security vulnerabilities
+## Publishing security vulnerabilities
 
 Kamailio will publish security vulnerabilities, including an CVE ID, on
 the kamailio-business mailing list, sr-dev, sr-users as well as related
@@ -47,7 +47,7 @@ maintenance schedule, no immediate security releases are done. If
 possible a non-code workaround should be provided for the found security
 vulnerability.
 
-#### Timeline of the security process
+## Timeline of the security process
 
 1. Initial acknowledge time to the reporting party for a report about a
     new security issue for a new report: 3 working days
@@ -58,7 +58,7 @@ vulnerability.
 4. Project preparation time for kamailio.org announcement: 3 working
     days
 
-#### Kamailio Security Team
+## Kamailio Security Team
 
 A Kamailio Security team is appointed with core developers of the
 project. These individuals will be part of the security process and
@@ -68,7 +68,7 @@ manage each security incident - which does not mean solving the code
 issue, but managing the process from report to publication and patch
 release.
 
-#### PGP encryption
+## PGP encryption
 
 The address used for reporting security reports to the Kamailio project
 should have a PGP key associated, used by the security officers.

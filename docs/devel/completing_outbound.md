@@ -1,3 +1,5 @@
+# outbound
+
 This page contains some notes describing the work to fully complete
 outbound (RFC 5626) support on Kamailio. It is believed that the current
 Kamailio feature set is sufficient to provide separate Edge Proxy and

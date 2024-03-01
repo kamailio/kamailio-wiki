@@ -1,3 +1,5 @@
+# sidebar
+
 - [Wiki Home](index.md)
 - [Kamailio Site](https://www.kamailio.org)
 - [Docs Index](https://www.kamailio.org/docs/)
