@@ -29,6 +29,7 @@ jobs:
         with:
           config: .markdownlint-cli2.yaml
           globs: ${{ steps.changed-markdown-files.outputs.all_changed_files }}
+          separator: ' '
       - name: Build
         uses: Tiryoh/actions-mkdocs@v0
         with:
