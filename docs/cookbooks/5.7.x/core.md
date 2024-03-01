@@ -3725,8 +3725,8 @@ Number of seconds before autoclosing an idle association (default: `180`
 s). Can be changed at runtime, but it will affect only new associations.
 E.g.:
 
-``` c
-$ kamcmd cfg.seti sctp autoclose 120
+``` shell
+kamcmd cfg.seti sctp autoclose 120
 ```
 
 ``` c
@@ -3738,8 +3738,8 @@ sctp_autoclose = seconds
 Number of milliseconds before an unsent message/chunk is dropped
 (default: `32000` ms or `32` s). Can be changed at runtime, e.g.:
 
-``` c
-$ kamcmd cfg.seti sctp send_ttl 180000
+``` shell
+kamcmd cfg.seti sctp send_ttl 180000
 ```
 
 ``` c

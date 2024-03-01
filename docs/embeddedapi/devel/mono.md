@@ -10,11 +10,15 @@ defined in **SR.cs** file located in source tree
 
 To compile **SR.cs** to a library, use:
 
-    gmcs -t:library SR.cs
+``` shell
+gmcs -t:library SR.cs
+```
 
 This will generate the file **SR.dll**. To link your C# file to it, use:
 
-    $ gmcs -r:SR.dll MyFile.cs
+``` shell
+gmcs -r:SR.dll MyFile.cs
+```
 
 The API is stored in a **namespace**, named **SR**. The several classes
 offer access to internal Kamailio functionalities via public static
