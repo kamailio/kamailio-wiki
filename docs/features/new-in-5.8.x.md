@@ -1,6 +1,6 @@
 # Kamailio SIP Server - New Features in 5.8.x Version
 
-📘 **Previous version was 5.8.x (released on May 2023), see
+📘 **Previous version was 5.7.x (released on May 2023), see
 what was new in that release at**:
 
 - [New In v5.7.x](new-in-5.7.x.md)
@@ -13,15 +13,25 @@ source code repository.*
 
 ### file_out
 
-### influxdbc
+  - https://www.kamailio.org/docs/modules/devel/modules/file_out.html
 
-### microhttpd
+### influxdbc ###
 
-## Archived Modules
+  - https://www.kamailio.org/docs/modules/devel/modules/influxdbc.html
+
+### microhttpd ###
+
+  - https://www.kamailio.org/docs/modules/devel/modules/microhttpd.html
+
+## Archived Modules ##
 
 ### app_sqlang
 
-### auth_identity
+  - https://github.com/kamailio/kamailio-archive/tree/main/src/modules/app_sqlang
+
+### auth_identity ###
+
+  - https://github.com/kamailio/kamailio-archive/tree/main/src/modules/auth_identity
 
 ## New in existing Modules
 
