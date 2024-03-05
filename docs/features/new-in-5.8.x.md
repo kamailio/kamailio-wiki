@@ -35,6 +35,45 @@ source code repository.*
 
 ## New in existing Modules
 
+### cfgt
+
+  - `skip_unknown` modparam
+  - `route_log` modparam
+
+### db_redis
+
+  - added TLS support
+
+### geoip2
+
+  - added function for distance
+
+### imc
+
+  - added function to check if a room is active
+  - added function to check if a user is member of a chat room
+
+### ipops
+
+  - create container items on demand for `srv` and `naptr` functions
+
+### mqueue
+
+  - support for db_text storage
+
+### msilo
+
+  - new function to allow specifying src/dst addresses
+  - modparams for callid and status columns
+  - option to store call-id and reuse it on delivery
+
+### nats
+
+  - nats_publish allow reply parameter to be optional
+### ndb_redis
+
+  - added TLS support
+
 ### p_usrloc
 
 - added `use_domain_crc32` modparam
@@ -43,9 +82,22 @@ source code repository.*
 
 - RPC reload limit controlled via **reload_delta** module parameter
 
+### presence
+
+- RPC command `publish_cache_sync` to sync from storage
+
+### rabbitmq
+
+  - added amqps support
+
 ### registrar
 
-- added `tcpconn_id` to `xavp_cfg`
+  - added `tcpconn_id` to `xavp_cfg`
+  - larger max size for user and domain building AoR
+
+### rtpengine
+
+  - support receiving dtmf events from rtpengine and raise an event
 
 ### siptrace
 
@@ -53,7 +105,8 @@ source code repository.*
 
 ### tls
 
-- added rpc function to kill session by id
+  - support for libssl 3.x
+  - added rpc function to kill session by id
 
 ### topos
 
@@ -61,6 +114,8 @@ source code repository.*
 - added support for Call-ID masking when sending to downstream
 
 ## New in Core
+
+  - new log macros allowing to use local log levels per module
 
 ### Command line arguments
 
@@ -83,6 +138,8 @@ source code repository.*
 ### kamcmd
 
 ### kamctl
+
+  - added support for deleting a gateway or full setid in dispatcher
 
 ### kamdbctl
 
