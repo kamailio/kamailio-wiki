@@ -15,21 +15,21 @@ source code repository.*
 
   - https://www.kamailio.org/docs/modules/devel/modules/file_out.html
 
-### influxdbc ###
+### influxdbc
 
   - https://www.kamailio.org/docs/modules/devel/modules/influxdbc.html
 
-### microhttpd ###
+### microhttpd
 
   - https://www.kamailio.org/docs/modules/devel/modules/microhttpd.html
 
-## Archived Modules ##
+## Archived Modules
 
 ### app_sqlang
 
   - https://github.com/kamailio/kamailio-archive/tree/main/src/modules/app_sqlang
 
-### auth_identity ###
+### auth_identity
 
   - https://github.com/kamailio/kamailio-archive/tree/main/src/modules/auth_identity
 
@@ -40,13 +40,30 @@ source code repository.*
   - `skip_unknown` modparam
   - `route_log` modparam
 
+### corex
+
+  - new function via_reply_add_xavp_params()
+
 ### db_redis
 
   - added TLS support
 
+### dispatcher
+
+  - option to retain existing latency stats when reloading destinations
+  - new function ds_dsg_fetch()
+  - new variable $dsg(key) to get attributes of a dispatcher group
+  - $dsg(key) - count active/inactive targets in the group
+
 ### geoip2
 
   - added function for distance
+
+### htable
+
+  - rpc command to perform a dmq sync action
+  - option to dmq sync a single htable via rpc
+  - rpc command to perform a dmq resync action
 
 ### imc
 
@@ -70,21 +87,27 @@ source code repository.*
 ### nats
 
   - nats_publish allow reply parameter to be optional
+
 ### ndb_redis
 
   - added TLS support
 
 ### p_usrloc
 
-- added `use_domain_crc32` modparam
+  - added `use_domain_crc32` modparam
 
 ### permissions
 
-- RPC reload limit controlled via **reload_delta** module parameter
+  - RPC reload limit controlled via **reload_delta** module parameter
 
 ### presence
 
-- RPC command `publish_cache_sync` to sync from storage
+  - RPC command `publish_cache_sync` to sync from storage
+
+### pv
+
+  - added $viaX(params) to return the parameters part of a Via body
+  - via-related variables can retun oc parameters
 
 ### rabbitmq
 
@@ -103,6 +126,10 @@ source code repository.*
 
 - added `sip_trace_msg(dst, corlid, vmsg)`
 
+### smsops
+
+  - conversion from UCS-2 to UTF-8 and viceversa
+
 ### tls
 
   - support for libssl 3.x
@@ -113,11 +140,18 @@ source code repository.*
 - handle early-dialog b-side UPDATE requests routing
 - added support for Call-ID masking when sending to downstream
 
-## New in Core
+## New In Core
 
   - new log macros allowing to use local log levels per module
+  - TCP_USER_TIMEOUT option on listening socket
+  - macros to specify position params for shm allocation
+  - config parser extended with xavp_via_reply_params parameter
+  - new internal message flag FL_ADD_XAVP_VIA_REPLY_PARAMS
+  - ability to add parameters to top via of generated sip replies
+  - add via reply xavp params for generation when using another reply
+  - xavp - helper function to set style when serializing
 
-### Command line arguments
+### Command Line Arguments
 
 ### Interpreter
 
@@ -127,7 +161,8 @@ source code repository.*
 
 ### Memory Managers
 
-- alignment to 16 bytes for `q_malloc (qm)` and `f_malloc (fm)`
+  - alignment to 16 bytes for `q_malloc (qm)` and `f_malloc (fm)`
+  - archived incomplete memory managers
 
 ### Architecture
 
