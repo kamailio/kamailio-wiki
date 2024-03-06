@@ -35,6 +35,12 @@ source code repository.*
 
 ## New in existing Modules
 
+### cdp
+
+  - added support for TLS
+  - support for diameter routing agent (DRA) / relay
+  - support for re-auth on ro sessions initiated from charging server
+
 ### cfgt
 
   - `skip_unknown` modparam
@@ -43,6 +49,9 @@ source code repository.*
 ### corex
 
   - new function via_reply_add_xavp_params()
+  - rpc command to print shm status report to file based on filter
+  - rpc corex.list_sockets use now lowercase for field names
+  - rpc corex.list_aliases use now lowercase for field names
 
 ### db_redis
 
@@ -55,6 +64,10 @@ source code repository.*
   - new variable $dsg(key) to get attributes of a dispatcher group
   - $dsg(key) - count active/inactive targets in the group
 
+### dmq
+
+  - added function to find dmq node by IP
+
 ### geoip2
 
   - added function for distance
@@ -64,15 +77,51 @@ source code repository.*
   - rpc command to perform a dmq sync action
   - option to dmq sync a single htable via rpc
   - rpc command to perform a dmq resync action
+  - added column packing features
+
+### http_client
+
+  - added parameter timeout_mode (timeout in seconds or milliseconds)
 
 ### imc
 
   - added function to check if a room is active
   - added function to check if a user is member of a chat room
 
+### ims_charging
+
+  - implemented restore of Ro sessions from database
+  - enhancements to make module compatible to other charging servers
+
+### ims_dialog
+
+  - added support for database backend
+  - added function to get dialog by hash entry and id
+
+### ims_ipsec_pcscf
+
+  - add optional AoR argument to ipsec_destroy()
+  - new function to destroy IPSec based on Contact and received IP and port
+  - add q value to Security-Server header for IPSec
+  - options for ipsec_forward() to use Via or try TCP
+
+### ims_qos
+
+  - added suspend_transaction parameter
+  - option to use received ip, port and proto from via
+  - option to set DLG_MOBILE_ORIGINATING for rx_add_media_component_description_avp()
+
+### ims_registrar_pcscf
+
+  - option to delay record expiration instead of immediate delete
+
 ### ipops
 
   - create container items on demand for `srv` and `naptr` functions
+
+### lost
+
+  - support of shape representations (as in RFC5491) and new 3d parameter
 
 ### mqueue
 
@@ -96,6 +145,10 @@ source code repository.*
 
   - added `use_domain_crc32` modparam
 
+### pdt
+
+  - added mode parameter to allow ignoring duplicated prefixes
+
 ### permissions
 
   - RPC reload limit controlled via **reload_delta** module parameter
@@ -107,7 +160,8 @@ source code repository.*
 ### pv
 
   - added $viaX(params) to return the parameters part of a Via body
-  - via-related variables can retun oc parameters
+  - via-related variables can return oc parameters
+  - added function to serialize xavps with quoted str values
 
 ### rabbitmq
 
@@ -122,23 +176,58 @@ source code repository.*
 
   - support receiving dtmf events from rtpengine and raise an event
 
+### sca
+
+  - update rr if necessary for subscriptions
+
+### secsipid
+
+  - new config function to sign providing private key data
+
 ### siptrace
 
-- added `sip_trace_msg(dst, corlid, vmsg)`
+  - added `sip_trace_msg(dst, corlid, vmsg)`
+
+### sl
+
+  - added send_reply_error()
 
 ### smsops
 
   - conversion from UCS-2 to UTF-8 and viceversa
+
+### statsd
+
+  - added support for labels to metrics
+
+### textops
+
+  - new function via_param_rm("name", idx)
 
 ### tls
 
   - support for libssl 3.x
   - added rpc function to kill session by id
 
+### tm
+
+  - new function t_reply_error()
+
+### topoh
+
+  - uses socket IP when no mask_ip is defined
+
 ### topos
 
-- handle early-dialog b-side UPDATE requests routing
-- added support for Call-ID masking when sending to downstream
+  - handle early-dialog b-side UPDATE requests routing
+  - added support for Call-ID masking when sending to downstream
+  - handle NOTIFY during call setup
+  - update headers for stateless cancel and non-2xx ack
+  - added version_table parameter
+
+### usrloc
+
+  - new parameter to specify reply codes for keepalive handling
 
 ## New In Core
 
@@ -150,19 +239,34 @@ source code repository.*
   - ability to add parameters to top via of generated sip replies
   - add via reply xavp params for generation when using another reply
   - xavp - helper function to set style when serializing
+  - internal msg flags switched to 64b
+  - parameter for increasing socket send buffer size
+  - xavp - option to quote string values when serializing
+  - kemi - parameter for request route callback function name
+  - added proto field to advertise listen structure
+  - tcp - set limit for reading a message
+  - tcp - close connection without data traffic at all
+  - tcp - exclude crlf ping from data exchange state
+  - tcp - limit number of accepted connections per src ip
+  - added msg_recv_max_size global parameter
+  - added tcp_msg_read_timeout parameter
+  - added tcp_check_timer parameter
+  - added tcp_msg_data_timeout parameter
+  - added tcp_accept_iplimit parameter
+  - use advertised proto to build advertised sock string
+  - via builder can use proto from xavp fields or advertised address
+  - set atexit to default to `no`
+  - added core parameter mem_add_size
+  - xavp - serialize long long values
 
 ### Command Line Arguments
-
-### Interpreter
-
-### Parameters
-
-### Functions
 
 ### Memory Managers
 
   - alignment to 16 bytes for `q_malloc (qm)` and `f_malloc (fm)`
+  - internal malloc optimization factor increased to 15
   - archived incomplete memory managers
+  - api function to print status with filter
 
 ### Architecture
 
@@ -171,6 +275,8 @@ source code repository.*
 ## Tools
 
 ### kamcmd
+
+  - Makefile - CUSTOM_NAME for specifying custom binary name
 
 ### kamctl
 
