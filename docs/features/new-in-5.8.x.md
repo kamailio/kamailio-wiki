@@ -68,6 +68,10 @@ source code repository.*
 
   - added function to find dmq node by IP
 
+### dmq_usrloc:
+
+  - copy and send attributes related to contacts
+
 ### geoip2
 
   - added function for distance
@@ -162,6 +166,8 @@ source code repository.*
   - added $viaX(params) to return the parameters part of a Via body
   - via-related variables can return oc parameters
   - added function to serialize xavps with quoted str values
+  - PPI and PAI support to $hfl() and $hflc()
+  - support for Diversion header in $hfl() and $hflc()
 
 ### rabbitmq
 
@@ -175,6 +181,7 @@ source code repository.*
 ### rtpengine
 
   - support receiving dtmf events from rtpengine and raise an event
+  - added support for codec-accept and codec-consume
 
 ### sca
 
@@ -187,6 +194,10 @@ source code repository.*
 ### siptrace
 
   - added `sip_trace_msg(dst, corlid, vmsg)`
+
+### siputils
+
+  - added tel2sip2() function
 
 ### sl
 
@@ -208,6 +219,7 @@ source code repository.*
 
   - support for libssl 3.x
   - added rpc function to kill session by id
+  - init in a local thread
 
 ### tm
 
@@ -228,6 +240,9 @@ source code repository.*
 ### usrloc
 
   - new parameter to specify reply codes for keepalive handling
+  - added keepalive interval to set the step for sending
+  - option to randomize when keepalive is sent
+  - synchronize attributes from DMQ
 
 ## New In Core
 
@@ -258,6 +273,8 @@ source code repository.*
   - set atexit to default to `no`
   - added core parameter mem_add_size
   - xavp - serialize long long values
+  - parser extended to handle diversion with multiple bodies
+  - keep listen socket even if advertise address does not resolve
 
 ### Command Line Arguments
 
