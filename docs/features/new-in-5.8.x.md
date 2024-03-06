@@ -15,6 +15,8 @@ source code repository.*
 
   - https://www.kamailio.org/docs/modules/devel/modules/file_out.html
 
+### gcrypt
+
 ### influxdbc
 
   - https://www.kamailio.org/docs/modules/devel/modules/influxdbc.html
@@ -52,6 +54,11 @@ source code repository.*
   - rpc command to print shm status report to file based on filter
   - rpc corex.list_sockets use now lowercase for field names
   - rpc corex.list_aliases use now lowercase for field names
+
+### db_mysql
+
+  - enable TLS when building with `mariadb-connector-c`
+  - new module param opt_ssl_ca to configure CA certs
 
 ### db_redis
 
@@ -96,6 +103,7 @@ source code repository.*
 
   - implemented restore of Ro sessions from database
   - enhancements to make module compatible to other charging servers
+  - added option to get and use P-Access-Network-Info for terminating scenario
 
 ### ims_dialog
 
@@ -123,6 +131,14 @@ source code repository.*
 
   - create container items on demand for `srv` and `naptr` functions
 
+### kex
+
+  - added is_myhost(uri) - check if host part only is local
+
+### ldap
+
+  - option to start even when connecting to server fails
+
 ### lost
 
   - support of shape representations (as in RFC5491) and new 3d parameter
@@ -148,6 +164,7 @@ source code repository.*
 ### p_usrloc
 
   - added `use_domain_crc32` modparam
+  - added `preload` modparam
 
 ### pdt
 
@@ -182,10 +199,17 @@ source code repository.*
 
   - support receiving dtmf events from rtpengine and raise an event
   - added support for codec-accept and codec-consume
+  - optional ping parameter for rpc reload command
+  - new modparam to disable pinging rtpengines at startup
 
 ### sca
 
   - update rr if necessary for subscriptions
+
+### sdpops
+
+  - added $sdp(c:ip) variable to return connection ip
+  - added sdp line interator functions and variables
 
 ### secsipid
 
@@ -202,6 +226,7 @@ source code repository.*
 ### sl
 
   - added send_reply_error()
+  - do not send error reply if message marked with delayed-reply flag
 
 ### smsops
 
@@ -244,6 +269,10 @@ source code repository.*
   - option to randomize when keepalive is sent
   - synchronize attributes from DMQ
 
+### xlog
+
+  - added kemi xlog_facility() function
+
 ## New In Core
 
   - new log macros allowing to use local log levels per module
@@ -275,6 +304,8 @@ source code repository.*
   - xavp - serialize long long values
   - parser extended to handle diversion with multiple bodies
   - keep listen socket even if advertise address does not resolve
+  - added internal API functions to run functions in threads
+  - added tls_threads_mode global parameter
 
 ### Command Line Arguments
 
