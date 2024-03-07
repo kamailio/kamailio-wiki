@@ -13,15 +13,25 @@ source code repository.*
 
 ### file_out
 
+Logging from config to a file.
+
   - https://www.kamailio.org/docs/modules/devel/modules/file_out.html
 
 ### gcrypt
 
+Crypto functions for config file.
+
+  - https://www.kamailio.org/docs/modules/devel/modules/gcrypt.html
+
 ### influxdbc
+
+Connector to InfluxDB.
 
   - https://www.kamailio.org/docs/modules/devel/modules/influxdbc.html
 
 ### microhttpd
+
+Simple HTTP server implementation.
 
   - https://www.kamailio.org/docs/modules/devel/modules/microhttpd.html
 
