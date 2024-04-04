@@ -3370,12 +3370,22 @@ if(secsipid_build_identity("$fU", "$rU", "A", "",
 
 ## sdpops module variables
 
-- $sdp(body) - full SDP body (read only)
-- $sdp(sess_version) - sess-version -attribute from SDP o= -line. When
-    set to special value -1, current value is incremented. (read +
+The variables are read-only unless specified otherwise.
+
+- `$sdp(body)` or `$sdp(raw)` - full SDP body
+- `$sdp(sess_version)` - `sess-version` attribute from SDP `o=` line. When
+    set to special value `-1`, current value is incremented. (read +
     write)
-- $sdp(c:ip) - connection IP (read only) - taken from first media stream if specified,
+- `$sdp(c:ip)` - connection IP - taken from first media stream if specified,
     otherwise from first session
+- `$sdp(c:af)` - connection address family
+- `$sdp(o:ip)` - origin IP
+- `$sdp(m0:raw)` - all lines (raw) of first media stream
+- `$sdp(m0:rtp:port)` - rtp port of first media stream
+- `$sdp(m0:rtcp:port)` - rtcp port of first media stream, if not set is rtp port incremented
+- `$sdp(m0:b:AS)` - value from `b=AS:...` line of first media stream
+- `$sdp(m0:b:RR)` - value from `b=RR:...` line of first media stream
+- `$sdp(m0:b:RS)` - value from `b=AS:...` line of first media stream
 
 ## $sruid - Unique ID
 
