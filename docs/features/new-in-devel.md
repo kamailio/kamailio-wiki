@@ -15,6 +15,13 @@ source code repository.*
 
 ## New in existing Modules
 
+### cfgutils
+
+- **lock** family functions got another optional key parameter to
+  generate the hash id. See [#3808](https://github.com/kamailio/kamailio/pull/3808)
+  or [cfgutils docs](https://www.kamailio.org/docs/modules/devel/modules/cfgutils.html)
+  for details
+
 ## Archived Modules
 
 modules considered obsolete and not maintained have been moved to
