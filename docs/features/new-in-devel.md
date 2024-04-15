@@ -15,6 +15,15 @@ source code repository.*
 
 ## New in existing Modules
 
+## Archived Modules
+
+modules considered obsolete and not maintained have been moved to
+<https://github.com/kamailio/kamailio-archive/>
+
+- auth_identity
+- app_lua_sr
+- app_sqlang
+
 ## New in Core
 
 ### Command line arguments
