@@ -3748,7 +3748,7 @@ tls_port_no=6061
 
 ### tls_max_connections
 
-Maximum number of ls connections (if the number is exceeded no new ls
+Maximum number of TLS connections (if the number is exceeded no new TLS
 connections will be accepted). It cannot exceed tcp_max_connections.
 
 Default value is `2048`.
