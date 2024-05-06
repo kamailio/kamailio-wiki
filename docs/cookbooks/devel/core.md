@@ -2778,6 +2778,21 @@ Default: `UDP` (`off`). Recommended: `TCP`.
 udp_mtu_try_proto = TCP|TLS|SCTP|UDP
 ```
 
+### udp_receiver_mode
+
+Specify how UDP traffic is received, either via a pool of processes per UDP socket
+or a single multi-threaded process with a thread per socket.
+
+Default value is `0` (pool of processes defined by `children`, existing behaviour).
+
+Value `1` switches to multi-threaded process receiver. SIP messages are pushed
+to `udp` async tasks group, sending is still done by any of processes.
+
+```c
+async_workers_group="name=udp;workers=8"
+udp_receiver_mode = 1
+```
+
 ### uri_host_extra_chars
 
 Specify additional chars that should be allowed in the host part of URI.
