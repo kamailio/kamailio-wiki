@@ -2599,7 +2599,8 @@ socket = {
 
 The attributes are:
 
-- `bind` - the address to listen on in format `[proto:]address[:port]`
+- `bind` - the address to listen on in format `[proto:]address[:port]` or
+  `[proto:]address[:port1-port2]`
 - `advertise` - the address to advertise in SIP headers in format `address[:port]`
 - `name` - name of the socket to be referenced in configuration file
 - `virtual` - set to `yes/no` to indicate if the IP has to be considered virtual or not
@@ -2621,6 +2622,46 @@ The above is the equivalent of:
 
 ``` c
 listen=udp:10.10.10.10:5060 advertise 11.11.11.11:5060 name "s0" virtual
+```
+
+When attribute `bind` is set to `[proto:]address[:port1-port2]`, then Kamailio
+binds to a range of ports from `port1` to `port2` (the start and end ports are
+inclusive). If socket `name` is provided in this case, then the port is appended,
+becoming `[name][port]` for each of the sockets created in the port range. If
+`advertise` is also provided, then a corresponding range of ports is used for
+advertised addresses, although only the start port for advertise has to be provided.
+
+If the following `socket` definition is provided:
+
+``` c
+socket = {
+    bind = udp:10.10.10.10:5060-5068;
+    advertise = 11.11.11.11:5060;
+    name = "s0p";
+    virtual = yes;
+}
+```
+
+The first bind socket in rage is the equivalent of:
+
+``` c
+socket = {
+    bind = udp:10.10.10.10:5060;
+    advertise = 11.11.11.11:5060;
+    name = "s0p5060";
+    virtual = yes;
+}
+```
+
+And the last one is:
+
+``` c
+socket = {
+    bind = udp:10.10.10.10:5068;
+    advertise = 11.11.11.11:5068;
+    name = "s0p5068";
+    virtual = yes;
+}
 ```
 
 ### socket_workers
