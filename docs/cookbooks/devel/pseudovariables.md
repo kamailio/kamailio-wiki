@@ -231,6 +231,10 @@ $rm to get the method (works also for responses).
 
 **$ct** - reference to the value of contact header
 
+### $ctu - Contact Header URI
+
+**$ctu** - reference to the URI part of the contact header
+
 ### $cT - Content-Type
 
 **$cT** - reference to the value of content-type header
