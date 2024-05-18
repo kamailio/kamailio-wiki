@@ -231,6 +231,10 @@ $rm to get the method (works also for responses).
 
 **$ct** - reference to the value of contact header
 
+### $cts - Contact Header Star Status
+
+**$cts** - 1 - if Contact header has `*` value; 0 - otherwise
+
 ### $ctu - Contact Header URI
 
 **$ctu** - reference to the URI part of the contact header
