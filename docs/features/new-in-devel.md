@@ -22,6 +22,15 @@ source code repository.*
   or [cfgutils docs](https://www.kamailio.org/docs/modules/devel/modules/cfgutils.html)
   for details
 
+### permissions
+
+- **allow_register_include_port()**, the permissions module got a new function, which extends
+  a funcitonality for checking contacts (locations) allowed to be registered.
+  With a newer function one has a possibility to include Contact URI port into this check.
+  See [#3846](https://github.com/kamailio/kamailio/pull/3846)
+  or [permissions docs](https://www.kamailio.org/docs/modules/devel/modules/permissions.html)
+  for details.
+
 ## Archived Modules
 
 modules considered obsolete and not maintained have been moved to
