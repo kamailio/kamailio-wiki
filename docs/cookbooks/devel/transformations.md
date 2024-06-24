@@ -339,6 +339,15 @@ variable.
 $(var(x){s.rm,test})
 ```
 
+### {s.rmhdws}
+
+Remove header-like duplicated whitespaces (i.e., end of line followed
+by whitespaces or tabs are replaced by a single whitespace).
+
+``` c
+$(var(x){s.rmhdws})
+```
+
 ### {s.rmws}
 
 Remove occurrences of whitespace characters (' ', '\\t, '\\r', '\\n').
