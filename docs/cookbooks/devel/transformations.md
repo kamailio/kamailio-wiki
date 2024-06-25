@@ -102,18 +102,24 @@ Example:
 ### {s.select,index,separator}
 
 Return a field from PV value. The field is selected based on separator
-and index. The separator must be a character used to identify the
-fields. Index must be an integer value or a PV. If index is negative, the
+and index.
+
+Index must be an integer value or a PV. If index is negative, the
 count of fields starts from end of PV value, -1 being last field. If
 index is positive, 0 is the first field.
 
+The separator must be a character used to identify the fields. It can also be
+an escaped character: `\\`, `\t`, `\n`, `\r` or `\s` (all whitespaces).
+
 Example:
 
+```
     $var(x) = "12,34,56";
     $(var(x){s.select,1,,}) => "34" ;
 
     $var(x) = "12,34,56";
     $(var(x){s.select,-2,,}) => "34"
+```
 
 ### {s.encode.7bit}
 
