@@ -31,6 +31,11 @@ source code repository.*
   or [permissions docs](https://www.kamailio.org/docs/modules/devel/modules/permissions.html)
   for details.
 
+### rabbitmq
+
+- kamailio init will not fail if rabbitmq connection doesn't work. The module will try to reconnect
+  when **rabbitmq_publish()** or **rabbitmq_publish_consume()** are called in the config.
+
 ## Archived Modules
 
 modules considered obsolete and not maintained have been moved to
