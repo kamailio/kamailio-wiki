@@ -348,6 +348,15 @@ by whitespaces or tabs are replaced by a single whitespace).
 $(var(x){s.rmhdws})
 ```
 
+### {s.rmhlws}
+
+Remove header line split white spaces (i.e., remove end of lines and following
+white spaces or tabls, like in a multi-line header value to make it single line).
+
+``` c
+$(var(x){s.rmhlws})
+```
+
 ### {s.rmws}
 
 Remove occurrences of whitespace characters (' ', '\\t, '\\r', '\\n').
