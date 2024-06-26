@@ -320,6 +320,22 @@ To reset $du:
 
     $du = $null;
 
+### $En - LF
+
+Return `\n`.
+
+### $En - CR
+
+Return `\r`.
+
+### $Et - Tab
+
+Return `\t`.
+
+### $Es - Space
+
+Return ` `.
+
 ### $fd - From URI domain
 
 **$fd** - reference to domain in URI of 'From' header
