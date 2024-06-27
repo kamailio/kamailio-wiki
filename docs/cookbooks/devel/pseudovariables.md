@@ -320,6 +320,10 @@ To reset $du:
 
     $du = $null;
 
+### $Eb - Back Slash
+
+Return `\`.
+
 ### $En - LF
 
 Return `\n`.
@@ -335,6 +339,30 @@ Return `\t`.
 ### $Es - Space
 
 Return ` `.
+
+### $Ec - Comma
+
+Return `,`.
+
+### $Eq - Double Quote
+
+Return `"`.
+
+### $Ek - Single Quote
+
+Return `'`.
+
+### $Ei - Colon
+
+Return `:`.
+
+### $Ej - Semicolon
+
+Return `;`.
+
+### $Ev - Back Tick
+
+Return `\``.
 
 ### $fd - From URI domain
 
