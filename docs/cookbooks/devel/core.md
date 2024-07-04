@@ -3815,6 +3815,27 @@ Example of usage:
 tls_max_connections=4096
 ```
 
+### tls_threads_mode
+
+Control how to initialize the internal multi-threading system that impacts
+libssl 3.x.
+
+Values:
+
+  - `0` - no thread-specific initialization/execution (default)
+  - `1` - for each function that might initialize OpenSSL, run it in a temporary
+  thread; this leaves the thread-local variables in rank 0, main thread at their
+  default value of 0x0
+  - `2` - use at-fork handler to set thread-local variables to 0x0; the
+  implementation will set thread-local keys from 0-15 to have value 0x0.
+
+```
+tls_threads_mode = 2
+```
+
+With libssl v3.x, the recommended value for production is `2`. For
+development/troubleshooting, value `1` can be used.
+
 ## SCTP Parameters
 
 ### disable_sctp
