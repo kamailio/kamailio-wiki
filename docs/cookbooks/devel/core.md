@@ -306,8 +306,9 @@ Available directives:
 - `#!ifdef NAME` - check if a keyword is defined
 - `#!ifndef` - check if a keyword is not defined
 - `#!ifexp` - check if an expression is true (see corresponding section for more)
-- `#!else` - switch to false branch of `ifdef/ifndef/#!ifexp` region
-- `#!endif` - end `ifdef/ifndef/#!ifexp` region
+- `#!else` - switch to false branch of `ifdef/ifndef/#!ifexp` region (needs `EoL`
+  after it to be detected)
+- `#!endif` - end `ifdef/ifndef/#!ifexp` region (needs `EoL` after it to be detected)
 - `#!trydef` - add a define if not already defined
 - `#!redefine` - force redefinition even if already defined
 
@@ -317,7 +318,7 @@ Predefined keywords:
 - `MOD_X` - when module `X` has been loaded
 - `KAMAILIO_VERSION` - associated with a number representation of Kamailio
      version (e.g., for version `X.Y.Z`, the value is `X00Y00Z`, representing
-    `X*1000000 + Y*1000 + z`)
+    `X*1000000 + Y*1000 + Z`)
 - `OS_NAME` - associated with a string representing the Operating System name
 
 Examples:
