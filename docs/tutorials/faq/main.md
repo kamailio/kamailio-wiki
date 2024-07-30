@@ -274,10 +274,14 @@ for example, compiling only tls module:
 
 📃 Kamailio is working always with the received SIP message (request or
 reply). Changes done to headers or body are kept as a list of operations
-to be applied before writing to the network. If you want changes to be
-applied immediately, use **msg_apply_changes()** from textopsx module:
+to be applied before writing to the network. Such changes can be adding
+headers, removing headers, updating the content of headers, adding or removing
+body, or updating body content.
 
-- <http://kamailio.org/docs/modules/stable/modules/textopsx.html#textopsx.msg_apply_changes>
+If you want changes to be applied immediately, use **msg_apply_changes()**
+from textopsx module:
+
+- [http://kamailio.org/docs/modules/stable/modules/textopsx.html#textopsx.msg_apply_changes](http://kamailio.org/docs/modules/stable/modules/textopsx.html#textopsx.msg_apply_changes)
 
 Be careful with it and don't use it after record_route(), because this
 function has to insert a header containing the IP address from the local
