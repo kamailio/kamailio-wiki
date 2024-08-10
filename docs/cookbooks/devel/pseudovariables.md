@@ -2,8 +2,6 @@
 
 Version: Kamailio SIP Server v6.0.x (devel)
 
-![pseudovariables.png](pseudovariables.png)
-
 ## Introduction
 
 The term `pseudo-variable` is used for special tokens that can be given
@@ -2151,8 +2149,8 @@ HTTP response body and body length,
 
 - name - id to refer the documet
 - spec - specifier:
-  - doc - set/get the document as text
-  - xpath:xpath-expression - evaluate xpath expression
+  * doc - set/get the document as text
+  * xpath:xpath-expression - evaluate xpath expression
 
 Example:
 
