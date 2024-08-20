@@ -336,7 +336,7 @@ Return `\t`.
 
 ### $Es - Space
 
-Return ` `.
+Return ` `. <!-- markdownlint-disable MD038 -->
 
 ### $Ec - Comma
 
@@ -1749,7 +1749,7 @@ printing in the Erlang shell.
 
 ### $erl_atom(name)
 
-*$erl_atom(name)* pseudo variable allows create analog to Erlang atom
+_$erl_atom(name)_ pseudo variable allows create analog to Erlang atom
 data type. Erlang atom is a literal, a constant with name. Formatted
 output pseudo variable atom could be enclosed in single quotes (') if it
 does not begin with a lower-case letter or if it contains other
@@ -2149,8 +2149,8 @@ HTTP response body and body length,
 
 - name - id to refer the documet
 - spec - specifier:
-  * doc - set/get the document as text
-  * xpath:xpath-expression - evaluate xpath expression
+  - doc - set/get the document as text
+  - xpath:xpath-expression - evaluate xpath expression
 
 Example:
 
@@ -3347,7 +3347,7 @@ evrexec attributes:
 ### $subs(key) - Subscription Attributes
 
 This variable gives access to attributes of the current subscription.
-The variable has to be used after executing *handle_subscription()* in
+The variable has to be used after executing _handle_subscription()_ in
 order to provide accurate values.
 
 The key can be:
@@ -3503,7 +3503,7 @@ The key can be:
 
 ## pv_headers module variables
 
-- $x_hdr(*header_name*): *header_name* header value
+- $x_hdr(_header_name_): _header_name_ header value
 - $x_fu: Full From header
 - $x_fU: From header user part
 - $x_fd: From header domain part
