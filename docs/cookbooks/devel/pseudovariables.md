@@ -376,6 +376,24 @@ configuration file, but its value does not change)
 🔥**IMPORTANT**: It is R/W variable (you can assign values to it directly in
 configuration file, but its value does not change)
 
+**NOTE:** _When using this along with $fu to change part of the message, applying them all at once can result in unintended side-effects. To ensure that the changes are applied to the message as intended, it is suggested to use the `msg_apply_changes()` function from the `textopsx` module after each change to the message. This function can ensure that the changes are applied correctly and that the message remains valid._
+
+Example:
+
+```c
+loadmodule "textopsx.so"
+...
+$fu = "sip:new_user@example.com"
+msg_apply_changes()
+$fn = "New Display Name"
+msg_apply_changes()
+...
+```
+
+**Recommendation**: Use `uac` module functions such as `uac_replace_from` for updating values reliably.
+
+[See FAQ for more info.](../../tutorials/faq/main.md#sip-message-processing)
+
 ### $fs - Forced Send Socket
 
 **$fs** - reference to the forced send socket for the SIP message (if
@@ -437,6 +455,24 @@ configuration file, but its value does not change)
 
 Note that changing the From: header may break backwards compatibility
 with SIP 1.0 devices.
+
+**NOTE:** _When using this along with $fn to change part of the message, applying them all at once can result in unintended side-effects. To ensure that the changes are applied to the message as intended, it is suggested to use the `msg_apply_changes()` function from the `textopsx` module after each change to the message. This function can ensure that the changes are applied correctly and that the message remains valid._
+
+Example:
+
+```c
+loadmodule "textopsx.so"
+...
+$fu = "sip:new_user@example.com"
+msg_apply_changes()
+$fn = "New Display Name"
+msg_apply_changes()
+...
+```
+
+**Recommendation**: Use `uac` module functions such as `uac_replace_from` for updating values reliably.
+
+[See FAQ for more info.](../../tutorials/faq/main.md#sip-message-processing)
 
 ### $fU - From URI username
 
@@ -837,6 +873,24 @@ configuration file, but its value does not change)
 🔥**IMPORTANT**: It is R/W variable (you can assign values to it directly in
 configuration file, but its value does not change)
 
+**NOTE:** _When using this along with $tu to change part of the message, applying them all at once can result in unintended side-effects. To ensure that the changes are applied to the message as intended, it is suggested to use the `msg_apply_changes()` function from the `textopsx` module after each change to the message. This function can ensure that the changes are applied correctly and that the message remains valid._
+
+Example:
+
+```c
+loadmodule "textopsx.so"
+...
+$tu = "sip:new_user@example.com"
+msg_apply_changes()
+$tn = "New Display Name"
+msg_apply_changes()
+...
+```
+
+**Recommendation**: Use `uac` module functions such as `uac_replace_to` for updating values reliably.
+
+[See FAQ for more info.](../../tutorials/faq/main.md#sip-message-processing)
+
 ### $tt - To tag
 
 **$tt** - reference to tag parameter of 'To' header
@@ -861,6 +915,24 @@ this variable returning the right value.
 
 🔥**IMPORTANT**: It is R/W variable (you can assign values to it directly in
 configuration file, but its value does not change)
+
+**NOTE:** _When using this along with $tn to change part of the message, applying them all at once can result in unintended side-effects. To ensure that the changes are applied to the message as intended, it is suggested to use the `msg_apply_changes()` function from the `textopsx` module after each change to the message. This function can ensure that the changes are applied correctly and that the message remains valid._
+
+Example:
+
+```c
+loadmodule "textopsx.so"
+...
+$fu = "sip:new_user@example.com"
+msg_apply_changes()
+$fn = "New Display Name"
+msg_apply_changes()
+...
+```
+
+**Recommendation**: Use `uac` module functions such as `uac_replace_to` for updating values reliably.
+
+[See FAQ for more info.](../../tutorials/faq/main.md#sip-message-processing)
 
 ### $tU - To URI Username
 
