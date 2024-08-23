@@ -336,7 +336,7 @@ Return `\t`.
 
 ### $Es - Space
 
-Return ` `.
+Return ` `. <!-- markdownlint-disable MD038 -->
 
 ### $Ec - Comma
 
@@ -375,6 +375,24 @@ configuration file, but its value does not change)
 
 🔥**IMPORTANT**: It is R/W variable (you can assign values to it directly in
 configuration file, but its value does not change)
+
+**NOTE:** _When using this along with $fu to change part of the message, applying them all at once can result in unintended side-effects. To ensure that the changes are applied to the message as intended, it is suggested to use the `msg_apply_changes()` function from the `textopsx` module after each change to the message. This function can ensure that the changes are applied correctly and that the message remains valid._
+
+Example:
+
+```c
+loadmodule "textopsx.so"
+...
+$fu = "sip:new_user@example.com"
+msg_apply_changes()
+$fn = "New Display Name"
+msg_apply_changes()
+...
+```
+
+**Recommendation**: Use `uac` module functions such as `uac_replace_from` for updating values reliably.
+
+[See FAQ for more info.](../../tutorials/faq/main.md#sip-message-processing)
 
 ### $fs - Forced Send Socket
 
@@ -437,6 +455,24 @@ configuration file, but its value does not change)
 
 Note that changing the From: header may break backwards compatibility
 with SIP 1.0 devices.
+
+**NOTE:** _When using this along with $fn to change part of the message, applying them all at once can result in unintended side-effects. To ensure that the changes are applied to the message as intended, it is suggested to use the `msg_apply_changes()` function from the `textopsx` module after each change to the message. This function can ensure that the changes are applied correctly and that the message remains valid._
+
+Example:
+
+```c
+loadmodule "textopsx.so"
+...
+$fu = "sip:new_user@example.com"
+msg_apply_changes()
+$fn = "New Display Name"
+msg_apply_changes()
+...
+```
+
+**Recommendation**: Use `uac` module functions such as `uac_replace_from` for updating values reliably.
+
+[See FAQ for more info.](../../tutorials/faq/main.md#sip-message-processing)
 
 ### $fU - From URI username
 
@@ -837,6 +873,24 @@ configuration file, but its value does not change)
 🔥**IMPORTANT**: It is R/W variable (you can assign values to it directly in
 configuration file, but its value does not change)
 
+**NOTE:** _When using this along with $tu to change part of the message, applying them all at once can result in unintended side-effects. To ensure that the changes are applied to the message as intended, it is suggested to use the `msg_apply_changes()` function from the `textopsx` module after each change to the message. This function can ensure that the changes are applied correctly and that the message remains valid._
+
+Example:
+
+```c
+loadmodule "textopsx.so"
+...
+$tu = "sip:new_user@example.com"
+msg_apply_changes()
+$tn = "New Display Name"
+msg_apply_changes()
+...
+```
+
+**Recommendation**: Use `uac` module functions such as `uac_replace_to` for updating values reliably.
+
+[See FAQ for more info.](../../tutorials/faq/main.md#sip-message-processing)
+
 ### $tt - To tag
 
 **$tt** - reference to tag parameter of 'To' header
@@ -861,6 +915,24 @@ this variable returning the right value.
 
 🔥**IMPORTANT**: It is R/W variable (you can assign values to it directly in
 configuration file, but its value does not change)
+
+**NOTE:** _When using this along with $tn to change part of the message, applying them all at once can result in unintended side-effects. To ensure that the changes are applied to the message as intended, it is suggested to use the `msg_apply_changes()` function from the `textopsx` module after each change to the message. This function can ensure that the changes are applied correctly and that the message remains valid._
+
+Example:
+
+```c
+loadmodule "textopsx.so"
+...
+$fu = "sip:new_user@example.com"
+msg_apply_changes()
+$fn = "New Display Name"
+msg_apply_changes()
+...
+```
+
+**Recommendation**: Use `uac` module functions such as `uac_replace_to` for updating values reliably.
+
+[See FAQ for more info.](../../tutorials/faq/main.md#sip-message-processing)
 
 ### $tU - To URI Username
 
@@ -1749,7 +1821,7 @@ printing in the Erlang shell.
 
 ### $erl_atom(name)
 
-*$erl_atom(name)* pseudo variable allows create analog to Erlang atom
+_$erl_atom(name)_ pseudo variable allows create analog to Erlang atom
 data type. Erlang atom is a literal, a constant with name. Formatted
 output pseudo variable atom could be enclosed in single quotes (') if it
 does not begin with a lower-case letter or if it contains other
@@ -2095,12 +2167,12 @@ parameters before sending a HTTP query.
     to discover server-supported authentication methods. You may want to
     use a specific value. Valid values are:
 
-  - 1 - BASIC authentication
-  - 2 - HTTP Digest authentication
-  - 4 - GSS-Negotiate authentication
-  - 8 - NTLM authentication
-  - 16 - HTTP Digest with IE flavour.
-  - (Default value is 3 - BASIC and Digest authentication.)
+  + 1 - BASIC authentication
+  + 2 - HTTP Digest authentication
+  + 4 - GSS-Negotiate authentication
+  + 8 - NTLM authentication
+  + 16 - HTTP Digest with IE flavour.
+  + (Default value is 3 - BASIC and Digest authentication.)
 - username: sets the username to use for authenticated requests
 - password: sets the password to use for authenticated requests
 - suspend: if set to 0 it doesn't suspend the current transaction before performing the query
@@ -2149,8 +2221,8 @@ HTTP response body and body length,
 
 - name - id to refer the documet
 - spec - specifier:
-  * doc - set/get the document as text
-  * xpath:xpath-expression - evaluate xpath expression
+  + doc - set/get the document as text
+  + xpath:xpath-expression - evaluate xpath expression
 
 Example:
 
@@ -2284,7 +2356,7 @@ The key can be:
 - hdrs - SIP Headers
 - body - Body
 - flags - flags for processing
-  - 1 - the password is provided in HA1 format
+  + 1 - the password is provided in HA1 format
 - auser - authentication username
 - apasswd - authentication password
 - sock - local socket to be used for sending (proto:address:port)
@@ -3222,12 +3294,12 @@ dns_query(hostname, pvid) function from ipops module.
 
 - pvid can be any string
 - key can be:
-  - count - number of addresses
-  - ipv4 - set to 1 if at least one ipv4 address (otherwise 0)
-  - ipv6 - set to 1 if at least one ipv6 address (otherwise 0)
-  - addr\[index\] - the address as string from position index in the
+  + count - number of addresses
+  + ipv4 - set to 1 if at least one ipv4 address (otherwise 0)
+  + ipv6 - set to 1 if at least one ipv6 address (otherwise 0)
+  + addr\[index\] - the address as string from position index in the
         list (0 based indexing)
-  - type\[index\] - the type of address from position index in the
+  + type\[index\] - the type of address from position index in the
         list (0 based indexing), the value is 4 for ipv4 and 6 for ipv6
 
 The index can be an integer or a variable with integer value. First
@@ -3347,7 +3419,7 @@ evrexec attributes:
 ### $subs(key) - Subscription Attributes
 
 This variable gives access to attributes of the current subscription.
-The variable has to be used after executing *handle_subscription()* in
+The variable has to be used after executing _handle_subscription()_ in
 order to provide accurate values.
 
 The key can be:
@@ -3503,7 +3575,7 @@ The key can be:
 
 ## pv_headers module variables
 
-- $x_hdr(*header_name*): *header_name* header value
+- $x_hdr(_header_name_): _header_name_ header value
 - $x_fu: Full From header
 - $x_fU: From header user part
 - $x_fd: From header domain part
