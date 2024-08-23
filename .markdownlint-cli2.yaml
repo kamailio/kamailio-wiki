@@ -1,4 +1,6 @@
 config:
   default: true
+  MD004:
+    style: "sublist"
   MD013: false
   MD046: false
