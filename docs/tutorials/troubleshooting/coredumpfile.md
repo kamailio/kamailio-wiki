@@ -8,6 +8,15 @@ used to get the cause (or at least a hint) of the crash. The core file
 contains the memory of the process at the moment it crashes as well as
 the execution trace, so it could contain sensitive data.
 
+## Table Of Content
+
+- [Troubleshooting Core Dump File With GDB](#troubleshooting-core-dump-file-with-gdb)
+  * [Potential Causes](#potential-causes)
+  * [Analyze Core File](#analyze-core-file)
+  * [How To Get Core Files](#how-to-get-core-files)
+    + [CentOS Core Dump Settings](#centos-core-dump-settings)
+  * [Useful Links](#useful-links)
+
 ## Potential Causes
 
 - Invalid input data, e.g. some messages or from the database
