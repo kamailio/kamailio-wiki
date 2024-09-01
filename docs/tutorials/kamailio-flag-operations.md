@@ -7,35 +7,37 @@
     Daniel-Constantin Mierla
       <miconda (at) gmail.com>
 
-Abstract
-
 Tutorial for operations with flags in Kamailio SIP Server.
 
 ## Introduction
 
-For each SIP request, Kamailio (OpenSER) keeps a set of flags that can
+For each SIP request, Kamailio keeps a set of flags that can
 be set, reset and tested from routing blocks in the configuration file.
 At this moment, the flags are mapped over the bits of an integer value,
 so there are thirty two flags (four groups of eight flags).
 
 Example 1. flags bit map
 
+```
      0                     1                     2                     3
      0 1 2 3 4 5 6 7   8 9 0 1 2 3 4 5   6 7 8 9 0 1 2 3   4 5 6 7 8 9 0 1    
     +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+
     |0|0|0|0|0|0|0|0| |0|0|0|0|0|0|0|0| |0|0|0|0|0|0|0|0| |0|0|0|0|0|0|0|0|
     +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+
+```
 
 The flag is identified by the position in the bit array, valid values
 being in the range from 0 to 31.
 
 Example 2. the 15th flag
 
+```
      0                     1                     2                     3
      0 1 2 3 4 5 6 7   8 9 0 1 2 3 4 5   6 7 8 9 0 1 2 3   4 5 6 7 8 9 0 1    
     +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+
     |0|0|0|0|0|0|0|0| |0|0|0|0|0|0|0|X| |0|0|0|0|0|0|0|0| |0|0|0|0|0|0|0|0|
     +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+
+```
 
 ## Functions
 
@@ -49,11 +51,13 @@ The value of the parameter must be an integer between 0 and 31.
 
 Example 3. setflag(15) -- set the 15th flag
 
+```
      0                     1                     2                     3
      0 1 2 3 4 5 6 7   8 9 0 1 2 3 4 5   6 7 8 9 0 1 2 3   4 5 6 7 8 9 0 1    
     +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+
     |0|0|0|0|0|0|0|0| |0|0|0|0|0|0|0|1| |0|0|0|0|0|0|0|0| |0|0|0|0|0|0|0|0|
     +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+
+```
 
 If the value of the flag was already set, the operation has no other
 effect, the flag remains set to 1.
@@ -68,11 +72,13 @@ too.
 
 Example 4. resetflag(15) -- reset the 15th flag
 
+```
      0                     1                     2                     3
      0 1 2 3 4 5 6 7   8 9 0 1 2 3 4 5   6 7 8 9 0 1 2 3   4 5 6 7 8 9 0 1    
     +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+
     |0|0|0|0|0|0|0|0| |0|0|0|0|0|0|0|0| |0|0|0|0|0|0|0|0| |0|0|0|0|0|0|0|0|
     +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+
+```
 
 If the value of the flag was already 0, the operation has no other
 effect, the flag remains set to 0.
@@ -89,6 +95,7 @@ the value of the flag is 0.
 
 Example 5. isflagset(15)
 
+```
      0                     1                     2                     3
      0 1 2 3 4 5 6 7   8 9 0 1 2 3 4 5   6 7 8 9 0 1 2 3   4 5 6 7 8 9 0 1    
     +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+
@@ -102,6 +109,7 @@ Example 5. isflagset(15)
       } else {
          # not in this case
       };
+```
 
 ## Examples
 
@@ -113,6 +121,7 @@ number 1 is used to mark the requests to be accounted.
 
 Example 6. accounting config file
 
+```
     # Kamailio configuration file: accounting calls
 
     # Details about this configuration script
@@ -184,6 +193,7 @@ Example 6. accounting config file
         };
 
     }
+```
 
 ### Optimizations
 
@@ -192,6 +202,7 @@ duplicated routines or executions of same security checks over database.
 
 Example 7. optimization of config file
 
+```
     # Kamailio configuration file: using flags
     #
     #
@@ -262,6 +273,7 @@ Example 7. optimization of config file
         revert_uri();
         t_relay_to_udp("voicemail_ip","voicemail_ip");
     }
+```
 
 ## Remarks
 
@@ -270,9 +282,9 @@ fast way of keeping states during processing a request or during a
 transaction, if Kamailio is in stateful mode.
 
 One of the main purposes for flags is to enable accounting in Kamailio.
-The “acc” module uses flags to identify transactions to be accounted.
+The `acc` module uses flags to identify transactions to be accounted.
 These transactions are usually marked from configuration file using
-“setflag()” function.
+`setflag()` function.
 
 ## Development
 
@@ -284,12 +296,14 @@ from configuration file, but now you have to provide the pointer to
 number of the flag to operate on.
 
 The next example presents the prototypes of these functions (just look
-into “flags.h” file to see them).
+into `flags.h` file to see them).
 
 Example 8. accounting config file
 
+```
     typedef unsigned int flag_t;
 
     int setflag(struct sip_msg* msg, flag_t flag);
     int resetflag(struct sip_msg* msg, flag_t flag);
     int isflagset(struct sip_msg* msg, flag_t flag);
+```
