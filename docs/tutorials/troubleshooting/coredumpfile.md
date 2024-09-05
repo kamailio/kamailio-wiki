@@ -100,13 +100,35 @@ setting:
 
 - [https://sysctl-explorer.net/fs/suid_dumpable/](https://sysctl-explorer.net/fs/suid_dumpable/)
 
-To get per-process core file then you can use on Linux:
+The core file can be written on the disk or sent to an application. To find what
+is done with it, check the file name pattern in `/proc/sys/kernel/core_pattern`:
+
+```
+cat /proc/sys/kernel/core_pattern
+```
+
+To change it to something new, for example to include various attributes in the
+name (e.g., pid, executable name, timestamp, ...):
+
+```
+echo "/tmp/cores/core.%e.%t.%p" > /proc/sys/kernel/core_pattern
+```
+
+The change done before is only applicable until the next reboot. In order to make
+the change permanent, edit `/etc/sysctl.conf` and add/set:
+
+```
+kernel.core_pattern=/tmp/cores/core.%e.%t.%p
+```
+
+If the core pattern is just the file name, to get per-process core file then you
+can use on Linux:
 
 ```
     echo "1" > /proc/sys/kernel/core_uses_pid
 ```
 
-A similar command for FreeBSD:
+FreeBSD has its own approach, as an example, the next command can be used:
 
 ```
     sysctl kern.corefile='%N.%P.core'
