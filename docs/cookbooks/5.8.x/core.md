@@ -5598,9 +5598,9 @@ be quite useful when running on containerised environments.
 To see the the available command line parameters, run **kamailio -h**:
 
 ``` c
-    # kamailio -h
+~# kamailio -h
 
-version: kamailio 5.7.0-dev1 (x86_64/darwin) 353aa1
+version: kamailio 5.8.3 (aarch64/linux) be1fe9
 Usage: kamailio [options]
 Options:
     -a mode      Auto aliases mode: enable with yes or on,
@@ -5610,10 +5610,12 @@ Options:
     --atexit=val Control atexit callbacks execution from external libraries
                   which may access destroyed shm memory causing crash on shutdown.
                   Can be y[es] or 1 to enable atexit callbacks, n[o] or 0 to disable,
-                  default is yes.
+                  default is no.
     -A define    Add config pre-processor define (e.g., -A WITH_AUTH,
                   -A 'FLT_ACC=1', -A 'DEFVAL="str-val"')
     -b nr        Maximum OS UDP receive buffer size which will not be exceeded by
+                  auto-probing-and-increase procedure even if OS allows
+    -B nr        Maximum OS UDP send buffer size which will not be exceeded by
                   auto-probing-and-increase procedure even if OS allows
     -c           Check configuration file for syntax errors
     --cfg-print  Print configuration file evaluating includes and ifdefs
@@ -5625,7 +5627,7 @@ Options:
                   -DDD..daemonize (default)
     -e           Log messages printed in terminal colors (requires -E)
     -E           Log to stderr
-    -f file      Configuration file (default: /tmp/kamailio-dev/etc/kamailio/kamailio.cfg)
+    -f file      Configuration file (default: /usr/local/etc/kamailio/kamailio.cfg)
     -g gid       Change gid (group id)
     -G file      Create a pgid file
     -h           This help message
@@ -5645,7 +5647,7 @@ Options:
                   The default behaviour is to listen on all the interfaces.
     --loadmodule=name load the module specified by name
     --log-engine=log engine name and data
-    -L path      Modules search path (default: /tmp/kamailio-dev/lib64/kamailio/modules)
+    -L path      Modules search path (default: /usr/local/lib64/kamailio/modules)
     -m nr        Size of shared memory allocated in Megabytes
     --modparam=modname:paramname:type:value set the module parameter
                   type has to be 's' for string value and 'i' for int value,
