@@ -4490,6 +4490,7 @@ Test if a flag is set for current processed message (if the flag value
 is 1). The value of the parameter can be in range of 0..31.
 
 For more see:
+
 - [Kamailio - Flag Operations](../../tutorials/kamailio-flag-operations.md)
 
 Example of usage:
@@ -4503,7 +4504,9 @@ if(isflagset(3)) {
 Kamailio also supports named flags. They have to be declared at the
 beginning of the config file with:
 
+``` shell
      flags  flag1_name[:position],  flag2_name ...
+```
 
 Example:
 
@@ -4638,7 +4641,9 @@ received by server (undo all changes of R-URI).
 
 Example of usage:
 
+``` c
       revert_uri();
+```
 
 ### rewritehostport
 
@@ -4650,7 +4655,9 @@ parameters remain unchanged.
 
 Example of usage:
 
+``` c
       rewritehostport("1.2.3.4:5080");
+```
 
 ### rewritehostporttrans
 
@@ -4831,8 +4838,8 @@ Like `set_forward_no_connect()`, but for replies to the current message
 depends in which route block the function is called:
 
 - normal request route: affects all replies sent back on the
-    transaction (either local or forwarded) and all local stateless
-    replies (`sl_reply()`).
+  transaction (either local or forwarded) and all local stateless
+  replies (`sl_reply()`).
 
 <!-- -->
 
@@ -4851,6 +4858,7 @@ depends in which route block the function is called:
 
 Example of usage:
 
+``` c
       route[4] {
         //requests from local users. There are usually behind NAT so it does not make sense to try
         //to establish a new TCP connection for the replies
@@ -4858,6 +4866,7 @@ Example of usage:
         // do authentication and call routing
         ...
       }
+```
 
 ### set_reply_close
 
@@ -4866,6 +4875,7 @@ Can be used in same route blocks as `set_reply_no_connect`.
 
 Example of usage:
 
+``` c
       route {
         ...
         if (...caller-is-not-registered...) {
@@ -4878,6 +4888,7 @@ Example of usage:
         }
         ...
       }
+```
 
 ### setavpflag
 
@@ -4889,6 +4900,7 @@ processing (e.g., accounting) or to keep some state (e.g., message
 authenticated).
 
 For more see:
+
 - [Kamailio - Flag Operations](../../tutorials/kamailio-flag-operations.md)
 
 Example of usage:
@@ -4916,7 +4928,7 @@ Example of usage:
 ### udp_mtu_try_proto(proto)
 
 - proto - `TCP|TLS|SCTP|UDP` - like `udp_mtu_try_proto` global
-    parameter but works on a per packet basis and not globally.
+  parameter but works on a per packet basis and not globally.
 
 Example:
 
@@ -4925,7 +4937,7 @@ Example:
 
 ### userphone
 
-Add "user=phone" parameter to R-URI.
+Add `user=phone` parameter to R-URI.
 
 ## Custom Global Parameters
 
@@ -4958,7 +4970,7 @@ $ru = "sip:" + $rU + "@" + $sel(cfg_get.pstn.gw_ip);
 
 **Note:** Some words cannot be used as (part of) names for custom
 variables or groups, and if they are used a syntax error is logged by
-kamailio. These keywords are: "yes", "true", "on", "enable", "no",
+kamailio. Among these keywords: "yes", "true", "on", "enable", "no",
 "false", "off", "disable", "udp", "UDP", "tcp", "TCP", "tls", "TLS",
 "sctp", "SCTP", "ws", "WS", "wss", "WSS", "inet", "INET", "inet6",
 "INET6", "sslv23", "SSLv23", "SSLV23", "sslv2", "SSLv2", "SSLV2",
@@ -5237,17 +5249,17 @@ Example:
 ```
 
 - snd_ip, snd_port - behave like src_ip/src_port, but contain the
-    ip/port Kamailio will use to send the message
+  ip/port Kamailio will use to send the message
 - to_ip, to_port - like above, but contain the ip/port the message
-    will be sent to (not to be confused with dst_ip/dst_port, which are
-    the destination of the original received request: Kamailio's ip and
-    port on which the message was received)
+  will be sent to (not to be confused with dst_ip/dst_port, which are
+  the destination of the original received request: Kamailio's ip and
+  port on which the message was received)
 - snd_proto, snd_af - behave like proto/af but contain the
-    protocol/address family that Kamailio will use to send the message
+  protocol/address family that Kamailio will use to send the message
 - msg:len - when used in an onsend_route, msg:len will contain the
-    length of the message on the wire (after all the changes in the
-    script are applied, Vias are added a.s.o) and not the lentgh of the
-    original message.
+  length of the message on the wire (after all the changes in the
+  script are applied, Vias are added a.s.o) and not the lentgh of the
+  original message.
 
 ### event_route
 
@@ -5263,10 +5275,10 @@ Prototype: `event_route[groupid:eventid]`
 Implementations:
 
 - `event_route[core:worker-one-init]` - executed by core after the
-    first udp sip worker process executed the child_init() for all
-    modules, before starting to process sip traffic
-  - note that due to forking, other sip workers can get faster to
-        listening for sip traffic
+  first udp sip worker process executed the child_init() for all
+  modules, before starting to process sip traffic
+  * note that due to forking, other sip workers can get faster to
+    listening for sip traffic
 
 ``` c
 event_route[core:worker-one-init] {
@@ -5275,13 +5287,13 @@ event_route[core:worker-one-init] {
 ```
 
 - `event_route[core:msg-received]` - executed when a message is
-    received from the network. It runs with a faked request and makes
-    available the $rcv(key) variables to access what was received and
-    related attribtues.
-  - it has to be enabled with received_route_mode global parameter.
-        For usage via Kemi, set kemi.received_route_callback global
-        parameter.
-  - if drop is executed, the received message is no longer processed
+  received from the network. It runs with a faked request and makes
+  available the $rcv(key) variables to access what was received and
+  related attribtues.
+  * it has to be enabled with received_route_mode global parameter.
+    For usage via Kemi, set kemi.received_route_callback global
+    parameter.
+  * if drop is executed, the received message is no longer processed
 
 ``` c
 event_route[core:msg-received] {
@@ -5293,11 +5305,11 @@ event_route[core:msg-received] {
 ```
 
 - `event_route[core:pre-routing]` - executed by core on receiving
-    SIP traffic before running request_route or reply_route.
-  - if drop is used, then the message is not processed further with
-        request_route or reply_route in the same process. This can be
-        useful together with sworker module which can delegate the
-        processing to another worker.
+  SIP traffic before running request_route or reply_route.
+  * if drop is used, then the message is not processed further with
+    request_route or reply_route in the same process. This can be
+    useful together with sworker module which can delegate the
+    processing to another worker.
 
 ``` c
 async_workers_group="name=reg;workers=4"
@@ -5314,10 +5326,10 @@ event_route[core:pre-routing] {
 ```
 
 - `event_route[core:receive-parse-error]` - executed by core
-    on receiving a broken SIP message that can not be parsed.
-  - note that the SIP message is broken in this case, but it gets
-        access to source and local socket addresses (ip, port, proto,
-        af) as well as the whole message buffer and its size
+  on receiving a broken SIP message that can not be parsed.
+  * note that the SIP message is broken in this case, but it gets
+    access to source and local socket addresses (ip, port, proto,
+    af) as well as the whole message buffer and its size
 
 ``` c
 event_route[core:receive-parse-error] {
@@ -5393,7 +5405,6 @@ event_route[tm:branch-failure:myroute] {
     }
   }
 }
-
 ```
 
 ## Script Statements
@@ -5404,11 +5415,13 @@ IF-ELSE statement
 
 Prototype:
 
-        if(expr) {
-           actions;
-        } else {
-           actions;
-        }
+```
+    if(expr) {
+       actions;
+    } else {
+       actions;
+    }
+```
 
 The `expr` should be a valid logical expression.
 
@@ -5428,12 +5441,14 @@ The logical operators that can be used in `expr`:
 
 Example of usage:
 
+``` c
       if(is_method("INVITE"))
       {
           log("this sip message is an invite\n");
       } else {
           log("this sip message is not an invite\n");
       }
+```
 
 See also the FAQ for how the function return code is evaluated:
 
@@ -5441,91 +5456,92 @@ See also the FAQ for how the function return code is evaluated:
 
 ### switch
 
-SWITCH statement - it can be used to test the value of a
-pseudo-variable.
+SWITCH statement - it can be used to test the value of a pseudo-variable.
 
-IMPORTANT NOTE: `break` can be used only to mark the end of a `case`
-branch (as it is in shell scripts). If you are trying to use `break`
-outside a `case` block the script will return error -- you must use
-`return` there.
+NOTE: `break` can be used only to mark the end of a `case`
+branch (as it is in shell scripts).
 
 Example of usage:
 
-        route {
-            route(1);
-            switch($retcode)
-            {
-                case -1:
-                    log("process INVITE requests here\n");
-                break;
-                case 1:
-                    log("process REGISTER requests here\n");
-                break;
-                case 2:
-                case 3:
-                    log("process SUBSCRIBE and NOTIFY requests here\n");
-                break;
-                default:
-                    log("process other requests here\n");
-           }
-
-            # switch of R-URI username
-            switch($rU)
-            {
-                case "101":
-                    log("destination number is 101\n");
-                break;
-                case "102":
-                    log("destination number is 102\n");
-                break;
-                case "103":
-                case "104":
-                    log("destination number is 103 or 104\n");
-                break;
-                # cases with starting slash are regular expressions
-                case /"\+49.*":
-                    log("destination number is germany\n");
-                break;
-                case /"\+33.*":
-                    log("destination number is france\n");
-                break;
-                default:
-                    log("unknown destination number\n");
-           }
+``` c
+    request_route {
+        route(1);
+        switch($retcode)
+        {
+            case -1:
+                log("process INVITE requests here\n");
+            break;
+            case 1:
+                log("process REGISTER requests here\n");
+            break;
+            case 2:
+            case 3:
+                log("process SUBSCRIBE and NOTIFY requests here\n");
+            break;
+            default:
+                log("process other requests here\n");
         }
 
-        route[1]{
-            if(is_method("INVITE"))
-            {
-                return(-1);
-            };
-            if(is_method("REGISTER"))
-                return(1);
-            }
-            if(is_method("SUBSCRIBE"))
-                return(2);
-            }
-            if(is_method("NOTIFY"))
-                return(3);
-            }
-            return(-2);
+        # switch of R-URI username
+        switch($rU)
+        {
+            case "101":
+                log("destination number is 101\n");
+            break;
+            case "102":
+                log("destination number is 102\n");
+            break;
+            case "103":
+            case "104":
+                log("destination number is 103 or 104\n");
+            break;
+            # cases with starting slash are regular expressions
+            case /"\+49.*":
+                log("destination number is germany\n");
+            break;
+            case /"\+33.*":
+                log("destination number is france\n");
+            break;
+            default:
+                log("unknown destination number\n");
         }
+    }
+
+    route[1] {
+        if(is_method("INVITE"))
+        {
+            return(-1);
+        };
+        if(is_method("REGISTER"))
+            return(1);
+        }
+        if(is_method("SUBSCRIBE"))
+            return(2);
+        }
+        if(is_method("NOTIFY"))
+            return(3);
+        }
+        return(-2);
+    }
+```
 
 NOTE: take care while using `return` - `return(0)` stops the execution
 of the script.
 
 ### while
 
-while statement
+while statement - conditional loop
 
 Example of usage:
 
-      $var(i) = 0;
-      while($var(i) < 10)
-      {
-          xlog("counter: $var(i)\n");
-          $var(i) = $var(i) + 1;
-      }
+``` c
+    $var(i) = 0;
+    while($var(i) < 10)
+    {
+        xlog("counter: $var(i)\n");
+        $var(i) = $var(i) + 1;
+    }
+```
 
 ## Script Operations
 
@@ -5534,8 +5550,8 @@ directly in configuration file.
 
 ### Assignment
 
-Assignments can be done like in C, via `=` (equal). The following
-pseudo-variables can be used in left side of an assignment:
+Assignments can be done like in C, via `=` (equal). Among the
+pseudo-variables that can be used in left side of an assignment:
 
 - Unordered List Item AVPs - to set the value of an AVP
 - script variables `($var(...))` - to set the value of a script variable
@@ -5558,15 +5574,19 @@ one statement (in other words, delete existing AVPs with same name, add
 a new one with the right side value). This replaces the `:=` assignment
 operator from kamailio `< 3.0`.
 
+``` c
     $(avp(i:3)[*]) = 123;
     $(avp(i:3)[*]) = $null;
+```
 
 ### String Operations
 
 For strings, `+` is available to concatenate.
 
+``` c
     $var(a) = "test";
     $var(b) = "sip:" + $var(a) + "@" + $fd;
+```
 
 ### Arithmetic Operations
 
@@ -5624,32 +5644,34 @@ whenever possible (both operand types can be safely determined at start
 time and they are the same).
 
 1. Kamailio tries to guess what the user wanted when operators that
-    support multiple types are used on different typed operands. In
-    general convert the right operand to the type of the left operand
-    and then perform the operation. Exception: the left operand is
-    undef. This applies to the following operators: `+`, `==` and `!=`.
+  support multiple types are used on different typed operands. In
+  general convert the right operand to the type of the left operand
+  and then perform the operation. Exception: the left operand is
+  undef. This applies to the following operators: `+`, `==` and `!=`.
 
-       Special case: undef as left operand:
-       For +: undef + expr -> undef is converted to string => "" + expr.
-       For == and !=:   undef == expr -> undef is converted to type_of expr.
-       If expr is undef, then undef == undef is true (internally is converted
-       to string).
+  * Special case: undef as left operand:
+  For +: undef + expr -> undef is converted to string => "" + expr.
+  For == and !=:   undef == expr -> undef is converted to type_of expr.
+  If expr is undef, then undef == undef is true (internally is converted
+  to string).
 
-1. expression evaluation changes: Kamailio will auto-convert to integer
-    or string in function of the operators:
+2. expression evaluation changes: Kamailio will auto-convert to integer
+  or string in function of the operators:
 
-         int(undef)==0,  int("")==0, int("123")==123, int("abc")==0
-         str(undef)=="", str(123)=="123".
+``` c
+    int(undef)==0,  int("")==0, int("123")==123, int("abc")==0
+    str(undef)=="", str(123)=="123"
+```
 
-1. script operators for dealing with empty/undefined variables
+3. script operators for dealing with empty/undefined variables
 
-        defined expr - returns true if expr is defined, and false if not.
-                       Note: only a standalone avp or pvar can be
-                       undefined, everything else is defined.
-        strlen(expr) - returns the lenght of expr evaluated as string.
-        strempty(expr) - returns true if expr evaluates to the empty
-                         string (equivalent to expr=="").
-        Example: if (defined $v && !strempty($v)) $len=strlen($v);
+  * defined expr - returns true if expr is defined, and false if not.
+    Note: only a standalone avp or pvar can be
+    undefined, everything else is defined.
+  * strlen(expr) - returns the lenght of expr evaluated as string.
+  * strempty(expr) - returns true if expr evaluates to the empty
+    string (equivalent to expr=="").
+    Example: `if (defined $v && !strempty($v)) $len=strlen($v);`
 
 ## Command Line Parameters
 
@@ -5760,23 +5782,21 @@ The value of this parameter can be **--log-engine=name** or
 The name of the log engine can be:
 
 - **json** - write logs in structured JSON format
-  - the **data** for **json** log engine can be a set of character
+  * the **data** for **json** log engine can be a set of character
         flags:
-    - **a** - add log prefix as a special field
-    - **A** - do not add log prefix
-    - **c** - add Call-ID (when available) as a dedicated JSON
-            attribute
-    - **j** - the log prefix and message fields are printed in
-            JSON structure format, detecting if they are enclosed in
-            between **{ }** or adding them as a **text** field
-    - **M** - strip EOL (`\n`) from the value of the log message
-            field
-    - **N** - do not add EOL at the end of JSON document
-    - **p** - the log prefix is printed as it is in the root json
-            document, it has to start with comma (**,**) and be a valid
-            set of json fields
-    - **U** - CEE (Common Event Expression) schema format -
-            [https://cee.mitre.org/language/1.0-beta1/core-profile.html](https://cee.mitre.org/language/1.0-beta1/core-profile.html)
+    + **a** - add log prefix as a special field
+    + **A** - do not add log prefix
+    + **c** - add Call-ID (when available) as a dedicated JSON attribute
+    + **j** - the log prefix and message fields are printed in
+      JSON structure format, detecting if they are enclosed in
+      between **{ }** or adding them as a **text** field
+    + **M** - strip EOL (`\n`) from the value of the log message field
+    + **N** - do not add EOL at the end of JSON document
+    + **p** - the log prefix is printed as it is in the root json
+      document, it has to start with comma (**,**) and be a valid
+      set of json fields
+    + **U** - CEE (Common Event Expression) schema format -
+      [https://cee.mitre.org/language/1.0-beta1/core-profile.html](https://cee.mitre.org/language/1.0-beta1/core-profile.html)
 
 Example of JSON logs when running Kamailio with `--log-engine=json:M` :
 
