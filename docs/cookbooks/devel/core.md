@@ -434,16 +434,14 @@ request_route {
 
 - number of allowed defines is now set to 256
 
-<!-- -->
-
 - notes:
-  - multilines defines are reduced to single line, so line counter
-        should be fine
-  - column counter goes inside the define value, but you have to
-        omit the `\` and `CR` for the accurate inside-define position
-  - text on the same line as the directive will cause problems. Keep
-        the directive lines clean and only comment on a line before or
-        after.
+  * multilines defines are reduced to single line, so line counter
+    should be fine
+  * column counter goes inside the define value, but you have to
+    omit the `\` and `CR` for the accurate inside-define position
+  * text on the same line as the directive will cause problems. Keep
+    the directive lines clean and only comment on a line before or
+    after.
 
 ### ifexp
 
@@ -1431,8 +1429,10 @@ flags
 
 ### force_rport
 
-yes/no: Similar to the force_rport() function, but activates symmetric
-response routing globally.
+Value: `yes`/`no` (default `no`)
+
+Similar to the force_rport() function, but activates symmetric response routing
+globally.
 
 ### fork
 
@@ -1675,8 +1675,8 @@ e.g.:
     listen=udp:[2a02:1850:1:1::18]:5060
 ```
 
-You can specify an advertise address (like `ip:port`) per listening socket
-- it will be used to build the SIP headers such as Via and Record-Route:
+You can specify an advertise address (like `ip:port`) per listening socket, it
+will be used to build the SIP headers such as Via and Record-Route:
 
 ``` c
     listen=udp:10.10.10.10:5060 advertise 11.11.11.11:5060
@@ -3828,14 +3828,14 @@ libssl 3.x.
 
 Values:
 
-  - `0` - no thread-specific initialization/execution (default)
-  - `1` - for each function that might initialize OpenSSL, run it in a temporary
+- `0` - no thread-specific initialization/execution (default)
+- `1` - for each function that might initialize OpenSSL, run it in a temporary
   thread; this leaves the thread-local variables in rank 0, main thread at their
   default value of 0x0
-  - `2` - use at-fork handler to set thread-local variables to 0x0; the
+- `2` - use at-fork handler to set thread-local variables to 0x0; the
   implementation will set thread-local keys from 0-15 to have value 0x0.
 
-```
+``` c
 tls_threads_mode = 2
 ```
 
@@ -4177,7 +4177,7 @@ not need to be set (if set it will be ignored, the proper MTU will be
 used automatically by the kernel). On Linux it should be set.
 
 The parameter can be set at runtime (`core.udp4_raw_mtu`).
-`
+
 ### udp4_raw_ttl
 
 TTL value used for UDP IPv4 packets when udp4_raw is enabled. By default
@@ -4414,7 +4414,7 @@ function. Look also at the functions exported by `exec` module.
 exec("/path/to/app");
 ```
 
-### force_rport
+### force_rport()
 
 The `force_rport()` adds the rport parameter to the first Via header of the
 received message. Thus, Kamailio will add the received port to the top
@@ -4427,7 +4427,7 @@ signaling.
 
 The rport parameter is defined in RFC 3581.
 
-Note: there is also a force_rport parameter which changes the global
+Note: there is also a `force_rport` parameter which changes the global
 behavior of the SIP proxy.
 
 Example of usage:
