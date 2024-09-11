@@ -1209,7 +1209,9 @@ auto_domains=no
 ### auto_bind_ipv6
 
 When turned on, Kamailio will automatically bind to all IPv6 addresses
-(much like the default behaviour for IPv4). Default is 0.
+(much like the default behaviour for IPv4).
+
+Default is `0`.
 
 Example:
 
@@ -1219,9 +1221,12 @@ auto_bind_ipv6=1
 
 ### bind_ipv6_link_local
 
-If set to 1, try to bind also IPv6 link local addresses by discovering
-the scope of the interface. This apply for UDP socket for now, to be
-added for the other protocols. Default is 0.
+If set to `1`, try to bind also IPv6 link local addresses by discovering
+the scope of the interface. If set to `2`, skip binding link local addresses.
+
+Note: for UDP sockets by first implementation, to be added for the other protocols.
+
+Default is `0`.
 
 Example:
 
