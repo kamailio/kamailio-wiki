@@ -4727,7 +4727,7 @@ Example of usage:
 
       rewriteuser("newuser");
 
-### route
+### route()
 
 Execute route block given in parameter. Parameter may be name of the
 block or a string valued expression.
@@ -5415,7 +5415,7 @@ IF-ELSE statement
 
 Prototype:
 
-```
+``` c
     if(expr) {
        actions;
     } else {
@@ -5649,10 +5649,10 @@ time and they are the same).
   and then perform the operation. Exception: the left operand is
   undef. This applies to the following operators: `+`, `==` and `!=`.
 
-  * Special case: undef as left operand:
-  For +: undef + expr -> undef is converted to string => "" + expr.
-  For == and !=:   undef == expr -> undef is converted to type_of expr.
-  If expr is undef, then undef == undef is true (internally is converted
+- Special case: undef as left operand:
+  For `+`: `undef + expr` -> `undef` is converted to string => "" + expr.
+  For `==` and `!=`:   `undef == expr` -> `undef` is converted to type_of expr.
+  If `expr` is `undef`, then `undef == undef` is `true` (internally is converted
   to string).
 
 2. expression evaluation changes: Kamailio will auto-convert to integer
@@ -5663,15 +5663,13 @@ time and they are the same).
     str(undef)=="", str(123)=="123"
 ```
 
-3. script operators for dealing with empty/undefined variables
-
-  * defined expr - returns true if expr is defined, and false if not.
-    Note: only a standalone avp or pvar can be
-    undefined, everything else is defined.
-  * strlen(expr) - returns the lenght of expr evaluated as string.
-  * strempty(expr) - returns true if expr evaluates to the empty
-    string (equivalent to expr=="").
-    Example: `if (defined $v && !strempty($v)) $len=strlen($v);`
+- `defined expr` - returns true if expr is defined, and false if not.
+  Note: only a standalone avp or pvar can be
+  undefined, everything else is defined.
+- `strlen(expr)` - returns the lenght of expr evaluated as string.
+- `strempty(expr)` - returns true if expr evaluates to the empty
+  string (equivalent to expr=="").
+  Example: `if (defined $v && !strempty($v)) $len=strlen($v);`
 
 ## Command Line Parameters
 
