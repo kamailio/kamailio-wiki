@@ -529,7 +529,6 @@
 | **dlg_extra_hdrs (string)** | [dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/dialog.html#dialog.p.dlg_extra_hdrs) |
 | **dlg_extra_hdrs (string)** | [ims_dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/ims_dialog.html) |
 | **dlg_filter_mode (int)** | [dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/dialog.html#dialog.p.dlg_filter_mode) |
-| **dlg_flag (integer)** | [dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/dialog.html#dialog.p.flag) |
 | **dlg_flag (integer)** | [ims_dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/ims_dialog.html#dlg-flag-id) |
 | **dlg_major_threshold (Integer)** | [snmpstats](https://www.kamailio.org/docs/modules/5.6.x/modules/snmpstats.html#snmpstats.p.dlg_major_treshold) |
 | **dlg_match_mode (integer)** | [dialog](https://www.kamailio.org/docs/modules/5.6.x/modules/dialog.html#dialog.p.dlg_match_mode) |
