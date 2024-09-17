@@ -5643,7 +5643,7 @@ Note: internally `==` and `!=` are converted on startup to `eq/ne/ieq/ine`
 whenever possible (both operand types can be safely determined at start
 time and they are the same).
 
-1. Kamailio tries to guess what the user wanted when operators that
+- Kamailio tries to guess what the user wanted when operators that
   support multiple types are used on different typed operands. In
   general convert the right operand to the type of the left operand
   and then perform the operation. Exception: the left operand is
@@ -5655,7 +5655,7 @@ time and they are the same).
   If `expr` is `undef`, then `undef == undef` is `true` (internally is converted
   to string).
 
-2. expression evaluation changes: Kamailio will auto-convert to integer
+- expression evaluation changes: Kamailio will auto-convert to integer
   or string in function of the operators:
 
 ``` c
