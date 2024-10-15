@@ -25,16 +25,25 @@ source code repository.*
 ### permissions
 
 - **allow_register_include_port()**, the permissions module got a new function, which extends
-  a funcitonality for checking contacts (locations) allowed to be registered.
+  a functionality for checking contacts (locations) allowed to be registered.
   With a newer function one has a possibility to include Contact URI port into this check.
   See [#3846](https://github.com/kamailio/kamailio/pull/3846)
   or [permissions docs](https://www.kamailio.org/docs/modules/devel/modules/permissions.html)
   for details.
 
+### pua_dialoginfo
+
+- **use_uuid** optional parameter to generate pres_id using libuuid via uuid module
+
 ### rabbitmq
 
 - kamailio init will not fail if rabbitmq connection doesn't work. The module will try to reconnect
   when **rabbitmq_publish()** or **rabbitmq_publish_consume()** are called in the config.
+
+### sca
+
+- **from_uri_avp** **to_uri_avp** module parameters adding the possibility of define what is the URI value
+  for To and/or From instead of the values coming from the SIP message.
 
 ## Archived Modules
 
