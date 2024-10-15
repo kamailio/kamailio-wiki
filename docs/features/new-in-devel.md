@@ -44,6 +44,7 @@ modules considered obsolete and not maintained have been moved to
 - auth_identity
 - app_lua_sr
 - app_sqlang
+- app_mono
 
 ## New in Core
 
