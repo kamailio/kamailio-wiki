@@ -5186,6 +5186,8 @@ reply_route {
 }
 ```
 
+🔥**IMPORTANT**: Note: In reply_route, if the last executed function fails, the SIP response processing is considered unsuccessful, and kamailio will not relay the reply. To ensure proper relay of the SIP response, make sure the last command in reply_route is either a **successful** function or a **return** statement.
+
 🔥**IMPORTANT**: Note: for backward compatibility reasons, the main `reply`
 routing block can be also identified by `onreply_route {...}` or
 `onreply_route[0] {...}`.
