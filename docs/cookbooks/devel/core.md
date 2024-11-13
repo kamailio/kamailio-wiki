@@ -2609,6 +2609,8 @@ The attributes are:
   `[proto:]address[:port1-port2]`
 - `advertise` - the address to advertise in SIP headers in format `address[:port]`
 - `name` - name of the socket to be referenced in configuration file
+- `agname` - async (action) group name where to push SIP messages received using
+  multi-threaded mode
 - `virtual` - set to `yes/no` to indicate if the IP has to be considered virtual or not
 
 The attribute `bind` is mandatory and has to provide at list the address to listen on.
@@ -2830,14 +2832,52 @@ udp_mtu_try_proto = TCP|TLS|SCTP|UDP
 Specify how UDP traffic is received, either via a pool of processes per UDP socket
 or a single multi-threaded process with a thread per socket.
 
-Default value is `0` (pool of processes defined by `children`, existing behaviour).
+Default value is `0` (pool of processes defined by `children`, old-style behaviour).
 
-Value `1` switches to multi-threaded process receiver. SIP messages are pushed
-to `udp` async tasks group, sending is still done by any of processes.
+Value `1` switches to multi-threaded process receiver for all UDP sockets.
+SIP messages are pushed to `udp` async tasks group, sending is still done by any
+of processes.
 
 ```c
 async_workers_group="name=udp;workers=8"
 udp_receiver_mode = 1
+```
+
+Value `2` allows to define sockets that can be groupped to a specific async tasks
+group by providing the `agname` to `socket` definition. These sockets use the
+multi-threaded receiver style. The sockets without `agname` set use the old-style
+multi-process receivers.
+
+```c
+async_workers_group="name=udp507x;workers=8"
+async_workers_group="name=udp5080;workers=8"
+udp_receiver_mode = 2
+
+// multi-process UDP receiving
+socket = {
+    bind = udp:10.10.10.10:5060;
+    advertise = 11.11.11.11:5060;
+    name = "s5060";
+}
+// multi-threaded UDP receiving
+socket = {
+    bind = udp:10.10.10.10:5070;
+    name = "s5070";
+    agname = "udp507x";
+}
+// multi-threaded UDP receiving
+socket = {
+    bind = udp:10.10.10.10:5072;
+    name = "s5072";
+    agname = "udp507x";
+}
+// multi-threaded UDP receiving
+socket = {
+    bind = udp:10.10.10.10:5080;
+    advertise = 11.11.11.11:5080;
+    name = "s5080";
+    agname = "udp5080";
+}
 ```
 
 ### uri_host_extra_chars
