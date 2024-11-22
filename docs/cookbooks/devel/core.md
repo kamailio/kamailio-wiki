@@ -5380,6 +5380,15 @@ event_route[core:receive-parse-error] {
 
 ```
 
+- `event_route[core:modinit-before]` - executed by core before the
+  module-init callbacks are run:
+
+``` c
+event_route[core:modinit-before] {
+    $shv(x) = 0;
+}
+```
+
 #### Module Event Routes
 
 Here are only a few examples, to see if a module exports event_route
