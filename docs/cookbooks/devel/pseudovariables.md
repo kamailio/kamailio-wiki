@@ -3270,22 +3270,6 @@ Returns the value (Address signal) of the Generic Number for the IAM
 message. Returns -1 if there is a parsing error or if the Generic Number
 is not present.
 
-## $cfg(key) - Config File Attributes
-
-Attributes related to configuration file.
-
-The key can be:
-
-- line - return the current line in config
-- name - return the name of current config file
-- file - return the name of current config file
-- route - return the name of routing block
-
-Example:
-
-``` c
-send_reply("404", "Not found at line $cfg(line)");
-```
 
 ## $dns(pvid=>key) - DNS Query Result
 
@@ -3368,9 +3352,26 @@ The key can be:
 - text - text of the code for the JSONRPC response
 - body - the body of the JSONRPC response
 
-### Corex Module
+## Corex Module
 
-### $lsock(expr)
+### $cfg(key) - Config File Attributes
+
+Attributes related to configuration file.
+
+The key can be:
+
+- line - return the current line in config
+- name - return the name of current config file
+- file - return the name of current config file
+- route - return the name of routing block
+
+Example:
+
+``` c
+send_reply("404", "Not found at line $cfg(line)");
+```
+
+### $lsock(expr) - Listen Socket Attributes
 
 Get attributes for listen sockets.
 
