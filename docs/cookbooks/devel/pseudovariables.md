@@ -3399,12 +3399,33 @@ The **field** can be (only first character matches):
 
 Example:
 
+``` c
     listen=udp:127.0.0.1:5060 advertise 127.0.0.1:5090 name "s0"
     ...
     xinfo("$lsock(n/s0/listen)\n");
     xinfo("$lsock(l/udp:127.0.0.1:5060/name)\n");
     $var(s0) = "n/s0/listen";
     xinfo("$lsock($var(s0))\n");
+```
+
+### $atkv(name) - Async Type-Key-Value Event Attributes
+
+Attributes for Async Type-Key-Value events.
+
+The key can be:
+
+- type - type of event
+- key - key of event
+- val - value of event
+- gname - async group name
+
+Example:
+
+``` c
+event_route[core:tkv] {
+    xlog("$atkv(type) / $atkv(key) / $atkv(val)\n");
+}
+```
 
 ## Evrexec Module
 
