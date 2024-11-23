@@ -5389,6 +5389,17 @@ event_route[core:modinit-before] {
 }
 ```
 
+- `event_route[core:tkv]` - executed by core for events emitted with a
+type-key-value (mostly for catching error cases):
+
+``` c
+event_route[core:tkv] {
+    xlog("$atkv(type) / atkv(key) / atkv(val)\n");
+}
+```
+
+The event route is executed in an async worker process.
+
 #### Module Event Routes
 
 Here are only a few examples, to see if a module exports event_route
