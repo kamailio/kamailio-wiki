@@ -3368,9 +3368,11 @@ The key can be:
 - text - text of the code for the JSONRPC response
 - body - the body of the JSONRPC response
 
-## $lsock(expr)
+### Corex Module
 
-Get attributes for listen sockets (from corex module).
+### $lsock(expr)
+
+Get attributes for listen sockets.
 
 The **expr** is an expression specifying what to match and return, the
 format is:
