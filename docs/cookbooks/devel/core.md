@@ -5394,7 +5394,7 @@ type-key-value (mostly for catching error cases):
 
 ``` c
 event_route[core:tkv] {
-    xlog("$atkv(type) / atkv(key) / atkv(val)\n");
+    xlog("$atkv(type) / $atkv(key) / $atkv(val)\n");
 }
 ```
 
