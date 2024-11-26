@@ -1410,7 +1410,7 @@ The key can be:
 ## $dsg(key) - Dispatcher group attributes
 
 Return attributes related to dispatcher group that is set via
-`ds_dsg_fetch()`.
+`ds_dsg_fetch()` or `ds_dsg_fetch_uri()`.
 
 The key can be:
 
@@ -1419,6 +1419,14 @@ The key can be:
 - `pactive`- the percent of active destinations in the group
 - `inactive` - the number of inactive destination in the group
 - `pinactive` - the percent of inactive destination in the group
+
+When `ds_dsg_fetch_uri()` is used, the key can also be:
+
+- `octime_sec` - the value of `octime_sec` for the corresponding URI in the group
+- `octime_usec` - the value of `octime_isec` for the corresponding URI in the group
+- `ocseq` - the value of `ocseq` for the corresponding URI in the group
+- `ocrate` - the value of `ocrate` for the corresponding URI in the group
+
 
 ## $time(name) - Broken-down time
 
