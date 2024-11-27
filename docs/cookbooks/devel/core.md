@@ -1187,16 +1187,32 @@ If the **name** is default, then it overwrites the value set by
 
 See also `event_route[core:pre-routing]` and `sworker` module.
 
+### async_tkv_evcb
+
+Set the name of the event route or KEMI callback for processing tkv.
+
+Default: `` (empty string)
+
+Example:
+
+``` c
+async_tkv_evcb = "core:tkv"
+...
+async_tkv_evcb = "ksr_core_tkv"
+```
+
 ### async_tkv_gname
 
-Set the name of the async group to be used for processing TKV events.
+Set the name of the async group to be used for processing TKV events. The
+async group has to be defined.
 
-Default: ``
+Default: `` (empty string)
 
 Example:
 
 ``` c
 async_workers_group="name=tkv;workers=1;nonblock=0;usleep=0"
+
 async_tkv_gname = "tkv"
 ```
 
@@ -5406,6 +5422,10 @@ event_route[core:modinit-before] {
 type-key-value (mostly for catching error cases):
 
 ``` c
+async_workers_group="name=tkv;workers=1;nonblock=0;usleep=0"
+async_tkv_gname = "tkv"
+async_tkv_evcb = "core:tkv"
+
 event_route[core:tkv] {
     xlog("$atkv(type) / $atkv(key) / $atkv(val)\n");
 }
