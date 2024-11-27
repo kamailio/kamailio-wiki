@@ -1185,7 +1185,20 @@ async_workers_group="name=reg;workers=4;nonblock=0;usleep=0"
 If the **name** is default, then it overwrites the value set by
 **async_workers**.
 
-See also **event_route\[core:pre-routing\]** and **sworker** module.
+See also `event_route[core:pre-routing]` and `sworker` module.
+
+### async_tkv_gname
+
+Set the name of the async group to be used for processing TKV events.
+
+Default: ``
+
+Example:
+
+``` c
+async_workers_group="name=tkv;workers=1;nonblock=0;usleep=0"
+async_tkv_gname = "tkv"
+```
 
 ### auto_aliases
 
