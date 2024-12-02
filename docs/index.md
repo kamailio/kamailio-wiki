@@ -39,6 +39,7 @@ available at the **Old Wiki Site**:*
 
 - [Install Kamailio Devel Version From GIT (html)](https://kamailio.org/docs/tutorials/devel/kamailio-install-guide-git/)
 - [Install Kamailio Devel Version From GIT (wiki)](install/devel/git.md)
+- [Install Kamailio Devel Version From GIT with CMake (wiki)](tutorials/cmake/index.md)
 - [Install Kamailio v5.8.x From GIT (html)](https://kamailio.org/docs/tutorials/5.8.x/kamailio-install-guide-git/)
 - [Install Kamailio v5.7.x From GIT (html)](https://kamailio.org/docs/tutorials/5.7.x/kamailio-install-guide-git/)
 - [Install Kamailio v5.6.x From GIT (html)](https://kamailio.org/docs/tutorials/5.6.x/kamailio-install-guide-git/)
