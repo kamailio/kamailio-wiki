@@ -1,6 +1,8 @@
 
-# Building Kamailio from Source using CMake
+# Building Kamailio From Source Using CMake
 
-* [Building Kamailio from Source using CMake default options](default.md)
+* [The Basics Of Building Kamailio From Source Using CMake](default.md)
 
-* [Building Kamailio from Source using CMake with custom options](custom.md)
+* [Customizing The Building Kamailio With CMake Options](custom.md)
+
+* [Corresponding Old-Makefiles And CMake Commands](commands.md)
