@@ -661,7 +661,7 @@ loadmodule "db_mysql.so"
 #!ifdef
 ```
 
-### trydefenvns
+### trydefenvs
 
 Similar to **#!trydefenv**, but the value is defined in between double
 quotes to make it convenient to be used as a string token.
