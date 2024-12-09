@@ -5502,6 +5502,21 @@ event_route[tm:branch-failure:myroute] {
 }
 ```
 
+## Compatibility Modes
+
+With the merge of source trees from `Kamailio` and `SER` in 2008, there were
+some different behaviours in various module parameters and functions. To control
+the behaviour, the compatibility mode can be specified with `#!KAMAILIO` or
+`#!SER` at the beginning (first line) of the configuration file.
+
+The default mode is `#!KAMAILIO`.
+
+The parameters and functions that behave differently should have a note in their
+documentation.
+
+Note: the first line having `#!KAMAILIO` is also used to set the file type by
+extenssions in editors like `vim`, `vscode`, `atom`, `mcedit` or `emacs`.
+
 ## Script Statements
 
 ### if
