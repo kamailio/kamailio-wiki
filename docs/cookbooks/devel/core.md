@@ -1376,6 +1376,9 @@ Further information can also be found at:
 
 **Alias name:** **descr desc**
 
+This is a keyword that can be used when declaring custom global parameters to
+specify their text description. See the section `Custom Global Parameters`.
+
 ### disable_core_dump
 
 Can be 'yes' or 'no'. By default core dump limits are set to unlimited
