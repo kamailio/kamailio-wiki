@@ -1,6 +1,6 @@
 # Selects Variables
 
-Version: Kamailio SIP Server v5.8.x (devel)
+Version: Kamailio SIP Server v6.0.x (devel)
 
 The **select** is a READ-ONLY "function", that helps to get direct
 access to some parts of SIP message within the script (like @to,
@@ -82,15 +82,12 @@ Example:
 
 Select handling XMLRPC requests via XMLRPC module.
 
-## Complete Select List
+## The List Of Selects
 
-**For a list with all the selects defined in the devel version (the
-master branch) see the auto-generated
-<http://sip-router.org/docbook/sip-router/branch/master/select_list/select_list.html>.**
 
-The list presented on this page is **obsolete**.
+Note that this list might not be complete.
 
-This part is auto-generated from ser_objdump CSV output. If you want to
+The next part was auto-generated from ser_objdump CSV output. If you want to
 add description, examples, comments, etc., please add entries above.
 
     awk -F, '{print $3 " " $1;}' selects.csv | sort | awk '{print "==== " $1 " ====\n\nExported by: " $2 "\n\n";}'
