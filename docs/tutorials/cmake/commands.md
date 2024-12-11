@@ -51,3 +51,6 @@ Legend for the table:
 | `---`  | Compile with verbose output (quiet off) |
 | `OM`   | `make Q=0` |
 | `CM`   | `make VERBOSE=on` |
+| `---`  | Specify the compiler (example with `clang`) |
+| `OM`   | `make CC=clang` |
+| `CM`   | `cmake -DCMAKE_C_COMPILER="clang" ..` |
