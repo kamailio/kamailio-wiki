@@ -20,6 +20,9 @@ mkdir build
 cd build
 ```
 
+Also, if `cmake` is in the example command, it usually has to be followed by
+`make` to perform the compilation.
+
 Legend for the table:
 
   - `OM` - Old-Makefiles
