@@ -1379,8 +1379,9 @@ processes. Each “shv” has single value and it is initialised to integer
 shared variable. The module exports a set of RPC functions to get/set
 the value of shared variables.
 
-Example - shv(name) pseudo-variable usage:
+Example - $shv(name) pseudo-variable usage:
 
+```
     ...
     modparam("pv", "shvset", "debug=i:1")
     ...
@@ -1388,6 +1389,13 @@ Example - shv(name) pseudo-variable usage:
         xlog("request: $rm from $fu to $ru\n");
     }
     ...
+```
+
+These variables can be set also via RPC:
+
+```
+ksmctl rpc pv.shvSet debug int 2
+```
 
 🔥**IMPORTANT**: It is R/W variable (you can assign values to it directly in
 configuration file)
