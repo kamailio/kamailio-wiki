@@ -9,6 +9,17 @@
 
 Tutorial for operations with flags in Kamailio SIP Server.
 
+* [Introduction](#introduction)
+* [Functions](#functions)
+  + [setflag ( flag )](#setflag--flag-)
+  + [resetflag ( flag )](#resetflag--flag-)
+  + [isflagset ( flag )](#isflagset--flag-)
+* [Examples](#examples)
+  + [Accounting](#accounting)
+  + [Optimizations](#optimizations)
+* [Remarks](#remarks)
+* [Development](#development)
+
 ## Introduction
 
 For each SIP request, Kamailio keeps a set of flags that can
@@ -18,7 +29,7 @@ so there are thirty two flags (four groups of eight flags).
 
 Example 1. flags bit map
 
-```
+``` text
      0                     1                     2                     3
      0 1 2 3 4 5 6 7   8 9 0 1 2 3 4 5   6 7 8 9 0 1 2 3   4 5 6 7 8 9 0 1    
     +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+
@@ -31,7 +42,7 @@ being in the range from 0 to 31.
 
 Example 2. the 15th flag
 
-```
+``` text
      0                     1                     2                     3
      0 1 2 3 4 5 6 7   8 9 0 1 2 3 4 5   6 7 8 9 0 1 2 3   4 5 6 7 8 9 0 1    
     +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+
@@ -51,7 +62,7 @@ The value of the parameter must be an integer between 0 and 31.
 
 Example 3. setflag(15) -- set the 15th flag
 
-```
+``` text
      0                     1                     2                     3
      0 1 2 3 4 5 6 7   8 9 0 1 2 3 4 5   6 7 8 9 0 1 2 3   4 5 6 7 8 9 0 1    
     +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+
@@ -72,7 +83,7 @@ too.
 
 Example 4. resetflag(15) -- reset the 15th flag
 
-```
+``` text
      0                     1                     2                     3
      0 1 2 3 4 5 6 7   8 9 0 1 2 3 4 5   6 7 8 9 0 1 2 3   4 5 6 7 8 9 0 1    
     +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+
@@ -95,7 +106,7 @@ the value of the flag is 0.
 
 Example 5. isflagset(15)
 
-```
+``` text
      0                     1                     2                     3
      0 1 2 3 4 5 6 7   8 9 0 1 2 3 4 5   6 7 8 9 0 1 2 3   4 5 6 7 8 9 0 1    
     +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+
@@ -121,7 +132,7 @@ number 1 is used to mark the requests to be accounted.
 
 Example 6. accounting config file
 
-```
+``` js
     # Kamailio configuration file: accounting calls
 
     # Details about this configuration script
@@ -156,7 +167,7 @@ Example 6. accounting config file
     modparam("acc", "log_flag", 1 )
 
     # main routing block
-    request_route{
+    request_route {
 
         # --- initial sanity checks ---
         if (!mf_process_maxfwd_header("10"))
@@ -202,7 +213,7 @@ duplicated routines or executions of same security checks over database.
 
 Example 7. optimization of config file
 
-```
+``` js
     # Kamailio configuration file: using flags
     #
     #
@@ -229,7 +240,7 @@ Example 7. optimization of config file
     # ----------------- setting module-specific parameters ---------------
 
     # main routing block
-    request_route{
+    request_route {
 
         # --- initial sanity checks ---
         if !mf_process_maxfwd_header("10"))
@@ -300,7 +311,7 @@ into `flags.h` file to see them).
 
 Example 8. accounting config file
 
-```
+``` c
     typedef unsigned int flag_t;
 
     int setflag(struct sip_msg* msg, flag_t flag);
