@@ -6,3 +6,5 @@
 * [Customizing The Building Kamailio With CMake Options](custom.md)
 
 * [Corresponding Old-Makefiles And CMake Commands](commands.md)
+
+* [Available Targets](targets.md)
