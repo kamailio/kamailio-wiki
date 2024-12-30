@@ -25,7 +25,7 @@ jobs:
           files: |
              **.md
           since_last_remote_commit: true
-      - uses: DavidAnson/markdownlint-cli2-action@v18
+      - uses: DavidAnson/markdownlint-cli2-action@v19
         with:
           config: .markdownlint-cli2.yaml
           globs: ${{ steps.changed-markdown-files.outputs.all_changed_files }}
