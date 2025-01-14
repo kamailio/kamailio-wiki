@@ -11,7 +11,7 @@ contribution.
 
 Have a look to the file in our GitHub repository for the complete
 information about this:
-[CONTRIBUTING.md](https://github.com/kamailio/kamailio/blob/master/.github/contributing.md)
+[CONTRIBUTING.md](https://github.com/kamailio/kamailio/blob/master/.github/CONTRIBUTING.md)
 
 See also:
 
@@ -27,4 +27,4 @@ it is recommended you read that one as well.
 For any question, do not hesitate to contact other developers via
 mailing list:
 
-- **\<sr-dev \[at\] lists.sip-router.org>**
+- **<sr-dev@lists.kamailio.org>**
