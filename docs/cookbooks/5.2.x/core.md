@@ -3221,9 +3221,11 @@ In bool expressions:
 - Negative is FALSE
 - Positive is TRUE
 
-If no value is specified, or a route reaches its end without executing a
-return statement, it returns 1. If return is used in the top level route
-is equivalent with exit \[val\].
+If no value is specified, it returns 1. If return is used in the top level route
+is equivalent with exit `[val]`. If no `return` is at the end of the routing block,
+the return code is the value of the last executed action, therefore it is highly
+recommended to return an explicit value (e.g., `return(1)`) to avoid unexpected
+config execution.
 
 Example usage:
 
