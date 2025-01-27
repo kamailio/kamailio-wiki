@@ -13,7 +13,27 @@ source code repository.*
 
 ## New Modules
 
-## New in existing Modules
+### ims_qos_npn
+
+* https://www.kamailio.org/docs/modules/devel/modules/ims_qos_npn.html
+
+### nghttp2
+
+* https://www.kamailio.org/docs/modules/devel/modules/nghttp2.html
+
+### presence_dfks
+
+* https://www.kamailio.org/docs/modules/devel/modules/presence_dfks.html
+
+### pvtpl
+
+* https://www.kamailio.org/docs/modules/devel/modules/pvtpl.html
+
+### topos_htable
+
+* https://www.kamailio.org/docs/modules/devel/modules/topos_htable.html
+
+## New In Existing Modules
 
 ### cfgutils
 
@@ -60,13 +80,24 @@ source code repository.*
 
 ## Archived Modules
 
-modules considered obsolete and not maintained have been moved to
-<https://github.com/kamailio/kamailio-archive/>
+Modules considered obsolete and not maintained have been moved to:
+
+- [https://github.com/kamailio/kamailio-archive/](https://github.com/kamailio/kamailio-archive/)
+
+The list of archived modules:
 
 - auth_identity
 - app_lua_sr
 - app_sqlang
 - app_mono
+- db_cassandra
+- osp
+- print
+- print_lib
+
+Should one still be needed, it can be copied in `src/modules/` folder and then
+compiled and installed as usual, provided it was still compiling it the previous
+series 5.8.x.
 
 ## New in Core
 
