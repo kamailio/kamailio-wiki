@@ -40,6 +40,7 @@ available at the **Old Wiki Site**:*
 - [Install Kamailio Devel Version From GIT (html)](https://kamailio.org/docs/tutorials/devel/kamailio-install-guide-git/)
 - [Install Kamailio Devel Version From GIT (wiki)](install/devel/git.md)
 - [Install Kamailio Devel Version From GIT with CMake (wiki)](tutorials/cmake/index.md)
+- [Install Kamailio v6.0.x From GIT (html)](https://kamailio.org/docs/tutorials/6.0.x/kamailio-install-guide-git/)
 - [Install Kamailio v5.8.x From GIT (html)](https://kamailio.org/docs/tutorials/5.8.x/kamailio-install-guide-git/)
 - [Install Kamailio v5.7.x From GIT (html)](https://kamailio.org/docs/tutorials/5.7.x/kamailio-install-guide-git/)
 - [Install Kamailio v5.6.x From GIT (html)](https://kamailio.org/docs/tutorials/5.6.x/kamailio-install-guide-git/)
@@ -66,6 +67,7 @@ available at the **Old Wiki Site**:*
 ### Upgrade
 
 - [Upgrade Kamailio stable to devel](install/upgrade/stable-to-devel.md)
+- [Upgrade Kamailio v5.8.x to v6.0.0](install/upgrade/5.8.x-to-6.0.0.md)
 - [Upgrade Kamailio v5.7.x to v5.8.0](install/upgrade/5.7.x-to-5.8.0.md)
 - [Upgrade Kamailio v5.6.x to v5.7.0](install/upgrade/5.6.x-to-5.7.0.md)
 - [Upgrade Kamailio v5.5.x to v5.6.0](install/upgrade/5.5.x-to-5.6.0.md)
@@ -77,6 +79,7 @@ available at the **Old Wiki Site**:*
 
 - [Main Download Page](https://www.kamailio.org/w/download/)
 - [Download Tarball with Sources of Latest Stable Release](https://www.kamailio.org/pub/kamailio/latest/src/)
+- [Download Sources of v6.0.x from GIT Repository](download/v6.0.x-from-git.md)
 - [Download Sources of v5.8.x from GIT Repository](download/v5.8.x-from-git.md)
 - [Download Sources of v5.7.x from GIT Repository](download/v5.7.x-from-git.md)
 - [Download Sources of v5.6.x from GIT Repository](download/v5.6.x-from-git.md)
@@ -114,6 +117,7 @@ Alphabetic indexes generated from documentation (modules' readme docs).
 |---------|-------------------------------------------|------------------------------------------|-----------------------------------------|-------------------------------------------|
 | Version | Modules Parameters                        | Modules Functions                        | RPC Commands                            | Statistics                                |
 | devel   | [link](alphaindexes/devel/modparameters.md) | [link](alphaindexes/devel/modfunctions.md) | [link](alphaindexes/devel/rpccommands.md) | [link](alphaindexes/devel/modstatistics.md) |
+| 6.0.x   | [link](alphaindexes/6.0.x/modparameters.md) | [link](alphaindexes/6.0.x/modfunctions.md) | [link](alphaindexes/6.0.x/rpccommands.md) | [link](alphaindexes/6.0.x/modstatistics.md) |
 | 5.8.x   | [link](alphaindexes/5.8.x/modparameters.md) | [link](alphaindexes/5.8.x/modfunctions.md) | [link](alphaindexes/5.8.x/rpccommands.md) | [link](alphaindexes/5.8.x/modstatistics.md) |
 | 5.7.x   | [link](alphaindexes/5.7.x/modparameters.md) | [link](alphaindexes/5.7.x/modfunctions.md) | [link](alphaindexes/5.7.x/rpccommands.md) | [link](alphaindexes/5.7.x/modstatistics.md) |
 | 5.6.x   | [link](alphaindexes/5.6.x/modparameters.md) | [link](alphaindexes/5.6.x/modfunctions.md) | [link](alphaindexes/5.6.x/rpccommands.md) | [link](alphaindexes/5.6.x/modstatistics.md) |
@@ -139,6 +143,8 @@ in embedded Lua/Python/JavaScript/Ruby/... SIP routing scripts:
 
 - Development:
     <https://kamailio.org/docs/tutorials/devel/kamailio-kemi-framework/>
+- Version 6.0.x:
+    <https://kamailio.org/docs/tutorials/6.0.x/kamailio-kemi-framework/>
 - Version 5.8.x:
     <https://kamailio.org/docs/tutorials/5.8.x/kamailio-kemi-framework/>
 - Version 5.7.x:
@@ -153,6 +159,7 @@ in embedded Lua/Python/JavaScript/Ruby/... SIP routing scripts:
 ## Features
 
 - [New Features in Devel Version](features/new-in-devel.md)
+- [New Features in Release 6.0.x](features/new-in-6.0.x.md)
 - [New Features in Release 5.8.x](features/new-in-5.8.x.md)
 - [New Features in Release 5.7.x](features/new-in-5.7.x.md)
 - [New Features in Release 5.6.x](features/new-in-5.6.x.md)
@@ -192,6 +199,7 @@ in embedded Lua/Python/JavaScript/Ruby/... SIP routing scripts:
 ### Database Structure
 
 - [Devel Version](https://www.kamailio.org/docs/db-tables/kamailio-db-devel.html)
+- [6.0.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-6.0.x.html)
 - [5.8.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.8.x.html)
 - [5.7.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.7.x.html)
 - [5.6.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.6.x.html)
