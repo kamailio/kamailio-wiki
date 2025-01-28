@@ -44,6 +44,11 @@ source code repository.*
 
 - initial support for free-threading Python
 
+### async
+
+- exported async_tkv_emit() function
+- added parameter mode
+
 ### auth
 
 - new function auth_algorithm(...) to dynamically override algorithm
@@ -62,6 +67,7 @@ source code repository.*
 - functions to manage iflags can get 0..63 parameter value
 - new function forward_uac()
 - added forward_uac_uri(vuri) function
+- added $atkv(name) variable
 
 ### db_sqlite
 
@@ -70,12 +76,21 @@ source code repository.*
 ### dialog
 
 - dropped support for dlg_flag parameter
+- added dlg_mode parameter
+- new function dlg_set_state(newstate) - set the state for a dialog
+- added dlg_update_state() function
 
 ### dispatcher
 
 - new set of attributes for overload control (oc)-based routing (RFC7339)
 - new flag 32 to not send ping to destination
 - new rpc command dispatcher.oclist
+- more fields to $dsg(...) related to overload control
+- function to fetch by group id and uri
+
+### gcrypt
+
+- exported api for aes128 functions
 
 ### htable
 
@@ -90,6 +105,12 @@ source code repository.*
 - added variable $httprhdr(name) - get response header value
 - added http_client_response_headers_set(mode)
 - added http_client_response_headers_clear()
+
+### ims_auth
+
+- added Milenage, AES-128 (Rijndael) and auth_vector local generation
+- new av_mode parameter
+- function to set ims auth data
 
 ### ims_qos
 
@@ -150,6 +171,14 @@ source code repository.*
 
 - added `natnum` property, containing the nationally formatted number, to pv
 
+### presence:
+
+- continue on one notify sending failure
+
+### pua
+
+- support as-feature-event
+
 ### pua_dialoginfo
 
 - **use_uuid** optional parameter to generate pres_id using libuuid via uuid module
@@ -181,6 +210,8 @@ source code repository.*
 - added param write_sdp_pv_mode
 - add "active" field to rtpengine.show as alternate of "disabled"
 - disable aggressive redetection by default
+- added timer to ping rtpengine instances
+- export subscribe operation functions
 
 ### sca
 
@@ -225,6 +256,7 @@ source code repository.*
 ### sqlops
 
 - added log_buf_size param for logging raw queries
+- new connect mode to limit the amount of connections
 
 ### tcpops
 
@@ -263,11 +295,17 @@ source code repository.*
 
 - added reload_delta parameter
 - added field for cseq number for $uac_req(...)
+- exported two new functions for remote UAC registering/unregistering and rpc for registering
 
 ### xhttp_prom
 
 - export pkg stats
-- new uptime statistic
+- new uptime statistics
+- new xhttp_prom_tags parameter
+
+### xlog
+
+- evaluate prefix for kemi functions
 
 ## Archived Modules
 
@@ -309,6 +347,13 @@ series 5.8.x.
 - allow '/' in database URL passwords
 - added other 4xx reply error count stats
 - replaced INT_PARAM => PARAM_INT
+- added fixup-free functions to many exported functions by modules
+- this enable using variables for their parameters
+- added event_route[core:modinit-before]
+- main - init async type-key-value framework
+- tcp - emit async tkv event for read error
+- new parameter to define async_tkv_gname
+- parameter to set async_tkv_evcb
 
 ### Command line arguments
 
@@ -327,6 +372,10 @@ series 5.8.x.
 - several shared memory structures no longer destroyed individually at shut down
 
 ### kamailio.cfg
+
+- use dlgs to get dialog stats via rpc
+- example for udp_reciever_mode parameter
+- do record route for REFER
 
 ## Tools
 
