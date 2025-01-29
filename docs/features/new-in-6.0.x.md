@@ -15,23 +15,28 @@ source code repository.*
 
 ### ims_qos_npn
 
-* https://www.kamailio.org/docs/modules/devel/modules/ims_qos_npn.html
+* enhanced version of IMS QoS implementatio
+* [https://www.kamailio.org/docs/modules/devel/modules/ims_qos_npn.html](https://www.kamailio.org/docs/modules/devel/modules/ims_qos_npn.html)
 
 ### nghttp2
 
-* https://www.kamailio.org/docs/modules/devel/modules/nghttp2.html
+* HTTP2 server module implementation
+* [https://www.kamailio.org/docs/modules/devel/modules/nghttp2.html](https://www.kamailio.org/docs/modules/devel/modules/nghttp2.html)
 
 ### presence_dfks
 
-* https://www.kamailio.org/docs/modules/devel/modules/presence_dfks.html
+* presence support for Device FeatureKey Synchronization
+* [https://www.kamailio.org/docs/modules/devel/modules/presence_dfks.html](https://www.kamailio.org/docs/modules/devel/modules/presence_dfks.html)
 
 ### pvtpl
 
-* https://www.kamailio.org/docs/modules/devel/modules/pvtpl.html
+* evaluation of template files with config variables
+* [https://www.kamailio.org/docs/modules/devel/modules/pvtpl.html](https://www.kamailio.org/docs/modules/devel/modules/pvtpl.html)
 
 ### topos_htable
 
-* https://www.kamailio.org/docs/modules/devel/modules/topos_htable.html
+* htable storage for topology stripping (topos) module
+* [https://www.kamailio.org/docs/modules/devel/modules/topos_htable.html](https://www.kamailio.org/docs/modules/devel/modules/topos_htable.html)ß
 
 ## New In Existing Modules
 
@@ -63,7 +68,6 @@ source code repository.*
 ### corex
 
 - added dns_file modparam
-- algorithm DS_ALG_OVERLOAD set to 64 to be able to used as a flag
 - functions to manage iflags can get 0..63 parameter value
 - new function forward_uac()
 - added forward_uac_uri(vuri) function
@@ -82,6 +86,7 @@ source code repository.*
 
 ### dispatcher
 
+- algorithm DS_ALG_OVERLOAD set to 64 to be able to used as a flag
 - new set of attributes for overload control (oc)-based routing (RFC7339)
 - new flag 32 to not send ping to destination
 - new rpc command dispatcher.oclist
@@ -185,19 +190,19 @@ source code repository.*
 
 ### pv
 
-- $K(IP4) and $K(IP6) - support SDP style for address family
-- transformation to escape/unescape cr lf
-- added $sdp(m0:raw) - get all lines of the first m= stream
-- aliased $sdp(raw) to $sdp(body)
-- added $sdp(m0:b:AS), $sdp(m0:b:RR) and $sdp(m0:b:RS)
-- added $ctu - return contact header uri
-- added $cts - contact header star status
-- new transformation {s.rmhdws}
-- new transformation {s.rmhlws}
-- support all spaces separator for {s.select}
-- added xavp_xparams_explode(params, sep, xname)
+- `$K(IP4)` and `$K(IP6)` - support SDP style for address family
+- transformation to escape/unescape `cr` `lf`
+- added `$sdp(m0:raw)` - get all lines of the first m= stream
+- aliased `$sdp(raw)` to `$sdp(body)`
+- added `$sdp(m0:b:AS)`, `$sdp(m0:b:RR)` and `$sdp(m0:b:RS)`
+- added `$ctu` - return contact header uri
+- added `$cts` - contact header star status
+- new transformation `{s.rmhdws}`
+- new transformation `{s.rmhlws}`
+- support all spaces separator for `{s.select}`
+- added `xavp_xparams_explode(params, sep, xname)`
 - new variables for common escaped characters
-- several new $E... variables for punctuation signs
+- several new `$E...` variables for punctuation signs
 
 ### rabbitmq
 
