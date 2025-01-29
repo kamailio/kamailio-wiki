@@ -391,6 +391,7 @@ receiving
 - CMake compilation and installation support
 - multi-threaded UDP receiving mode
 - several shared memory structures no longer destroyed individually at shut down
+- internal libraries are directly linked to the core
 
 ### kamailio.cfg
 
