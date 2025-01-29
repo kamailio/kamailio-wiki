@@ -11,6 +11,13 @@ released in late 2024 or early 2025**.
 manually updated, thus not always synchronized with what is new in
 source code repository.*
 
+## Overview
+
+The increment of the first version number reflects several important updates,
+among them: multi-threaded option for UDP receiving, option for specifying a range
+of ports to listen to, support for expressions with variables for most of the module
+functions parameters, support to use `cmake` to compile and install Kamailio.
+
 ## New Modules
 
 ### ims_qos_npn
