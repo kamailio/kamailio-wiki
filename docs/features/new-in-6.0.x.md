@@ -355,9 +355,9 @@ series 5.8.x.
 - added fixup-free functions to many exported functions by modules
 - this enable using variables for their parameters
 - added event_route[core:modinit-before]
-- main - init async type-key-value framework
-- tcp - emit async tkv event for read error
-- new parameter to define async_tkv_gname
+- main - async framework to execute type-key-value events
+- tcp - emit async type-key-value event for read error
+- added SPDX identifiers to code files
 - parameter to set async_tkv_evcb
 
 ### Command line arguments
@@ -365,6 +365,15 @@ series 5.8.x.
 ### Interpreter
 
 ### Parameters
+
+* new core parameter `udp_receiver_mode` - turn UDP receiving to multi-threading
+for all listen sockets
+* added `agname` field to bind structure - per socket option to do UDP multi-threading
+receiving
+* new core parameter `async_tkv_gname` - specify the async group to process
+`type-key-value` events
+* new core parameter `async_tkv_evcb` - name of event route or kemi callback for
+`type-key-valye` processing
 
 ### Functions
 
@@ -378,16 +387,30 @@ series 5.8.x.
 
 ### kamailio.cfg
 
-- use dlgs to get dialog stats via rpc
-- example for udp_reciever_mode parameter
-- do record route for REFER
+- load `dlgs` module to get dialog stats via rpc
+- example for `udp_reciever_mode` parameter
+- do record route for `REFER`
+- added `tcp_accept_iplimit` config example
+- set `tls_threads_mode` to 2
 
 ## Tools
 
 ### kamcmd
 
+* support to compile and install with cmake
+
 ### kamctl
+
+|* host/port configurable for root user connections
 
 ### kamdbctl
 
 ### kamcli
+
+* support for tcp transport for jsonrpc
+* cmd_pipelimit: command to reset the pipe
+* cmd_acc: provide rate_group parameter for rates generate command
+* cmd_acc: added command to list missed calls records
+* cmd_acc: added command to print acc reports
+* cmd_acc: added report for top destinations and original destinations
+* cmd_acc: new command method-stats to print sip methods statistics
