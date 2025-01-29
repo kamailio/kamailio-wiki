@@ -58,12 +58,12 @@ functions parameters, support to use `cmake` to compile and install Kamailio.
 
 ### async
 
-- exported async_tkv_emit() function
+- exported `async_tkv_emit()` function
 - added parameter mode
 
 ### auth
 
-- new function auth_algorithm(...) to dynamically override algorithm
+- new function `auth_algorithm(...)` to dynamically override algorithm
 
 ### cfgutils
 
@@ -408,7 +408,7 @@ receiving
 
 ### kamctl
 
-|* host/port configurable for root user connections
+* host/port configurable for root user connections
 
 ### kamdbctl
 
