@@ -1,6 +1,6 @@
 # Selects Variables
 
-Version: Kamailio SIP Server v6.0.x (devel)
+Version: Kamailio SIP Server v6.1.x (devel)
 
 The **select** is a READ-ONLY "function", that helps to get direct
 access to some parts of SIP message within the script (like @to,

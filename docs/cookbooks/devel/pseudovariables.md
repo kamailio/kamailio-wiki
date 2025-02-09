@@ -1,6 +1,6 @@
 # Pseudo-Variables
 
-Version: Kamailio SIP Server v6.0.x (devel)
+Version: Kamailio SIP Server v6.1.x (devel)
 
 ## Introduction
 
