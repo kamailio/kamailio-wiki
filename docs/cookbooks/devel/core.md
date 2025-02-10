@@ -1314,6 +1314,34 @@ Example of usage:
 corelog=1
 ```
 
+### coreparam
+
+This parameter offers a generic framework to set new core parameters without
+the need to write new code in Lex/Yacc, but to add to an internal exports
+structure in the core. The format is:
+
+```
+coreparam[name] = value
+```
+
+The `name` can be a string or an ID, and the `value` can be a string, an ID or
+a number (integer).
+
+Available parameters that can be set via `coreparam` are listed next.
+
+#### random_engine
+
+Set the random engine to be used internally. The values can be:
+
+  * `rand` - use the libc `rand()/random()` functions (the default)
+  * `fast` - use internal `fastrand()` functions (the default)
+
+Example:
+
+```
+coreparam[random_engine] = "fast"
+```
+
 ### debug
 
 Set the debug level. Higher values make Kamailio to print more debug
