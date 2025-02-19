@@ -1824,6 +1824,7 @@ They can be:
 - `g` (or `G`) - open the module shared object file with `RTLD_GLOBAL` set,
   which can be used for modules related to external scripting languages to avoid
   reloading.
+- `o` (or `O`) - if module is already loaded (e.g., via `--loadmodule`), skip it
 
 Example of usage:
 
