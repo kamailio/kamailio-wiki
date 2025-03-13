@@ -1003,6 +1003,16 @@ Example:
 xdbg("PATH environment variable:  $env(PATH)\n");
 ```
 
+## $envn(NAME) - environment variables as number
+
+**$envn(NAME)** - value-as-number of the environment variable named NAME
+
+Example:
+
+``` c
+xdbg("COUNT environment variable:  $envn(COUNT)\n");
+```
+
 ## $avp(id) - AVPs
 
 **$avp(id)** - the value of the AVP identified by 'id'.
