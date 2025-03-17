@@ -20,7 +20,7 @@ jobs:
           fetch-depth: 2
       - name: Get all changed markdown files
         id: changed-markdown-files
-        uses: tj-actions/changed-files@v45
+        uses: tj-actions/changed-files@v46
         with:
           files: |
              **.md
