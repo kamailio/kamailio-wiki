@@ -299,7 +299,7 @@ Example:
 
 ``` c
 $var(x) = "abababa";
-$(var(x){s.replace,a,c} => "cbcbcbc"
+$(var(x){s.replace,a,c}) => "cbcbcbc"
 ```
 
 ### {s.ftime,format}
