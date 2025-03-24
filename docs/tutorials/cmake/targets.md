@@ -25,10 +25,6 @@ Use `make target_name` to execute the desired target in the build folder.
 
 - **install**: Installs the built components to the specified directory.
 - **uninstall**: Uninstalls the previously installed components.
-- **install-kamailio-utils**: Installs the Kamailio utilities (`kamctl` and `kamdbctl`) and kamailio congiguration files.
-  + **install-kamailio-utils-bin**: Installs the Kamailio utilities binaries (kamctl kamdbctl).
-  + **install-kamailio-utils-cfg**: Installs the Kamailio utilities configuration files (kamctlrc kamailio.cfg).
-- **install_kamailio_docs**: Installs the Kamailio documentation.
 
 ## Documentation Targets
 
