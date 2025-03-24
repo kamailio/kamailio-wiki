@@ -20,6 +20,9 @@ For additional features (CMake will error or warn if a library is not found):
 - MySQL or PostgreSQL (for database support) (optional)
 - OpenSSL (for TLS support) (optional)
 - libxml2 (for XML support) (optional)
+- docbook-xsl (for generating READMEs) (optional)
+- lynx (for generating documentation) (optional)
+- xsltproc (for generating documentation) (optional)
 - many more (check each module's documentation for specific requirements)
 
 ## Building Kamailio
