@@ -519,6 +519,10 @@ Return the URI parameters in a string
 
 Return the value of parameter with name 'name'
 
+### {uri.rmparam,name}
+
+Remove the parameter with name 'name'
+
 ### {uri.headers}
 
 Return URI headers
