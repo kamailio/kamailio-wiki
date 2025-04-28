@@ -3727,8 +3727,8 @@ tcp_msg_data_timeout=10
 
 ### tcp_msg_read_timeout
 
-Duration in seconds for how long to wait till data is received on a new tcp
-connection. Default 20.
+Duration in seconds for how long to wait till a SIP message is read on
+a new tcp connection. Default 20.
 
 ``` c
 tcp_msg_read_timeout=10
