@@ -1450,6 +1450,17 @@ Reverse Meaning of the disable_tls parameter. See disable_tls parameter.
 enable_tls=yes # enable tls support in core
 ```
 
+### tls_connection_match_domain
+
+Value: `yes`/`no` (default `no`)
+
+When set to `yes` allows to establish multiple TLS connections with different TLS domains to the same host:port target.
+Default Kamailio behavior is to reuse TLS connection for the same host:port target despite possible different TLS domains.
+
+```c
+tls_connection_match_domain=yes
+```
+
 ### exit_timeout
 
 **Alias name:** **ser_kill_timeout**
