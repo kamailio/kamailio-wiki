@@ -909,6 +909,10 @@ It is exported by **rr** module and has to be used after loose_route().
 The append_fromtag parameter is required to be set to 1 in order to have
 this variable returning the right value.
 
+### $tts - To-Tag State
+
+**$tts** - return the To-Tag state: `0` - To-tag is not set; `1` - To-Tag is set
+
 ### $tu - To URI
 
 **$tu** - reference to URI of 'To' header
