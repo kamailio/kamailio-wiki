@@ -2393,6 +2393,8 @@ The key can be:
 - callid - SIP-Call-ID of the generated request (by default, a call-id
     is generated)
 - cseqno - CSeq number to be used if greater than 0
+- fr_timeout - fr_timeout value for the local transaction of the uac request
+- fr_inv_timeout - fr_inv_timeout value for the local INVITE transaction of the uac request
 - all - alias useful to reset all fields - $uac_req(all) = $null;
 - evroute - it has to be set to 1 in order to execute
     event_route\[uac:reply\] when reply is received
