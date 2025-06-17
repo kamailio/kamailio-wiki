@@ -254,7 +254,7 @@ Example:
 ``` c
 #!define ABC xyz
 
-xlog("FLT_ACC: $def(ABC)\n");
+xlog("ABC: $def(ABC)\n");
 ```
 
 ### $defn(name) - Defined Value As Number
@@ -267,6 +267,20 @@ Example:
 #!define FLT_ACC 1
 
 xlog("FLT_ACC: $defn(FLT_ACC)\n");
+```
+
+### $defv(name) - Unquoted Defined Value
+
+**$defv(name)** - return unquoted defined value. Works for both single and double
+quotes. If the defined value is not enclosed between quotes, then the value is
+returned as it is.
+
+Example:
+
+``` c
+#!define ABC "xyz"
+
+xlog("ABC: $def(ABC)\n");
 ```
 
 ### $di - Diversion header URI
