@@ -269,6 +269,19 @@ Example:
 xlog("FLT_ACC: $defn(FLT_ACC)\n");
 ```
 
+### $defs(name) - String Quoted Defined Value
+
+**$defs(name)** - return string quoted defined value. If the defined value is
+enclosed between single or double quotes, then the value is returned as it is.
+
+Example:
+
+``` c
+#!define ABC xyz
+
+xlog("ABC: $def(ABC)\n");
+```
+
 ### $defv(name) - Unquoted Defined Value
 
 **$defv(name)** - return unquoted defined value. Works for both single and double
