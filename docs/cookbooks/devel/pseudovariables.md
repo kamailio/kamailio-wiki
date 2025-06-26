@@ -2961,6 +2961,25 @@ The key can be:
 
 - URL of http request.
 
+## NGHTTP2 Module
+
+### $nghttp2(name)
+
+The attributes of HTTP messages handled by nghttp2 module.
+
+The name can be:
+
+- `path` - the HTTP request path
+- `pathfull` - the full HTTP request path
+- `method` - the method for the HTTP request
+- `data` - the data (body) for the HTTP request
+- `size` - the size of the data (body) for the HTTP request
+- `srcip` - source IP of the HTTP message
+- `h:name` - the value of the header specified by the `name`
+(not yet implemented, returns `$null`)
+- `version` - the HTTP version
+
+
 ## MSRP Module
 
 This class of pseudo-variables is exported by MSRP module and give
