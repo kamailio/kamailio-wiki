@@ -1455,6 +1455,8 @@ The key can be:
     available
 - flags - flags set internally when executing event_route
     'dispatcher:dst-up' or 'dispatcher:dst-down'
+- uri - the URI address of the record triggering the event route
+- setid - (or group) the set id of the record triggering the event route
 
 ## $dsg(key) - Dispatcher group attributes
 
