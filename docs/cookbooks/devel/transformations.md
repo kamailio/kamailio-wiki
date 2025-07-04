@@ -1034,3 +1034,27 @@ the value is int, then it is preserved as it is.
 $var(x) = '"name" <sip:name@a.com>';
 $(var(x){val.jsonqe}) => "\"name\" <sip:name@a.com>"
 ```
+
+## Number Transformations
+
+Exported by **pv** module.
+
+### {num.fdigit}
+
+Return the first digit of the number. In case of a string or $null value, `0` is
+returned.
+
+``` c
+$var(x) = 1234;
+# $(var(x){num.fdigit}) -> 1
+```
+
+### {num.ldigit}
+
+Return the last digit of the number. In case of a string or $null value, `0` is
+returned.
+
+``` c
+$var(x) = 1234;
+# $(var(x){num.ldigit}) -> 4
+```
