@@ -1320,7 +1320,7 @@ This parameter offers a generic framework to set new core parameters without
 the need to write new code in Lex/Yacc, but to add to an internal exports
 structure in the core. The format is:
 
-```
+``` c
 coreparam[name] = value
 ```
 
@@ -1333,12 +1333,12 @@ Available parameters that can be set via `coreparam` are listed next.
 
 Set the random engine to be used internally. The values can be:
 
-  * `rand` - use the libc `rand()/random()` functions (the default)
-  * `fast` - use internal `fastrand()` functions (the default)
+- `rand` - use the libc `rand()/random()` functions (the default)
+- `fast` - use internal `fastrand()` functions (the default)
 
 Example:
 
-```
+``` c
 coreparam[random_engine] = "fast"
 ```
 
