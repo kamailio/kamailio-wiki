@@ -3733,6 +3733,18 @@ tcp_fin_timeout on, see linux tcp(7) TCP_LINGER2). Linux only.
 tcp_linger2 = seconds (not set by default)
 ```
 
+### tcp_main_threads
+
+If set to 1, the TLS read and encode (for sending) operations are done by threads
+created by the main TCP process. If set to 0, the operations are done in the
+old-style, mostly by the SIP worker processes.
+
+Default: `0`
+
+``` c
+tcp_main_threads = 1
+```
+
 ### tcp_max_connections
 
 Maximum number of tcp connections (if the number is exceeded no new tcp
