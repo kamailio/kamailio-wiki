@@ -117,8 +117,11 @@ The 'name' can be:
 - send_socket - return the socket to be used to send the branch
 - count - return the number of the branches
 - flags - return the branch flags value
-- ruid - return the ruid of the branch (Record internal Unique ID from
-    usrloc)
+- ruid - (readonly) - return the ruid of the branch (Record internal
+    Unique ID from usrloc
+- location_ua - (readonly) - user agent from the location record
+- instance - (readonly) - the value of instance field
+- otcpid - outbound tcp connection id
 
 The PV can take an index to access a specific branch:
 $(branch(name)\[index\])
@@ -1477,7 +1480,6 @@ When `ds_dsg_fetch_uri()` is used, the key can also be:
 - `octime_usec` - the value of `octime_isec` for the corresponding URI in the group
 - `ocseq` - the value of `ocseq` for the corresponding URI in the group
 - `ocrate` - the value of `ocrate` for the corresponding URI in the group
-
 
 ## $time(name) - Broken-down time
 
@@ -3349,7 +3351,6 @@ Can return the following values:
 Returns the value (Address signal) of the Generic Number for the IAM
 message. Returns -1 if there is a parsing error or if the Generic Number
 is not present.
-
 
 ## $dns(pvid=>key) - DNS Query Result
 

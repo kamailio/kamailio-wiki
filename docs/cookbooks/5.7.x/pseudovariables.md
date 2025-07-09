@@ -119,8 +119,11 @@ The 'name' can be:
 - send_socket - return the socket to be used to send the branch
 - count - return the number of the branches
 - flags - return the branch flags value
-- ruid - return the ruid of the branch (Record internal Unique ID from
-    usrloc)
+- ruid - (readonly) - return the ruid of the branch (Record internal
+    Unique ID from usrloc
+- location_ua - (readonly) - user agent from the location record
+- instance - (readonly) - the value of instance field
+- otcpid - outbound tcp connection id
 
 The PV can take an index to access a specific branch:
 $(branch(name)\[index\])
@@ -2008,12 +2011,12 @@ parameters before sending a HTTP query.
     to discover server-supported authentication methods. You may want to
     use a specific value. Valid values are:
 
-  - 1 - BASIC authentication
-  - 2 - HTTP Digest authentication
-  - 4 - GSS-Negotiate authentication
-  - 8 - NTLM authentication
-  - 16 - HTTP Digest with IE flavour.
-  - (Default value is 3 - BASIC and Digest authentication.)
+  + 1 - BASIC authentication
+  + 2 - HTTP Digest authentication
+  + 4 - GSS-Negotiate authentication
+  + 8 - NTLM authentication
+  + 16 - HTTP Digest with IE flavour.
+  + (Default value is 3 - BASIC and Digest authentication.)
 - username: sets the username to use for authenticated requests
 - password: sets the password to use for authenticated requests
 - suspend: if set to 0 it doesn't suspend the current transaction before performing the query
@@ -2062,8 +2065,8 @@ HTTP response body and body length,
 
 - name - id to refer the documet
 - spec - specifier:
-  - doc - set/get the document as text
-  - xpath:xpath-expression - evaluate xpath expression
+  + doc - set/get the document as text
+  + xpath:xpath-expression - evaluate xpath expression
 
 Example:
 
@@ -2197,7 +2200,7 @@ The key can be:
 - hdrs - SIP Headers
 - body - Body
 - flags - flags for processing
-  - 1 - the password is provided in HA1 format
+  + 1 - the password is provided in HA1 format
 - auser - authentication username
 - apasswd - authentication password
 - sock - local socket to be used for sending (proto:address:port)
@@ -3134,12 +3137,12 @@ dns_query(hostname, pvid) function from ipops module.
 
 - pvid can be any string
 - key can be:
-  - count - number of addresses
-  - ipv4 - set to 1 if at least one ipv4 address (otherwise 0)
-  - ipv6 - set to 1 if at least one ipv6 address (otherwise 0)
-  - addr\[index\] - the address as string from position index in the
+  + count - number of addresses
+  + ipv4 - set to 1 if at least one ipv4 address (otherwise 0)
+  + ipv6 - set to 1 if at least one ipv6 address (otherwise 0)
+  + addr\[index\] - the address as string from position index in the
         list (0 based indexing)
-  - type\[index\] - the type of address from position index in the
+  + type\[index\] - the type of address from position index in the
         list (0 based indexing), the value is 4 for ipv4 and 6 for ipv6
 
 The index can be an integer or a variable with integer value. First
