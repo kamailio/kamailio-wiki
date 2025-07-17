@@ -1211,7 +1211,7 @@ The 'name' can be:
 - sec - return seconds (int 0-59)
 - min - return minutes (int 0-59)
 - hour - return hours (int 0-23)
-- mday - return the day of month (int 0-59)
+- mday - return the day of month (int 1-31)
 - mon - return the month (int 1-12)
 - year - return the year (int, e.g., 2008)
 - wday - return the day of week (int, 1=Sunday - 7=Saturday)
