@@ -282,7 +282,7 @@ Example:
 ``` c
 #!define ABC xyz
 
-xlog("ABC: $def(ABC)\n");
+xlog("ABC: $defs(ABC)\n");
 ```
 
 ### $defv(name) - Unquoted Defined Value
@@ -296,7 +296,7 @@ Example:
 ``` c
 #!define ABC "xyz"
 
-xlog("ABC: $def(ABC)\n");
+xlog("ABC: $defv(ABC)\n");
 ```
 
 ### $di - Diversion header URI
