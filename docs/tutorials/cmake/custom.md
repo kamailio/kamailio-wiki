@@ -293,3 +293,4 @@ If you are unable to resolve the issue, you can seek help on the [Kamailio maili
 * [Kamailio documentation](https://www.kamailio.org/w/documentation/)
 * [Kamailio mailing list](https://www.kamailio.org/w/mailing-lists/)
 * [Kamailio GitHub repository](https://github.com/kamailio/kamailio)
+* [An Introduction to Modern CMake](https://cliutils.gitlab.io/modern-cmake/chapters/intro/running.html#building-a-project)
