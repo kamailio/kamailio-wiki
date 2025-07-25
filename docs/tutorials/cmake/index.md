@@ -10,3 +10,5 @@ Tutorials for building Kamailio using CMake.
 * [Corresponding Old-Makefiles And CMake Commands](commands.md)
 
 * [Available Targets](targets.md)
+
+* [Creating A New Module for kamailio](new_module.md)
