@@ -34,9 +34,10 @@ Use `make target_name` to execute the desired target in the build folder.
   + **[module_name]_doc**: Generates the documentation for a specific module. Replace `module_name` with the actual module name.
     * **[module_name]_doc_text**: Generates the documentation for a specific module in text format.
     * **[module_name]_doc_html**: Generates the documentation for a specific module in HTML format.
-    * **[module_name]_readme**: Generates the documentation for a specific module in README format in the source code tree of each module.
+    * **[module_name]_readme**: Generates the documentation for a specific module in README format in the source code tree of each module. _Note: This will overwrite the existing README files._
 - **kamailio_docs_man**: Generates the man pages for ALL modules.
   + **[module_name]_man**: Generates the man page for a specific module if available. Replace `module_name` with the actual module name.
+
 - **kamailio_docs_readme**: Generates the documentation for ALL modules in README format in the source code tree of each module. _Note: This will overwrite the existing README files._
 
 - **man**: Creates the manual pages for Kamailio core and utils. **Note**: This target is NOT included in the default `all` target. You need to run it separately. If you want to install the man pages, make sure to build it first.
