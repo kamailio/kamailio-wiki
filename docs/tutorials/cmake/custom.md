@@ -142,6 +142,16 @@ cmake -S . -B build -DFEATURE_OPTION=ON/OFF
 
 Replace `FEATURE_OPTION` with the name of the feature you want to enable or disable, and `ON/OFF` with the desired state.
 
+> [!TIP]
+> Some build definitions are present in the Kamailio codebase but are not yet exposed as dedicated CMake options.  
+> To set these, you can use the `EXTRA_DEFS` CMake option, which accepts a semicolon-separated list of definitions to pass to the build system.  
+>  
+> **Example usage:**  
+> ```bash
+> cmake -S . -B build -DEXTRA_DEFS="DEFINITION;ANOTHER_DEF=VALUE"
+> ```
+> Replace `DEFINITION` and `ANOTHER_DEF=VALUE` with the actual definitions you want to set.
+
 ### Example Command
 
 Here's an example command that includes specific modules, excludes others, sets a custom module group name, enables documentation building, and enables TLS support:
