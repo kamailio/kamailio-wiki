@@ -92,55 +92,55 @@ add description, examples, comments, etc., please add entries above.
 
     awk -F, '{print $3 " " $1;}' selects.csv | sort | awk '{print "==== " $1 " ====\n\nExported by: " $2 "\n\n";}'
 
-### @authorization\[%s\]
+### @authorization[%s]
 
 Exported by: core
 
-### @authorization\[%s\].algorithm
+### @authorization[%s].algorithm
 
 Exported by: core
 
-### @authorization\[%s\].cnonce
+### @authorization[%s].cnonce
 
 Exported by: core
 
-### @authorization\[%s\].nc
+### @authorization[%s].nc
 
 Exported by: core
 
-### @authorization\[%s\].nonce
+### @authorization[%s].nonce
 
 Exported by: core
 
-### @authorization\[%s\].opaque
+### @authorization[%s].opaque
 
 Exported by: core
 
-### @authorization\[%s\].qop
+### @authorization[%s].qop
 
 Exported by: core
 
-### @authorization\[%s\].realm
+### @authorization[%s].realm
 
 Exported by: core
 
-### @authorization\[%s\].response
+### @authorization[%s].response
 
 Exported by: core
 
-### @authorization\[%s\].uri
+### @authorization[%s].uri
 
 Exported by: core
 
-### @authorization\[%s\].username
+### @authorization[%s].username
 
 Exported by: core
 
-### @authorization\[%s\].username.domain
+### @authorization[%s].username.domain
 
 Exported by: core
 
-### @authorization\[%s\].username.user
+### @authorization[%s].username.user
 
 Exported by: core
 
@@ -164,7 +164,7 @@ Exported by: core
 
 Exported by: core
 
-### @contact.params\[%s\]
+### @contact.params[%s]
 
 Exported by: core
 
@@ -192,7 +192,7 @@ Exported by: core
 
 Exported by: core
 
-### @contact.uri.params\[%s\]
+### @contact.uri.params[%s]
 
 Exported by: core
 
@@ -224,95 +224,95 @@ Exported by: core
 
 Exported by: core
 
-### @db.fetch\[%i\]
+### @db.fetch[%i]
 
 Exported by: db_ops
 
-### @db.fetch\[%i\].count
+### @db.fetch[%i].count
 
 Exported by: db_ops
 
-### @db.fetch\[%i\].field\[%i\]
+### @db.fetch[%i].field[%i]
 
 Exported by: db_ops
 
-### @db.fetch\[%i\].field\[%i\].nameaddr
+### @db.fetch[%i].field[%i].nameaddr
 
 Exported by: db_ops
 
-### @db.fetch\[%i\].field\[%i\].uri
+### @db.fetch[%i].field[%i].uri
 
 Exported by: db_ops
 
-### @db.fetch\[%i\].nameaddr
+### @db.fetch[%i].nameaddr
 
 Exported by: db_ops
 
-### @db.fetch\[%i\].row\[%i\]
+### @db.fetch[%i].row[%i]
 
 Exported by: db_ops
 
-### @db.fetch\[%i\].row\[%i\].field\[%i\]
+### @db.fetch[%i].row[%i].field[%i]
 
 Exported by: db_ops
 
-### @db.fetch\[%i\].row\[%i\].field\[%i\].nameaddr
+### @db.fetch[%i].row[%i].field[%i].nameaddr
 
 Exported by: db_ops
 
-### @db.fetch\[%i\].row\[%i\].field\[%i\].uri
+### @db.fetch[%i].row[%i].field[%i].uri
 
 Exported by: db_ops
 
-### @db.fetch\[%i\].row_no
+### @db.fetch[%i].row_no
 
 Exported by: db_ops
 
-### @db.fetch\[%i\].uri
+### @db.fetch[%i].uri
 
 Exported by: db_ops
 
-### @db.query\[%i\]
+### @db.query[%i]
 
 Exported by: db_ops
 
-### @db.query\[%i\].count
+### @db.query[%i].count
 
 Exported by: db_ops
 
-### @db.query\[%i\].field\[%i\]
+### @db.query[%i].field[%i]
 
 Exported by: db_ops
 
-### @db.query\[%i\].field\[%i\].nameaddr
+### @db.query[%i].field[%i].nameaddr
 
 Exported by: db_ops
 
-### @db.query\[%i\].field\[%i\].uri
+### @db.query[%i].field[%i].uri
 
 Exported by: db_ops
 
-### @db.query\[%i\].nameaddr
+### @db.query[%i].nameaddr
 
 Exported by: db_ops
 
-### @db.query\[%i\].row\[%i\]
+### @db.query[%i].row[%i]
 
 Exported by: db_ops
 
-### @db.query\[%i\].row\[%i\].field\[%i\]
+### @db.query[%i].row[%i].field[%i]
 
 Exported by: db_ops
 
-### @db.query\[%i\].row\[%i\].field\[%i\].nameaddr
+### @db.query[%i].row[%i].field[%i].nameaddr
 
 Exported by: db_ops
 
-### @db.query\[%i\].row\[%i\].field\[%i\].uri
+### @db.query[%i].row[%i].field[%i].uri
 
 Exported by: db_ops
 
-### @db.query\[%i\].uri
+### @db.query[%i].uri
 
 Exported by: db_ops
 
@@ -344,7 +344,7 @@ Exported by: core
 
 Exported by: core
 
-### @dst_uri.params\[%s\]
+### @dst_uri.params[%s]
 
 Exported by: core
 
@@ -364,31 +364,31 @@ Exported by: core
 
 Exported by: core
 
-### @eval.get\[%i\]
+### @eval.get[%i]
 
 Exported by: eval
 
-### @eval.get\[%i\].nameaddr
+### @eval.get[%i].nameaddr
 
 Exported by: eval
 
-### @eval.get\[%i\].uri
+### @eval.get[%i].uri
 
 Exported by: eval
 
-### @eval.pop\[%i\]
+### @eval.pop[%i]
 
 Exported by: eval
 
-### @eval.reg\[%s\]
+### @eval.reg[%s]
 
 Exported by: eval
 
-### @eval.reg\[%s\].nameaddr
+### @eval.reg[%s].nameaddr
 
 Exported by: eval
 
-### @eval.reg\[%s\].uri
+### @eval.reg[%s].uri
 
 Exported by: eval
 
@@ -408,7 +408,7 @@ Exported by: core
 
 Exported by: core
 
-### @f.params\[%s\]
+### @f.params[%s]
 
 Exported by: core
 
@@ -432,7 +432,7 @@ Exported by: core
 
 Exported by: core
 
-### @f.uri.params\[%s\]
+### @f.uri.params[%s]
 
 Exported by: core
 
@@ -460,7 +460,7 @@ Exported by: core
 
 Exported by: core
 
-### @from.params\[%s\]
+### @from.params[%s]
 
 Exported by: core
 
@@ -484,7 +484,7 @@ Exported by: core
 
 Exported by: core
 
-### @from.uri.params\[%s\]
+### @from.uri.params[%s]
 
 Exported by: core
 
@@ -520,15 +520,11 @@ Exported by: textops
 
 Exported by: textops
 
-### @hf_value.%s.p\[%s\]
+### @hf_value.%s.p[%s]
 
 Exported by: textops
 
-### @hf_value.%s.param\[%s\]
-
-Exported by: textops
-
-### @hf_value.%s.uri
+### @hf_value.%s.param[%s]
 
 Exported by: textops
 
@@ -536,35 +532,39 @@ Exported by: textops
 
 Exported by: textops
 
-### @hf_value.%s\[%i\]
+### @hf_value.%s.uri
 
 Exported by: textops
 
-### @hf_value.%s\[%i\].%s
+### @hf_value.%s[%i]
 
 Exported by: textops
 
-### @hf_value.%s\[%i\].name
+### @hf_value.%s[%i].%s
 
 Exported by: textops
 
-### @hf_value.%s\[%i\].nameaddr
+### @hf_value.%s[%i].name
 
 Exported by: textops
 
-### @hf_value.%s\[%i\].p\[%s\]
+### @hf_value.%s[%i].nameaddr
 
 Exported by: textops
 
-### @hf_value.%s\[%i\].param\[%s\]
+### @hf_value.%s[%i].p[%s]
 
 Exported by: textops
 
-### @hf_value.%s\[%i\].uri
+### @hf_value.%s[%i].param[%s]
 
 Exported by: textops
 
-### @hf_value.%s\[%i\].uri
+### @hf_value.%s[%i].uri
+
+Exported by: textops
+
+### @hf_value.%s[%i].uri
 
 Exported by: textops
 
@@ -584,23 +584,23 @@ Exported by: textops
 
 Exported by: textops
 
-### @hf_value2.%s\[%i\]
+### @hf_value2.%s[%i]
 
 Exported by: textops
 
-### @hf_value2.%s\[%i\].%s
+### @hf_value2.%s[%i].%s
 
 Exported by: textops
 
-### @hf_value2.%s\[%i\].%s
+### @hf_value2.%s[%i].%s
 
 Exported by: textops
 
-### @hf_value2.%s\[%i\].%s
+### @hf_value2.%s[%i].%s
 
 Exported by: textops
 
-### @hf_value_exists\[%s\].%s
+### @hf_value_exists[%s].%s
 
 Exported by: textops
 
@@ -624,7 +624,7 @@ Exported by: core
 
 Exported by: core
 
-### @m.params\[%s\]
+### @m.params[%s]
 
 Exported by: core
 
@@ -652,7 +652,7 @@ Exported by: core
 
 Exported by: core
 
-### @m.uri.params\[%s\]
+### @m.uri.params[%s]
 
 Exported by: core
 
@@ -692,7 +692,7 @@ Exported by: core
 
 Exported by: core
 
-### @msg.%s.nameaddr.params\[%s\]
+### @msg.%s.nameaddr.params[%s]
 
 Exported by: core
 
@@ -712,7 +712,7 @@ Exported by: core
 
 Exported by: core
 
-### @msg.%s.nameaddr.uri.params\[%s\]
+### @msg.%s.nameaddr.uri.params[%s]
 
 Exported by: core
 
@@ -732,75 +732,75 @@ Exported by: core
 
 Exported by: core
 
-### @msg.%s.params\[%s\]
+### @msg.%s.params[%s]
 
 Exported by: core
 
-### @msg.%s\[%i\]
+### @msg.%s[%i]
 
 Exported by: core
 
-### @msg.%s\[%i\].nameaddr
+### @msg.%s[%i].nameaddr
 
 Exported by: core
 
-### @msg.%s\[%i\].nameaddr.name
+### @msg.%s[%i].nameaddr.name
 
 Exported by: core
 
-### @msg.%s\[%i\].nameaddr.params
+### @msg.%s[%i].nameaddr.params
 
 Exported by: core
 
-### @msg.%s\[%i\].nameaddr.params\[%s\]
+### @msg.%s[%i].nameaddr.params[%s]
 
 Exported by: core
 
-### @msg.%s\[%i\].nameaddr.uri
+### @msg.%s[%i].nameaddr.uri
 
 Exported by: core
 
-### @msg.%s\[%i\].nameaddr.uri.host
+### @msg.%s[%i].nameaddr.uri.host
 
 Exported by: core
 
-### @msg.%s\[%i\].nameaddr.uri.hostport
+### @msg.%s[%i].nameaddr.uri.hostport
 
 Exported by: core
 
-### @msg.%s\[%i\].nameaddr.uri.params
+### @msg.%s[%i].nameaddr.uri.params
 
 Exported by: core
 
-### @msg.%s\[%i\].nameaddr.uri.params\[%s\]
+### @msg.%s[%i].nameaddr.uri.params[%s]
 
 Exported by: core
 
-### @msg.%s\[%i\].nameaddr.uri.port
+### @msg.%s[%i].nameaddr.uri.port
 
 Exported by: core
 
-### @msg.%s\[%i\].nameaddr.uri.pwd
+### @msg.%s[%i].nameaddr.uri.pwd
 
 Exported by: core
 
-### @msg.%s\[%i\].nameaddr.uri.type
+### @msg.%s[%i].nameaddr.uri.type
 
 Exported by: core
 
-### @msg.%s\[%i\].nameaddr.uri.user
+### @msg.%s[%i].nameaddr.uri.user
 
 Exported by: core
 
-### @msg.%s\[%i\].params\[%s\]
+### @msg.%s[%i].params[%s]
 
 Exported by: core
 
-### @nathelper.rewrite_contact\[%i\]
+### @nathelper.rewrite_contact[%i]
 
 Exported by: nathelper
 
-### @nathelper.rewrite_contact\[%i\].nameaddr
+### @nathelper.rewrite_contact[%i].nameaddr
 
 Exported by: nathelper
 
@@ -820,7 +820,7 @@ Exported by: core
 
 Exported by: core
 
-### @next_hop.params\[%s\]
+### @next_hop.params[%s]
 
 Exported by: core
 
@@ -840,55 +840,55 @@ Exported by: core
 
 Exported by: core
 
-### @proxy_authorization\[%s\]
+### @proxy_authorization[%s]
 
 Exported by: core
 
-### @proxy_authorization\[%s\].algorithm
+### @proxy_authorization[%s].algorithm
 
 Exported by: core
 
-### @proxy_authorization\[%s\].cnonce
+### @proxy_authorization[%s].cnonce
 
 Exported by: core
 
-### @proxy_authorization\[%s\].nc
+### @proxy_authorization[%s].nc
 
 Exported by: core
 
-### @proxy_authorization\[%s\].nonce
+### @proxy_authorization[%s].nonce
 
 Exported by: core
 
-### @proxy_authorization\[%s\].opaque
+### @proxy_authorization[%s].opaque
 
 Exported by: core
 
-### @proxy_authorization\[%s\].qop
+### @proxy_authorization[%s].qop
 
 Exported by: core
 
-### @proxy_authorization\[%s\].realm
+### @proxy_authorization[%s].realm
 
 Exported by: core
 
-### @proxy_authorization\[%s\].response
+### @proxy_authorization[%s].response
 
 Exported by: core
 
-### @proxy_authorization\[%s\].uri
+### @proxy_authorization[%s].uri
 
 Exported by: core
 
-### @proxy_authorization\[%s\].username
+### @proxy_authorization[%s].username
 
 Exported by: core
 
-### @proxy_authorization\[%s\].username.domain
+### @proxy_authorization[%s].username.domain
 
 Exported by: core
 
-### @proxy_authorization\[%s\].username.user
+### @proxy_authorization[%s].username.user
 
 Exported by: core
 
@@ -920,7 +920,7 @@ Exported by: core
 
 Exported by: core
 
-### @record_route.params\[%s\]
+### @record_route.params[%s]
 
 Exported by: core
 
@@ -940,7 +940,7 @@ Exported by: core
 
 Exported by: core
 
-### @record_route.uri.params\[%s\]
+### @record_route.uri.params[%s]
 
 Exported by: core
 
@@ -972,7 +972,7 @@ Exported by: rr
 
 Exported by: core
 
-### @rr.params\[%s\]
+### @rr.params[%s]
 
 Exported by: core
 
@@ -992,7 +992,7 @@ Exported by: core
 
 Exported by: core
 
-### @rr.uri.params\[%s\]
+### @rr.uri.params[%s]
 
 Exported by: core
 
@@ -1028,7 +1028,7 @@ Exported by: core
 
 Exported by: core
 
-### @ruri.params\[%s\]
+### @ruri.params[%s]
 
 Exported by: core
 
@@ -1068,7 +1068,7 @@ Exported by: core
 
 Exported by: core
 
-### @t.params\[%s\]
+### @t.params[%s]
 
 Exported by: core
 
@@ -1092,7 +1092,7 @@ Exported by: core
 
 Exported by: core
 
-### @t.uri.params\[%s\]
+### @t.uri.params[%s]
 
 Exported by: core
 
@@ -1112,7 +1112,7 @@ Exported by: core
 
 Exported by: core
 
-### @timer\[%i\].enabled
+### @timer[%i].enabled
 
 Exported by: timer
 
@@ -2772,7 +2772,7 @@ Exported by: core
 
 Exported by: core
 
-### @to.params\[%s\]
+### @to.params[%s]
 
 Exported by: core
 
@@ -2796,7 +2796,7 @@ Exported by: core
 
 Exported by: core
 
-### @to.uri.params\[%s\]
+### @to.uri.params[%s]
 
 Exported by: core
 
@@ -2868,7 +2868,7 @@ Exported by: core
 
 Exported by: core
 
-### @v.params\[%s\]
+### @v.params[%s]
 
 Exported by: core
 
@@ -2892,55 +2892,55 @@ Exported by: core
 
 Exported by: core
 
-### @v\[%i\]
+### @v[%i]
 
 Exported by: core
 
-### @v\[%i\].alias
+### @v[%i].alias
 
 Exported by: core
 
-### @v\[%i\].branch
+### @v[%i].branch
 
 Exported by: core
 
-### @v\[%i\].comment
+### @v[%i].comment
 
 Exported by: core
 
-### @v\[%i\].host
+### @v[%i].host
 
 Exported by: core
 
-### @v\[%i\].i
+### @v[%i].i
 
 Exported by: core
 
-### @v\[%i\].name
+### @v[%i].name
 
 Exported by: core
 
-### @v\[%i\].params\[%s\]
+### @v[%i].params[%s]
 
 Exported by: core
 
-### @v\[%i\].port
+### @v[%i].port
 
 Exported by: core
 
-### @v\[%i\].received
+### @v[%i].received
 
 Exported by: core
 
-### @v\[%i\].rport
+### @v[%i].rport
 
 Exported by: core
 
-### @v\[%i\].transport
+### @v[%i].transport
 
 Exported by: core
 
-### @v\[%i\].version
+### @v[%i].version
 
 Exported by: core
 
@@ -2972,7 +2972,7 @@ Exported by: core
 
 Exported by: core
 
-### @via.params\[%s\]
+### @via.params[%s]
 
 Exported by: core
 
@@ -2996,55 +2996,55 @@ Exported by: core
 
 Exported by: core
 
-### @via\[%i\]
+### @via[%i]
 
 Exported by: core
 
-### @via\[%i\].alias
+### @via[%i].alias
 
 Exported by: core
 
-### @via\[%i\].branch
+### @via[%i].branch
 
 Exported by: core
 
-### @via\[%i\].comment
+### @via[%i].comment
 
 Exported by: core
 
-### @via\[%i\].host
+### @via[%i].host
 
 Exported by: core
 
-### @via\[%i\].i
+### @via[%i].i
 
 Exported by: core
 
-### @via\[%i\].name
+### @via[%i].name
 
 Exported by: core
 
-### @via\[%i\].params\[%s\]
+### @via[%i].params[%s]
 
 Exported by: core
 
-### @via\[%i\].port
+### @via[%i].port
 
 Exported by: core
 
-### @via\[%i\].received
+### @via[%i].received
 
 Exported by: core
 
-### @via\[%i\].rport
+### @via[%i].rport
 
 Exported by: core
 
-### @via\[%i\].transport
+### @via[%i].transport
 
 Exported by: core
 
-### @via\[%i\].version
+### @via[%i].version
 
 Exported by: core
 

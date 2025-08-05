@@ -284,7 +284,7 @@ $var(y) = $(var(x){s.strip,2}); # resulted value is "34"
 Return string after removing ending 'len' characters. Parameter 'len'
 can be positive integer or pseudo-variable holding a positive integer.
 
-### {s.prefixes\[,len\]}
+### {s.prefixes[,len]}
 
 Return series of comma separated prefixes of the pv. Parameter 'len' is
 optional and will limit the maximum prefix length.
@@ -294,10 +294,10 @@ Example:
 ``` c
 $var(x) = "123456";
 $(var(x){s.prefixes}) => 1,12,123,1234,12345,123456
-$(var(x){s.prefixes,4} => 1,12,123,1234
+$(var(x){s.prefixes,4}) => 1,12,123,1234
 ```
 
-### {s.prefixes.quoted\[,len\]}
+### {s.prefixes.quoted[,len]}
 
 Return series of comma separated quoted prefixes of the pv. Parameter
 'len' is optional and will limit the maximum prefix length.
@@ -306,8 +306,8 @@ Example:
 
 ``` c
 $var(x) = "123456";
-$(var(x){s.prefixes.quoted} => '1','12','123','1234','12345','123456'
-$(var(x){s.prefixes.quoted,4} => '1','12','123','1234'
+$(var(x){s.prefixes.quoted}) => '1','12','123','1234','12345','123456'
+$(var(x){s.prefixes.quoted,4}) => '1','12','123','1234'
 ```
 
 ### {s.replace,match,repl}
@@ -416,7 +416,7 @@ $var(alice) = $(var(x){s.unquote});
 
 ### {s.unbracket}
 
-Return the value without surrounding (), \[\], {} or \<\>.
+Return the value without surrounding (), [], {} or <>.
 
 ``` c
 $var(x) = "<sip:alice@test.sip>";
@@ -643,7 +643,7 @@ is a delimiter between serialized SIP header/URI bodies. The workaround
 is to use the subst transformation to replace the comma with another
 character that is used then as separator.
 
-### {param.value,name\[, delimiter\]}
+### {param.value,name[, delimiter]}
 
 Return the value of parameter 'name'
 
@@ -657,7 +657,7 @@ Example:
 parameter delimiter. For example, when parsing HTTP URL query strings
 use '&'.
 
-### {param.in,name\[,delimiter\]}
+### {param.in,name[,delimiter]}
 
 Return 1 if the parameter 'name' is found in parameters list, 0 if not
 found.
@@ -672,7 +672,7 @@ Example:
 parameter delimiter. For example, when parsing HTTP URL query strings
 use '&'.
 
-### {param.valueat,index\[, delimiter\]}
+### {param.valueat,index[, delimiter]}
 
 Return the value of parameter at position given by 'index' (0-based
 index)
@@ -687,7 +687,7 @@ Example:
 parameter delimiter. For example, when parsing HTTP URL query strings
 use '&'.
 
-### {param.name,index\[, delimiter\]}
+### {param.name,index[, delimiter]}
 
 Return the name of parameter at position 'index'.
 
@@ -699,7 +699,7 @@ Example:
 parameter delimiter. For example, when parsing HTTP URL query strings
 use '&'.
 
-### {param.count\[, delimiter\]}
+### {param.count[, delimiter]}
 
 Return the number of parameters in the list.
 
@@ -714,7 +714,7 @@ use '&'.
 ## Name-address Transformations
 
 The name of the transformation starts with 'nameaddr.'. The PV value is
-considered to be a string like '\[display_name\] uri'. The
+considered to be a string like '[display_name] uri'. The
 transformations returns the value for a specific field.
 
 Available transformations in this class:
