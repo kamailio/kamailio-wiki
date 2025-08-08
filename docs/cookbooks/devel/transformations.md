@@ -109,7 +109,8 @@ count of fields starts from end of PV value, -1 being last field. If
 index is positive, 0 is the first field.
 
 The separator must be a character used to identify the fields. It can also be
-an escaped character: `\\`, `\t`, `\n`, `\r` or `\s` (all whitespaces).
+an escaped character: `\\`, `\t`, `\n`, `\r`, `\w` (the whitespace ` `) or
+`\s` (all whitespaces).
 
 Example:
 
