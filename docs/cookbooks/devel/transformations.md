@@ -122,6 +122,19 @@ Example:
     $(var(x){s.select,-2,,}) => "34"
 ```
 
+### {s.selectws,index}
+
+Return a field from PV value. The field is selected based on any-whitespace as
+a separator and the index parameter.
+
+Example:
+
+```
+    $var(x) = "12 34\t56";
+    $(var(x){s.selectws,1}) => "34" ;
+    $(var(x){s.selectws,2}) => "56" ;
+```
+
 ### {s.encode.7bit}
 
 Return encoding in 7Bit of PV value
