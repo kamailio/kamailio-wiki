@@ -3630,7 +3630,7 @@ $ltt(key) - return local generated To-tag when Kamailio sends a reply
 - $ltt(x) - $ltt(t) if the transaction was created already, otherwise
     $ltt(s)
 
-## $via0(attr) - Via\[0\] Attributes
+## $via0(attr) - Via[0] Attributes
 
 $via0(attr) - attributes of first Via header.
 
