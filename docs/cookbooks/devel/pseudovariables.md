@@ -632,6 +632,8 @@ RFC 3325)
 
 **$retcode** - same as **$rc**
 
+**$?** - same as **$rc**
+
 Note that the value of $rc is overwritten by each new function call.
 
 Example of use:
