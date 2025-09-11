@@ -120,7 +120,7 @@ an escaped character: `\\`, `\t`, `\n`, `\r`, `\w` (the whitespace ` `) or
 
 Example:
 
-```
+``` c
     $var(x) = "12,34,56";
     $(var(x){s.select,1,,}) => "34" ;
 
@@ -135,7 +135,7 @@ a separator and the index parameter.
 
 Example:
 
-```
+``` c
     $var(x) = "12 34\t56";
     $(var(x){s.selectws,1}) => "34" ;
     $(var(x){s.selectws,2}) => "56" ;
@@ -870,9 +870,9 @@ The prototype is:
 - replacement_expression - substitution expression with back
     references to matched tokes: \\1, \\2, ..., \\9
 - flags:
-  - i - match ignore case
-  - s - match within multi-lines strings
-  - g - replace all matches
+  + i - match ignore case
+  + s - match within multi-lines strings
+  + g - replace all matches
 
 ## SQL Transformations
 
