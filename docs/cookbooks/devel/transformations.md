@@ -68,6 +68,12 @@ Return md5 over PV value
 
     xlog("md5 over From username: $(fU{s.md5})");
 
+### {s.sha1}
+
+Return sha1 over PV value
+
+    xlog("sha1 over From username: $(fU{s.sha1})");
+
 ### {s.sha256}
 
 Return sha 256 over PV value
