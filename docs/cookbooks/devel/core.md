@@ -1329,7 +1329,7 @@ a number (integer).
 
 Available parameters that can be set via `coreparam` are listed next.
 
-#### random_engine
+#### coreparam[random_engine]
 
 Set the random engine to be used internally. The values can be:
 
@@ -1340,6 +1340,15 @@ Example:
 
 ``` c
 coreparam[random_engine] = "fast"
+```
+
+#### coreparam[timer_sanity_check]
+
+Enable timer list sanity check by setting it to 1. It does a safety check of
+the items in the list of the core timer.
+
+``` c
+coreparam[timer_sanity_check] = 1
 ```
 
 ### debug
