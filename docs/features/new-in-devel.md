@@ -71,6 +71,8 @@ modules considered obsolete and not maintained have been moved to
 
 ## New in Core
 
+- VRF [Virtual Routing and Forwarding](https://docs.kernel.org/networking/vrf.html) support in socket definition
+
 ### Command line arguments
 
 ### Interpreter
