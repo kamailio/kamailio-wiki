@@ -2693,7 +2693,8 @@ The attributes are:
 - `agname` - async (action) group name where to push SIP messages received using
   multi-threaded mode
 - `virtual` - set to `yes/no` to indicate if the IP has to be considered virtual or not
-
+- `vrf` - name of the VRF device associated with this socket. See
+  [kernel docs](https://docs.kernel.org/networking/vrf.html) for details
 The attribute `bind` is mandatory and has to provide at list the address to listen on.
 
 Example:
