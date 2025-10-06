@@ -16,6 +16,10 @@ source code repository.*
 
 ## New in existing Modules
 
+### cdp
+
+- **vrf** optional attribute on Acceptor and Peer definitions allowing [Virtual Routing and Forwarding](https://docs.kernel.org/networking/vrf.html) to be used in that socket.
+
 ### cfgutils
 
 - **lock** family functions got another optional key parameter to
