@@ -2024,13 +2024,13 @@ The “htname” must be a hash table name defined via “htable” parameter.
 
 The **exp** can be:
 
-- reqexp - match by regular expression 'regexp'
-- \~\~regexp - match by regular expression 'regexp'
-- \~%prefix - match by right prefix
-- %\~prefix - match by left prefix
-- ==value - match by string value
-- eqvalue - match by integer value
-- \* \* - (two asterisks next to each other) - count all items
+- `reqexp` - match by regular expression 'regexp'
+- `~~regexp` - match by regular expression 'regexp'
+- `~%prefix` - match by right prefix
+- `%~prefix` - match by left prefix
+- `==value` - match by string value
+- `eqvalue` - match by integer value
+- `**` - (two asterisks next to each other) - count all items
 
 The **exp** can contain pseudo-variables.
 
