@@ -1546,7 +1546,7 @@ The key can be:
 - len - lenght of received message
 - srcip - source ip
 - rcvip - local ip where it was received
-- scrport - source port
+- srcport - source port
 - rcvport - local port where it was received
 - proto - protocol as int id
 - sproto - protocol as string
