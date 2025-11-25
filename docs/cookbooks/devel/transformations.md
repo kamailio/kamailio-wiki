@@ -55,12 +55,36 @@ Return strlen of PV value
 
 ### {s.int}
 
-Return integer value of a string-represented number
+Return integer value of a string-represented number.
 
+``` shell
     $var(x) = "1234";
-    if($(var(x){s.int})==1234) {
+    if($(var(x){s.int}) == 1234) {
       ...
     }
+```
+
+Note: some variables have both string and integer values associated,
+one or the other being used based on context. The string and integer values
+can be different, for example protocol-related variables can have the string
+value like `udp` or `tcp`, while the integer value is the internal protocol id,
+like `1` or `2`. In a string context, this transformation returns the existing
+associated string value.
+
+### {s.intv}
+
+Return integer value, ensuring the associated string value of the result is
+the printed number.
+
+``` shell
+    $var(x) = "4321";
+    if($(var(x){s.intv}) == 4321) {
+      ...
+    }
+```
+
+Note: if the variable has a different associated string value, this transformation
+returns the printed integer value in string context.
 
 ### {s.md5}
 
