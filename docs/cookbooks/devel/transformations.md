@@ -22,16 +22,19 @@ follows the name of a PV. When using transformations, the PV name and
 transformations **must** be enclosed in between **'('** and **')'**,
 following the **$** sign.
 
+``` shell
     # the length of From URI ($fu is PV for From URI)
 
     $(fu{s.len})
+```
 
 Many transformations can be applied in the same time to a PV.
 
+``` shell
     # the length of escaped 'Test' header body
 
     $(hdr(Test){s.escape.common}{s.len})
-
+```
 The transformations can be used anywhere, being considered parts of PV
 -- in xlog, avpops or other modules' functions and parameters, in right
 side assignment expressions or in comparisons.
@@ -47,11 +50,13 @@ Available transformations in this class:
 
 Return strlen of PV value
 
+``` shell
     $var(x) = "abc";
     if($(var(x){s.len}) == 3)
     {
        ...
     }
+```
 
 ### {s.int}
 
@@ -90,31 +95,41 @@ returns the printed integer value in string context.
 
 Return md5 over PV value
 
+``` shell
     xlog("md5 over From username: $(fU{s.md5})");
+```
 
 ### {s.sha1}
 
 Return sha1 over PV value
 
+``` shell
     xlog("sha1 over From username: $(fU{s.sha1})");
+```
 
 ### {s.sha256}
 
 Return sha 256 over PV value
 
+``` shell
     xlog("sha 256 over From username: $(fU{s.sha256})");
+```
 
 ### {s.sha384}
 
 Return sha 384 over PV value
 
+``` shell
     xlog("sha 384 over From username: $(fU{s.sha384})");
+```
 
 ### {s.sha512}
 
 Return sha 512 over PV value
 
+``` shell
     xlog("sha 512 over From username: $(fU{s.sha512})");
+```
 
 ### {s.substr,offset,length}
 
@@ -126,8 +141,10 @@ offset and length can be PV as well.
 
 Example:
 
+``` shell
     $var(x) = "abcd";
     $(var(x){s.substr,1,0}); => "bcd"
+```
 
 ### {s.select,index,separator}
 
