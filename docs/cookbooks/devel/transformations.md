@@ -204,7 +204,9 @@ Return base58 encoding of PV value.
 
 The set of base58 digits is:
 
+``` shell
     123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz
+```
 
 ### {s.decode.base58}
 
@@ -628,7 +630,9 @@ like **<sip:address:port;transport=proto>** to **proto:address:port**.
 
 Example:
 
+``` c
     "sip:test@127.0.0.1:5060;transport=udp"{uri.tosocket} => "udp:127.0.0.1:5060"
+```
 
 ### {uri.duri}
 
@@ -690,7 +694,9 @@ Return the value of parameter 'name'
 
 Example:
 
+``` c
     "a=1;b=2;c=3"{param.value,c} = "3"
+```
 
 'name' can be a pseudo-variable
 
@@ -705,7 +711,9 @@ found.
 
 Example:
 
+``` c
     "a=1;b=2;c=3"{param.in,c} = 1
+```
 
 'name' can be a pseudo-variable
 
@@ -720,7 +728,9 @@ index)
 
 Example:
 
+``` c
     "a=1;b=2;c=3"{param.valueat,1} = "2"
+```
 
 'index' can be a pseudo-variable
 
@@ -734,7 +744,9 @@ Return the name of parameter at position 'index'.
 
 Example:
 
+``` c
     "a=1;b=2;c=3"{param.name,1} = "b"
+```
 
 'delimiter' allows you to specify a single character to use as the
 parameter delimiter. For example, when parsing HTTP URL query strings
@@ -746,7 +758,9 @@ Return the number of parameters in the list.
 
 Example:
 
+``` c
     "a=1;b=2;c=3"{param.count} = 3
+```
 
 'delimiter' allows you to specify a single character to use as the
 parameter delimiter. For example, when parsing HTTP URL query strings
@@ -766,7 +780,9 @@ Return the value of display name
 
 Example:
 
+``` c
     '"test" <sip:test@kamailio.net>' {nameaddr.name} = "test"
+```
 
 ### {nameaddr.uri}
 
@@ -774,7 +790,9 @@ Return the value of URI
 
 Example:
 
+``` c
     '"test" <sip:test@kamailio.net>' {nameaddr.uri} = sip:test@kamailio.net
+```
 
 ### {nameaddr.len}
 
@@ -789,27 +807,27 @@ Access parts of a ToBody-like structure.
 
 ### {tobody.uri}
 
-\* return URI from To body
+* return URI from To body
 
 ### {tobody.display}
 
-\* return Display name from To body
+* return Display name from To body
 
 ### {tobody.tag}
 
-\* return Tag parameter from To body
+* return Tag parameter from To body
 
 ### {tobody.user}
 
-\* return URI User from To body
+* return URI User from To body
 
 ### {tobody.host}
 
-\* return URI Host from To body
+* return URI Host from To body
 
 ### {tobody.params}
 
-\* return parameters part from To body
+* return parameters part from To body
 
 ## Line Transformations
 
