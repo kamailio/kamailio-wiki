@@ -109,7 +109,7 @@ Your module will be automatically included in the build process if it's placed i
 From the source directory:
 
 ```sh
-cmake -S . -B build -DCMAKE_INSTALL_PREFIX=/path/to/install -DMODULE_GROUP_NAME="DEFAULT my_group" -DMY_MODULE_OPTION=ON -DINCULDE_MODULES="my_module"
+cmake -S . -B build -DCMAKE_INSTALL_PREFIX=/path/to/install -DMODULE_GROUP_NAME="DEFAULT my_group" -DMY_MODULE_OPTION=ON -DINCLUDE_MODULES="my_module"
 cmake --build build --target my_module
 cmake --install build
 ```
