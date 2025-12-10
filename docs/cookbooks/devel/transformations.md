@@ -1023,6 +1023,12 @@ Query string part of an HTTP URL. For example,
 🔥**IMPORTANT**: This transformation class is exported by **json**
 module.
 
+### {json.encode}
+
+Encode the value: `.` to `%2E`; ` ` to `+`; other special chars to hex format `%XY`.
+
+    $var(data) = $(rb{json.encode});
+
 ### {json.parse}
 
 You can use the transformation to extract values from the json
