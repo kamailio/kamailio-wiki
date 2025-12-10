@@ -1027,14 +1027,31 @@ module.
 
 Encode the value: `.` to `%2E`; ` ` to `+`; other special chars to hex format `%XY`.
 
+``` c
     $var(data) = $(rb{json.encode});
+```
 
 ### {json.parse}
 
-You can use the transformation to extract values from the json
-structured pseudo-variables
+Prototype: `{json.parse,path}`
 
+Extract values from the json structured pseudo-variables. The separator for the
+fields is `.`.
+
+``` c
     $var(Custom-Data) = $(rb{json.parse,Custom-Data});
+```
+
+### {json.parsex}
+
+Prototype: `{json.parsex,path}`
+
+Extract values from the json structured pseudo-variables, the first character
+of the path is the separator for the fields.
+
+``` c
+    $var(Custom-Data) = $(rb{json.parse,/fi.rst/second});
+```
 
 ## Socket Address Transformations
 
