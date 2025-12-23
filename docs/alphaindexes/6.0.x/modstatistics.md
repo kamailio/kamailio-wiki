@@ -80,12 +80,14 @@
 
 | Name | Module Name |
 |------|-------------|
+| **AAR Timeouts (aar_timeouts)** | [ims_qos_npn](https://www.kamailio.org/docs/modules/6.0.x/modules/ims_qos_npn.html) |
 | **AAR Timeouts (aar_timeouts)** | [ims_qos](https://www.kamailio.org/docs/modules/6.0.x/modules/ims_qos.html) |
 | **accepted_regs** | [registrar](https://www.kamailio.org/docs/modules/6.0.x/modules/registrar.html) |
 | **active_dialogs** | [dialog](https://www.kamailio.org/docs/modules/6.0.x/modules/dialog.html) |
 | **active_rooms** | [imc](https://www.kamailio.org/docs/modules/6.0.x/modules/imc.html) |
 | **active_transactions** | [tmx](https://www.kamailio.org/docs/modules/6.0.x/modules/tmx.html) |
 | **added_branches** | [tsilo](https://www.kamailio.org/docs/modules/6.0.x/modules/tsilo.html#tsilo.stat.added_branches) |
+| **Average AAR Response Time (aar_avg_response_time)** | [ims_qos_npn](https://www.kamailio.org/docs/modules/6.0.x/modules/ims_qos_npn.html) |
 | **Average AAR Response Time (aar_avg_response_time)** | [ims_qos](https://www.kamailio.org/docs/modules/6.0.x/modules/ims_qos.html) |
 | **Average LIR Response Time (lir_avg_response_time)** | [ims_icscf](https://www.kamailio.org/docs/modules/6.0.x/modules/ims_icscf.html) |
 | **Average MAR Response Time (mar_avg_response_time)** | [ims_auth](https://www.kamailio.org/docs/modules/6.0.x/modules/ims_auth.html) |
