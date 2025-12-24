@@ -3,8 +3,8 @@
 Details on how to monitor and collect information about memory usage by
 Kamailio.
 
-A typical case is to investigate the cases when "out of memory" or "no
-more memory" log messages are printed in syslog and Kamailio stops
+A typical case is to investigate the cases when **out of memory** or
+**no more memory** log messages are printed in syslog and Kamailio stops
 working properly.
 
 ## Table Of Content
@@ -32,27 +32,27 @@ There are two types of memory used by Kamailio:
 - private memory - allocated for each Kamailio process
   * one zone per child - no syncronization needed to access it
   * referred also as pkg (the operations in the code are done with
-    pkg_malloc()/pkg_free()/...)
+    `pkg_malloc()`/`pkg_free()`/...)
 - shared memory - allocated for entire Kamailio instances
   * all processes use the same zone - syncronization (mutex)
     required to access it
   * referred also as shm (the operations in the code are done with
-    shm_malloc()/shm_free()/...)
+    `shm_malloc()`/`shm_free()`/...)
 
 As of v4.2.0, default size for private memory is 8MB and for shared
 memory is 64MB. You can run 'kamailio -I' to check these values - they
 are printed as:
 
-``` c
+``` shell
   DEFAULT PKG_SIZE=8MB
   DEFAULT SHM_SIZE=64MB
 ```
 
 The size for private or shared memory can be specified via command line
-parameter -M (for pkg) and -m (for shm). Let's say kamailio should use
-up to 12MB of pkg and 128MB of shm, the command line should be:
+parameter `-M` (for `pkg`) and `-m` (for `shm`). Let's say kamailio should use
+up to `12MB` of `pkg` and `128MB` of `shm`, the command line should be:
 
-```
+``` shell
     kamailio -M 12 -m 128 ...
 ```
 
@@ -73,14 +73,15 @@ used, free, etc.
 
 The statistics for SHM memory can be seen with:
 
-```
+``` shell
     kamctl stats shmem
     kamcmd mod.stats all shm
 ```
 
 The statistics for PKG memory can be seen with:
 
-```
+``` shell
+    kamctl rpc pkg.stats
     kamcmd pkg.stats
     kamcmd mod.stats all pkg
 ```
@@ -90,9 +91,9 @@ zone of memory, while for PKG you get a list with many groups of
 statistics, each specific for a Kamailio process (child).
 
 In order to merge the free memory fragments one should enable the memory
-join support in the core. It is enabled by default (mem_join=1).
+join support in the core. It is enabled by default (`mem_join=1`).
 
-```
+``` c
     mem_join=1
 ```
 
@@ -121,14 +122,14 @@ where the allocation was done.
 
 To see if the memory manager is compiled in debugging mode, run:
 
-```
+``` shell
     kamailio -I | grep DBG_QM_MALLOC
 ```
 
 If it is printed, then it is, if not, then Kamailio has to be recompiled
 with:
 
-```
+``` shell
     MEMDBG=1 make cfg ...
 ```
 
@@ -137,7 +138,7 @@ include_modules="...").
 
 Then run the typical:
 
-```
+``` shell
     make all
     make install
 ```
@@ -164,7 +165,7 @@ To get the list of chunks from memory manager, there are two ways:
 - send a rpc command during runtime
   * for PKG memory:
 
-```
+``` shell
     kamcmd cfg.set_now_int core mem_dump_pkg _PID_
 ```
 
@@ -174,14 +175,14 @@ To get the list of chunks from memory manager, there are two ways:
 
     + for SHM memory:
 
-```
+``` shell
     kamcmd cfg.set_now_int core mem_dump_shm 1
 ```
 
 The log file will contain the messages detailing the chunks from memory
 manager. The ones for SHM should look like:
 
-```
+``` c
        0(17665) Memory status (shm):
        0(17665) qm_status (0xb5a7e000):
        0(17665)  heap size= 33554432
@@ -200,7 +201,7 @@ For PKG is similar format, just SHM replaced with PKG in messages.
 
 To generate summary report, do:
 
-```
+``` shell
     # first set memlog lower than debug
     kamcmd cfg.set_now_int core memlog 1
 
@@ -209,7 +210,7 @@ To generate summary report, do:
 
 The log for f_malloc with debug enabled should look like:
 
-```
+``` log
     20(4082) NOTICE: fm_status: summarizing all alloc'ed. fragments:
     20(4082) NOTICE: fm_status:  count=     1 size=     16640 bytes from <core>: counters.c: counters_prefork_init(207)
     20(4082) NOTICE: fm_status:  count=     1 size=     14560 bytes from debugger: debugger_api.c: dbg_init_pid_list(572)
@@ -225,7 +226,7 @@ The log for f_malloc with debug enabled should look like:
 If you dumped the status with qm_malloc, you can extract the logs from
 syslog and count the unique allocations with next commands:
 
-```
+``` shell
     grep qm_status /var/log/syslog >qm_status.txt
 
     # or:
@@ -245,7 +246,7 @@ etc), up to 10000. Note again that Kamailio has to be compiled with
 memory manager debugging. The range of used PKG chunks can be adjusted,
 just replace the 2000 and 10000 numbers in the script.
 
-``` c
+``` shell
 set $i=0
 set $a = mem_block->first_frag
 while($i<10000)
@@ -266,7 +267,7 @@ end
 An alternative is to print all used chunks, but be aware that it may
 take some time:
 
-``` c
+``` shell
 set $i=0
 set $a = mem_block->first_frag
 while($a < mem_block->last_frag_end)
@@ -285,7 +286,7 @@ end
 If the batch file is saved in /tmp/kamailio-dump-used-pkg.gdb, you can
 run it with:
 
-```
+``` shell
     gdb --batch --command=/tmp/kamailio-dump-used-pkg.gdb /path/to/kamailio _PID_
 ```
 
@@ -293,7 +294,7 @@ Again, be sure the path to kamailio is appropriate for the installation
 and the `_PID_` is replaced with the pid of Kamailio process you want to
 troubleshoot. The real command should be like:
 
-```
+``` shell
     gdb --batch --command=/tmp/kamailio-dump-used-pkg.gdb /usr/sbin/kamailio 21907
 ```
 
@@ -307,7 +308,7 @@ mode.
 Next is a diff showing the changes in Makefile.defs, but note that lines
 may vary on your specific Kamailio version.
 
-``` c
+``` diff
 diff --git a/src/Makefile.defs b/src/Makefile.defs
 index 675f2cf5bb..ac5972dfd7 100644
 --- a/src/Makefile.defs
@@ -349,7 +350,7 @@ Here is the article that presents better the situation:
 
 An relevant excerpt from the blog article:
 
-```
+``` text
     Looking at the contents of /proc/meminfo showed these two lines:
 
     Slab: 4126212 kB
@@ -364,6 +365,6 @@ An relevant excerpt from the blog article:
 
 The respective memory can be reclaimed with command:
 
-```
+``` shell
     sync; echo 3 > /proc/sys/vm/drop_caches
 ```
