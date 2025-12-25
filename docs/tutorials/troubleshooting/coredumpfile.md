@@ -28,25 +28,25 @@ Core files can be examined with **gdb**, the GNU debugger. It can read
 the crash informations, and display (among other things) the backtrace
 that leads to the crash. Just run:
 
-```
+``` shell
     gdb /path/to/kamailio /path/to/core/file
 ```
 
 Substitute the paths to match your installation, for example:
 
-```
+``` shell
     gdb /usr/local/sbin/kamailio /home/corefiles/core.1234
 ```
 
 After gdb finished to read the input and shows its prompt, execute:
 
-```
+``` shell
     backtrace
 ```
 
 or the short variant:
 
-```
+``` shell
     bt
 ```
 
@@ -54,7 +54,7 @@ GDB will then output the backtrace.
 
 More useful could be the full backtrace, that can be seen with:
 
-```
+``` shell
     bt full
 ```
 
@@ -66,16 +66,16 @@ In order to get a meaningful backtrace gdb needs some debugging
 informations in its binary. If you compiled from the source, no
 additional steps should be necessary from you. If you install a binary
 package, e.g. from debian, you need to install the **-dbg** package too
-(e.g., kamailio-dbg...deb).
+(e.g., `kamailio-dbg...deb`).
 
 If you don't understand the information that gdb prints, some developer
-on the mailling list should be able to help you.
+on the mailing list should be able to help you.
 
 ## How To Get Core Files
 
 Sometimes the server don't write the core file after a crash.
 
-```
+``` log
     INFO:core:handle_sigs: core was not generated
 ```
 
@@ -85,14 +85,14 @@ DUMP_CORE setting in the "/etc/default/kamailio" file. If this are all
 not set, then there is probably some ulimit configured that prohibits
 the core file generation. Just run:
 
-```
+``` shell
     ulimit -c unlimited
 ```
 
 in the shell where you started the server. If you run from an init script
 it should normally already take care of this. If its still not create a
 core file then perhaps the server has no permissions to write into its
-working directory, check its permissions and the startup option "-w".
+working directory, check its permissions and the startup option `-w`.
 
 On some operating systems it may be required to run Kamailio as
 privileged user (e.g., root) or change the **fs.suid_dumpable** sysctl
@@ -103,34 +103,34 @@ setting:
 The core file can be written on the disk or sent to an application. To find what
 is done with it, check the file name pattern in `/proc/sys/kernel/core_pattern`:
 
-```
+``` shell
 cat /proc/sys/kernel/core_pattern
 ```
 
 To change it to something new, for example to include various attributes in the
-name (e.g., pid, executable name, timestamp, ...):
+name (e.g., `pid`, `executable name`, t`imestamp`, ...):
 
-```
+``` shell
 echo "/tmp/cores/core.%e.%t.%p" > /proc/sys/kernel/core_pattern
 ```
 
 The change done before is only applicable until the next reboot. In order to make
 the change permanent, edit `/etc/sysctl.conf` and add/set:
 
-```
+``` shell
 kernel.core_pattern=/tmp/cores/core.%e.%t.%p
 ```
 
 If the core pattern is just the file name, to get per-process core file then you
 can use on Linux:
 
-```
+``` shell
     echo "1" > /proc/sys/kernel/core_uses_pid
 ```
 
 FreeBSD has its own approach, as an example, the next command can be used:
 
-```
+``` shell
     sysctl kern.corefile='%N.%P.core'
 ```
 
@@ -140,7 +140,7 @@ For CentOS 7, the following settings can be useful:
 
 Edit **/etc/sysctl.d/99-sysctl.conf** and add:
 
-```
+``` shell
     kernel.core_pattern = /tmp/core.%e.%p.%h.%t
     kernel.core_uses_pid=1
     fs.suid_dumpable = 2
@@ -150,7 +150,7 @@ Run **sysctl --system** to reload kernel parameters.
 
 Edit **/etc/sysconfig/kamailio** and set:
 
-```
+``` shell
     DUMP_CORE=yes
 ```
 
@@ -162,4 +162,4 @@ Debugging with GDB:
 
 Shortcut in the tutorial for **backtrace** command of **gdb**:
 
-- https://sourceware.org/gdb/onlinedocs/gdb/Backtrace.html
+- [https://sourceware.org/gdb/onlinedocs/gdb/Backtrace.html](https://sourceware.org/gdb/onlinedocs/gdb/Backtrace.html)
