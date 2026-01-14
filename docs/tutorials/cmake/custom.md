@@ -58,13 +58,21 @@ Replace `module4 module5 module6` with the names of the modules you want to excl
 
 ### MODULE_GROUP_NAME
 
-The `MODULE_GROUP_NAME` option allows you to specify a custom module group name. This is useful for organizing modules into logical groups. To set a custom module group name, use the following command:
+The `MODULE_GROUP_NAME` option allows you to specify a module group name. This is useful for organizing modules into logical groups. You can provide multiple group names separated by space.
+
+To set a custom module group name, use the following command:
 
 ```bash
 cmake -S . -B build -DMODULE_GROUP_NAME="GROUP"
 ```
 
 Replace `GROUP` with the desired module group name. By default, the module group name is set to `DEFAULT`. You can see the available group names in the `groups.cmake` file and cmake will print if you provide and invalid group name.
+
+Special group names:
+
+* `ALL`: Includes all available modules. (no grouping applied - all modules are built)
+* `DEFAULT`: Includes the default set of modules for the core which have no dependencies.
+* `ALL_PACKAGED`: This will expand to include all groups defined in `groups.cmake` in `${MODULE_GROUP_PACKAGE_GROUPS}` variable. Useful to build all modules but as part of their respective package groups.
 
 ### BUILD_DOC
 
@@ -142,17 +150,81 @@ cmake -S . -B build -DFEATURE_OPTION=ON/OFF
 
 Replace `FEATURE_OPTION` with the name of the feature you want to enable or disable, and `ON/OFF` with the desired state.
 
-> [!TIP]
-> Some build definitions are present in the Kamailio codebase but are not yet exposed as dedicated CMake options.  
-> To set these, you can use the `EXTRA_DEFS` CMake option, which accepts a semicolon-separated list of definitions to pass to the build system.  
->
-> **Example usage:**  
->
-> ```bash
-> cmake -S . -B build -DEXTRA_DEFS="DEFINITION;ANOTHER_DEF=VALUE"
-> ```
->
-> Replace `DEFINITION` and `ANOTHER_DEF=VALUE` with the actual definitions you want to set.
+## EXTRA_DEFS
+
+Some build definitions are present in the Kamailio codebase but are not yet exposed as dedicated CMake options.  
+To set these, you can use the `EXTRA_DEFS` CMake option, which accepts a semicolon-separated list of definitions to pass to the build system.  
+**Example usage:**  
+
+```bash
+cmake -S . -B build -DEXTRA_DEFS="DEFINITION;ANOTHER_DEF=VALUE" 
+```
+
+Replace `DEFINITION` and `ANOTHER_DEF=VALUE` with the actual definitions you want to set.
+
+### Advanced Feature Options
+
+Some features may require additional configuration, such as specifying paths to external libraries or setting specific flags. These advanced options can also be set using the `-D` flag with the `cmake` command in configuration phase.
+
+## LOCK_METHOD
+
+The `LOCK_METHOD` option allows you to specify the locking mechanism used by Kamailio. To set the locking method, use the following command:
+
+```bash
+cmake -S . -B build -DLOCK_METHOD="method_name"
+```
+
+Replace `method_name` with the desired locking method. Available methods  are:
+
+* AUTO: Automatically select the best available locking method. (default)
+* FAST_LOCK: Use fast lock mechanism
+* FUTEX: Use futex locking mechanism
+* PTHREAD_MUTEX: Use pthread mutex locking mechanism.
+* POSIX_SEM: Use POSIX semaphores locking mechanism.
+* SYSV_SEM: Use System V semaphores locking mechanism.
+
+## RADIUSCLIENT
+
+The `RADIUSCLIENT` option allows you to specify the RADIUS client library to be used by Kamailio modules. To set the RADIUS client library, use the following command:
+
+```bash
+cmake -S . -B build -DRADIUSCLIENT="library_name"
+```
+
+Replace `library_name` with the desired RADIUS client library. Available libraries are:
+
+* FREERADIUS: Use FreeRADIUS client library.
+* RADCLI: Use RADCLI client library. (default)
+* RADIUSCLIENT_NG: Use RADIUSCLIENT_NG client library. (discontinued, should be avoided, use FREERADIUS instead)
+
+## LIBSSL_STATIC_SRCPATH
+
+**Note: This option is relevant only when `LIBSSL_STATIC=ON` and `LIBSSL_STATIC_SRCPATH=ON` is set for the `tls` or `tlsa` module.**
+
+The `LIBSSL_STATIC_SRCPATH` option allows you to specify the path for a static version of the OpenSSL library builded from source. This is useful if you want to link Kamailio statically with OpenSSL.
+
+### CMake modules defining external packages
+
+Kamailio CMake build system includes CMake modules for finding and configuring various external packages. These modules are located in the `cmake/modules` directory of the Kamailio source tree.
+
+Some of the available CMake modules for external packages include:
+
+* FindErlang.cmake
+* FindLdap.cmake
+* FindMySQL.cmake
+* FindRadius.cmake
+
+along with many others.
+
+These modules can be used to find and configure the corresponding external packages during the build process. You can use these modules by including them in your `CMakeLists.txt` file and calling the appropriate `find_package` command.
+
+If you need to customize the paths or settings for these external packages, you can do so by setting the appropriate CMake variables before calling `find_package`. For example, to specify a custom installation path for the MySQL client library, you can set the `MySQL_DIR` variable:
+
+```bash
+cmake -S . -B build -DMySQL_DIR=/path/to/mysql
+```
+
+See the documentation for each CMake module for more information on the available variables and options.
 
 ### Example Command
 
