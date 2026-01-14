@@ -154,6 +154,7 @@ Replace `FEATURE_OPTION` with the name of the feature you want to enable or disa
 
 Some build definitions are present in the Kamailio codebase but are not yet exposed as dedicated CMake options.  
 To set these, you can use the `EXTRA_DEFS` CMake option, which accepts a semicolon-separated list of definitions to pass to the build system.  
+
 **Example usage:**  
 
 ```bash
@@ -199,9 +200,10 @@ Replace `library_name` with the desired RADIUS client library. Available librari
 
 ## LIBSSL_STATIC_SRCPATH
 
-**Note: This option is relevant only when `LIBSSL_STATIC=ON` and `LIBSSL_STATIC_SRCPATH=ON` is set for the `tls` or `tlsa` module.**
+**Note: This option is relevant only when `LIBSSL_STATIC=ON` and `LIBSSL_STATIC_SRCLIB=ON` are set for the `tls` or `tlsa` module.**
 
-The `LIBSSL_STATIC_SRCPATH` option allows you to specify the path for a static version of the OpenSSL library builded from source. This is useful if you want to link Kamailio statically with OpenSSL.
+The `LIBSSL_STATIC_SRCPATH` option allows you to specify the path for a static version of the OpenSSL library built from sources. This is useful if you want to link Kamailio tls modules statically with
+OpenSSL.
 
 ### CMake modules defining external packages
 
