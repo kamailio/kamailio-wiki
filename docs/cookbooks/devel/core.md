@@ -2379,6 +2379,20 @@ Example:
 msg_recv_max_size = 10000
 ```
 
+### msg_apply_changes_mode
+
+If set to `1`, the `msg_apply_changes()` is executed before the transaction for
+the SIP request is created. It can enable the use of `t_msg_apply_changes()`
+inside a `branch_route` block.
+
+Default: `0`
+
+Example:
+
+``` c
+msg_apply_changes_mode = 1
+```
+
 ### onsend_route_reply
 
 If set to 1 (yes, on), onsend_route block is executed for received
