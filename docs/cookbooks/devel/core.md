@@ -3787,6 +3787,16 @@ tcp_fin_timeout on, see linux tcp(7) TCP_LINGER2). Linux only.
 tcp_linger2 = seconds (not set by default)
 ```
 
+### tcp_listen_backlog
+
+The value for listen backlog parameter for TCP/TLS sockets.
+
+Default value: `1024`.
+
+``` c
+tcp_listen_backlog = 2048
+```
+
 ### tcp_main_threads
 
 If set to 1, the TLS read and encode (for sending) operations are done by threads
