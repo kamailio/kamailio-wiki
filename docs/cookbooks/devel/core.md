@@ -2393,6 +2393,24 @@ Example:
 msg_apply_changes_mode = 1
 ```
 
+### msg_clone_extra_size
+
+Size to be allocated extra when cloning the SIP request buffer to transaction.
+Useful when intending to do raw operations over the content of the buffer (e.g.,
+SIP message body). The value is in bytes.
+
+Important: do raw operations over the content of the buffer only if known to be
+safe for transaction, which requires to be familiar with the internal code of
+Kamailio core and transaction module.
+
+Default: `0`
+
+Example:
+
+``` c
+msg_clone_extra_size = 256
+```
+
 ### onsend_route_reply
 
 If set to 1 (yes, on), onsend_route block is executed for received
