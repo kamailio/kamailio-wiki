@@ -1,17 +1,17 @@
-# Upgrade Kamailio from v5.8.x to v5.9.0 (devel)
+# Upgrade Kamailio from v6.1.x to v6.2.0 (devel)
 
 The page contains the details about the changes that were made to old
-components during the development of v5.7.0 compared with what existed
-in v5.6.x. It does not include the brand new modules, focusing on how to
-upgrade database and configuration file from v5.6.x to run with Kamailio
-5.7.0.
+components during the development of v6.2.0 compared with what existed
+in v6.1.x. It does not include the brand new modules, focusing on how to
+upgrade database and configuration file from v6.1.x to run with Kamailio
+6.2.0.
 
 ## Previous Stable Release
 
 If you look for the guidelines to upgrade to previous stable release,
 see:
 
-- [Upgrade Kamailio v5.7.x to v5.8.0](5.7.x-to-5.8.0.md)
+- [Upgrade Kamailio v6.0.x to v6.1.0](6.0.x-to-6.1.0.md)
 
 ## Remarks
 
@@ -53,7 +53,7 @@ Following tokens are used to mark the changes:
 ### MySQL Database Structure
 
 Run following SQL statements in MySQL client to upgrade database
-structure from v5.8 to v5.9:
+structure from v6.1 to v6.2:
 
 ``` sql
 ...
