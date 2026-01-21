@@ -65,10 +65,9 @@ source code repository.*
 modules considered obsolete and not maintained have been moved to
 <https://github.com/kamailio/kamailio-archive/>
 
-- auth_identity
-- app_lua_sr
-- app_sqlang
-- app_mono
+- app_java
+- db_berkeley
+- db_perlvdb
 
 ## New in Core
 
