@@ -11,6 +11,22 @@ source code repository.*
 
 ## New Modules
 
+### auth_arnacon
+
+- https://www.kamailio.org/docs/modules/devel/modules/auth_arnacon.html
+
+### auth_web3
+
+- https://www.kamailio.org/docs/modules/devel/modules/auth_web3.html
+
+### peerstate
+
+- https://www.kamailio.org/docs/modules/devel/modules/peerstate.html
+
+### ptimer
+
+- https://www.kamailio.org/docs/modules/devel/modules/ptimer.html
+
 ## New in existing Modules
 
 ### cdp
