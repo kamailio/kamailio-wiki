@@ -67,6 +67,7 @@ available at the **Old Wiki Site**:*
 ### Upgrade
 
 - [Upgrade Kamailio stable to devel](install/upgrade/stable-to-devel.md)
+- [Upgrade Kamailio v6.0.x to v6.1.0](install/upgrade/6.0.x-to-6.1.0.md)
 - [Upgrade Kamailio v5.8.x to v6.0.0](install/upgrade/5.8.x-to-6.0.0.md)
 - [Upgrade Kamailio v5.7.x to v5.8.0](install/upgrade/5.7.x-to-5.8.0.md)
 - [Upgrade Kamailio v5.6.x to v5.7.0](install/upgrade/5.6.x-to-5.7.0.md)
@@ -79,6 +80,7 @@ available at the **Old Wiki Site**:*
 
 - [Main Download Page](https://www.kamailio.org/w/download/)
 - [Download Tarball with Sources of Latest Stable Release](https://www.kamailio.org/pub/kamailio/latest/src/)
+- [Download Sources of v6.1.x from GIT Repository](download/v6.1.x-from-git.md)
 - [Download Sources of v6.0.x from GIT Repository](download/v6.0.x-from-git.md)
 - [Download Sources of v5.8.x from GIT Repository](download/v5.8.x-from-git.md)
 - [Download Sources of v5.7.x from GIT Repository](download/v5.7.x-from-git.md)
