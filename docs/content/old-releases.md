@@ -7,6 +7,11 @@ This page is indexing the wiki pages related to older Kamailio releases,
 
 ### Installation from GIT Sources
 
+- [Install Kamailio v5.6.x From GIT (html)](https://kamailio.org/docs/tutorials/5.6.x/kamailio-install-guide-git/)
+- [Install Kamailio v5.5.x From GIT (html)](https://kamailio.org/docs/tutorials/5.5.x/kamailio-install-guide-git/)
+- [Install Kamailio v5.4.x From GIT (html)](https://kamailio.org/docs/tutorials/5.4.x/kamailio-install-guide-git/)
+- [Install Kamailio v5.3.x From GIT (html)](https://kamailio.org/docs/tutorials/5.3.x/kamailio-install-guide-git/)
+- [Install Kamailio v5.2.x From GIT (html)](https://kamailio.org/docs/tutorials/5.2.x/kamailio-install-guide-git/)
 - [Install Kamailio v5.1.x From GIT (html)](https://kamailio.org/docs/tutorials/5.1.x/kamailio-install-guide-git/)
 - [Install Kamailio v5.0.x From GIT (html)](https://kamailio.org/docs/tutorials/5.0.x/kamailio-install-guide-git/)
 - [Install Kamailio v4.4.x From GIT](../install/4.4.x/git.md)
@@ -19,6 +24,10 @@ This page is indexing the wiki pages related to older Kamailio releases,
 
 ### Upgrade
 
+- [Upgrade Kamailio v5.5.x to v5.6.0](../install/upgrade/5.5.x-to-5.6.0.md)
+- [Upgrade Kamailio v5.4.x to v5.5.0](../install/upgrade/5.4.x-to-5.5.0.md)
+- [Upgrade Kamailio v5.3.x to v5.4.0](../install/upgrade/5.3.x-to-5.4.0.md)
+- [Upgrade Kamailio v5.2.x to v5.3.0](../install/upgrade/5.2.x-to-5.3.0.md)
 - [Upgrade Kamailio v5.1.x to v5.2.0](../install/upgrade/5.1.x-to-5.2.0.md)
 - [Upgrade Kamailio v5.0.x to v5.1.0](../install/upgrade/5.0.x-to-5.1.0.md)
 - [Upgrade Kamailio v4.4.x to v5.0.0](../install/upgrade/4.4.x-to-5.0.0.md)
@@ -32,6 +41,11 @@ This page is indexing the wiki pages related to older Kamailio releases,
 
 ## Download
 
+- [Download Sources of v5.6.x from GIT Repository](../download/v5.6.x-from-git.md)
+- [Download Sources of v5.5.x from GIT Repository](../download/v5.5.x-from-git.md)
+- [Download Sources of v5.4.x from GIT Repository](../download/v5.4.x-from-git.md)
+- [Download Sources of v5.3.x from GIT Repository](../download/v5.3.x-from-git.md)
+- [Download Sources of v5.2.x from GIT Repository](../download/v5.2.x-from-git.md)
 - [Download Sources of v5.1.x from GIT Repository](../download/v5.1.x-from-git.md)
 - [Download Sources of v5.0.x from GIT Repository](../download/v5.0.x-from-git.md)
 - [Download Sources of v4.4.x from GIT Repository](../download/v4.4.x-from-git.md)
@@ -51,6 +65,11 @@ This page is indexing the wiki pages related to older Kamailio releases,
 |         |                               |                                          |                                          |                                  |                                                 |
 |---------|-------------------------------|------------------------------------------|------------------------------------------|----------------------------------|-------------------------------------------------|
 | Version | Core Cookbook                 | Pseudo Variables                         | Transformations                          | Selects                          | Modules                                         |
+| 5.6.x   | [link](../cookbooks/5.6.x/core.md) | [link](../cookbooks/5.6.x/pseudovariables.md) | [link](../cookbooks/5.6.x/transformations.md) | [link](../cookbooks/5.6.x/selects.md) | [link](https://kamailio.org/docs/modules/5.6.x/) |
+| 5.5.x   | [link](../cookbooks/5.5.x/core.md) | [link](../cookbooks/5.5.x/pseudovariables.md) | [link](../cookbooks/5.5.x/transformations.md) | [link](../cookbooks/5.5.x/selects.md) | [link](https://kamailio.org/docs/modules/5.5.x/) |
+| 5.4.x   | [link](../cookbooks/5.4.x/core.md) | [link](../cookbooks/5.4.x/pseudovariables.md) | [link](../cookbooks/5.4.x/transformations.md) | [link](../cookbooks/5.4.x/selects.md) | [link](https://kamailio.org/docs/modules/5.4.x/) |
+| 5.3.x   | [link](../cookbooks/5.3.x/core.md) | [link](../cookbooks/5.3.x/pseudovariables.md) | [link](../cookbooks/5.3.x/transformations.md) | [link](../cookbooks/5.3.x/selects.md) | [link](https://kamailio.org/docs/modules/5.3.x/) |
+| 5.2.x   | [link](../cookbooks/5.2.x/core.md) | [link](../cookbooks/5.2.x/pseudovariables.md) | [link](../cookbooks/5.2.x/transformations.md) | [link](../cookbooks/5.2.x/selects.md) | [link](https://kamailio.org/docs/modules/5.2.x/) |
 | 5.1.x   | [link](../cookbooks/5.1.x/core.md) | [link](../cookbooks/5.1.x/pseudovariables.md) | [link](../cookbooks/5.1.x/transformations.md) | [link](../cookbooks/5.1.x/selects.md) | [link](https://kamailio.org/docs/modules/5.1.x/) |
 | 5.0.x   | [link](../cookbooks/5.0.x/core.md) | [link](../cookbooks/5.0.x/pseudovariables.md) | [link](../cookbooks/5.0.x/transformations.md) | [link](../cookbooks/5.0.x/selects.md) | [link](https://kamailio.org/docs/modules/5.0.x/) |
 | 4.4.x   | [link](../cookbooks/4.4.x/core.md) | [link](../cookbooks/4.4.x/pseudovariables.md) | [link](../cookbooks/4.4.x/transformations.md) | [link](../cookbooks/4.4.x/selects.md) | [link](https://kamailio.org/docs/modules/4.4.x/) |
@@ -68,6 +87,11 @@ Alphabetic indexes generated from documentation (modules' readme docs).
 |         |                                           |                                          |                                         |                                           |
 |---------|-------------------------------------------|------------------------------------------|-----------------------------------------|-------------------------------------------|
 | Version | Modules Parameters                        | Modules Functions                        | RPC Commands                            | Statistics                                |
+| 5.6.x   | [link](../alphaindexes/5.6.x/modparameters.md) | [link](../alphaindexes/5.6.x/modfunctions.md) | [link](../alphaindexes/5.6.x/rpccommands.md) | [link](../alphaindexes/5.6.x/modstatistics.md) |
+| 5.5.x   | [link](../alphaindexes/5.5.x/modparameters.md) | [link](../alphaindexes/5.5.x/modfunctions.md) | [link](../alphaindexes/5.5.x/rpccommands.md) | [link](../alphaindexes/5.5.x/modstatistics.md) |
+| 5.4.x   | [link](../alphaindexes/5.4.x/modparameters.md) | [link](../alphaindexes/5.4.x/modfunctions.md) | [link](../alphaindexes/5.4.x/rpccommands.md) | [link](../alphaindexes/5.4.x/modstatistics.md) |
+| 5.3.x   | [link](../alphaindexes/5.3.x/modparameters.md) | [link](../alphaindexes/5.3.x/modfunctions.md) | [link](../alphaindexes/5.3.x/rpccommands.md) | [link](../alphaindexes/5.3.x/modstatistics.md) |
+| 5.2.x   | [link](../alphaindexes/5.2.x/modparameters.md) | [link](../alphaindexes/5.2.x/modfunctions.md) | [link](../alphaindexes/5.2.x/rpccommands.md) | [link](../alphaindexes/5.2.x/modstatistics.md) |
 | 5.1.x   | [link](../alphaindexes/5.1.x/modparameters.md) | [link](../alphaindexes/5.1.x/modfunctions.md) | [link](../alphaindexes/5.1.x/rpccommands.md) | [link](../alphaindexes/5.1.x/modstatistics.md) |
 | 5.0.x   | [link](../alphaindexes/5.0.x/modparameters.md) | [link](../alphaindexes/5.0.x/modfunctions.md) | [link](../alphaindexes/5.0.x/rpccommands.md) | [link](../alphaindexes/5.0.x/modstatistics.md) |
 
@@ -85,6 +109,11 @@ Alphabetic indexes generated from documentation (modules' readme docs).
 
 ## Features
 
+- [New Features in Release 5.6.x](../features/new-in-5.6.x.md)
+- [New Features in Release 5.5.x](../features/new-in-5.5.x.md)
+- [New Features in Release 5.4.x](../features/new-in-5.4.x.md)
+- [New Features in Release 5.3.x](../features/new-in-5.3.x.md)
+- [New Features in Release 5.2.x](../features/new-in-5.2.x.md)
 - [New Features in Release 5.1.x](../features/new-in-5.1.x.md)
 - [New Features in Release 5.0.x](../features/new-in-5.0.x.md)
 - [New Features in Release 4.4.x](../features/new-in-4.4.x.md)
@@ -102,6 +131,11 @@ Alphabetic indexes generated from documentation (modules' readme docs).
 
 ### Database Structure
 
+- [5.6.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.6.x.html)
+- [5.5.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.5.x.html)
+- [5.4.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.4.x.html)
+- [5.3.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.3.x.html)
+- [5.2.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.2.x.html)
 - [5.1.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.1.x.html)
 - [5.0.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.0.x.html)
 - [4.4.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-4.4.x.html)
