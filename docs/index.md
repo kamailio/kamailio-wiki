@@ -26,7 +26,7 @@ or newer, respectively the installation and upgrade tutorials, new
 features, a.s.o... For older releases, 3.2.x to 5.1.x, go to **Older
 Releases Index**:*
 
-- [Link To Content For Older Releases - 3.2.x to 5.1.x](content/old-releases.md)
+- [Link To Content For Older Releases - 3.2.x to 5.6.x](content/old-releases.md)
 
 🔥 **IMPORTANT:** *Content for older releases than 3.2.0 is
 available at the **Old Wiki Site**:*
@@ -44,11 +44,6 @@ available at the **Old Wiki Site**:*
 - [Install Kamailio v6.0.x From GIT (html)](https://kamailio.org/docs/tutorials/6.0.x/kamailio-install-guide-git/)
 - [Install Kamailio v5.8.x From GIT (html)](https://kamailio.org/docs/tutorials/5.8.x/kamailio-install-guide-git/)
 - [Install Kamailio v5.7.x From GIT (html)](https://kamailio.org/docs/tutorials/5.7.x/kamailio-install-guide-git/)
-- [Install Kamailio v5.6.x From GIT (html)](https://kamailio.org/docs/tutorials/5.6.x/kamailio-install-guide-git/)
-- [Install Kamailio v5.5.x From GIT (html)](https://kamailio.org/docs/tutorials/5.5.x/kamailio-install-guide-git/)
-- [Install Kamailio v5.4.x From GIT (html)](https://kamailio.org/docs/tutorials/5.4.x/kamailio-install-guide-git/)
-- [Install Kamailio v5.3.x From GIT (html)](https://kamailio.org/docs/tutorials/5.3.x/kamailio-install-guide-git/)
-- [Install Kamailio v5.2.x From GIT (html)](https://kamailio.org/docs/tutorials/5.2.x/kamailio-install-guide-git/)
 
 ### Installation By Building Packages
 
@@ -72,10 +67,6 @@ available at the **Old Wiki Site**:*
 - [Upgrade Kamailio v5.8.x to v6.0.0](install/upgrade/5.8.x-to-6.0.0.md)
 - [Upgrade Kamailio v5.7.x to v5.8.0](install/upgrade/5.7.x-to-5.8.0.md)
 - [Upgrade Kamailio v5.6.x to v5.7.0](install/upgrade/5.6.x-to-5.7.0.md)
-- [Upgrade Kamailio v5.5.x to v5.6.0](install/upgrade/5.5.x-to-5.6.0.md)
-- [Upgrade Kamailio v5.4.x to v5.5.0](install/upgrade/5.4.x-to-5.5.0.md)
-- [Upgrade Kamailio v5.3.x to v5.4.0](install/upgrade/5.3.x-to-5.4.0.md)
-- [Upgrade Kamailio v5.2.x to v5.3.0](install/upgrade/5.2.x-to-5.3.0.md)
 
 ## Download
 
@@ -85,11 +76,6 @@ available at the **Old Wiki Site**:*
 - [Download Sources of v6.0.x from GIT Repository](download/v6.0.x-from-git.md)
 - [Download Sources of v5.8.x from GIT Repository](download/v5.8.x-from-git.md)
 - [Download Sources of v5.7.x from GIT Repository](download/v5.7.x-from-git.md)
-- [Download Sources of v5.6.x from GIT Repository](download/v5.6.x-from-git.md)
-- [Download Sources of v5.5.x from GIT Repository](download/v5.5.x-from-git.md)
-- [Download Sources of v5.4.x from GIT Repository](download/v5.4.x-from-git.md)
-- [Download Sources of v5.3.x from GIT Repository](download/v5.3.x-from-git.md)
-- [Download Sources of v5.2.x from GIT Repository](download/v5.2.x-from-git.md)
 
 ### Linux - Unix Distributions
 
@@ -106,11 +92,6 @@ available at the **Old Wiki Site**:*
 | 6.0.x   | [link](cookbooks/6.0.x/core.md) | [link](cookbooks/6.0.x/pseudovariables.md) | [link](cookbooks/6.0.x/transformations.md) | [link](cookbooks/6.0.x/selects.md) | [link](https://kamailio.org/docs/modules/6.0.x/) |
 | 5.8.x   | [link](cookbooks/5.8.x/core.md) | [link](cookbooks/5.8.x/pseudovariables.md) | [link](cookbooks/5.8.x/transformations.md) | [link](cookbooks/5.8.x/selects.md) | [link](https://kamailio.org/docs/modules/5.8.x/) |
 | 5.7.x   | [link](cookbooks/5.7.x/core.md) | [link](cookbooks/5.7.x/pseudovariables.md) | [link](cookbooks/5.7.x/transformations.md) | [link](cookbooks/5.7.x/selects.md) | [link](https://kamailio.org/docs/modules/5.7.x/) |
-| 5.6.x   | [link](cookbooks/5.6.x/core.md) | [link](cookbooks/5.6.x/pseudovariables.md) | [link](cookbooks/5.6.x/transformations.md) | [link](cookbooks/5.6.x/selects.md) | [link](https://kamailio.org/docs/modules/5.6.x/) |
-| 5.5.x   | [link](cookbooks/5.5.x/core.md) | [link](cookbooks/5.5.x/pseudovariables.md) | [link](cookbooks/5.5.x/transformations.md) | [link](cookbooks/5.5.x/selects.md) | [link](https://kamailio.org/docs/modules/5.5.x/) |
-| 5.4.x   | [link](cookbooks/5.4.x/core.md) | [link](cookbooks/5.4.x/pseudovariables.md) | [link](cookbooks/5.4.x/transformations.md) | [link](cookbooks/5.4.x/selects.md) | [link](https://kamailio.org/docs/modules/5.4.x/) |
-| 5.3.x   | [link](cookbooks/5.3.x/core.md) | [link](cookbooks/5.3.x/pseudovariables.md) | [link](cookbooks/5.3.x/transformations.md) | [link](cookbooks/5.3.x/selects.md) | [link](https://kamailio.org/docs/modules/5.3.x/) |
-| 5.2.x   | [link](cookbooks/5.2.x/core.md) | [link](cookbooks/5.2.x/pseudovariables.md) | [link](cookbooks/5.2.x/transformations.md) | [link](cookbooks/5.2.x/selects.md) | [link](https://kamailio.org/docs/modules/5.2.x/) |
 
 ## Alphabetic Indexes
 
