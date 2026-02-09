@@ -104,11 +104,6 @@ Alphabetic indexes generated from documentation (modules' readme docs).
 | 6.0.x   | [link](alphaindexes/6.0.x/modparameters.md) | [link](alphaindexes/6.0.x/modfunctions.md) | [link](alphaindexes/6.0.x/rpccommands.md) | [link](alphaindexes/6.0.x/modstatistics.md) |
 | 5.8.x   | [link](alphaindexes/5.8.x/modparameters.md) | [link](alphaindexes/5.8.x/modfunctions.md) | [link](alphaindexes/5.8.x/rpccommands.md) | [link](alphaindexes/5.8.x/modstatistics.md) |
 | 5.7.x   | [link](alphaindexes/5.7.x/modparameters.md) | [link](alphaindexes/5.7.x/modfunctions.md) | [link](alphaindexes/5.7.x/rpccommands.md) | [link](alphaindexes/5.7.x/modstatistics.md) |
-| 5.6.x   | [link](alphaindexes/5.6.x/modparameters.md) | [link](alphaindexes/5.6.x/modfunctions.md) | [link](alphaindexes/5.6.x/rpccommands.md) | [link](alphaindexes/5.6.x/modstatistics.md) |
-| 5.5.x   | [link](alphaindexes/5.5.x/modparameters.md) | [link](alphaindexes/5.5.x/modfunctions.md) | [link](alphaindexes/5.5.x/rpccommands.md) | [link](alphaindexes/5.5.x/modstatistics.md) |
-| 5.4.x   | [link](alphaindexes/5.4.x/modparameters.md) | [link](alphaindexes/5.4.x/modfunctions.md) | [link](alphaindexes/5.4.x/rpccommands.md) | [link](alphaindexes/5.4.x/modstatistics.md) |
-| 5.3.x   | [link](alphaindexes/5.3.x/modparameters.md) | [link](alphaindexes/5.3.x/modfunctions.md) | [link](alphaindexes/5.3.x/rpccommands.md) | [link](alphaindexes/5.3.x/modstatistics.md) |
-| 5.2.x   | [link](alphaindexes/5.2.x/modparameters.md) | [link](alphaindexes/5.2.x/modfunctions.md) | [link](alphaindexes/5.2.x/rpccommands.md) | [link](alphaindexes/5.2.x/modstatistics.md) |
 
 ## C Code Export Lists
 
@@ -146,11 +141,6 @@ in embedded Lua/Python/JavaScript/Ruby/... SIP routing scripts:
 - [New Features in Release 6.0.x](features/new-in-6.0.x.md)
 - [New Features in Release 5.8.x](features/new-in-5.8.x.md)
 - [New Features in Release 5.7.x](features/new-in-5.7.x.md)
-- [New Features in Release 5.6.x](features/new-in-5.6.x.md)
-- [New Features in Release 5.5.x](features/new-in-5.5.x.md)
-- [New Features in Release 5.4.x](features/new-in-5.4.x.md)
-- [New Features in Release 5.3.x](features/new-in-5.3.x.md)
-- [New Features in Release 5.2.x](features/new-in-5.2.x.md)
 
 ## Tutorials
 
@@ -186,11 +176,6 @@ in embedded Lua/Python/JavaScript/Ruby/... SIP routing scripts:
 - [6.0.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-6.0.x.html)
 - [5.8.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.8.x.html)
 - [5.7.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.7.x.html)
-- [5.6.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.6.x.html)
-- [5.5.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.5.x.html)
-- [5.4.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.4.x.html)
-- [5.3.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.3.x.html)
-- [5.2.x Version](https://www.kamailio.org/docs/db-tables/kamailio-db-5.2.x.html)
 
 ## Development
 
@@ -198,18 +183,6 @@ in embedded Lua/Python/JavaScript/Ruby/... SIP routing scripts:
 
 - [RPC Control Interface - API](https://www.kamailio.org/docs/docbooks/3.2.x/rpc_api/rpc_api.html)
 - [Kamailio Development Guide](https://www.asipto.com/pub/kamailio-devel-guide/)
-
-### Embedded APIs
-
-See the section about KEMI exports.
-
-Old Exports APIs:
-
-|         |                                 |                                |                                 |                                 |                                   |
-|---------|---------------------------------|--------------------------------|---------------------------------|---------------------------------|-----------------------------------|
-| Version | \- Java -                       | \- Lua -                       | \- Mono -                       | \- Perl -                       | \- Python -                       |
-| devel   | [link](embeddedapi/devel/java.md) | [link](embeddedapi/devel/lua.md) | [link](embeddedapi/devel/mono.md) | [link](embeddedapi/devel/perl.md) | [link](embeddedapi/devel/python.md) |
-| 4.3.x   | [link](embeddedapi/4.3.x/java.md) | [link](embeddedapi/4.3.x/lua.md) | [link](embeddedapi/4.3.x/mono.md) | [link](embeddedapi/4.3.x/perl.md) | [link](embeddedapi/4.3.x/python.md) |
 
 ### Guidelines
 

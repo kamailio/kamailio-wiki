@@ -156,6 +156,7 @@ Old Exports APIs:
 |         |                                 |                                |                                 |                                 |                                   |
 |---------|---------------------------------|--------------------------------|---------------------------------|---------------------------------|-----------------------------------|
 | Version | \- Java -                       | \- Lua -                       | \- Mono -                       | \- Perl -                       | \- Python -                       |
+| 4.3.x   | [link](embeddedapi/4.3.x/java.md) | [link](embeddedapi/4.3.x/lua.md) | [link](embeddedapi/4.3.x/mono.md) | [link](embeddedapi/4.3.x/perl.md) | [link](embeddedapi/4.3.x/python.md) |
 | 4.2.x   | [link](../embeddedapi/4.2.x/java.md) | [link](../embeddedapi/4.2.x/lua.md) | [link](../embeddedapi/4.2.x/mono.md) | [link](../embeddedapi/4.2.x/perl.md) | [link](../embeddedapi/4.2.x/python.md) |
 | 4.1.x   | [link](../embeddedapi/4.1.x/java.md) | [link](../embeddedapi/4.1.x/lua.md) | [link](../embeddedapi/4.1.x/mono.md) | [link](../embeddedapi/4.1.x/perl.md) | [link](../embeddedapi/4.1.x/python.md) |
 | 4.0.x   | \-                              | [link](../embeddedapi/4.0.x/lua.md) | [link](../embeddedapi/4.0.x/mono.md) | [link](../embeddedapi/4.0.x/perl.md) | [link](../embeddedapi/4.0.x/python.md) |
