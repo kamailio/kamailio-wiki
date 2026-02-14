@@ -91,9 +91,19 @@ modules considered obsolete and not maintained have been moved to
 
 ### Command line arguments
 
+- `--domain=val` - match the config parameter as alternative to alias
+- `--iuid=val` - set instance unique id via cli parameter
+
 ### Interpreter
 
 ### Parameters
+
+- `msg_apply_changes_mode` - control if message changes are applied before transaction is created
+- `msg_clone_extra_size` - specify extra size in bytes to be allocated for message buffer when cloning it
+- `tcp_listen_backlog` - allows to set the value for tcp listen backlog
+- `tcp_main_threads` - control the tcp main process working threads
+- `tls_connection_match_domain` - tls connection domain matching
+- `coreparam[name]=value` - generic core parameter definition
 
 ### Functions
 
