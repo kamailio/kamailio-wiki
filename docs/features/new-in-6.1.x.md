@@ -29,6 +29,14 @@ source code repository.*
 
 ## New in existing Modules
 
+### app_python3s
+
+- added `threads_mode` parameter
+
+### auth
+
+- support for password hasing with SHA512
+
 ### cdp
 
 - **vrf** optional attribute on Acceptor and Peer definitions allowing [Virtual Routing and Forwarding](https://docs.kernel.org/networking/vrf.html) to be used in that socket.
@@ -39,6 +47,31 @@ source code repository.*
   generate the hash id. See [#3808](https://github.com/kamailio/kamailio/pull/3808)
   or [cfgutils docs](https://www.kamailio.org/docs/modules/devel/modules/cfgutils.html)
   for details
+
+### dispatcher
+
+- added ping socket configuration
+
+### dmq
+
+- added `remove_inactive` parameter
+
+### dmq_usrloc
+
+- new modparam to sync `UL_CONTACT_EXPIRE` actions
+- new modparam for `cflags` replication
+
+### kex
+
+-  add `KDMQ` to request statistic
+
+### nathelper
+
+- modparam to not send ping to Path
+
+### outbound
+
+- encode bind address into flow token as destination
 
 ### permissions
 
@@ -52,6 +85,14 @@ source code repository.*
 ### pua_dialoginfo
 
 - **use_uuid** optional parameter to generate pres_id using libuuid via uuid module
+
+### pua_json
+
+- add support for `as-feature-event`
+
+### pv
+
+- new transformation `{uri.rmparam,name}`
 
 ### rabbitmq
 
@@ -76,6 +117,27 @@ source code repository.*
   or [siputils](https://www.kamailio.org/docs/modules/devel/modules/siputils.html)
   for details.
 
+- `contact_param_encode_alias()` - function to encode contact with alias
+
+### sl
+
+- stats for 1xx replies
+
+### tcpops
+
+- `tcp_con_alive()`- function to check if a connection is alive by remote `addr:port`
+
+### tm
+
+- new modparam `delayed_reply`
+- rpc commands for sending requests without automatic ACK
+- `tm.retransmit_reply` rpc command
+- rpc command `tm.retransmit_reply_callid`
+
+### topoh
+
+- added `$th(ecallid)` - return encoded call id
+
 ## Archived Modules
 
 modules considered obsolete and not maintained have been moved to
@@ -88,6 +150,11 @@ modules considered obsolete and not maintained have been moved to
 ## New in Core
 
 - VRF [Virtual Routing and Forwarding](https://docs.kernel.org/networking/vrf.html) support in socket definition
+- `ksrxrand` - framework to set custom rand/srand functions
+- `coreparam[name]` - generic core parameter definition
+- new `coreparam[random_engine]` to control rand api
+- added option `o` for `loadmodule`
+- allow `route(...)` usage inside `onsend_route` block
 
 ### Command line arguments
 
