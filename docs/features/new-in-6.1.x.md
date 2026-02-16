@@ -29,6 +29,10 @@ source code repository.*
 
 ## New in existing Modules
 
+### app_jsdt
+
+- added dynamic buffer sizing to load bigger .js files
+
 ### app_python3s
 
 - added `threads_mode` parameter
@@ -51,6 +55,8 @@ source code repository.*
 ### dispatcher
 
 - added ping socket configuration
+- new modparam `ds_ping_fr_timeout`
+- added `ds_mark_addr(state, group, uri)`
 
 ### dmq
 
@@ -60,6 +66,11 @@ source code repository.*
 
 - new modparam to sync `UL_CONTACT_EXPIRE` actions
 - new modparam for `cflags` replication
+
+### file_out
+
+- added `require_rotation` option
+- added rotation on timer
 
 ### kex
 
@@ -82,6 +93,10 @@ source code repository.*
   or [permissions docs](https://www.kamailio.org/docs/modules/devel/modules/permissions.html)
   for details.
 
+### pdb
+
+= add new RPC command to view/change PDB query timeout
+
 ### pua_dialoginfo
 
 - **use_uuid** optional parameter to generate pres_id using libuuid via uuid module
@@ -93,16 +108,31 @@ source code repository.*
 ### pv
 
 - new transformation `{uri.rmparam,name}`
+- added functions to remove all root xavp/xavi items
+- added `$tts` variable
 
 ### rabbitmq
 
 - kamailio init will not fail if rabbitmq connection doesn't work. The module will try to reconnect
   when **rabbitmq_publish()** or **rabbitmq_publish_consume()** are called in the config.
 
+### rr
+
+- `loose_route_mode()` - added vmode bit 2 to skip outbound
+
+### rtpengine
+
+- added internal hash table dmq replication
+- add support for commands needed for siprec
+
 ### sca
 
 - **from_uri_avp** **to_uri_avp** module parameters adding the possibility of define what is the URI value
   for To and/or From instead of the values coming from the SIP message.
+
+### secfilter
+
+- added RPC `secfilter.del_wl` command
 
 ### siputils
 
@@ -127,16 +157,27 @@ source code repository.*
 
 - `tcp_con_alive()`- function to check if a connection is alive by remote `addr:port`
 
+### textops
+
+- added `str_all_in()` function
+
 ### tm
 
 - new modparam `delayed_reply`
 - rpc commands for sending requests without automatic ACK
 - `tm.retransmit_reply` rpc command
 - rpc command `tm.retransmit_reply_callid`
+- invoke event route `tm:local-request` on generated ACK messages
+- run event `tm:local_request` for CANCEL if locally initiated
 
 ### topoh
 
 - added `$th(ecallid)` - return encoded call id
+
+### uac
+
+- added `fr_timeout` and `fr_inv_timeout` for locally generated requests
+- added `ftag` and `ttag` fields for `$uac_req(...)`
 
 ## Archived Modules
 
@@ -155,6 +196,9 @@ modules considered obsolete and not maintained have been moved to
 - new `coreparam[random_engine]` to control rand api
 - added option `o` for `loadmodule`
 - allow `route(...)` usage inside `onsend_route` block
+- support tls connection domain matching
+- added `$defv(name)` variable
+- added `$defs(name)` return defined value as string between double quotes
 
 ### Command line arguments
 
