@@ -299,8 +299,8 @@ modules considered obsolete and not maintained have been moved to
 - added option `o` for `loadmodule`
 - allow `route(...)` usage inside `onsend_route` block
 - support tls connection domain matching
-- added `$defv(name)` variable
-- added `$defs(name)` return defined value as string between double quotes
+- added `$defv(name)` variable to return unquoted value of the define
+- added `$defs(name)` variable to return defined value as string between double quotes
 - added multiarch support for rpm generation
 - option for tls multi-threading processing
 - dns cache - added rm delay of entries with high refcnt
@@ -314,7 +314,7 @@ modules considered obsolete and not maintained have been moved to
 - added `coreparam[iuid]` to set a string instance unique id
 - added `$iuid` variable - return the instance unique id value
 - `log_prefix_mode` value `2` to use faked request for non-sip logging
-- parameter to add extra value to via branch
+- internal api parameter to add extra value to via branch
 - use process shared pthread mutexes for arm64
 - use stdatomic for arm64
 - added sha3 implementation
