@@ -62,10 +62,18 @@ source code repository.*
   or [cfgutils docs](https://www.kamailio.org/docs/modules/devel/modules/cfgutils.html)
   for details
 
+### corex
+
+- functions for managing via-body flags
+- added function `msg_vbflag_parse()`
+- extended list for iflag functions for msg apply changes
+- new function `add_tcp_alias()` as alternative for `force_tcp_alias()`
+
 ### db_redis
 
 - added auto expiry support with hashes
 - added sentinel support
+- added support of `max_key_length`
 
 ### dialog
 
@@ -103,6 +111,10 @@ source code repository.*
 - support for 32bit and 64bit integer keys
 - exported config functions for inc, dec and is_null
 - more KEMI specific functions
+
+### json
+
+- new transformation `{json.parsex,path}`
 
 ### kex
 
@@ -155,6 +167,8 @@ source code repository.*
 - new transformation `{s.selectws,idx}` - select with whitespaces delimiter
 - new transformation `{s.sha1}`
 - new transformation `{s.intv}`
+- added `{s.crc32}` transformation
+- added `sha3/keccak` transformations
 
 ### pv_headers
 
@@ -168,6 +182,7 @@ source code repository.*
 ### rr
 
 - `loose_route_mode()` - added vmode bit 2 to skip outbound
+- added `loose_route_mode` modparam
 
 ### rtpengine
 
@@ -211,6 +226,7 @@ source code repository.*
 ### tcpops
 
 - `tcp_con_alive()`- function to check if a connection is alive by remote `addr:port`
+- `tcp_con_alive()` - support also for SIP URI parameter
 
 ### textops
 
@@ -238,6 +254,18 @@ source code repository.*
 - added rpc command `tm.t_uac_attrs`
 - added `t_relay_to_proxy("proto:addr:port")`
 - trigger `tm:local-request` event for ACK on negative replies
+- new parameter `local_ack_branch_mode` to control via branch value for local ACK
+- added `event_route[tm:local-ack-sent]`
+- added `evcb_local_ack_sent` parameter
+- option to create a completely new branch for local 200ok-ack
+- per uac/branch via-body flags field
+- added `t_msg_apply_changes()` function
+- setting for disabling auto ack generation
+
+### tmx
+
+- functions for management of t-uac via-body flags
+- added function to generate ack locally in config
 
 ### topoh
 
@@ -246,6 +274,7 @@ source code repository.*
 ### topos
 
 - added `contact_mode=3` and 2 new modparam for contact host domains
+- added new modparam for updating record time on re-INVITE
 
 ### uac
 
@@ -285,6 +314,12 @@ modules considered obsolete and not maintained have been moved to
 - added `coreparam[iuid]` to set a string instance unique id
 - added `$iuid` variable - return the instance unique id value
 - `log_prefix_mode` value `2` to use faked request for non-sip logging
+- parameter to add extra value to via branch
+- use process shared pthread mutexes for arm64
+- use stdatomic for arm64
+- added sha3 implementation
+- msg parser - field for via-body flags
+- srjson - array pretty-printing similar to structure alignment
 
 ### Command line arguments
 
@@ -314,6 +349,9 @@ modules considered obsolete and not maintained have been moved to
 ## Tools
 
 ### kamcmd
+
+- basic support for JSONRPC
+- buffer size for JSONRPC response made cli option
 
 ### kamctl
 
