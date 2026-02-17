@@ -2330,6 +2330,14 @@ Example:
 msg_recv_max_size = 10000
 ```
 
+### msg_time
+
+If set to 1 (yes, on), the sip message timeval value is set automatically at received time. Otherwise, it will be set to the first time the message is accessed. Default is 1.
+
+```c
+msg_time=1
+```
+
 ### onsend_route_reply
 
 If set to 1 (yes, on), onsend_route block is executed for received
