@@ -248,7 +248,7 @@ source code repository.*
 - `tm.retransmit_reply` rpc command
 - rpc command `tm.retransmit_reply_callid`
 - invoke event route `tm:local-request` on generated ACK messages
-- run event `tm:local_request` for CANCEL if locally initiated
+- run event `tm:local-request` for CANCEL if locally initiated
 - added module parameter `evlreq_mode`
 - rpc commands with hexa-encoded body
 - added rpc command `tm.t_uac_attrs`
