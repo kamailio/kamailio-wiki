@@ -3576,6 +3576,27 @@ Default value is **no**.
 tcp_accept_no_cl=yes
 ```
 
+### tcp_accept_protocols
+
+Control additional active protocols that can come over TCP/TLS:
+
+- http (4)
+- ws/wss (8)
+- msrp (16)
+- hep/hep3 (32)
+- stun (64)
+- haproxy (128)
+
+It can be set as a sum of the number ids associated to the protocols or as a
+comma separated list of protocol names.
+
+Default value: 92 (http,ws,msrp,stun)
+
+``` c
+tcp_accept_protocols = 12
+tcp_accept_protocols = "http,ws"
+```
+
 ### tcp_accept_unique
 
 If set to `1`, reject duplicate connections coming from same source IP and
