@@ -1629,7 +1629,7 @@ kemi.onsend_route_callback="ksr_my_onsend_route"
 Set the name of callback function in the KEMI script to be executed as
 the equivalent of `event_route[core:msg-received]` block (from the
 native configuration file). For execution, it also require to have the
-received_route_mode global parameter set to 1.
+`received_route_mode` global parameter set different than 0.
 
 Default value: `none`
 
@@ -2573,7 +2573,7 @@ Default value: `0` (disabled)
 Example of usage:
 
 ``` c
-received_route_mode=1
+received_route_mode=2
 ```
 
 ### reply_to_via
