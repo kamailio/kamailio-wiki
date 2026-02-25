@@ -547,6 +547,26 @@ Encode the value for URL param format.
 
 Decode the value from URL param format.
 
+### {s.charat,pos}
+
+Return the character at the given position, which has to be positive number,
+with 0 being the position of the first character.
+
+``` c
+$var(x) = "abc";
+$(var(x){s.charat,1}) == "b"
+```
+
+### {s.byte,pos}
+
+Return the byte code at the given position, which has to be positive
+ number, with 0 being the position of the first byte.
+
+``` c
+$var(x) = "abc";
+$(var(x){s.byteat,1}) == 98
+```
+
 ## URI Transformations
 
 The name of transformation starts with 'uri.'. The PV value is
