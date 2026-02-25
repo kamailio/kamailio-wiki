@@ -1582,8 +1582,10 @@ if($sel(via[1].host)=="10.10.10.10")
 
 ### $rcv(key)
 
+Aliased variable: `$recv(key)`
+
 Attributes of received data. The variables must be used inside
-**event_route\[core:msg-received\]** routing block.
+`event_route[core:msg-received]` routing block.
 
 The key can be:
 
@@ -1596,6 +1598,17 @@ The key can be:
 - proto - protocol as int id
 - sproto - protocol as string
 - af - address family
+- safe - return `1` if the buffer contains printable characters or `\t`,
+  `\r`, `\n`; `0` - otherwise (e.g., binary characters)
+- evtype - return the corresponding mode of execution (see `received_route_mode`
+  config parameter)
+- bufat - can be used to set characters at a specific position in buffer. The
+  value has to be in the format `position:content` (e.g., `2:XY`). The new content
+  must not go over the size of the current buffer. The position starts with 0 for
+  the first character.
+- hexat - can be used to set characters at a specific position in buffer, content
+  being provided with pairs of hex-digits. The value has to be in the format
+  `position:content` (e.g., `2:5859`)
 
 Example of usage:
 
