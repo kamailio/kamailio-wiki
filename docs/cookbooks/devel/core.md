@@ -2555,8 +2555,18 @@ rundir="/tmp"
 
 ### received_route_mode
 
-Enable or disable the execution of `event_route[core:msg-received]`
-routing block or its corresponding Kemi callback.
+Control the execution of `event_route[core:msg-received]` routing block or its
+corresponding Kemi callback.
+
+Possible values:
+
+- `1` - execute when the message has been recevied completely (its end
+could be figured out)
+- `2` - execute when bare data has been received (when it is read from the socket,
+before trying to figure out is end -- can be executed many time as data comes in,
+still pointing at the beginning of the incoming data with `$rcv(buf)`)
+
+Its value can be set to `3` to execute on both cases.
 
 Default value: `0` (disabled)
 
@@ -5494,10 +5504,10 @@ event_route[core:worker-one-init] {
 
 - `event_route[core:msg-received]` - executed when a message is
   received from the network. It runs with a faked request and makes
-  available the $rcv(key) variables to access what was received and
+  available the `$rcv(key)` variables to access what was received and
   related attribtues.
-  * it has to be enabled with received_route_mode global parameter.
-    For usage via Kemi, set kemi.received_route_callback global
+  * it has to be enabled with `received_route_mode` global parameter.
+    For usage via Kemi, set `kemi.received_route_callback` global
     parameter.
   * if drop is executed, the received message is no longer processed
 
