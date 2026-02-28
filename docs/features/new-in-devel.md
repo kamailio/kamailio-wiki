@@ -16,6 +16,10 @@ source code repository.*
 
 ## New in existing Modules
 
+### ims_dialog
+
+- ``dbg_list`` module parameter to print internal debug information related to dialogs
+
 ## Archived Modules
 
 modules considered obsolete and not maintained have been moved to
