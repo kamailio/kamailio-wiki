@@ -1,9 +1,9 @@
 # Kamailio SIP Server - New Features in 6.0.x Version
 
 **Previous stable version was 5.8.x (released during the spring of 2024),
-see what was new in that release at:**
+see what was new in that release at**:
 
-- <https://www.kamailio.org/wikidocs/features/new-in-5.8.x/>
+- [New In v5.8.x](new-in-5.8.x.md)
 
 *This is summary of new features added in this version,
 manually updated, thus not always synchronized with what is new in
@@ -20,28 +20,28 @@ functions parameters, support to use `cmake` to compile and install Kamailio.
 
 ### ims_qos_npn
 
-* enhanced version of IMS QoS implementatio
-* [https://www.kamailio.org/docs/modules/devel/modules/ims_qos_npn.html](https://www.kamailio.org/docs/modules/devel/modules/ims_qos_npn.html)
+- enhanced version of IMS QoS implementatio
+- [https://www.kamailio.org/docs/modules/devel/modules/ims_qos_npn.html](https://www.kamailio.org/docs/modules/devel/modules/ims_qos_npn.html)
 
 ### nghttp2
 
-* HTTP2 server module implementation
-* [https://www.kamailio.org/docs/modules/devel/modules/nghttp2.html](https://www.kamailio.org/docs/modules/devel/modules/nghttp2.html)
+- HTTP2 server module implementation
+- [https://www.kamailio.org/docs/modules/devel/modules/nghttp2.html](https://www.kamailio.org/docs/modules/devel/modules/nghttp2.html)
 
 ### presence_dfks
 
-* presence support for Device FeatureKey Synchronization
-* [https://www.kamailio.org/docs/modules/devel/modules/presence_dfks.html](https://www.kamailio.org/docs/modules/devel/modules/presence_dfks.html)
+- presence support for Device FeatureKey Synchronization
+- [https://www.kamailio.org/docs/modules/devel/modules/presence_dfks.html](https://www.kamailio.org/docs/modules/devel/modules/presence_dfks.html)
 
 ### pvtpl
 
-* evaluation of template files with config variables
-* [https://www.kamailio.org/docs/modules/devel/modules/pvtpl.html](https://www.kamailio.org/docs/modules/devel/modules/pvtpl.html)
+- evaluation of template files with config variables
+- [https://www.kamailio.org/docs/modules/devel/modules/pvtpl.html](https://www.kamailio.org/docs/modules/devel/modules/pvtpl.html)
 
 ### topos_htable
 
-* htable storage for topology stripping (topos) module
-* [https://www.kamailio.org/docs/modules/devel/modules/topos_htable.html](https://www.kamailio.org/docs/modules/devel/modules/topos_htable.html)ß
+- htable storage for topology stripping (topos) module
+- [https://www.kamailio.org/docs/modules/devel/modules/topos_htable.html](https://www.kamailio.org/docs/modules/devel/modules/topos_htable.html)ß
 
 ## New In Existing Modules
 
@@ -181,7 +181,7 @@ functions parameters, support to use `cmake` to compile and install Kamailio.
 
 - added `natnum` property, containing the nationally formatted number, to pv
 
-### presence:
+### presence
 
 - continue on one notify sending failure
 
@@ -271,7 +271,7 @@ functions parameters, support to use `cmake` to compile and install Kamailio.
 ### tcpops
 
 - new variables to get active connection attributes
-  - $tcp(aconid), $tcp(ac_si), $tcp(ac_sp)
+  + $tcp(aconid), $tcp(ac_si), $tcp(ac_sp)
 
 ### textops
 
@@ -295,7 +295,7 @@ functions parameters, support to use `cmake` to compile and install Kamailio.
 - emit event route on cancel
 - new function t_cell_append_branches(tindex, tlabel)
 - made configurable the code and reason for generating timeout response
-  * reply_408_code and reply_408_reason params
+  + reply_408_code and reply_408_reason params
 
 ### tsilo
 
@@ -371,13 +371,13 @@ series 5.8.x.
 
 ### Parameters
 
-* new core parameter `udp_receiver_mode` - turn UDP receiving to multi-threading
+- new core parameter `udp_receiver_mode` - turn UDP receiving to multi-threading
 for all listen sockets
-* added `agname` field to bind structure - per socket option to do UDP multi-threading
+- added `agname` field to bind structure - per socket option to do UDP multi-threading
 receiving
-* new core parameter `async_tkv_gname` - specify the async group to process
+- new core parameter `async_tkv_gname` - specify the async group to process
 `type-key-value` events
-* new core parameter `async_tkv_evcb` - name of event route or kemi callback for
+- new core parameter `async_tkv_evcb` - name of event route or kemi callback for
 `type-key-valye` processing
 
 ### Functions
@@ -403,20 +403,20 @@ receiving
 
 ### kamcmd
 
-* support to compile and install with cmake
+- support to compile and install with cmake
 
 ### kamctl
 
-* host/port configurable for root user connections
+- host/port configurable for root user connections
 
 ### kamdbctl
 
 ### kamcli
 
-* support for tcp transport for jsonrpc
-* cmd_pipelimit: command to reset the pipe
-* cmd_acc: provide rate_group parameter for rates generate command
-* cmd_acc: added command to list missed calls records
-* cmd_acc: added command to print acc reports
-* cmd_acc: added report for top destinations and original destinations
-* cmd_acc: new command method-stats to print sip methods statistics
+- support for tcp transport for jsonrpc
+- cmd_pipelimit: command to reset the pipe
+- cmd_acc: provide rate_group parameter for rates generate command
+- cmd_acc: added command to list missed calls records
+- cmd_acc: added command to print acc reports
+- cmd_acc: added report for top destinations and original destinations
+- cmd_acc: new command method-stats to print sip methods statistics

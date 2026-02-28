@@ -3,7 +3,7 @@
 **Previous version was 6.0.x (released on Jan 2025), see
 what was new in that release at**:
 
-- <https://www.kamailio.org/wikidocs/features/new-in-6.0.x/>
+- [New In v6.0.x](new-in-6.0.x.md)
 
 *This is a draft of new features added in devel version,
 manually updated, thus not always synchronized with what is new in
@@ -13,19 +13,19 @@ source code repository.*
 
 ### auth_arnacon
 
-- https://www.kamailio.org/docs/modules/devel/modules/auth_arnacon.html
+- [docs/auth_arnacon](https://www.kamailio.org/docs/modules/devel/modules/auth_arnacon.html)
 
 ### auth_web3
 
-- https://www.kamailio.org/docs/modules/devel/modules/auth_web3.html
+- [docs/auth_web3](https://www.kamailio.org/docs/modules/devel/modules/auth_web3.html)
 
 ### peerstate
 
-- https://www.kamailio.org/docs/modules/devel/modules/peerstate.html
+- [docs/peerstate](https://www.kamailio.org/docs/modules/devel/modules/peerstate.html)
 
 ### ptimer
 
-- https://www.kamailio.org/docs/modules/devel/modules/ptimer.html
+- [docs/ptimer](https://www.kamailio.org/docs/modules/devel/modules/ptimer.html)
 
 ## New in existing Modules
 
