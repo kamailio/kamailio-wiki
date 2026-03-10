@@ -41,7 +41,7 @@ Legend for the table:
 | `CM`   | `cmake -DINCLUDE_MODULES="app_lua db_mysql" ..` |
 | `---`  | Specify modules to be excluded from compilation |
 | `OM`   | `make exclude_modules="app_lua db_mysql" cfg` |
-| `CM`   | `cmake -DEXCLUDE_MODULES="app_lua db_mysql" ..` |
+| `CM`   | `cmake -DMODULE_GROUP_NAME=ALL -DEXCLUDE_MODULES="app_lua db_mysql" ..` |
 | `---`  | Compile `kamailio` binary (the core) |
 | `OM`   | `make` |
 | `CM`   | `make kamailio` |
