@@ -378,6 +378,10 @@
 | **uac.reg_reload** | [uac](https://www.kamailio.org/docs/modules/6.1.x/modules/uac.html#uac.r.uac.reg_reload) |
 | **uac.reg_remove** | [uac](https://www.kamailio.org/docs/modules/6.1.x/modules/uac.html#uac.r.uac.reg_remove) |
 | **uac.reg_unregister** | [uac](https://www.kamailio.org/docs/modules/6.1.x/modules/uac.html#uac.r.uac.reg_unregister) |
+| **udp.proxy.dump** | [kex](https://www.kamailio.org/docs/modules/6.1.x/modules/kex.html#kex.r.udp.proxy.dump) |
+| **udp.proxy.stats** | [kex](https://www.kamailio.org/docs/modules/6.1.x/modules/kex.html#kex.r.udp.proxy.stats) |
+| **udp.proxy.clean** | [kex](https://www.kamailio.org/docs/modules/6.1.x/modules/kex.html#kex.r.udp.proxy.clean) |
+| **udp.proxy.flush** | [kex](https://www.kamailio.org/docs/modules/6.1.x/modules/kex.html#kex.r.udp.proxy.flush) |
 | **ul.add** | [usrloc](https://www.kamailio.org/docs/modules/6.1.x/modules/usrloc.html#usrloc.r.add) |
 | **ul.db_contacts** | [usrloc](https://www.kamailio.org/docs/modules/6.1.x/modules/usrloc.html#usrloc.r.db_contacts) |
 | **ul.db_expired_contacts** | [usrloc](https://www.kamailio.org/docs/modules/6.1.x/modules/usrloc.html#usrloc.r.db_expired_contacts) |
