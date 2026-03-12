@@ -4394,6 +4394,35 @@ for normal UDP sockets.
 
 The parameter can be set at runtime (`core.udp4_raw_ttl`).
 
+### udp_accept_proxy
+
+Enables support for one or both of two UDP proxy protocols if set to non-zero.
+
+The bit value 1 enables support for version 2 of the [HAproxy
+protocol](https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt) (version
+1 does not support UDP). The bit value 2 enables support for the "simple" UDP
+proxy protocol (for example used by [Cloudflare
+Spectrum](https://developers.cloudflare.com/spectrum/reference/simple-proxy-protocol-header/)).
+The value 3 therefore enables support for both.
+
+When a UDP proxy protocol is in use, UDP packets are prepended with an
+additional header which includes information about the real source address and
+port. This header is then removed for further processing of the packet.
+
+The mappings between real source addresses and proxy addresses are kept in an
+internal hash table. For packets sent in the reverse direction, the matching
+proxy address is then looked up from the hash table in order to establish
+correct UDP flows.
+
+Entries are automatically removed from the hash table after 2 hours or not
+being used.
+
+The default value is zero to disable this support.
+
+``` c
+udp_accept_proxy=2
+```
+
 ## Blocklist Parameters
 
 ### dst_blocklist_expire

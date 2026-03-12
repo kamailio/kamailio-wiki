@@ -33,6 +33,12 @@ modules considered obsolete and not maintained have been moved to
 
 ### Parameters
 
+- `udp_accept_proxy` - add support for two UDP proxy protocols (HAproxy and "simple")
+- RPC command `udp.proxy.dump` to inspect the contents of the UDP proxy hash table
+- RPC command `udp.proxy.stats` to get an overview of the size of the UDP proxy hash table
+- RPC command `udp.proxy.clean` to remove expired entries from the UDP proxy hash table
+- RPC command `udp.proxy.flush` to remove all entries from the UDP proxy hash table
+
 ### Functions
 
 ### Memory Managers
