@@ -739,6 +739,10 @@ request)
 🔥**IMPORTANT**: It is R/W variable (you can assign values to it directly in
 configuration file)
 
+### $rul - Request URI Length
+
+Request URI length.
+
 ### $rU - Username in R-URI
 
 **$rU** - reference to username in request's URI or to the Namespace
