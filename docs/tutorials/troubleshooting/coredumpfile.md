@@ -58,15 +58,27 @@ More useful could be the full backtrace, that can be seen with:
     bt full
 ```
 
+If some Kamailio components are expected to run threads, use:
+
+``` shell
+    thread apply all bt
+```
+
 This information should added to your bug report of the crash. Please
 don't delete the core files after the backtrace generation, as its
 really helpful for eventual further investigations.
 
 In order to get a meaningful backtrace gdb needs some debugging
-informations in its binary. If you compiled from the source, no
+information in its binary. If you compiled from the source, no
 additional steps should be necessary from you. If you install a binary
-package, e.g. from debian, you need to install the **-dbg** package too
-(e.g., `kamailio-dbg...deb`).
+package, e.g. from Debian/Ubuntu, you need to install the `-dbg` or `-dbgsym`
+packages too (e.g., `kamailio-dbgsym`, `kamailio-mysql-modules-dbgsym`).
+
+On Debian/Ubuntu, the dbg packages can be searched with:
+
+``` shell
+    apt-cache search kamailio dbg
+```
 
 If you don't understand the information that gdb prints, some developer
 on the mailing list should be able to help you.
@@ -163,3 +175,7 @@ Debugging with GDB:
 Shortcut in the tutorial for **backtrace** command of **gdb**:
 
 - [https://sourceware.org/gdb/onlinedocs/gdb/Backtrace.html](https://sourceware.org/gdb/onlinedocs/gdb/Backtrace.html)
+
+Debian Wiki - How To Get A Backtrace:
+
+- [https://wiki.debian.org/HowToGetABacktrace](https://wiki.debian.org/HowToGetABacktrace)
