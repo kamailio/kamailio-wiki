@@ -311,6 +311,8 @@ Available directives:
 - `#!endif` - end `ifdef/ifndef/#!ifexp` region (needs `EoL` after it to be detected)
 - `#!trydef` - add a define if not already defined
 - `#!redefine` - force redefinition even if already defined
+- `#!undefine` - remove a previously defined keyword
+- `#!tryundef` - remove a possibly defined keyword
 
 Predefined keywords:
 
@@ -593,6 +595,224 @@ Examples:
 
 Preprocessor directive similar to `#!defexp`, but the the result being enclosed
 in double quotes, suitable to be used for string values.
+
+### trydef
+
+Preprocessor directive to define an ID if not already defined.  
+The value of ID is unchanged if it exists.
+
+Trydef has the same syntax as `#!define`, either without a value:
+
+``` c
+#!trydef ID
+```
+
+Or redefining an ID with a value:
+
+``` c
+#!trydef ID VAL
+```
+
+An example usage is setting a default value after importing local configs:
+
+``` c
+import_file "kamailio-local.cfg"
+
+#!trydef SERVER_LOG_LVL 0
+
+debug = SERVER_LOG_LVL
+```
+
+### redefine
+
+Preprocessor directive to redefine an ID.  
+The ID is defined if it did not exist.
+
+Redefine has the same syntax as `#!define`, either without a value:
+
+``` c
+#!redefine ID
+```
+
+Or redefining an ID with a value:
+
+``` c
+#!redefine ID VAL
+```
+
+Example: redefining the log level when debugging is enabled.
+
+``` c
+import_file "kamailio-local.cfg"
+
+#!ifdef WITH_DEBUG
+#!redefine SERVER_LOG_LVL 3
+#!else
+#!trydef SERVER_LOG_LVL 0
+#!endif
+
+debug = SERVER_LOG_LVL
+```
+
+### undefine
+
+Preprocessor directive to remove an ID that was previously defined.  
+The ID is removed regardless of which directive defined it.
+
+``` c
+#!undefine ID
+```
+
+Mutually exlusive / dependent features can be disabled:
+
+``` c
+#!trydefenvs DEPLOY_ENV
+
+#!ifexp DEPLOY_ENV == "production"
+#!undefine WITH_DEBUG
+#!undefine WITH_TESTS
+#!undefine WITH_BENCHMARKS
+#!undefine WITH_DB_SQLITE
+#!endif
+```
+
+Features can be enabled / disabled based on priority:
+
+``` c
+#!ifdef WITH_DB_POSTGRES
+#!undefine WITH_DB_MYSQL
+#!undefine WITH_DB_SQLITE
+#!define DBURI "postgres://user:pass@host:port/kamailio"
+#!endif
+
+#!ifdef WITH_DB_MYSQL
+#!undefine WITH_DB_SQLITE
+#!define DBURI "mysql://user:pass@host:port/kamailio"
+#!endif
+
+#!ifdef WITH_DB_SQLITE
+#!define DBURI "sqlite:///etc/kamailio/kamailio.db"
+#!endif
+```
+
+Unused or conflicting IDs can be removed:
+
+``` c
+#!undefine MOD_acc
+#!undefine MOD_corex
+#!undefine KAMAILIO_6
+```
+
+Local tests can isolate only the routing logic to validate.  
+The example below demonstrates how an E2E test could do so for TCP routing. 
+
+``` c
+#!define WITH_UDP
+#!define WITH_TCP
+#!define WITH_TLS
+#!define WITH_SCTP
+#!define WITH_CDR
+#!define WITH_IDENTITY
+#!define WITH_OUTBOUND
+
+...
+
+import_file "testing-overrides.cfg"
+
+...
+
+#!ifdef WITH_CDR
+...
+modparam("acc", "cdr_enable", 1)
+...
+#!endif
+
+...
+
+request_route {
+...
+
+#!ifdef WITH_IDENTITY
+...
+#!endif
+
+#!ifdef WITH_OUTBOUND
+...
+t_relay();
+exit;
+...
+#!endif
+
+...
+}
+```
+
+The kamailio config above will override enabled features when a test exists.  
+Below is an example test config `test-tcp.cfg`, that overrides IDs in the 
+main config.
+
+``` c
+#!undefine WITH_UDP
+#!redefine WITH_TCP
+#!undefine WITH_TLS
+#!undefine WITH_SCTP
+#!undefine WITH_CDR
+#!undefine WITH_IDENTITY
+#!redefine WITH_OUTBOUND
+```
+
+An example running the test above:
+
+``` bash
+#!/usr/bin/env bash
+cp -f test-tcp.cfg /etc/kamailio/testing-overrides.cfg &&
+trap 'rm -f /etc/kamailio/testing-overrides.cfg; systemctl restart kamailio;' EXIT &&
+systemctl restart kamailio &&
+sipp -t tn -sn uac 127.0.0.1:5060
+```
+
+### tryundef
+
+``` c
+#!tryundef ID
+```
+
+Similar to `#!undefine`, but will not error if the ID does not exist.  
+Can be useful when the deployed environment could be configrued in 
+multiple ways.
+
+The example below expands on the conditional DB loading from the 
+previous section.  
+Note that the config no longer assumes the format of the main config.  
+The admin deploying the config can define a single ID to choose a DB.
+
+``` c
+...
+
+import_file "kamailio-local.cfg"
+
+...
+
+#!ifdef WITH_DB_POSTGRES
+#!tryundef WITH_DB_MYSQL
+#!tryundef WITH_DB_SQLITE
+#!define DBURI "postgres://user:pass@host:port/kamailio"
+#!endif
+
+#!ifdef WITH_DB_MYSQL
+#!tryundef WITH_DB_POSTGRES
+#!tryundef WITH_DB_SQLITE
+#!define DBURI "mysql://user:pass@host:port/kamailio"
+#!endif
+
+#!ifdef WITH_DB_SQLITE
+#!tryundef WITH_DB_POSTGRES
+#!tryundef WITH_DB_MYSQL
+#!define DBURI "sqlite:///etc/kamailio/kamailio.db"
+#!endif
+
+...
+```
 
 ### defenv
 
