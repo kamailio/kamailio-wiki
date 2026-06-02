@@ -4256,12 +4256,12 @@ libssl 3.x.
 
 Values:
 
-- `0` - no thread-specific initialization/execution (default)
+- `0` - no thread-specific initialization/execution
 - `1` - for each function that might initialize OpenSSL, run it in a temporary
   thread; this leaves the thread-local variables in rank 0, main thread at their
-  default value of 0x0
+  default value of 0x0 (obsolete, not usable anymore)
 - `2` - use at-fork handler to set thread-local variables to 0x0; the
-  implementation will set thread-local keys from 0-15 to have value 0x0.
+  implementation will set thread-local keys from 0-15 to have value 0x0 (default).
 
 ``` c
 tls_threads_mode = 2
