@@ -91,6 +91,7 @@ source code repository.*
 - option to manage destination states via internal uid
 - support for hexadecimal flags format in the list file
 - support for fields in ds_db_extra_attrs
+- normalization of the default transport for destination list entries according to RFC 3263
 
 ### dmq
 
