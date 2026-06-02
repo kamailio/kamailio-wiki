@@ -57,7 +57,7 @@ answering to Prometheus pull requests (HTTP requests to /metrics URL).
 
 ### acc
 
-Removal of obselete diameter related documentation
+Removal of obsolete diameter related documentation
 
 - [https://kamailio.org/docs/modules/devel/modules/acc.html](https://kamailio.org/docs/modules/devel/modules/acc.html)
 
@@ -346,7 +346,7 @@ the index of matched token.
 - Add configuration parameter to add path and flags to redirected
     contacts.
   - [https://www.kamailio.org/docs/modules/devel/modules/tm.html#tm.p.rich_redirect](https://www.kamailio.org/docs/modules/devel/modules/tm.html#tm.p.rich_redirect)
-- Removal of obselete delete_timer parameter - it was not used since a
+- Removal of obsolete delete_timer parameter - it was not used since a
     long time
 - Improve from-tags to include more randomness and use the recommended
     size from RFC 3261

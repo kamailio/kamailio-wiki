@@ -107,7 +107,7 @@ statistics
 
 - organize and add new RPC commands, cr.add_host, cr.delete_host,
     cr.activate_host, cr.deactivate_host and cr.replace_host
-- remove obselete FIFO commands implementation
+- remove obsolete FIFO commands implementation
 
 ### cdt
 
