@@ -4122,12 +4122,12 @@ a low value). Note also that this value limits the maximum message size
 (SIP, HTTP) that can be received over tcp.
 
 The value is internally limited to 16MByte, for higher values recompile
-Kamailio with higher limit in tcp_options.c (search for "rd_buf_size"
-and 16777216). Further, you may need to increase the private memory, and
+Kamailio with higher limit in tcp_options.c (search for `rd_buf_size`
+and `16777216`). Further, you may need to increase the private memory, and
 if you process the message stateful you may also have to increase the
 shared memory.
 
-Default: 4096, can be changed at runtime.
+Default: `16384` (16kB), can be changed at runtime.
 
 ``` c
 tcp_rd_buf_size=65536
