@@ -4096,7 +4096,7 @@ tcp_msg_read_timeout=10
 ### tcp_no_connect
 
 Stop outgoing TCP connects (also stops TLS) by setting tcp_no_connect to
-yes.
+`yes` (or `1`). Default value is `0` (`no`).
 
 You can do this any time, even even if Kamailio is already started (in
 this case using the command "kamcmd cfg.set_now_int tcp no_connect 1").
