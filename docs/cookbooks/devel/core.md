@@ -3858,8 +3858,11 @@ Set the check interval (in seconds) for tcp connections. It is used to check
 if there was any data received on new connections or if the receiving of SIP
 messages takes too long. See also `tcp_msg_data_timeout` and `tcp_msg_read_timeout`.
 
-Default half of `tcp_msg_data_timeout` or `tcp_msg_read_timeout` value depending on
-which one is smaller and not zero or 0 if both are zero
+Default value is `-1`, resulting in computing the runtime valua as the half of
+`tcp_msg_data_timeout` or `tcp_msg_read_timeout` value depending on
+which one is smaller when both are greater than zero. If one of `tcp_msg_data_timeout`
+or `tcp_msg_read_timeout` is greater than zero, the runtime value is half of it.
+The runtime value is 0 if both are zero.
 
 ``` c
 tcp_check_timer=5
