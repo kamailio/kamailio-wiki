@@ -3937,8 +3937,8 @@ tcp_connect_timeout=5
 ### tcp_conn_wq_max
 
 Maximum bytes queued for write allowed per connection. Attempting to
-queue more bytes would result in an error and in the connection being
-closed (too slow). If tcp_buf_write is not enabled, it has no effect.
+queue more bytes would result in an error and in the connection being closed
+(too slow). If `tcp_buf_write` (`tcp_asyc`) is not enabled, it has no effect.
 
 ``` c
 tcp_conn_wq_max = bytes (default 32 K)
@@ -4216,7 +4216,7 @@ Default: `2100` (`~ 2 INVITEs`), can be changed at runtime.
 ### tcp_wq_max
 
 Maximum bytes queued for write allowed globally. It has no effect if
-tcp_buf_write is not enabled.
+`tcp_buf_write` (`tcp_asyc`) is not enabled.
 
 ``` c
 tcp_wq_max = bytes (default 10 Mb)
