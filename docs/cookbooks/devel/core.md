@@ -598,7 +598,7 @@ in double quotes, suitable to be used for string values.
 
 ### trydef
 
-Preprocessor directive to define an ID if not already defined.  
+Preprocessor directive to define an ID if not already defined.
 The value of ID is unchanged if it exists.
 
 Trydef has the same syntax as `#!define`, either without a value:
@@ -625,7 +625,7 @@ debug = SERVER_LOG_LVL
 
 ### redefine
 
-Preprocessor directive to redefine an ID.  
+Preprocessor directive to redefine an ID.
 The ID is defined if it did not exist.
 
 Redefine has the same syntax as `#!define`, either without a value:
@@ -656,7 +656,7 @@ debug = SERVER_LOG_LVL
 
 ### undefine
 
-Preprocessor directive to remove an ID that was previously defined.  
+Preprocessor directive to remove an ID that was previously defined.
 The ID is removed regardless of which directive defined it.
 
 ``` c
@@ -703,8 +703,8 @@ Unused or conflicting IDs can be removed:
 #!undefine KAMAILIO_6
 ```
 
-Local tests can isolate only the routing logic to validate.  
-The example below demonstrates how an E2E test could do so for TCP routing. 
+Local tests can isolate only the routing logic to validate.
+The example below demonstrates how an E2E test could do so for TCP routing.
 
 ``` c
 #!define WITH_UDP
@@ -747,8 +747,8 @@ exit;
 }
 ```
 
-The kamailio config above will override enabled features when a test exists.  
-Below is an example test config `test-tcp.cfg`, that overrides IDs in the 
+The kamailio config above will override enabled features when a test exists.
+Below is an example test config `test-tcp.cfg`, that overrides IDs in the
 main config.
 
 ``` c
@@ -777,13 +777,13 @@ sipp -t tn -sn uac 127.0.0.1:5060
 #!tryundef ID
 ```
 
-Similar to `#!undefine`, but will not error if the ID does not exist.  
-Can be useful when the deployed environment could be configrued in 
+Similar to `#!undefine`, but will not error if the ID does not exist.
+Can be useful when the deployed environment could be configrued in
 multiple ways.
 
-The example below expands on the conditional DB loading from the 
-previous section.  
-Note that the config no longer assumes the format of the main config.  
+The example below expands on the conditional DB loading from the
+previous section.
+Note that the config no longer assumes the format of the main config.
 The admin deploying the config can define a single ID to choose a DB.
 
 ``` c
@@ -2756,6 +2756,19 @@ Example:
 
 ``` c
 rpc_exec_delta=5
+```
+
+### rpc_exec_locks
+
+Define the number of mutex locks to be used for synchronization when executing
+RPC commands, the lock is selected based on command name, practically the same
+RPC command cannot be executed many times in parallel. If set to `1`, then
+only one RPC command can be executed at a time, no matter of the command name.
+
+Default: `0` (no synchronization)
+
+``` c
+rpc_exec_locks = 4
 ```
 
 ### rundir
