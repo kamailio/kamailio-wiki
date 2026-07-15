@@ -2771,6 +2771,17 @@ Default: `0` (no synchronization)
 rpc_exec_locks = 4
 ```
 
+### rpc_exec_locks_mode
+
+If set to `1` the prefix till the first dot from the RPC command name is used
+for locking on execution.
+
+Default: `0`
+
+``` c
+rpc_exec_locks_mode = 1
+```
+
 ### rundir
 
 Alias: run_dir
