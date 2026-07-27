@@ -44,11 +44,13 @@ Predefined pseudo-variables are listed in alphabetical order.
 **$\_s(format)** - returns the string after evaluating all
 pseudo-variables in format
 
+``` shell
         $var(x) = "sip:" + $rU + "@" + $fd;
 
         # is equivalent of:
 
         $var(x) = $_s(sip:$rU@$fd);
+```
 
 ### $ai - URI in P-Asserted-Identity header
 
@@ -108,23 +110,23 @@ additional branches, the main branch can be accessed using $ru and $du.
 additional branches - the branch_route will be called once for each one
 of them.)
 
-The 'name' can be:
+The `name` can be:
 
-- uri - return uri of the branch
-- dst_uri - return destination uri (next hop address)
-- path - return the path vector for the branch
-- q - return the q value of the branch as integer `0..100` (representing `q * 100`)
-- send_socket - return the socket to be used to send the branch
-- count - return the number of the branches
-- flags - return the branch flags value
-- ruid - (readonly) - return the ruid of the branch (Record internal
+- `uri` - return uri of the branch
+- `dst_uri` - return destination uri (next hop address)
+- `path` - return the path vector for the branch
+- `q` - return the q value of the branch as integer `0..100` (representing `q * 100`)
+- `send_socket` - return the socket to be used to send the branch
+- `count` - return the number of the branches
+- `flags` - return the branch flags value
+- `ruid` - (readonly) - return the ruid of the branch (Record internal
     Unique ID from usrloc
-- location_ua - (readonly) - user agent from the location record
-- instance - (readonly) - the value of instance field
-- otcpid - outbound tcp connection id
+- `location_ua` - (readonly) - user agent from the location record
+- `instance` - (readonly) - the value of instance field
+- `otcpid` - outbound tcp connection id
 
 The PV can take an index to access a specific branch:
-$(branch(name)\[index\])
+`$(branch(name)[index])`
 
 Example:
 
