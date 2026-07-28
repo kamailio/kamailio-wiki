@@ -1002,16 +1002,20 @@ Like sql.val, but output string '' for null values.
 Within a PV, many transformation can be applied, being executed from
 left to right.
 
-\* The length of the value of parameter at postion 1 (remember 0 is
+* The length of the value of parameter at position 1 (remember 0 is
 first position, 1 is second position)
 
+``` c
     $var(x) = "a=1;b=22;c=333";
     $(var(x){param.value,$(var(x){param.name,1})}{s.len}) = 2
+```
 
-\* Test if whether is un-registration or not
+* Test if whether is un-registration or not
 
+``` c
     if(is_method("REGISTER") && is_present_hf("Expires") && $(hdr(Expires){s.int})==0)
         xlog("This is an un-registration\n");
+```
 
 ## HTTP URL Transformations
 
@@ -1024,10 +1028,12 @@ Path part of an HTTP URL.
 
 For example,
 
+``` shell
     # When the first line of HTTP request is
     # "GET /path/to/file/?this=is&the=querystring"
 
     $(hu{url.path}) => "/path/to/file/"
+```
 
 ### {url.querystring}
 
