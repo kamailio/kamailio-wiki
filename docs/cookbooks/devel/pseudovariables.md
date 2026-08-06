@@ -3458,7 +3458,8 @@ The key can be:
 
 ### $cfg(key) - Config File Attributes
 
-Attributes related to configuration file.
+Attributes related to configuration file. It is exported by the **corex**
+module.
 
 The key can be:
 
