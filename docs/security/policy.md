@@ -12,4 +12,4 @@ cause Kamailio to crash or lock up by sending messages to the server
 process.
 
 The current security process is defined in the github repository at the following
-[link](https://github.com/kamailio-security/reports/security/policy).
+link: [security policy](https://github.com/kamailio-security/reports/security/policy).
