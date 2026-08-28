@@ -5731,8 +5731,9 @@ The route is executed in when a SIP request is sent out. Only a limited
 number of commands are allowed (`drop`, `if` + all the checks, msg flag
 manipulations, `send()`, `log()`, `textops::search()`).
 
-In this route the final destination of the message is available and can
-be checked (with `snd_ip`, `snd_port`, `to_ip`, `to_port`, `snd_proto`, `snd_af`).
+In this route the local socket to send and the next hop address of the message
+are available and can be checked (with `snd_ip`, `snd_port`, `to_ip`, `to_port`,
+`snd_proto`, `snd_af`).
 
 This route is executed only when forwarding requests - it is not
 executed for replies, retransmissions, or locally generated messages
