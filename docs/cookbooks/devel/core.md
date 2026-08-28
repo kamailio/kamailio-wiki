@@ -1057,11 +1057,27 @@ Example of usage:
 
 ### snd_af
 
+Alias: `to_af`
+
+The IP family to be used to send the message. The keyword is available
+in onsend_route block.
+
 ### snd_ip
+
+The IP of the local socket to be used to send the message. The keyword is available
+in onsend_route block.
 
 ### snd_port
 
+The port of the local socket to be used to send the message. The keyword is available
+in onsend_route block.
+
 ### snd_proto
+
+Alias: `to_proto`
+
+The protocol to be used to send the message. The keyword is available
+in onsend_route block.
 
 ### src_ip
 
@@ -1092,7 +1108,13 @@ Example of usage:
 
 ### to_ip
 
+The IP of the next hop where to send the message. The keyword is available
+in onsend_route block.
+
 ### to_port
+
+The port of the next hop where to send the message. The keyword is available
+in onsend_route block.
 
 ### to_uri
 
@@ -5751,11 +5773,11 @@ Example:
 ```
 
 - snd_ip, snd_port - behave like src_ip/src_port, but contain the
-  ip/port Kamailio will use to send the message
+  ip/port Kamailio will use to send the message. These are from a local socket.
 - to_ip, to_port - like above, but contain the ip/port the message
   will be sent to (not to be confused with dst_ip/dst_port, which are
   the destination of the original received request: Kamailio's ip and
-  port on which the message was received)
+  port on which the message was received). These are from peer address.
 - snd_proto, snd_af - behave like proto/af but contain the
   protocol/address family that Kamailio will use to send the message
 - msg:len - when used in an onsend_route, msg:len will contain the
