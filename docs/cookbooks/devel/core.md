@@ -3918,6 +3918,15 @@ Example of usage:
 tcp_clone_rcvbuf=1
 ```
 
+### tcp_close_rst
+
+Option to send RST in case kamailio closes the connection. Used to speed
+up clearing of TCP sockets in `TIME_WAIT` scenarios.
+
+``` c
+tcp_close_rst = 0 | 1 (default 0:  0 = no RST sent, 1 = RST is sent))
+```
+
 ### tcp_connection_lifetime
 
 Lifetime in seconds for TCP sessions. TCP sessions which are inactive
