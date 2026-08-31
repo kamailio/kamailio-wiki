@@ -3945,8 +3945,10 @@ tcp_clone_rcvbuf=1
 Option to send RST in case kamailio closes the connection. Used to speed
 up clearing of TCP sockets in `TIME_WAIT` scenarios.
 
+Default is `0` (no RST sent), set it to `1` to send RST.
+
 ``` c
-tcp_close_rst = 0 | 1 (default 0:  0 = no RST sent, 1 = RST is sent))
+tcp_close_rst=1
 ```
 
 ### tcp_connection_lifetime
@@ -4108,6 +4110,11 @@ tcp_listen_backlog = 2048
 
 ### tcp_main_threads
 
+If set to 2, all TCP reads and writes are done by a thread
+pool in the main TCP process. The number of threads can be
+configured with the setting `tcp_reactor_threads`.
+SIP message processing is still handled by SIP worker processes.
+
 If set to 1, the TLS read and encode (for sending) operations are done by threads
 created by the main TCP process. If set to 0, the operations are done in the
 old-style, mostly by the SIP worker processes.
@@ -4115,7 +4122,10 @@ old-style, mostly by the SIP worker processes.
 Default: `0`
 
 ``` c
+# multi-process TCP with single-process multi-threaded TLS
 tcp_main_threads = 1
+# single-process multi-threaded TCP
+tcp_main_threads = 2
 ```
 
 ### tcp_max_connections
@@ -4186,6 +4196,17 @@ Default: `16384` (16kB), can be changed at runtime.
 
 ``` c
 tcp_rd_buf_size=65536
+```
+
+### tcp_reactor_threads
+
+Configures the size of the thread pool in the main
+TCP process when `tcp_main_threads = 2`.
+
+Default:  `8`.
+
+``` c
+tcp_reactor_threads = 16
 ```
 
 ### tcp_reuse_port
