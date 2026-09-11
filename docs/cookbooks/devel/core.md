@@ -2611,7 +2611,8 @@ parameters.
 
 ### msg_recv_max_size
 
-Set the maximum size in bytes of a SIP message to be accepted by Kamailio.
+Set the maximum size in bytes of a SIP message to be accepted by Kamailio. It must
+not exceed `2^16 - 1` (internal `BUF_SIZE`).
 
 Default: `32767` (`2^15 - 1`)
 
