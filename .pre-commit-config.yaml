@@ -10,7 +10,7 @@ repos:
       - id: check-merge-conflict
       - id: mixed-line-ending
       - id: check-added-large-files
-  - repo: https://github.com/DavidAnson/markdownlint-cli2
-    rev: v0.15.0
+  - repo: https://github.com/jackdewinter/pymarkdown
+    rev: v0.9.39
     hooks:
-    - id: markdownlint-cli2-docker
+      - id: pymarkdown

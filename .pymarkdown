@@ -1,0 +1,19 @@
+{
+  "extensions": {
+    "markdown-tables": {
+        "enabled" : true
+    }
+  },
+  "plugins": {
+    "MD004": {
+      "enabled": true,
+      "style": "sublist"
+    },
+    "MD013": {
+      "enabled": false
+    },
+    "MD046": {
+      "enabled": false
+    }
+  }
+}
