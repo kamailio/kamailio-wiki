@@ -574,6 +574,10 @@ sip message is a reply
 
 **$ou** - reference to request's original URI
 
+### $oul - Original R-URI Length
+
+**$oul** - the length of request's original URI
+
 ### $oU - Username in original R-URI
 
 **$oU** - reference to username in request's original URI
