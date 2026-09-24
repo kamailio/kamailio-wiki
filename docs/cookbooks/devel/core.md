@@ -3601,6 +3601,15 @@ dns_cache_mem = number
 dns_cache_min_ttl = time in seconds (default 0)
 ```
 
+### dns_cache_mode
+
+If set to `1`, the dns cache item is destroyed if unlinked, otherwise wait for
+reference drying when is `0`.
+
+``` c
+dns_cache_mode = 1 (default 0)
+```
+
 ### dns_cache_negative_ttl
 
 Tells how long to keep negative DNS responses in cache. If set to 0,
