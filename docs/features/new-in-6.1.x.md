@@ -165,7 +165,7 @@ source code repository.*
 - added functions to remove all root xavp/xavi items
 - added `$tts` variable
 - new transformation `{num.name}`
-- new transformation `{s.selectws,idx}` - select with whitespaces delimiter
+- new transformation `{s.selectsw,idx}` - select with whitespaces delimiter
 - new transformation `{s.sha1}`
 - new transformation `{s.intv}`
 - added `{s.crc32}` transformation

@@ -169,7 +169,7 @@ Example:
     $(var(x){s.select,-2,,}) => "34"
 ```
 
-### {s.selectws,index}
+### {s.selectsw,index}
 
 Return a field from PV value. The field is selected based on any-whitespace as
 a separator and the index parameter.
@@ -178,8 +178,8 @@ Example:
 
 ``` c
     $var(x) = "12 34\t56";
-    $(var(x){s.selectws,1}) => "34" ;
-    $(var(x){s.selectws,2}) => "56" ;
+    $(var(x){s.selectsw,1}) => "34" ;
+    $(var(x){s.selectsw,2}) => "56" ;
 ```
 
 ### {s.encode.7bit}
