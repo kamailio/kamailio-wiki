@@ -1437,7 +1437,7 @@ the value of shared variables.
 
 Example - $shv(name) pseudo-variable usage:
 
-```
+```c
     ...
     modparam("pv", "shvset", "debug=i:1")
     ...
@@ -1449,7 +1449,7 @@ Example - $shv(name) pseudo-variable usage:
 
 These variables can be set also via RPC:
 
-```
+```shell
 ksmctl rpc pv.shvSet debug int 2
 ```
 
@@ -3006,7 +3006,6 @@ The name can be:
 (not yet implemented, returns `$null`)
 - `version` - the HTTP version
 
-
 ## MSRP Module
 
 This class of pseudo-variables is exported by MSRP module and give
@@ -3644,6 +3643,35 @@ The variables are read-only unless specified otherwise.
 ## $sruid - Unique ID
 
 - $sruid - return unique ID generated internally Kamailio
+
+## uuid module variables
+
+`$uuid(type)` - return a UUID (Universally Unique Identifier) value generated
+with the libuuid library. It is exported by the **uuid** module.
+
+The type can be:
+
+- `g` - generic UUID, generated with `uuid_generate()`
+- `r` - random-based UUIDv4, generated with `uuid_generate_random()`
+- `t` - time-based UUIDv1, generated with `uuid_generate_time()`
+- `s` - time-based UUIDv1, generated with `uuid_generate_time_safe()`. If the
+    generation was not safe, it returns `$null`. The function is not
+    available on Mac OS X, where the value is the one returned by
+    `uuid_generate_time()`
+- `7` - time-ordered UUIDv7 (RFC 9562), generated with
+    `uuid_generate_time_v7()`. It requires libuuid from util-linux 2.41 or
+    newer, if the module was built against an older libuuid, it returns
+    `$null` and logs an error
+
+Example:
+
+```c
+$var(uuid) = $uuid(g);
+xdbg("generated uuid is [$var(uuid)]\n");
+add_rr_param(";uuid=$var(uuid)");
+$var(sid) = $uuid(7);
+xdbg("generated time-ordered uuid is [$var(sid)]\n");
+```
 
 ## $ltt(key) - Local To-Tag
 
