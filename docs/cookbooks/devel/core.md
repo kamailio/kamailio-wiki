@@ -4120,14 +4120,25 @@ tcp_listen_backlog = 2048
 
 ### tcp_main_threads
 
+If set to 0, enables multi-process TCP/TLS processing.
+TLS configurations must also use `tls_threads_mode = 2`.
+
+If set to 1, enables multi-process TCP but TLS read and encode
+(for sending) operations are done by threads created by the
+main TCP process.
+
 If set to 2, all TCP reads and writes are done by a thread
 pool in the main TCP process. The number of threads can be
 configured with the setting `tcp_reactor_threads`.
 SIP message processing is still handled by SIP worker processes.
 
-If set to 1, the TLS read and encode (for sending) operations are done by threads
-created by the main TCP process. If set to 0, the operations are done in the
-old-style, mostly by the SIP worker processes.
+Tuning: with `tcp_main_threads=2`, bursts relayed to one connection
+(trunks, WS/WSS gateways) can fill its write queue; raise
+`tcp_conn_wq_max` (default 32 KiB), e.g. `tcp_conn_wq_max = 262144`.
+Mode 2 enforces this limit only while the socket is full, and
+`tcp_wq_max` still bounds the total. In any mode, a new outbound TLS
+connection queues cleartext until its handshake completes: raise
+`modparam("tls", "con_ct_wq_max", ...)` (default 64 KiB, max 4 MiB).
 
 Default: `0`
 
