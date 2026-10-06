@@ -4133,10 +4133,13 @@ configured with the setting `tcp_reactor_threads`.
 SIP message processing is still handled by SIP worker processes.
 
 Tuning: with `tcp_main_threads=2`, bursts relayed to one connection
-(trunks, WS/WSS gateways) can fill its write queue; raise
-`tcp_conn_wq_max` (default 32 KiB), e.g. `tcp_conn_wq_max = 262144`.
-Mode 2 enforces this limit only while the socket is full, and
-`tcp_wq_max` still bounds the total. In any mode, a new outbound TLS
+(trunks, WS/WSS gateways) fill its write queue faster than in modes
+0 and 1, and a full write queue closes the connection. For such relays
+set `tcp_conn_wq_max = 1048576` (1 MiB; default 32 KiB).
+Mode 2 enforces this limit while the socket is full, so the memory
+serves a peer that reads slowly. `tcp_wq_max` (default 10 MiB) bounds
+the total over all connections: raise it too when many connections
+burst at the same time. In any mode, a new outbound TLS
 connection queues cleartext until its handshake completes: raise
 `modparam("tls", "con_ct_wq_max", ...)` (default 64 KiB, max 4 MiB).
 
