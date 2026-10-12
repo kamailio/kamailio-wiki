@@ -3326,6 +3326,27 @@ Example of usage:
    version_table="version44"
 ```
 
+### via_conid_mode
+
+Controls the **i** parameter that Kamailio adds to its own Via header
+when it forwards a request received over TCP, TLS or SCTP. The
+parameter holds the id of the incoming connection, so that a reply
+forwarded statelessly goes back on that connection.
+
+  - 0 - always add the **i** parameter
+  - 1 - add the **i** parameter only when the forwarded Via of the
+    previous hop carries no **rport** (see **force_rport()**). With
+    **rport**, the reply is sent to its **received** and **rport**
+    values, which match the connection the request came in on.
+
+Default: 0
+
+Example:
+
+``` c
+via_conid_mode = 1
+```
+
 ### wait_worker1_mode
 
 Enable waiting for child SIP worker one to complete initialization, then
