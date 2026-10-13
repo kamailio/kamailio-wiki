@@ -2065,6 +2065,16 @@ local, it will recognise that, and can relay the traffic to another
 Kamailio node as needed, instead of thinking it always needs to handle
 the traffic.
 
+As of 6.2, the address to bind to can be `*` or `[*]` to bind to all IPv4 or IPv6
+local addresses.
+
+Example:
+
+``` shell
+listen = udp:*:5080
+listen = udp:[*]:5080
+```
+
 ### loadmodule
 
 Loads a module for later usage in the configuration script. The module
@@ -3062,6 +3072,21 @@ socket = {
     name = "s0p5068";
     virtual = yes;
 }
+```
+
+As of 6.2, the address to bind to can be `*` or `[*]` to bind to all IPv4 or IPv6
+local addresses.
+
+Example:
+
+``` shell
+socket = {
+    bind = udp:*:5080
+}
+
+socket = {
+    bind = udp:[*]:5080
+socket = {
 ```
 
 ### socket_workers
