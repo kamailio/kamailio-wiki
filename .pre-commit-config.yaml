@@ -11,6 +11,6 @@ repos:
       - id: mixed-line-ending
       - id: check-added-large-files
   - repo: https://github.com/jackdewinter/pymarkdown
-    rev: v0.9.39
+    rev: v0.9.41
     hooks:
       - id: pymarkdown
