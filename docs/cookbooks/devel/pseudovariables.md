@@ -2409,6 +2409,11 @@ The **name** can be:
 - ruid - return the internal location ruid field for current branch
 - reply_type - 1 if it is a local generated reply, 0 - if no reply for
     transaction or it is a received reply
+- branch_route - returns the name of the currently set branch_route
+- failure_route - returns the name of the currenty set failure_route
+- onreply_route - returns the name of the currently set onreply_route
+- branch_failure_route - returns the name of the currently set 
+    branch_failure_route
 
 Note: the pair (id_index,id_label) uniquely identifies a transaction.
 
