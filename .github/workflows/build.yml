@@ -10,26 +10,48 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 jobs:
-  check-format:
+  depth-value:
     runs-on: ubuntu-latest
+    steps:
+      - name: Calculate depth from Pull-Request commits
+        id: set_value
+        run: |
+          if [[ "${{ github.event_name }}" == 'pull_request' ]] ; then
+            val=$(( ${{ github.event.pull_request.commits || 0 }} + 1 ))
+          else
+            val=2
+          fi
+          echo "val is $val"
+          echo "result=$val" >> "$GITHUB_OUTPUT"
+    outputs:
+      pr_depth: ${{ steps.set_value.outputs.result }}
+  lint:
+    runs-on: ubuntu-latest
+    needs: depth-value
     permissions:
       contents: read # to fetch code (actions/checkout)
     steps:
       - uses: actions/checkout@v7
         with:
-          fetch-depth: 2
+          fetch-depth: ${{ needs.depth-value.outputs.pr_depth }}
+
       - name: Get all changed markdown files
         id: changed-markdown-files
         uses: tj-actions/changed-files@v47
         with:
+          base_sha: ${{ github.event.pull_request.base.sha }}
           files: |
-             **.md
+            **/*.md
           since_last_remote_commit: true
-      - uses: DavidAnson/markdownlint-cli2-action@v24.2.0
+          write_output_files: true
+          output_dir: ".github/outputs"
+
+      - name: Run pymarkdown
+        if: steps.changed-markdown-files.outputs.all_changed_files != ''
+        uses: ./.github/actions/md-lint
         with:
-          config: .markdownlint-cli2.yaml
-          globs: ${{ steps.changed-markdown-files.outputs.all_changed_files }}
-          separator: ' '
+          changes-path: .github/outputs/all_changed_files.txt
+
       - name: Build
         uses: Tiryoh/actions-mkdocs@v0
         with:

@@ -1,0 +1,33 @@
+name: 'PyMarkdown Linter'
+description: 'Lint markdown files and create annotations'
+inputs:
+  changes-path:
+    description: 'Path to file with list of changed files'
+    required: True
+  fail-on-error:
+    description: 'Fail the action if errors are found'
+    required: false
+    default: 'true'
+outputs:
+  errors:
+    description: 'Number of errors found'
+  warnings:
+    description: 'Number of warnings found'
+  total-issues:
+    description: 'Total issues found'
+runs:
+  using: 'composite'
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v7
+      with:
+        python-version: '3.x'
+
+    - run: pip install pymarkdownlnt github-action-toolkit
+      shell: bash
+
+    - run: python ${{ github.action_path }}/action.py
+      env:
+        INPUT_CHANGES-PATH: ${{ inputs.changes-path }}
+        INPUT_FAIL-ON-ERROR: ${{ inputs.fail-on-error }}
+      shell: bash
