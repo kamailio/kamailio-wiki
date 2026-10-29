@@ -1118,13 +1118,13 @@
 | **t_reuse_branch()** | [tmx](https://www.kamailio.org/docs/modules/6.0.x/modules/tmx.html#tmx.f.t_reuse_branch) |
 | **t_save_lumps()** | [tm](https://www.kamailio.org/docs/modules/6.0.x/modules/tm.html#tm.f.t_save_lumps) |
 | **t_send_reply(code, reason)** | [tm](https://www.kamailio.org/docs/modules/6.0.x/modules/tm.html#tm.f.t_send_reply) |
-| **t_set_auto_inv_100(0|1)** | [tm](https://www.kamailio.org/docs/modules/6.0.x/modules/tm.html#tm.f.t_set_auto_inv_100) |
-| **t_set_disable_6xx(0|1)** | [tm](https://www.kamailio.org/docs/modules/6.0.x/modules/tm.html#tm.f.t_set_disable_6xx) |
-| **t_set_disable_failover(0|1)** | [tm](https://www.kamailio.org/docs/modules/6.0.x/modules/tm.html#tm.f.t_set_disable_failover) |
-| **t_set_disable_internal_reply(0|1)** | [tm](https://www.kamailio.org/docs/modules/6.0.x/modules/tm.html#tm.f.t_set_disable_internal_reply) |
+| **t_set_auto_inv_100()** | [tm](https://www.kamailio.org/docs/modules/6.0.x/modules/tm.html#tm.f.t_set_auto_inv_100) |
+| **t_set_disable_6xx()** | [tm](https://www.kamailio.org/docs/modules/6.0.x/modules/tm.html#tm.f.t_set_disable_6xx) |
+| **t_set_disable_failover()** | [tm](https://www.kamailio.org/docs/modules/6.0.x/modules/tm.html#tm.f.t_set_disable_failover) |
+| **t_set_disable_internal_reply()** | [tm](https://www.kamailio.org/docs/modules/6.0.x/modules/tm.html#tm.f.t_set_disable_internal_reply) |
 | **t_set_fr(fr_inv_timeout [, fr_timeout])** | [tm](https://www.kamailio.org/docs/modules/6.0.x/modules/tm.html#tm.f.t_set_fr) |
 | **t_set_max_lifetime(inv_lifetime, noninv_lifetime)** | [tm](https://www.kamailio.org/docs/modules/6.0.x/modules/tm.html#tm.f.t_set_max_lifetime) |
-| **t_set_no_e2e_cancel_reason(0|1)** | [tm](https://www.kamailio.org/docs/modules/6.0.x/modules/tm.html#tm.f.t_set_no_e2e_cancel_reason) |
+| **t_set_no_e2e_cancel_reason()** | [tm](https://www.kamailio.org/docs/modules/6.0.x/modules/tm.html#tm.f.t_set_no_e2e_cancel_reason) |
 | **t_set_retr(retr_t1_interval, retr_t2_interval)** | [tm](https://www.kamailio.org/docs/modules/6.0.x/modules/tm.html#tm.f.t_set_retr) |
 | **t_suspend()** | [tmx](https://www.kamailio.org/docs/modules/6.0.x/modules/tmx.html#tmx.f.t_suspend) |
 | **t_uac_send(method, ruri, nexthop, socket, headers, body)** | [tm](https://www.kamailio.org/docs/modules/6.0.x/modules/tm.html#tm.f.t_uac_send) |
