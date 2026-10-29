@@ -5,7 +5,7 @@
 ## [a]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **app_jsdt.api_list** | [app_jsdt](https://www.kamailio.org/docs/modules/5.6.x/modules/app_jsdt.html#app_jsdt.r.api_list) |
 | **app_jsdt.reload** | [app_jsdt](https://www.kamailio.org/docs/modules/5.6.x/modules/app_jsdt.html#app_jsdt.r.reload) |
 | **app_lua.api_list** | [app_lua](https://www.kamailio.org/docs/modules/5.6.x/modules/app_lua.html#app_lua.r.api_list) |
@@ -28,7 +28,7 @@
 ## [b]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **benchmark.enable_global** | [benchmark](https://www.kamailio.org/docs/modules/5.6.x/modules/benchmark.html#benchmark.rpc.enable_global) |
 | **benchmark.enable_timer** | [benchmark](https://www.kamailio.org/docs/modules/5.6.x/modules/benchmark.html#benchmark.rpc.enable_timer) |
 | **benchmark.granularity** | [benchmark](https://www.kamailio.org/docs/modules/5.6.x/modules/benchmark.html#benchmark.rpc.granularity) |
@@ -39,7 +39,7 @@
 ## [c]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **call_obj.free** | [call_obj](https://www.kamailio.org/docs/modules/5.6.x/modules/call_obj.html#call_obj.rpc.free) |
 | **call_obj.free_all** | [call_obj](https://www.kamailio.org/docs/modules/5.6.x/modules/call_obj.html#call_obj.rpc.free_all) |
 | **call_obj.list** | [call_obj](https://www.kamailio.org/docs/modules/5.6.x/modules/call_obj.html#call_obj.rpc.list) |
@@ -100,7 +100,7 @@
 ## [d]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **dbcl.disable_connection** | [db_cluster](https://www.kamailio.org/docs/modules/5.6.x/modules/db_cluster.html#dbcl.disable_connection) |
 | **dbcl.enable_connection** | [db_cluster](https://www.kamailio.org/docs/modules/5.6.x/modules/db_cluster.html#dbcl.enable_connection) |
 | **dbcl.list_clusters** | [db_cluster](https://www.kamailio.org/docs/modules/5.6.x/modules/db_cluster.html#dbcl.list_clusters) |
@@ -164,24 +164,24 @@
 ## [e]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **evrexec.run** | [evrexec](https://www.kamailio.org/docs/modules/5.6.x/modules/evrexec.html#evrexec.r.run) |
 
 ## [f]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 
 ## [g]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **geoip2.reload** | [geoip2](https://www.kamailio.org/docs/modules/5.6.x/modules/geoip2.html#geoip2.r.reload) |
 
 ## [h]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **htable.delete htable key** | [htable](https://www.kamailio.org/docs/modules/5.6.x/modules/htable.html#htable.rpc.delete) |
 | **htable.dump htable** | [htable](https://www.kamailio.org/docs/modules/5.6.x/modules/htable.html#htable.rpc.dump) |
 | **htable.flush htable** | [htable](https://www.kamailio.org/docs/modules/5.6.x/modules/htable.html#htable.rpc.flush) |
@@ -200,24 +200,24 @@
 ## [i]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **imc.list_members** | [imc](https://www.kamailio.org/docs/modules/5.6.x/modules/imc.html#imc.r.list_members) |
 | **imc.list_rooms** | [imc](https://www.kamailio.org/docs/modules/5.6.x/modules/imc.html#imc.r.list_rooms) |
 
 ## [j]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 
 ## [k]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 
 ## [l]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **lcr.defunct_gw** | [lcr](https://www.kamailio.org/docs/modules/5.6.x/modules/lcr.html#lcr.rpc.defunct_gw) |
 | **lcr.dump_gws** | [lcr](https://www.kamailio.org/docs/modules/5.6.x/modules/lcr.html#lcr.rpc.dump_gws) |
 | **lcr.dump_rules** | [lcr](https://www.kamailio.org/docs/modules/5.6.x/modules/lcr.html#lcr.rpc.dump_rules) |
@@ -227,7 +227,7 @@
 ## [m]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **matrix.reload** | [matrix](https://www.kamailio.org/docs/modules/5.6.x/modules/matrix.html#matrix.rpc.reload) |
 | **mod.mem_stats** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.mod.mem_stats) |
 | **mod.mem_statsx** | [kex](https://www.kamailio.org/docs/modules/5.6.x/modules/kex.html#kex.r.mod.mem_statsx) |
@@ -246,18 +246,18 @@
 ## [n]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **nathelper.enable_ping** | [nathelper](https://www.kamailio.org/docs/modules/5.6.x/modules/nathelper.html#nathelper.r.enable_ping) |
 
 ## [o]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 
 ## [p]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **pdb.activate** | [pdb](https://www.kamailio.org/docs/modules/5.6.x/modules/pdb.html#pdb.r.activate) |
 | **pdb.deactivate** | [pdb](https://www.kamailio.org/docs/modules/5.6.x/modules/pdb.html#pdb.r.deactivate) |
 | **pdb.status** | [pdb](https://www.kamailio.org/docs/modules/5.6.x/modules/pdb.html#pdb.r.status) |
@@ -295,12 +295,12 @@
 ## [q]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 
 ## [r]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **regex.reload** | [regex](https://www.kamailio.org/docs/modules/5.6.x/modules/regex.html#regex.r.regex_reload) |
 | **regscscf.dereg_impu** | [ims_registrar_scscf](https://www.kamailio.org/docs/modules/5.6.x/modules/ims_registrar_scscf.html) |
 | **rl.get_pid** | [ratelimit](https://www.kamailio.org/docs/modules/5.6.x/modules/ratelimit.html) |
@@ -325,7 +325,7 @@
 ## [s]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **sctp.info** | [sctp](https://www.kamailio.org/docs/modules/5.6.x/modules/sctp.html#sctp.r.sctp.info) |
 | **sctp.options** | [sctp](https://www.kamailio.org/docs/modules/5.6.x/modules/sctp.html#sctp.r.sctp.) |
 | **sipcapture.status param** | [sipcapture](https://www.kamailio.org/docs/modules/5.6.x/modules/sipcapture.html#sipcapture.r.sipcapture.status) |
@@ -344,14 +344,14 @@
 ## [t]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **ts.dump** | [tsilo](https://www.kamailio.org/docs/modules/5.6.x/modules/tsilo.html#tsilo.rpc.ts.dump) |
 | **ts.lookup** | [tsilo](https://www.kamailio.org/docs/modules/5.6.x/modules/tsilo.html#tsilo.rpc.ts.lookup) |
 
 ## [u]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **uac.reg_active** | [uac](https://www.kamailio.org/docs/modules/5.6.x/modules/uac.html#uac.r.uac.reg_active) |
 | **uac.reg_add** | [uac](https://www.kamailio.org/docs/modules/5.6.x/modules/uac.html#uac.r.uac.reg_add) |
 | **uac.reg_disable** | [uac](https://www.kamailio.org/docs/modules/5.6.x/modules/uac.html#uac.r.uac.reg_disable) |
@@ -385,12 +385,12 @@
 ## [v]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 
 ## [w]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **ws.close** | [websocket](https://www.kamailio.org/docs/modules/5.6.x/modules/websocket.html#websocket.rpc.ws.close) |
 | **ws.disable** | [websocket](https://www.kamailio.org/docs/modules/5.6.x/modules/websocket.html#websocket.rpc.ws.disable) |
 | **ws.dump** | [websocket](https://www.kamailio.org/docs/modules/5.6.x/modules/websocket.html#websocket.rpc.ws.dump) |
@@ -401,7 +401,7 @@
 ## [x]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **xcap_client.refreshXcapDoc** | [xcap_client](https://www.kamailio.org/docs/modules/5.6.x/modules/xcap_client.html#xcap_client.rpc.refreshXcapDoc) |
 | **xhttp_pi.reload** | [xhttp_pi](https://www.kamailio.org/docs/modules/5.6.x/modules/xhttp_pi.html) |
 | **xhttp_prom.counter_inc** | [xhttp_prom](https://www.kamailio.org/docs/modules/5.6.x/modules/xhttp_prom.html#xhttp_prom.rpc.counter_inc) |
@@ -414,9 +414,9 @@
 ## [y]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 
 ## [z]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |

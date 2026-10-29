@@ -5,7 +5,7 @@
 ## [a]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **abort()** | [cfgutils](https://www.kamailio.org/docs/modules/6.0.x/modules/cfgutils.html#cfgutils.f.abort) |
 | **acc_db_request(comment, table)** | [acc](https://www.kamailio.org/docs/modules/6.0.x/modules/acc.html#acc.f.acc_db_request) |
 | **acc_diam_request(comment)** | [acc_diameter](https://www.kamailio.org/docs/modules/6.0.x/modules/acc_diameter.html#acc_diameter.f.acc_diam_request) |
@@ -102,7 +102,7 @@
 ## [b]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **bl_iterator_append(iname, text)** | [textopsx](https://www.kamailio.org/docs/modules/6.0.x/modules/textopsx.html#textopsx.f.bl_iterator_append) |
 | **bl_iterator_end(iname)** | [textopsx](https://www.kamailio.org/docs/modules/6.0.x/modules/textopsx.html#textopsx.f.bl_iterator_end) |
 | **bl_iterator_insert(iname, text)** | [textopsx](https://www.kamailio.org/docs/modules/6.0.x/modules/textopsx.html#textopsx.f.bl_iterator_insert) |
@@ -127,7 +127,7 @@
 ## [c]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **call_control()** | [call_control](https://www.kamailio.org/docs/modules/6.0.x/modules/call_control.html#call_control.f.call_control) |
 | **call_obj_free(object_number)** | [call_obj](https://www.kamailio.org/docs/modules/6.0.x/modules/call_obj.html#call_obj.f.call_obj_free) |
 | **call_obj_get(reply_number)** | [call_obj](https://www.kamailio.org/docs/modules/6.0.x/modules/call_obj.html#call_obj.f.call_obj_get) |
@@ -191,7 +191,7 @@
 ## [d]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **dbg_breakpoint(mode)** | [debugger](https://www.kamailio.org/docs/modules/6.0.x/modules/debugger.html#dbg.f.db_breakpoint) |
 | **dbg_pv_dump([mask] [, level])** | [debugger](https://www.kamailio.org/docs/modules/6.0.x/modules/debugger.html#dbg.f.dbg_pv_dump) |
 | **dbg_sip_msg([log_level], [facility])** | [debugger](https://www.kamailio.org/docs/modules/6.0.x/modules/debugger.html#dbg.f.dbg_sip_msg) |
@@ -286,7 +286,7 @@
 ## [e]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **encode_contact(encoding_prefix, hostpart)** | [siputils](https://www.kamailio.org/docs/modules/6.0.x/modules/siputils.html#siputils.f.encode_contact) |
 | **encode_contact(encoding_prefix)** | [mangler](https://www.kamailio.org/docs/modules/6.0.x/modules/mangler.html#mangler.f.encode_contact) |
 | **end_media_session()** | [mediaproxy](https://www.kamailio.org/docs/modules/6.0.x/modules/mediaproxy.html#mediaproxy.p.end) |
@@ -315,7 +315,7 @@
 ## [f]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **file_out(filename, string)** | [file_out](https://www.kamailio.org/docs/modules/6.0.x/modules/file_out.html) |
 | **file_read(fpath, var)** | [corex](https://www.kamailio.org/docs/modules/6.0.x/modules/corex.html#corex.f.file_read) |
 | **file_write(fpath, content)** | [corex](https://www.kamailio.org/docs/modules/6.0.x/modules/corex.html#corex.f.file_write) |
@@ -335,7 +335,7 @@
 ## [g]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **gcrypt_aes_decrypt(text, key, res)** | [gcrypt](https://www.kamailio.org/docs/modules/6.0.x/modules/gcrypt.html#gcrypt.f.gcrypt_aes_decrypt) |
 | **gcrypt_aes_encrypt(text, key, res)** | [gcrypt](https://www.kamailio.org/docs/modules/6.0.x/modules/gcrypt.html#gcrypt.f.gcrypt_aes_encrypt) |
 | **geoip_match(ipaddr, pvc)** | [geoip](https://www.kamailio.org/docs/modules/6.0.x/modules/geoip.html) |
@@ -354,7 +354,7 @@
 ## [h]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **h350_auth_lookup(auth_username, "username_avp_spec/pwd_avp_spec")** | [h350](https://www.kamailio.org/docs/modules/6.0.x/modules/h350.html) |
 | **h350_result_call_preferences(avp_name_prefix)** | [h350](https://www.kamailio.org/docs/modules/6.0.x/modules/h350.html) |
 | **h350_result_service_level(avp_name_prefix)** | [h350](https://www.kamailio.org/docs/modules/6.0.x/modules/h350.html) |
@@ -391,7 +391,7 @@
 ## [i]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **i_enum_query(["suffix" [,"service"]])** | [enum](https://www.kamailio.org/docs/modules/6.0.x/modules/enum.html#enum.f.i_enum_query) |
 | **I_perform_location_information_request(route_block)** | [ims_icscf](https://www.kamailio.org/docs/modules/6.0.x/modules/ims_icscf.html) |
 | **I_perform_user_authorization_request(route_block, capabalities)** | [ims_icscf](https://www.kamailio.org/docs/modules/6.0.x/modules/ims_icscf.html) |
@@ -498,7 +498,7 @@
 ## [j]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **jansson_append(type, key/path, value, result)** | [jansson](https://www.kamailio.org/docs/modules/6.0.x/modules/jansson.html#jansson.f.jansson_append) |
 | **jansson_array_size(key/path, src, dst)** | [jansson](https://www.kamailio.org/docs/modules/6.0.x/modules/jansson.html#jansson.f.jansson_array_size) |
 | **jansson_get_field(field_name, src, dst)** | [jansson](https://www.kamailio.org/docs/modules/6.0.x/modules/jansson.html#jansson.f.jansson_get_field) |
@@ -530,7 +530,7 @@
 ## [k]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **kazoo_encode(to_encode, target_var)** | [modules](https://www.kamailio.org/docs/modules/6.0.x/modules/kazoo.html) |
 | **kazoo_json(json_payload, field, target_var)** | [modules](https://www.kamailio.org/docs/modules/6.0.x/modules/kazoo.html) |
 | **kazoo_pua_publish(json_payload)** | [modules](https://www.kamailio.org/docs/modules/6.0.x/modules/kazoo.html) |
@@ -544,7 +544,7 @@
 ## [l]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **ldap_filter_url_encode(string, avp_spec)** | [ldap](https://www.kamailio.org/docs/modules/6.0.x/modules/ldap.html#ldap-filter-url-encode-fn) |
 | **ldap_result_check("ldap_attr_name/string_to_match" [, regex_subst])** | [ldap](https://www.kamailio.org/docs/modules/6.0.x/modules/ldap.html#ldap-result-check-fn) |
 | **ldap_result_next()** | [ldap](https://www.kamailio.org/docs/modules/6.0.x/modules/ldap.html#ldap-result-next-fn) |
@@ -582,7 +582,7 @@
 ## [m]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **m_dump([owner])** | [msilo](https://www.kamailio.org/docs/modules/6.0.x/modules/msilo.html#msilo.f.m_dump) |
 | **m_store_addrs(owner, srcaddr, dstaddr)** | [msilo](https://www.kamailio.org/docs/modules/6.0.x/modules/msilo.html#msilo.f.m_store_addrs) |
 | **m_store([owner])** | [msilo](https://www.kamailio.org/docs/modules/6.0.x/modules/msilo.html#msilo.f.m_store) |
@@ -636,7 +636,7 @@
 ## [n]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **naptr_query(domain, pvid)** | [ipops](https://www.kamailio.org/docs/modules/6.0.x/modules/ipops.html#ipops.f.naptr_query) |
 | **nat_uac_test(flags)** | [nathelper](https://www.kamailio.org/docs/modules/6.0.x/modules/nathelper.html#nathelper.f.nat_uac_test) |
 | **nats_publish(subject, payload, reply)** | [nats](https://www.kamailio.org/docs/modules/6.0.x/modules/nats.html#nats.f.nats_publish) |
@@ -649,13 +649,13 @@
 ## [o]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **options_reply()** | [siputils](https://www.kamailio.org/docs/modules/6.0.x/modules/siputils.html#siputils.f.options_reply) |
 
 ## [p]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **pcre_match (string, pcre_regex)** | [regex](https://www.kamailio.org/docs/modules/6.0.x/modules/regex.html#regex.f.pcre_match) |
 | **pcre_match_group (string [, group])** | [regex](https://www.kamailio.org/docs/modules/6.0.x/modules/regex.html#regex.f.pcre_match_group) |
 | **pcscf_follows_service_routes(domain)** | [ims_registrar_pcscf](https://www.kamailio.org/docs/modules/6.0.x/modules/ims_registrar_pcscf.html) |
@@ -742,12 +742,12 @@
 ## [q]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 
 ## [r]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **rabbitmq_publish_consume(exchange, routing_key, content_type, messagebody, reply)** | [rabbitmq](https://www.kamailio.org/docs/modules/6.0.x/modules/rabbitmq.html#rabbitmq.f.rabbitmq_publish_consume) |
 | **rabbitmq_publish(exchange, routing_key, content_type, messagebody)** | [rabbitmq](https://www.kamailio.org/docs/modules/6.0.x/modules/rabbitmq.html#rabbitmq.f.rabbitmq_publish) |
 | **radius_does_uri_exist([uri])** | [misc_radius](https://www.kamailio.org/docs/modules/6.0.x/modules/misc_radius.html#mrad.f.does_uri_exist) |
@@ -860,7 +860,7 @@
 ## [s]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **sanity_check([msg_checks [, uri_checks]])** | [sanity](https://www.kamailio.org/docs/modules/6.0.x/modules/sanity.html#sanity.f.sanity_check) |
 | **sanity_reply()** | [sanity](https://www.kamailio.org/docs/modules/6.0.x/modules/sanity.html#sanity.f.sanity_reply) |
 | **save_extra_attrs (group_id, id)** | [uid_avp_db](https://www.kamailio.org/docs/modules/6.0.x/modules/uid_avp_db.html) |
@@ -1056,7 +1056,7 @@
 ## [t]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **t_any_replied()** | [tm](https://www.kamailio.org/docs/modules/6.0.x/modules/tm.html#tm.f.t_any_replied) |
 | **t_any_timeout()** | [tm](https://www.kamailio.org/docs/modules/6.0.x/modules/tm.html#tm.f.t_any_timeout) |
 | **t_branch_replied()** | [tm](https://www.kamailio.org/docs/modules/6.0.x/modules/tm.html#tm.f.t_branch_replied) |
@@ -1160,7 +1160,7 @@
 ## [u]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **uac_auth_mode(vmode)** | [uac](https://www.kamailio.org/docs/modules/6.0.x/modules/uac.html#uac.f.uac_auth_mode) |
 | **uac_auth([mode])** | [uac](https://www.kamailio.org/docs/modules/6.0.x/modules/uac.html#uac.f.uac_auth) |
 | **uac_reg_disable(attr, val)** | [uac](https://www.kamailio.org/docs/modules/6.0.x/modules/uac.html#uac.f.uac_reg_disable) |
@@ -1201,7 +1201,7 @@
 ## [v]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **verify_destination()** | [peering](https://www.kamailio.org/docs/modules/6.0.x/modules/peering.html) |
 | **verify_source()** | [peering](https://www.kamailio.org/docs/modules/6.0.x/modules/peering.html) |
 | **via_add_srvid(flags)** | [corex](https://www.kamailio.org/docs/modules/6.0.x/modules/corex.html#corex.f.via_add_srvid) |
@@ -1213,7 +1213,7 @@
 ## [w]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **ws_close([status, reason[, connection_id]])** | [websocket](https://www.kamailio.org/docs/modules/6.0.x/modules/websocket.html#websocket.f.ws_close) |
 | **ws_handle_handshake()** | [websocket](https://www.kamailio.org/docs/modules/6.0.x/modules/websocket.html#websocket.f.ws_handle_handshake) |
 | **www_authenticate(realm, table [, method])** | [auth_db](https://www.kamailio.org/docs/modules/6.0.x/modules/auth_db.html#auth_db.f.www_authenticate) |
@@ -1224,7 +1224,7 @@
 ## [x]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **xalert(format)** | [xlog](https://www.kamailio.org/docs/modules/6.0.x/modules/xlog.html#xlog.f.xalert) |
 | **xavi_child_rm(rname, cname)** | [pv](https://www.kamailio.org/docs/modules/6.0.x/modules/pv.html#pv.f.xavi_child_rm) |
 | **xavi_child_seti(rname, cname, ival)** | [pv](https://www.kamailio.org/docs/modules/6.0.x/modules/pv.html#pv.f.xavi_child_seti) |
@@ -1272,9 +1272,9 @@
 ## [y]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 
 ## [z]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
