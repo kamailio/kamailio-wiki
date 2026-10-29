@@ -85,37 +85,34 @@ available at the **Old Wiki Site**:*
 
 ## Cookbooks
 
-|         |                               |                                          |                                          |                                  |                                                  |
-|---------|-------------------------------|------------------------------------------|------------------------------------------|----------------------------------|--------------------------------------------------|
-| Version | Core Cookbook                 | Pseudo Variables                         | Transformations                          | Selects                          | Modules                                          |
-| devel   | [link](cookbooks/devel/core.md) | [link](cookbooks/devel/pseudovariables.md) | [link](cookbooks/devel/transformations.md) | [link](cookbooks/devel/selects.md) | [link](https://kamailio.org/docs/modules/devel/) |
-| 6.1.x   | [link](cookbooks/6.1.x/core.md) | [link](cookbooks/6.1.x/pseudovariables.md) | [link](cookbooks/6.1.x/transformations.md) | [link](cookbooks/6.1.x/selects.md) | [link](https://kamailio.org/docs/modules/6.1.x/) |
-| 6.0.x   | [link](cookbooks/6.0.x/core.md) | [link](cookbooks/6.0.x/pseudovariables.md) | [link](cookbooks/6.0.x/transformations.md) | [link](cookbooks/6.0.x/selects.md) | [link](https://kamailio.org/docs/modules/6.0.x/) |
-| 5.8.x   | [link](cookbooks/5.8.x/core.md) | [link](cookbooks/5.8.x/pseudovariables.md) | [link](cookbooks/5.8.x/transformations.md) | [link](cookbooks/5.8.x/selects.md) | [link](https://kamailio.org/docs/modules/5.8.x/) |
-| 5.7.x   | [link](cookbooks/5.7.x/core.md) | [link](cookbooks/5.7.x/pseudovariables.md) | [link](cookbooks/5.7.x/transformations.md) | [link](cookbooks/5.7.x/selects.md) | [link](https://kamailio.org/docs/modules/5.7.x/) |
+| Version | Core Cookbook | Pseudo Variables | Transformations | Selects | Modules |
+| --- | --- | --- | --- | --- | --- |
+| devel | [:link:](cookbooks/devel/core.md) | [:link:](cookbooks/devel/pseudovariables.md) | [:link:](cookbooks/devel/transformations.md) | [:link:](cookbooks/devel/selects.md) | [:link:](https://kamailio.org/docs/modules/devel/) |
+| 6.1.x | [:link:](cookbooks/6.1.x/core.md) | [:link:](cookbooks/6.1.x/pseudovariables.md) | [:link:](cookbooks/6.1.x/transformations.md) | [:link:](cookbooks/6.1.x/selects.md) | [:link:](https://kamailio.org/docs/modules/6.1.x/) |
+| 6.0.x | [:link:](cookbooks/6.0.x/core.md) | [:link:](cookbooks/6.0.x/pseudovariables.md) | [:link:](cookbooks/6.0.x/transformations.md) | [:link:](cookbooks/6.0.x/selects.md) | [:link:](https://kamailio.org/docs/modules/6.0.x/) |
+| 5.8.x | [:link:](cookbooks/5.8.x/core.md) | [:link:](cookbooks/5.8.x/pseudovariables.md) | [:link:](cookbooks/5.8.x/transformations.md) | [:link:](cookbooks/5.8.x/selects.md) | [:link:](https://kamailio.org/docs/modules/5.8.x/) |
+| 5.7.x | [:link:](cookbooks/5.7.x/core.md) | [:link:](cookbooks/5.7.x/pseudovariables.md) | [:link:](cookbooks/5.7.x/transformations.md) | [:link:](cookbooks/5.7.x/selects.md) | [:link:](https://kamailio.org/docs/modules/5.7.x/) |
 
 ## Alphabetic Indexes
 
 Alphabetic indexes generated from documentation (modules' readme docs).
 
-|         |                                           |                                          |                                         |                                           |
-|---------|-------------------------------------------|------------------------------------------|-----------------------------------------|-------------------------------------------|
-| Version | Modules Parameters                        | Modules Functions                        | RPC Commands                            | Statistics                                |
-| devel   | [link](alphaindexes/devel/modparameters.md) | [link](alphaindexes/devel/modfunctions.md) | [link](alphaindexes/devel/rpccommands.md) | [link](alphaindexes/devel/modstatistics.md) |
-| 6.1.x   | [link](alphaindexes/6.1.x/modparameters.md) | [link](alphaindexes/6.1.x/modfunctions.md) | [link](alphaindexes/6.1.x/rpccommands.md) | [link](alphaindexes/6.1.x/modstatistics.md) |
-| 6.0.x   | [link](alphaindexes/6.0.x/modparameters.md) | [link](alphaindexes/6.0.x/modfunctions.md) | [link](alphaindexes/6.0.x/rpccommands.md) | [link](alphaindexes/6.0.x/modstatistics.md) |
-| 5.8.x   | [link](alphaindexes/5.8.x/modparameters.md) | [link](alphaindexes/5.8.x/modfunctions.md) | [link](alphaindexes/5.8.x/rpccommands.md) | [link](alphaindexes/5.8.x/modstatistics.md) |
-| 5.7.x   | [link](alphaindexes/5.7.x/modparameters.md) | [link](alphaindexes/5.7.x/modfunctions.md) | [link](alphaindexes/5.7.x/rpccommands.md) | [link](alphaindexes/5.7.x/modstatistics.md) |
+| Version | Modules Parameters | Modules Functions | RPC Commands | Statistics |
+| --- | --- | --- | --- | --- |
+| devel | [:link:](alphaindexes/devel/modparameters.md) | [:link:](alphaindexes/devel/modfunctions.md) | [:link:](alphaindexes/devel/rpccommands.md) | [:link:](alphaindexes/devel/modstatistics.md) |
+| 6.1.x | [:link:](alphaindexes/6.1.x/modparameters.md) | [:link:](alphaindexes/6.1.x/modfunctions.md) | [:link:](alphaindexes/6.1.x/rpccommands.md) | [:link:](alphaindexes/6.1.x/modstatistics.md) |
+| 6.0.x | [:link:](alphaindexes/6.0.x/modparameters.md) | [:link:](alphaindexes/6.0.x/modfunctions.md) | [:link:](alphaindexes/6.0.x/rpccommands.md) | [:link:](alphaindexes/6.0.x/modstatistics.md) |
+| 5.8.x | [:link:](alphaindexes/5.8.x/modparameters.md) | [:link:](alphaindexes/5.8.x/modfunctions.md) | [:link:](alphaindexes/5.8.x/rpccommands.md) | [:link:](alphaindexes/5.8.x/modstatistics.md) |
+| 5.7.x | [:link:](alphaindexes/5.7.x/modparameters.md) | [:link:](alphaindexes/5.7.x/modfunctions.md) | [:link:](alphaindexes/5.7.x/rpccommands.md) | [:link:](alphaindexes/5.7.x/modstatistics.md) |
 
 ## C Code Export Lists
 
 Lists of exported symbols generated from C code.
 
-|         |                                                                             |                                                                                     |                                                                                   |                                                                                     |
-|---------|-----------------------------------------------------------------------------|-------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
-| Version | RPC Commands List                                                           | Cfg Vars List                                                                       | Selects List                                                                      | Counters List                                                                       |
-| devel   | [link](https://www.kamailio.org/docs/docbooks/devel/rpc_list/rpc_list.html) | [link](https://www.kamailio.org/docs/docbooks/devel/cfg_var_list/cfg_var_list.html) | [link](https://www.kamailio.org/docs/docbooks/devel/select_list/select_list.html) | [link](https://www.kamailio.org/docs/docbooks/devel/counter_list/counter_list.html) |
-| 5.0.x   | [link](https://www.kamailio.org/docs/docbooks/5.0.x/rpc_list/rpc_list.html) | ---                                                                                 | ---                                                                               | ---                                                                                 |
+| Version | RPC Commands List | Cfg Vars List | Selects List | Counters List |
+| --- | --- | --- | --- | --- |
+| devel | [:link:](https://www.kamailio.org/docs/docbooks/devel/rpc_list/rpc_list.html) | [:link:](https://www.kamailio.org/docs/docbooks/devel/cfg_var_list/cfg_var_list.html) | [:link:](https://www.kamailio.org/docs/docbooks/devel/select_list/select_list.html) | [:link:](https://www.kamailio.org/docs/docbooks/devel/counter_list/counter_list.html) |
+| 5.0.x | [:link:](https://www.kamailio.org/docs/docbooks/5.0.x/rpc_list/rpc_list.html) | --- | --- | --- |
 
 ## KEMI Framework
 
