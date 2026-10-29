@@ -5,7 +5,7 @@
 ## [a]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **ac_extra_hdrs (string)** | [tm](https://www.kamailio.org/docs/modules/6.1.x/modules/tm.html#tm.p.ac_extra_hdrs) |
 | **acc_callid_column (string)** | [acc](https://www.kamailio.org/docs/modules/6.1.x/modules/acc.html#acc.p.acc_callid_column) |
 | **acc_db_table (string)** | [uac_redirect](https://www.kamailio.org/docs/modules/6.1.x/modules/uac_redirect.html#uac_redirect.p.acc_db_table) |
@@ -134,7 +134,7 @@
 ## [b]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **backend (string)** | [xmpp](https://www.kamailio.org/docs/modules/6.1.x/modules/xmpp.html) |
 | **base_dn (string)** | [h350](https://www.kamailio.org/docs/modules/6.1.x/modules/h350.html) |
 | **base_folder (string)** | [file_out](https://www.kamailio.org/docs/modules/6.1.x/modules/file_out.html) |
@@ -175,7 +175,7 @@
 ## [c]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **ca_file (str)** | [mqtt](https://www.kamailio.org/docs/modules/6.1.x/modules/mqtt.html#mqtt.p.ca_file) |
 | **ca_list (string)** | [cdp](https://www.kamailio.org/docs/modules/6.1.x/modules/cdp.html) |
 | **ca_list (string)** | [tls](https://www.kamailio.org/docs/modules/6.1.x/modules/tls.html#tls.p.ca_list) |
@@ -357,7 +357,7 @@
 ## [d]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **data_col (string)** | [secfilter](https://www.kamailio.org/docs/modules/6.1.x/modules/secfilter.html#secfilter.p.data_col) |
 | **data_mode (integer)** | [siptrace](https://www.kamailio.org/docs/modules/6.1.x/modules/siptrace.html#siptrace.p.data_mode) |
 | **database (int)** | [influxdbc](https://www.kamailio.org/docs/modules/6.1.x/modules/influxdbc.html#influxdbc.p.database) |
@@ -659,7 +659,7 @@
 ## [e]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **e164_max_len (int)** | [siputils](https://www.kamailio.org/docs/modules/6.1.x/modules/siputils.html#siputils.p.e164_max_len) |
 | **e2e_cancel_hop_by_hop (int)** | [tm](https://www.kamailio.org/docs/modules/6.1.x/modules/tm.html#e2e_cancel_hop_by_hop) |
 | **e2e_cancel_reason (boolean)** | [tm](https://www.kamailio.org/docs/modules/6.1.x/modules/tm.html#e2e_cancel_reason) |
@@ -764,7 +764,7 @@
 ## [f]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **fage (int)** | [sipdump](https://www.kamailio.org/docs/modules/6.1.x/modules/sipdump.html#sipdump.p.fage) |
 | **fagex (str)** | [sipdump](https://www.kamailio.org/docs/modules/6.1.x/modules/sipdump.html#sipdump.p.fagex) |
 | **fail_count_enabled(int)** | [dmq](https://www.kamailio.org/docs/modules/6.1.x/modules/dmq.html#dmq.p.fail_count_enabled) |
@@ -857,7 +857,7 @@
 ## [g]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **gateway_domain (string)** | [xmpp](https://www.kamailio.org/docs/modules/6.1.x/modules/xmpp.html) |
 | **general_query_flags (integer)** | [dnssec](https://www.kamailio.org/docs/modules/6.1.x/modules/dnssec.html) |
 | **geoheader_order (int)** | [lost](https://www.kamailio.org/docs/modules/6.1.x/modules/lost.html#lost.p.geoheader_order) |
@@ -883,7 +883,7 @@
 ## [h]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **h_entry_column (string)** | [dialog](https://www.kamailio.org/docs/modules/6.1.x/modules/dialog.html#dialog.p.h_entry_column) |
 | **h_id_column (string)** | [dialog](https://www.kamailio.org/docs/modules/6.1.x/modules/dialog.html#dialog.p.h_id_column) |
 | **h_id_start (int)** | [dialog](https://www.kamailio.org/docs/modules/6.1.x/modules/dialog.html#dialog.p.h_id_start) |
@@ -942,7 +942,7 @@
 ## [i]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **i_enum_suffix (string)** | [enum](https://www.kamailio.org/docs/modules/6.1.x/modules/enum.html#enum.p.i_enum_suffix) |
 | **ice_candidate (string)** | [mediaproxy](https://www.kamailio.org/docs/modules/6.1.x/modules/mediaproxy.html#mediaproxy.p.ice_candidate) |
 | **ice_candidate_avp (string)** | [mediaproxy](https://www.kamailio.org/docs/modules/6.1.x/modules/mediaproxy.html#mediaproxy.p.ice_candidate_avp) |
@@ -1009,12 +1009,12 @@
 ## [j]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 
 ## [k]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **ka_domain (str)** | [usrloc](https://www.kamailio.org/docs/modules/6.1.x/modules/usrloc.html#usrloc.p.ka_domain) |
 | **ka_failed_limit (int)** | [dialog](https://www.kamailio.org/docs/modules/6.1.x/modules/dialog.html#dialog.p.ka_failed_limit) |
 | **ka_filter (int)** | [usrloc](https://www.kamailio.org/docs/modules/6.1.x/modules/usrloc.html#usrloc.p.ka_filter) |
@@ -1054,7 +1054,7 @@
 ## [l]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **latency_threshold (int)** | [cdp](https://www.kamailio.org/docs/modules/6.1.x/modules/cdp.html) |
 | **lcr_count (integer)** | [lcr](https://www.kamailio.org/docs/modules/6.1.x/modules/lcr.html#lcr.p.lcr_count) |
 | **lcr_gw_count (integer)** | [lcr](https://www.kamailio.org/docs/modules/6.1.x/modules/lcr.html#lcr.p.lcr_gw_count) |
@@ -1128,7 +1128,7 @@
 ## [m]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **mapping_struct_type (int)** | [db_redis](https://www.kamailio.org/docs/modules/6.1.x/modules/db_redis.html#db_redis.p.mapping_struct_type) |
 | **mask (int)** | [cfgt](https://www.kamailio.org/docs/modules/6.1.x/modules/cfgt.html#cfgt.p.mask) |
 | **mask_callid (int)** | [topos](https://www.kamailio.org/docs/modules/6.1.x/modules/topos.html#topos.p.mask_callid) |
@@ -1303,7 +1303,7 @@
 ## [n]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **name (string)** | [ims_auth](https://www.kamailio.org/docs/modules/6.1.x/modules/ims_auth.html) |
 | **name_col (string)** | [domain](https://www.kamailio.org/docs/modules/6.1.x/modules/domain.html#domain.p.name_col) |
 | **name_column (string)** | [uid_avp_db](https://www.kamailio.org/docs/modules/6.1.x/modules/uid_avp_db.html) |
@@ -1353,7 +1353,7 @@
 ## [o]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **offline_message (string)** | [msilo](https://www.kamailio.org/docs/modules/6.1.x/modules/msilo.html#msilo.p.offline_message) |
 | **omit_flow_ports integer** | [ims_qos_npn](https://www.kamailio.org/docs/modules/6.1.x/modules/ims_qos_npn.html) |
 | **omit_flow_ports integer** | [ims_qos](https://www.kamailio.org/docs/modules/6.1.x/modules/ims_qos.html) |
@@ -1385,7 +1385,7 @@
 ## [p]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **params_column (string)** | [lcr](https://www.kamailio.org/docs/modules/6.1.x/modules/lcr.html) |
 | **parse_mode (int)** | [app_perl](https://www.kamailio.org/docs/modules/6.1.x/modules/app_perl.html#app_perl.p.parse_mode) |
 | **partition_column (string)** | [usrloc](https://www.kamailio.org/docs/modules/6.1.x/modules/usrloc.html#usrloc.p.partition_column) |
@@ -1495,7 +1495,7 @@
 ## [q]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **q_column (string)** | [usrloc](https://www.kamailio.org/docs/modules/6.1.x/modules/usrloc.html#usrloc.p.q_column) |
 | **q_value (int)** | [uac_redirect](https://www.kamailio.org/docs/modules/6.1.x/modules/uac_redirect.html) |
 | **qop (string)** | [auth](https://www.kamailio.org/docs/modules/6.1.x/modules/auth.html#auth.p.qop) |
@@ -1510,7 +1510,7 @@
 ## [r]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **rad_time_mode(integer)** | [acc_radius](https://www.kamailio.org/docs/modules/6.1.x/modules/acc_radius.html#acc_radius.p.rad_time_mod) |
 | **radius_avps_mode (integer)** | [auth_radius](https://www.kamailio.org/docs/modules/6.1.x/modules/auth_radius.html#auth_radius.p.radius_avps_mode) |
 | **radius_config (string)** | [acc_radius](https://www.kamailio.org/docs/modules/6.1.x/modules/acc_radius.html#acc_radius.p.radius_config) |
@@ -1692,7 +1692,7 @@
 ## [s]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **salt (str)** | [crypto](https://www.kamailio.org/docs/modules/6.1.x/modules/crypto.html#crypto.p.salt) |
 | **sampling_time_unit (integer)** | [pike](https://www.kamailio.org/docs/modules/6.1.x/modules/pike.html#pike.p.sampling_time_unit) |
 | **sanity_checks (int)** | [topos](https://www.kamailio.org/docs/modules/6.1.x/modules/topos.html#topos.p.sanity_checks) |
@@ -1879,7 +1879,7 @@
 ## [t]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **table (str)** | [siptrace](https://www.kamailio.org/docs/modules/6.1.x/modules/siptrace.html#siptrace.p.table) |
 | **table (string)** | [group](https://www.kamailio.org/docs/modules/6.1.x/modules/group.html#group.p.table) |
 | **table_name (str)** | [sipcapture](https://www.kamailio.org/docs/modules/6.1.x/modules/sipcapture.html#sipcapture.p.table_name) |
@@ -2014,7 +2014,7 @@
 ## [u]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **udpping_from_path (int)** | [nathelper](https://www.kamailio.org/docs/modules/6.1.x/modules/nathelper.html#nathelper.p.udpping_from_path) |
 | **ue_unsubscribe_on_dereg (int)** | [ims_registrar_scscf](https://www.kamailio.org/docs/modules/6.1.x/modules/ims_registrar_scscf.html) |
 | **uid_column (string)** | [uid_avp_db](https://www.kamailio.org/docs/modules/6.1.x/modules/uid_avp_db.html) |
@@ -2114,7 +2114,7 @@
 ## [v]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **value_col (string)** | [domain](https://www.kamailio.org/docs/modules/6.1.x/modules/domain.html#domain.p.value_col) |
 | **value_column (string)** | [avpops](https://www.kamailio.org/docs/modules/6.1.x/modules/avpops.html#avpops.p.value_column) |
 | **value_column (string)** | [uid_avp_db](https://www.kamailio.org/docs/modules/6.1.x/modules/uid_avp_db.html) |
@@ -2166,7 +2166,7 @@
 ## [w]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **wait (int)** | [sipdump](https://www.kamailio.org/docs/modules/6.1.x/modules/sipdump.html#sipdump.p.wait) |
 | **wait_ack (int)** | [dialog](https://www.kamailio.org/docs/modules/6.1.x/modules/dialog.html#dialog.p.wait_ack) |
 | **wait_idle (int)** | [evapi](https://www.kamailio.org/docs/modules/6.1.x/modules/evapi.html#evapi.p.wait_idle) |
@@ -2199,7 +2199,7 @@
 ## [x]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 | **xavp_cfg (str)** | [presence](https://www.kamailio.org/docs/modules/6.1.x/modules/presence.html#presence.p.xavp_cfg) |
 | **xavp_cfg (str)** | [rtjson](https://www.kamailio.org/docs/modules/6.1.x/modules/rtjson.html#rtjson.p.xavp_cfg) |
 | **xavp_cfg (string)** | [registrar](https://www.kamailio.org/docs/modules/6.1.x/modules/registrar.html#registrar.p.xavp_cfg) |
@@ -2254,9 +2254,9 @@
 ## [y]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
 
 ## [z]
 
 | Name | Module Name |
-|------|-------------|
+| --- | --- |
