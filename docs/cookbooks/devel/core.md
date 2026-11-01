@@ -2985,12 +2985,20 @@ sip_parser_log = 1
 
 Control sip parser behaviour.
 
-If set to `1`, the parser is more strict in accepting messages that have
-invalid headers (e.g., duplicate To or From). It can make the system
-safer, but loses the flexibility to be able to fix invalid messages with
-config operations.
+If set to `2` (strict eager parsing), the parser strictly validates all the way
+to the end of the headers.
+
+If set to `1` (strict lazy parsing), the parser is more strict in accepting
+messages that have invalid headers (e.g., duplicate To or From) than mode 0.
+However, it stops further validation once the essential quadruple headers
+(To, From, Call-ID, CSeq) are parsed. Any headers encountered before completing
+this quadruple undergo strict validation.
 
 If set to `0`, the parser is less strict on checking validity of headers.
+
+Note: Enabling either strict parsing mode increases system safety,
+but sacrifices the flexibility to fix invalid messages via config operations or
+to send custom responses to them.
 
 Default: `1`
 
