@@ -1571,6 +1571,27 @@ a number (integer).
 
 Available parameters that can be set via `coreparam` are listed next.
 
+#### coreparam[dns_resolver_log]
+
+Set the log level for detailed DNS resolver diagnostics. The messages trace system
+resolver success and failure results, returned addresses, DNS queries, response headers,
+and parsed resource records. The value uses the internal numeric log levels.
+
+``` shell
+# coreparam[dns_resolver_log] = log_level
+coreparam[dns_resolver_log] = 1
+```
+
+Default: `3` (debug).
+
+The parameter is stored in shared memory and can be changed at runtime.
+
+For example:
+
+``` shell
+kamcli rpc coreparam.setn dns_resolver_log 2
+```
+
 #### coreparam[random_engine]
 
 Set the random engine to be used internally. The values can be:
