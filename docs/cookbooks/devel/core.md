@@ -200,6 +200,7 @@ Cookbook.
 
 Example:
 
+<!-- pyml disable-num-lines 2 MD014 -->
 ``` c
 $var(x) = $rU + "@" + $fd;
 ```
@@ -404,12 +405,14 @@ request_route {
 
 - defined IDs are replaced at startup, during config parsing, e.g.,:
 
+<!-- pyml disable-num-lines 2 MD014 -->
 ``` c
 $var(x) = 100 + MYINT;
 ```
 
 - is interpreted as:
 
+<!-- pyml disable-num-lines 2 MD014 -->
 ``` c
 $var(x) = 100 + 123;
 ```
@@ -2982,12 +2985,20 @@ sip_parser_log = 1
 
 Control sip parser behaviour.
 
-If set to `1`, the parser is more strict in accepting messages that have
-invalid headers (e.g., duplicate To or From). It can make the system
-safer, but loses the flexibility to be able to fix invalid messages with
-config operations.
+If set to `2` (strict eager parsing), the parser strictly validates all the way
+to the end of the headers.
+
+If set to `1` (strict lazy parsing), the parser is more strict in accepting
+messages that have invalid headers (e.g., duplicate To or From) than mode 0.
+However, it stops further validation once the essential quadruple headers
+(To, From, Call-ID, CSeq) are parsed. Any headers encountered before completing
+this quadruple undergo strict validation.
 
 If set to `0`, the parser is less strict on checking validity of headers.
+
+Note: Enabling either strict parsing mode increases system safety,
+but sacrifices the flexibility to fix invalid messages via config operations or
+to send custom responses to them.
 
 Default: `1`
 
@@ -3379,11 +3390,11 @@ when it forwards a request received over TCP, TLS or SCTP. The
 parameter holds the id of the incoming connection, so that a reply
 forwarded statelessly goes back on that connection.
 
-  - 0 - always add the **i** parameter
-  - 1 - add the **i** parameter only when the forwarded Via of the
-    previous hop carries no **rport** (see **force_rport()**). With
-    **rport**, the reply is sent to its **received** and **rport**
-    values, which match the connection the request came in on.
+- 0 - always add the **i** parameter
+- 1 - add the **i** parameter only when the forwarded Via of the
+  previous hop carries no **rport** (see **force_rport()**). With
+  **rport**, the reply is sent to its **received** and **rport**
+  values, which match the connection the request came in on.
 
 Default: 0
 
@@ -5383,6 +5394,7 @@ equivalent of ternary condition/operator
 
 Example:
 
+<!-- pyml disable-num-lines 2 MD014 -->
 ``` c
 $var(x) = selval($Ts mod 2, "true/" + $ru, "false/" + $rd);
 ```
@@ -5589,10 +5601,14 @@ pstn.gw_ip = "1.2.3.4" desc "PSTN GW Address"
 
 The custom global parameter can be accessed inside a routing block via:
 
+<!-- pyml disable-num-lines 2 MD014 -->
+``` c
     $sel(cfg_get.group.variable)
+```
 
 Example:
 
+<!-- pyml disable-num-lines 2 MD014 -->
 ``` c
 $ru = "sip:" + $rU + "@" + $sel(cfg_get.pstn.gw_ip);
 ```
@@ -6242,13 +6258,17 @@ pseudo-variables that can be used in left side of an assignment:
 - `$sf` - to set script flags value
 - `$bf` - to set branch flags value
 
+<!-- pyml disable-num-lines 2 MD014 -->
+``` c
     $var(a) = 123;
+```
 
 For avp's there a way to remove all values and assign a single value in
 one statement (in other words, delete existing AVPs with same name, add
 a new one with the right side value). This replaces the `:=` assignment
 operator from kamailio `< 3.0`.
 
+<!-- pyml disable-num-lines 3 MD014 -->
 ``` c
     $(avp(i:3)[*]) = 123;
     $(avp(i:3)[*]) = $null;
@@ -6258,6 +6278,7 @@ operator from kamailio `< 3.0`.
 
 For strings, `+` is available to concatenate.
 
+<!-- pyml disable-num-lines 3 MD014 -->
 ``` c
     $var(a) = "test";
     $var(b) = "sip:" + $var(a) + "@" + $fd;
@@ -6281,6 +6302,7 @@ For numbers, one can use:
 
 Example:
 
+<!-- pyml disable-num-lines 2 MD014 -->
 ``` c
 $var(a) = 4 + ( 7 & ( ~2 ) );
 ```
