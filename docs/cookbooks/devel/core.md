@@ -3685,6 +3685,19 @@ dns_cache_mode = 1 (default 0)
 Tells how long to keep negative DNS responses in cache. If set to 0,
 disables caching of negative responses. Default is 60 (seconds).
 
+### dns_query_absolute
+
+If enabled together with `dns_use_search_list=no`, relative DNS names are made
+absolute by appending the trailing root dot before they are passed to the resolver.
+The option has no effect when `dns_use_search_list=yes`, on names already ending
+in a dot, or on IP address literals.
+
+Default: `no`
+
+``` shell
+dns_query_absolute = yes/no
+```
+
 ### dns_naptr_ignore_rfc
 
 If the DNS lookup should ignore the remote side's protocol preferences,
