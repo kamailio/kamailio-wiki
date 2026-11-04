@@ -2972,10 +2972,17 @@ shm_mem_size = 64 (default 64)
 
 ### sip_parser_log
 
-Log level for printing debug messages for some of the SIP parsing
-errors.
+Log level for the SIP parser error messages printed while parsing the
+first line, the header names or the header fields of a SIP message.
 
-Default: `0` (`L_WARN`)
+The parser messages are emitted with this log level, therefore they are
+printed only if the `debug` level is greater or equal to
+`sip_parser_log`.
+
+Errors from parsing the body of headers such as To, From, Via or CSeq
+are not affected by this parameter, they are always printed at `L_ERR`.
+
+Default: `-1` (`L_ERR`)
 
 ``` c
 sip_parser_log = 1
