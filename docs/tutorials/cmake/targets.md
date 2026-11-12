@@ -30,7 +30,7 @@ Use `make target_name` to execute the desired target in the build folder.
 
   _Most of the documentation targets require `xsltproc`, `docbook-xsl`, `lynx` packages to be installed._
 
-- **kamailio_docs**: Generates the documentation for Kamailio and it's modules.
+- **kamailio_docs**: Generates the documentation for Kamailio and it's modules (This target is NOT included in the default `all` target unless BUILD_DOC=ON is provided).
   + **[module_name]_doc**: Generates the documentation for a specific module. Replace `module_name` with the actual module name.
     * **[module_name]_doc_text**: Generates the documentation for a specific module in text format.
     * **[module_name]_doc_html**: Generates the documentation for a specific module in HTML format.
@@ -40,6 +40,6 @@ Use `make target_name` to execute the desired target in the build folder.
 
 - **kamailio_docs_readme**: Generates the documentation for ALL modules in README format in the source code tree of each module. _Note: This will overwrite the existing README files._
 
-- **man**: Creates the manual pages for Kamailio core and utils. **Note**: This target is NOT included in the default `all` target. You need to run it separately. If you want to install the man pages, make sure to build it first.
+- **man**: Creates the manual pages for Kamailio core and utils. **Note**: This target is NOT included in the default `all` target unless BUILD_DOC=ON is provided. You need to run it separately. If you want to install the man pages, make sure to build it first.
   + **kamctl_man**: Creates the manual page for the `kamctl` and `kamdbctl` utils.
   + **kamdcmd_man**: Creates the manual page for the `kamcmd`util.
