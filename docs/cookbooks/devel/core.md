@@ -3321,6 +3321,27 @@ socket = {
 }
 ```
 
+### udp_rx_mode
+
+Per-worker udp sockets: `shared`, `random` or `hash` steering. With `udp_rx_mode="auto"`
+or `hash` every forked udp worker of a unicast listener reads and sends on its own
+`SO_REUSEPORT` socket instead of all workers sharing one; the kernel steers each
+datagram to one of them. `auto` attaches a classic BPF picker that returns
+a uniformly random member, so the workers get equal shares whatever the number
+of peers; `hash` leaves the kernel's 4-tuple hash, which keeps a peer on one
+worker. The default `shared` is the old behaviour. The other processes
+keep member 0 as the listener's socket.
+
+Prerequisites: Linux 3.9 or later for the per-worker sockets (`SO_REUSEPORT`)
+and 4.5 or later for auto's picker (`SO_ATTACH_REUSEPORT_CBPF`); both are probed
+at startup, and an older kernel keeps the shared socket, or the hash for auto,
+with a warning. The shared socket also stays, with a warning, for multicast
+listeners, the threaded receiver modes and no-fork mode, and on other platforms.
+
+``` c
+`udp_rx_mode = "hash"`
+```
+
 ### uri_host_extra_chars
 
 Specify additional chars that should be allowed in the host part of URI.
