@@ -3498,6 +3498,9 @@ The **matchid** can be:
 
 - n - match on name
 - l - match on listen address
+- a - match on advertise address
+- i - match on index in the list of all sockets (as returned by the
+  index field); a negative value counts from the end of the list
 
 The **value** specifies what to match with.
 
@@ -3515,6 +3518,8 @@ Example:
     ...
     xinfo("$lsock(n/s0/listen)\n");
     xinfo("$lsock(l/udp:127.0.0.1:5060/name)\n");
+    xinfo("$lsock(a/udp:127.0.0.1:5090/name)\n");
+    xinfo("$lsock(i/0/listen)\n");
     $var(s0) = "n/s0/listen";
     xinfo("$lsock($var(s0))\n");
 ```
