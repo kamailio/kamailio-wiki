@@ -75,8 +75,8 @@ With OpenSSL in one process, A, B and C are unnecessary: the pthread shims
 are off, each domain has one `SSL_CTX`, and no process inherits per-thread
 state. Engine and provider (HSM) keys also become possible. PKCS#11 modules
 are not fork-safe, and in mode 0 an `SSL` object could carry one worker's
-key object into another worker. The cost is that workers see TLS state only
-through copies (below).
+key object into another worker. The cost is that workers cannot query OpenSSL
+for a connection and see TLS state only through copies (below).
 
 ## Where OpenSSL runs, per mode
 
@@ -90,24 +90,63 @@ through copies (below).
 | Engine and provider (HSM) keys | rejected | loaded once in `PROC_TCP_MAIN` at child init and on `tls.reload` |
 | Libraries | OpenSSL | OpenSSL, AWS-LC |
 
-## Modes 1 / 2: TLS state reaches workers as copies
+## TLS state reaches workers as copies
 
-The final free of a TLS connection runs in `PROC_TCP_MAIN`
-(`tcpconn_free_in_main`). TLS state crosses between processes only as
-copies in shared memory, made at a fixed point; a process never follows a
-pointer into another process's private state.
+Workers read TLS state only from copies in shared memory, made at a fixed
+point; a process never follows a pointer into another process's private
+state. The final free of a TLS connection runs in `PROC_TCP_MAIN`
+(`tcpconn_free_in_main`).
 
 | | SSL metadata cache | outbound `$xavp(tls=>...)` copy |
 | --- | --- | --- |
-| Direction | `PROC_TCP_MAIN` to worker | worker to `PROC_TCP_MAIN` |
+| Modes | all | 1 and 2 |
+| Direction | process that ran the handshake to workers | worker to `PROC_TCP_MAIN` |
 | Content | server name, cipher, version, certificates, verify result | `server_name`, `server_id` |
-| Made | after the handshake (`tls_build_ssl_cache()`) | before the connect: mode 1 in `tls_tcpconn_init()`, mode 2 in `tcp_reactor_connect_put()` |
-| Stored in | `c->extra_data` (`struct tls_extra_data`) | `c->cinfo` |
+| Made | after the handshake (`tls_build_ssl_cache()`), rebuilt after an allowed renegotiation (`tls_refresh_ssl_cache()`) | before the connect: mode 1 in `tls_tcpconn_init()`, mode 2 in `tcp_reactor_connect_put()` |
+| Stored in | `c->extra_data` (`struct tls_extra_data`), under `cache_lock` | `c->cinfo` |
 | Read by | `$tls_*` variables, `tls:connection-out` | `tls_complete_init()`: client profile, SNI, `verify_server_name` |
 
-Neither copy changes after it is made. A later request that reuses the
-connection with a different `$xavp(tls=>server_name)` keeps the profile and
-SNI of the first request, as in mode 0.
+The cache (`d0d1d58bd2`, 2026) is unconditional. In mode 0 the `SSL`
+object is in shared memory and any worker could query it, but the `$tls_*`
+variables read the cache there too, so all modes return the same values.
+In mode 0 the outbound copy is not needed: the worker that sends the request
+runs the connect and reads its own `$xavp(tls=>...)`.
+
+The outbound copy does not change after it is made. A later request that
+reuses the connection with a different `$xavp(tls=>server_name)` keeps the
+profile and SNI of the first request, as in mode 0.
+
+### Renegotiation
+
+A TLS 1.2 client can renegotiate an established connection and present a
+different certificate, or none. The cached values then no longer describe
+the connection. TLS 1.3 has no renegotiation.
+
+`sr_ssl_ctx_info_callback()` (`tls_domain.c`) sees the new handshake in
+the process or thread that reads the connection (`SSL_read()`): in mode 0
+the TCP worker that holds it, in modes 1 and 2 `PROC_TCP_MAIN`. What happens
+next depends on the `renegotiation` parameter:
+
+- `0` (default): the callback marks the connection
+  (`F_TLS_CON_RENEGOTIATION`), and `tls_h_read_mp_f()` reports end of
+  stream, so the connection closes (CVE-2009-3555). The cache never changes.
+- `1`: when the handshake completes, the callback calls
+  `tls_refresh_ssl_cache()` (`97de12c798`, 2026). It builds a new cache in a
+  local structure, swaps the fields in under `cache_lock`, and frees the old
+  buffers after it releases the lock.
+
+Readers in other processes take `cache_lock` and copy what they need before
+releasing it: the `$tls_*` variables copy strings into their buffers and
+decode certificates from the DER copies, `tls.list` copies the fields it
+prints. A reader therefore never sees a freed buffer or a half-updated
+cache.
+
+The lock covers one read, not a route. Two `$tls_*` variables read in the
+same route block can straddle a refresh, for example a peer subject from the
+old certificate and a verify result from the new one. A message received
+before the renegotiation reports the new values if it reads them after the
+refresh. Configurations that make decisions on the peer certificate should
+keep `renegotiation` at 0.
 
 ## Server profile selection (SNI)
 
