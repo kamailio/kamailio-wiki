@@ -128,6 +128,57 @@ connection, `reactor_writes_behind_read` counts writes that arrived during a
 read job and could not start a write job beside it (near 0 under load is
 the healthy value).
 
+### FUTURE: a separate write queue
+
+Today the pool has one job queue (`job_head` in `struct tcp_reactor_pool`):
+the io_wait thread appends read and write jobs in arrival order, and any
+pool thread takes the oldest (`tcp_reactor_next_job()`). A possible design
+splits it into a read queue and a write queue, served by the same threads
+with a pick policy, or by a set of threads reserved for writes.
+
+Why it may be wanted:
+
+- **head-of-line blocking**: a burst of read jobs (many connections
+  arriving, TLS handshakes, large messages) delays the writes queued behind
+  them. Writes carry replies and relays that complete transactions, so they
+  are the latency-sensitive side.
+- **memory**: unread input stays in the kernel and costs Kamailio nothing,
+  while a staged write holds shared memory (`wsq`, `wbuf_q`) and counts
+  against `tcp_conn_wq_max` and `tcp_wq_max`. Draining writes first keeps
+  the queues short and away from the limits that close connections.
+- **isolation**: under a flood of reads (or of new TLS connections), writes
+  for established calls keep a share of the pool
+- **visibility**: per-direction queue depth and wait time are easier to
+  measure, and to alarm on, with two queues
+
+What it would change:
+
+- **starvation moves, it does not vanish**: strict write priority starves
+  reads under sustained writes, the failure the beside jobs fixed. The pick
+  policy needs a bound (for example a few writes, then a read) or a
+  weighted share, and so does a reserved writer set when traffic is
+  one-sided.
+- **handshakes couple the directions**: a TLS write on a new connection
+  waits for a read to finish the handshake (`WANT_READ`), so read priority
+  cannot drop below what handshakes need
+- **thread use**: reserved writer threads sit idle when traffic is mostly
+  inbound, and the read side has fewer threads; one pool picking from two
+  queues avoids that at the cost of a policy in the hot path
+- **locking and wakeups**: two lists under the pool lock, and waking a
+  thread that will take the queued kind; small, but in the hot path
+- **invariants stay**: at most one read and one write job per connection,
+  the last job out decides, and the io_wait thread owns the flags. The
+  split changes only the order in which queued jobs start.
+- **tuning surface**: weights or a thread split become parameters and
+  multiply the test matrix. The earlier read/write split was unwound from an
+  opt-in switch to always-on for this reason; a separate queue should land
+  the same way, as one built-in policy.
+
+Before building it, measure it: per-direction wait from enqueue to start
+and queue depth under the burst and soak gates, compared with the single
+queue. The beside counters above show overlap, not waiting time in the
+queue.
+
 ## Mode 2: write path and the queue limit
 
 ```text
