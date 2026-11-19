@@ -184,6 +184,10 @@ in embedded Lua/Python/JavaScript/Ruby/... SIP routing scripts:
 - [RPC Control Interface - API](https://www.kamailio.org/docs/docbooks/3.2.x/rpc_api/rpc_api.html)
 - [Kamailio Development Guide](https://www.asipto.com/pub/kamailio-devel-guide/)
 
+### Internals
+
+- [Kamailio Internals](internals/index.md) - how parts of the C code work inside (TCP/TLS threading, TLS module)
+
 ### Guidelines
 
 - [Kamailio SIP Server v3.2.x Devel Guide](https://asipto.com/u/kdg)
