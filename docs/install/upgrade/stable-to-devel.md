@@ -46,6 +46,15 @@ Following tokens are used to mark the changes:
 
 ### Parameters
 
+#### topos module
+
+- Removed module paramater `contact_mode` (UPG)
+- Renamed `xavu_field_a_contact` to `xavu_field_a_contact_user` (UPG)
+- Renamed `xavu_field_b_contact` to `xavu_field_b_contact_user` (UPG)
+- Introduced new parameter `key_location` parameter (UPG)
+
+Please refer to the [topos module documentation](https://www.kamailio.org/docs/modules/devel/modules/topos.html#topos.p.key_location) for more details about the new parameter and how to migrate each `contact_mode` value to the new `key_location` parameter with the appropriate values for xavu fields.
+
 ### Misc
 
 ## Database
