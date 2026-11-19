@@ -5,179 +5,199 @@ Last checked: `60d373b604` (6.2.0-dev)
 Source: `src/core/tcp_main.c`, `src/core/tcp_read.c`, `src/core/tcp_reactor.c`,
 `src/core/tcp_reactor.h`, `src/core/tcp_conn.h`, `src/core/tcp_mtops.c`.
 
-The user side of these settings is in the core cookbook (`tcp_main_threads`,
+The core cookbook documents the settings (`tcp_main_threads`,
 `tcp_reactor_threads`, `tcp_conn_wq_max`).
 
 ## The three modes
 
-The global `tcp_main_threads` sets `ksr_tcp_main_threads` (note the `ksr_`
-prefix when searching the code).
+The global parameter `tcp_main_threads` sets the variable
+`ksr_tcp_main_threads`; search the code for the `ksr_` name.
 
-| Mode | Who reads and writes TCP/TLS connections | Who calls OpenSSL |
+| Mode | Reads and writes TCP/TLS connections | Calls OpenSSL |
 | --- | --- | --- |
-| 0 (default) | the SIP workers; `PROC_TCP_MAIN` accepts and passes file descriptors to them | every worker |
-| 1 | as mode 0 | `PROC_TCP_MAIN` only: workers relay TLS calls to it (`tcp_mtops.c`) |
-| 2 | a thread pool inside `PROC_TCP_MAIN`; workers only process SIP messages | `PROC_TCP_MAIN` only (its pool threads) |
+| 0 (default) | the SIP workers; `PROC_TCP_MAIN` accepts connections and passes the file descriptors to them | every worker |
+| 1 | as mode 0 | `PROC_TCP_MAIN` only; workers send their TLS calls to it (`tcp_mtops.c`) |
+| 2 | a thread pool in `PROC_TCP_MAIN`; workers only process SIP messages | `PROC_TCP_MAIN` only, on its pool threads |
 
-Mode 2 needs `tcp_async=yes` (startup fails otherwise: outbound connects run
-on its single io_wait thread, and a blocking connect would stall every
-connection) and the `TCP_ASYNC` compile flag.
+Mode 2 requires `tcp_async=yes` and the `TCP_ASYNC` compile flag. Its
+outbound connects run on a single thread, the io_wait thread, and a blocking
+connect would stall every connection, so Kamailio refuses to start without
+them.
 
-## Modes 0/1: connection ownership moves back and forth
+## Modes 0/1: connection ownership moves between processes
 
-A connection is not handed to one worker for good:
+A worker does not keep a connection for its lifetime:
 
-1. `PROC_TCP_MAIN` accepts it and `send2child()` passes the descriptor to the
-   least busy worker, which adds it to its own poll set and reads it.
+1. `PROC_TCP_MAIN` accepts the connection, and `send2child()` passes the
+   descriptor to the least busy worker. The worker adds it to its own poll
+   set and reads it.
 2. Each read extends a 5 second idle timer (`TCP_CHILD_TIMEOUT`).
-3. After 5 seconds without input the worker releases the connection
-   (`CONN_RELEASE`); `PROC_TCP_MAIN` watches it again.
-4. The next input makes `PROC_TCP_MAIN` call `send2child()` again, possibly
-   to another worker.
+3. After 5 seconds without input, the worker returns the connection to
+   `PROC_TCP_MAIN` (`CONN_RELEASE`), which polls it again.
+4. On the next input, `PROC_TCP_MAIN` calls `send2child()` again; the
+   connection may go to a different worker.
 
-A busy connection stays with one worker; a quiet one (a registered phone
-between calls) moves on each reactivation. `CRITICAL: ... queue full` from
-`send2child()` is a retried hand-off (`send2child_q`, 2 s per entry), not a
-dropped connection: check client-visible failures before treating it as a
-regression.
+A busy connection stays with one worker. A quiet connection, such as a
+registered phone between calls, changes worker each time it wakes up.
+
+`send2child()` logs `CRITICAL: ... queue full` when a worker's socket is
+full. The hand-off is retried from `send2child_q` for up to 2 s; the
+connection is not dropped. Count client-visible failures before treating
+this message as a regression.
 
 ## Mode 2: threads
 
 `PROC_TCP_MAIN` runs:
 
-- one **io_wait thread** (its main thread): owns every socket, the poll set
-  `io_h` and the local timer `tcp_main_ltimer`
-- **pool threads** (`tcp_reactor_threads`): run read and write jobs
+- one **io_wait thread** (its main thread), which owns every socket, the
+  poll set `io_h` and the local timer `tcp_main_ltimer`
+- the **pool threads** (`tcp_reactor_threads`), which run read and write
+  jobs
 
-SIP workers receive complete messages over a shared `AF_UNIX SOCK_DGRAM`
-socket (any worker may take the next message, as with UDP), and send their
-writes to `PROC_TCP_MAIN` as `CONN_WRITE_REQ`.
+Workers receive complete messages over one shared `AF_UNIX SOCK_DGRAM`
+socket: any idle worker takes the next message, as with UDP. Workers send
+their writes to `PROC_TCP_MAIN` as `CONN_WRITE_REQ` commands.
 
-`io_h` and `tcp_main_ltimer` are `static` in `tcp_main.c`; other files reach
-them only through the `tcpmain_*` wrappers, which may be called from the
-io_wait thread only. Each function header in `tcp_reactor.c` names its
-calling thread: `[io_wait]`, `[pool]`, `[worker]`, `[any]`, `[init]`.
+`io_h` and `tcp_main_ltimer` are `static` in `tcp_main.c`. Other files reach
+them only through the `tcpmain_*` wrappers, and only the io_wait thread may
+call those. Each function header in `tcp_reactor.c` names the thread that
+calls it: `[io_wait]`, `[pool]`, `[worker]`, `[any]` or `[init]`.
 
 ## Mode 2: the job model
 
-The io_wait thread never reads or writes a connection itself. It
-**shields** the connection (removes it from `io_h` and the timer, takes the
-in-pool reference) and queues a job:
+The io_wait thread does not read or write connections. To hand a connection
+to the pool, it **shields** the connection: it removes the connection from
+`io_h` and from the timer, takes a reference for the pool, and queues a job:
 
 | Job | Runs on | Does |
 | --- | --- | --- |
-| `TCP_R_READ` | pool thread | `tcp_read_req()`: read, TLS decrypt, frame, send complete messages to workers |
-| `TCP_R_WRITE` | pool thread | move staged writes (`wsq`) into `wbuf_q` (TLS encode there), flush to the socket |
-| `TCP_R_RUN` | pool thread | a task with no connection (`tcpx_task_t`, e.g. `tls.reload`) |
+| `TCP_R_READ` | pool thread | `tcp_read_req()`: read, decrypt TLS, frame, send complete messages to workers |
+| `TCP_R_WRITE` | pool thread | move staged writes (`wsq`) into `wbuf_q`, encoding TLS there, and flush to the socket |
+| `TCP_R_RUN` | pool thread | a task without a connection (`tcpx_task_t`, e.g. `tls.reload`) |
 
 Rules:
 
-- at most one read job and one write job per connection, at the same time if
-  needed (`F_CONN_POOL_RD`, `F_CONN_POOL_WR`); they share the SSL object and
-  `wbuf_q` under `c->write_lock`
-- a finished job returns to the io_wait thread (`tcp_reactor_handle_done()`);
-  the **last job out** decides: close, chain the next write, or unshield
-- **write beside read** and **read beside write**: the other direction
-  starts next to a running job, so neither starves (see below)
-- a full socket unshields with POLLIN|POLLOUT instead of re-chaining the
-  write; POLLIN is re-armed in one place only, `tcp_reactor_read_rearm()`
-- code running inside `PROC_TCP_MAIN` that sends (CRLF pong, WebSocket
-  control frames) stages on `wsq` from a pool thread; only the io_wait thread
-  touches `io_h` or the watch flags
+- A connection has at most one read job and one write job, and the two may
+  run at the same time (`F_CONN_POOL_RD`, `F_CONN_POOL_WR`). They share the
+  SSL object and `wbuf_q` under `c->write_lock`.
+- Each finished job returns to the io_wait thread
+  (`tcp_reactor_handle_done()`). When the last job on a connection finishes,
+  the io_wait thread closes the connection, queues its next write (a
+  *chained* write), or unshields it.
+- A read can start while a write runs, and a write while a read runs (see
+  [Beside jobs](#beside-jobs-keeping-both-directions-moving)).
+- When the socket is full, the io_wait thread unshields the connection and
+  polls it for POLLIN and POLLOUT instead of chaining the write. POLLIN is
+  re-armed in one function only, `tcp_reactor_read_rearm()`.
+- Code in `PROC_TCP_MAIN` that sends data (CRLF pong, WebSocket control
+  frames) stages it on `wsq` when it runs on a pool thread. Only the io_wait
+  thread changes `io_h` or a connection's watch flags.
 
 ### Beside jobs: keeping both directions moving
 
-A shielded connection is out of the poll set, so the io_wait thread learns
-nothing new about it until its last job finishes. With one job at a time,
-that is a trap for a connection that carries traffic both ways, such as a
-trunk or a WebSocket gateway: while a write chain runs, nothing reads, and
-while a long read runs, staged writes wait. The reactor therefore lets the
-other direction start *beside* the running job, under the same shield and
-the same in-pool reference:
+While a connection is shielded, it is not in the poll set, so the io_wait
+thread receives no events for it until its last job finishes. If each
+connection ran one job at a time, a connection with traffic in both
+directions (a trunk, a WebSocket gateway) would read nothing during a run of
+writes and would hold its writes during a long read. The reactor therefore
+starts a job for the other direction next to the running one, under the
+same shield and pool reference:
 
-- **write beside read** (`tcp_reactor_write_beside_read()`): when a worker's
-  write arrives while only a read job runs, the io_wait thread starts the
-  write job at once instead of leaving the data staged until the read ends
-- **read beside write** (`tcp_reactor_read_beside_write()`): when a write is
-  chained, and when a read finishes while a write still runs, the io_wait
-  thread probes the socket with a zero-timeout `poll(POLLIN)` and starts a
-  read job if input is waiting
+- **Write beside read** (`tcp_reactor_write_beside_read()`): a write that
+  arrives while only a read job runs starts a write job at once. Without
+  it, the data would wait until the read finished.
+- **Read beside write** (`tcp_reactor_read_beside_write()`): when the
+  io_wait thread chains a write, or when a read finishes while a write
+  still runs, it checks the socket with a zero-timeout `poll(POLLIN)`. If
+  input is waiting, it starts a read job.
 
-Read beside write fixes a real starvation (`d635ea9a0d`, 2026-10). Before it,
-`tcp_reactor_unshield_or_chain()` chained the next write whenever data was
-staged and returned without re-arming POLLIN. Under a steady stream of
-relays the connection never went back to the poll set, so its input was
-never read: the peer's 200 OKs piled up unread (about 217 KB), the peer
-blocked in its own send and stopped reading, its window closed, and the
-write queue limit finally closed the connection. On loopback the receiver
-drained at once, the chain broke often and POLLIN was re-armed in the gaps,
-which hid the bug in local tests. The same probe is the reactor's half of
-OpenSSL's `WANT_READ` contract: a TLS write on a new outbound connection
-waits for a read to complete the handshake.
+Read beside write was added to fix read starvation (`d635ea9a0d`, 2026-10).
+Before the fix, `tcp_reactor_unshield_or_chain()` chained a write whenever
+data was staged and did not re-arm POLLIN. Under a continuous stream of
+relayed messages the connection never returned to the poll set, so
+Kamailio never read it. The sequence was:
 
-The rule of at most one read job and one write job per connection still
-holds: a beside job starts only when its own kind is idle, and it is skipped
-when a close is pending or the connection is bad. What remains is a short
-delay: input that arrives during a write job, with no read running, waits
-for that job to end (microseconds to a few milliseconds). Keeping the reader
-armed in the poll set during write jobs would remove it, but would let a
-second read start on a shielded connection; that is left until measurements
-ask for it. Two counters (`kamcmd cnt.grp_get_all core`) show the effect:
-`reactor_rw_overlap` counts write jobs started while a read job owned the
-connection, `reactor_writes_behind_read` counts writes that arrived during a
-read job and could not start a write job beside it (near 0 under load is
-the healthy value).
+1. The peer's 200 OK replies accumulated unread in Kamailio's receive
+   buffer (about 217 KB).
+2. The peer blocked while sending them and stopped reading its own socket.
+3. The peer's receive window closed, Kamailio's writes stalled, and the
+   write queue limit closed the connection.
+
+Local tests did not show the bug: on loopback the receiver read every
+message at once, the write chain stopped often, and each stop re-armed
+POLLIN.
+
+The same check serves OpenSSL's `WANT_READ` rule: a TLS write on a new
+outbound connection cannot complete until a read finishes the handshake.
+
+The beside jobs keep the limit of one read and one write job per
+connection. A beside job starts only when no job of its kind is running, and
+not when a close is pending or the connection is bad. One delay remains:
+input that arrives during a write job, while no read runs, waits for the
+write job to end, from microseconds to a few milliseconds. Polling for
+input during write jobs would remove the delay but would allow a second read
+job on a shielded connection; this change waits for measurements that call
+for it.
+
+Two counters (`kamcmd cnt.grp_get_all core`) measure the beside jobs:
+
+- `reactor_rw_overlap`: write jobs started while a read job owned the
+  connection
+- `reactor_writes_behind_read`: writes that arrived during a read job and
+  could not start a write job; under load it should stay near 0
 
 ### FUTURE: a separate write queue
 
-Today the pool has one job queue (`job_head` in `struct tcp_reactor_pool`):
-the io_wait thread appends read and write jobs in arrival order, and any
-pool thread takes the oldest (`tcp_reactor_next_job()`). A possible design
-splits it into a read queue and a write queue, served by the same threads
-with a pick policy, or by a set of threads reserved for writes.
+The pool has one job queue (`job_head` in `struct tcp_reactor_pool`). The
+io_wait thread appends read and write jobs in arrival order, and the next
+free pool thread takes the oldest job (`tcp_reactor_next_job()`). A possible
+design uses two queues, one for reads and one for writes. Either the same
+threads serve both under a selection policy, or some threads serve writes
+only.
 
-Why it may be wanted:
+Reasons for it:
 
-- **head-of-line blocking**: a burst of read jobs (many connections
-  arriving, TLS handshakes, large messages) delays the writes queued behind
-  them. Writes carry replies and relays that complete transactions, so they
-  are the latency-sensitive side.
-- **memory**: unread input stays in the kernel and costs Kamailio nothing,
-  while a staged write holds shared memory (`wsq`, `wbuf_q`) and counts
-  against `tcp_conn_wq_max` and `tcp_wq_max`. Draining writes first keeps
-  the queues short and away from the limits that close connections.
-- **isolation**: under a flood of reads (or of new TLS connections), writes
-  for established calls keep a share of the pool
-- **visibility**: per-direction queue depth and wait time are easier to
-  measure, and to alarm on, with two queues
+- **Head-of-line blocking.** A burst of read jobs (many new connections, TLS
+  handshakes, large messages) delays the write jobs queued behind it. Writes
+  carry the replies and relayed requests that complete transactions, so
+  their latency matters more.
+- **Memory.** Unread input stays in the kernel's buffers. A staged write
+  occupies shared memory (`wsq`, `wbuf_q`) and counts against
+  `tcp_conn_wq_max` and `tcp_wq_max`. Running writes first keeps the queues
+  short and below the limits that close connections.
+- **Isolation.** During a flood of reads or of new TLS connections, writes
+  for established calls still get pool time.
+- **Measurement.** Two queues make queue depth and waiting time per
+  direction easy to count and to alert on.
 
-What it would change:
+Costs and risks:
 
-- **starvation moves, it does not vanish**: strict write priority starves
-  reads under sustained writes, the failure the beside jobs fixed. The pick
-  policy needs a bound (for example a few writes, then a read) or a
-  weighted share, and so does a reserved writer set when traffic is
-  one-sided.
-- **handshakes couple the directions**: a TLS write on a new connection
-  waits for a read to finish the handshake (`WANT_READ`), so read priority
-  cannot drop below what handshakes need
-- **thread use**: reserved writer threads sit idle when traffic is mostly
-  inbound, and the read side has fewer threads; one pool picking from two
-  queues avoids that at the cost of a policy in the hot path
-- **locking and wakeups**: two lists under the pool lock, and waking a
-  thread that will take the queued kind; small, but in the hot path
-- **invariants stay**: at most one read and one write job per connection,
-  the last job out decides, and the io_wait thread owns the flags. The
-  split changes only the order in which queued jobs start.
-- **tuning surface**: weights or a thread split become parameters and
-  multiply the test matrix. The earlier read/write split was unwound from an
-  opt-in switch to always-on for this reason; a separate queue should land
-  the same way, as one built-in policy.
+- **Starvation in the other direction.** Strict priority for writes stops
+  reads under a continuous stream of writes, which is the failure that the
+  beside jobs fixed. The selection policy needs a limit, such as one read
+  after every few writes, or a weighted share. Dedicated write threads need
+  the same limit when traffic flows mostly one way.
+- **TLS handshakes.** A TLS write on a new connection waits for a read to
+  finish the handshake (`WANT_READ`). Reads must keep enough priority for
+  handshakes to complete.
+- **Thread use.** Dedicated write threads are idle when traffic is mostly
+  inbound, and they leave fewer threads for reads. One pool that serves
+  both queues avoids this but adds the selection policy to every job pickup.
+- **Locking and wakeups.** The pool lock protects two lists, and a new job
+  must wake a thread that will take its kind. The cost is small but sits on
+  every job.
+- **Unchanged rules.** A connection still has at most one read and one write
+  job, the last job to finish still decides, and the io_wait thread still
+  owns the flags. Only the start order of queued jobs changes.
+- **More parameters.** Weights or a thread split become settings, and each
+  setting multiplies the test matrix. For this reason the earlier
+  read/write split changed from an opt-in setting to fixed behaviour; a
+  separate queue should also ship as one built-in policy.
 
-Before building it, measure it: per-direction wait from enqueue to start
-and queue depth under the burst and soak gates, compared with the single
-queue. The beside counters above show overlap, not waiting time in the
-queue.
+Measure before building it: per direction, the time from enqueue to start
+and the queue depth, under the burst and soak tests, compared with the
+single queue. The beside-job counters count overlaps, not time spent in
+the queue.
 
 ## Mode 2: write path and the queue limit
 
@@ -188,51 +208,51 @@ pool:    TCP_R_WRITE -> tls_encode() -> write through when wbuf_q is empty,
          queue the rest
 ```
 
-- a message goes straight to the socket when nothing is queued, so
-  `tcp_conn_wq_max` is not a maximum message size in mode 2
-- the limit is checked when a write is staged, and only while the socket is
-  full: a batch waiting for its pool flush is not backpressure. Do not make
-  the check unconditional: it brings back false "write queue full" closes.
-  Only the global `tcp_wq_max` bounds a slow peer that keeps the socket
-  partly writable.
-- the first message on a new outbound connection waits whole until the
-  connect completes, in every mode, so it must fit `tcp_conn_wq_max`
-- a write that fails is reported as a connection close, not a send error:
-  tm answers 408 after its timer instead of 477
+- When nothing is queued, a message goes straight to the socket, so
+  `tcp_conn_wq_max` does not limit message size in mode 2.
+- The limit is checked when a write is staged, and only while the socket is
+  full: data that waits for its pool job is not backpressure. Do not make
+  the check unconditional; that reintroduces false "write queue full"
+  closes. A slow peer that keeps the socket partly writable is limited only
+  by the global `tcp_wq_max`.
+- In every mode, the first message on a new outbound connection is queued
+  whole until the connect completes, so it must fit in `tcp_conn_wq_max`.
+- A failed write is reported as a closed connection, not as a send error:
+  tm answers 408 when its timer expires, where mode 0 answers 477.
 
 ## Memory
 
 Kamailio code allocates with `pkg_malloc` (memory private to a process) or
-`shm_malloc` (memory shared between processes), never with `malloc`
+`shm_malloc` (memory shared between processes). It does not call `malloc`
 directly.
 
-The pkg managers (`qm`, `fm`, `tlsf`) keep their own heap per process and
-take no lock; mode 2 runs several threads in `PROC_TCP_MAIN`, so
-`tcp_reactor_pkg_lock_install()` wraps that process's allocator with a lock
-before the pool starts (`tcp_reactor_mem.c`). The exception is the `sm` pkg
-manager (`-X sm`, `7eded19363`), which is the system `malloc`: it is
-thread-safe already, so the lock is not installed. `sm` backs pkg only; shm
-refuses it, because system memory is private to a process.
+The pkg managers `qm`, `fm` and `tlsf` keep a separate heap per process and
+take no lock. Mode 2 runs several threads in `PROC_TCP_MAIN`, so
+`tcp_reactor_pkg_lock_install()` adds a lock to that process's allocator
+before the pool starts (`tcp_reactor_mem.c`). The `sm` pkg manager
+(`-X sm`, `7eded19363`) uses the system `malloc`, which is already
+thread-safe, so the lock is not installed. `sm` serves pkg memory only; shm
+rejects it because system memory is private to a process.
 
-Libraries keep their own allocation: OpenSSL in modes 1/2, for example, uses
-the system allocator, while in mode 0 the tls module points it at shm.
+Libraries use their own allocation. OpenSSL in modes 1/2 uses the system
+allocator; in mode 0 the tls module directs it to shm.
 
 ## Timers
 
 | Timer | Owner | Purpose |
 | --- | --- | --- |
 | `tcp_reader_ltimer` | each worker (modes 0/1) | the 5 s idle release to `PROC_TCP_MAIN` |
-| `tcp_main_ltimer` | `PROC_TCP_MAIN` (mode 2: io_wait thread) | connection lifetime of the connections it holds |
-| none | mode 2 pool threads | shield removes a connection from the timer; unshield re-arms it |
+| `tcp_main_ltimer` | `PROC_TCP_MAIN` (mode 2: io_wait thread) | lifetime of the connections it holds |
+| none | mode 2 pool threads | shielding removes a connection from the timer; unshielding re-arms it |
 
 ## Debugging mode 2
 
-- counters `reactor_rw_overlap` and `reactor_writes_behind_read`:
-  `kamcmd cnt.grp_get_all core`
-- to see what the reactor decided, trace its own calls with uprobes
+- Counters `reactor_rw_overlap` and `reactor_writes_behind_read`:
+  `kamcmd cnt.grp_get_all core`.
+- To see the reactor's decisions, attach uprobes to its own functions
   (`tcp_reactor_enqueue_job`, `tcp_reactor_stamp`, `tcp_reactor_wsq_add`)
-  next to kernel probes on `tcp_recvmsg`/`tcp_sendmsg`: a starved connection
-  shows as missing read jobs while the socket's unread bytes grow; network
-  level probes alone see only the stall
+  and kernel probes to `tcp_recvmsg` and `tcp_sendmsg`. A starved connection
+  shows no read jobs while its socket's unread bytes grow. Network-level
+  probes alone show only the stall, not its cause.
 
 See also [Connections: references, changes, close](connections.md).

@@ -1,13 +1,13 @@
 # Kamailio Internals
 
-Developer notes on how parts of Kamailio work inside: the mechanisms, the
-rules the code relies on and the mistakes worth not repeating. They are for
-people (and tools) changing the C code, not for writing a configuration;
-the cookbooks and module documentation cover that.
+These pages describe how parts of Kamailio's C code work: the mechanisms,
+the rules the code depends on, and past mistakes. They are for developers
+and tools that change the code. For configuration, see the cookbooks and
+the module documentation.
 
-Each page names the source files it describes and the commit it was last
-checked against. The code is the reference: when a page and the code
-disagree, the page is out of date and a fix is welcome.
+Each page lists the source files it describes and the commit it was last
+checked against. The code is authoritative: if a page and the code
+disagree, the page is out of date; corrections are welcome.
 
 ## Topics
 
@@ -18,9 +18,10 @@ disagree, the page is out of date and a fix is welcome.
 
 ## Writing a page
 
-- one mechanism per page; start with what it is for, then how it works
-- name functions, files and commits, so a reader can find the code
-- state the rules the code depends on, and what breaks when they are broken
-- keep history short: what was tried and why it changed, when it explains
-  the current shape of the code
-- add `Last checked:` with the commit the page was verified against
+- Cover one mechanism per page. State its purpose first, then how it works.
+- Name functions, files and commits, so readers can find the code.
+- State the rules the code depends on, and what breaks when code violates
+  them.
+- Keep history short: include a past design only when it explains the
+  current code.
+- Add a `Last checked:` line with the commit the page was verified against.
