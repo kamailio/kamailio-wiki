@@ -111,7 +111,8 @@ same shield and pool reference:
   still runs, it checks the socket with a zero-timeout `poll(POLLIN)`. If
   input is waiting, it starts a read job.
 
-Read beside write was added to fix read starvation (`d635ea9a0d`, 2026-10).
+Read beside write was added to fix read starvation (`d635ea9a0d`, 2026-10;
+[how it was found](tracing.md)).
 Before the fix, `tcp_reactor_unshield_or_chain()` chained a write whenever
 data was staged and did not re-arm POLLIN. Under a continuous stream of
 relayed messages the connection never returned to the poll set, so
@@ -253,6 +254,7 @@ allocator; in mode 0 the tls module directs it to shm.
   (`tcp_reactor_enqueue_job`, `tcp_reactor_stamp`, `tcp_reactor_wsq_add`)
   and kernel probes to `tcp_recvmsg` and `tcp_sendmsg`. A starved connection
   shows no read jobs while its socket's unread bytes grow. Network-level
-  probes alone show only the stall, not its cause.
+  probes alone show only the stall, not its cause. The script and an
+  example are in [Tracing the reactor](tracing.md).
 
 See also [Connections: references, changes, close](connections.md).

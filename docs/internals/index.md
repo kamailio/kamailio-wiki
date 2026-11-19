@@ -13,7 +13,7 @@ disagree, the page is out of date; corrections are welcome.
 
 | Area | Pages |
 | --- | --- |
-| TCP/TLS threading (`tcp_main_threads`) | [Reactor overview](reactor/index.md), [Connections: references, changes, close](reactor/connections.md) |
+| TCP/TLS threading (`tcp_main_threads`) | [Reactor overview](reactor/index.md), [Connections: references, changes, close](reactor/connections.md), [Tracing the reactor](reactor/tracing.md) |
 | TLS module (OpenSSL, AWS-LC) | [Overview](tls/index.md), [OpenSSL thread-local state](tls/openssl-thread-locals.md), [SNI profile selection](tls/sni.md) |
 
 ## Writing a page
